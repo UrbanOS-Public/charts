@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  carpenter:
+  - apiVersion: v1
+    created: 2019-05-20T23:56:14.314537824-04:00
+    description: Creates tables for the SmartCitiesData platform
+    digest: 46b9846b168697e892c6b13c91b2020c0847e4865201524c4ada0f6513eaa1ab
+    name: carpenter
+    urls:
+    - carpenter-1.0.0.tgz
+    version: 1.0.0
+generated: 2019-05-20T23:56:14.311754123-04:00
