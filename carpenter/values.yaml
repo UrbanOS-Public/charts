@@ -1,0 +1,25 @@
+# make a dependency when kdp is published
+presto:
+  url: "http://kdp-kubernetes-data-platform-presto.kdp:8080"
+
+redis:
+  enabled: true
+  # passed to carpenter configuration
+  host: carpenter-redis-master
+  usePassword: false
+  cluster:
+    enabled: false
+
+image:
+  repository: smartcitiesdata/carpenter
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# defaults to be overridden by user
+replicaCount: 1
+nameOverride: ""
+fullnameOverride: ""
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
