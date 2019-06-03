@@ -12,7 +12,7 @@ redis:
 
 image:
   repository: smartcitiesdata/carpenter
-  tag: latest
+  tag: development
   pullPolicy: IfNotPresent
 
 # defaults to be overridden by user
