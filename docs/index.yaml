@@ -2,11 +2,31 @@ apiVersion: v1
 entries:
   carpenter:
   - apiVersion: v1
-    created: "2019-06-03T15:54:03.483593-04:00"
+    created: 2019-06-27T12:52:33.424845716-04:00
     description: Creates tables for the SmartCitiesData platform
     digest: 7cbd2567e020902d7a01b001111ba9e1b44d8a41c78b8142d84ebaeec32d62ad
     name: carpenter
     urls:
     - carpenter-1.0.0.tgz
     version: 1.0.0
-generated: "2019-06-03T15:54:03.481787-04:00"
+  kubernetes-data-platform:
+  - apiVersion: v1
+    created: 2019-06-27T12:52:33.426541834-04:00
+    description: Hadoop-less data platform for the Smart City OS
+    digest: ba465d7bd1dccb7823dfa860001e9f8b459059d40669441583aeca064b8b0e76
+    keywords:
+    - presto
+    - hive-metastore
+    - cloud-object-store
+    - minio
+    name: kubernetes-data-platform
+    sources:
+    - https://github.com/prestodb/presto
+    - https://github.com/apache/hive
+    - https://github.com/minio/minio
+    - https://github.com/helm/helm
+    tillerVersion: '>=2.8.0'
+    urls:
+    - kubernetes-data-platform-1.0.0.tgz
+    version: 1.0.0
+generated: 2019-06-27T12:52:33.422805041-04:00
