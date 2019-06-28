@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   carpenter:
   - apiVersion: v1
-    created: 2019-06-27T12:52:33.424845716-04:00
+    created: 2019-06-28T10:53:43.617466887-04:00
     description: Creates tables for the SmartCitiesData platform
     digest: 7cbd2567e020902d7a01b001111ba9e1b44d8a41c78b8142d84ebaeec32d62ad
     name: carpenter
@@ -11,7 +11,7 @@ entries:
     version: 1.0.0
   kubernetes-data-platform:
   - apiVersion: v1
-    created: 2019-06-27T12:52:33.426541834-04:00
+    created: 2019-06-28T10:53:43.618064611-04:00
     description: Hadoop-less data platform for the Smart City OS
     digest: ba465d7bd1dccb7823dfa860001e9f8b459059d40669441583aeca064b8b0e76
     keywords:
@@ -29,4 +29,14 @@ entries:
     urls:
     - kubernetes-data-platform-1.0.0.tgz
     version: 1.0.0
-generated: 2019-06-27T12:52:33.422805041-04:00
+  streisand:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-06-28T10:53:43.618281614-04:00
+    description: Publishes public streaming data to the public kafka cluster
+    digest: 0d32486a6f57df65470d16e4a4d93038ae58cceeba91ea40e5c33ad216d99e78
+    name: streisand
+    urls:
+    - streisand-1.0.0.tgz
+    version: 1.0.0
+generated: 2019-06-28T10:53:43.615418863-04:00
