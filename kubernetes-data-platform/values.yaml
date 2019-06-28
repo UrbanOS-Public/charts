@@ -1,5 +1,5 @@
 presto:
-  workers: 2
+  workers: 0
   service:
     type: NodePort
     port: 8080
@@ -34,8 +34,10 @@ presto:
       rollingUpdate:
         maxSurge: 1
         maxUnavailable: 1
+    deployPrometheusExporter: false
+    useJmxExporter: false
   ingress:
-    enable: true
+    enable: false
     annotations:
       alb.ingress.kubernetes.io/healthcheck-path: /v1/cluster
 
@@ -127,4 +129,6 @@ global:
   environment: sandbox
   objectStore:
     bucketName: kdp-cloud-storage
+    accessKey: accessKey
+    accessSecret: accessSecret
 
