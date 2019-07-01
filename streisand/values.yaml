@@ -1,10 +1,11 @@
 
 kafka:
-  #comma delimited list of kafka seed brokers
-  pipeline_brokers: incoming-data-broker
+  # Override these with the addresses of your Kafka brokers 
+  pipeline_brokers: incoming-data-broker:9092
+  public_brokers: public-kafka-cluster-broker:9092
+
   strimziCluster: strimzi-cluster
   transformed_topic: topic-to-read-from
-  public_brokers: public-kafka-cluster-broker
 
 redis:
   host: streisand-redis-master
