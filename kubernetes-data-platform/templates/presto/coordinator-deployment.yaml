@@ -67,12 +67,14 @@ spec:
           httpGet:
             path: /v1/cluster
             port: http-coord
+          failureThreshold: 12
         readinessProbe:
           httpGet:
             path: /v1/cluster
             port: http-coord
         resources:
 {{ toYaml .Values.presto.deploy.container.resources | indent 10 }}
+{{- if .Values.presto.deploy.deployPrometheusExporter }}
       - name: presto-exporter
         image: yahoojapan/presto-exporter:master
         imagePullPolicy: {{ .Values.presto.deploy.container.pullPolicy }}
@@ -87,6 +89,7 @@ spec:
           httpGet:
             path: /metrics
             port: metric-port
+{{- end }}
       volumes:
       - name: presto-configs
         configMap:

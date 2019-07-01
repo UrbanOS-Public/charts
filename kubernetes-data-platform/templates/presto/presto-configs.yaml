@@ -19,8 +19,9 @@ data:
     -XX:+ExplicitGCInvokesConcurrent
     -XX:+HeapDumpOnOutOfMemoryError
     -XX:+ExitOnOutOfMemoryError
+{{- if .Values.presto.deploy.useJmxExporter }}
     -javaagent:/presto/jmx_exporter.jar=8181:/presto/etc/jmx_exporter_config.yaml
-
+{{- end }}
   jmx_exporter_config.yaml: |
     {}
 
