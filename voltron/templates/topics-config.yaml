@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-topics
+  namespace: {{ .Release.Namespace }}
+data:
+  FROM_TOPIC: {{ .Values.kafka.from_topic }}
+  TO_TOPIC: {{ .Values.kafka.to_topic }}
