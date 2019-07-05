@@ -1,0 +1,18 @@
+outputTopicPrefix: raw
+dlqTopic: streaming-dead-letters
+replicaCount: 2
+image:
+  repository: smartcitiesdata/reaper
+  tag: development
+  pullPolicy: Always
+service:
+  port: 9092
+  type: ClusterIP
+
+redis:
+  host: redis.external-services
+strimzi:
+  kafka:
+    brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
+vault:
+  endpoint: http://vault.vault:8200

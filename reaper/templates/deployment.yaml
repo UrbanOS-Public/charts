@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    helm.sh/chart: {{ include "reaper.chart" . }}
+    app.kubernetes.io/name: {{ include "reaper.name" . }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  serviceAccountName: reaper
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "reaper.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "reaper.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      serviceAccountName: {{ .Chart.Name }}
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: {{ .Chart.Name }}
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        resources:
+          limits:
+            memory: 1Gi
+            cpu: 300m
+            ephemeral-storage: 50G
+          requests:
+            memory: 1Gi
+            cpu: 100m
+            ephemeral-storage: 25G
+        ports:
+        - containerPort: 9001
+        - containerPort: 4369
+        volumeMounts:
+        - mountPath: /downloads
+          name: download-dir
+        env:
+        - name: OUTPUT_TOPIC_PREFIX
+          value: {{ .Values.outputTopicPrefix }}
+        - name: DLQ_TOPIC
+          value: {{ .Values.dlqTopic }}
+        - name: KAFKA_BROKERS
+          value: {{ .Values.strimzi.kafka.brokers | default (include "kafka.brokerservice" .) }}
+        - name: RUN_IN_KUBERNETES
+          value: "true"
+        - name: REDIS_HOST
+          value: {{ .Values.redis.host }}
+        - name: SECRETS_ENDPOINT
+          value: {{ .Values.vault.endpoint }}
+        - name: NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: NODE_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+      volumes:
+      - name: download-dir
+        emptyDir: {}
