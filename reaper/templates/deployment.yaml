@@ -28,14 +28,7 @@ spec:
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         resources:
-          limits:
-            memory: 1Gi
-            cpu: 300m
-            ephemeral-storage: 50G
-          requests:
-            memory: 1Gi
-            cpu: 100m
-            ephemeral-storage: 25G
+{{ toYaml .Values.resources | indent 10 }}
         ports:
         - containerPort: 9001
         - containerPort: 4369

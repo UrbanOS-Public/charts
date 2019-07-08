@@ -1,6 +1,6 @@
 outputTopicPrefix: raw
 dlqTopic: streaming-dead-letters
-replicaCount: 2
+replicaCount: 1
 image:
   repository: smartcitiesdata/reaper
   tag: development
@@ -16,3 +16,13 @@ strimzi:
     brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
 vault:
   endpoint: http://vault.vault:8200
+
+resources:
+  limits:
+    memory: 1Gi
+    cpu: 300m
+    ephemeral-storage: 15G
+  requests:
+    memory: 512Mi
+    cpu: 100m
+    ephemeral-storage: 10G

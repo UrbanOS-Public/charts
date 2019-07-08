@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   carpenter:
   - apiVersion: v1
-    created: 2019-07-08T08:24:21.912354666-04:00
+    created: 2019-07-08T09:58:05.030549301-04:00
     description: Creates tables for the SmartCitiesData platform
     digest: 7cbd2567e020902d7a01b001111ba9e1b44d8a41c78b8142d84ebaeec32d62ad
     name: carpenter
@@ -11,7 +11,7 @@ entries:
     version: 1.0.0
   kubernetes-data-platform:
   - apiVersion: v1
-    created: 2019-07-08T08:24:21.914598009-04:00
+    created: 2019-07-08T09:58:05.032254697-04:00
     description: Hadoop-less data platform for the Smart City OS
     digest: 594caa5f1b1f8a99c8a9c211cea32f0ef5ba408cc9a72a6feecec11174dbef20
     keywords:
@@ -30,7 +30,7 @@ entries:
     - kubernetes-data-platform-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v1
-    created: 2019-07-08T08:24:21.913445624-04:00
+    created: 2019-07-08T09:58:05.031398139-04:00
     description: Hadoop-less data platform for the Smart City OS
     digest: ba465d7bd1dccb7823dfa860001e9f8b459059d40669441583aeca064b8b0e76
     keywords:
@@ -51,10 +51,10 @@ entries:
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-08T08:24:21.915907916-04:00
+    created: 2019-07-08T09:58:05.033530084-04:00
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
-    digest: 6d2683d987707bc4603cdce908a6940ee7f9ada9a7f5bad2d7f926a1d4dd82e9
+    digest: 0a4e1e99fe4980d431c29b78920b97bd13d889887927b0a9d3bd7f0c289ad69c
     name: reaper
     urls:
     - reaper-0.1.0.tgz
@@ -62,11 +62,11 @@ entries:
   streisand:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-08T08:24:21.916382719-04:00
+    created: 2019-07-08T09:58:05.03402943-04:00
     description: Publishes public streaming data to the public kafka cluster
     digest: 0d32486a6f57df65470d16e4a4d93038ae58cceeba91ea40e5c33ad216d99e78
     name: streisand
     urls:
     - streisand-1.0.0.tgz
     version: 1.0.0
-generated: 2019-07-08T08:24:21.90972321-04:00
+generated: 2019-07-08T09:58:05.028326836-04:00
