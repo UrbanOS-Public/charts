@@ -1,0 +1,25 @@
+replicaCount: 2
+
+kafka:
+  brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
+  input_topic_prefix: validated
+  output_topic_prefix: transformed
+
+redis:
+  host: redis.redis
+
+image:
+  repository: smartcitiesdata/voltron
+  tag: development
+  pullPolicy: IfNotPresent
+
+service:
+  port: 9092
+  type: ClusterIP
+
+nameOverride: ""
+fullnameOverride: ""
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
