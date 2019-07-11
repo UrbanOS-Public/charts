@@ -48,6 +48,8 @@ spec:
           value: {{ .Values.redis.host }}
         - name: SECRETS_ENDPOINT
           value: {{ .Values.vault.endpoint }}
+        - name: DOWNLOAD_TIMEOUT
+          value: {{.Values.download_timeout}}
         - name: NAMESPACE
           valueFrom:
             fieldRef:

@@ -26,3 +26,5 @@ resources:
     memory: 512Mi
     cpu: 100m
     ephemeral-storage: 10G
+
+download_timeout: 60_000
