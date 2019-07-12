@@ -5,6 +5,7 @@ metadata:
   labels:
     component: presto
     role: coordinator
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
 {{ include "kdp.labels" . | indent 4 }}
 spec:
   selector:
