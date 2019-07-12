@@ -39,6 +39,7 @@ data:
     hive.allow-drop-column={{ .Values.metastore.allowDropTable }}
     hive.allow-rename-column={{ .Values.metastore.allowDropTable }}
     hive.allow-add-column={{ .Values.metastore.allowDropTable }}
+    hive.metastore.disallow.incompatible.col.type.changes=false
 {{- if and .Values.global.objectStore.accessKey .Values.global.objectStore.accessSecret }}
     hive.s3.aws-access-key={{ .Values.global.objectStore.accessKey }}
     hive.s3.aws-secret-key={{ .Values.global.objectStore.accessSecret }}

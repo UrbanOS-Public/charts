@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   carpenter:
   - apiVersion: v1
-    created: 2019-07-08T16:43:19.218813931-04:00
+    created: 2019-07-12T10:46:54.368552507-04:00
     description: Creates tables for the SmartCitiesData platform
     digest: 7cbd2567e020902d7a01b001111ba9e1b44d8a41c78b8142d84ebaeec32d62ad
     name: carpenter
@@ -11,7 +11,26 @@ entries:
     version: 1.0.0
   kubernetes-data-platform:
   - apiVersion: v1
-    created: 2019-07-08T16:43:19.220624457-04:00
+    created: 2019-07-12T10:46:54.369910087-04:00
+    description: Hadoop-less data platform for the Smart City OS
+    digest: b1dc576b4cd588e0d25e95a3aafc73176c7798379d247fcd8a03a453d8e53904
+    keywords:
+    - presto
+    - hive-metastore
+    - cloud-object-store
+    - minio
+    name: kubernetes-data-platform
+    sources:
+    - https://github.com/prestodb/presto
+    - https://github.com/apache/hive
+    - https://github.com/minio/minio
+    - https://github.com/helm/helm
+    tillerVersion: '>=2.8.0'
+    urls:
+    - kubernetes-data-platform-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v1
+    created: 2019-07-12T10:46:54.369248761-04:00
     description: Hadoop-less data platform for the Smart City OS
     digest: ba465d7bd1dccb7823dfa860001e9f8b459059d40669441583aeca064b8b0e76
     keywords:
@@ -32,7 +51,7 @@ entries:
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-08T16:43:19.221025217-04:00
+    created: 2019-07-12T10:46:54.37022627-04:00
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
     digest: 0a4e1e99fe4980d431c29b78920b97bd13d889887927b0a9d3bd7f0c289ad69c
@@ -43,7 +62,7 @@ entries:
   streisand:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-08T16:43:19.221545734-04:00
+    created: 2019-07-12T10:46:54.370478413-04:00
     description: Publishes public streaming data to the public kafka cluster
     digest: 0d32486a6f57df65470d16e4a4d93038ae58cceeba91ea40e5c33ad216d99e78
     name: streisand
@@ -53,11 +72,11 @@ entries:
   voltron:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-08T16:43:19.221865225-04:00
+    created: 2019-07-12T10:46:54.370832636-04:00
     description: Data transformation service
     digest: 23d527a7a82f48032a6a3e068de2e9631e9b5f59f7d549522af46617091c247d
     name: voltron
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-07-08T16:43:19.215917787-04:00
+generated: 2019-07-12T10:46:54.366600808-04:00
