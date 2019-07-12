@@ -118,7 +118,6 @@ Create a common label block
 */}}
 {{- define "kdp.labels" -}}
 environment: {{ .Values.global.environment }}
-chart: {{ .Chart.Name }}-{{ .Chart.Version }}
 release: {{ .Release.Name }}
 source: helm
 {{- end -}}
