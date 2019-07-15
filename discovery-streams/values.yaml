@@ -1,0 +1,31 @@
+dashboard:
+  title: "Dashboard Metrics"
+
+image:
+  repository: smartcitiesdata/discovery_streams
+  tag: development
+  pullPolicy: Always
+
+ingress:
+  enabled: false
+  scheme: ""
+  subnets: ""
+  securityGroups: ""
+  certificateARN: ""
+  dnsZone: "localhost"
+  root_dns_zone: "localhost"
+
+kafka:
+  brokers: data-broker:9092
+
+replicaCount: 1
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 4000
+
+smokeTestImage:
+  repository: smartcitiesdata/discovery_streams_smoke_test
+  tag: development
+  pullPolicy: Always
