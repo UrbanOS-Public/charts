@@ -19,11 +19,9 @@ tolerations: []
 affinity: {}
 
 kdp:
-  enabled: true
   user: "forklift"
   url: http://kdp-kubernetes-data-platform-presto.kdp:8080
   
 redis:
-  enabled: true
   host: forklift-redis-master
 
