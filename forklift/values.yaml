@@ -1,0 +1,27 @@
+replicaCount: 1
+
+image:
+  repository: smartcitiesdata/forklift
+  tag: development
+  pullPolicy: Always
+
+kafka:
+  #comma delimited list of kafka seed brokers
+  brokers: data-broker:9092
+  strimziCluster: streaming-service
+  dataTopicPrefix: "transformed"
+  outputTopic: "streaming-persisted"
+
+nameOverride: ""
+fullnameOverride: ""
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+kdp:
+  user: "forklift"
+  url: http://presto-endpoint:8080
+  
+redis:
+  host: forklift-redis-master
+
