@@ -1,5 +1,5 @@
 dashboard:
-  title: "COTA Streaming Metrics"
+  title: "Dashboard Metrics"
 
 image:
   repository: smartcitiesdata/discovery_streams
