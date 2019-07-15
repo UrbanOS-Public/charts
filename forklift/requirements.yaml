@@ -1,0 +1,10 @@
+dependencies:
+  - name: redis
+    version: 8.0.1
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    condition: redis.enabled
+  - name: kdp
+    version: 1.0.1
+    repository: https://smartcitiesdata.github.io/charts
+    condition: kdp.enabled
+`
