@@ -7,7 +7,7 @@ image:
 
 kafka:
   #comma delimited list of kafka seed brokers
-  brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
+  brokers: data-broker:9092
   strimziCluster: streaming-service
   dataTopicPrefix: "transformed"
   outputTopic: "streaming-persisted"
@@ -20,7 +20,7 @@ affinity: {}
 
 kdp:
   user: "forklift"
-  url: http://kdp-kubernetes-data-platform-presto.kdp:8080
+  url: http://presto-endpoint:8080
   
 redis:
   host: forklift-redis-master
