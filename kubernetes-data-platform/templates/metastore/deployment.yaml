@@ -4,7 +4,6 @@ metadata:
   name: {{ template "kdp.metastore.fullname" . }}
   labels:
     component: metastore
-    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
 {{ include "kdp.labels" . | indent 4 }}
 spec:
   selector:
