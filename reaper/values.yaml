@@ -9,6 +9,10 @@ service:
   port: 9092
   type: ClusterIP
 
+aws:
+  region: us-west-2
+  hostedFileBucket: "" 
+
 redis:
   host: redis.external-services
 strimzi:
