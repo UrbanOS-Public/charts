@@ -52,8 +52,6 @@ spec:
           value: {{ .Values.aws.hostedFileBucket }}
         - name: AWS_REGION
           value: {{ .Values.aws.region }}
-        - name: DOWNLOAD_TIMEOUT
-          value: {{.Values.download_timeout}}
         - name: NAMESPACE
           valueFrom:
             fieldRef:

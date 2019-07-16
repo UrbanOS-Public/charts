@@ -25,7 +25,7 @@ entries:
     created: 2019-07-16T16:23:37.700229664-04:00
     description: Dynamically find kafka topics and makes available corresponding channels
       on a public websocket
-    digest: 2a2c063edde7c2f09cb86e582bb61126225d98f7718bdbd85c2d17d83b9b9563
+    digest: 63bf4e84bf6193da9a87f37e8878f3ac0ee49e693a1bd96f29e8fcdfed8fbef9
     name: discovery-streams
     urls:
     - discovery-streams-0.1.2.tgz
@@ -66,7 +66,7 @@ entries:
     created: 2019-07-16T16:23:37.706357138-04:00
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
-    digest: 7fd0537b5a9481edcb5cb3ad551fb952da56f770b9eb18df381225ade55ab358
+    digest: 4be4086499bd38a8ef5403425bf0f14678c717d59e4ce82b92cd3627a085fc84
     name: reaper
     urls:
     - reaper-0.1.1.tgz
