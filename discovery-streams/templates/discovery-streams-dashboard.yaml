@@ -5,4 +5,4 @@ metadata:
   labels:
     grafana_dashboard: "true"
 data:
-  dashboard.json: {{ .Values.dashboard-content }}
+  dashboard.json: {{ .Values.dashboard.content }}
