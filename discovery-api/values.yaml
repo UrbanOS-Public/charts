@@ -1,0 +1,46 @@
+service:
+  name: discovery-api
+  port: 80
+  auth_string: ""
+
+ingress:
+  enabled: false
+  scheme: ""
+  subnets: ""
+  security_groups: ""
+  dnsZone: ""
+  certificate_arn: ""
+
+image:
+  name: smartcitiesdata/discovery_api
+  tag: development
+  pullPolicy: Always
+
+monitoring:
+  targetPort: 80
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+redis:
+  host: discovery-api-redis-master
+
+presto:
+  url: "http://presto-endpoint:8080"
+  catalog: "hive"
+  schema: "default"
+
+ldap:
+  host: "ldap.example.com"
+  base: "dc=example,dc=com"
+  user: "binduser"
+  account:
+    subdn: "cn=users,cn=accounts"
+
+s3:
+  hostedFileBucket: "hosted-dataset-files"
+  hostedFileRegion: "us-west-2"
+
+vault:
+  endpoint: http://vault.example.com:8200
