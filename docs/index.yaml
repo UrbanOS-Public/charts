@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   carpenter:
   - apiVersion: v1
-    created: 2019-07-16T13:29:22.096397646-04:00
+    created: 2019-07-16T15:07:22.226144049-04:00
     description: Creates tables for the SmartCitiesData platform
     digest: 7cbd2567e020902d7a01b001111ba9e1b44d8a41c78b8142d84ebaeec32d62ad
     name: carpenter
@@ -12,7 +12,7 @@ entries:
   discovery-streams:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-16T13:29:22.097510226-04:00
+    created: 2019-07-16T15:07:22.226457893-04:00
     description: Dynamically find kafka topics and makes available corresponding channels
       on a public websocket
     digest: 63bf4e84bf6193da9a87f37e8878f3ac0ee49e693a1bd96f29e8fcdfed8fbef9
@@ -23,7 +23,7 @@ entries:
   forklift:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-16T13:29:22.098049771-04:00
+    created: 2019-07-16T15:07:22.226695436-04:00
     description: Loads data from the transformed topic into Presto
     digest: 81a6e56b42bf48b9a7a2f4861504b326c14333c2f74cd8579f9407f2ed6b78d1
     name: forklift
@@ -32,7 +32,7 @@ entries:
     version: 2.1.0
   kubernetes-data-platform:
   - apiVersion: v1
-    created: 2019-07-16T13:29:22.098987731-04:00
+    created: 2019-07-16T15:07:22.227243309-04:00
     description: Hadoop-less data platform for the Smart City OS
     digest: ba465d7bd1dccb7823dfa860001e9f8b459059d40669441583aeca064b8b0e76
     keywords:
@@ -53,17 +53,17 @@ entries:
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-16T13:29:22.10024405-04:00
+    created: 2019-07-16T15:07:22.227869877-04:00
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
-    digest: 7fd0537b5a9481edcb5cb3ad551fb952da56f770b9eb18df381225ade55ab358
+    digest: 4be4086499bd38a8ef5403425bf0f14678c717d59e4ce82b92cd3627a085fc84
     name: reaper
     urls:
     - reaper-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-16T13:29:22.099670857-04:00
+    created: 2019-07-16T15:07:22.227523179-04:00
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
     digest: 0a4e1e99fe4980d431c29b78920b97bd13d889887927b0a9d3bd7f0c289ad69c
@@ -74,7 +74,7 @@ entries:
   streisand:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-16T13:29:22.100658078-04:00
+    created: 2019-07-16T15:07:22.228793623-04:00
     description: Publishes public streaming data to the public kafka cluster
     digest: 0d32486a6f57df65470d16e4a4d93038ae58cceeba91ea40e5c33ad216d99e78
     name: streisand
@@ -84,11 +84,11 @@ entries:
   voltron:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-16T13:29:22.101141463-04:00
+    created: 2019-07-16T15:07:22.229284655-04:00
     description: Data transformation service
     digest: 23d527a7a82f48032a6a3e068de2e9631e9b5f59f7d549522af46617091c247d
     name: voltron
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-07-16T13:29:22.094112683-04:00
+generated: 2019-07-16T15:07:22.224326872-04:00
