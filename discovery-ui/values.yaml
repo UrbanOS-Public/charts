@@ -17,14 +17,6 @@ image:
   tag: development
   environment: "local"
 
-resources:
-  limits:
-    cpu: 100m
-    memory: 128Mi
-  requests:
-    cpu: 100m
-    memory: 128Mi
-
 env:
   api_host: "https://data.example.com"
   gtm_id: "GTM-EXAMPLE"
