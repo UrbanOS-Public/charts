@@ -1,0 +1,41 @@
+replicaCount: 2
+
+image:
+  repository: smartcitiesdata/valkyrie
+  tag: development
+  pullPolicy: Always
+
+# monitoring:
+  # targetPort: 4000
+# If running locally on Minikube, set to true to deploy an AWS localstack instance
+# https://github.com/localstack/localstack
+localstack:
+  enabled: false
+
+kafka:
+  #comma delimited list of kafka seed brokers
+  brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
+  strimziCluster: streaming-service # http://strimzi.io/docs/0.4.0/#_topic_configmap
+  inputTopicPrefix: "raw"
+  outputTopicPrefix: "validated"
+  dlqTopic: "streaming-dead-letters"
+
+redis:
+  host: redis.external-services
+
+nameOverride: ""
+fullnameOverride: ""
+
+resources:
+  limits:
+    cpu: 300m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 512Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

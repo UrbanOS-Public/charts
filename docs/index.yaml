@@ -141,6 +141,16 @@ entries:
     urls:
     - streisand-1.0.0.tgz
     version: 1.0.0
+  valkyrie:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-07-17T11:18:37.211971852-04:00
+    description: Validates data from raw topic and writes it to validated topic
+    digest: b2762a060c5922f7a648000084f8ec9ae50240261fd3d4713b6d928825e3bb6e
+    name: valkyrie
+    urls:
+    - valkyrie-2.0.1.tgz
+    version: 2.0.1
   voltron:
   - apiVersion: v1
     appVersion: "1.0"
