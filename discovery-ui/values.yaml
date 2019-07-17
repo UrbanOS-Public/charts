@@ -1,0 +1,37 @@
+service:
+  name: discovery-ui
+  port: 80
+
+ingress:
+  enabled: false
+  scheme: ""
+  subnets: ""
+  security_groups: "" #Load balancer Security Group
+  dns_zone: "localhost"
+  root_dns_zone: "localhost"
+  certificate_arns: ""
+  tags: ""
+
+image:
+  name: smartcitiesdata/discovery_ui
+  tag: development
+  environment: "local"
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+env:
+  api_host: "https://data.example.com"
+  gtm_id: "GTM-EXAMPLE"
+  base_url: "example.com"
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
