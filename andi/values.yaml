@@ -1,0 +1,36 @@
+replicaCount: 1
+
+image:
+  repository: smartcitiesdata/andi
+  tag: development
+  pullPolicy: Always
+
+monitoring:
+  targetPort: 80
+
+redis:
+  host: redis.external-services
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 80
+
+ingress:
+  enabled: false
+  scheme: ""
+  subnets: ""
+  securityGroups: ""
+  certificateARN: ""
+  dnsZone: "localhost"
+
+resources:
+  limits:
+    memory: 256Mi
+    cpu: 150m
+  requests:
+    memory: 256Mi
+    cpu: 50m
