@@ -72,9 +72,9 @@ entries:
   genesis:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-17T10:05:53.049330412-04:00
+    created: 2019-07-17T10:55:43.822821076-04:00
     description: Loads data from the transformed topic into Presto
-    digest: c91297c463f63bf0de73af10b259beed306cd4d6774f489911e107c587530999
+    digest: 3666b3dcf5aec92c96b64e3d78c6b12264aa038ce72a9f72f38a09293501b53e
     name: genesis
     urls:
     - genesis-2.0.1.tgz
@@ -140,5 +140,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-07-17T10:05:53.046558966-04:00
-
+generated: 2019-07-17T10:55:43.821429629-04:00
