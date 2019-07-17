@@ -69,6 +69,16 @@ entries:
     urls:
     - forklift-2.1.0.tgz
     version: 2.1.0
+  genesis:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-07-17T10:05:53.049330412-04:00
+    description: Loads data from the transformed topic into Presto
+    digest: c91297c463f63bf0de73af10b259beed306cd4d6774f489911e107c587530999
+    name: genesis
+    urls:
+    - genesis-2.0.1.tgz
+    version: 2.0.1
   kubernetes-data-platform:
   - apiVersion: v1
     created: 2019-07-17T08:43:03.938291188-04:00
@@ -130,4 +140,5 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-07-17T09:43:08.719349877-04:00
+generated: 2019-07-17T10:05:53.046558966-04:00
+
