@@ -59,6 +59,17 @@ entries:
     urls:
     - discovery-ui-0.1.1.tgz
     version: 0.1.1
+  flair:
+  - apiVersion: v1
+    appVersion: 1.0.0-static
+    created: 2019-07-17T12:43:29.135195026-04:00
+    description: Watches data on the validated topic and does profiling on its path
+      through the data pipeline.
+    digest: c859e0c0f26db7c835a94de2a6a998169a117d093a3bbabc11015b8e208ddf70
+    name: flair
+    urls:
+    - flair-2.1.0.tgz
+    version: 2.1.0
   forklift:
   - apiVersion: v1
     appVersion: "1.0"
@@ -150,4 +161,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-07-17T11:18:37.209503844-04:00
+generated: 2019-07-17T12:43:29.133754199-04:00
