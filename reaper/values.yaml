@@ -11,7 +11,7 @@ service:
 
 aws:
   region: us-west-2
-  hostedFileBucket: "" 
+  hostedFileBucket: ""
 
 redis:
   host: redis.external-services
@@ -30,5 +30,3 @@ resources:
     memory: 512Mi
     cpu: 100m
     ephemeral-storage: 10G
-
-download_timeout: 60_000
