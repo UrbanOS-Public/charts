@@ -13,8 +13,8 @@ redis:
 kafka:
   public_brokers: streaming-service-public-kafka-bootstrap.streaming-public:9092
   strimziCluster: streaming-service
-  topic_partitions: 3
-  topic_replication_factor: 3
+  topic_partitions: 1
+  topic_replication_factor: 1
 
 image:
   repository: smartcitiesdata/genesis
