@@ -28,6 +28,16 @@ entries:
     urls:
     - carpenter-1.0.0.tgz
     version: 1.0.0
+  discovery-api:
+  - apiVersion: v1
+    appVersion: 1.0.0-static
+    created: 2019-07-16T16:23:37.699742476-04:00
+    description: A middleware layer to connect data consumers with the data sources
+    digest: 42a1507eeeb6d7773d568189b84cdba87f8f821e58f983643682f225cf0c508e
+    name: discovery-api
+    urls:
+    - discovery-api-0.2.0.tgz
+    version: 0.2.0
   discovery-streams:
   - apiVersion: v1
     appVersion: "1.0"
