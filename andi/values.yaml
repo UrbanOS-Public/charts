@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: smartcitiesdata/andi
-  tag: 0.2.3
+  tag: development
   pullPolicy: Always
 
 monitoring:
