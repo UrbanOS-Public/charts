@@ -49,6 +49,16 @@ entries:
     urls:
     - discovery-streams-0.1.2.tgz
     version: 0.1.2
+  discovery-ui:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-07-17T09:43:08.720755994-04:00
+    description: A helm chart for the discovery ui
+    digest: 60730467df1df1b2b6f78038b1e37c1ed0c1330acf1f2d57ebc26b322ba32b6b
+    name: discovery-ui
+    urls:
+    - discovery-ui-0.1.1.tgz
+    version: 0.1.1
   forklift:
   - apiVersion: v1
     appVersion: "1.0"
@@ -120,4 +130,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-07-17T08:43:03.906347005-04:00
+generated: 2019-07-17T09:43:08.719349877-04:00
