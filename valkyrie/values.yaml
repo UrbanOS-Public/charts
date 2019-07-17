@@ -28,11 +28,11 @@ fullnameOverride: ""
 
 resources:
   limits:
-    cpu: 600m
-    memory: 1Gi
+    cpu: 300m
+    memory: 512Mi
   requests:
     cpu: 100m
-    memory: 1Gi
+    memory: 512Mi
 
 nodeSelector: {}
 
