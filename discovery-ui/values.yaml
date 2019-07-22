@@ -21,6 +21,7 @@ env:
   api_host: "https://data.example.com"
   gtm_id: "GTM-EXAMPLE"
   base_url: "example.com"
+  streets_tile_layer_url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 
 nodeSelector: {}
 
