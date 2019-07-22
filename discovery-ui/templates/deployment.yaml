@@ -28,3 +28,5 @@ spec:
             value: {{ .Values.env.gtm_id }}
           - name: "BASE_URL"
             value: {{ .Values.env.base_url }}
+          - name: "STREETS_TILE_LAYER_URL"
+            value: {{ .Values.env.streets_tile_layer_url }}
