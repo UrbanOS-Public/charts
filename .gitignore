@@ -1,3 +1,5 @@
 requirements.lock
 **/charts/
 tmp_charts/
+
+.DS_Store
