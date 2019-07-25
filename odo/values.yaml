@@ -1,0 +1,16 @@
+replicaCount: 1
+image:
+  repository: smartcitiesdata/odo
+  tag: development
+  pullPolicy: Always
+
+redis:
+  host: redis.external-services
+
+resources:
+  limits:
+    memory: 128Mi
+    cpu: 300m
+  requests:
+    memory: 128Mi
+    cpu: 100m
