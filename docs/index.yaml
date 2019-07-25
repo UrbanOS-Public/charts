@@ -128,6 +128,16 @@ entries:
     urls:
     - kubernetes-data-platform-1.0.0.tgz
     version: 1.0.0
+  odo:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-07-25T14:31:18.679240968-04:00
+    description: shapeshifting service
+    digest: 843c9f8039f37cb5e2a023f8751a928a521a784ba5131c693f57f529079f754e
+    name: odo
+    urls:
+    - odo-0.1.0.tgz
+    version: 0.1.0
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
