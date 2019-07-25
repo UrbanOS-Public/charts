@@ -21,7 +21,10 @@ affinity: {}
 kdp:
   user: "forklift"
   url: http://presto-endpoint:8080
-  
+
 redis:
   host: forklift-redis-master
 
+prometheus:
+  scrape: true
+  metrics_port: 9002
