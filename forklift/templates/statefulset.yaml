@@ -39,6 +39,8 @@ spec:
             value: {{.Values.kafka.outputTopic}}
           - name: PRESTO_USER
             value: {{.Values.kdp.user}}
+          - name: METRICS_PORT
+            value: {{.Values.prometheus.port}}
           - name: NAMESPACE
             valueFrom:
               fieldRef:
