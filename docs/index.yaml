@@ -119,6 +119,16 @@ entries:
     urls:
     - kubernetes-data-platform-1.0.0.tgz
     version: 1.0.0
+  odo:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-07-25T14:01:04.050987435-04:00
+    description: shapeshifting service
+    digest: 77b3ea6072f09db02738f094b885e47bd4a9637f76e8a462af00b138c0cc1782
+    name: odo
+    urls:
+    - odo-0.1.1.tgz
+    version: 0.1.1
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
@@ -170,4 +180,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-07-22T15:45:57.026052539-04:00
+generated: 2019-07-25T14:01:04.050597388-04:00
