@@ -20,7 +20,7 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
       annotations:
         prometheus.io/scrape: {{ .Values.prometheus.scrape }}
-        prometheus.io/port: {{ .Values.prometheus.port }}
+        prometheus.io/port: {{ .Values.prometheus.metrics_port }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -40,7 +40,7 @@ spec:
           - name: PRESTO_USER
             value: {{.Values.kdp.user}}
           - name: METRICS_PORT
-            value: {{.Values.prometheus.port}}
+            value: {{.Values.prometheus.metrics_port}}
           - name: NAMESPACE
             valueFrom:
               fieldRef:
