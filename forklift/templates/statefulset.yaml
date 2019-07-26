@@ -19,8 +19,8 @@ spec:
         app.kubernetes.io/name: {{ include "helm.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
       annotations:
-        prometheus.io/scrape: {{ .Values.prometheus.scrape }}
-        prometheus.io/port: {{ .Values.prometheus.metrics_port }}
+        prometheus.io/scrape: {{ .Values.prometheus.scrape  | quote }}
+        prometheus.io/port: {{ .Values.prometheus.metrics_port  | quote }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -40,7 +40,7 @@ spec:
           - name: PRESTO_USER
             value: {{.Values.kdp.user}}
           - name: METRICS_PORT
-            value: {{.Values.prometheus.metrics_port}}
+            value: {{.Values.prometheus.metrics_port | quote }}
           - name: NAMESPACE
             valueFrom:
               fieldRef:
