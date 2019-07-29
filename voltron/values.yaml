@@ -17,6 +17,8 @@ service:
   port: 9092
   type: ClusterIP
 
+processor_count: 1
+
 nameOverride: ""
 fullnameOverride: ""
 resources: {}
