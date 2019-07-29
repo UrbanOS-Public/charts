@@ -26,6 +26,8 @@ redis:
 nameOverride: ""
 fullnameOverride: ""
 
+processor_count: 1
+
 resources:
   limits:
     cpu: 300m
