@@ -24,6 +24,12 @@ helm init --upgrade
 rm -rf master/charts/
 helm dep update master/
 helm repo add scdp https://smartcitiesdata.github.io/charts
+helm delete --purge master
+helm upgrade --install master master/
 
+k get po --all-namespaces
 
 kubectl create secret generic ldap --from-literal=host=localhost
+
+k apply -f ./templates/secrets/ldap.yaml 
+ k describe secret/ldap
