@@ -34,8 +34,8 @@ spec:
             value: {{.Values.kafka.dlqTopic}}
           - name: REDIS_HOST
             value: {{ .Values.redis.host }}
-          - name: PROCESSOR_COUNT
-            value: {{ .Values.processor_count }}
+          - name: PROCESSOR_STAGES
+            value: {{ .Values.processor_stages }}
           - name: NAMESPACE
             valueFrom:
               fieldRef:

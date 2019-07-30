@@ -26,7 +26,7 @@ redis:
 nameOverride: ""
 fullnameOverride: ""
 
-processor_count: 1
+processor_stages: "1"
 
 resources:
   limits:
