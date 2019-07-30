@@ -1,0 +1,61 @@
+dependencies:
+  - name: andi
+    version: 1.1.0
+    repository: https://smartcitiesdata.github.io/charts
+    condition: andi.enabled
+  - name: carpenter
+    version: 1.0.0
+    repository: https://smartcitiesdata.github.io/charts
+    condition: carpenter.enabled
+  - name: discovery-api
+    version: 0.2.1
+    repository: https://smartcitiesdata.github.io/charts
+    condition: discovery-api.enabled
+  - name: discovery-streams
+    version: 0.1.2
+    repository: https://smartcitiesdata.github.io/charts
+    condition: discovery-streams.enabled
+  - name: discovery-ui
+    version: 0.1.2
+    repository: https://smartcitiesdata.github.io/charts
+    condition: discovery-ui.enabled
+  - name: flair
+    version: 2.1.0
+    repository: https://smartcitiesdata.github.io/charts
+    condition: flair.enabled
+  - name: forklift
+    version: 2.1.1
+    repository: https://smartcitiesdata.github.io/charts
+    condition: forklift.enabled
+  - name: kubernetes-data-platform
+    version: 1.0.0
+    repository: https://smartcitiesdata.github.io/charts
+    condition: kdp.enabled
+  - name: genesis
+    version: 2.0.1
+    repository: https://smartcitiesdata.github.io/charts
+    condition: genesis.enabled
+  - name: odo
+    version: 0.1.0
+    repository: https://smartcitiesdata.github.io/charts
+    condition: odo.enabled
+  - name: reaper
+    version: 0.1.1
+    repository: https://smartcitiesdata.github.io/charts
+    condition: reaper.enabled
+  - name: redis
+    version: 8.0.1
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    condition: redis.enabled
+  - name: streisand
+    version: 1.0.0
+    repository: https://smartcitiesdata.github.io/charts
+    condition: streisand.enabled
+  - name: valkyrie
+    version: 2.0.1
+    repository: https://smartcitiesdata.github.io/charts
+    condition: valkyrie.enabled
+  - name: voltron
+    version: 1.0.0
+    repository: https://smartcitiesdata.github.io/charts
+    condition: voltron.enabled
