@@ -41,8 +41,8 @@ spec:
           value: {{ .Values.kafka.output_topic_prefix }}
         - name: REDIS_HOST
           value: {{ .Values.redis.host }}
-        - name: PROCESSOR_COUNT
-          value: {{ .Values.processor_count }}
+        - name: PROCESSOR_STAGES
+          value: {{ .Values.processor_stages }}
         resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
