@@ -172,9 +172,9 @@ entries:
   valkyrie:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-30T13:07:33.245563-04:00
+    created: 2019-07-30T13:28:16.421453-04:00
     description: Validates data from raw topic and writes it to validated topic
-    digest: 5f1c340e82bae3b80c4f72fea352a01d5b3ff6d74ec2ee3b244dfa4b15025401
+    digest: e0a0ed33cd14032aa44ad8cba3c7d70447f49ae06aa5c9094af0e892c4378231
     name: valkyrie
     urls:
     - valkyrie-2.0.1.tgz
@@ -182,11 +182,11 @@ entries:
   voltron:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-30T13:07:29.984124-04:00
+    created: 2019-07-30T13:28:13.015492-04:00
     description: Data transformation service
-    digest: 3b982a65853fb2fd8197da3b4970c586db862fb8d833c14e0ca9e2ec67d9ca9c
+    digest: 4ff804fc590376a368d92d8c685facc30235afc9c22723d0ccc24d16c70c496d
     name: voltron
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-07-30T13:07:33.245068-04:00
+generated: 2019-07-30T13:28:16.420878-04:00
