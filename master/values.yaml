@@ -1,3 +1,31 @@
 andi:
-  enabled: true
+  enabled: true  
+reaper:
+  enabled: false
+carpenter:
+  enabled: false
+discovery-api:
+  enabled: false
+discovery-streams:
+  enabled: false
+discovery-ui:
+  enabled: false
+flair:
+  enabled: false
+forklift:
+  enabled: false
+kdp:
+  enabled: false
+genesis:
+  enabled: false
+odo:
+  enabled: false
+reaper:
+  enabled: false
+streisand:
+  enabled: false
+valkyrie:
+  enabled: false
+voltron:
+  enabled: false
   

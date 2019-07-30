@@ -29,3 +29,16 @@ helm repo update
 2. Add templates, helpers, values, dependencies, etc. to your chart.
 3. Run the setup script (`./package.sh ${CHART_NAME}`).
 4. Submit a pull request.
+
+## Master Chart
+
+### Running
+
+- (install minikube)
+- `minikube start`
+- `helm init --upgrade`
+- `helm dep update master/` - rerun any time you add an app
+- `helm upgrade --install master master/` 
+  - if upgrade fails, try `helm delete --purge master`
+- `k get po --all-namespaces`
+
