@@ -42,7 +42,7 @@ spec:
         - name: REDIS_HOST
           value: {{ .Values.redis.host }}
         - name: PROCESSOR_STAGES
-          value: {{ .Values.processor_stages }}
+          value: {{ .Values.processor_stages | quote }}
         resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
