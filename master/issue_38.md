@@ -4,17 +4,18 @@ Can we have the master chart without it's own image? What does it actually need?
 What happens for dependencies of dependencies?
 How do we run an unpublished/local chart on minikube?
 
+Get redis connection working
+Get LDAP connection working
+
 
 andi 
-- connect to paddle
-
-carpenter
-- re-use existing redis
+- connect to ldap
 
 reaper
 - aws creds
 
-
+discovery-streams
+- smoke test
 
 
 
@@ -28,7 +29,11 @@ reaper
 #    repository: https://kubernetes-charts.storage.googleapis.com/
 #    condition: redis.enabled
 
-file://../carpenter
+alias hd='helm delete --purge master'
+alias hu='helm dep update master'
+alias hs='helm upgrade --install master master/'
+alias hw='watch kubectl get po'
+
 
 - (install minikube)
 minikube start

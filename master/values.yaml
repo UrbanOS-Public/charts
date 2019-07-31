@@ -1,9 +1,9 @@
 andi:
   enabled: true  
-reaper:
-  enabled: false
 carpenter:
-  enabled: false
+  enabled: true
+  redis:
+    host: master-redis-master    
 discovery-api:
   enabled: false
 discovery-streams:
@@ -22,6 +22,9 @@ odo:
   enabled: false
 reaper:
   enabled: false
+redis:
+  enabled: true
+  usePassword: false
 streisand:
   enabled: false
 valkyrie:
