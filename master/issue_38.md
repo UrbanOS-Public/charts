@@ -4,7 +4,17 @@ Can we have the master chart without it's own image? What does it actually need?
 What happens for dependencies of dependencies?
 How do we run an unpublished/local chart on minikube?
 
-Get redis connection working
+kafka
+- resource limits: what can we scale down
+- Are we using the kafka topics in the values file?
+- kafka tolerations?
+- make kafka/strimzi optional
+
+vault
+- set VAULT_ADDR='http://127.0.0.1:8200' env variable
+- only 1 node?
+- store secrets
+
 Get LDAP connection working
 
 
@@ -41,6 +51,7 @@ helm init --upgrade
 rm -rf master/charts/
 helm dep update master/
 helm repo add scdp https://smartcitiesdata.github.io/charts
+helm repo add kci http://storage.googleapis.com/kubernetes-charts-incubator
 helm delete --purge master
 helm upgrade --install master master/
 

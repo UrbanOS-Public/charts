@@ -1,34 +1,107 @@
 andi:
   enabled: true  
+  redis:
+    host: master-redis-master 
 carpenter:
-  enabled: true
+  enabled: false
   redis:
     host: master-redis-master    
 discovery-api:
   enabled: false
+  redis:
+    host: master-redis-master 
 discovery-streams:
   enabled: false
 discovery-ui:
   enabled: false
 flair:
   enabled: false
+  redis:
+    host: master-redis-master 
 forklift:
   enabled: false
+  redis:
+    host: master-redis-master 
 kdp:
   enabled: false
 genesis:
   enabled: false
+  redis:
+    host: master-redis-master 
 odo:
   enabled: false
 reaper:
   enabled: false
+  redis:
+    host: master-redis-master 
 redis:
-  enabled: true
-  usePassword: false
+  enabled: false
+  usePassword: true
 streisand:
   enabled: false
+  redis:
+    host: master-redis-master
+strimzi:
+  enabled: true
+vault:
+  enabled: true
+  replicaCount: 1
+  extraEnv:
+    VAULT_ADDR: http://127.0.0.1:8200
 valkyrie:
   enabled: false
+  redis:
+    host: master-redis-master 
 voltron:
   enabled: false
-  
+  redis:
+    host: master-redis-master
+
+kafka:
+  broker: streaming-service-kafka-bootstrap.streaming-prime:9092
+  strimziCluster: streaming-service
+  storageSize: 10Gi
+  defaultPartitions: 100
+  defaultReplicas: 1
+  topics:
+  - name: smoke-test
+  - name: dataset-registry
+  - name: streaming-og
+  - name: streaming-raw
+  - name: streaming-validated
+  - name: streaming-transformed
+  - name: organization-raw
+  - name: streaming-persisted
+  - name: streaming-dead-letters
+  resources:
+    requests:
+      cpu: 1200m
+      memory: 14500M
+    limits:
+      cpu: 2000m
+      memory: 14500M
+
+tlsSidecar:
+  resources:
+    requests:
+      cpu: 10m
+      memory: 10Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
+
+tolerations:
+- key: scos.run.kafka
+  operator: Equal
+  value: 'true'
+  effect: NoExecute
+
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: scos.run.kafka
+          operator: In
+          values:
+          - 'true'

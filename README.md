@@ -40,5 +40,6 @@ helm repo update
 - `helm dep update master/` - rerun any time you add an app
 - `helm upgrade --install master master/` 
   - if upgrade fails, try `helm delete --purge master`
+  - possibly manually delete any resources that get stuck / aren't deleted by the purge
 - `k get po --all-namespaces`
 
