@@ -18,6 +18,7 @@ vault
 Get LDAP connection working
 
 
+
 andi 
 - connect to ldap
 
@@ -51,7 +52,6 @@ helm init --upgrade
 rm -rf master/charts/
 helm dep update master/
 helm repo add scdp https://smartcitiesdata.github.io/charts
-helm repo add kci http://storage.googleapis.com/kubernetes-charts-incubator
 helm delete --purge master
 helm upgrade --install master master/
 

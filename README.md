@@ -37,6 +37,7 @@ helm repo update
 - (install minikube)
 - `minikube start`
 - `helm init --upgrade`
+- `helm upgrade --install strimzi-kafka-operator strimzi/strimzi-kafka-operator --version 0.08.0`
 - `helm dep update master/` - rerun any time you add an app
 - `helm upgrade --install master master/` 
   - if upgrade fails, try `helm delete --purge master`

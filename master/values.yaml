@@ -31,7 +31,7 @@ genesis:
 odo:
   enabled: false
 reaper:
-  enabled: false
+  enabled: true
   redis:
     host: master-redis-master 
 redis:
@@ -42,12 +42,7 @@ streisand:
   redis:
     host: master-redis-master
 strimzi:
-  enabled: true
-vault:
-  enabled: true
-  replicaCount: 1
-  extraEnv:
-    VAULT_ADDR: http://127.0.0.1:8200
+  enabled: false
 valkyrie:
   enabled: false
   redis:

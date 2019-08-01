@@ -59,10 +59,6 @@ dependencies:
     version: 2.0.1
     repository: https://manapart.github.io/charts
     condition: valkyrie.enabled
-  - name: vault
-    version: 0.18.15
-    repository: http://storage.googleapis.com/kubernetes-charts-incubator
-    condition: vault.enabled
   - name: voltron
     version: 1.0.0
     repository: https://manapart.github.io/charts
