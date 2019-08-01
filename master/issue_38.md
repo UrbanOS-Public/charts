@@ -7,13 +7,7 @@ How do we run an unpublished/local chart on minikube?
 kafka
 - resource limits: what can we scale down
 - Are we using the kafka topics in the values file?
-- kafka tolerations?
 - make kafka/strimzi optional
-
-vault
-- set VAULT_ADDR='http://127.0.0.1:8200' env variable
-- only 1 node?
-- store secrets
 
 Get LDAP connection working
 
@@ -28,17 +22,6 @@ reaper
 discovery-streams
 - smoke test
 
-
-
-- name: andi
-   version: 1.0.1
-   repository: https://smartcitiesdata.github.io/charts
-   condition: andi.enabled
-   # dependencies:
-#  - name: redis
-#    version: 8.0.1
-#    repository: https://kubernetes-charts.storage.googleapis.com/
-#    condition: redis.enabled
 
 alias hd='helm delete --purge master'
 alias hu='helm dep update master'

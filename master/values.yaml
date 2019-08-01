@@ -33,10 +33,13 @@ odo:
 reaper:
   enabled: true
   redis:
-    host: master-redis-master 
+    host: master-redis-master
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
 redis:
-  enabled: false
-  usePassword: true
+  enabled: true
+  usePassword: false
 streisand:
   enabled: false
   redis:
@@ -53,7 +56,7 @@ voltron:
     host: master-redis-master
 
 kafka:
-  broker: streaming-service-kafka-bootstrap.streaming-prime:9092
+  broker: streaming-service-kafka-bootstrap:9092
   strimziCluster: streaming-service
   storageSize: 10Gi
   defaultPartitions: 100
