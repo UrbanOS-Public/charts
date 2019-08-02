@@ -15,3 +15,4 @@ alias hs='helm upgrade --install master master/'
 alias hw='watch kubectl get po'
 alias po='kubectl get po'
 
+Elsa.list_topics(["streaming-service-kafka-bootstrap": 9092])

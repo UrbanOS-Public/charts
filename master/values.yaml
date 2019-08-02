@@ -31,12 +31,12 @@ forklift:
 kdp:
   enabled: false
 genesis:
-  enabled: false
+  enabled: true
   redis:
     host: master-redis-master 
   strimzi:
     kafka:
-      brokers: streaming-service-kafka-bootstrap:9092
+      public_brokers: streaming-service-kafka-bootstrap:9092
 odo:
   enabled: false
 reaper:
@@ -61,7 +61,7 @@ streisand:
 strimzi:
   enabled: false
 valkyrie:
-  enabled: tue
+  enabled: false
   redis:
     host: master-redis-master 
 voltron:
@@ -90,10 +90,10 @@ kafka:
   resources:
     requests:
       cpu: 1200m
-      memory: 14500M
+      memory: 7500M
     limits:
       cpu: 2000m
-      memory: 14500M
+      memory: 7500M
 tlsSidecar:
   resources:
     requests:
@@ -102,17 +102,3 @@ tlsSidecar:
     limits:
       cpu: 100m
       memory: 128Mi
-tolerations:
-- key: scos.run.kafka
-  operator: Equal
-  value: 'true'
-  effect: NoExecute
-affinity:
-  nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: scos.run.kafka
-          operator: In
-          values:
-          - 'true'
