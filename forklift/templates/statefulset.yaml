@@ -41,7 +41,7 @@ spec:
             value: {{.Values.kdp.user}}
           - name: METRICS_PORT
             value: {{.Values.prometheus.metrics_port | quote }}
-          {{- if .Values.compactionSchedule }}
+          {{ if .Values.compactionSchedule }}
           - name: COMPACTION_SCHEDULE
             value: {{.Values.compactionSchedule | quote }}
           {{ end -}}
