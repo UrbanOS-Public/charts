@@ -23,13 +23,6 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          livenessProbe:
-            exec:
-              command:
-                - /app/bin/valkyrie
-                - ping
-            initialDelaySeconds: 10
-            periodSeconds: 60
           env:
           - name: KAFKA_BROKERS
             value: {{ .Values.kafka.brokers }}
