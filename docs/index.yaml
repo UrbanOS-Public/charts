@@ -82,9 +82,9 @@ entries:
   forklift:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-08-02T08:48:41.431612666-04:00
+    created: 2019-08-02T18:29:31.571774822-04:00
     description: Loads data from the transformed topic into Presto
-    digest: e21dd839f05f514285c2a67ab007234ab6e0c121a32f0bfab53d262470875aea
+    digest: 8fc8269f5cc64bd1dba93e150ddb07b7a01f69f624c0ead3601097907c8c14fd
     name: forklift
     urls:
     - forklift-2.2.1.tgz
