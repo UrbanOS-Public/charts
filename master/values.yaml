@@ -1,5 +1,5 @@
 andi:
-  enabled: true  
+  enabled: false  
   redis:
     host: master-redis-master 
 carpenter:
@@ -17,21 +17,30 @@ discovery-ui:
 flair:
   enabled: false
   redis:
-    host: master-redis-master 
+    host: master-redis-master
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
 forklift:
   enabled: false
   redis:
     host: master-redis-master 
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
 kdp:
   enabled: false
 genesis:
   enabled: false
   redis:
     host: master-redis-master 
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
 odo:
   enabled: false
 reaper:
-  enabled: true
+  enabled: false
   redis:
     host: master-redis-master
   strimzi:
@@ -40,25 +49,32 @@ reaper:
 redis:
   enabled: true
   usePassword: false
+  cluster:
+    enabled: false
 streisand:
   enabled: false
   redis:
     host: master-redis-master
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
 strimzi:
   enabled: false
 valkyrie:
-  enabled: false
+  enabled: tue
   redis:
     host: master-redis-master 
 voltron:
   enabled: false
   redis:
     host: master-redis-master
-
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
 kafka:
   broker: streaming-service-kafka-bootstrap:9092
   strimziCluster: streaming-service
-  storageSize: 10Gi
+  storageSize: 5Gi
   defaultPartitions: 100
   defaultReplicas: 1
   topics:
@@ -78,7 +94,6 @@ kafka:
     limits:
       cpu: 2000m
       memory: 14500M
-
 tlsSidecar:
   resources:
     requests:
@@ -87,13 +102,11 @@ tlsSidecar:
     limits:
       cpu: 100m
       memory: 128Mi
-
 tolerations:
 - key: scos.run.kafka
   operator: Equal
   value: 'true'
   effect: NoExecute
-
 affinity:
   nodeAffinity:
     requiredDuringSchedulingIgnoredDuringExecution:

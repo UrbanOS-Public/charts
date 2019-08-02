@@ -35,8 +35,11 @@ helm repo update
 ### Running
 
 - (install minikube)
+- In virtualbox, increase your memory to 6gb? and your processors to 4?
 - `minikube start`
 - `helm init --upgrade`
+- `helm repo add scdp https://smartcitiesdata.github.io/charts`
+- Deploy the strimzi operator before deploying the rest of the chart: `helm repo add strimzi https://strimzi.io/charts`
 - `helm upgrade --install strimzi-kafka-operator strimzi/strimzi-kafka-operator --version 0.08.0`
 - `helm dep update master/` - rerun any time you add an app
 - `helm upgrade --install master master/` 
