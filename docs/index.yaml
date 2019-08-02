@@ -3,7 +3,7 @@ entries:
   andi:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-17T08:43:03.913273417-04:00
+    created: "2019-07-17T08:43:03.913273417-04:00"
     description: REST API to allow for dataset definition ingestion
     digest: 95d51c3a76f115ccb53e2cd2e37694c60ee92e728a24593b16f44aaf962fc106
     name: andi
@@ -12,7 +12,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-17T08:43:03.912184586-04:00
+    created: "2019-07-17T08:43:03.912184586-04:00"
     description: REST API to allow for dataset definition ingestion
     digest: 87a558e09dc5ee07fbe8182060aa40e43d2ed1d6055280007cbc372a6d7f1a56
     name: andi
@@ -21,7 +21,7 @@ entries:
     version: 1.0.0
   carpenter:
   - apiVersion: v1
-    created: 2019-07-17T08:43:03.922392093-04:00
+    created: "2019-07-17T08:43:03.922392093-04:00"
     description: Creates tables for the SmartCitiesData platform
     digest: 7cbd2567e020902d7a01b001111ba9e1b44d8a41c78b8142d84ebaeec32d62ad
     name: carpenter
@@ -31,7 +31,7 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: 2019-07-16T16:23:37.699742476-04:00
+    created: "2019-07-16T16:23:37.699742476-04:00"
     description: A middleware layer to connect data consumers with the data sources
     digest: 42a1507eeeb6d7773d568189b84cdba87f8f821e58f983643682f225cf0c508e
     name: discovery-api
@@ -41,7 +41,7 @@ entries:
   discovery-streams:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-17T08:43:03.926899729-04:00
+    created: "2019-07-17T08:43:03.926899729-04:00"
     description: Dynamically find kafka topics and makes available corresponding channels
       on a public websocket
     digest: 63bf4e84bf6193da9a87f37e8878f3ac0ee49e693a1bd96f29e8fcdfed8fbef9
@@ -52,7 +52,7 @@ entries:
   discovery-ui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-22T15:45:57.026845124-04:00
+    created: "2019-07-22T15:45:57.026845124-04:00"
     description: A helm chart for the discovery ui
     digest: 55c5ff025721822c407f83e6cb1a0d665a686f0b15a923b50085d4cc8513c661
     name: discovery-ui
@@ -61,7 +61,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-17T09:43:08.720755994-04:00
+    created: "2019-07-17T09:43:08.720755994-04:00"
     description: A helm chart for the discovery ui
     digest: 60730467df1df1b2b6f78038b1e37c1ed0c1330acf1f2d57ebc26b322ba32b6b
     name: discovery-ui
@@ -71,7 +71,7 @@ entries:
   flair:
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: 2019-07-17T12:43:29.135195026-04:00
+    created: "2019-07-17T12:43:29.135195026-04:00"
     description: Watches data on the validated topic and does profiling on its path
       through the data pipeline.
     digest: c859e0c0f26db7c835a94de2a6a998169a117d093a3bbabc11015b8e208ddf70
@@ -100,7 +100,7 @@ entries:
     version: 2.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-25T15:04:18.185072769-04:00
+    created: "2019-07-25T15:04:18.185072769-04:00"
     description: Loads data from the transformed topic into Presto
     digest: fcd99b18e45289c20c57505e35620cc9517db9fa388cc1adec53dd9e86f32e24
     name: forklift
@@ -110,7 +110,7 @@ entries:
   genesis:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-17T10:55:43.822821076-04:00
+    created: "2019-07-17T10:55:43.822821076-04:00"
     description: Loads data from the transformed topic into Presto
     digest: 3666b3dcf5aec92c96b64e3d78c6b12264aa038ce72a9f72f38a09293501b53e
     name: genesis
@@ -119,7 +119,7 @@ entries:
     version: 2.0.1
   kubernetes-data-platform:
   - apiVersion: v1
-    created: 2019-07-17T08:43:03.938291188-04:00
+    created: "2019-07-17T08:43:03.938291188-04:00"
     description: Hadoop-less data platform for the Smart City OS
     digest: ba465d7bd1dccb7823dfa860001e9f8b459059d40669441583aeca064b8b0e76
     keywords:
@@ -140,7 +140,7 @@ entries:
   odo:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-25T15:21:03.919055773-04:00
+    created: "2019-07-25T15:21:03.919055773-04:00"
     description: shapeshifting service
     digest: baa1be8a7cc099d617620ef0c9dd9e65b6da3dec39ddae839611b77f439aba95
     name: odo
@@ -150,7 +150,7 @@ entries:
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-17T08:43:03.940224529-04:00
+    created: "2019-07-17T08:43:03.940224529-04:00"
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
     digest: 4be4086499bd38a8ef5403425bf0f14678c717d59e4ce82b92cd3627a085fc84
@@ -160,7 +160,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-17T08:43:03.93962147-04:00
+    created: "2019-07-17T08:43:03.93962147-04:00"
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
     digest: 0a4e1e99fe4980d431c29b78920b97bd13d889887927b0a9d3bd7f0c289ad69c
@@ -171,7 +171,7 @@ entries:
   streisand:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-17T08:43:03.942124097-04:00
+    created: "2019-07-17T08:43:03.942124097-04:00"
     description: Publishes public streaming data to the public kafka cluster
     digest: 0d32486a6f57df65470d16e4a4d93038ae58cceeba91ea40e5c33ad216d99e78
     name: streisand
@@ -181,7 +181,16 @@ entries:
   valkyrie:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-30T13:28:16.421453-04:00
+    created: "2019-07-31T15:26:27.195485663-04:00"
+    description: Validates data from raw topic and writes it to validated topic
+    digest: 15b81735af8ccb405d9e1435c6c1134a7c404f9cccf38d2b598cfc435c8a1e66
+    name: valkyrie
+    urls:
+    - valkyrie-2.1.0.tgz
+    version: 2.1.0
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-07-30T13:28:16.421453-04:00"
     description: Validates data from raw topic and writes it to validated topic
     digest: e0a0ed33cd14032aa44ad8cba3c7d70447f49ae06aa5c9094af0e892c4378231
     name: valkyrie
@@ -191,7 +200,7 @@ entries:
   voltron:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-30T13:28:13.015492-04:00
+    created: "2019-07-30T13:28:13.015492-04:00"
     description: Data transformation service
     digest: 4ff804fc590376a368d92d8c685facc30235afc9c22723d0ccc24d16c70c496d
     name: voltron
