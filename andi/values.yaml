@@ -11,6 +11,10 @@ monitoring:
 redis:
   host: redis.external-services
 
+strimzi:
+  kafka:
+    brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
+
 nameOverride: ""
 fullnameOverride: ""
 
