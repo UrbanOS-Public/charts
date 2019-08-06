@@ -6,7 +6,7 @@ metadata:
   labels:
     app: discovery-api
 spec:
-  replicas: 3
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: discovery-api
