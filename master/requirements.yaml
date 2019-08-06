@@ -51,10 +51,6 @@ dependencies:
     version: 1.0.0
     repository: https://manapart.github.io/charts
     condition: streisand.enabled
-  - name: strimzi-kafka-operator
-    version: 0.8.0
-    repository: https://strimzi.io/charts/
-    condition: strimzi.enabled
   - name: valkyrie
     version: 2.0.1
     repository: https://manapart.github.io/charts

@@ -1,3 +1,5 @@
+replicaCount: 3
+
 service:
   name: discovery-api
   port: 80
@@ -8,7 +10,8 @@ ingress:
   scheme: ""
   subnets: ""
   security_groups: ""
-  dnsZone: ""
+  dnsZone: "localhost"
+  rootDnsZone: "localhost"
   certificate_arn: ""
 
 image:

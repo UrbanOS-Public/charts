@@ -1,19 +1,23 @@
 andi:
-  enabled: false  
+  enabled: true
   redis:
-    host: master-redis-master 
+    host: master-redis-master
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
 carpenter:
   enabled: false
   redis:
     host: master-redis-master    
 discovery-api:
-  enabled: false
+  enabled: true
+  replicaCount: 1
   redis:
     host: master-redis-master 
 discovery-streams:
   enabled: false
 discovery-ui:
-  enabled: false
+  enabled: true
 flair:
   enabled: false
   redis:
@@ -22,7 +26,7 @@ flair:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
 forklift:
-  enabled: false
+  enabled: true
   redis:
     host: master-redis-master 
   strimzi:
@@ -31,16 +35,15 @@ forklift:
 kdp:
   enabled: false
 genesis:
-  enabled: true
+  enabled: false
   redis:
     host: master-redis-master 
-  strimzi:
-    kafka:
-      public_brokers: streaming-service-kafka-bootstrap:9092
+  kafka:
+    public_brokers: streaming-service-kafka-bootstrap:9092
 odo:
   enabled: false
 reaper:
-  enabled: false
+  enabled: true
   redis:
     host: master-redis-master
   strimzi:
@@ -58,14 +61,14 @@ streisand:
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
-strimzi:
-  enabled: false
 valkyrie:
-  enabled: false
+  enabled: true
+  replicaCount: 1
   redis:
     host: master-redis-master 
 voltron:
-  enabled: false
+  enabled: true
+  replicaCount: 1
   redis:
     host: master-redis-master
   strimzi:
@@ -89,11 +92,11 @@ kafka:
   - name: streaming-dead-letters
   resources:
     requests:
-      cpu: 1200m
-      memory: 7500M
+      cpu: 500m
+      memory: 1000M
     limits:
-      cpu: 2000m
-      memory: 7500M
+      cpu: 500m
+      memory: 1000M
 tlsSidecar:
   resources:
     requests:

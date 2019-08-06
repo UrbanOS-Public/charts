@@ -3,8 +3,6 @@ kafka
 - Are we using the kafka topics in the values file?
 - make kafka/strimzi optional
 
-
-
 discovery-streams
 - smoke test
 

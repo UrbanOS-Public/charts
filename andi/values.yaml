@@ -23,6 +23,10 @@ service:
   port: 80
   targetPort: 80
 
+strimzi:
+  kafka:
+    brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
+
 ingress:
   enabled: false
   scheme: ""
