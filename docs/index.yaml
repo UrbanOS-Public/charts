@@ -69,9 +69,9 @@ entries:
   discovery-ui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-22T15:45:57.026845124-04:00
+    created: 2019-08-07T10:38:40.974285955-04:00
     description: A helm chart for the discovery ui
-    digest: 55c5ff025721822c407f83e6cb1a0d665a686f0b15a923b50085d4cc8513c661
+    digest: 0e958050a4c13d9f17ff4643ffc1c26c313599bdb9d7911a56aca3168ae5016d
     name: discovery-ui
     urls:
     - discovery-ui-0.1.2.tgz
@@ -167,10 +167,10 @@ entries:
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-17T08:43:03.940224529-04:00
+    created: 2019-08-07T10:39:41.511373444-04:00
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
-    digest: 4be4086499bd38a8ef5403425bf0f14678c717d59e4ce82b92cd3627a085fc84
+    digest: 20a2be9806c4f46afc6b8fa933588c772370bab08446bcbc33d2694b93fa0e2b
     name: reaper
     urls:
     - reaper-0.1.1.tgz
@@ -226,11 +226,11 @@ entries:
   voltron:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-30T13:28:13.015492-04:00
+    created: 2019-08-07T10:39:53.470155604-04:00
     description: Data transformation service
-    digest: 4ff804fc590376a368d92d8c685facc30235afc9c22723d0ccc24d16c70c496d
+    digest: 576583de8380dfd0fece1eb0adc46eadb302ccce65915c7d604649279d3672c8
     name: voltron
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-08-06T10:57:54.467228842-04:00
+generated: 2019-08-07T10:39:53.469682301-04:00
