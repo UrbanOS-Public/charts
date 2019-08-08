@@ -29,9 +29,9 @@ entries:
     version: 1.0.0
   carpenter:
   - apiVersion: v1
-    created: 2019-07-17T08:43:03.922392093-04:00
+    created: 2019-08-08T10:17:35.904303738-04:00
     description: Creates tables for the SmartCitiesData platform
-    digest: 7cbd2567e020902d7a01b001111ba9e1b44d8a41c78b8142d84ebaeec32d62ad
+    digest: 85da6bf15e5efa208739d3d083b9c87fdae2029d915ef2e0bea39556b510e8fd
     name: carpenter
     urls:
     - carpenter-1.0.0.tgz
@@ -233,4 +233,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-08-07T10:39:53.469682301-04:00
+generated: 2019-08-08T10:17:35.903864373-04:00
