@@ -30,3 +30,5 @@ spec:
             value: {{ .Values.env.base_url }}
           - name: "STREETS_TILE_LAYER_URL"
             value: {{ .Values.env.streets_tile_layer_url }}
+          - name: "LOGO_URL"
+            value: {{ .Values.env.logo_url | default "null" }}
