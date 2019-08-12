@@ -15,6 +15,6 @@ spec:
         release: {{ .Release.Name }}
     spec:
       containers:
-        - name: rediscontainername
+        - name: redis-container
           image: "osixia/openldap:latest"
           imagePullPolicy: IfNotPresent

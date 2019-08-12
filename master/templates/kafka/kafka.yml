@@ -28,14 +28,8 @@ spec:
       timeoutSeconds: 15
     resources:
 {{ toYaml .Values.kafka.resources | indent 6 }}
-    # rack:
-    #   topologyKey: failure-domain.beta.kubernetes.io/zone
     tlsSidecar:
 {{ toYaml .Values.tlsSidecar | indent 6 }}
-#     tolerations:
-# {{ toYaml .Values.tolerations | indent 6 }}
-#     affinity:
-# {{ toYaml .Values.affinity | indent 6 }}
   zookeeper:
     replicas: {{ .Values.kafka.defaultReplicas }}
     storage:
@@ -51,10 +45,6 @@ spec:
         memory: 512Mi
     tlsSidecar:
 {{ toYaml .Values.tlsSidecar | indent 6 }}
-#     tolerations:
-# {{ toYaml .Values.tolerations | indent 6 }}
-#     affinity:
-# {{ toYaml .Values.affinity | indent 6 }}
   entityOperator:
     topicOperator:
       resources:
@@ -66,7 +56,3 @@ spec:
           memory: 512Mi
     tlsSidecar:
 {{ toYaml .Values.tlsSidecar | indent 6 }}
-#     tolerations:
-# {{ toYaml .Values.tolerations | indent 6 }}
-#     affinity:
-# {{ toYaml .Values.affinity | indent 6 }}

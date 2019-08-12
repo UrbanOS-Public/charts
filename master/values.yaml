@@ -88,12 +88,6 @@ kafka:
   defaultReplicas: 1
   topics:
   - name: event-stream
-  - name: smoke-test
-  - name: dataset-registry
-  - name: streaming-raw
-  - name: streaming-validated
-  - name: streaming-transformed
-  - name: organization-raw
   - name: streaming-persisted
   - name: streaming-dead-letters
   resources:
