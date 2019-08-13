@@ -49,10 +49,10 @@ spec:
     topicOperator:
       resources:
         requests:
-          cpu: "100m"
+          cpu: 100m
           memory: 512Mi
         limits:
-          cpu: "500m"
+          cpu: 500m
           memory: 512Mi
     tlsSidecar:
 {{ toYaml .Values.tlsSidecar | indent 6 }}
