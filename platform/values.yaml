@@ -1,19 +1,19 @@
 andi:
   enabled: true
   redis:
-    host: master-redis-master
+    host: platform-redis-master
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
 carpenter:
   enabled: true
   redis:
-    host: master-redis-master
+    host: platform-redis-master
 discovery-api:
   enabled: true
   replicaCount: 1
   redis:
-    host: master-redis-master
+    host: platform-redis-master
   ldap:
     host: ldap
 discovery-streams:
@@ -23,14 +23,14 @@ discovery-ui:
 flair:
   enabled: true
   redis:
-    host: master-redis-master
+    host: platform-redis-master
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
 forklift:
   enabled: true
   redis:
-    host: master-redis-master 
+    host: platform-redis-master 
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
@@ -39,17 +39,17 @@ kdp:
 genesis:
   enabled: true
   redis:
-    host: master-redis-master 
+    host: platform-redis-master 
   kafka:
     public_brokers: streaming-service-kafka-bootstrap:9092
 odo:
   enabled: true
   redis:
-    host: master-redis-master
+    host: platform-redis-master
 reaper:
   enabled: true
   redis:
-    host: master-redis-master
+    host: platform-redis-master
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
@@ -63,7 +63,7 @@ redis:
 streisand:
   enabled: true
   redis:
-    host: master-redis-master
+    host: platform-redis-master
   kafka:
     pipeline_brokers: streaming-service-kafka-bootstrap:9092
     public_brokers: streaming-service-kafka-bootstrap:9092
@@ -71,12 +71,12 @@ valkyrie:
   enabled: true
   replicaCount: 1
   redis:
-    host: master-redis-master 
+    host: platform-redis-master 
 voltron:
   enabled: true
   replicaCount: 1
   redis:
-    host: master-redis-master
+    host: platform-redis-master
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
