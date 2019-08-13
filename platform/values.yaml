@@ -1,0 +1,107 @@
+andi:
+  enabled: true
+  redis:
+    host: platform-redis-master
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
+carpenter:
+  enabled: true
+  redis:
+    host: platform-redis-master
+discovery-api:
+  enabled: true
+  replicaCount: 1
+  redis:
+    host: platform-redis-master
+  ldap:
+    host: ldap
+discovery-streams:
+  enabled: false
+discovery-ui:
+  enabled: true
+flair:
+  enabled: true
+  redis:
+    host: platform-redis-master
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
+forklift:
+  enabled: true
+  redis:
+    host: platform-redis-master 
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
+kdp:
+  enabled: false
+genesis:
+  enabled: true
+  redis:
+    host: platform-redis-master 
+  kafka:
+    public_brokers: streaming-service-kafka-bootstrap:9092
+odo:
+  enabled: true
+  redis:
+    host: platform-redis-master
+reaper:
+  enabled: true
+  redis:
+    host: platform-redis-master
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
+  vault:
+    endpoint: ""
+redis:
+  enabled: true
+  usePassword: false
+  cluster:
+    enabled: false
+streisand:
+  enabled: true
+  redis:
+    host: platform-redis-master
+  kafka:
+    pipeline_brokers: streaming-service-kafka-bootstrap:9092
+    public_brokers: streaming-service-kafka-bootstrap:9092
+valkyrie:
+  enabled: true
+  replicaCount: 1
+  redis:
+    host: platform-redis-master 
+voltron:
+  enabled: true
+  replicaCount: 1
+  redis:
+    host: platform-redis-master
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
+kafka:
+  broker: streaming-service-kafka-bootstrap:9092
+  strimziCluster: streaming-service
+  storageSize: 5Gi
+  defaultPartitions: 1
+  defaultReplicas: 1
+  topics:
+  - name: event-stream
+  - name: streaming-persisted
+  - name: streaming-dead-letters
+  resources:
+    requests:
+      cpu: 500m
+      memory: 1000M
+    limits:
+      cpu: 500m
+      memory: 1000M
+tlsSidecar:
+  resources:
+    requests:
+      cpu: 10m
+      memory: 10Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
