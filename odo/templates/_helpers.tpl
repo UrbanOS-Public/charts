@@ -30,3 +30,10 @@ Create chart name and version as used by the chart label.
 {{- define "odo.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+
+{{/*
+Create a default service name for the Kafka Bootstrap endpoint.
+*/}}
+{{- define "kafka.brokerservice" -}}
+{{- printf "%s-%s.%s:%s" .Release.Name "kafka-bootstrap" .Release.Namespace "9092" | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}

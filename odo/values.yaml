@@ -7,6 +7,16 @@ image:
 redis:
   host: redis.external-services
 
+kafka:
+  brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
+
+vault:
+  endpoint: http://vault.vault:8200
+
+cloud:
+  region: us-east-1
+  fileBucket: ""
+
 resources:
   limits:
     memory: 128Mi
