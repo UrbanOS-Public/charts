@@ -1,5 +1,6 @@
 service:
   name: discovery-ui
+  type: NodePort
   port: 80
 
 ingress:
