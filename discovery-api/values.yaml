@@ -2,6 +2,7 @@ replicaCount: 3
 
 service:
   name: discovery-api
+  type: NodePort
   port: 80
   auth_string: ""
 
