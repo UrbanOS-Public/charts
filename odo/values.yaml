@@ -24,3 +24,7 @@ resources:
   requests:
     memory: 128Mi
     cpu: 100m
+
+prometheus:
+  scrape: true
+  metrics_port: 9002

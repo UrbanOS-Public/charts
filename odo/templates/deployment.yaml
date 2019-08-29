@@ -18,6 +18,9 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "odo.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+      annotations:
+        prometheus.io/scrape: {{ .Values.prometheus.scrape  | quote }}
+        prometheus.io/port: {{ .Values.prometheus.metrics_port  | quote }}
     spec:
       serviceAccountName: {{ .Chart.Name }}
       containers:
@@ -42,6 +45,8 @@ spec:
           value: {{ .Values.vault.endpoint }}
         - name: WORKING_DIR
           value: {{ .Values.workingDirectory }}
+        - name: METRICS_PORT
+          value: {{.Values.prometheus.metrics_port | quote }}
       volumes:
       - name: download-dir
         emptyDir: {}
