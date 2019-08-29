@@ -26,6 +26,8 @@ spec:
           env:
           - name: KAFKA_BROKERS
             value: {{ .Values.kafka.brokers }}
+          - name: RUN_IN_KUBERNETES
+            value: "true"
           - name: INPUT_TOPIC_PREFIX
             value: {{.Values.kafka.inputTopicPrefix}}
           - name: OUTPUT_TOPIC_PREFIX
