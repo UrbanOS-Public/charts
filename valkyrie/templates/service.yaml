@@ -4,10 +4,10 @@ metadata:
   name: {{ .Chart.Name }}
   namespace: {{ .Release.Namespace }}
   labels:
-    app.kubernetes.io/name: {{ include "valkyrie.name" . }}
+    app.kubernetes.io/name: {{ include "helm.name" . }}
 spec:
   selector:
-    app.kubernetes.io/name: {{ include "valkyrie.name" . }}
+    app.kubernetes.io/name: {{ include "helm.name" . }}
   ports:
   - name: erlang-vm
     protocol: TCP
