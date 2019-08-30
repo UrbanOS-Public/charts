@@ -5,6 +5,9 @@ image:
   tag: development
   pullPolicy: Always
 
+service:
+  type: ClusterIP
+
 kafka:
   #comma delimited list of kafka seed brokers
   brokers: data-broker:9092

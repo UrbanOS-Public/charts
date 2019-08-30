@@ -22,15 +22,21 @@ spec:
         prometheus.io/scrape: {{ .Values.prometheus.scrape  | quote }}
         prometheus.io/port: {{ .Values.prometheus.metrics_port  | quote }}
     spec:
+      serviceAccountName: {{ .Chart.Name }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+          - containerPort: 9001
+          - containerPort: 4369
           env:
           - name: KAFKA_BROKERS
             value: {{ .Values.kafka.brokers }}
           - name: PRESTO_URL
             value: {{ .Values.kdp.url }}
+          - name: RUN_IN_KUBERNETES
+            value: "true"
           - name: REDIS_HOST
             value: {{ .Values.redis.host }}
           - name: DATA_TOPIC_PREFIX
