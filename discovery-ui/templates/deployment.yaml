@@ -32,3 +32,5 @@ spec:
             value: {{ .Values.env.streets_tile_layer_url }}
           - name: "LOGO_URL"
             value: {{ .Values.env.logo_url | default "null" }}
+          - name: "MAPBOX_ACCESS_TOKEN"
+            value: {{ .Values.env.mapbox_access_token }}
