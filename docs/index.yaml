@@ -78,9 +78,9 @@ entries:
   discovery-ui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-09-03T15:31:57.352921-04:00
+    created: 2019-09-04T08:56:46.165049-04:00
     description: A helm chart for the discovery ui
-    digest: 3b44746531c3252ad1cb6b21fd3cbf08530342e5bbd29630ab609477a72affb9
+    digest: 02cb36319d2abb9e61e1b7d1d9113b1f012bbccb460efe368865ef43650fd1ea
     name: discovery-ui
     urls:
     - discovery-ui-0.2.1.tgz
@@ -304,4 +304,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-09-03T15:31:57.352108-04:00
+generated: 2019-09-04T08:56:46.163784-04:00
