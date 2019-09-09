@@ -19,10 +19,10 @@ cloud:
 
 resources:
   limits:
-    memory: 128Mi
+    memory: 2Gi
     cpu: 300m
   requests:
-    memory: 128Mi
+    memory: 2Gi
     cpu: 100m
 
 prometheus:
