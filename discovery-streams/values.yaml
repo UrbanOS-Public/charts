@@ -29,3 +29,6 @@ smokeTestImage:
   repository: smartcitiesdata/discovery_streams_smoke_test
   tag: development
   pullPolicy: Always
+
+redis:
+  host: redis.external-services
