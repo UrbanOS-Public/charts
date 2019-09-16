@@ -24,10 +24,11 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}
-        envFrom:
-        - configMapRef:
-            name: kafka-brokers
         env:
+        - name: KAFKA_BROKERS
+          value: {{ .Values.kafka.brokers | default (include "kafka.brokerservice" .) }}
+        - name: REDIS_HOST
+          value: {{ .Values.redis.host }}
         - name: RUN_IN_KUBERNETES
           value: "true"
         - name: NAMESPACE
