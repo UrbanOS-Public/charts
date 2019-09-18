@@ -1,3 +1,4 @@
+{{- if .Values.smokeTest.enable -}}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -12,7 +13,8 @@ spec:
     spec:
       containers:
       - name: smoke-test-websocket
-        image: {{ .Values.smokeTestImage.repository }}:{{ .Values.smokeTestImage.tag }}
+        image: {{ .Values.smokeTest.image }}:{{ .Values.smokeTest.tag }}
         tty: true
         command: ["smoke-test", "streams.{{ .Values.ingress.dnsZone }}"]
       restartPolicy: OnFailure
+{{- end }}
