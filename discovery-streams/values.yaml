@@ -25,10 +25,11 @@ service:
   port: 80
   targetPort: 4000
 
-smokeTestImage:
-  repository: smartcitiesdata/discovery_streams_smoke_test
+smokeTest:
+  image: smartcitiesdata/discovery_streams_smoke_test
   tag: development
   pullPolicy: Always
+  enable: true
 
 redis:
   host: redis.external-services
