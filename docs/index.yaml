@@ -39,9 +39,18 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: "2019-08-27T12:10:27.239956497-04:00"
+    created: "2019-09-23T12:51:16.119341-04:00"
     description: A middleware layer to connect data consumers with the data sources
-    digest: e4aeb60154bd1befa4b6abe92f33532cf6a225d640b7671042808f424099a49e
+    digest: d6cb46980abec0d0f30c5b8173f79c600a0d405525f681d41cd79855fe07e5e4
+    name: discovery-api
+    urls:
+    - discovery-api-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v1
+    appVersion: 1.0.0-static
+    created: "2019-09-23T12:50:36.885011-04:00"
+    description: A middleware layer to connect data consumers with the data sources
+    digest: cdc9727e69c8cfc1f920c888fe7bf3b23db62da41db022d98ed0436652e1150e
     name: discovery-api
     urls:
     - discovery-api-0.3.0.tgz
@@ -349,4 +358,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2019-09-18T08:56:42.387819-04:00"
+generated: "2019-09-23T12:51:16.117775-04:00"

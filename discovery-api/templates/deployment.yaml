@@ -59,3 +59,11 @@ spec:
             value: {{ .Values.s3.hostedFileRegion }}
           - name: SECRETS_ENDPOINT
             value: {{ .Values.vault.endpoint }}
+          - name: POSTGRES_HOST
+            value: {{ .Values.postgres.host }}
+          - name: POSTGRES_NAME
+            value: {{ .Values.postgres.name }}
+          - name: POSTGRES_PASSWORD
+            value: {{ .Values.postgres.password }}
+          - name: POSTGRES_PORT
+            value: {{ quote .Values.postgres.port }}
