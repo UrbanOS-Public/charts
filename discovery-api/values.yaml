@@ -48,3 +48,9 @@ s3:
 
 vault:
   endpoint: http://vault.example.com:8200
+
+postgres:
+  host: "example.com"
+  port: "5432"
+  name: "postgres"
+  password: "password"
