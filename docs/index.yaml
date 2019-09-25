@@ -36,6 +36,16 @@ entries:
     urls:
     - carpenter-1.0.0.tgz
     version: 1.0.0
+  discovery:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-09-24T16:32:56.796084-04:00"
+    description: A helm chart for Discovery front-end
+    digest: ab9ebcbfbe8b0551a069ecd8438e04aa09ae5629a1872b11f65df3c9b23d1e3a
+    name: discovery
+    urls:
+    - discovery-0.2.2.tgz
+    version: 0.2.2
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
@@ -358,4 +368,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2019-09-23T12:51:16.117775-04:00"
+generated: "2019-09-24T16:32:56.795535-04:00"

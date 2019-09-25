@@ -1,0 +1,34 @@
+service:
+  name: discovery
+  type: NodePort
+  port: 80
+
+ingress:
+  enabled: false
+  scheme: ""
+  subnets: ""
+  security_groups: "" #Load balancer Security Group
+  dns_zone: "localhost"
+  root_dns_zone: "localhost"
+  certificate_arns: ""
+  tags: ""
+
+image:
+  name: smartcolumbusos/discovery
+  tag: development
+  environment: "local"
+
+env:
+  api_host: "https://data.example.com"
+  gtm_id: "GTM-EXAMPLE"
+  base_url: "example.com"
+  streets_tile_layer_url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  mapbox_access_token: ""
+  auth0_domain: ""
+  auth0_client_id: ""
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
