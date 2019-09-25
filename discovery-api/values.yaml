@@ -54,3 +54,8 @@ postgres:
   port: "5432"
   name: "postgres"
   password: "password"
+
+auth:
+  jwt_issuer: ""
+  jwks_endpoint: ""
+  user_info_endpoint: ""
