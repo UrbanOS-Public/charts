@@ -389,9 +389,9 @@ entries:
   vault:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-09-30T14:09:20.976571-04:00"
+    created: "2019-09-30T15:32:48.16673-04:00"
     description: Vault Secret Management
-    digest: a6bcc2fe90658343aeb17cadc914c2f048cafd6abe59908dd6772a0d15af8230
+    digest: 27002611f441cbf53027edce80c8d113834f8699da9b8ff92f377975909ba66d
     name: vault
     urls:
     - vault-1.0.0.tgz
@@ -406,5 +406,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-vault
-generated: "2019-09-30T14:26:18.691538-04:00"
+generated: "2019-09-30T15:32:48.166066-04:00"
