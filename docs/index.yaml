@@ -265,6 +265,16 @@ entries:
     urls:
     - kubernetes-data-platform-1.0.0.tgz
     version: 1.0.0
+  micro-service-watchinator:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-09-30T14:26:18.692253-04:00"
+    description: Cron job to watch microservices and make sure they are alive
+    digest: 467f16b997754485cd2a2392b20d91dea94e350be75d4f55a30a0527030cb1b2
+    name: micro-service-watchinator
+    urls:
+    - micro-service-watchinator-1.0.0.tgz
+    version: 1.0.0
   odo:
   - apiVersion: v1
     created: "2019-09-09T09:27:22.125262-04:00"
@@ -396,4 +406,5 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2019-09-30T14:09:20.975735-04:00"
+vault
+generated: "2019-09-30T14:26:18.691538-04:00"
