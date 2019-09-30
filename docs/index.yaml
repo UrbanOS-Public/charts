@@ -386,6 +386,16 @@ entries:
     urls:
     - valkyrie-2.0.1.tgz
     version: 2.0.1
+  vault:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-09-30T14:09:20.976571-04:00"
+    description: Vault Secret Management
+    digest: a6bcc2fe90658343aeb17cadc914c2f048cafd6abe59908dd6772a0d15af8230
+    name: vault
+    urls:
+    - vault-1.0.0.tgz
+    version: 1.0.0
   voltron:
   - apiVersion: v1
     appVersion: "1.0"
@@ -396,4 +406,5 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
+vault
 generated: "2019-09-30T14:26:18.691538-04:00"
