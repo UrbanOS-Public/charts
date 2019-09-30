@@ -1,0 +1,36 @@
+{{- if not .Values.vault.devMode -}}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: vault-upgrade-cleaner
+  namespace: {{ .Release.Namespace }}
+  labels:
+    helm.sh/chart: {{ include "vault.chart" . }}
+    app.kubernetes.io/name: {{ include "vault.name" . }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  annotations:
+    "helm.sh/hook": post-upgrade
+    "helm.sh/hook-weight": "2"
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: {{ include "vault.chart" . }}
+        app.kubernetes.io/name: {{ include "vault.name" . }}
+        app.kubernetes.io/managed-by: {{ .Release.Service }}
+    spec:
+      serviceAccountName: vault-upgrade-cleaner
+      restartPolicy: OnFailure
+      containers:
+      - name: vault-upgrade-cleaner
+        image: alpine
+        imagePullPolicy: {{ .Values.vault.pullPolicy }}
+        command:
+        - "/bin/sh"
+        - "-c"
+        - "apk add curl && \
+          curl -L https://storage.googleapis.com/kubernetes-release/release/v{{ .Values.kubectl.version }}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && \
+          chmod +x /usr/local/bin/kubectl && \
+          kubectl -n {{ .Release.Namespace }} delete pod {{ .Chart.Name }}-0"
+{{- end -}}
