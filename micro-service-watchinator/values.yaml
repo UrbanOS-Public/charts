@@ -10,4 +10,4 @@ namespace: watchinator
 image:
   repository: smartcitiesdata/micro-service-watchinator
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
