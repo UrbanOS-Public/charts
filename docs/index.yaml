@@ -268,6 +268,15 @@ entries:
   micro-service-watchinator:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2019-10-02T11:05:06.739733-04:00"
+    description: Cron job to watch microservices and make sure they are alive
+    digest: 693486943a95d02cbc8fedef22e22c96b62120ceda5b21d5399dc3a617fbb6de
+    name: micro-service-watchinator
+    urls:
+    - micro-service-watchinator-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2019-09-30T14:26:18.692253-04:00"
     description: Cron job to watch microservices and make sure they are alive
     digest: 467f16b997754485cd2a2392b20d91dea94e350be75d4f55a30a0527030cb1b2
@@ -406,4 +415,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2019-09-30T15:32:48.166066-04:00"
+generated: "2019-10-02T11:05:06.738275-04:00"
