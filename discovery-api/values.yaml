@@ -27,6 +27,10 @@ nodeSelector: {}
 tolerations: []
 affinity: {}
 
+kafka:
+  #comma delimited list of kafka seed brokers
+  brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
+
 redis:
   host: discovery-api-redis-master
 
