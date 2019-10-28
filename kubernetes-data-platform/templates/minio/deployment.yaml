@@ -26,9 +26,13 @@ spec:
           imagePullPolicy: {{ .Values.minio.deploy.container.pullPolicy }}
           command:
           - minio
-          args:
+          {{ if .Values.minio.azure.enable }}
+          - gateway
+          - azure
+          {{ else }}
           - server
           - /data
+          {{ end }}
           env:
           - name: MINIO_ACCESS_KEY
             value: {{ .Values.global.objectStore.accessKey }}
