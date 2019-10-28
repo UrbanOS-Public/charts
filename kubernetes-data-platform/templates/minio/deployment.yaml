@@ -26,6 +26,7 @@ spec:
           imagePullPolicy: {{ .Values.minio.deploy.container.pullPolicy }}
           command:
           - minio
+          args:
           {{ if .Values.minio.azure.enable }}
           - gateway
           - azure
