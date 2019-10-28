@@ -119,6 +119,8 @@ minio:
         maxUnavailable: 1
   ingress:
     enable: true
+  azure:
+    enable: false
 
 hook:
   container:
