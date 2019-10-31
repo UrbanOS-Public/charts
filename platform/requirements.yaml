@@ -1,6 +1,6 @@
 dependencies:
   - name: andi
-    version: 1.1.1
+    version: 1.1.2
     repository: https://smartcitiesdata.github.io/charts
     condition: andi.enabled
   - name: discovery-api

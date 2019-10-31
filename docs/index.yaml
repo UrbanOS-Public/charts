@@ -343,6 +343,16 @@ entries:
     urls:
     - odo-0.1.0.tgz
     version: 0.1.0
+  platform:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-10-31T11:38:16.303037-04:00"
+    description: Master chart that deploys the OS. Targets minikube
+    digest: 60b6a620f908f88bd1a0a0232809546c63c0e4817659b5a48588b9c1204048b1
+    name: platform
+    urls:
+    - platform-0.0.1.tgz
+    version: 0.0.1
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
@@ -440,4 +450,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2019-10-31T10:40:40.772688-04:00"
+generated: "2019-10-31T11:38:16.299078-04:00"
