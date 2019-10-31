@@ -1,3 +1,4 @@
+{{- if .Values.kafka.enabled }}
 apiVersion: kafka.strimzi.io/v1alpha1
 kind: Kafka
 metadata:
@@ -56,3 +57,4 @@ spec:
           memory: 512Mi
     tlsSidecar:
 {{ toYaml .Values.tlsSidecar | indent 6 }}
+{{- end }}

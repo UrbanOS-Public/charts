@@ -5,10 +5,6 @@ andi:
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
-carpenter:
-  enabled: true
-  redis:
-    host: platform-redis-master
 discovery-api:
   enabled: true
   replicaCount: 1
@@ -30,18 +26,12 @@ flair:
 forklift:
   enabled: true
   redis:
-    host: platform-redis-master 
+    host: platform-redis-master
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
 kdp:
   enabled: false
-genesis:
-  enabled: true
-  redis:
-    host: platform-redis-master 
-  kafka:
-    public_brokers: streaming-service-kafka-bootstrap:9092
 odo:
   enabled: true
   redis:
@@ -60,27 +50,15 @@ redis:
   usePassword: false
   cluster:
     enabled: false
-streisand:
-  enabled: true
-  redis:
-    host: platform-redis-master
-  kafka:
-    pipeline_brokers: streaming-service-kafka-bootstrap:9092
-    public_brokers: streaming-service-kafka-bootstrap:9092
 valkyrie:
   enabled: true
   replicaCount: 1
   redis:
-    host: platform-redis-master 
-voltron:
-  enabled: true
-  replicaCount: 1
-  redis:
     host: platform-redis-master
-  strimzi:
-    kafka:
-      brokers: streaming-service-kafka-bootstrap:9092
+ldap:
+  enabled: true
 kafka:
+  enabled: true
   broker: streaming-service-kafka-bootstrap:9092
   strimziCluster: streaming-service
   storageSize: 5Gi
