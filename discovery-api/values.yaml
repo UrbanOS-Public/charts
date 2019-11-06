@@ -57,6 +57,7 @@ postgres:
   host: "example.com"
   port: "5432"
   name: "postgres"
+  user: "postgres"
   password: "password"
 
 auth:
