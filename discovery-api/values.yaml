@@ -56,7 +56,7 @@ vault:
 postgres:
   host: "example.com"
   port: "5432"
-  name: "postgres"
+  dbname: "postgres"
   user: "postgres"
   password: "password"
 

@@ -63,8 +63,8 @@ spec:
             value: {{ .Values.vault.endpoint }}
           - name: POSTGRES_HOST
             value: {{ .Values.postgres.host }}
-          - name: POSTGRES_NAME
-            value: {{ .Values.postgres.name }}
+          - name: POSTGRES_DBNAME
+            value: {{ .Values.postgres.dbname }}
           - name: POSTGRES_USER
             value: {{ .Values.postgres.user }}
           - name: POSTGRES_PASSWORD
