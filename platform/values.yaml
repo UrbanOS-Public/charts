@@ -48,16 +48,6 @@ discovery-api:
   environment: demo
   service:
     type: LoadBalancer
-discovery-ui:
-  enabled: true
-  env:
-    api_host: "http://localhost"
-    base_url: "http://localhost"
-  image:
-    environment: demo
-    tag: 0.12.4
-  service:
-    type: LoadBalancer
 discovery-streams:
   enabled: false
   image:
