@@ -1,0 +1,7 @@
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "redis"
+spec:
+  type: ExternalName
+  externalName: "redis-master.default.svc.cluster.local"

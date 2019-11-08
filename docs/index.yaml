@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   andi:
   - apiVersion: v1
-    created: "2019-10-31T10:40:40.773138-04:00"
+    created: 2019-10-31T10:40:40.773138-04:00
     description: REST API to allow for dataset definition ingestion
     digest: 748cb1a2d42f9f03a2a105cfe33fed909b5d9e54a3533ee1787b76464b5a57b1
     name: andi
@@ -10,7 +10,7 @@ entries:
     - andi-1.1.2.tgz
     version: 1.1.2
   - apiVersion: v1
-    created: "2019-10-24T16:17:25.765506-04:00"
+    created: 2019-10-24T16:17:25.765506-04:00
     description: REST API to allow for dataset definition ingestion
     digest: fd12957f7b9374d7938592492312520f348e411f5c576749267619c52721a26b
     name: andi
@@ -18,7 +18,7 @@ entries:
     - andi-1.1.1.tgz
     version: 1.1.1
   - apiVersion: v1
-    created: "2019-08-06T10:25:46.176264-04:00"
+    created: 2019-08-06T10:25:46.176264-04:00
     description: REST API to allow for dataset definition ingestion
     digest: 5aa94c38e83912cda418215e6ae8f7a263d887851db66a83812379c1ccb7d5e9
     name: andi
@@ -27,7 +27,7 @@ entries:
     version: 1.1.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-17T08:43:03.913273417-04:00"
+    created: 2019-07-17T08:43:03.913273417-04:00
     description: REST API to allow for dataset definition ingestion
     digest: 95d51c3a76f115ccb53e2cd2e37694c60ee92e728a24593b16f44aaf962fc106
     name: andi
@@ -36,7 +36,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-17T08:43:03.912184586-04:00"
+    created: 2019-07-17T08:43:03.912184586-04:00
     description: REST API to allow for dataset definition ingestion
     digest: 87a558e09dc5ee07fbe8182060aa40e43d2ed1d6055280007cbc372a6d7f1a56
     name: andi
@@ -45,7 +45,7 @@ entries:
     version: 1.0.0
   carpenter:
   - apiVersion: v1
-    created: "2019-08-08T10:17:35.904303738-04:00"
+    created: 2019-08-08T10:17:35.904303738-04:00
     description: Creates tables for the SmartCitiesData platform
     digest: 85da6bf15e5efa208739d3d083b9c87fdae2029d915ef2e0bea39556b510e8fd
     name: carpenter
@@ -55,7 +55,7 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: "2019-10-14T11:51:58.694727525-04:00"
+    created: 2019-10-14T11:51:58.694727525-04:00
     description: A middleware layer to connect data consumers with the data sources
     digest: 52f1312abd3eb97055d7a80704ebcbdabb409b77bb25eb3a22fad5e35c7c494e
     name: discovery-api
@@ -64,7 +64,7 @@ entries:
     version: 0.4.2
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: "2019-09-25T14:05:59.69468-04:00"
+    created: 2019-09-25T14:05:59.69468-04:00
     description: A middleware layer to connect data consumers with the data sources
     digest: c3ea0b7c95c074d3442a7e1b698cd65339cc852fa9fb85df9271821f7cbbfc58
     name: discovery-api
@@ -73,7 +73,7 @@ entries:
     version: 0.4.1
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: "2019-09-23T12:51:16.119341-04:00"
+    created: 2019-09-23T12:51:16.119341-04:00
     description: A middleware layer to connect data consumers with the data sources
     digest: d6cb46980abec0d0f30c5b8173f79c600a0d405525f681d41cd79855fe07e5e4
     name: discovery-api
@@ -82,7 +82,7 @@ entries:
     version: 0.4.0
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: "2019-09-23T12:50:36.885011-04:00"
+    created: 2019-09-23T12:50:36.885011-04:00
     description: A middleware layer to connect data consumers with the data sources
     digest: cdc9727e69c8cfc1f920c888fe7bf3b23db62da41db022d98ed0436652e1150e
     name: discovery-api
@@ -91,7 +91,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: "2019-08-06T10:57:54.46772333-04:00"
+    created: 2019-08-06T10:57:54.46772333-04:00
     description: A middleware layer to connect data consumers with the data sources
     digest: 2929f38815547b1c87969eb9aafe60bf122c8c8844a3e57ca0109f8b71abef51
     name: discovery-api
@@ -100,7 +100,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: "2019-07-16T16:23:37.699742476-04:00"
+    created: 2019-07-16T16:23:37.699742476-04:00
     description: A middleware layer to connect data consumers with the data sources
     digest: 42a1507eeeb6d7773d568189b84cdba87f8f821e58f983643682f225cf0c508e
     name: discovery-api
@@ -110,7 +110,7 @@ entries:
   discovery-streams:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-09-18T08:56:42.388497-04:00"
+    created: 2019-09-18T08:56:42.388497-04:00
     description: Dynamically find kafka topics and makes available corresponding channels
       on a public websocket
     digest: 21f17d1bed83cd9af7c30bc6b0d3bde85818c9c8e727420d715d2659f71a93b3
@@ -120,7 +120,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-09-16T14:02:09.143635-04:00"
+    created: 2019-09-16T14:02:09.143635-04:00
     description: Dynamically find kafka topics and makes available corresponding channels
       on a public websocket
     digest: f503a31c002392f28aa908bf19831d4a262694582dc52e09822133992b5a9831
@@ -130,7 +130,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-17T08:43:03.926899729-04:00"
+    created: 2019-07-17T08:43:03.926899729-04:00
     description: Dynamically find kafka topics and makes available corresponding channels
       on a public websocket
     digest: 63bf4e84bf6193da9a87f37e8878f3ac0ee49e693a1bd96f29e8fcdfed8fbef9
@@ -141,7 +141,7 @@ entries:
   discovery-ui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-09-26T14:50:26.254629-04:00"
+    created: 2019-09-26T14:50:26.254629-04:00
     description: A helm chart for the discovery ui
     digest: 8aac23502d772964f7487968e992a97797bc9f3441775a265992348dde8841b4
     name: discovery-ui
@@ -150,7 +150,7 @@ entries:
     version: 0.2.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-09-12T10:18:25.831987-04:00"
+    created: 2019-09-12T10:18:25.831987-04:00
     description: A helm chart for the discovery ui
     digest: 03e4e5a101456b27a264dfa040b62b70bd178329c72a3c127096afc31eb4be9e
     name: discovery-ui
@@ -159,7 +159,7 @@ entries:
     version: 0.2.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-09-04T08:56:46.165049-04:00"
+    created: 2019-09-04T08:56:46.165049-04:00
     description: A helm chart for the discovery ui
     digest: 02cb36319d2abb9e61e1b7d1d9113b1f012bbccb460efe368865ef43650fd1ea
     name: discovery-ui
@@ -168,7 +168,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-08-27T12:11:25.402154708-04:00"
+    created: 2019-08-27T12:11:25.402154708-04:00
     description: A helm chart for the discovery ui
     digest: dc21382df0f2bed0ead62580f0663f2c9d6d0b6d841be3aa8e8321e146fa5fee
     name: discovery-ui
@@ -177,7 +177,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-08-09T11:28:38.037045495-04:00"
+    created: 2019-08-09T11:28:38.037045495-04:00
     description: A helm chart for the discovery ui
     digest: e255e5b95b31d22e2bdc5593913a81dc1baae7a0803918a22c527ad065c2cac7
     name: discovery-ui
@@ -186,7 +186,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-17T09:43:08.720755994-04:00"
+    created: 2019-07-17T09:43:08.720755994-04:00
     description: A helm chart for the discovery ui
     digest: 60730467df1df1b2b6f78038b1e37c1ed0c1330acf1f2d57ebc26b322ba32b6b
     name: discovery-ui
@@ -196,7 +196,7 @@ entries:
   external-services:
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2019-09-27T10:15:50.10791-04:00"
+    created: 2019-09-27T10:15:50.10791-04:00
     description: Helm chart for external services
     digest: fb24917c26b0edfe54c390c6b516f902546cd37e5fd18a650013cf6591ea65ba
     name: external-services
@@ -206,7 +206,7 @@ entries:
   flair:
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: "2019-07-17T12:43:29.135195026-04:00"
+    created: 2019-07-17T12:43:29.135195026-04:00
     description: Watches data on the validated topic and does profiling on its path
       through the data pipeline.
     digest: c859e0c0f26db7c835a94de2a6a998169a117d093a3bbabc11015b8e208ddf70
@@ -217,7 +217,7 @@ entries:
   forklift:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-08-30T15:31:41.177188754-04:00"
+    created: 2019-08-30T15:31:41.177188754-04:00
     description: Loads data from the transformed topic into Presto
     digest: 84c751d79e03f7f00b632e51caf07ee4f748eed0b25a35d68adb1f37b105b8e1
     name: forklift
@@ -226,7 +226,7 @@ entries:
     version: 2.4.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-08-21T16:12:26.503173486-04:00"
+    created: 2019-08-21T16:12:26.503173486-04:00
     description: Loads data from the transformed topic into Presto
     digest: 5f63bba1add04b38c5345c70d9f24d0a68d2e06d3aebea0a14ee1cb3b8ecabf5
     name: forklift
@@ -235,7 +235,7 @@ entries:
     version: 2.3.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-08-02T18:29:31.571774822-04:00"
+    created: 2019-08-02T18:29:31.571774822-04:00
     description: Loads data from the transformed topic into Presto
     digest: 8fc8269f5cc64bd1dba93e150ddb07b7a01f69f624c0ead3601097907c8c14fd
     name: forklift
@@ -244,7 +244,7 @@ entries:
     version: 2.2.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-26T10:36:03.83234085-04:00"
+    created: 2019-07-26T10:36:03.83234085-04:00
     description: Loads data from the transformed topic into Presto
     digest: d63a4469b796afb6515ccfcce26ed5886c7972646f26d5b56c1c6bb9a61e91c8
     name: forklift
@@ -253,7 +253,7 @@ entries:
     version: 2.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-25T15:04:18.185072769-04:00"
+    created: 2019-07-25T15:04:18.185072769-04:00
     description: Loads data from the transformed topic into Presto
     digest: fcd99b18e45289c20c57505e35620cc9517db9fa388cc1adec53dd9e86f32e24
     name: forklift
@@ -263,7 +263,7 @@ entries:
   genesis:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-17T10:55:43.822821076-04:00"
+    created: 2019-07-17T10:55:43.822821076-04:00
     description: Loads data from the transformed topic into Presto
     digest: 3666b3dcf5aec92c96b64e3d78c6b12264aa038ce72a9f72f38a09293501b53e
     name: genesis
@@ -272,7 +272,7 @@ entries:
     version: 2.0.1
   kubernetes-data-platform:
   - apiVersion: v1
-    created: "2019-07-17T08:43:03.938291188-04:00"
+    created: 2019-07-17T08:43:03.938291188-04:00
     description: Hadoop-less data platform for the Smart City OS
     digest: ba465d7bd1dccb7823dfa860001e9f8b459059d40669441583aeca064b8b0e76
     keywords:
@@ -293,7 +293,7 @@ entries:
   micro-service-watchinator:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-02T11:05:06.739733-04:00"
+    created: 2019-10-02T11:05:06.739733-04:00
     description: Cron job to watch microservices and make sure they are alive
     digest: 693486943a95d02cbc8fedef22e22c96b62120ceda5b21d5399dc3a617fbb6de
     name: micro-service-watchinator
@@ -302,7 +302,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-09-30T14:26:18.692253-04:00"
+    created: 2019-09-30T14:26:18.692253-04:00
     description: Cron job to watch microservices and make sure they are alive
     digest: 467f16b997754485cd2a2392b20d91dea94e350be75d4f55a30a0527030cb1b2
     name: micro-service-watchinator
@@ -311,7 +311,7 @@ entries:
     version: 1.0.0
   odo:
   - apiVersion: v1
-    created: "2019-09-09T09:27:22.125262-04:00"
+    created: 2019-09-09T09:27:22.125262-04:00
     description: shapeshifting service
     digest: 11d4b056256eb6270bab8e3703ee382e25f0868352bced164cf9759c429920bd
     name: odo
@@ -319,7 +319,7 @@ entries:
     - odo-0.2.2.tgz
     version: 0.2.2
   - apiVersion: v1
-    created: "2019-09-04T14:53:52.231640834-04:00"
+    created: 2019-09-04T14:53:52.231640834-04:00
     description: shapeshifting service
     digest: 90a827bb72c85010dbaad2af0b2edd332df6918d8e5d1c625a71281aaf2aac41
     name: odo
@@ -327,7 +327,7 @@ entries:
     - odo-0.2.1.tgz
     version: 0.2.1
   - apiVersion: v1
-    created: "2019-08-19T17:33:52.314652-04:00"
+    created: 2019-08-19T17:33:52.314652-04:00
     description: shapeshifting service
     digest: 84899232e6a9a4d2f9ec5d1081c579e58ece6e79e7da9c04a7b9e7ea3ac805da
     name: odo
@@ -336,7 +336,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-25T15:21:03.919055773-04:00"
+    created: 2019-07-25T15:21:03.919055773-04:00
     description: shapeshifting service
     digest: baa1be8a7cc099d617620ef0c9dd9e65b6da3dec39ddae839611b77f439aba95
     name: odo
@@ -346,7 +346,16 @@ entries:
   platform:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-31T11:38:16.303037-04:00"
+    created: 2019-11-08T15:19:26.82673-05:00
+    description: Master chart that deploys the OS. Targets AWS or Azure
+    digest: ff605c7bb13c364147beedf9c39d7f98f5ea70d641cc828400020d8ba1427615
+    name: platform
+    urls:
+    - platform-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-10-31T11:38:16.303037-04:00
     description: Master chart that deploys the OS. Targets minikube
     digest: 60b6a620f908f88bd1a0a0232809546c63c0e4817659b5a48588b9c1204048b1
     name: platform
@@ -356,7 +365,7 @@ entries:
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-08-07T10:39:41.511373444-04:00"
+    created: 2019-08-07T10:39:41.511373444-04:00
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
     digest: 20a2be9806c4f46afc6b8fa933588c772370bab08446bcbc33d2694b93fa0e2b
@@ -366,7 +375,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-17T08:43:03.93962147-04:00"
+    created: 2019-07-17T08:43:03.93962147-04:00
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
     digest: 0a4e1e99fe4980d431c29b78920b97bd13d889887927b0a9d3bd7f0c289ad69c
@@ -377,7 +386,7 @@ entries:
   streisand:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-17T08:43:03.942124097-04:00"
+    created: 2019-07-17T08:43:03.942124097-04:00
     description: Publishes public streaming data to the public kafka cluster
     digest: 0d32486a6f57df65470d16e4a4d93038ae58cceeba91ea40e5c33ad216d99e78
     name: streisand
@@ -387,7 +396,7 @@ entries:
   valkyrie:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-08-30T11:22:56.361093-04:00"
+    created: 2019-08-30T11:22:56.361093-04:00
     description: Validates data from raw topic and writes it to validated topic
     digest: b9b918ace36cf1019331561c98b2e0073483c71cc656c6b722b5710d05cbf9e6
     name: valkyrie
@@ -396,7 +405,7 @@ entries:
     version: 2.4.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-08-22T11:04:47.954927127-04:00"
+    created: 2019-08-22T11:04:47.954927127-04:00
     description: Validates data from raw topic and writes it to validated topic
     digest: 943eecba980d1cb5e894dc1faa0487348bb02d353953e17592f495abe08335d4
     name: valkyrie
@@ -405,7 +414,7 @@ entries:
     version: 2.3.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-08-22T09:56:39.376352971-04:00"
+    created: 2019-08-22T09:56:39.376352971-04:00
     description: Validates data from raw topic and writes it to validated topic
     digest: 088b3642af4d4d04759a5c474375852b8e22716e36fda05132e7f6f4a87a72a5
     name: valkyrie
@@ -414,7 +423,7 @@ entries:
     version: 2.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-31T15:26:27.195485663-04:00"
+    created: 2019-07-31T15:26:27.195485663-04:00
     description: Validates data from raw topic and writes it to validated topic
     digest: 15b81735af8ccb405d9e1435c6c1134a7c404f9cccf38d2b598cfc435c8a1e66
     name: valkyrie
@@ -423,7 +432,7 @@ entries:
     version: 2.1.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-30T13:28:16.421453-04:00"
+    created: 2019-07-30T13:28:16.421453-04:00
     description: Validates data from raw topic and writes it to validated topic
     digest: e0a0ed33cd14032aa44ad8cba3c7d70447f49ae06aa5c9094af0e892c4378231
     name: valkyrie
@@ -433,7 +442,7 @@ entries:
   vault:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-09-30T15:32:48.16673-04:00"
+    created: 2019-09-30T15:32:48.16673-04:00
     description: Vault Secret Management
     digest: 27002611f441cbf53027edce80c8d113834f8699da9b8ff92f377975909ba66d
     name: vault
@@ -443,11 +452,11 @@ entries:
   voltron:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-08-07T10:39:53.470155604-04:00"
+    created: 2019-08-07T10:39:53.470155604-04:00
     description: Data transformation service
     digest: 576583de8380dfd0fece1eb0adc46eadb302ccce65915c7d604649279d3672c8
     name: voltron
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2019-10-31T11:38:16.299078-04:00"
+generated: 2019-11-08T15:19:26.820876-05:00
