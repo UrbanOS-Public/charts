@@ -27,9 +27,9 @@ spec:
           command:
           - minio
           args:
-          {{ if .Values.minio.azure.enable }}
+          {{ if .Values.minio.gateway.enabled }}
           - gateway
-          - azure
+          - .Values.minio.gateway.type
           {{ else }}
           - server
           - /data

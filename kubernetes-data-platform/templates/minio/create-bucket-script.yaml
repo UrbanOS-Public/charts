@@ -1,4 +1,4 @@
-{{- if .Values.minio.enable -}}
+{{- if and .Values.minio.enable (not .Values.minio.gateway.enable) -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
