@@ -365,9 +365,9 @@ entries:
   platform:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-11T11:11:24.713151-05:00
+    created: 2019-11-11T11:27:21.610908-05:00
     description: Master chart that deploys the data platform.
-    digest: d63c3ad15caa5011d737304b7f69d164444e6639267d494f2dbcd9e9c6fa109a
+    digest: afa7a98a6eddc57d30d3ff4f97ce2d56358525ca95998fcff87620ba7c839151
     name: platform
     urls:
     - platform-0.0.2.tgz
@@ -478,4 +478,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-11-11T11:11:24.707868-05:00
+generated: 2019-11-11T11:27:21.605935-05:00

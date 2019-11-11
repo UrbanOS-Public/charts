@@ -87,7 +87,7 @@ kubernetes-data-platform:
     azure:
       enable: false
   postgres:
-    enable: false
+    enable: true
     service:
       externalAddress: ''
     db:
@@ -131,6 +131,11 @@ valkyrie:
   redis:
     host: redis-master
 flair:
-  enabled: false
+  enabled: true
+  redis:
+    host: redis-master
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
 odo:
-  enabled: false
+  enabled: true
