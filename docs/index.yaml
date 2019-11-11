@@ -346,9 +346,9 @@ entries:
   platform:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-08T15:42:44.996122-05:00
-    description: Master chart that deploys the OS. Targets AWS or Azure
-    digest: 975091fe9783721f6863032f2992be10d34d6e95aeae99751f398a2e4d6fb5b8
+    created: 2019-11-11T11:11:24.713151-05:00
+    description: Master chart that deploys the data platform.
+    digest: d63c3ad15caa5011d737304b7f69d164444e6639267d494f2dbcd9e9c6fa109a
     name: platform
     urls:
     - platform-0.0.2.tgz
@@ -459,4 +459,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-11-08T15:42:44.990234-05:00
+generated: 2019-11-11T11:11:24.707868-05:00
