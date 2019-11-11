@@ -1,4 +1,4 @@
-{{- if .Values.ldap.enabled }}
+{{- if .Values.openldap.enabled }}
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:

@@ -20,7 +20,7 @@ andi:
   image:
     tag: 0.6.0
   redis:
-    host: redis
+    host: redis-master
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
@@ -30,11 +30,11 @@ discovery-api:
   image:
     tag: 0.16.2
   redis:
-    host: redis
+    host: redis-master
   presto:
     url: http://kdp-kubernetes-data-platform-presto:8080
   postgres:
-    host: scosdev.postgres.database.azure.com
+    host: ''
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
@@ -107,7 +107,7 @@ forklift:
   kdp:
     url: "http://kdp-kubernetes-data-platform-presto:8080"
   redis:
-    host: redis
+    host: redis-master
   prometheus:
     scrape: false
 reaper:
@@ -116,7 +116,7 @@ reaper:
   image:
     tag: 0.10.1
   redis:
-    host: redis
+    host: redis-master
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
@@ -129,4 +129,8 @@ valkyrie:
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   redis:
-    host: redis
+    host: redis-master
+flair:
+  enabled: false
+odo:
+  enabled: false
