@@ -139,3 +139,8 @@ flair:
       brokers: streaming-service-kafka-bootstrap:9092
 odo:
   enabled: true
+kafka:
+  enabled: true
+  storage:
+    enable: false
+    storageSize: 5Gi
