@@ -28,11 +28,11 @@ andi:
     type: ClusterIP
 discovery-api:
   image:
-    tag: 0.16.2
+    tag: 0.15.6
   redis:
     host: redis-master
   presto:
-    url: http://kdp-kubernetes-data-platform-presto:8080
+    url: http://platform-kubernetes-data-platform-presto:8080
   postgres:
     host: ''
   strimzi:
@@ -84,8 +84,9 @@ kubernetes-data-platform:
             cpu: 1
   minio:
     enable: true
-    azure:
+    gateway:
       enable: false
+      type: azure
   postgres:
     enable: true
     service:
@@ -105,7 +106,7 @@ forklift:
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   kdp:
-    url: "http://kdp-kubernetes-data-platform-presto:8080"
+    url: "http://platform-kubernetes-data-platform-presto:8080"
   redis:
     host: redis-master
   prometheus:
