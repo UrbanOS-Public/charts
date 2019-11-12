@@ -272,9 +272,9 @@ entries:
     version: 2.0.1
   kubernetes-data-platform:
   - apiVersion: v1
-    created: 2019-11-11T16:30:09.156081-05:00
+    created: 2019-11-12T13:50:39.309552-05:00
     description: Hadoop-less data platform for the Smart City OS
-    digest: 7e60c7a1ea7cb5bbe895b3174381cc6d81bf14985c93a7e20fe587d341c80c9b
+    digest: cb2b05a04f8140d4902eb764b3a99ccf7c16902065cc4ad956a5bb648cd83030
     keywords:
     - presto
     - hive-metastore
@@ -384,9 +384,9 @@ entries:
   platform:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-12T10:48:07.656677-05:00
+    created: 2019-11-12T15:00:00.607858-05:00
     description: Master chart that deploys the data platform.
-    digest: bd6ea2642d011270c9a30423c7d343628d5e6810d05ccb20dc00fac5f0f1556e
+    digest: b96569e44079bdbb343a6d841721003aefd7d2c9de45f0f173fa24463848a4d9
     name: platform
     urls:
     - platform-0.0.3.tgz
@@ -506,4 +506,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-11-12T10:48:07.652487-05:00
+generated: 2019-11-12T15:00:00.603257-05:00

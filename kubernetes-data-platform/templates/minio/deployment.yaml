@@ -29,7 +29,7 @@ spec:
           args:
           {{ if .Values.minio.gateway.enable }}
           - gateway
-          - .Values.minio.gateway.type
+          - {{ .Values.minio.gateway.type }}
           {{ else }}
           - server
           - /data
