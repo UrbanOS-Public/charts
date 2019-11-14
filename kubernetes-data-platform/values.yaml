@@ -134,4 +134,3 @@ global:
     bucketName: kdp-cloud-storage
     accessKey: accessKey
     accessSecret: accessSecret
-

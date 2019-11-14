@@ -4,7 +4,7 @@
 # Required Parameters
 kubernetes-data-platform.global.objectStore.bucketName=<S3 BUCKET NAME HERE>
 kubernetes-data-platform.global.objectStore.accessKey=<S3 BUCKET ACCESS KEY HERE>
-kubernetes-data-platform.global.objectStoreacessSecret=<S3 BUCKET SECRET HERE>
+kubernetes-data-platform.global.objectStore.accessSecret=<S3 BUCKET SECRET HERE>
 kubernetes-data-platform.postgres.service.externalAddress=<POSTGRES DB LOCATION HERE >
 kubernetes-data-platform.postgres.db.user=<POSTGRES DB USER HERE>
 kubernetes-data-platform.postgres.enable=<SPIN UP POSTGRES POD?>
