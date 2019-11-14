@@ -1,85 +1,147 @@
+redis:
+  fullnameOverride: redis
+  usePassword: false
+  cluster:
+    enabled: false
+openldap:
+  fullnameOverride: ldap-openldap
+  enabled: true
+  adminPassword: ''
+  env:
+    LDAP_BASE_DN: dc=example,dc=org
+  customLdifFiles:
+    init.ldif : |
+      dn: ou=orgs,dc=example,dc=org
+      objectClass: top
+      objectClass: organizationalUnit
+      ou: orgs
 andi:
   enabled: true
+  image:
+    tag: 0.6.0
   redis:
-    host: platform-redis-master
+    host: redis-master
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
+  service:
+    type: ClusterIP
 discovery-api:
-  enabled: true
-  replicaCount: 1
+  image:
+    tag: 0.15.6
   redis:
-    host: platform-redis-master
+    host: redis-master
+  presto:
+    url: http://platform-kubernetes-data-platform-presto:8080
+  postgres:
+    host: ''
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
+  s3:
+    hostedFileBucket: hosted-bucket
   ldap:
-    host: ldap
+    host: ldap-openldap
+    base: "dc=example,dc=org"
+  vault:
+    endpoint: ""
+  environment: demo
+  service:
+    type: LoadBalancer
 discovery-streams:
   enabled: false
-discovery-ui:
-  enabled: true
-flair:
-  enabled: true
-  redis:
-    host: platform-redis-master
-  strimzi:
-    kafka:
-      brokers: streaming-service-kafka-bootstrap:9092
-forklift:
-  enabled: true
-  redis:
-    host: platform-redis-master
-  strimzi:
-    kafka:
-      brokers: streaming-service-kafka-bootstrap:9092
-kdp:
+  image:
+    environment: demo
+    tag: 0.12.4
+  service:
+    type: LoadBalancer
+kubernetes-data-platform:
+  fullnameOverride: kdp
   enabled: false
-odo:
+  global:
+    environment: demo
+    objectStore:
+      bucketName: ''
+      accessKey: ''
+      accessSecret: ''
+    ingress:
+      annotations: {}
+  presto:
+    workers: 2
+    ingress:
+      enable: false
+      annotations: {}
+    jvm:
+      maxHeapSize: 1536M
+    deploy:
+      container:
+        resources:
+          limits:
+            memory: 2Gi
+            cpu: 2
+          requests:
+            memory: 2Gi
+            cpu: 1
+  minio:
+    enable: true
+    gateway:
+      enable: false
+      type: azure
+  postgres:
+    enable: true
+    service:
+      externalAddress: ''
+    db:
+      name: metastore
+      user: ''
+      password: ''
+  metastore:
+    allowDropTable: true
+    timeout: 360m
+forklift:
+  fullnameOverride: forklift
   enabled: true
+  image:
+    tag: 0.9.0
+  kafka:
+    brokers: streaming-service-kafka-bootstrap:9092
+  kdp:
+    url: "http://platform-kubernetes-data-platform-presto:8080"
   redis:
-    host: platform-redis-master
+    host: redis-master
+  prometheus:
+    scrape: false
 reaper:
+  fullnameOverride: reaper
   enabled: true
+  image:
+    tag: 0.10.1
   redis:
-    host: platform-redis-master
+    host: redis-master
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
   vault:
     endpoint: ""
-redis:
-  enabled: true
-  usePassword: false
-  cluster:
-    enabled: false
 valkyrie:
+  fullnameOverride: valkyrie
   enabled: true
   replicaCount: 1
+  kafka:
+    brokers: streaming-service-kafka-bootstrap:9092
   redis:
-    host: platform-redis-master
-ldap:
+    host: redis-master
+flair:
+  enabled: true
+  redis:
+    host: redis-master
+  strimzi:
+    kafka:
+      brokers: streaming-service-kafka-bootstrap:9092
+odo:
   enabled: true
 kafka:
   enabled: true
-  broker: streaming-service-kafka-bootstrap:9092
-  strimziCluster: streaming-service
-  storageSize: 5Gi
-  defaultPartitions: 1
-  defaultReplicas: 1
-  topics:
-  - name: event-stream
-  - name: streaming-persisted
-  - name: streaming-dead-letters
-  resources:
-    requests:
-      cpu: 500m
-      memory: 1000M
-    limits:
-      cpu: 500m
-      memory: 1000M
-tlsSidecar:
-  resources:
-    requests:
-      cpu: 10m
-      memory: 10Mi
-    limits:
-      cpu: 100m
-      memory: 128Mi
+  storage:
+    enable: false
+    storageSize: 5Gi

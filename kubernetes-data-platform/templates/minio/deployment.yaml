@@ -27,9 +27,9 @@ spec:
           command:
           - minio
           args:
-          {{ if .Values.minio.azure.enable }}
+          {{ if .Values.minio.gateway.enable }}
           - gateway
-          - azure
+          - {{ .Values.minio.gateway.type }}
           {{ else }}
           - server
           - /data
@@ -42,6 +42,7 @@ spec:
           ports:
           - containerPort: {{ .Values.minio.service.port }}
             name: minio
+          {{ if not .Values.minio.gateway.enable }}
           volumeMounts:
           - mountPath: /data
             name: cloud-storage
@@ -49,4 +50,5 @@ spec:
         - name: cloud-storage
           persistentVolumeClaim:
             claimName: {{ template "kdp.minio.fullname" . }}-storage
+          {{- end }}
 {{- end }}

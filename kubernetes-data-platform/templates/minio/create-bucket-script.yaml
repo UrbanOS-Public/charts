@@ -1,4 +1,4 @@
-{{- if .Values.minio.enable -}}
+{{- if and .Values.minio.enable (not .Values.minio.gateway.enable) -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -9,7 +9,7 @@ metadata:
 data:
   create_bucket.sh: |
     #!/bin/sh
-    
+
     wget https://dl.minio.io/client/mc/release/linux-amd64/mc -P /usr/bin/
     chmod a+x /usr/bin/mc
 
