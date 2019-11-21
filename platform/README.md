@@ -13,6 +13,20 @@ kubernetes-data-platform.kdp.s3.hostedFileBucket=<BUCKET NAME HERE>
 discovery-api.postgres.host=<HOST HERE>
 discovery-api.s3.hostedFileBucket=<HOST HERE>
 openldap.adminPassword=admin
+discovery-api.postgres.dbname=metastore
+discovery-api.postgres.user=<DB USERNAME>
+discovery-api.postgres.password=<DB PASSWORD>
+discovery-api.redis.host=<REDIS_HOST>
+discovery-api.redis.password=<REDIS_PASSWORD>
+reaper.redis.host=<REDIS_HOST>
+reaper.redis.password=<REDIS_PASSWORD>
+valkyrie.redis.host=<REDIS_HOST>
+valkyrie.redis.password=<REDIS_PASSWORD>
+forklift.redis.host=<REDIS_HOST>
+forklift.redis.password=<REDIS_PASSWORD>
+andi.redis.host=<REDIS_HOST>
+andi.redis.password=<REDIS_PASSWORD>
+forklift.postgres.host=<DB SERVER NAME same as above>
 
 # To make changes to a dependent chart for development
 1. Make the changes you need on your local chart
