@@ -27,6 +27,7 @@ kdp:
 
 redis:
   host: forklift-redis-master
+  password: ""
 
 prometheus:
   scrape: true

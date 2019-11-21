@@ -39,6 +39,8 @@ spec:
             value: "true"
           - name: REDIS_HOST
             value: {{ .Values.redis.host }}
+          - name: REDIS_PASSWORD
+            value: {{ .Values.redis.password }}
           - name: DATA_TOPIC_PREFIX
             value: {{.Values.kafka.dataTopicPrefix}}
           - name: OUTPUT_TOPIC

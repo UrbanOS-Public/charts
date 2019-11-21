@@ -40,6 +40,8 @@ spec:
             value: {{.Values.kafka.dlqTopic}}
           - name: REDIS_HOST
             value: {{ .Values.redis.host }}
+          - name: REDIS_PASSWORD
+            value: {{ .Values.redis.password }}
           - name: PROCESSOR_STAGES
             value: {{ .Values.processor_stages | quote }}
           - name: NAMESPACE
