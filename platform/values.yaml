@@ -1,8 +1,3 @@
-redis:
-  fullnameOverride: redis
-  usePassword: false
-  cluster:
-    enabled: false
 openldap:
   fullnameOverride: ldap-openldap
   enabled: true
@@ -18,9 +13,12 @@ openldap:
 andi:
   enabled: true
   image:
-    tag: 0.6.0
+    repository: rconaway2/andi
+    tag: 85.3.0
   redis:
-    host: redis-master
+    host: ''
+    password: ''
+
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
@@ -28,16 +26,19 @@ andi:
     type: ClusterIP
 discovery-api:
   image:
-    tag: 0.15.6
+    name: rconaway2/discovery_api
+    tag: 85.3.0
   redis:
-    host: redis-master
+    host: ''
+    password: ''
   presto:
     url: http://platform-kubernetes-data-platform-presto:8080
   postgres:
     host: ''
-  strimzi:
-    kafka:
-      brokers: streaming-service-kafka-bootstrap:9092
+    dbname: ''
+    user: ''
+  kafka:
+    brokers: streaming-service-kafka-bootstrap:9092
   s3:
     hostedFileBucket: hosted-bucket
   ldap:
@@ -102,22 +103,26 @@ forklift:
   fullnameOverride: forklift
   enabled: true
   image:
-    tag: 0.9.0
+    repository: rconaway2/forklift
+    tag: 85.3.0
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   kdp:
     url: "http://platform-kubernetes-data-platform-presto:8080"
   redis:
-    host: redis-master
+    host: ''
+    password: ''
   prometheus:
     scrape: false
 reaper:
   fullnameOverride: reaper
   enabled: true
   image:
-    tag: 0.10.1
+    repository: rconaway2/reaper
+    tag: 85.3.0
   redis:
-    host: redis-master
+    host: ''
+    password: ''
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
@@ -126,13 +131,17 @@ reaper:
 valkyrie:
   fullnameOverride: valkyrie
   enabled: true
+  image:
+    repository: rconaway2/valkyrie
+    tag: 85.3.0
   replicaCount: 1
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   redis:
-    host: redis-master
+    host: ''
+    password: ''
 flair:
-  enabled: true
+  enabled: false
   redis:
     host: redis-master
   strimzi:
@@ -145,3 +154,5 @@ kafka:
   storage:
     enable: false
     storageSize: 5Gi
+redis:
+  enabled: false

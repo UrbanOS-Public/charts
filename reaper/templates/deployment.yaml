@@ -46,6 +46,8 @@ spec:
           value: "true"
         - name: REDIS_HOST
           value: {{ .Values.redis.host }}
+        - name: REDIS_PASSWORD
+          value: {{ .Values.redis.password }}
         - name: SECRETS_ENDPOINT
           value: {{ .Values.vault.endpoint }}
         - name: HOSTED_FILE_BUCKET
