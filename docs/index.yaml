@@ -63,9 +63,9 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: 2019-11-21T11:10:15.697974-05:00
+    created: 2019-11-25T16:02:52.616883-05:00
     description: A middleware layer to connect data consumers with the data sources
-    digest: 6897803dddaa458305d7bdb37c3fee283c614215a25b1954966812f4d5cae72b
+    digest: 7db8cb8230d09a8132a0b647d374b5f9ffd17834796a66ee7d4f7d0a850306be
     name: discovery-api
     urls:
     - discovery-api-0.4.4.tgz
@@ -307,9 +307,28 @@ entries:
     version: 2.0.1
   kubernetes-data-platform:
   - apiVersion: v1
-    created: 2019-11-22T10:16:26.466708-05:00
+    created: 2019-11-25T15:30:41.797731-05:00
     description: Hadoop-less data platform for the Smart City OS
-    digest: e91e06001f56b2b9000ac47a7cef648f2703e8e8a1f5b517704bc5f6cc52ebb0
+    digest: 971ab04a506fe935a47f3e9947fff7deaa903c4dc67c45224de2701e0f3753b4
+    keywords:
+    - presto
+    - hive-metastore
+    - cloud-object-store
+    - minio
+    name: kubernetes-data-platform
+    sources:
+    - https://github.com/prestodb/presto
+    - https://github.com/apache/hive
+    - https://github.com/minio/minio
+    - https://github.com/helm/helm
+    tillerVersion: '>=2.8.0'
+    urls:
+    - kubernetes-data-platform-1.1.2.tgz
+    version: 1.1.2
+  - apiVersion: v1
+    created: 2019-11-25T12:57:42.61897-05:00
+    description: Hadoop-less data platform for the Smart City OS
+    digest: 777b0d744495a0d0dd970e8696f39eff25788edf5808f5d148b4cbde2e5793c5
     keywords:
     - presto
     - hive-metastore
@@ -419,9 +438,18 @@ entries:
   platform:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-22T10:17:10.630961-05:00
+    created: 2019-11-25T16:03:57.29836-05:00
     description: Master chart that deploys the data platform.
-    digest: 9127648a3969d54cee08816ed6d57cdd7e70b7ea69858fa4f28391a59e20b736
+    digest: ef9f8c9cf4651a1f2bcb8f9aa09797e0db2d6edf4513385dc2eabb06de9996a7
+    name: platform
+    urls:
+    - platform-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-11-21T10:56:28.447042-05:00
+    description: Master chart that deploys the data platform.
+    digest: 564927370c2200bcd620263db77a4f0bf1e8af766dcfcb0f6d19c1a0f82add90
     name: platform
     urls:
     - platform-0.0.3.tgz
@@ -560,4 +588,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-11-22T14:30:42.74537-05:00
+generated: 2019-11-25T16:03:57.295045-05:00

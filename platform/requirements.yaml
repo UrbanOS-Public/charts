@@ -24,7 +24,7 @@ dependencies:
     repository: https://smartcitiesdata.github.io/charts
     condition: forklift.enabled
   - name: kubernetes-data-platform
-    version: 1.1.1
+    version: 1.1.2
     repository: https://smartcitiesdata.github.io/charts
     condition: kubernetes-data-platform.enabled
   - name: odo
