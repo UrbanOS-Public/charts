@@ -307,9 +307,28 @@ entries:
     version: 2.0.1
   kubernetes-data-platform:
   - apiVersion: v1
-    created: 2019-11-22T15:45:59.303812-05:00
+    created: 2019-11-25T13:06:52.505132-05:00
     description: Hadoop-less data platform for the Smart City OS
-    digest: 4048d658eb4115f3db24f2b6f015e5428e9bbb288d54a45e021159170fa7cc22
+    digest: c5fbfa44bf8c456c80ccd5b68959eb9c27ff1f334787e393b5b0d4b21cca126a
+    keywords:
+    - presto
+    - hive-metastore
+    - cloud-object-store
+    - minio
+    name: kubernetes-data-platform
+    sources:
+    - https://github.com/prestodb/presto
+    - https://github.com/apache/hive
+    - https://github.com/minio/minio
+    - https://github.com/helm/helm
+    tillerVersion: '>=2.8.0'
+    urls:
+    - kubernetes-data-platform-1.1.2.tgz
+    version: 1.1.2
+  - apiVersion: v1
+    created: 2019-11-25T12:57:42.61897-05:00
+    description: Hadoop-less data platform for the Smart City OS
+    digest: 777b0d744495a0d0dd970e8696f39eff25788edf5808f5d148b4cbde2e5793c5
     keywords:
     - presto
     - hive-metastore
@@ -419,9 +438,9 @@ entries:
   platform:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-25T12:40:06.68607-05:00
+    created: 2019-11-25T13:08:50.4793-05:00
     description: Master chart that deploys the data platform.
-    digest: 6d2b941cb367fb2f55c599f487465a4791583ea1dcbf844617fe2fd9d5bb71e3
+    digest: 4e1d1c17808224f43c9b791d1a84e2bcebbcc2db0e73234ff58e32741ab3ed17
     name: platform
     urls:
     - platform-0.0.4.tgz
@@ -569,4 +588,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-11-25T12:40:06.682125-05:00
+generated: 2019-11-25T13:08:50.475671-05:00
