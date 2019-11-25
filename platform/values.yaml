@@ -12,9 +12,6 @@ openldap:
       ou: orgs
 andi:
   enabled: true
-  image:
-    repository: rconaway2/andi
-    tag: 85.3.0
   redis:
     host: ''
     password: ''
@@ -25,9 +22,6 @@ andi:
   service:
     type: ClusterIP
 discovery-api:
-  image:
-    name: rconaway2/discovery_api
-    tag: 85.3.0
   redis:
     host: ''
     password: ''
@@ -109,9 +103,6 @@ kubernetes-data-platform:
 forklift:
   fullnameOverride: forklift
   enabled: true
-  image:
-    repository: rconaway2/forklift
-    tag: 85.3.0
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   kdp:
@@ -124,9 +115,6 @@ forklift:
 reaper:
   fullnameOverride: reaper
   enabled: true
-  image:
-    repository: rconaway2/reaper
-    tag: 85.3.0
   redis:
     host: ''
     password: ''
@@ -138,9 +126,6 @@ reaper:
 valkyrie:
   fullnameOverride: valkyrie
   enabled: true
-  image:
-    repository: rconaway2/valkyrie
-    tag: 85.3.0
   replicaCount: 1
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
