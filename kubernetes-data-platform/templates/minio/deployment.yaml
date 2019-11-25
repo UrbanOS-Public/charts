@@ -46,12 +46,12 @@ spec:
             name: minio
           volumeMounts:
           - mountPath: /data/config.json
-            name: google-creds
+            name: google-credentials
             subPath: config.json
       volumes:
-        - name: google-creds
+        - name: google-credentials
           configMap:
-            name: creds
+            name: google-credentials
           {{ if not .Values.minio.gateway.enable }}
           volumeMounts:
           - mountPath: /data

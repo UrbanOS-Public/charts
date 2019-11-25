@@ -103,7 +103,7 @@ minio:
   gateway:
     enable: false
     type: azure
-  creds:
+  googleCredentials:
     project_id: ''
     private_key_id: ''
     private_key: ''
