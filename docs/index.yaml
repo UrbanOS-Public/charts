@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   andi:
   - apiVersion: v1
-    created: 2019-11-21T10:56:05.248175-05:00
+    created: 2019-11-22T15:45:54.234216-05:00
     description: REST API to allow for dataset definition ingestion
-    digest: daadfcb7d9ed54a81a3fbc140382e80eb2375f61aaa13145e2126dd3897214ea
+    digest: 3911b57e5bf1eec9738d312c1113818b137f136df626508d803dae334b692273
     name: andi
     urls:
     - andi-1.1.3.tgz
@@ -63,9 +63,9 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: 2019-11-21T11:10:15.697974-05:00
+    created: 2019-11-22T15:46:30.647979-05:00
     description: A middleware layer to connect data consumers with the data sources
-    digest: 6897803dddaa458305d7bdb37c3fee283c614215a25b1954966812f4d5cae72b
+    digest: f51bb8b8b80a18e2098f2eafc61c35b7a0e304cc74d469e771e09d216090ba44
     name: discovery-api
     urls:
     - discovery-api-0.4.4.tgz
@@ -243,9 +243,9 @@ entries:
   forklift:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-21T11:10:36.065477-05:00
+    created: 2019-11-22T15:46:23.039867-05:00
     description: Loads data from the transformed topic into Presto
-    digest: c9a028b88475570b557df968dc78f44fc26e2435d9ae12128d856c6f2abe2c00
+    digest: fb0165ed6d88808e09069fbfded6efa98d99ab057139517a477c267d31255fbf
     name: forklift
     urls:
     - forklift-2.4.1.tgz
@@ -307,9 +307,9 @@ entries:
     version: 2.0.1
   kubernetes-data-platform:
   - apiVersion: v1
-    created: 2019-11-22T10:16:26.466708-05:00
+    created: 2019-11-22T15:45:59.303812-05:00
     description: Hadoop-less data platform for the Smart City OS
-    digest: e91e06001f56b2b9000ac47a7cef648f2703e8e8a1f5b517704bc5f6cc52ebb0
+    digest: 4048d658eb4115f3db24f2b6f015e5428e9bbb288d54a45e021159170fa7cc22
     keywords:
     - presto
     - hive-metastore
@@ -419,9 +419,18 @@ entries:
   platform:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-22T10:17:10.630961-05:00
+    created: 2019-11-25T12:40:06.68607-05:00
     description: Master chart that deploys the data platform.
-    digest: 9127648a3969d54cee08816ed6d57cdd7e70b7ea69858fa4f28391a59e20b736
+    digest: 6d2b941cb367fb2f55c599f487465a4791583ea1dcbf844617fe2fd9d5bb71e3
+    name: platform
+    urls:
+    - platform-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-11-21T10:56:28.447042-05:00
+    description: Master chart that deploys the data platform.
+    digest: 564927370c2200bcd620263db77a4f0bf1e8af766dcfcb0f6d19c1a0f82add90
     name: platform
     urls:
     - platform-0.0.3.tgz
@@ -447,10 +456,10 @@ entries:
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-21T11:10:40.320397-05:00
+    created: 2019-11-22T15:46:41.569016-05:00
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
-    digest: 2179370ab056dffadbbacafb7678b8ae4b843757edf3eac9f6e641a19426b260
+    digest: 602cbc17a4499a76556e6f58dd815bf251d74f50230e1be21ac9b7676c46ae07
     name: reaper
     urls:
     - reaper-0.1.2.tgz
@@ -488,9 +497,9 @@ entries:
   valkyrie:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-21T11:10:43.835999-05:00
+    created: 2019-11-22T15:46:37.213746-05:00
     description: Validates data from raw topic and writes it to validated topic
-    digest: 4157ba395d1ba361948708a129a95ecac2f2dbd066ded794f0ece642679912e6
+    digest: 1b61a784fe5a2c763fb93931c74a0d1af93e46397f58db534a304e4e01d1f6e4
     name: valkyrie
     urls:
     - valkyrie-2.4.1.tgz
@@ -560,4 +569,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-11-22T14:30:42.74537-05:00
+generated: 2019-11-25T12:40:06.682125-05:00
