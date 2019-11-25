@@ -39,11 +39,14 @@ spec:
             value: {{ .Values.global.objectStore.accessKey }}
           - name: MINIO_SECRET_KEY
             value: {{ .Values.global.objectStore.accessSecret }}
+          {{ if eq .Values.minio.gateway.type "gcs" }}
           - name: GOOGLE_APPLICATION_CREDENTIALS
             value: /data/config.json
+          {{ end }}
           ports:
           - containerPort: {{ .Values.minio.service.port }}
             name: minio
+          {{ if eq .Values.minio.gateway.type "gcs" }}
           volumeMounts:
           - mountPath: /data/config.json
             name: google-credentials
@@ -52,6 +55,7 @@ spec:
         - name: google-credentials
           configMap:
             name: google-credentials
+          {{ end }}
           {{ if not .Values.minio.gateway.enable }}
           volumeMounts:
           - mountPath: /data

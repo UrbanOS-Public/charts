@@ -63,9 +63,9 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: 2019-11-21T11:10:15.697974-05:00
+    created: 2019-11-25T16:02:52.616883-05:00
     description: A middleware layer to connect data consumers with the data sources
-    digest: 6897803dddaa458305d7bdb37c3fee283c614215a25b1954966812f4d5cae72b
+    digest: 7db8cb8230d09a8132a0b647d374b5f9ffd17834796a66ee7d4f7d0a850306be
     name: discovery-api
     urls:
     - discovery-api-0.4.4.tgz
@@ -307,9 +307,9 @@ entries:
     version: 2.0.1
   kubernetes-data-platform:
   - apiVersion: v1
-    created: 2019-11-25T15:01:08.682749-05:00
+    created: 2019-11-25T15:30:41.797731-05:00
     description: Hadoop-less data platform for the Smart City OS
-    digest: ce408c6f3f4176ae63e059ffb1035df4559e2c5855194574728d00e2d935e566
+    digest: 971ab04a506fe935a47f3e9947fff7deaa903c4dc67c45224de2701e0f3753b4
     keywords:
     - presto
     - hive-metastore
@@ -438,9 +438,9 @@ entries:
   platform:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-25T15:02:26.44887-05:00
+    created: 2019-11-25T16:03:57.29836-05:00
     description: Master chart that deploys the data platform.
-    digest: 95e4e71427772b0f41430c2f25e968ae32a01afcc874f3ba453005c5a3924835
+    digest: ef9f8c9cf4651a1f2bcb8f9aa09797e0db2d6edf4513385dc2eabb06de9996a7
     name: platform
     urls:
     - platform-0.0.4.tgz
@@ -588,4 +588,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-11-25T15:02:26.445459-05:00
+generated: 2019-11-25T16:03:57.295045-05:00
