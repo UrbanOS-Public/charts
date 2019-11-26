@@ -63,9 +63,9 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: 2019-11-26T09:01:02.088427-05:00
+    created: 2019-11-26T09:15:45.063197-05:00
     description: A middleware layer to connect data consumers with the data sources
-    digest: fe8c4bbf89d11ea5bb6fe0c5b45e5c33e434f7327ec6f3f785395a07c53daecf
+    digest: 01065bd174835a0e232289b2e6bd392fa8ad02b98b7585cd6e2ed1a1fdf538de
     name: discovery-api
     urls:
     - discovery-api-0.4.4.tgz
@@ -438,9 +438,9 @@ entries:
   platform:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-26T09:05:18.728933-05:00
+    created: 2019-11-26T09:25:06.137103-05:00
     description: Master chart that deploys the data platform.
-    digest: 41229170678c939d3a285bcb29dcbf031232decd81b87a54cc24bbd50a11f04c
+    digest: cf68f52a9299612df11f9772f08afc55acbeda3b85f8e2599122b60378c0ac0a
     name: platform
     urls:
     - platform-0.0.4.tgz
@@ -516,9 +516,9 @@ entries:
   valkyrie:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-26T09:00:49.330133-05:00
+    created: 2019-11-26T09:24:20.251775-05:00
     description: Validates data from raw topic and writes it to validated topic
-    digest: 54b7f9e593675040aaa495c094a1c146cb5cc02c56107dd0205d602b6aadaaf0
+    digest: a2a88ee09619c118b1011a16a80c42f610cee4d3a05dd5eaa7d4b1e846a2ae68
     name: valkyrie
     urls:
     - valkyrie-2.4.1.tgz
@@ -588,4 +588,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-11-26T09:05:18.724102-05:00
+generated: 2019-11-26T09:25:06.132301-05:00
