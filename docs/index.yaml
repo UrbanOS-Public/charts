@@ -55,6 +55,15 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
+    created: "2019-12-02T16:09:41.301887-05:00"
+    description: A middleware layer to connect data consumers with the data sources
+    digest: 6feb0e0c685bb0c57d4bde80c1392443c6e505e6d3b14ea1761a3ce83fb7f58a
+    name: discovery-api
+    urls:
+    - discovery-api-0.5.0.tgz
+    version: 0.5.0
+  - apiVersion: v1
+    appVersion: 1.0.0-static
     created: "2019-11-11T09:30:24.953952-05:00"
     description: A middleware layer to connect data consumers with the data sources
     digest: 470cd2e312e7458865f8def8fe29fa24139fe0fd1e61bb7d7c8cb02921f995fe
@@ -281,7 +290,7 @@ entries:
     version: 2.0.1
   kubernetes-data-platform:
   - apiVersion: v1
-    created: 2019-11-08T22:33:39.564976281-05:00
+    created: "2019-11-08T22:33:39.564976281-05:00"
     description: Hadoop-less data platform for the Smart City OS
     digest: bf9e5696039bbb5bfd03cf032bf05cb95ab935730f09926c7890388fc93f83c2
     keywords:
@@ -300,7 +309,7 @@ entries:
     - kubernetes-data-platform-1.1.0.tgz
     version: 1.1.0
   - apiVersion: v1
-    created: 2019-07-17T08:43:03.938291188-04:00
+    created: "2019-07-17T08:43:03.938291188-04:00"
     description: Hadoop-less data platform for the Smart City OS
     digest: ba465d7bd1dccb7823dfa860001e9f8b459059d40669441583aeca064b8b0e76
     keywords:
@@ -478,4 +487,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2019-11-11T09:30:24.952644-05:00"
+generated: "2019-12-02T16:09:41.301118-05:00"
