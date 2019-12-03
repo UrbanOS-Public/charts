@@ -61,6 +61,7 @@ postgres:
   password: "password"
 
 auth:
+  provider: "default"
   jwt_issuer: ""
   jwks_endpoint: ""
   user_info_endpoint: ""
