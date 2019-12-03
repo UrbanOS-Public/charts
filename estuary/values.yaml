@@ -1,0 +1,17 @@
+# make a dependency when kdp is published
+presto:
+  url: "http://kdp-kubernetes-data-platform-presto.kdp:8080"
+
+image:
+  repository: smartcitiesdata/apps/estuary
+  tag: development
+  pullPolicy: IfNotPresent
+
+# defaults to be overridden by user
+replicaCount: 1
+nameOverride: ""
+fullnameOverride: ""
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
