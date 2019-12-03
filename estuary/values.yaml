@@ -3,7 +3,7 @@ presto:
   url: "http://kdp-kubernetes-data-platform-presto.kdp:8080"
 
 image:
-  repository: smartcitiesdata/apps/estuary
+  repository: smartcitiesdata/estuary
   tag: development
   pullPolicy: IfNotPresent
 
