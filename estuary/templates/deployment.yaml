@@ -26,6 +26,14 @@ spec:
           env:
           - name: PRESTO_URL
             value: {{ .Values.presto.url }}
+          - name: "PRESTO_USER"
+            value: {{ .Values.presto.user }}
+          - name: "TABLE_NAME"
+            value: {{.Values.estuary.table_name}}
+          - name: KAFKA_BROKERS
+            value: {{ .Values.kafka.brokers }}
+          - name: DATA_TOPIC
+            value: {{ .Values.estuary.data_topic }}
           - name: NAMESPACE
             valueFrom:
               fieldRef:

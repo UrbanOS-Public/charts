@@ -1,6 +1,14 @@
-# make a dependency when kdp is published
 presto:
+  user: "estuary"
   url: "http://kdp-kubernetes-data-platform-presto.kdp:8080"
+
+kafka:
+  #comma delimited list of kafka seed brokers
+  brokers: data-broker:9092
+
+estuary:
+  data_topic: streaming-persisted
+  table_name: "event_stream"
 
 image:
   repository: smartcitiesdata/estuary
