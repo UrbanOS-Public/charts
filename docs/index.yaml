@@ -211,6 +211,15 @@ entries:
     urls:
     - discovery-ui-0.1.1.tgz
     version: 0.1.1
+  estuary:
+  - apiVersion: v1
+    created: "2019-12-04T13:33:18.262116-05:00"
+    description: Reads the event stream and stores them in to event_stream table
+    digest: 6a2d92c1a7f3a4a433d193e582dd6ead2aaaa821f9065294c1c93a60726ac165
+    name: estuary
+    urls:
+    - estuary-0.1.0.tgz
+    version: 0.1.0
   external-services:
   - apiVersion: v1
     appVersion: 1.0.0
@@ -487,4 +496,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2019-12-03T10:30:22.898305-05:00"
+generated: "2019-12-04T13:33:18.26142-05:00"
