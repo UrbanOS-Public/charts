@@ -213,9 +213,9 @@ entries:
     version: 0.1.1
   estuary:
   - apiVersion: v1
-    created: "2019-12-05T12:08:41.627507-05:00"
+    created: "2019-12-05T12:24:33.633947-05:00"
     description: Reads the event stream and stores them in to event_stream table
-    digest: 6db43a6250b23d33f78ab2d41a609a5cba14c9c87d1e582869899d570005e359
+    digest: f31ff84bd82bdce3df95e8b185244db9711626d050332e26c2896c10b44334f3
     name: estuary
     urls:
     - estuary-0.1.0.tgz
@@ -536,4 +536,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2019-12-05T12:08:41.62706-05:00"
+generated: "2019-12-05T12:24:33.633465-05:00"
