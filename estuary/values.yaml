@@ -16,7 +16,7 @@ image:
   pullPolicy: Always
 
 # defaults to be overridden by user
-replicaCount: 2
+replicaCount: 1
 nameOverride: ""
 fullnameOverride: ""
 resources: {}
