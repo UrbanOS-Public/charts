@@ -213,53 +213,13 @@ entries:
     version: 0.1.1
   estuary:
   - apiVersion: v1
-    created: "2019-12-05T12:24:33.633947-05:00"
+    created: "2019-12-05T12:57:32.628106-05:00"
     description: Reads the event stream and stores them in to event_stream table
-    digest: f31ff84bd82bdce3df95e8b185244db9711626d050332e26c2896c10b44334f3
+    digest: a0722e18491b41903c4d462921f21fbf90474d52c35548e248099e8491ae5c83
     name: estuary
     urls:
     - estuary-0.1.0.tgz
     version: 0.1.0
-  - apiVersion: v1
-    created: "2019-12-04T16:40:38.96372-05:00"
-    description: Reads the event stream and stores them in to event_stream table
-    digest: a16c421353c7af11dfbc900561860df22c9d38ea824c3360a772f0d66b385e98
-    name: estuary
-    urls:
-    - estuary-wip.tgz
-    version: wip
-  - apiVersion: v1
-    created: "2019-12-04T16:43:24.570837-05:00"
-    description: Reads the event stream and stores them in to event_stream table
-    digest: ec1b22a490582f4372559502b8129072f4eeb915dde6cbcbf5f291f22457cb40
-    name: estuary
-    urls:
-    - estuary-wip.tgz
-    version: wip
-  - apiVersion: v1
-    created: "2019-12-05T09:43:21.20536-05:00"
-    description: Reads the event stream and stores them in to event_stream table
-    digest: 31c24d12fd08e2cffb02c5132644c6626680cef04004d49021e2909693abda7c
-    name: estuary
-    urls:
-    - estuary-wip.tgz
-    version: wip
-  - apiVersion: v1
-    created: "2019-12-05T10:55:14.761787-05:00"
-    description: Reads the event stream and stores them in to event_stream table
-    digest: 41aa3ed6c1426a54888c91f155f0b391da5a1b71b49058dc8f19edd5bae08262
-    name: estuary
-    urls:
-    - estuary-wip.tgz
-    version: wip
-  - apiVersion: v1
-    created: "2019-12-05T11:35:39.341094-05:00"
-    description: Reads the event stream and stores them in to event_stream table
-    digest: d4a3fd90da1ec14c75aada2c74c556ef7057644478e192ae5bb77592863aa613
-    name: estuary
-    urls:
-    - estuary-wip_test.tgz
-    version: wip_test
   external-services:
   - apiVersion: v1
     appVersion: 1.0.0
@@ -536,4 +496,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2019-12-05T12:24:33.633465-05:00"
+generated: "2019-12-05T12:57:32.627572-05:00"
