@@ -213,14 +213,6 @@ entries:
     version: 0.1.1
   estuary:
   - apiVersion: v1
-    created: "2019-12-05T12:57:32.628106-05:00"
-    description: Reads the event stream and stores them in to event_stream table
-    digest: a0722e18491b41903c4d462921f21fbf90474d52c35548e248099e8491ae5c83
-    name: estuary
-    urls:
-    - estuary-0.1.0.tgz
-    version: 0.1.0
-  - apiVersion: v1
     created: "2019-12-05T13:57:00.281813-05:00"
     description: Reads the event stream and stores them in to event_stream table
     digest: d5f74e2efdcae4279a6e7f48f0f6299481776ab2f1d527c408c83f92bd547411
