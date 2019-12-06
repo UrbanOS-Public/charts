@@ -34,6 +34,8 @@ spec:
             value: {{ .Values.kafka.brokers }}
           - name: DATA_TOPIC
             value: {{ .Values.estuary.data_topic }}
+          - name: DLQ_TOPIC
+            value: {{ .Values.estuary.dlq_topic }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}

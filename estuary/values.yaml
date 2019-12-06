@@ -9,6 +9,7 @@ kafka:
 estuary:
   data_topic: event-stream
   table_name: "event_stream"
+  dlq_topic: streaming-dead-letters
 
 image:
   repository: smartcitiesdata/estuary
