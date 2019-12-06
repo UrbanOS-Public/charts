@@ -220,14 +220,6 @@ entries:
     urls:
     - estuary-0.1.0.tgz
     version: 0.1.0
-  - apiVersion: v1
-    created: "2019-12-06T10:25:41.3624-05:00"
-    description: Reads the event stream and stores them in to event_stream table
-    digest: 2bfeca183fa7e259ff93ed10233b65853b91d16080b1d53167590ec5c2c8bbc6
-    name: estuary
-    urls:
-    - estuary-development.tgz
-    version: development
   external-services:
   - apiVersion: v1
     appVersion: 1.0.0
