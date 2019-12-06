@@ -19,6 +19,7 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "reaper.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+        istio-injection: {{ .Values.metadata.labels.istioInjection }}
     spec:
       serviceAccountName: {{ .Chart.Name }}
       imagePullSecrets:

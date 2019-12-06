@@ -1,9 +1,12 @@
 outputTopicPrefix: raw
 dlqTopic: streaming-dead-letters
 replicaCount: 1
+metadata:
+  labels:
+    istioInjection: disabled
 image:
-  repository: smartcitiesdata/reaper
-  tag: development
+  repository: rconaway2/reaper
+  tag: 86.0.0
   pullPolicy: Always
 service:
   port: 9092
