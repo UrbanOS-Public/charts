@@ -16,7 +16,7 @@ data:
     query.max-total-memory-per-node={{ .Values.presto.query.maxTotalMemoryPerNode }}
     discovery.uri=http://{{ template "kdp.presto.fullname" . }}:{{ .Values.presto.service.port }}
     memory.heap-headroom-per-node={{ .Values.presto.query.heapHeadroomPerNode }}
-    task.writer-count={{.Values.presto.task.writer-count}}
+    task.writer-count={{.Values.presto.task.writerCount}}
     
   health_check.sh: |
     #!/bin/bash
