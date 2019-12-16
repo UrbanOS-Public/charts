@@ -309,7 +309,26 @@ entries:
     version: 2.0.1
   kubernetes-data-platform:
   - apiVersion: v1
-    created: "2019-11-08T22:33:39.564976281-05:00"
+    created: 2019-12-16T13:48:28.671298-05:00
+    description: Hadoop-less data platform for the Smart City OS
+    digest: 3e467f5a0f25f229259b40699b0cca1075e6fe7e5bbcc114df7a2f2a9c5132de
+    keywords:
+    - presto
+    - hive-metastore
+    - cloud-object-store
+    - minio
+    name: kubernetes-data-platform
+    sources:
+    - https://github.com/prestodb/presto
+    - https://github.com/apache/hive
+    - https://github.com/minio/minio
+    - https://github.com/helm/helm
+    tillerVersion: '>=2.8.0'
+    urls:
+    - kubernetes-data-platform-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v1
+    created: 2019-11-08T22:33:39.564976281-05:00
     description: Hadoop-less data platform for the Smart City OS
     digest: bf9e5696039bbb5bfd03cf032bf05cb95ab935730f09926c7890388fc93f83c2
     keywords:
