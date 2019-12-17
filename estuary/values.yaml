@@ -1,6 +1,8 @@
 presto:
   user: "estuary"
   url: "http://kdp-kubernetes-data-platform-presto.kdp:8080"
+  schema_name: event_stream
+  table_name: history
 
 kafka:
   #comma delimited list of kafka seed brokers
@@ -8,7 +10,6 @@ kafka:
 
 estuary:
   data_topic: event-stream
-  table_name: history
   dlq_topic: streaming-dead-letters
 
 image:
