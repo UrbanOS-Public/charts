@@ -31,7 +31,7 @@ spec:
           - name: SCHEMA_NAME
             value: {{ .Values.presto.schema_name }}
           - name: TABLE_NAME
-            value: {{ .Values.estuary.table_name }}
+            value: {{ .Values.presto.table_name }}
           - name: KAFKA_BROKERS
             value: {{ .Values.kafka.brokers }}
           - name: DATA_TOPIC
