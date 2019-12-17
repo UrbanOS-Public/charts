@@ -8,7 +8,7 @@ kafka:
 
 estuary:
   data_topic: event-stream
-  table_name: event_stream
+  table_name: history
   dlq_topic: streaming-dead-letters
 
 image:
