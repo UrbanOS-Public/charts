@@ -21,3 +21,4 @@ data:
     memory.heap-headroom-per-node={{ .Values.presto.query.heapHeadroomPerNode }}
     discovery-server.enabled=true
     discovery.uri=http://{{ template "kdp.presto.fullname" . }}:{{ .Values.presto.service.port }}
+    task.writer-count={{ .Values.presto.task.writerCount }}
