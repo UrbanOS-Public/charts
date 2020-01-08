@@ -438,9 +438,9 @@ entries:
   platform:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-26T09:25:06.137103-05:00
+    created: 2020-01-07T15:06:42.676747-05:00
     description: Master chart that deploys the data platform.
-    digest: cf68f52a9299612df11f9772f08afc55acbeda3b85f8e2599122b60378c0ac0a
+    digest: d852a2a6cd522925cb41cf511d7168ee882f378e94814a18f43a18b033e8f612
     name: platform
     urls:
     - platform-0.0.4.tgz
@@ -475,10 +475,20 @@ entries:
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-26T09:00:54.105663-05:00
+    created: 2019-12-06T15:19:07.590934-05:00
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
-    digest: 2eecb051057ebb891711eb197a5b97a6543bb48bc0365970ff28f436e6181386
+    digest: e1402147f8752763ce3fc2741752ae89b66db6ac32ba274f99844e92c19a4136
+    name: reaper
+    urls:
+    - reaper-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-12-06T13:47:40.581027-05:00
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
+    digest: 461e8f34eea8e4cd90fea864cb7cf5098186b241c9f203c3d5e56f1e76cb3f0a
     name: reaper
     urls:
     - reaper-0.1.2.tgz
@@ -588,4 +598,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-11-26T09:25:06.132301-05:00
+generated: 2020-01-07T15:06:42.672453-05:00
