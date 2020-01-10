@@ -1,7 +1,6 @@
 presto:
   user: "estuary"
   url: "http://kdp-kubernetes-data-platform-presto.kdp:8080"
-  schema_name: event_stream
   table_name: history
 
 kafka:

@@ -28,8 +28,6 @@ spec:
             value: {{ .Values.presto.url }}
           - name: PRESTO_USER
             value: {{ .Values.presto.user }}
-          - name: SCHEMA_NAME
-            value: {{ .Values.presto.schema_name }}
           - name: TABLE_NAME
             value: {{ .Values.presto.table_name }}
           - name: KAFKA_BROKERS
