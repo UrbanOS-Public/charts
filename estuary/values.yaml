@@ -1,7 +1,7 @@
 presto:
   user: "estuary"
   url: "http://kdp-kubernetes-data-platform-presto.kdp:8080"
-  table_name: history
+  table_name: event_stream
 
 kafka:
   #comma delimited list of kafka seed brokers
