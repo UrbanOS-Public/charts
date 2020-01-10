@@ -169,7 +169,16 @@ entries:
   discovery-ui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-09-26T14:50:26.254629-04:00
+    created: "2020-01-10T09:38:20.844071-05:00"
+    description: A helm chart for the discovery ui
+    digest: 0ead3043078b591836305c08df60b696d7c03afc8f38c63be0f1f4453088258a
+    name: discovery-ui
+    urls:
+    - discovery-ui-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-09-26T14:50:26.254629-04:00"
     description: A helm chart for the discovery ui
     digest: 8aac23502d772964f7487968e992a97797bc9f3441775a265992348dde8841b4
     name: discovery-ui

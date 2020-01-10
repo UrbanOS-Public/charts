@@ -40,3 +40,5 @@ spec:
             value: {{ .Values.env.auth0_client_id }}
           - name: "AUTH0_AUDIENCE"
             value: {{ .Values.env.auth0_audience }}
+          - name: "ADDITIONAL_CSP_HOSTS"
+            value: {{ .Values.env.additional_csp_hosts }}
