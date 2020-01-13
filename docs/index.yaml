@@ -621,7 +621,7 @@ entries:
   voltron:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-08-07T10:39:53.470155604-04:00"
+    created: 2019-08-07T10:39:53.470155604-04:00
     description: Data transformation service
     digest: 576583de8380dfd0fece1eb0adc46eadb302ccce65915c7d604649279d3672c8
     name: voltron
