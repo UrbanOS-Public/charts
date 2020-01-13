@@ -36,6 +36,9 @@ spec:
             value: {{ .Values.estuary.data_topic }}
           - name: DLQ_TOPIC
             value: {{ .Values.estuary.dlq_topic }}
+          {{ if .Values.compactionSchedule }}
+          - name: COMPACTION_SCHEDULE
+            value: {{.Values.compactionSchedule | quote }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
