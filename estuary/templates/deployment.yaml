@@ -39,6 +39,7 @@ spec:
           {{ if .Values.compactionSchedule }}
           - name: COMPACTION_SCHEDULE
             value: {{.Values.compactionSchedule | quote }}
+          {{ end -}}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
