@@ -3,5 +3,4 @@ kind: ConfigMap
 metadata:
   name: google-credentials
 data:
-  config.json: |
-    {{ .Values.minio.googleServiceKey }}
+  config.json: {{ .Values.minio.googleServiceKey | toJson | quote }}
