@@ -128,7 +128,17 @@ entries:
   discovery-streams:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-12-12T14:56:44.062504-05:00
+    created: "2020-01-16T10:35:33.701193-05:00"
+    description: Dynamically find kafka topics and makes available corresponding channels
+      on a public websocket
+    digest: a486adda7ca32422b1eff5269a8fc1aecc51cca129bf678527090c950b711286
+    name: discovery-streams
+    urls:
+    - discovery-streams-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-12-12T14:56:44.062504-05:00"
     description: Dynamically find kafka topics and makes available corresponding channels
       on a public websocket
     digest: 0357c54697a3ec4439f7e9731845e60cf8dc001053f8e645a1ef99e20303e169
@@ -167,6 +177,15 @@ entries:
     - discovery-streams-0.1.2.tgz
     version: 0.1.2
   discovery-ui:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-01-16T10:35:40.206062-05:00"
+    description: A helm chart for the discovery ui
+    digest: 44951989f60899deba97f1b4b7cbd3cf5ea4efe63c2b9b0e60d3ce02323dd48a
+    name: discovery-ui
+    urls:
+    - discovery-ui-0.3.1.tgz
+    version: 0.3.1
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-01-10T10:30:11.851206-05:00"
