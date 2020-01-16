@@ -11,6 +11,7 @@ metadata:
     alb.ingress.kubernetes.io/tags: scos.delete.on.teardown=true
     alb.ingress.kubernetes.io/healthcheck-path: /socket/healthcheck
     alb.ingress.kubernetes.io/certificate-arn: {{ .Values.ingress.certificateARN }}
+    alb.ingress.kubernetes.io/ssl-policy: "ELBSecurityPolicy-TLS-1-2-2017-01"
 spec:
   backend:
     serviceName: {{ .Chart.Name }}
