@@ -45,6 +45,11 @@ spec:
             value: {{ .Values.ldap.user }}
           - name: LDAP_ACCOUNT_SUBDN
             value: {{ .Values.ldap.account.subdn }}
+          - name: PRESIGN_KEY
+            valueFrom:
+              secretKeyRef:
+                name: discovery-api-presign-key
+                key: discovery-api-presign-key
           - name: LDAP_PASS
             valueFrom:
               secretKeyRef:
