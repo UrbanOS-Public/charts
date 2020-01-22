@@ -71,3 +71,8 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
+          - name: LIVEVIEW_SALT
+            valueFrom:
+              secretKeyRef:
+                name: andi_lv_salt
+                key: salt
