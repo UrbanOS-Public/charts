@@ -22,7 +22,7 @@ presto:
     replicas: 1
     container:
       image: smartcitiesdata/presto
-      tag: 0.9.12
+      tag: 0.10.0
       pullPolicy: Always
       resources:
         limits:
