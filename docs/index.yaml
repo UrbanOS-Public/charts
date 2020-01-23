@@ -137,7 +137,7 @@ entries:
   discovery-streams:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-16T10:35:33.701193-05:00"
+    created: 2020-01-16T10:35:33.701193-05:00
     description: Dynamically find kafka topics and makes available corresponding channels
       on a public websocket
     digest: a486adda7ca32422b1eff5269a8fc1aecc51cca129bf678527090c950b711286
@@ -147,7 +147,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-12T14:56:44.062504-05:00"
+    created: 2019-12-12T14:56:44.062504-05:00
     description: Dynamically find kafka topics and makes available corresponding channels
       on a public websocket
     digest: 0357c54697a3ec4439f7e9731845e60cf8dc001053f8e645a1ef99e20303e169
@@ -188,7 +188,7 @@ entries:
   discovery-ui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-16T10:35:40.206062-05:00"
+    created: 2020-01-16T10:35:40.206062-05:00
     description: A helm chart for the discovery ui
     digest: 44951989f60899deba97f1b4b7cbd3cf5ea4efe63c2b9b0e60d3ce02323dd48a
     name: discovery-ui
@@ -197,7 +197,7 @@ entries:
     version: 0.3.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-10T10:30:11.851206-05:00"
+    created: 2020-01-10T10:30:11.851206-05:00
     description: A helm chart for the discovery ui
     digest: e63095d6b093d5c3a2ed9c524d76cbfa0fc07d4d2a8d34d2c4d3beb7712c1496
     name: discovery-ui
@@ -401,6 +401,25 @@ entries:
     - genesis-2.0.1.tgz
     version: 2.0.1
   kubernetes-data-platform:
+  - apiVersion: v1
+    created: 2020-01-23T14:20:21.816028-05:00
+    description: Hadoop-less data platform for the Smart City OS
+    digest: 39aec1825475b074c7a8550a1bce008a0e28a13131aa8c0352a0150365977839
+    keywords:
+    - presto
+    - hive-metastore
+    - cloud-object-store
+    - minio
+    name: kubernetes-data-platform
+    sources:
+    - https://github.com/prestodb/presto
+    - https://github.com/apache/hive
+    - https://github.com/minio/minio
+    - https://github.com/helm/helm
+    tillerVersion: '>=2.8.0'
+    urls:
+    - kubernetes-data-platform-1.3.0.tgz
+    version: 1.3.0
   - apiVersion: v1
     created: 2019-12-18T09:47:55.912918-05:00
     description: Hadoop-less data platform for the Smart City OS
@@ -656,4 +675,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2020-01-13T17:19:06.898967019-05:00
+generated: 2020-01-23T14:20:21.814296-05:00
