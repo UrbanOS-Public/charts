@@ -36,6 +36,23 @@ spec:
             value: {{ .Values.estuary.data_topic }}
           - name: DLQ_TOPIC
             value: {{ .Values.estuary.dlq_topic }}
+          - name: NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: NODE_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: NODE_ID
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: LIVEVIEW_SALT
+            valueFrom:
+              secretKeyRef:
+                name: estuary_lv_salt
+                key: salt
           {{ if .Values.compactionSchedule }}
           - name: COMPACTION_SCHEDULE
             value: {{.Values.compactionSchedule | quote }}
