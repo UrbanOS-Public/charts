@@ -51,7 +51,7 @@ spec:
           - name: LIVEVIEW_SALT
             valueFrom:
               secretKeyRef:
-                name: estuary_lv_salt
+                name: estuary-lv-salt
                 key: salt
           {{ if .Values.compactionSchedule }}
           - name: COMPACTION_SCHEDULE
