@@ -74,5 +74,5 @@ spec:
           - name: LIVEVIEW_SALT
             valueFrom:
               secretKeyRef:
-                name: andi_lv_salt
+                name: andi-lv-salt
                 key: salt
