@@ -39,7 +39,7 @@ service:
 secrets:
   live_view:
     enable: true
-    value: "dev_only_enable_false_and_define_out_of_source_in_prod"
+    value: "devonlyenablefalseanddefineoutofsourceinprod"
 
 ingress:
   enabled: false
