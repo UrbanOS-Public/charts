@@ -23,7 +23,7 @@ resources:
     cpu: 300m
   requests:
     memory: 2Gi
-    cpu: 100m
+    cpu: 300m
 
 prometheus:
   scrape: true
