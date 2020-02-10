@@ -79,16 +79,25 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: 2020-01-22T13:30:54.513673-05:00
+    created: "2020-02-10T12:37:45.57104-05:00"
     description: A middleware layer to connect data consumers with the data sources
-    digest: 2e62eda99d4dc297869ff02684b80c3f7d0573b746c5d0b6746a7f7a1eaca126
+    digest: 7aa9cbc1feb4cd92e7d0495244efa22ea8266eaf98abed0bfa85889e016b5ee8
+    name: discovery-api
+    urls:
+    - discovery-api-0.7.0.tgz
+    version: 0.7.0
+  - apiVersion: v1
+    appVersion: 1.0.0-static
+    created: "2020-02-10T10:40:44.635631-05:00"
+    description: A middleware layer to connect data consumers with the data sources
+    digest: bc12b6f3d300b63ec1a864533a24e5ff72f127d6840676458aef397c02e32afa
     name: discovery-api
     urls:
     - discovery-api-0.6.0.tgz
     version: 0.6.0
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: 2019-12-03T10:30:22.898932-05:00
+    created: "2019-12-03T10:30:22.898932-05:00"
     description: A middleware layer to connect data consumers with the data sources
     digest: a0d20a5ceedf024c91a5409de25df462ee9be1ca30c68327702123f49f8f46ba
     name: discovery-api

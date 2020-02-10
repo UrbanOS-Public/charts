@@ -27,6 +27,10 @@ spec:
             value: {{ .Values.kafka.brokers }}
           - name: REDIS_HOST
             value: {{ .Values.redis.host }}
+{{- if .Values.redis.password }}
+          - name: REDIS_PASSWORD
+            value: {{ .Values.redis.password }}
+{{- end }}
           - name: PRESTO_URL
             value: {{ .Values.presto.url }}
           - name: PRESTO_CATALOG
