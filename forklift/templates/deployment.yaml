@@ -51,6 +51,10 @@ spec:
           - name: COMPACTION_SCHEDULE
             value: {{.Values.compactionSchedule | quote }}
           {{ end -}}
+          {{ if .Values.kdp.bucket }}
+          - name: S3_WRITER_BUCKET
+            value: {{ .Values.kdp.bucket }}
+          {{ end -}}
           - name: NAMESPACE
             valueFrom:
               fieldRef:
