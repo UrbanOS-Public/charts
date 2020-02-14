@@ -44,6 +44,10 @@ vault:
       boundServiceAccountNamespaces: admin
       policies: dataset_access_keys
       tokenTtl: 2m
+    - name: forklift-role
+      boundServiceAccounts: forklift
+      boundServiceAccountNamespaces: streaming-services
+      policies: forklift_aws
 
   policies:
     - name: dataset_access_keys
@@ -54,6 +58,8 @@ vault:
       path: secrets/smart_city/aws_keys/odo
     - name: discovery_api_aws
       path: secrets/smart_city/aws_keys/discovery_api
+    - name: forklift_aws
+      path: secrets/smart_city/aws_keys/forklift
 
 kubectl:
   version: "1.14.0"
