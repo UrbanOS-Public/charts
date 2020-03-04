@@ -88,3 +88,9 @@ spec:
             value: {{ quote .Values.auth.jwks_endpoint }}
           - name: AUTH_USER_INFO_ENDPOINT
             value: {{ quote .Values.auth.user_info_endpoint }}
+          - name: AUTH_DOMAIN
+            value: {{ quote .Values.auth.domain }}
+          - name: AUTH_CLIENT_ID
+            value: {{ quote .Values.auth.client_id }}
+          - name: AUTH_REDIRECT_BASE_URL
+            value: {{ quote .Values.auth.redirect_base_url }}
