@@ -83,11 +83,11 @@ spec:
           - name: AUTH_PROVIDER
             value: {{ quote .Values.auth.provider }}
           - name: AUTH_JWT_ISSUER
-            value: {{ printf "https://%s/" .Values.auth.domain | quote}}
+            value: {{ quote .Values.auth.jwt_issuer }}
           - name: AUTH_JWKS_ENDPOINT
-            value: {{ printf "https://%s/.well-known/jwks.json" .Values.auth.domain | quote}}
+            value: {{ quote .Values.auth.jwks_endpoint }}
           - name: AUTH_USER_INFO_ENDPOINT
-            value: {{ printf "https://%s/userinfo" .Values.auth.domain | quote}}
+            value: {{ quote .Values.auth.user_info_endpoint }}
           - name: AUTH_DOMAIN
             value: {{ quote .Values.auth.domain }}
           - name: AUTH_CLIENT_ID

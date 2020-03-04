@@ -66,3 +66,6 @@ auth:
   domain: "example.com"
   client_id: "1234"
   redirect_base_url: "http://localhost"
+  jwks_endpoint: "https://example.com/.well-known/jwks.json"
+  jwt_issuer: "https://example.com/"
+  user_info_endpoint: "https://example.com/userinfo"
