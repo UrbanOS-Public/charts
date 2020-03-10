@@ -27,8 +27,8 @@ spec:
           serviceName: redirect
           servicePort: use-annotation
   - http:
-    paths:
-    - path: /*
-      backend:
-        serviceName: redirect
-        servicePort: use-annotation
+      paths:
+      - path: /*
+        backend:
+          serviceName: redirect
+          servicePort: use-annotation
