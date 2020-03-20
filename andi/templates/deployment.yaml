@@ -30,6 +30,8 @@ spec:
           env:
           - name: REDIS_HOST
             value: {{ .Values.redis.host }}
+          - name: REDIS_PASSWORD
+            value: {{ .Values.redis.password }}
           - name: KAFKA_BROKERS
             value: {{ .Values.strimzi.kafka.brokers | default (include "kafka.brokerservice" .) }}
           - name: RUN_IN_KUBERNETES

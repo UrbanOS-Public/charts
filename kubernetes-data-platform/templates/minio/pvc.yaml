@@ -1,5 +1,5 @@
 {{- if .Values.minio.enable -}}
-{{ if not .Values.minio.azure.enable }}
+{{ if not .Values.minio.gateway.enable }}
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:

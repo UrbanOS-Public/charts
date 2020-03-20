@@ -25,6 +25,7 @@ kafka:
 
 redis:
   host: redis.external-services
+  password: ""
 
 nameOverride: ""
 fullnameOverride: ""
