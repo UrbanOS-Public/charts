@@ -1,4 +1,4 @@
-{{- if .Values.ldap.enabled }}
+{{- if .Values.openldap.enabled }}
 apiVersion: v1
 kind: Service
 metadata:

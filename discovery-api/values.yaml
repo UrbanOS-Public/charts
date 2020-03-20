@@ -33,7 +33,7 @@ kafka:
 
 redis:
   host: discovery-api-redis-master
-  password: null
+  password: ""
 
 presto:
   url: "http://presto-endpoint:8080"

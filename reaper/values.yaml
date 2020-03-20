@@ -1,6 +1,8 @@
 outputTopicPrefix: raw
 dlqTopic: streaming-dead-letters
 replicaCount: 1
+metadata:
+  labels:
 image:
   repository: smartcitiesdata/reaper
   tag: development
@@ -15,6 +17,8 @@ aws:
 
 redis:
   host: redis.external-services
+  password: ""
+  
 strimzi:
   kafka:
     brokers: streaming-service-kafka-bootstrap.streaming-prime:9092

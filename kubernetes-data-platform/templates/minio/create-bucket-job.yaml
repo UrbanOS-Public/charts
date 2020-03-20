@@ -1,4 +1,4 @@
-{{- if .Values.minio.enable -}}
+{{- if and .Values.minio.enable (not .Values.minio.gateway.enable) -}}
 apiVersion: batch/v1
 kind: Job
 metadata:

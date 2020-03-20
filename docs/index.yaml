@@ -36,7 +36,15 @@ entries:
   - apiVersion: v1
     created: "2019-10-31T10:40:40.773138-04:00"
     description: REST API to allow for dataset definition ingestion
-    digest: 748cb1a2d42f9f03a2a105cfe33fed909b5d9e54a3533ee1787b76464b5a57b1
+    digest: 89965919b438c3d79bf3020d4d820bf9b0138340eeffadbfe11ddb186d6ee946
+    name: andi
+    urls:
+    - andi-1.1.3.tgz
+    version: 1.1.3
+  - apiVersion: v1
+    created: "2019-11-19T16:18:41.444293-05:00"
+    description: REST API to allow for dataset definition ingestion
+    digest: ba9b4c8b9d2597f8ee3ed8e930f94cc98ac54d2576692c13f4ebff4ce3d3ce4f
     name: andi
     urls:
     - andi-1.1.2.tgz
@@ -143,7 +151,7 @@ entries:
     appVersion: 1.0.0-static
     created: "2019-11-11T09:30:24.953952-05:00"
     description: A middleware layer to connect data consumers with the data sources
-    digest: 470cd2e312e7458865f8def8fe29fa24139fe0fd1e61bb7d7c8cb02921f995fe
+    digest: 6a8c4c78dd7c395cb7f3f2fab3c735fee1ea8a93eb0be5086106f91b9e4e3cd8
     name: discovery-api
     urls:
     - discovery-api-0.4.3.tgz
@@ -451,7 +459,7 @@ entries:
     appVersion: "1.0"
     created: "2019-08-30T15:31:41.177188754-04:00"
     description: Loads data from the transformed topic into Presto
-    digest: 84c751d79e03f7f00b632e51caf07ee4f748eed0b25a35d68adb1f37b105b8e1
+    digest: 4d1829b3a54ba603385caea8297d21b42f1d97c4413e8802b9a45dbd77352460
     name: forklift
     urls:
     - forklift-2.4.0.tgz
@@ -675,6 +683,33 @@ entries:
   platform:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2020-01-16T12:37:55.017592-05:00"
+    description: Master chart that deploys the data platform.
+    digest: b46931ea37efbce0355297cc380e574d4fcd5488dfed8db74fabd60fb9ea21f5
+    name: platform
+    urls:
+    - platform-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-11-21T10:56:28.447042-05:00"
+    description: Master chart that deploys the data platform.
+    digest: 564927370c2200bcd620263db77a4f0bf1e8af766dcfcb0f6d19c1a0f82add90
+    name: platform
+    urls:
+    - platform-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-11-11T15:20:39.134892-05:00"
+    description: Master chart that deploys the data platform.
+    digest: 871b42df72b19a6cebb9b03eba9b70c7a18ce611c51291228ad200882fcaee1f
+    name: platform
+    urls:
+    - platform-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2019-10-31T11:38:16.303037-04:00"
     description: Master chart that deploys the OS. Targets minikube
     digest: 60b6a620f908f88bd1a0a0232809546c63c0e4817659b5a48588b9c1204048b1
@@ -683,6 +718,16 @@ entries:
     - platform-0.0.1.tgz
     version: 0.0.1
   reaper:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-03-20T16:09:06.768775-04:00"
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
+    digest: 5239150ec8dfad6320f78f6c03247e42f5ff8f0de2b6eced78f20b6b5a664388
+    name: reaper
+    urls:
+    - reaper-0.1.3.tgz
+    version: 0.1.3
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-01-27T13:15:25.851969-05:00"
@@ -695,10 +740,10 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-08-07T10:39:41.511373444-04:00"
+    created: "2019-11-19T15:46:47.610453-05:00"
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
-    digest: 20a2be9806c4f46afc6b8fa933588c772370bab08446bcbc33d2694b93fa0e2b
+    digest: e76492a7868c67261bf4a08beae9bf971d016ada1aee58398f4a44d0a90f254e
     name: reaper
     urls:
     - reaper-0.1.1.tgz
@@ -726,9 +771,9 @@ entries:
   valkyrie:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-27T13:41:41.513043-05:00"
+    created: "2020-03-20T16:09:13.087005-04:00"
     description: Validates data from raw topic and writes it to validated topic
-    digest: 88229348294fa057d268d1b5917308adb9b9d97d1039ce59764ce7d536bfcdd6
+    digest: 6d82cd68e17b608ef80e291e7ac8864e1694c79b4e8238b53dfe02d464ef6914
     name: valkyrie
     urls:
     - valkyrie-2.4.1.tgz
@@ -737,7 +782,7 @@ entries:
     appVersion: "1.0"
     created: "2019-08-30T11:22:56.361093-04:00"
     description: Validates data from raw topic and writes it to validated topic
-    digest: b9b918ace36cf1019331561c98b2e0073483c71cc656c6b722b5710d05cbf9e6
+    digest: 986fc4774801840a7df64001e82e9b1943bed3584512517667e268ae2535a7cf
     name: valkyrie
     urls:
     - valkyrie-2.4.0.tgz
@@ -798,4 +843,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2020-03-10T14:59:26.649238-04:00"
+generated: "2020-03-20T16:09:13.085477-04:00"
