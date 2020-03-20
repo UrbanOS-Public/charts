@@ -4,7 +4,7 @@ kind: KafkaTopic
 metadata:
   name: streaming-dead-letters
   labels:
-    strimzi.io/cluster: streaming-service
+    strimzi.io/cluster: {{ .Values.kafka.strimziCluster }}
 spec:
   partitions: 1
   replicas: 1
@@ -15,7 +15,7 @@ kind: KafkaTopic
 metadata:
   name: event-stream
   labels:
-    strimzi.io/cluster: streaming-service
+    strimzi.io/cluster: {{ .Values.kafka.strimziCluster }}
 spec:
   partitions: 1
   replicas: 1
