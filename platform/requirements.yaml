@@ -9,7 +9,7 @@ dependencies:
     condition: andi.enabled
   - name: discovery-api
     version: 0.4.4
-    repository: https://raw.githubusercontent.com/PillarTechnology/charts-1/master/docs
+    repository: https://smartcitiesdata.github.io/charts
     condition: discovery-api.enabled
   - name: discovery-streams
     version: 0.1.4
