@@ -17,7 +17,7 @@ dependencies:
     condition: discovery-streams.enabled
   - name: flair
     version: 2.1.0
-    repository:  https://smartcitiesdata.github.io/charts
+    repository: https://smartcitiesdata.github.io/charts
     condition: flair.enabled
   - name: forklift
     version: 2.4.1
