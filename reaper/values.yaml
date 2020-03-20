@@ -4,8 +4,8 @@ replicaCount: 1
 metadata:
   labels:
 image:
-  repository: rconaway2/reaper
-  tag: 86.0.0
+  repository: smartcitiesdata/reaper
+  tag: development
   pullPolicy: Always
 service:
   port: 9092
