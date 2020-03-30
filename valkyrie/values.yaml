@@ -31,6 +31,8 @@ fullnameOverride: ""
 
 processor_stages: 1
 
+profiling_status: true
+
 resources:
   limits:
     cpu: 300m
