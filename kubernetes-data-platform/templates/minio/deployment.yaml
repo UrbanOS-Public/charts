@@ -1,5 +1,4 @@
 {{- if .Values.minio.enable -}}
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -28,9 +27,9 @@ spec:
           command:
           - minio
           args:
-          {{ if .Values.minio.azure.enable }}
+          {{ if .Values.minio.gateway.enable }}
           - gateway
-          - azure
+          - {{ .Values.minio.gateway.type }}
           {{ else }}
           - server
           - /data
@@ -40,10 +39,24 @@ spec:
             value: {{ .Values.global.objectStore.accessKey }}
           - name: MINIO_SECRET_KEY
             value: {{ .Values.global.objectStore.accessSecret }}
+          {{ if eq .Values.minio.gateway.type "gcs" }}
+          - name: GOOGLE_APPLICATION_CREDENTIALS
+            value: /data/config.json
+          {{ end }}
           ports:
           - containerPort: {{ .Values.minio.service.port }}
             name: minio
-          {{ if not .Values.minio.azure.enable }}
+          {{ if eq .Values.minio.gateway.type "gcs" }}
+          volumeMounts:
+          - mountPath: /data/config.json
+            name: google-credentials
+            subPath: config.json
+      volumes:
+        - name: google-credentials
+          configMap:
+            name: google-credentials
+          {{ end }}
+          {{ if not .Values.minio.gateway.enable }}
           volumeMounts:
           - mountPath: /data
             name: cloud-storage
@@ -51,5 +64,5 @@ spec:
         - name: cloud-storage
           persistentVolumeClaim:
             claimName: {{ template "kdp.minio.fullname" . }}-storage
-          {{ end }}
+          {{- end }}
 {{- end }}

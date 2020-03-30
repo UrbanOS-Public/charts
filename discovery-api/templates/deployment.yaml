@@ -27,6 +27,8 @@ spec:
             value: {{ .Values.kafka.brokers }}
           - name: REDIS_HOST
             value: {{ .Values.redis.host }}
+          - name: REDIS_PASSWORD
+            value: {{ .Values.redis.password }}
           - name: PRESTO_URL
             value: {{ .Values.presto.url }}
           - name: PRESTO_CATALOG
@@ -45,6 +47,11 @@ spec:
             value: {{ .Values.ldap.user }}
           - name: LDAP_ACCOUNT_SUBDN
             value: {{ .Values.ldap.account.subdn }}
+          - name: PRESIGN_KEY
+            valueFrom:
+              secretKeyRef:
+                name: discovery-api-presign-key
+                key: discovery-api-presign-key
           - name: LDAP_PASS
             valueFrom:
               secretKeyRef:
@@ -71,11 +78,15 @@ spec:
             value: {{ .Values.postgres.password }}
           - name: POSTGRES_PORT
             value: {{ quote .Values.postgres.port }}
-          - name: AUTH_PROVIDER
-            value: {{ quote .Values.auth.provider }}
           - name: AUTH_JWT_ISSUER
             value: {{ quote .Values.auth.jwt_issuer }}
           - name: AUTH_JWKS_ENDPOINT
             value: {{ quote .Values.auth.jwks_endpoint }}
           - name: AUTH_USER_INFO_ENDPOINT
             value: {{ quote .Values.auth.user_info_endpoint }}
+          - name: AUTH_DOMAIN
+            value: {{ quote .Values.auth.domain }}
+          - name: AUTH_CLIENT_ID
+            value: {{ quote .Values.auth.client_id }}
+          - name: AUTH_REDIRECT_BASE_URL
+            value: {{ quote .Values.auth.redirect_base_url }}

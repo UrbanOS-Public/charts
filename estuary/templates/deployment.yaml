@@ -23,6 +23,8 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 4000
           env:
           - name: PRESTO_URL
             value: {{ .Values.presto.url }}
@@ -36,9 +38,27 @@ spec:
             value: {{ .Values.estuary.data_topic }}
           - name: DLQ_TOPIC
             value: {{ .Values.estuary.dlq_topic }}
+          - name: NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: NODE_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: NODE_ID
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: LIVEVIEW_SALT
+            valueFrom:
+              secretKeyRef:
+                name: estuary-lv-salt
+                key: salt
           {{ if .Values.compactionSchedule }}
           - name: COMPACTION_SCHEDULE
             value: {{.Values.compactionSchedule | quote }}
+          {{ end -}}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}

@@ -27,3 +27,24 @@ affinity: {}
 
 # Dataset compaction is off by default. If it is needed, set compactionSchedule to a valid cron string such as "00 01 * * *" (This will run compaction nightly at 1:00am)
 compactionSchedule: null
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 4000
+
+secrets:
+  live_view:
+    enable: true
+    value: "devonlyenablefalseanddefineoutofsourceinprod"
+
+ingress:
+  enabled: false
+  scheme: ""
+  subnets: ""
+  securityGroups: ""
+  certificateARN: ""
+  dnsZone: "localhost"

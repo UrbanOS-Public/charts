@@ -22,7 +22,7 @@ presto:
     replicas: 1
     container:
       image: smartcitiesdata/presto
-      tag: 0.9.12
+      tag: 0.10.0
       pullPolicy: Always
       resources:
         limits:
@@ -102,6 +102,16 @@ postgres:
 
 minio:
   enable: true
+  gateway:
+    enable: false
+    type: azure
+  googleCredentials:
+    project_id: ''
+    private_key_id: ''
+    private_key: ''
+    client_email: ''
+    client_id: ''
+    client_x509_cert_url: ''
   storage:
     mode: ReadWriteOnce
     size: 5Gi
@@ -121,8 +131,6 @@ minio:
         maxUnavailable: 1
   ingress:
     enable: true
-  azure:
-    enable: false
 
 hook:
   container:
@@ -135,4 +143,3 @@ global:
     bucketName: kdp-cloud-storage
     accessKey: accessKey
     accessSecret: accessSecret
-

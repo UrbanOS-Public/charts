@@ -10,6 +10,7 @@ monitoring:
 
 redis:
   host: redis.external-services
+  password: ""
 
 strimzi:
   kafka:
@@ -22,6 +23,11 @@ service:
   type: NodePort
   port: 80
   targetPort: 80
+
+secrets:
+  live_view:
+    enable: true
+    value: "devonlyenablefalseanddefineoutofsourceinprod"
 
 ingress:
   enabled: false
@@ -37,4 +43,4 @@ resources:
     cpu: 150m
   requests:
     memory: 256Mi
-    cpu: 50m
+    cpu: 150m

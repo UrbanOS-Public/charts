@@ -25,6 +25,7 @@ kafka:
 
 redis:
   host: redis.external-services
+  password: ""
 
 nameOverride: ""
 fullnameOverride: ""
@@ -38,7 +39,7 @@ resources:
     cpu: 300m
     memory: 512Mi
   requests:
-    cpu: 100m
+    cpu: 300m
     memory: 512Mi
 
 nodeSelector: {}
