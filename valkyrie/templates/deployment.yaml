@@ -44,8 +44,8 @@ spec:
             value: {{ .Values.redis.password }}
           - name: PROCESSOR_STAGES
             value: {{ .Values.processor_stages | quote }}
-          - name: PROFILING_STATUS
-            value: {{ .Values.profiling_status | quote }}
+          - name: PROFILING_ENABLED
+            value: {{ .Values.profiling_enabled | quote }}
           - name: NAMESPACE
             valueFrom:
               fieldRef:

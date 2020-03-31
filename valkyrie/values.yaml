@@ -32,7 +32,7 @@ fullnameOverride: ""
 
 processor_stages: 1
 
-profiling_status: false
+profiling_enabled: false
 
 resources:
   limits:
