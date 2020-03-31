@@ -45,7 +45,7 @@ spec:
           - name: PROCESSOR_STAGES
             value: {{ .Values.processor_stages | quote }}
           - name: PROFILING_STATUS
-            value: {{ .Values.profiling_status }}
+            value: {{ .Values.profiling_status | quote }}
           - name: NAMESPACE
             valueFrom:
               fieldRef:
