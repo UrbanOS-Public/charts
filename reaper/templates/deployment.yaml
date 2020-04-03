@@ -54,6 +54,8 @@ spec:
           value: {{ .Values.aws.hostedFileBucket }}
         - name: AWS_REGION
           value: {{ .Values.aws.region }}
+        - name: PROFILING_ENABLED
+          value: {{ .Values.profiling_enabled | quote }}
         - name: NAMESPACE
           valueFrom:
             fieldRef:
