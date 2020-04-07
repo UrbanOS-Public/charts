@@ -49,6 +49,8 @@ spec:
             value: {{.Values.kdp.user}}
           - name: METRICS_PORT
             value: {{.Values.prometheus.metrics_port | quote }}
+          - name: PROFILING_ENABLED
+            value: {{ .Values.profiling_enabled | quote }}
           {{ if .Values.compactionSchedule }}
           - name: COMPACTION_SCHEDULE
             value: {{.Values.compactionSchedule | quote }}
