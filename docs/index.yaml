@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   andi:
   - apiVersion: v1
+    created: "2020-04-15T12:04:37.691153-04:00"
+    description: REST API to allow for dataset definition ingestion
+    digest: 49e8ac708330aaed41c1574f9c93c1d2101f0dd2ff80a40bd958fd1c55da4d41
+    name: andi
+    urls:
+    - andi-1.3.0.tgz
+    version: 1.3.0
+  - apiVersion: v1
     created: "2020-02-10T14:56:12.182537-05:00"
     description: REST API to allow for dataset definition ingestion
     digest: 6dc9dbb7f65a24b78d41a9ad3e1c0ea3548ef0501fdb32490115fc43b38a0d33
@@ -95,7 +103,7 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: 2020-03-24T09:37:11.365062699-04:00
+    created: "2020-03-24T09:37:11.365062699-04:00"
     description: A middleware layer to connect data consumers with the data sources
     digest: 763d9a31db23f6f39689262afb75cde9a2c3ac0af0ecf774d4516612ac09ca6f
     name: discovery-api
@@ -104,7 +112,7 @@ entries:
     version: 0.9.0
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: 2020-03-10T14:59:26.649868-04:00
+    created: "2020-03-10T14:59:26.649868-04:00"
     description: A middleware layer to connect data consumers with the data sources
     digest: 2687cd5a2abcc0e5a652e38d6b6a6b3823060f5c8acd22b16dcacd4a78922dd6
     name: discovery-api
@@ -457,7 +465,7 @@ entries:
   forklift:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2020-04-06T16:18:15.045175293-04:00
+    created: "2020-04-06T16:18:15.045175293-04:00"
     description: Loads data from the transformed topic into Presto
     digest: 2cb2721d1981576f34b52bf2dfb528a6eaedc12e7fb032023ff353e16fb9dd9c
     name: forklift
@@ -738,7 +746,7 @@ entries:
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2020-04-02T11:49:31.802477054-04:00
+    created: "2020-04-02T11:49:31.802477054-04:00"
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
     digest: 7db122721f012fd9a2b7e8bac2a9478c39c2744858af08552defd60fdcbf0d0a
@@ -799,7 +807,7 @@ entries:
   valkyrie:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2020-03-31T14:37:43.165749398-04:00
+    created: "2020-03-31T14:37:43.165749398-04:00"
     description: Validates data from raw topic and writes it to validated topic
     digest: 5653565f9891c333d618db402752378ba6ac7961ee9169dd53edbcefa9d7ab03
     name: valkyrie
@@ -808,7 +816,7 @@ entries:
     version: 2.5.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2020-03-31T12:28:50.718812641-04:00
+    created: "2020-03-31T12:28:50.718812641-04:00"
     description: Validates data from raw topic and writes it to validated topic
     digest: 0acf1dcbee87ab192de53b138da6c9d92477be64a8fda0d3f2322e7f6daa6c56
     name: valkyrie
@@ -817,7 +825,7 @@ entries:
     version: 2.5.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2020-03-31T08:51:29.941919545-04:00
+    created: "2020-03-31T08:51:29.941919545-04:00"
     description: Validates data from raw topic and writes it to validated topic
     digest: 7e563674344ff9a620193cf687f93a1ebf531d695a27b5400536cde7c393328e
     name: valkyrie
@@ -898,4 +906,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2020-04-06T16:18:15.044819531-04:00
+generated: "2020-04-15T12:04:37.688326-04:00"
