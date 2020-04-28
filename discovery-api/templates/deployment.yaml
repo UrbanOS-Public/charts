@@ -90,3 +90,5 @@ spec:
             value: {{ quote .Values.auth.client_id }}
           - name: AUTH_REDIRECT_BASE_URL
             value: {{ quote .Values.auth.redirect_base_url }}
+          - name: ELASTICSEARCH_HOST
+            value: {{ .Values.elasticsearch.host }}

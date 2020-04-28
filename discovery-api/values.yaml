@@ -61,6 +61,9 @@ postgres:
   user: "postgres"
   password: "password"
 
+elasticsearch:
+  host: "es.example.com"
+
 auth:
   domain: "example.com"
   client_id: "1234"
