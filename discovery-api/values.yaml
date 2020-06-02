@@ -21,7 +21,7 @@ image:
   pullPolicy: Always
 
 monitoring:
-  targetPort: 80
+  targetPort: 9002
 
 nodeSelector: {}
 tolerations: []

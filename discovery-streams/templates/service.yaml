@@ -6,7 +6,7 @@ metadata:
   labels:
     app: {{ .Chart.Name }}
   annotations:
-    prometheus.io/port:  "{{ .Values.service.targetPort }}"
+    prometheus.io/port:  "{{ .Values.monitoring.targetPort }}"
     prometheus.io/scrape: "true"
 spec:
   selector:
