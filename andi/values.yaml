@@ -6,7 +6,7 @@ image:
   pullPolicy: Always
 
 monitoring:
-  targetPort: 80
+  targetPort: 9002
 
 redis:
   host: redis.external-services

@@ -20,6 +20,9 @@ kafka:
 
 replicaCount: 1
 
+monitoring:
+  targetPort: 9002
+
 service:
   type: NodePort
   port: 80
