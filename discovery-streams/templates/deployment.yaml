@@ -31,6 +31,8 @@ spec:
           value: {{ .Values.redis.host }}
         - name: RUN_IN_KUBERNETES
           value: "true"
+        - name: METRICS_PORT
+          value: {{ .Values.monitoring.targetPort }}
         - name: NAMESPACE
           valueFrom:
             fieldRef:
