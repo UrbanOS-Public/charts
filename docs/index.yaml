@@ -111,9 +111,9 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: 2020-06-03T08:41:12.445336304-04:00
+    created: 2020-06-03T10:32:23.798414574-04:00
     description: A middleware layer to connect data consumers with the data sources
-    digest: 0a4fb819e23497f40b91b556dc3fb7ddb7db797a52fcee1f6d16dbab37248aec
+    digest: 7b714f8b95deabf2dc7517b5fb70f9368bf8eb2f154515d91f5edb6630414ed7
     name: discovery-api
     urls:
     - discovery-api-0.10.1.tgz
@@ -256,10 +256,10 @@ entries:
   discovery-streams:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2020-06-03T08:41:15.796059936-04:00
+    created: 2020-06-03T10:32:30.492805045-04:00
     description: Dynamically find kafka topics and makes available corresponding channels
       on a public websocket
-    digest: 5621494be91004b355a4a6938a50f6f24a5d38c15953712ea72363ec3bdad191
+    digest: 2cacb4478de063771042da803aeb52b2b17ad4fa2c30422fa8a8aaf74c5c1c9b
     name: discovery-streams
     urls:
     - discovery-streams-0.2.2.tgz
@@ -942,4 +942,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2020-06-03T08:41:15.795001507-04:00
+generated: 2020-06-03T10:32:30.492239906-04:00
