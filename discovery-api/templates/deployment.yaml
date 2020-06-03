@@ -92,3 +92,5 @@ spec:
             value: {{ quote .Values.auth.redirect_base_url }}
           - name: ELASTICSEARCH_HOST
             value: {{ .Values.elasticsearch.host }}
+          - name: METRICS_PORT
+            value: {{ .Values.monitoring.targetPort }}
