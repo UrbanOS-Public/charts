@@ -51,6 +51,3 @@ postgres:
   dbname: "postgres"
   user: "postgres"
   password: "password"
-
-telemetry:
-  port: 9568
