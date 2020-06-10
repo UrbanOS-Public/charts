@@ -34,6 +34,8 @@ spec:
             value: {{ .Values.redis.password }}
           - name: KAFKA_BROKERS
             value: {{ .Values.strimzi.kafka.brokers | default (include "kafka.brokerservice" .) }}
+          - name: TELEMETRY_PORT
+            value: {{ .Values.telemetry.port }}
           - name: RUN_IN_KUBERNETES
             value: "true"
           - name: NAMESPACE
