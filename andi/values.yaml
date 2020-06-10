@@ -44,3 +44,6 @@ resources:
   requests:
     memory: 256Mi
     cpu: 150m
+
+telemetry:
+  port: 9568
