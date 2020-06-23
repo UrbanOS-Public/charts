@@ -36,3 +36,6 @@ resources:
     memory: 1Gi
     cpu: 300m
     ephemeral-storage: 15G
+
+monitoring:
+  targetPort: 9002
