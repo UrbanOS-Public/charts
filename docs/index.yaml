@@ -806,6 +806,16 @@ entries:
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
+    created: 2020-06-22T22:23:47.227419432-04:00
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
+    digest: d19b3dd8baad163a28d3995811bb5782048bacda237a4626e0244ad85d84f86a
+    name: reaper
+    urls:
+    - reaper-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: 2020-04-02T11:49:31.802477054-04:00
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
@@ -966,4 +976,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2020-06-12T09:38:53.479413828-04:00
+generated: 2020-06-22T22:23:47.227025196-04:00
