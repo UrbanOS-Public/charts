@@ -6,7 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/name: {{ include "reaper.name" . }}
   annotations:
-    prometheus.io/port:  "reaper"
+    prometheus.io/port:  {{ .Values.monitoring.targetPort }}
     prometheus.io/scrape: "true"
 spec:
   selector:
@@ -18,8 +18,8 @@ spec:
     targetPort: reaper
   - name: erlang-vm
     protocol: TCP
-    port: {{ .Values.monitoring.targetPort }}
-    targetPort: {{ .Values.monitoring.targetPort }}
+    port: 9001
+    targetPort: 9001
   - name: epmd
     protocol: TCP
     port: 4369
