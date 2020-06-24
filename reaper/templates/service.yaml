@@ -18,8 +18,8 @@ spec:
     targetPort: reaper
   - name: erlang-vm
     protocol: TCP
-    port: 9001
-    targetPort: 9001
+    port: {{ .Values.monitoring.targetPort }}
+    targetPort: {{ .Values.monitoring.targetPort }}
   - name: epmd
     protocol: TCP
     port: 4369
