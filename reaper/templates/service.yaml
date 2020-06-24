@@ -6,7 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/name: {{ include "reaper.name" . }}
   annotations:
-    prometheus.io/port:  {{ .Values.monitoring.targetPort }}
+    prometheus.io/port: "{{ .Values.monitoring.targetPort }}"
     prometheus.io/scrape: "true"
 spec:
   selector:
