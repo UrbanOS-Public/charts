@@ -46,6 +46,8 @@ spec:
             value: {{ .Values.processor_stages | quote }}
           - name: PROFILING_ENABLED
             value: {{ .Values.profiling_enabled | quote }}
+          - name: METRICS_PORT
+            value: {{ quote .Values.monitoring.targetPort }}
           - name: NAMESPACE
             valueFrom:
               fieldRef:
