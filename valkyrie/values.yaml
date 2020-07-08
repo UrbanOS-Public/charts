@@ -47,3 +47,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+monitoring:
+  targetPort: 9002
