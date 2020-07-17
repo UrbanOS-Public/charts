@@ -60,7 +60,7 @@ metastore:
     replicas: 1
     container:
       image: smartcitiesdata/metastore
-      tag: tls-test
+      tag: 0.9.12
       pullPolicy: Always
       resources:
         limits:
