@@ -28,7 +28,9 @@ data:
       </property>
       <property>
         <name>javax.jdo.option.ConnectionURL</name>
-        <value>jdbc:postgresql://{{ template "kdp.postgres.fullname" . }}/{{ .Values.postgres.db.name }}</value>
+        {{- $fullname := include "kdp.postgres.fullname" . -}}
+        {{- $hostname := default $fullname .Values.postgres.service.externalAddress -}}
+        <value>jdbc:postgresql://{{ $hostname }}/{{ .Values.postgres.db.name }}?ssl={{ .Values.postgres.tls.enable }}&amp;sslmode={{ .Values.postgres.tls.mode }}&amp;sslrootcert={{ .Values.postgres.tls.rootCertPath }}</value>
       </property>
       <property>
         <name>javax.jdo.option.ConnectionDriverName</name>
