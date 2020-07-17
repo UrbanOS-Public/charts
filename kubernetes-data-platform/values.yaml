@@ -60,7 +60,7 @@ metastore:
     replicas: 1
     container:
       image: smartcitiesdata/metastore
-      tag: 0.9.12
+      tag: 0.11.1
       pullPolicy: Always
       resources:
         limits:
@@ -83,7 +83,7 @@ postgres:
   tls:
     enable: false
     mode: verify-full
-    rootCertPath: /home/username/.postgresql/root.crt
+    rootCertPath: /etc/ssl/certs/ca-certificates.crt
   service:
     type: ClusterIP
     port: 5432
