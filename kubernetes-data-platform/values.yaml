@@ -74,13 +74,16 @@ metastore:
       rollingUpdate:
         maxSurge: 1
         maxUnavailable: 1
-
 postgres:
   enable: true
   db:
     name: metastore
     user: hive
     password: password123
+  tls:
+    enable: false
+    mode: verify-full
+    rootCertPath: /home/username/.postgresql/root.crt
   service:
     type: ClusterIP
     port: 5432
