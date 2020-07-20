@@ -37,3 +37,6 @@ profiling_enabled: false
 
 # Dataset compaction is off by default. If it is needed, set compactionSchedule to a valid cron string such as "00 01 * * *" (This will run compaction nightly at 1:00am)
 compactionSchedule: null
+
+monitoring:
+  targetPort: 9002
