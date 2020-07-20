@@ -4,6 +4,9 @@ metadata:
   name: {{ .Chart.Name }}
   labels:
     app.kubernetes.io/name: {{ include "helm.name" . }}
+  annotations:
+    prometheus.io/port: "{{ .Values.monitoring.targetPort }}"
+    prometheus.io/scrape: "true"
 spec:
   selector:
     app.kubernetes.io/name: {{ include "helm.name" . }}
