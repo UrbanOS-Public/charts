@@ -22,7 +22,7 @@ presto:
     replicas: 1
     container:
       image: smartcitiesdata/presto
-      tag: 0.11.0
+      tag: 0.11.1
       pullPolicy: Always
       resources:
         limits:
@@ -65,10 +65,10 @@ metastore:
       resources:
         limits:
           memory: 1.5Gi
-          cpu: 1
+          cpu: 2
         requests:
           memory: 1.5Gi
-          cpu: 1
+          cpu: 2
     updateStrategy:
       type: RollingUpdate
       rollingUpdate:
