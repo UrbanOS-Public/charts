@@ -48,7 +48,7 @@ spec:
           - name: PRESTO_USER
             value: {{.Values.kdp.user}}
           - name: METRICS_PORT
-            value: {{.Values.prometheus.metrics_port | quote }}
+            value: {{ quote .Values.monitoring.targetPort }}
           - name: PROFILING_ENABLED
             value: {{ .Values.profiling_enabled | quote }}
           {{ if .Values.compactionSchedule }}
