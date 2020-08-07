@@ -18,9 +18,6 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "helm.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
-      annotations:
-        prometheus.io/scrape: {{ .Values.prometheus.scrape  | quote }}
-        prometheus.io/port: {{ .Values.prometheus.metrics_port  | quote }}
     spec:
       serviceAccountName: {{ .Chart.Name }}
       containers:
