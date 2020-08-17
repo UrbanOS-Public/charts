@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: {{ include "odo.name" . }}
+  annotations:
+    prometheus.io/port:  "{{ .Values.monitoring.targetPort }}"
+    prometheus.io/scrape: "true"

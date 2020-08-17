@@ -25,6 +25,5 @@ resources:
     memory: 2Gi
     cpu: 300m
 
-prometheus:
-  scrape: true
-  metrics_port: 9002
+monitoring:
+  targetPort: 9002
