@@ -27,3 +27,8 @@ resources:
 
 monitoring:
   targetPort: 9002
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 4000
