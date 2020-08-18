@@ -42,6 +42,8 @@ spec:
           value: {{ .Values.vault.endpoint }}
         - name: WORKING_DIR
           value: {{ .Values.workingDirectory }}
+        - name: METRICS_PORT
+          value: {{ quote .Values.monitoring.targetPort }}
       volumes:
       - name: download-dir
         emptyDir: {}
