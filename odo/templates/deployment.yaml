@@ -42,8 +42,6 @@ spec:
           value: {{ .Values.vault.endpoint }}
         - name: WORKING_DIR
           value: {{ .Values.workingDirectory }}
-        - name: METRICS_PORT
-          value: {{ .Values.prometheus.metrics_port | quote }}
       volumes:
       - name: download-dir
         emptyDir: {}
