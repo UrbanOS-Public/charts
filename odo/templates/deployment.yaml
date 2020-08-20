@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Chart.Name }}
-  namespace: {{ .Release.Namespace }}
+  # namespace: {{ .Release.Namespace }}
   labels:
     helm.sh/chart: {{ include "odo.chart" . }}
     app.kubernetes.io/name: {{ include "odo.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}

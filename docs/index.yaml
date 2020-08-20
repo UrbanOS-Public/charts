@@ -812,9 +812,9 @@ entries:
     version: 1.0.0
   odo:
   - apiVersion: v1
-    created: "2020-08-19T09:43:37.169094334-04:00"
+    created: "2020-08-20T09:49:25.337657045-04:00"
     description: shapeshifting service
-    digest: fc4448fd1408d3e9cb61230e567067723b7c46498b406eb828ec58f785d029a3
+    digest: 85d666bbfdc8034290a84b07a69c2aaf28a0dbdf06e2e56de494fcf2e631265c
     name: odo
     urls:
     - odo-0.3.0.tgz
@@ -1099,4 +1099,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2020-08-19T09:43:37.168652097-04:00"
+generated: "2020-08-20T09:49:25.33738466-04:00"
