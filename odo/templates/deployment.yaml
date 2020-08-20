@@ -6,6 +6,7 @@ metadata:
   labels:
     helm.sh/chart: {{ include "odo.chart" . }}
     app.kubernetes.io/name: {{ include "odo.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
