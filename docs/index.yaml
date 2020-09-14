@@ -280,6 +280,16 @@ entries:
   discovery-streams:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2020-09-14T15:14:19.627932-04:00"
+    description: Dynamically find kafka topics and makes available corresponding channels
+      on a public websocket
+    digest: 67689d9240803ff58112e39806c13d18456dde0db9c0e1fef09b3697356b2f60
+    name: discovery-streams
+    urls:
+    - discovery-streams-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-06-03T10:32:30.492805045-04:00"
     description: Dynamically find kafka topics and makes available corresponding channels
       on a public websocket
@@ -1118,4 +1128,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2020-09-14T10:50:16.703439-04:00"
+generated: "2020-09-14T15:14:19.627332-04:00"

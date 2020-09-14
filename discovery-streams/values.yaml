@@ -12,6 +12,7 @@ ingress:
   subnets: ""
   securityGroups: ""
   certificateARN: ""
+  waf_acl_arn: ""
   dnsZone: "localhost"
   root_dns_zone: "localhost"
 
