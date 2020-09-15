@@ -51,3 +51,11 @@ postgres:
   dbname: "postgres"
   user: "postgres"
   password: "password"
+
+vault:
+  endpoint: http://vault.vault:8200
+
+env:
+  auth0_domain: ""
+  auth0_client_id: ""
+  auth0_audience: ""
