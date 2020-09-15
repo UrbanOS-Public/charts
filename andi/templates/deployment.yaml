@@ -65,3 +65,9 @@ spec:
             value: {{ .Values.postgres.password }}
           - name: POSTGRES_PORT
             value: {{ quote .Values.postgres.port }}
+          - name: SECRETS_ENDPOINT
+            value: {{ .Values.vault.endpoint }}
+          - name: AUTH0_DOMAIN
+            value: {{ quote .Values.env.auth0_domain }}
+          - name: AUTH0_CLIENT_ID
+            value: {{ quote .Values.env.auth0_client_id }}
