@@ -11,6 +11,7 @@ ingress:
   dns_zone: "localhost"
   root_dns_zone: "localhost"
   certificate_arns: ""
+  waf_acl_arn: ""
   tags: ""
 
 image:
