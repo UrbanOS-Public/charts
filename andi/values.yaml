@@ -55,6 +55,7 @@ postgres:
 vault:
   endpoint: http://vault.vault:8200
 
-env:
+auth:
+  jwt_issuer: ""
   auth0_domain: ""
   auth0_client_id: ""
