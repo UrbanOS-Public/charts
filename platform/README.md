@@ -35,7 +35,7 @@ forklift.postgres.host=<DB SERVER NAME same as above>
 4. Find the desired chart and change the value of `repository:` to `https://<SERVICE ADDRESS>`
 
 # Running in Azure Example
-`helm add repo https://smartcitiesdata.github.io/charts`
+`helm add repo https://Datastillery.github.io/charts`
 ```
 helm upgrade --install platform scdp/platform \
  --set kubernetes-data-platform.enabled=true \
