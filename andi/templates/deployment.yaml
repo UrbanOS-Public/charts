@@ -74,3 +74,5 @@ spec:
             value: {{ quote .Values.auth.auth0_client_id }}
           - name: AUTH_JWT_ISSUER
             value: {{ quote .Values.auth.jwt_issuer }}
+          - name: DOCUMENTATION_ROOT
+            value: {{ quote .Values.documentationRoot }}
