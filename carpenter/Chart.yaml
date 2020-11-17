@@ -1,4 +1,0 @@
-apiVersion: v1
-description: Creates tables for the SmartCitiesData platform
-name: carpenter
-version: 1.0.0
