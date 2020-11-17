@@ -59,3 +59,6 @@ auth:
   jwt_issuer: ""
   auth0_domain: ""
   auth0_client_id: ""
+
+# The root at which documentation pdfs and other artifacts can be found
+documentationRoot: ""
