@@ -62,3 +62,8 @@ auth:
 
 # The root at which documentation pdfs and other artifacts can be found
 documentationRoot: ""
+
+# This flag controls whether Andi is deployed in Public mode or not.
+# Public mode prevents all access to Curator features for security reasons.
+# Can be "private" or "public"
+accessLevel: "private"

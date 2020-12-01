@@ -76,3 +76,5 @@ spec:
             value: {{ quote .Values.auth.jwt_issuer }}
           - name: DOCUMENTATION_ROOT
             value: {{ quote .Values.documentationRoot }}
+          - name: ACCESS_LEVEL
+            value: {{ quote .Values.accessLevel }}
