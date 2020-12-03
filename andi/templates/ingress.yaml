@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
   annotations:
 {{- if .Values.ingress.annotations }}
@@ -9,7 +9,7 @@ metadata:
 {{- end }}
 spec:
   backend:
-    serviceName: {{ .Chart.Name }}
+    serviceName: {{ .Release.Name }}
     servicePort: {{ .Values.service.port }}
   rules:
   - host: andi.{{ .Values.ingress.dnsZone }}

@@ -67,3 +67,9 @@ documentationRoot: ""
 # Public mode prevents all access to Curator features for security reasons.
 # Can be "private" or "public"
 accessLevel: "private"
+
+tolerations:
+  - key: example.run.public-worker
+    operator: Equal
+    value: "true"
+    effect: NoExecute
