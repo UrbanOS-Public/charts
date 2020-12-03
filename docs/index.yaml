@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   andi:
   - apiVersion: v1
+    created: "2020-12-03T08:24:52.232098-05:00"
+    description: REST API to allow for dataset definition ingestion
+    digest: 0ec20e50f60a187d23dc2136620e6eda3d25fcf27067838bb7d9f37237c3cd3e
+    name: andi
+    urls:
+    - andi-1.7.0.tgz
+    version: 1.7.0
+  - apiVersion: v1
     created: "2020-12-01T08:30:09.562321-05:00"
     description: REST API to allow for dataset definition ingestion
     digest: 5331a7ae034ed7f2e739251914599bc3a7744d8dcb19eac6b455e506bdf711b9
@@ -397,6 +405,15 @@ entries:
     - discovery-streams-0.1.2.tgz
     version: 0.1.2
   discovery-ui:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-12-03T08:27:46.292595-05:00"
+    description: A helm chart for the discovery ui
+    digest: 059105cd22f51d654d903970425100c95a450e8839665ad0067911c5f0e5ff9e
+    name: discovery-ui
+    urls:
+    - discovery-ui-0.4.1.tgz
+    version: 0.4.1
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-09-15T15:38:49.208668-04:00"
@@ -1203,4 +1220,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2020-12-01T08:30:09.561424-05:00"
+generated: "2020-12-03T08:27:46.291801-05:00"

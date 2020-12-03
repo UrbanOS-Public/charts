@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ .Release.Name }}
   labels:
-    app.kubernetes.io/name: {{ include "helm.name" . }}
+    app.kubernetes.io/name: {{ .Release.Name }}
     helm.sh/chart: {{ include "helm.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
@@ -11,17 +11,17 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "helm.name" . }}
+      app.kubernetes.io/name: {{ .Release.Name }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "helm.name" . }}
+        app.kubernetes.io/name: {{ .Release.Name }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-      serviceAccountName: {{ .Chart.Name }}
+      serviceAccountName: {{ .Release.Name }}
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ .Release.Name }}
           resources:
 {{ toYaml .Values.resources | indent 12 -}}
           ports:
@@ -78,3 +78,7 @@ spec:
             value: {{ quote .Values.documentationRoot }}
           - name: ACCESS_LEVEL
             value: {{ quote .Values.accessLevel }}
+{{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+{{- end }}
