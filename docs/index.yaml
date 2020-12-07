@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   andi:
   - apiVersion: v1
+    created: "2020-12-07T11:48:53.549878-05:00"
+    description: REST API to allow for dataset definition ingestion
+    digest: a506658c3b379d6dfde91593fa996232d53167aba6f2011d244c02c5a5716e09
+    name: andi
+    urls:
+    - andi-1.8.0.tgz
+    version: 1.8.0
+  - apiVersion: v1
     created: "2020-12-03T08:24:52.232098-05:00"
     description: REST API to allow for dataset definition ingestion
     digest: 0ec20e50f60a187d23dc2136620e6eda3d25fcf27067838bb7d9f37237c3cd3e
@@ -1220,4 +1228,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2020-12-03T08:27:46.291801-05:00"
+generated: "2020-12-07T11:48:53.548988-05:00"
