@@ -35,7 +35,9 @@ ingress:
   subnets: ""
   securityGroups: ""
   certificateARN: ""
-  dnsZone: "localhost"
+  rules:
+    - dnsZone: "localhost"
+      hostPrefix: "andi"
 
 resources:
   limits:

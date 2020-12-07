@@ -12,10 +12,13 @@ spec:
     serviceName: {{ .Release.Name }}
     servicePort: {{ .Values.service.port }}
   rules:
-  - host: andi.{{ .Values.ingress.dnsZone }}
+  {{- range .Values.ingress.rules }}
+  - host: "{{ .hostPrefix | default $.Release.Name }}.{{ .dnsZone }}"
     http:
       paths:
       - path: /*
         backend:
           serviceName: redirect
           servicePort: use-annotation
+  {{- end }}
+  
