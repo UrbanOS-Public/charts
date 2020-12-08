@@ -78,6 +78,8 @@ spec:
             value: {{ quote .Values.documentationRoot }}
           - name: ACCESS_LEVEL
             value: {{ quote .Values.accessLevel }}
+          - name: VAULT_ROLE
+            value: {{ quote .Values.vaultRole | default .Release.Name }}
 {{- with .Values.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}
