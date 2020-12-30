@@ -38,6 +38,8 @@ spec:
             value: {{ .Values.estuary.data_topic }}
           - name: DLQ_TOPIC
             value: {{ .Values.estuary.dlq_topic }}
+          - name: EVENT_TYPES_TO_PERSIST
+            value: {{ .Values.eventTypesToPersist }}
           - name: NAMESPACE
             valueFrom:
               fieldRef:

@@ -48,3 +48,14 @@ ingress:
   securityGroups: ""
   certificateARN: ""
   dnsZone: "localhost"
+
+eventTypesToPersist:
+- dataset:update
+- error:dataset:update
+- organization:update
+- error:organization:update
+- dataset:disable
+- dataset:delete
+- data:write:complete
+- dataset:harvest:start
+- dataset:harvest:end
