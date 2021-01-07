@@ -75,3 +75,7 @@ tolerations:
     operator: Equal
     value: "true"
     effect: NoExecute
+
+s3:
+  hostedFileBucket: "andi-public-sample-datasets"
+  hostedFileRegion: "us-west-2"
