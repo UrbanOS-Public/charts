@@ -42,7 +42,7 @@ spec:
             value: {{ .Values.env.auth0_audience }}
           - name: "ADDITIONAL_CSP_HOSTS"
             value: "{{ .Values.env.additional_csp_hosts }}"
-          {{ if .Values.contribute_host }}
+          {{ if .Values.env.contribute_host }}
           - name: CONTRIBUTE_HOST
             value: {{.Values.env.contribute_host | quote }}
           {{ end -}}
