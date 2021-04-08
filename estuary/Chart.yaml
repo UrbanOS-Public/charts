@@ -1,4 +1,4 @@
 apiVersion: v1
 description: Reads the event stream and stores them in to event_stream table
 name: estuary
-version: 0.5.1
+version: 0.5.2
