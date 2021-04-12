@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   andi:
   - apiVersion: v1
+    created: "2021-04-08T14:04:06.470958-04:00"
+    description: REST API to allow for dataset definition ingestion
+    digest: 4398708efcdb877779d2a6441edf1390513d712c83ed3bc8fdf68298f469d533
+    name: andi
+    urls:
+    - andi-1.8.3.tgz
+    version: 1.8.3
+  - apiVersion: v1
     created: "2021-01-07T13:42:10.158723-05:00"
     description: REST API to allow for dataset definition ingestion
     digest: 7bb53331d022fa73b1e861861ee78c405cdcc5671b2fb584c307350595d4bac3
@@ -213,6 +221,15 @@ entries:
     - carpenter-1.0.0.tgz
     version: 1.0.0
   discovery-api:
+  - apiVersion: v1
+    appVersion: 1.0.0-static
+    created: "2021-04-08T14:04:11.014281-04:00"
+    description: A middleware layer to connect data consumers with the data sources
+    digest: 92d140a9560513b46f13142e17135ff337bfa17481a5299b5960c88310a80d5c
+    name: discovery-api
+    urls:
+    - discovery-api-0.10.2.tgz
+    version: 0.10.2
   - apiVersion: v1
     appVersion: 1.0.0-static
     created: "2020-06-03T10:32:23.798414574-04:00"
@@ -441,6 +458,15 @@ entries:
   discovery-ui:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-04-08T14:04:13.822212-04:00"
+    description: A helm chart for the discovery ui
+    digest: 93c13db255d0a13133003317539843ed7bf03856d2ee10a22cae4995d0b9737c
+    name: discovery-ui
+    urls:
+    - discovery-ui-0.4.3.tgz
+    version: 0.4.3
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-01-21T09:29:58.940207-05:00"
     description: A helm chart for the discovery ui
     digest: be63766b23346f47567150970474d349c25f01e44305ea8a0c873849f18b15c3
@@ -548,6 +574,14 @@ entries:
     - discovery-ui-0.1.1.tgz
     version: 0.1.1
   estuary:
+  - apiVersion: v1
+    created: "2021-04-08T14:04:18.745342-04:00"
+    description: Reads the event stream and stores them in to event_stream table
+    digest: 7b7a070fb515d7653466f5667d49a5b69cb0ab8add781f4da917ead1400b8669
+    name: estuary
+    urls:
+    - estuary-0.5.2.tgz
+    version: 0.5.2
   - apiVersion: v1
     created: "2020-01-30T11:24:34.104351-05:00"
     description: Reads the event stream and stores them in to event_stream table
@@ -742,6 +776,25 @@ entries:
     - genesis-2.0.1.tgz
     version: 2.0.1
   kubernetes-data-platform:
+  - apiVersion: v1
+    created: "2021-04-08T14:04:23.275322-04:00"
+    description: Hadoop-less data platform for the Smart City OS
+    digest: c7b819ac364bf9ce2f99cf289faa4da8ec07bf43c67ccd2b04d779a0dff1db8d
+    keywords:
+    - presto
+    - hive-metastore
+    - cloud-object-store
+    - minio
+    name: kubernetes-data-platform
+    sources:
+    - https://github.com/prestodb/presto
+    - https://github.com/apache/hive
+    - https://github.com/minio/minio
+    - https://github.com/helm/helm
+    tillerVersion: '>=2.8.0'
+    urls:
+    - kubernetes-data-platform-1.5.4.tgz
+    version: 1.5.4
   - apiVersion: v1
     created: "2020-09-14T10:50:16.704485-04:00"
     description: Hadoop-less data platform for the Smart City OS
@@ -1263,4 +1316,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-04-08T12:18:00.012094-04:00"
+generated: "2021-04-08T14:04:23.274209-04:00"
