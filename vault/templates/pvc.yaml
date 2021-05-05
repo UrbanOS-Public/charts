@@ -10,6 +10,9 @@ metadata:
 spec:
   accessModes:
   - ReadWriteOnce
+  {{- if .Values.vault.storageClassName }}
+  storageClassName: {{ .Values.vault.storageClassName }}
+  {{- end }}
   resources:
     requests:
       storage: {{ .Values.vault.volumeSize }}
