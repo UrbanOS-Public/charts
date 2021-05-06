@@ -103,6 +103,10 @@ spec:
         - name: maintenance-script
           mountPath: /usr/local/bin/maintenance.sh
           subPath: maintenance.sh
+        {{- if not .Values.vault.config.listener.tcp.tls_disable }}
+        - mountPath: /etc/tls/vault-pem
+          name: vault-pem
+        {{- end }}
         securityContext:
           capabilities:
             add:
@@ -117,4 +121,9 @@ spec:
       - name: key-store
         persistentVolumeClaim:
           claimName: {{ .Chart.Name }}
+      {{- if not .Values.vault.config.listener.tcp.tls_disable }}
+      - name: vault-pem
+        secret:
+          secretName: {{ .Values.vault.certSecret }}
+      {{- end }}
 {{- end -}}

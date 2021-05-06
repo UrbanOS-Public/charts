@@ -7,6 +7,7 @@ vault:
   pullPolicy: IfNotPresent
   volumeSize: 5Gi
   secretsPath: secrets/smart_city
+  certSecret: vault-pem
   # Optional storage class
   # storageClassName: encrypted-example
   liveness:
@@ -20,7 +21,9 @@ vault:
       tcp:
         address: '[::]:8200'
         cluster_address: '[::]:8201'
-        tls_disable: true
+        tls_disable: false
+        # tls_key_file: /etc/tls/vault-pem/tls.key
+        # tls_cert_file: /etc/tls/vault-pem/tls.crt
         tls_prefer_server_cipher_suites: true
         tls_cipher_suites: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA
     storage:
