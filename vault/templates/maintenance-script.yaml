@@ -34,6 +34,7 @@ data:
       for key in $keys
       do
         vault operator unseal $key
+        kubectl -n {{ .Release.Namespace }} delete secret key${key_count} --ignore-not-found
         kubectl -n {{ .Release.Namespace }} create secret generic key${key_count} --from-literal=key${key_count}=$key
         key_count=$((key_count+1))
       done
