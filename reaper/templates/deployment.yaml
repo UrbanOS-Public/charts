@@ -35,6 +35,10 @@ spec:
         volumeMounts:
         - mountPath: /downloads
           name: download-dir
+        {{- if .Values.vault.CACertSecret }}
+        - mountPath: /certs/ca
+          name: ca-cert
+        {{- end }}
         env:
         - name: OUTPUT_TOPIC_PREFIX
           value: {{ .Values.outputTopicPrefix }}
@@ -50,6 +54,10 @@ spec:
           value: {{ .Values.redis.password }}
         - name: SECRETS_ENDPOINT
           value: {{ .Values.vault.endpoint }}
+        {{- if .Values.vault.CACertSecret }}
+        - name: CA_CERT_PATH
+          value: /certs/ca/ca.crt
+        {{- end }}
         - name: HOSTED_FILE_BUCKET
           value: {{ .Values.aws.hostedFileBucket }}
         - name: AWS_REGION
@@ -69,3 +77,8 @@ spec:
       volumes:
       - name: download-dir
         emptyDir: {}
+      {{- if .Values.vault.CACertSecret }}
+      - name: ca-cert
+        secret:
+          secret-name: {{ .Values.vault.CACertSecret }}
+      {{- end }}
