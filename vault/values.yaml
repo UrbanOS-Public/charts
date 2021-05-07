@@ -7,7 +7,8 @@ vault:
   pullPolicy: IfNotPresent
   volumeSize: 5Gi
   secretsPath: secrets/smart_city
-  certSecret: vault-pem
+  # certSecret: kube secret containing signed certificate and key
+  # caCertSecret: kube secret containing CA certificate
   # Optional storage class
   # storageClassName: encrypted-example
   liveness:

@@ -80,12 +80,19 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: status.podIP
-        - name: VAULT_ADDR
-          value: "http://$(POD_IP):8200"
         - name: VAULT_API_ADDR
           value: "https://$(POD_IP):8200"
         - name: VAULT_CLUSTER_ADDR
           value: "https://$(POD_IP):8201"
+        {{- if not .Values.vault.config.listener.tcp.tls_disable }}
+        - name: VAULT_ADDR
+          value: "https://$(POD_IP):8200"
+        - name: VAULT_CAPATH
+          vault: /etc/tls/ca
+        {{- else }}
+        - name: VAULT_ADDR
+          value: "http://$(POD_IP):8200"
+        {{- end }}
         volumeMounts:
         {{- range .Values.vault.policies }}
         - name: configs
@@ -106,6 +113,8 @@ spec:
         {{- if not .Values.vault.config.listener.tcp.tls_disable }}
         - mountPath: /etc/tls/vault-pem
           name: vault-pem
+        - mountPath: /etc/tls/ca
+          name: ca-cert
         {{- end }}
         securityContext:
           capabilities:
@@ -125,5 +134,8 @@ spec:
       - name: vault-pem
         secret:
           secretName: {{ .Values.vault.certSecret }}
+      - name: ca-cert
+        secret:
+          secretName: {{ .Values.vault.caCertSecret }}
       {{- end }}
 {{- end -}}
