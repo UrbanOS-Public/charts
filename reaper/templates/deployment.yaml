@@ -35,7 +35,7 @@ spec:
         volumeMounts:
         - mountPath: /downloads
           name: download-dir
-        {{- if .Values.vault.CACertSecret }}
+        {{- if .Values.vault.caCertSecret }}
         - mountPath: /certs/ca
           name: ca-cert
         {{- end }}
@@ -54,7 +54,7 @@ spec:
           value: {{ .Values.redis.password }}
         - name: SECRETS_ENDPOINT
           value: {{ .Values.vault.endpoint }}
-        {{- if .Values.vault.CACertSecret }}
+        {{- if .Values.vault.caCertSecret }}
         - name: CA_CERT_PATH
           value: /certs/ca/ca.crt
         {{- end }}
@@ -77,8 +77,8 @@ spec:
       volumes:
       - name: download-dir
         emptyDir: {}
-      {{- if .Values.vault.CACertSecret }}
+      {{- if .Values.vault.caCertSecret }}
       - name: ca-cert
         secret:
-          secret-name: {{ .Values.vault.CACertSecret }}
+          secret-name: {{ .Values.vault.caCertSecret }}
       {{- end }}
