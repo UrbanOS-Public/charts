@@ -23,7 +23,7 @@ spec:
       containers:
         - name: {{ .Release.Name }}
           resources:
-{{ toYaml .Values.resources | indent 12 -}}
+{{ toYaml .Values.resources | indent 12 }}
           ports:
             - containerPort: 80
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
