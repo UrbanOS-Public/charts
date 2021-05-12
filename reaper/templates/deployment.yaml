@@ -8,7 +8,6 @@ metadata:
     app.kubernetes.io/name: {{ include "reaper.name" . }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
-  serviceAccountName: reaper
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
