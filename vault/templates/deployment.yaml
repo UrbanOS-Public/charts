@@ -51,15 +51,15 @@ spec:
             path: /v1/sys/health?standbyok=true&uninitcode=204&sealedcode=204&
             port: {{ .Values.vault.port }}
             scheme: {{ if .Values.vault.config.listener.tcp.tls_disable -}}HTTP{{- else -}}HTTPS{{- end }}
-            initialDelaySeconds: {{ .Values.vault.liveness.initialDelaySeconds }}
-            periodSeconds: {{ .Values.vault.liveness.periodSeconds }}
+          initialDelaySeconds: {{ .Values.vault.liveness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.vault.liveness.periodSeconds }}
         readinessProbe:
           httpGet:
             path: /v1/sys/health?sealedcode=204&standbycode=204&uninitcode=204&
             port: {{ .Values.vault.port }}
             scheme: {{ if .Values.vault.config.listener.tcp.tls_disable -}}HTTP{{- else -}}HTTPS{{- end }}
-            initialDelaySeconds: {{ .Values.vault.readiness.initialDelaySeconds }}
-            periodSeconds: {{ .Values.vault.readiness.periodSeconds }}
+          initialDelaySeconds: {{ .Values.vault.readiness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.vault.readiness.periodSeconds }}
         env:
         - name: HOST_IP
           valueFrom:
