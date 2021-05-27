@@ -1,3 +1,10 @@
+global:
+  kafka:
+    brokers: streaming-service-kafka-bootstrap:9092
+  redis:
+    host: redis.external-services 
+    password: ""
+
 replicaCount: 2
 
 image:
@@ -16,16 +23,12 @@ localstack:
   enabled: false
 
 kafka:
-  #comma delimited list of kafka seed brokers
-  brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
+  #comma delimited list of kafka seed brokersß
   strimziCluster: streaming-service # http://strimzi.io/docs/0.4.0/#_topic_configmap
   inputTopicPrefix: "raw"
   outputTopicPrefix: "transformed"
   dlqTopic: "streaming-dead-letters"
 
-redis:
-  host: redis.external-services
-  password: ""
 
 nameOverride: ""
 fullnameOverride: ""

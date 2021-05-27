@@ -1,17 +1,19 @@
+global:
+  kafka:
+    brokers: streaming-service-kafka-bootstrap:9092
+  presto:
+    url: http://platform-kubernetes-data-platform-presto:8080
+  redis:
+    host: redis.external-services 
+    password: ""
+  vault:
+    endpoint: vault.vault:8200
+
 replicaCount: 1
 image:
   repository: smartcitiesdata/odo
   tag: development
   pullPolicy: Always
-
-redis:
-  host: redis.external-services
-
-kafka:
-  brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
-
-vault:
-  endpoint: http://vault.vault:8200
 
 cloud:
   region: us-east-1

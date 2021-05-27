@@ -36,11 +36,11 @@ spec:
         - name: HOSTED_FILE_BUCKET
           value: {{ .Values.cloud.fileBucket }}
         - name: KAFKA_BROKERS
-          value: {{ .Values.kafka.brokers | default (include "kafka.brokerservice" .) }}
+          value: {{ .Values.global.kafka.brokers | default (include "kafka.brokerservice" .) }}
         - name: REDIS_HOST
-          value: {{ .Values.redis.host }}
+          value: {{ .Values.global.redis.host }}
         - name: SECRETS_ENDPOINT
-          value: {{ .Values.vault.endpoint }}
+          value: {{ .Values.global.vault.endpoint }}
         - name: WORKING_DIR
           value: {{ .Values.workingDirectory }}
         - name: METRICS_PORT
