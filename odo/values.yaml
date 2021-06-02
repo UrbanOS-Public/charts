@@ -1,4 +1,8 @@
 global:
+  aws:
+    region: us-west-2
+  buckets:
+    hostedFileBucket: "master-chart-hosted-dataset-files"
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   presto:
@@ -14,10 +18,6 @@ image:
   repository: smartcitiesdata/odo
   tag: development
   pullPolicy: Always
-
-cloud:
-  region: us-east-1
-  fileBucket: ""
 
 resources:
   limits:

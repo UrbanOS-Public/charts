@@ -32,9 +32,9 @@ spec:
           name: download-dir
         env:
         - name: CLOUD_REGION
-          value: {{ .Values.cloud.region }}
+          value: {{ .Values.global.aws.region }}
         - name: HOSTED_FILE_BUCKET
-          value: {{ .Values.cloud.fileBucket }}
+          value: {{ .Values.global.buckets.hostedFileBucket }}
         - name: KAFKA_BROKERS
           value: {{ .Values.global.kafka.brokers | default (include "kafka.brokerservice" .) }}
         - name: REDIS_HOST

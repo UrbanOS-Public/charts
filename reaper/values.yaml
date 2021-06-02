@@ -1,4 +1,8 @@
 global:
+  aws:
+    region: us-west-2
+  buckets:
+    hostedFileBucket: "master-chart-hosted-dataset-files"
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   redis:
@@ -19,10 +23,6 @@ image:
 service:
   port: 9092
   type: ClusterIP
-
-aws:
-  region: us-west-2
-  hostedFileBucket: ""
 
 profiling_enabled: false
 

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}-rds
+  name: {{ include "helm.fullname" . }}-rds
   labels:
     component: postgres
 spec:

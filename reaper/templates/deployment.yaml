@@ -50,9 +50,9 @@ spec:
         - name: SECRETS_ENDPOINT
           value: {{ .Values.global.vault.endpoint }}
         - name: HOSTED_FILE_BUCKET
-          value: {{ .Values.aws.hostedFileBucket }}
+          value: {{ .Values.global.buckets.hostedFileBucket }}
         - name: AWS_REGION
-          value: {{ .Values.aws.region }}
+          value: {{ .Values.global.aws.region }}
         - name: PROFILING_ENABLED
           value: {{ .Values.profiling_enabled | quote }}
         - name: METRICS_PORT

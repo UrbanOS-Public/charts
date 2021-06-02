@@ -1,3 +1,17 @@
+global:
+  kafka:
+    brokers: streaming-service-kafka-bootstrap:9092
+  presto:
+    url: http://platform-kubernetes-data-platform-presto:8080
+  redis:
+    host: redis.external-services 
+    password: ""
+  vault:
+    endpoint: vault.vault:8200
+  ingress:
+    rootDnsZone: localhost
+    dnsZone: localhost
+
 replicaCount: 1
 
 image:
@@ -7,14 +21,6 @@ image:
 
 monitoring:
   targetPort: 9002
-
-redis:
-  host: redis.external-services
-  password: ""
-
-strimzi:
-  kafka:
-    brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
 
 nameOverride: ""
 fullnameOverride: ""
@@ -28,16 +34,6 @@ secrets:
   live_view:
     enable: true
     value: "devonlyenablefalseanddefineoutofsourceinprod"
-
-ingress:
-  enabled: false
-  scheme: ""
-  subnets: ""
-  securityGroups: ""
-  certificateARN: ""
-  rules:
-    - dnsZone: "localhost"
-      hostPrefix: "andi"
 
 resources:
   limits:
@@ -53,9 +49,6 @@ postgres:
   dbname: "postgres"
   user: "postgres"
   password: "password"
-
-vault:
-  endpoint: http://vault.vault:8200
 
 auth:
   jwt_issuer: ""
