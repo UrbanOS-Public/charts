@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ include "helm.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ .Release.Name }}
+    app.kubernetes.io/name: {{ include "helm.fullname" . }}
     helm.sh/chart: {{ include "helm.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/instance: {{ include "helm.fullname" . }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ .Release.Name }}
-      app.kubernetes.io/instance: {{ .Release.Name }}
+      app.kubernetes.io/name: {{ include "helm.fullname" .  }}
+      app.kubernetes.io/instance: {{ include "helm.fullname" . }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ .Release.Name }}
-        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/name: {{ include "helm.fullname" . }}
+        app.kubernetes.io/instance: {{ include "helm.fullname" . }}
     spec:
-      serviceAccountName: {{ .Release.Name }}
+      serviceAccountName: {{ include "helm.fullname" . }}
       containers:
-        - name: {{ .Release.Name }}
+        - name: {{ include "helm.fullname" . }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           ports:
@@ -30,11 +30,11 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           - name: REDIS_HOST
-            value: {{ .Values.redis.host }}
+            value: {{ .Values.global.redis.host }}
           - name: REDIS_PASSWORD
-            value: {{ .Values.redis.password }}
+            value: {{ .Values.global.redis.password }}
           - name: KAFKA_BROKERS
-            value: {{ .Values.strimzi.kafka.brokers | default (include "kafka.brokerservice" .) }}
+            value: {{ .Values.global.kafka.brokers | default (include "kafka.brokerservice" .) }}
           - name: METRICS_PORT
             value: {{ quote .Values.monitoring.targetPort }}
           - name: RUN_IN_KUBERNETES
@@ -67,7 +67,7 @@ spec:
           - name: POSTGRES_PORT
             value: {{ quote .Values.postgres.port }}
           - name: SECRETS_ENDPOINT
-            value: {{ .Values.vault.endpoint }}
+            value: {{ .Values.global.vault.endpoint }}
           - name: AUTH0_DOMAIN
             value: {{ quote .Values.auth.auth0_domain }}
           - name: AUTH0_CLIENT_ID
@@ -79,7 +79,7 @@ spec:
           - name: ACCESS_LEVEL
             value: {{ quote .Values.accessLevel }}
           - name: VAULT_ROLE
-            value: {{ quote .Values.vaultRole | default .Release.Name }}
+            value: {{ quote .Values.vaultRole | default "andi-role" }}
           - name: HOSTED_FILE_BUCKET
             value: {{ .Values.environment }}-{{ .Values.s3.hostedFileBucket }}
           - name: HOSTED_FILE_REGION

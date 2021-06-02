@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   andi:
   - apiVersion: v1
+    created: "2021-06-02T13:51:20.790811-05:00"
+    description: REST API to allow for dataset definition ingestion
+    digest: 3c904bceff7de5931f68ba2b4c9150430b708c1e96e3ebf71c265b23b977de17
+    name: andi
+    urls:
+    - andi-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v1
     created: "2021-05-11T16:13:07.32087-04:00"
     description: REST API to allow for dataset definition ingestion
     digest: 1cd051fb09b1b02dc566c2be699cedc539721e3690df9a7671003e4d1c8b35ca
@@ -685,6 +693,15 @@ entries:
   forklift:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-06-02T13:52:07.695796-05:00"
+    description: Loads data from the transformed topic into Presto
+    digest: c9ba01f1b3bfee31f0810dcf593e06a3d96af3b4f64c83f6eff99c4d1622a4da
+    name: forklift
+    urls:
+    - forklift-3.0.0.tgz
+    version: 3.0.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-09-24T14:51:00.947689-04:00"
     description: Loads data from the transformed topic into Presto
     digest: 5b0c677861d047ea676bd619769bea17ccd87fa6d34a9781f5febcfcd4b62b9d
@@ -1028,6 +1045,14 @@ entries:
     version: 1.0.0
   odo:
   - apiVersion: v1
+    created: "2021-06-02T13:51:34.077798-05:00"
+    description: shapeshifting service
+    digest: 33f7e8c8794806ffc5e4e578bbc53579b13b2a34615ec62d21b53d105a5cb123
+    name: odo
+    urls:
+    - odo-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v1
     created: "2020-08-20T10:23:03.897210957-04:00"
     description: shapeshifting service
     digest: 70b76123cc5ae1a45aa0d9d284fccb7cbc0d65b13aba6111be70f51992b13ae8
@@ -1114,6 +1139,15 @@ entries:
     - platform-0.0.1.tgz
     version: 0.0.1
   reaper:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-06-02T13:51:37.688199-05:00"
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    digest: 3d60e9c2887ac27bad37264d96df13521b95be8e39262aff62db27c4ae048cb8
+    name: reaper
+    urls:
+    - reaper-1.0.0.tgz
+    version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-05-12T15:52:29.838611-04:00"
@@ -1352,4 +1386,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-05-12T15:52:29.837125-04:00"
+generated: "2021-06-02T13:52:07.694657-05:00"

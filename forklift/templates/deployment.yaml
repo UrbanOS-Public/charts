@@ -29,15 +29,15 @@ spec:
           - containerPort: 4369
           env:
           - name: KAFKA_BROKERS
-            value: {{ .Values.kafka.brokers }}
+            value: {{ .Values.global.kafka.brokers }}
           - name: PRESTO_URL
-            value: {{ .Values.kdp.url }}
+            value: {{ .Values.global.presto.url }}
           - name: RUN_IN_KUBERNETES
             value: "true"
           - name: REDIS_HOST
-            value: {{ .Values.redis.host }}
+            value: {{ .Values.global.redis.host }}
           - name: REDIS_PASSWORD
-            value: {{ .Values.redis.password }}
+            value: {{ .Values.global.redis.password }}
           - name: DATA_TOPIC_PREFIX
             value: {{.Values.kafka.dataTopicPrefix}}
           - name: OUTPUT_TOPIC

@@ -1,24 +1,30 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ include "helm.fullname" . }}
   namespace: {{ .Release.Namespace }}
   annotations:
-{{- if .Values.ingress.annotations }}
-{{ toYaml .Values.ingress.annotations | trim | indent 4 }}
+{{- if .Values.global.ingress.annotations }}
+{{ toYaml .Values.global.ingress.annotations | trim | indent 4 }}
 {{- end }}
 spec:
   backend:
-    serviceName: {{ .Release.Name }}
+    serviceName: {{ include "helm.fullname" . }}
     servicePort: {{ .Values.service.port }}
   rules:
-  {{- range .Values.ingress.rules }}
-  - host: "{{ .hostPrefix | default $.Release.Name }}.{{ .dnsZone }}"
+  - host: andi.{{ .Values.global.ingress.dnsZone }}
     http:
       paths:
       - path: /*
         backend:
           serviceName: redirect
           servicePort: use-annotation
-  {{- end }}
-  
+{{- if ne .Values.accessLevel "private" }}
+  - host: andi.{{ .Values.global.ingress.rootDnsZone }}
+    http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: redirect
+          servicePort: use-annotation
+{{- end }}

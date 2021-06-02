@@ -40,19 +40,19 @@ spec:
         - name: DLQ_TOPIC
           value: {{ .Values.dlqTopic }}
         - name: KAFKA_BROKERS
-          value: {{ .Values.strimzi.kafka.brokers | default (include "kafka.brokerservice" .) }}
+          value: {{ .Values.global.kafka.brokers | default (include "kafka.brokerservice" .) }}
         - name: RUN_IN_KUBERNETES
           value: "true"
         - name: REDIS_HOST
-          value: {{ .Values.redis.host }}
+          value: {{ .Values.global.redis.host }}
         - name: REDIS_PASSWORD
-          value: {{ .Values.redis.password }}
+          value: {{ .Values.global.redis.password }}
         - name: SECRETS_ENDPOINT
-          value: {{ .Values.vault.endpoint }}
+          value: {{ .Values.global.vault.endpoint }}
         - name: HOSTED_FILE_BUCKET
-          value: {{ .Values.aws.hostedFileBucket }}
+          value: {{ .Values.global.buckets.hostedFileBucket }}
         - name: AWS_REGION
-          value: {{ .Values.aws.region }}
+          value: {{ .Values.global.aws.region }}
         - name: PROFILING_ENABLED
           value: {{ .Values.profiling_enabled | quote }}
         - name: METRICS_PORT

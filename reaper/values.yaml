@@ -1,3 +1,16 @@
+global:
+  aws:
+    region: us-west-2
+  buckets:
+    hostedFileBucket: "master-chart-hosted-dataset-files"
+  kafka:
+    brokers: streaming-service-kafka-bootstrap:9092
+  redis:
+    host: redis.external-services 
+    password: ""
+  vault:
+    endpoint: vault.vault:8200
+  
 outputTopicPrefix: raw
 dlqTopic: streaming-dead-letters
 replicaCount: 1
@@ -10,20 +23,6 @@ image:
 service:
   port: 9092
   type: ClusterIP
-
-aws:
-  region: us-west-2
-  hostedFileBucket: ""
-
-redis:
-  host: redis.external-services
-  password: ""
-
-strimzi:
-  kafka:
-    brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
-vault:
-  endpoint: http://vault.vault:8200
 
 profiling_enabled: false
 

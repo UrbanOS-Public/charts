@@ -1,3 +1,12 @@
+global:
+  kafka:
+    brokers: streaming-service-kafka-bootstrap:9092
+  presto:
+    url: http://platform-kubernetes-data-platform-presto:8080
+  redis:
+    host: redis.external-services 
+    password: ""
+
 replicaCount: 1
 
 image:
@@ -10,7 +19,6 @@ service:
 
 kafka:
   #comma delimited list of kafka seed brokers
-  brokers: data-broker:9092
   strimziCluster: streaming-service
   dataTopicPrefix: "transformed"
   outputTopic: "streaming-persisted"
@@ -23,11 +31,7 @@ affinity: {}
 
 kdp:
   user: "forklift"
-  url: http://presto-endpoint:8080
 
-redis:
-  host: forklift-redis-master
-  password: ""
 
 monitoring:
   targetPort: 9002
