@@ -693,9 +693,9 @@ entries:
   forklift:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-06-02T13:52:07.695796-05:00"
+    created: "2021-06-03T13:46:31.716938-05:00"
     description: Loads data from the transformed topic into Presto
-    digest: c9ba01f1b3bfee31f0810dcf593e06a3d96af3b4f64c83f6eff99c4d1622a4da
+    digest: 987f529e4e9e708e36901dfc22831aca2d0851962ea80d45fb31e26e8a704a3a
     name: forklift
     urls:
     - forklift-3.0.0.tgz
@@ -1386,4 +1386,5 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-06-02T13:52:07.694657-05:00"
+generated: "2021-06-03T13:46:31.705308-05:00"
+
