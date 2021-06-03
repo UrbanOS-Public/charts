@@ -2,7 +2,7 @@ global:
   aws:
     region: us-west-2
   buckets:
-    hostedFileBucket: "master-chart-hosted-dataset-files"
+    hostedFileBucket: 
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   redis:

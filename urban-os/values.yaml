@@ -1,0 +1,47 @@
+global:
+  aws:
+    region: us-west-2
+  buckets:
+    hostedFileBucket: ""
+  kafka:
+    brokers: streaming-service-kafka-bootstrap:9092
+  presto:
+    url: http://platform-kubernetes-data-platform-presto:8080
+  redis:
+    host: redis.external-services 
+    password: ""
+  vault:
+    endpoint: vault.vault:8200
+  ingress:
+    annotations:
+      kubernetes.io/ingress.class: alb
+      alb.ingress.kubernetes.io/ssl-policy: "ELBSecurityPolicy-TLS-1-2-2017-01"
+      alb.ingress.kubernetes.io/healthcheck-path: /healthcheck
+      alb.ingress.kubernetes.io/scheme: "internal"
+      alb.ingress.kubernetes.io/subnets: ""
+      alb.ingress.kubernetes.io/security-groups: ""
+      alb.ingress.kubernetes.io/certificate-arn: ""
+      alb.ingress.kubernetes.io/tags: scos.delete.on.teardown=true
+      alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=4000
+      alb.ingress.kubernetes.io/actions.redirect: '{"Type": "redirect", "RedirectConfig":{"Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+      alb.ingress.kubernetes.io/wafv2-acl-arn: ""
+    dnsZone: ""
+    rootDnsZone: ""
+    port: 80
+
+forklift:
+  fullnameOverride: forklift
+  enabled: true
+reaper:
+  fullnameOverride: reaper
+  enabled: true
+valkyrie:
+  fullnameOverride: valkyrie
+  enabled: true
+  replicaCount: 1
+odo:
+  enabled: true
+andi:
+  fullnameOverride: andi
+  enabled: true
