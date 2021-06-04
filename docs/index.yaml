@@ -1141,9 +1141,9 @@ entries:
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-06-02T13:51:37.688199-05:00"
+    created: "2021-06-03T15:18:05.785703-05:00"
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
-    digest: 3d60e9c2887ac27bad37264d96df13521b95be8e39262aff62db27c4ae048cb8
+    digest: b3f7c435ed0a6780ee6405d01cfaa6c48bd47239104963bd9b6bb3c1befaecfa
     name: reaper
     urls:
     - reaper-1.0.0.tgz
@@ -1238,6 +1238,41 @@ entries:
     name: streisand
     urls:
     - streisand-1.0.0.tgz
+    version: 1.0.0
+  urban-os:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-06-03T15:16:27.400379-05:00"
+    dependencies:
+    - condition: forklift.enabled
+      name: forklift
+      repository: https://Datastillery.github.io/charts
+      version: 3.0.0
+    - condition: odo.enabled
+      name: odo
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: reaper.enabled
+      name: reaper
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: https://Datastillery.github.io/charts
+      version: 2.6.0
+    - condition: andi.enabled
+      name: andi
+      repository: https://Datastillery.github.io/charts
+      version: 2.0.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    description: Master chart that deploys the data platform.
+    digest: 9a41a2a9d65c41e17b78749dd44335eb9f7e36905cecd08c08d5ae1f1351d819
+    name: urban-os
+    urls:
+    - urban-os-1.0.0.tgz
     version: 1.0.0
   valkyrie:
   - apiVersion: v1
@@ -1386,5 +1421,5 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-06-03T13:46:31.705308-05:00"
+generated: "2021-06-03T15:18:05.767018-05:00"
 
