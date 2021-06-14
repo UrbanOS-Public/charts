@@ -693,6 +693,15 @@ entries:
   forklift:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-06-14T09:45:07.444299-05:00"
+    description: Loads data from the transformed topic into Presto
+    digest: ecd00f477225666a038168a52182d27a60a33a4f1e6d1cd6c95e5940820e36b3
+    name: forklift
+    urls:
+    - forklift-3.0.1.tgz
+    version: 3.0.1
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-06-03T13:46:31.716938-05:00"
     description: Loads data from the transformed topic into Presto
     digest: 987f529e4e9e708e36901dfc22831aca2d0851962ea80d45fb31e26e8a704a3a
@@ -791,6 +800,16 @@ entries:
     urls:
     - genesis-2.0.1.tgz
     version: 2.0.1
+  kafka:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-06-14T09:45:30.949532-05:00"
+    description: A Helm chart for deploying kafka via strimzi
+    digest: e7e2f5c49bc3e7e7c202c2dbbc493c095fd41a37f5a72766f8c935263d20969b
+    name: kafka
+    urls:
+    - kafka-1.0.0.tgz
+    version: 1.0.0
   kubernetes-data-platform:
   - apiVersion: v1
     created: "2021-04-08T14:04:23.275322-04:00"
@@ -1277,6 +1296,15 @@ entries:
   valkyrie:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-06-14T09:44:55.658944-05:00"
+    description: Validates data from raw topic and writes it to validated topic
+    digest: d559a0ec071ef4b2aeb539a233876a9988496c349b11d9680b03e9c460bc2929
+    name: valkyrie
+    urls:
+    - valkyrie-2.6.1.tgz
+    version: 2.6.1
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-07-08T14:29:22.763404038-04:00"
     description: Validates data from raw topic and writes it to validated topic
     digest: b134742ccb9a89e604ed85c0b21437312bb619ef99be45e879ce4d8682bd2f45
@@ -1421,5 +1449,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-06-03T15:18:05.767018-05:00"
-
+generated: "2021-06-14T09:45:30.936052-05:00"

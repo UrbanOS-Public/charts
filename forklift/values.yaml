@@ -4,8 +4,16 @@ global:
   presto:
     url: http://platform-kubernetes-data-platform-presto:8080
   redis:
-    host: redis.external-services 
+    host: redis.external-services
     password: ""
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 1Gi
+  requests:
+    cpu: 500m
+    memory: 1Gi
 
 replicaCount: 1
 
@@ -19,7 +27,6 @@ service:
 
 kafka:
   #comma delimited list of kafka seed brokers
-  strimziCluster: streaming-service
   dataTopicPrefix: "transformed"
   outputTopic: "streaming-persisted"
 
@@ -31,7 +38,6 @@ affinity: {}
 
 kdp:
   user: "forklift"
-
 
 monitoring:
   targetPort: 9002
