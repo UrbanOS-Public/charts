@@ -2,7 +2,7 @@ global:
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   redis:
-    host: redis.external-services 
+    host: redis.external-services
     password: ""
 
 replicaCount: 2
@@ -16,7 +16,7 @@ service:
   type: ClusterIP
 
 # monitoring:
-  # targetPort: 4000
+# targetPort: 4000
 # If running locally on Minikube, set to true to deploy an AWS localstack instance
 # https://github.com/localstack/localstack
 localstack:
@@ -24,11 +24,9 @@ localstack:
 
 kafka:
   #comma delimited list of kafka seed brokersß
-  strimziCluster: streaming-service # http://strimzi.io/docs/0.4.0/#_topic_configmap
   inputTopicPrefix: "raw"
   outputTopicPrefix: "transformed"
   dlqTopic: "streaming-dead-letters"
-
 
 nameOverride: ""
 fullnameOverride: ""
