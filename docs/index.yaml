@@ -803,9 +803,9 @@ entries:
   kafka:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-06-14T09:45:30.949532-05:00"
+    created: "2021-06-14T15:01:40.714136-05:00"
     description: A Helm chart for deploying kafka via strimzi
-    digest: e7e2f5c49bc3e7e7c202c2dbbc493c095fd41a37f5a72766f8c935263d20969b
+    digest: c53324bcf5e4a43788c597f2c7b54e29885c34934b9fc0a375dfbf6e87f92605
     name: kafka
     urls:
     - kafka-1.0.0.tgz
@@ -1449,4 +1449,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-06-14T09:45:30.936052-05:00"
+generated: "2021-06-14T15:01:40.703473-05:00"
