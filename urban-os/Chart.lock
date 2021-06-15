@@ -1,0 +1,24 @@
+dependencies:
+- name: forklift
+  repository: https://Datastillery.github.io/charts
+  version: 3.0.1
+- name: odo
+  repository: https://Datastillery.github.io/charts
+  version: 1.0.0
+- name: reaper
+  repository: https://Datastillery.github.io/charts
+  version: 1.0.0
+- name: valkyrie
+  repository: https://Datastillery.github.io/charts
+  version: 2.6.1
+- name: andi
+  repository: https://Datastillery.github.io/charts
+  version: 2.0.0
+- name: external-services
+  repository: https://Datastillery.github.io/charts
+  version: 1.0.0
+- name: kafka
+  repository: https://Datastillery.github.io/charts
+  version: 1.0.0
+digest: sha256:1e33b6bb573c66e35fdf50217101e5b93ad43f4ad7be48630bb23a23f88bd6f9
+generated: "2021-06-14T15:06:29.813188-05:00"

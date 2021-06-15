@@ -1259,6 +1259,44 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2021-06-14T15:07:35.973107-05:00"
+    dependencies:
+    - condition: forklift.enabled
+      name: forklift
+      repository: https://Datastillery.github.io/charts
+      version: 3.0.1
+    - condition: odo.enabled
+      name: odo
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: reaper.enabled
+      name: reaper
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: https://Datastillery.github.io/charts
+      version: 2.6.1
+    - condition: andi.enabled
+      name: andi
+      repository: https://Datastillery.github.io/charts
+      version: 2.0.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: kafka.enabled
+      name: kafka
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    description: Master chart that deploys the data platform.
+    digest: 888ba2d9ec45896a17237c322e22b8027fb93f747a4d531e7b8d74d4a22f82dc
+    name: urban-os
+    urls:
+    - urban-os-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-06-03T15:16:27.400379-05:00"
@@ -1449,4 +1487,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-06-14T15:01:40.703473-05:00"
+generated: "2021-06-14T15:07:35.960558-05:00"
