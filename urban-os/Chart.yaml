@@ -33,3 +33,7 @@ dependencies:
     version: 1.0.0
     repository: https://Datastillery.github.io/charts
     condition: kafka.enabled
+  - name: kubernetes-data-platform
+    version: 1.5.4
+    repository: file://../kubernetes-data-platform
+    condition: kubernetes-data-platform.enabled

@@ -6,7 +6,7 @@ global:
   kafka:
     brokers: pipeline-kafka-bootstrap:9092
   presto:
-    url: http://platform-kubernetes-data-platform-presto:8080
+    url: http://kubernetes-data-platform-presto:8080
   redis:
     host: redis.external-services
     password: ""
@@ -47,3 +47,37 @@ andi:
   enabled: true
 kafka:
   enabled: true
+
+kubernetes-data-platform:
+  enabled: true
+  presto:
+    workers: 2
+    jvm:
+      maxHeapSize: 1536M
+    deploy:
+      container:
+        resources:
+          limits:
+            memory: 2Gi
+            cpu: 2
+          requests:
+            memory: 2Gi
+            cpu: 1
+    task:
+      writerCount: 1
+    deployPrometheusExporter: true
+    useJmxExporter: true
+  metastore:
+    allowDropTable: true
+    timeout: 360m
+  postgres:
+    enable: false
+    db:
+      name: metastore
+      user: metastore
+    tls:
+      enable: true
+      mode: verify-full
+      rootCertPath: /etc/ssl/certs/ca-certificates.crt
+  minio:
+    enable: false

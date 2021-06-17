@@ -20,5 +20,8 @@ dependencies:
 - name: kafka
   repository: https://Datastillery.github.io/charts
   version: 1.0.0
-digest: sha256:1e33b6bb573c66e35fdf50217101e5b93ad43f4ad7be48630bb23a23f88bd6f9
-generated: "2021-06-14T15:06:29.813188-05:00"
+- name: kubernetes-data-platform
+  repository: file://../kubernetes-data-platform
+  version: 1.5.4
+digest: sha256:59a0671c2bb2c6fed1bb5aa8854cb7cc88b7082c1013f41cfaf4431604baf049
+generated: "2021-06-16T13:13:43.829088-04:00"
