@@ -6,7 +6,7 @@ metadata:
   name: {{ $topic.name }}
   namespace: {{ $.Release.Namespace }}
   labels:
-    strimzi.io/cluster: kafka
+    strimzi.io/cluster: pipeline
 spec:
   partitions: {{ $topic.partitions | default $.Values.kafka.defaultPartitions }}
   replicas: {{ $topic.replicas | default $.Values.kafka.defaultReplicas }}

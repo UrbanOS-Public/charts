@@ -1,6 +1,6 @@
 dependencies:
 - name: forklift
-  repository: https://Datastillery.github.io/charts
+  repository: file://../forklift
   version: 3.0.1
 - name: odo
   repository: https://Datastillery.github.io/charts
@@ -18,10 +18,10 @@ dependencies:
   repository: https://Datastillery.github.io/charts
   version: 1.0.0
 - name: kafka
-  repository: https://Datastillery.github.io/charts
+  repository: file://../kafka
   version: 1.0.0
 - name: kubernetes-data-platform
   repository: file://../kubernetes-data-platform
   version: 1.5.4
-digest: sha256:59a0671c2bb2c6fed1bb5aa8854cb7cc88b7082c1013f41cfaf4431604baf049
-generated: "2021-06-16T13:13:43.829088-04:00"
+digest: sha256:21b2fee88e5745a01ddcccba47c61693c6e4c4ed45eb4ab576732dc46fa2712a
+generated: "2021-06-18T16:47:47.722558-04:00"

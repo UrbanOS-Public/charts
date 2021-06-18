@@ -16,7 +16,6 @@ global:
     annotations:
       kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/ssl-policy: "ELBSecurityPolicy-TLS-1-2-2017-01"
-      alb.ingress.kubernetes.io/healthcheck-path: /healthcheck
       alb.ingress.kubernetes.io/scheme: "internal"
       alb.ingress.kubernetes.io/subnets: ""
       alb.ingress.kubernetes.io/security-groups: ""

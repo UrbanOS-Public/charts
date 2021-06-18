@@ -56,9 +56,9 @@ spec:
           - name: SPECIAL_COMPACTION_DATASETS
             value: {{.Values.specialCompactionDatasets | quote }}
           {{ end -}}
-          {{ if .Values.kdp.bucket }}
+          {{ if .Values.global.buckets.hostedFileBucket }}
           - name: S3_WRITER_BUCKET
-            value: {{ .Values.kdp.bucket }}
+            value: {{ .Values.global.buckets.hostedFileBucket }}
           {{ end -}}
           - name: NAMESPACE
             valueFrom:

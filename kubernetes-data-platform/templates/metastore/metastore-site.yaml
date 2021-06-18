@@ -16,7 +16,7 @@ data:
       </property>
       <property>
         <name>metastore.warehouse.dir</name>
-        <value>s3a://{{ .Values.global.objectStore.bucketName }}/{{ .Values.metastore.warehouseDir }}</value>
+        <value>s3a://{{ .Values.global.buckets.hiveStorageBucket }}/{{ .Values.metastore.warehouseDir }}</value>
       </property>
       <property>
         <name>metastore.task.threads.always</name>

@@ -7,7 +7,7 @@ version: 1.0.1
 dependencies:
   - name: forklift
     version: 3.0.1
-    repository: https://Datastillery.github.io/charts
+    repository: file://../forklift
     condition: forklift.enabled
   - name: odo
     version: 1.0.0
@@ -31,7 +31,7 @@ dependencies:
     condition: external-services.enabled
   - name: kafka
     version: 1.0.0
-    repository: https://Datastillery.github.io/charts
+    repository: file://../kafka
     condition: kafka.enabled
   - name: kubernetes-data-platform
     version: 1.5.4

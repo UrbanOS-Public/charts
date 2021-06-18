@@ -15,6 +15,6 @@ data:
 
     sleep 10
     mc config host add kdp http://{{ template "kdp.minio.fullname" . }}:{{ .Values.minio.service.port }} {{ .Values.global.objectStore.accessKey }} {{ .Values.global.objectStore.accessSecret }}
-    mc mb kdp/{{ .Values.global.objectStore.bucketName }}
-    mc policy public kdp/{{ .Values.global.objectStore.bucketName }}
+    mc mb kdp/{{ .Values.global.buckets.hiveStorageBucket }}
+    mc policy public kdp/{{ .Values.global.buckets.hiveStorageBucket }}
 {{- end }}

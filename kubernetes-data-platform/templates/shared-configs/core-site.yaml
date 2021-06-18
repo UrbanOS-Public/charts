@@ -13,7 +13,7 @@ data:
 
       <property>
         <name>fs.defaultFS</name>
-        <value>s3a://{{ .Values.global.objectStore.bucketName }}</value>
+        <value>s3a://{{ .Values.global.buckets.hiveStorageBucket }}</value>
         <final>true</final>
       </property>
 
@@ -61,7 +61,7 @@ data:
         <name>fs.s3a.fast.upload</name>
         <value>true</value>
       </property>
-    
+
       <property>
         <name>fs.s3a.fast.upload.buffer</name>
         <value>disk</value>
