@@ -4,6 +4,9 @@ metadata:
   name: {{ include "helm.fullname" . }}
   namespace: {{ .Release.Namespace }}
   annotations:
+{{- if .Values.ingress.annotations }}
+{{ toYaml .Values.ingress.annotations | trim | indent 4 }}
+{{- end }}
 {{- if .Values.global.ingress.annotations }}
 {{ toYaml .Values.global.ingress.annotations | trim | indent 4 }}
 {{- end }}

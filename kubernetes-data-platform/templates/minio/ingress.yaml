@@ -5,12 +5,12 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-{{- if .Values.minio.ingress.annotations }}
   annotations:
+{{- if .Values.minio.ingress.annotations }}
 {{ toYaml .Values.minio.ingress.annotations | trim | indent 4 }}
+{{- end }}
 {{- if .Values.global.ingress.annotations }}
 {{ toYaml .Values.global.ingress.annotations | trim | indent 4 }}
-{{- end }}
 {{- end }}
   name: {{ template "kdp.minio.fullname" . }}
   labels:
