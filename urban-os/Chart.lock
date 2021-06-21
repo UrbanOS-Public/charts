@@ -24,4 +24,4 @@ dependencies:
   repository: file://../kubernetes-data-platform
   version: 1.5.4
 digest: sha256:21b2fee88e5745a01ddcccba47c61693c6e4c4ed45eb4ab576732dc46fa2712a
-generated: "2021-06-18T16:47:47.722558-04:00"
+generated: "2021-06-21T10:58:23.649317-04:00"

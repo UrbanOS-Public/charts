@@ -143,6 +143,7 @@ hook:
 global:
   environment: sandbox
   objectStore:
-    bucketName: kdp-cloud-storage
     accessKey: accessKey
     accessSecret: accessSecret
+  buckets:
+    hiveStorageBucket: placeholderName
