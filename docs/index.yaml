@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   andi:
   - apiVersion: v1
+    created: "2021-06-21T14:41:53.987741-04:00"
+    description: REST API to allow for dataset definition ingestion
+    digest: a39ca9cf6328da289f111be5e4a94579f7f497e2e40b088da1a49b89fe9921f3
+    name: andi
+    urls:
+    - andi-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v1
     created: "2021-06-02T13:51:20.790811-05:00"
     description: REST API to allow for dataset definition ingestion
     digest: 3c904bceff7de5931f68ba2b4c9150430b708c1e96e3ebf71c265b23b977de17
@@ -693,6 +701,15 @@ entries:
   forklift:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-06-21T14:42:51.941008-04:00"
+    description: Loads data from the transformed topic into Presto
+    digest: 61eb167551ecdde734fc2bcc08c73ec39e2b480a71461ceb36df022e1eb73903
+    name: forklift
+    urls:
+    - forklift-3.1.0.tgz
+    version: 3.1.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-06-14T09:45:07.444299-05:00"
     description: Loads data from the transformed topic into Presto
     digest: ecd00f477225666a038168a52182d27a60a33a4f1e6d1cd6c95e5940820e36b3
@@ -803,6 +820,15 @@ entries:
   kafka:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-06-21T14:43:06.430655-04:00"
+    description: A Helm chart for deploying kafka via strimzi
+    digest: b22177056787aba635c00843e15d9c0e07c03452831523f224020719dcf65fdf
+    name: kafka
+    urls:
+    - kafka-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-06-14T15:01:40.714136-05:00"
     description: A Helm chart for deploying kafka via strimzi
     digest: c53324bcf5e4a43788c597f2c7b54e29885c34934b9fc0a375dfbf6e87f92605
@@ -811,6 +837,24 @@ entries:
     - kafka-1.0.0.tgz
     version: 1.0.0
   kubernetes-data-platform:
+  - apiVersion: v1
+    created: "2021-06-21T14:43:12.777301-04:00"
+    description: Hadoop-less data platform for the Smart City OS
+    digest: 2e82a1f9eef9dd83a8a79d0fb84da3287c89ae39c74ee6c4fa8c378c217495dd
+    keywords:
+    - presto
+    - hive-metastore
+    - cloud-object-store
+    - minio
+    name: kubernetes-data-platform
+    sources:
+    - https://github.com/prestodb/presto
+    - https://github.com/apache/hive
+    - https://github.com/minio/minio
+    - https://github.com/helm/helm
+    urls:
+    - kubernetes-data-platform-1.6.0.tgz
+    version: 1.6.0
   - apiVersion: v1
     created: "2021-04-08T14:04:23.275322-04:00"
     description: Hadoop-less data platform for the Smart City OS
@@ -1487,4 +1531,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-06-14T15:07:35.960558-05:00"
+generated: "2021-06-21T14:43:12.77566-04:00"
