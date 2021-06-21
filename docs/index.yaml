@@ -1305,6 +1305,48 @@ entries:
   urban-os:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2021-06-21T15:52:00.076553-04:00"
+    dependencies:
+    - condition: forklift.enabled
+      name: forklift
+      repository: https://Datastillery.github.io/charts
+      version: 3.1.0
+    - condition: odo.enabled
+      name: odo
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: reaper.enabled
+      name: reaper
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: https://Datastillery.github.io/charts
+      version: 2.6.1
+    - condition: andi.enabled
+      name: andi
+      repository: https://Datastillery.github.io/charts
+      version: 2.0.1
+    - condition: external-services.enabled
+      name: external-services
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: kafka.enabled
+      name: kafka
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.1
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: https://Datastillery.github.io/charts
+      version: 1.6.0
+    description: Master chart that deploys the data platform.
+    digest: 0f4c7251a8d269497286dccf470f82f7e587a84814260948cc11f8a4a0f4e130
+    name: urban-os
+    urls:
+    - urban-os-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2021-06-14T15:07:35.973107-05:00"
     dependencies:
     - condition: forklift.enabled
@@ -1531,4 +1573,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-06-21T14:43:12.77566-04:00"
+generated: "2021-06-21T15:52:00.059847-04:00"
