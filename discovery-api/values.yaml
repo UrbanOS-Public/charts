@@ -1,4 +1,36 @@
-replicaCount: 3
+global:
+  buckets:
+    region: us-west-2
+    hostedFileBucket: "dataset-bucket"
+  kafka:
+    brokers: pipeline-kafka-bootstrap:9092
+  presto:
+    url: http://platform-kubernetes-data-platform-presto:8080
+  redis:
+    host: redis.external-services
+    password: ""
+  vault:
+    endpoint: vault.vault:8200
+  ingress:
+    rootDnsZone: localhost
+    dnsZone: localhost
+    port: 80
+    scheme: ""
+    subnets: ""
+    security_groups: ""
+
+resources:
+  limits:
+    memory: 512Mi
+    cpu: 1
+  requests:
+    memory: 512Mi
+    cpu: 1
+
+replicaCount: 1
+
+ingress:
+  annotations:
 
 service:
   name: discovery-api
@@ -6,19 +38,10 @@ service:
   port: 80
   auth_string: ""
 
-ingress:
-  enabled: false
-  scheme: ""
-  subnets: ""
-  security_groups: ""
-  dnsZone: "localhost"
-  rootDnsZone: "localhost"
-  certificate_arn: ""
-
 image:
   name: smartcitiesdata/discovery_api
   tag: development
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
 
 monitoring:
   targetPort: 9002
@@ -27,16 +50,7 @@ nodeSelector: {}
 tolerations: []
 affinity: {}
 
-kafka:
-  #comma delimited list of kafka seed brokers
-  brokers: streaming-service-kafka-bootstrap.streaming-prime:9092
-
-redis:
-  host: discovery-api-redis-master
-  password: ""
-
 presto:
-  url: "http://presto-endpoint:8080"
   catalog: "hive"
   schema: "default"
 
@@ -46,13 +60,6 @@ ldap:
   user: "binduser"
   account:
     subdn: "cn=users,cn=accounts"
-
-s3:
-  hostedFileBucket: "hosted-dataset-files"
-  hostedFileRegion: "us-west-2"
-
-vault:
-  endpoint: http://vault.example.com:8200
 
 postgres:
   host: "example.com"
@@ -71,3 +78,9 @@ auth:
   jwks_endpoint: "https://example.com/.well-known/jwks.json"
   jwt_issuer: "https://example.com/"
   user_info_endpoint: "https://example.com/userinfo"
+
+secrets:
+  discoveryApiPresignKey: ""
+
+ingress:
+  annotations:

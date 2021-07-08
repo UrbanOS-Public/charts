@@ -247,6 +247,15 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
+    created: "2021-07-08T15:56:09.248972-05:00"
+    description: A middleware layer to connect data consumers with the data sources
+    digest: 5708e8e37cf047d0f5d154ace127b2fd55b99134d3d429bdc58be377be82c895
+    name: discovery-api
+    urls:
+    - discovery-api-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v1
+    appVersion: 1.0.0-static
     created: "2021-04-12T11:57:52.646119-04:00"
     description: A middleware layer to connect data consumers with the data sources
     digest: 507542b27f859d91cc336d21a8d20f635d6420780a99f63387f6800d17d8f2ee
@@ -401,6 +410,15 @@ entries:
   discovery-streams:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-07-08T15:56:19.1186-05:00"
+    description: Dynamically find kafka topics and makes available corresponding channels on a public websocket
+    digest: 074d43af31929f2d48f44d9db2fb702fadbb78c0ab400cad060864b23589902b
+    name: discovery-streams
+    urls:
+    - discovery-streams-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-04-08T12:18:00.01316-04:00"
     description: Dynamically find kafka topics and makes available corresponding channels on a public websocket
     digest: d66ba890e5f009d6205cd32995f8960adc0fd7d34eda2d0beb9d9c5fbda2bc14
@@ -472,6 +490,15 @@ entries:
     - discovery-streams-0.1.2.tgz
     version: 0.1.2
   discovery-ui:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-07-08T15:56:15.214129-05:00"
+    description: A helm chart for the discovery ui
+    digest: 90f38f02aac9131766244b35c329477d87c80869052ef7db333074d92cf64202
+    name: discovery-ui
+    urls:
+    - discovery-ui-1.0.0.tgz
+    version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-04-12T11:57:55.362115-04:00"
@@ -1117,6 +1144,14 @@ entries:
     version: 1.0.0
   odo:
   - apiVersion: v1
+    created: "2021-07-08T15:56:30.868265-05:00"
+    description: shapeshifting service
+    digest: b2256fd68dd4b59856214d20562860d5c89d1d1e60b00caf3c431d95b046cf6e
+    name: odo
+    urls:
+    - odo-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v1
     created: "2021-06-02T13:51:34.077798-05:00"
     description: shapeshifting service
     digest: 33f7e8c8794806ffc5e4e578bbc53579b13b2a34615ec62d21b53d105a5cb123
@@ -1211,6 +1246,15 @@ entries:
     - platform-0.0.1.tgz
     version: 0.0.1
   reaper:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-07-08T15:56:26.573952-05:00"
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    digest: 608c6fd19d75bb55fe2807278e36963190a88b019feb3785607731490a149fd2
+    name: reaper
+    urls:
+    - reaper-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-06-03T15:18:05.785703-05:00"
@@ -1624,4 +1668,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-06-22T16:24:16.534924-04:00"
+generated: "2021-07-08T15:56:30.867573-05:00"

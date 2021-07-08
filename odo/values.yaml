@@ -1,14 +1,14 @@
 global:
-  aws:
-    region: us-west-2
   buckets:
-    hostedFileBucket: "master-chart-hosted-dataset-files"
+    region: us-west-2
+    hostedFileBucket: "example-file-bucket"
+    hiveStorageBucket: "example-hive-bucket"
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   presto:
     url: http://platform-kubernetes-data-platform-presto:8080
   redis:
-    host: redis.external-services 
+    host: redis.external-services
     password: ""
   vault:
     endpoint: vault.vault:8200

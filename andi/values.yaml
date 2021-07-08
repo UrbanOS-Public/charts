@@ -72,3 +72,6 @@ tolerations:
 s3:
   hostedFileBucket: "andi-public-sample-datasets"
   hostedFileRegion: "us-west-2"
+
+ingress:
+  annotations:

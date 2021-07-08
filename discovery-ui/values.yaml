@@ -1,21 +1,16 @@
+global:
+  ingress:
+    rootDnsZone: localhost
+    dnsZone: localhost
+    port: 80
+
 service:
   name: discovery-ui
   type: NodePort
   port: 80
 
-ingress:
-  enabled: false
-  scheme: ""
-  subnets: ""
-  security_groups: "" #Load balancer Security Group
-  dns_zone: "localhost"
-  root_dns_zone: "localhost"
-  certificate_arns: ""
-  waf_acl_arn: ""
-  tags: ""
-
 image:
-  name: smartcitiesdata/discovery_ui
+  name: smartcolumbusos/discovery_ui
   tag: development
   environment: "local"
 
@@ -36,3 +31,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+ingress:
+  annotations:

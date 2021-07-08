@@ -52,7 +52,7 @@ spec:
         - name: HOSTED_FILE_BUCKET
           value: {{ .Values.global.buckets.hostedFileBucket }}
         - name: AWS_REGION
-          value: {{ .Values.global.aws.region }}
+          value: {{ .Values.global.buckets.region }}
         - name: PROFILING_ENABLED
           value: {{ .Values.profiling_enabled | quote }}
         - name: METRICS_PORT
