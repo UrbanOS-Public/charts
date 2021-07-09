@@ -23,5 +23,14 @@ dependencies:
 - name: kubernetes-data-platform
   repository: https://Datastillery.github.io/charts
   version: 1.6.0
-digest: sha256:271927e770477f3510718aaccdc6fa4749bbc32d18807f3158728f5b8d3ecf73
-generated: "2021-06-22T16:24:02.883292-04:00"
+- name: discovery-api
+  repository: file://../discovery-api
+  version: 1.0.0
+- name: discovery-ui
+  repository: file://../discovery-ui
+  version: 1.0.0
+- name: discovery-streams
+  repository: file://../discovery-streams
+  version: 1.0.0
+digest: sha256:c7bdd5c61ecc9821de22bff1b52424eeca9eb7fc54611ca18151073356dc2517
+generated: "2021-07-09T10:47:51.682297-05:00"

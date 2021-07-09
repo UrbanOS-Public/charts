@@ -1,16 +1,16 @@
 global:
-  aws:
-    region: us-west-2
   buckets:
-    hostedFileBucket: 
+    region: us-west-2
+    hostedFileBucket: "example-file-bucket"
+    hiveStorageBucket: "example-hive-bucket"
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   redis:
-    host: redis.external-services 
+    host: redis.external-services
     password: ""
   vault:
     endpoint: vault.vault:8200
-  
+
 outputTopicPrefix: raw
 dlqTopic: streaming-dead-letters
 replicaCount: 1

@@ -1,4 +1,7 @@
 global:
+  auth:
+    jwt_issuer: ""
+    auth0_domain: ""
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   presto:
@@ -51,8 +54,6 @@ postgres:
   password: "password"
 
 auth:
-  jwt_issuer: ""
-  auth0_domain: ""
   auth0_client_id: ""
 
 # The root at which documentation pdfs and other artifacts can be found
@@ -72,3 +73,6 @@ tolerations:
 s3:
   hostedFileBucket: "andi-public-sample-datasets"
   hostedFileRegion: "us-west-2"
+
+ingress:
+  annotations:

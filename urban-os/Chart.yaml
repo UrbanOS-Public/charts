@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the data platform.
 name: urban-os
-version: 1.1.1
+version: 1.2.0
 
 dependencies:
   - name: forklift
@@ -37,3 +37,15 @@ dependencies:
     version: 1.6.0
     repository: https://Datastillery.github.io/charts
     condition: kubernetes-data-platform.enabled
+  - name: discovery-api
+    version: 1.0.0
+    repository: file://../discovery-api
+    condition: discovery-api.enabled
+  - name: discovery-ui
+    version: 1.0.0
+    repository: file://../discovery-ui
+    condition: discovery-ui.enabled
+  - name: discovery-streams
+    version: 1.0.0
+    repository: file://../discovery-streams
+    condition: discovery-streams.enabled

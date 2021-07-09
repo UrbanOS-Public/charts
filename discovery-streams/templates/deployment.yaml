@@ -26,9 +26,9 @@ spec:
 {{ toYaml .Values.resources | indent 10 }}
         env:
         - name: KAFKA_BROKERS
-          value: {{ .Values.kafka.brokers | default (include "kafka.brokerservice" .) }}
+          value: {{ .Values.global.kafka.brokers | default (include "kafka.brokerservice" .) }}
         - name: REDIS_HOST
-          value: {{ .Values.redis.host }}
+          value: {{ .Values.global.redis.host }}
         - name: RUN_IN_KUBERNETES
           value: "true"
         - name: METRICS_PORT

@@ -32,7 +32,7 @@ spec:
           name: download-dir
         env:
         - name: CLOUD_REGION
-          value: {{ .Values.global.aws.region }}
+          value: {{ .Values.global.buckets.region }}
         - name: HOSTED_FILE_BUCKET
           value: {{ .Values.global.buckets.hostedFileBucket }}
         - name: KAFKA_BROKERS
