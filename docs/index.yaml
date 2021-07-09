@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   andi:
   - apiVersion: v1
-    created: "2021-06-21T14:41:53.987741-04:00"
+    created: "2021-07-09T14:17:35.769905-05:00"
     description: REST API to allow for dataset definition ingestion
-    digest: a39ca9cf6328da289f111be5e4a94579f7f497e2e40b088da1a49b89fe9921f3
+    digest: 16e86407dbe7971263b5a8cc950b865f54d49ac6e77486b6096b80c43b3bce09
     name: andi
     urls:
     - andi-2.0.1.tgz
@@ -247,9 +247,9 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
-    created: "2021-07-08T15:56:09.248972-05:00"
+    created: "2021-07-09T14:15:06.904083-05:00"
     description: A middleware layer to connect data consumers with the data sources
-    digest: 5708e8e37cf047d0f5d154ace127b2fd55b99134d3d429bdc58be377be82c895
+    digest: cf978d6c6238d1e7a7659504f7d8daa6c96f145ac886e3df2937f8bd95768519
     name: discovery-api
     urls:
     - discovery-api-1.0.0.tgz
@@ -410,9 +410,9 @@ entries:
   discovery-streams:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-07-08T15:56:19.1186-05:00"
+    created: "2021-07-09T14:17:28.826869-05:00"
     description: Dynamically find kafka topics and makes available corresponding channels on a public websocket
-    digest: 074d43af31929f2d48f44d9db2fb702fadbb78c0ab400cad060864b23589902b
+    digest: 670ada337c00b6feb3533aaec3babbdccef0483d7fc32f035f8a2bc9d8108c0c
     name: discovery-streams
     urls:
     - discovery-streams-1.0.0.tgz
@@ -492,9 +492,9 @@ entries:
   discovery-ui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-07-08T15:56:15.214129-05:00"
+    created: "2021-07-09T14:17:23.611954-05:00"
     description: A helm chart for the discovery ui
-    digest: 90f38f02aac9131766244b35c329477d87c80869052ef7db333074d92cf64202
+    digest: 999f47d7bfedd37eea3767b334cdf6138152ebde932d098367e8e1c47479c1f0
     name: discovery-ui
     urls:
     - discovery-ui-1.0.0.tgz
@@ -1668,4 +1668,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-07-08T15:56:30.867573-05:00"
+generated: "2021-07-09T14:17:35.768815-05:00"
