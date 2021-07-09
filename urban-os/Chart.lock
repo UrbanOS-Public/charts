@@ -24,13 +24,13 @@ dependencies:
   repository: https://Datastillery.github.io/charts
   version: 1.6.0
 - name: discovery-api
-  repository: file://../discovery-api
+  repository: https://Datastillery.github.io/charts
   version: 1.0.0
 - name: discovery-ui
-  repository: file://../discovery-ui
+  repository: https://Datastillery.github.io/charts
   version: 1.0.0
 - name: discovery-streams
-  repository: file://../discovery-streams
+  repository: https://Datastillery.github.io/charts
   version: 1.0.0
-digest: sha256:c7bdd5c61ecc9821de22bff1b52424eeca9eb7fc54611ca18151073356dc2517
-generated: "2021-07-09T10:47:51.682297-05:00"
+digest: sha256:2e35b7428303437233d967953108e567e7e075829eac18ab4c05719837424ab4
+generated: "2021-07-09T14:43:32.197184-05:00"

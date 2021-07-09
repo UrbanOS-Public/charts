@@ -39,13 +39,13 @@ dependencies:
     condition: kubernetes-data-platform.enabled
   - name: discovery-api
     version: 1.0.0
-    repository: file://../discovery-api
+    repository: https://Datastillery.github.io/charts
     condition: discovery-api.enabled
   - name: discovery-ui
     version: 1.0.0
-    repository: file://../discovery-ui
+    repository: https://Datastillery.github.io/charts
     condition: discovery-ui.enabled
   - name: discovery-streams
     version: 1.0.0
-    repository: file://../discovery-streams
+    repository: https://Datastillery.github.io/charts
     condition: discovery-streams.enabled
