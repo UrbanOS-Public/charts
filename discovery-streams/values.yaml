@@ -7,7 +7,6 @@ global:
   ingress:
     dnsZone: ""
     rootDnsZone: ""
-    port: 80
 
 dashboard:
   title: "Dashboard Metrics"

@@ -17,10 +17,6 @@ global:
   ingress:
     rootDnsZone: localhost
     dnsZone: localhost
-    port: 80
-    scheme: ""
-    subnets: ""
-    security_groups: ""
 
 resources:
   limits:

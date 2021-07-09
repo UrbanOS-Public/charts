@@ -4,7 +4,6 @@ global:
   ingress:
     rootDnsZone: localhost
     dnsZone: localhost
-    port: 80
 
 service:
   name: discovery-ui
