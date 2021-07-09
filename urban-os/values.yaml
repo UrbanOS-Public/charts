@@ -1,6 +1,9 @@
 global:
   aws:
     region: us-west-2
+  auth:
+    jwt_issuer: ""
+    auth0_domain: ""
   buckets:
     hostedFileBucket: ""
   kafka:

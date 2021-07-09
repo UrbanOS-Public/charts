@@ -1,4 +1,6 @@
 global:
+  auth:
+    auth0_domain: ""
   ingress:
     rootDnsZone: localhost
     dnsZone: localhost

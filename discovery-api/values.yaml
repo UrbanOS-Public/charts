@@ -1,4 +1,7 @@
 global:
+  auth:
+    jwt_issuer: ""
+    auth0_domain: ""
   buckets:
     region: us-west-2
     hostedFileBucket: "dataset-bucket"
