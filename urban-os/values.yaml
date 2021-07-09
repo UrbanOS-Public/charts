@@ -1,10 +1,9 @@
 global:
-  aws:
-    region: us-west-2
   auth:
     jwt_issuer: ""
     auth0_domain: ""
   buckets:
+    region: "us-west-2"
     hostedFileBucket: ""
   kafka:
     brokers: pipeline-kafka-bootstrap:9092
@@ -39,6 +38,12 @@ andi:
   fullnameOverride: andi
   enabled: true
 kafka:
+  enabled: true
+discovery-api:
+  enabled: true
+discovery-ui:
+  enabled: true
+discovery-streams:
   enabled: true
 
 kubernetes-data-platform:
