@@ -1,5 +1,4 @@
 vault:
-  devMode: false
   port: 8200
   clusterPort: 8201
   repository: vault
