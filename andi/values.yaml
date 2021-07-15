@@ -55,6 +55,7 @@ postgres:
 
 auth:
   auth0_client_id: ""
+  auth0_client_secret: ""
 
 # The root at which documentation pdfs and other artifacts can be found
 documentationRoot: ""
