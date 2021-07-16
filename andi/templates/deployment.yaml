@@ -87,7 +87,7 @@ spec:
           - name: AUTH0_CLIENT_SECRET
             valueFrom:
               secretKeyRef:
-                name: auth0-client-secret
+                name: {{ .Release.Name }}-andi-auth0-client-secret
                 key: auth0_client_secret
 {{- with .Values.tolerations }}
       tolerations:
