@@ -1,5 +1,4 @@
 vault:
-  devMode: false
   port: 8200
   clusterPort: 8201
   repository: vault
@@ -29,22 +28,27 @@ vault:
   roles:
     - name: discovery-api-role
       boundServiceAccounts: discovery-api
-      boundServiceAccountNamespaces: discovery
+      boundServiceAccountNamespaces: urban-os
       policies: discovery_api_aws
       tokenTtl: 2m
     - name: reaper-role
       boundServiceAccounts: reaper
-      boundServiceAccountNamespaces: streaming-services
+      boundServiceAccountNamespaces: urban-os
       policies: reaper_aws,dataset_access_keys
       tokenTtl: 2m
     - name: odo-role
       boundServiceAccounts: odo
-      boundServiceAccountNamespaces: streaming-services
+      boundServiceAccountNamespaces: urban-os
       policies: odo_aws
     - name: andi-role
       boundServiceAccounts: andi
-      boundServiceAccountNamespaces: admin
-      policies: dataset_access_keys, andi_write_only
+      boundServiceAccountNamespaces: urban-os
+      policies: andi_auth0,andi_write_only,andi_aws_keys
+      tokenTtl: 2m
+    - name: andi-public-role
+      boundServiceAccounts: andi-public
+      boundServiceAccountNamespaces: urban-os
+      policies: andi_auth0,andi_aws_keys
       tokenTtl: 2m
 
   policies:
@@ -63,6 +67,12 @@ vault:
     - name: andi_write_only
       path: secrets/smart_city/ingestion/*
       capabilities: '["create", "update"]'
+    - name: andi_aws_keys
+      path: secrets/smart_city/aws_keys/andi
+      capabilities: '["read", "list"]'
+    - name: andi_auth0
+      path: secrets/smart_city/auth0/andi
+      capabilities: '["read", "list"]'
 
 kubectl:
   version: "1.14.0"
@@ -70,5 +80,15 @@ kubectl:
 jq:
   version: "1.6"
 
+# Used in maintenance-script
 ldap:
-  server: ""
+  server: "server"
+  binduser: "binduser"
+  userdn: "userdn"
+  basedn: "basedn"
+  bindpass: "bindpass"
+  userattr: "userattr"
+  groupdn: "groupdn"
+  groupattr: "groupattr"
+  start_tls: "start_tls"
+  insecure_tls: "insecure_tls"
