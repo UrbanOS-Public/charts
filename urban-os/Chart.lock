@@ -32,5 +32,5 @@ dependencies:
 - name: discovery-streams
   repository: https://Datastillery.github.io/charts
   version: 1.0.0
-digest: sha256:2e35b7428303437233d967953108e567e7e075829eac18ab4c05719837424ab4
-generated: "2021-07-19T12:13:15.670145-04:00"
+digest: sha256:149958cd3a4af593308f40a8f71b64b41291fe0452fae7b58ac2999525966d8f
+generated: "2021-07-19T14:24:42.504157-04:00"
