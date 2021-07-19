@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the data platform.
 name: urban-os
-version: 1.2.0
+version: 1.3.0
 
 dependencies:
   - name: forklift
@@ -22,7 +22,7 @@ dependencies:
     repository: https://Datastillery.github.io/charts
     condition: valkyrie.enabled
   - name: andi
-    version: 2.0.1
+    version: 2.0.2
     repository: https://Datastillery.github.io/charts
     condition: andi.enabled
   - name: external-services
