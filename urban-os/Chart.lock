@@ -13,7 +13,7 @@ dependencies:
   version: 2.6.1
 - name: andi
   repository: https://Datastillery.github.io/charts
-  version: 2.0.1
+  version: 2.0.2
 - name: external-services
   repository: https://Datastillery.github.io/charts
   version: 1.0.0
@@ -32,5 +32,5 @@ dependencies:
 - name: discovery-streams
   repository: https://Datastillery.github.io/charts
   version: 1.0.0
-digest: sha256:2e35b7428303437233d967953108e567e7e075829eac18ab4c05719837424ab4
-generated: "2021-07-09T14:43:32.197184-05:00"
+digest: sha256:149958cd3a4af593308f40a8f71b64b41291fe0452fae7b58ac2999525966d8f
+generated: "2021-07-19T12:44:17.862111-05:00"
