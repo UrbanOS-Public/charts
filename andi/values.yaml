@@ -55,6 +55,7 @@ postgres:
 
 auth:
   auth0_client_id: ""
+  auth0_client_secret: ""
 
 # The root at which documentation pdfs and other artifacts can be found
 documentationRoot: ""
@@ -73,6 +74,9 @@ tolerations:
 s3:
   hostedFileBucket: "andi-public-sample-datasets"
   hostedFileRegion: "us-west-2"
+
+# This is the name of the role that ANDI must have to access vault
+vaultRole: "andi-role"
 
 ingress:
   annotations:
