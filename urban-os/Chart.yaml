@@ -10,20 +10,23 @@ dependencies:
     repository: https://Datastillery.github.io/charts
     condition: forklift.enabled
   - name: odo
-    version: 1.0.0
-    repository: https://Datastillery.github.io/charts
+    version: 1.1.0
+    #repository: https://Datastillery.github.io/charts
+    repository: file://../odo
     condition: odo.enabled
   - name: reaper
-    version: 1.0.0
-    repository: https://Datastillery.github.io/charts
+    version: 1.1.0
+    #repository: https://Datastillery.github.io/charts
+    repository: file://../reaper
     condition: reaper.enabled
   - name: valkyrie
     version: 2.6.1
     repository: https://Datastillery.github.io/charts
     condition: valkyrie.enabled
   - name: andi
-    version: 2.0.2
-    repository: https://Datastillery.github.io/charts
+    version: 2.1.0
+    #repository: https://Datastillery.github.io/charts
+    repository: file://../andi
     condition: andi.enabled
   - name: external-services
     version: 1.0.0
@@ -38,8 +41,9 @@ dependencies:
     repository: https://Datastillery.github.io/charts
     condition: kubernetes-data-platform.enabled
   - name: discovery-api
-    version: 1.0.0
-    repository: https://Datastillery.github.io/charts
+    version: 1.1.0
+    #repository: https://Datastillery.github.io/charts
+    repository: file://../discovery-api
     condition: discovery-api.enabled
   - name: discovery-ui
     version: 1.0.0
