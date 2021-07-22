@@ -1,4 +1,3 @@
-{{- if not .Values.vault.devMode -}}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -16,4 +15,3 @@ spec:
   resources:
     requests:
       storage: {{ .Values.vault.volumeSize }}
-{{- end -}}
