@@ -13,7 +13,7 @@ global:
     host: redis.external-services
     password: ""
   vault:
-    endpoint: vault.vault:8200
+    endpoint: vault:8200
   ingress:
     dnsZone: ""
     rootDnsZone: ""
