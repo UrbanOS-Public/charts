@@ -1366,6 +1366,64 @@ entries:
   urban-os:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2021-07-22T08:12:21.498216-05:00"
+    dependencies:
+    - condition: forklift.enabled
+      name: forklift
+      repository: https://Datastillery.github.io/charts
+      version: 3.1.1
+    - condition: odo.enabled
+      name: odo
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: reaper.enabled
+      name: reaper
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: https://Datastillery.github.io/charts
+      version: 2.6.1
+    - condition: andi.enabled
+      name: andi
+      repository: https://Datastillery.github.io/charts
+      version: 2.0.2
+    - condition: external-services.enabled
+      name: external-services
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: kafka.enabled
+      name: kafka
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.1
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: https://Datastillery.github.io/charts
+      version: 1.6.0
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: vault.enabled
+      name: vault
+      repository: https://Datastillery.github.io/charts
+      version: 1.2.0
+    description: Master chart that deploys the data platform.
+    digest: 83bb9dead651ca930d21a293d891b94adbb6c1bbdc66bc78b79f78b56891c507
+    name: urban-os
+    urls:
+    - urban-os-1.4.0.tgz
+    version: 1.4.0
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2021-07-19T14:36:22.223238-04:00"
     dependencies:
     - condition: forklift.enabled
@@ -1802,4 +1860,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-07-22T08:05:47.268614-05:00"
+generated: "2021-07-22T08:12:21.482887-05:00"
