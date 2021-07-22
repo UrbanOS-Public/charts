@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the data platform.
 name: urban-os
-version: 1.4.0
+version: 1.3.0
 
 dependencies:
   - name: forklift
@@ -10,23 +10,20 @@ dependencies:
     repository: https://Datastillery.github.io/charts
     condition: forklift.enabled
   - name: odo
-    version: 1.1.0
-    #repository: https://Datastillery.github.io/charts
-    repository: file://../odo
+    version: 1.0.0
+    repository: https://Datastillery.github.io/charts
     condition: odo.enabled
   - name: reaper
-    version: 1.1.0
-    #repository: https://Datastillery.github.io/charts
-    repository: file://../reaper
+    version: 1.0.0
+    repository: https://Datastillery.github.io/charts
     condition: reaper.enabled
   - name: valkyrie
     version: 2.6.1
     repository: https://Datastillery.github.io/charts
     condition: valkyrie.enabled
   - name: andi
-    version: 2.1.0
-    #repository: https://Datastillery.github.io/charts
-    repository: file://../andi
+    version: 2.0.2
+    repository: https://Datastillery.github.io/charts
     condition: andi.enabled
   - name: external-services
     version: 1.0.0
@@ -41,9 +38,8 @@ dependencies:
     repository: https://Datastillery.github.io/charts
     condition: kubernetes-data-platform.enabled
   - name: discovery-api
-    version: 1.1.0
-    #repository: https://Datastillery.github.io/charts
-    repository: file://../discovery-api
+    version: 1.0.0
+    repository: https://Datastillery.github.io/charts
     condition: discovery-api.enabled
   - name: discovery-ui
     version: 1.0.0
