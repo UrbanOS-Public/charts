@@ -4,16 +4,16 @@ dependencies:
   version: 3.1.1
 - name: odo
   repository: https://Datastillery.github.io/charts
-  version: 1.0.0
+  version: 1.1.0
 - name: reaper
   repository: https://Datastillery.github.io/charts
-  version: 1.0.0
+  version: 1.1.0
 - name: valkyrie
   repository: https://Datastillery.github.io/charts
   version: 2.6.1
 - name: andi
   repository: https://Datastillery.github.io/charts
-  version: 2.0.2
+  version: 2.1.0
 - name: external-services
   repository: https://Datastillery.github.io/charts
   version: 1.0.0
@@ -25,7 +25,7 @@ dependencies:
   version: 1.6.0
 - name: discovery-api
   repository: https://Datastillery.github.io/charts
-  version: 1.0.0
+  version: 1.1.0
 - name: discovery-ui
   repository: https://Datastillery.github.io/charts
   version: 1.0.0
@@ -35,5 +35,5 @@ dependencies:
 - name: vault
   repository: https://Datastillery.github.io/charts
   version: 1.2.0
-digest: sha256:7372c4597eb3a44cf0611ee3739b94bbb465b7f43d04be74c5170d2566a7eb27
-generated: "2021-07-22T08:10:58.308475-05:00"
+digest: sha256:0666da0f3ca1fddc66312c040345cea00291ebd4d32404facf660004029bfe0c
+generated: "2021-07-26T15:30:34.75529-04:00"
