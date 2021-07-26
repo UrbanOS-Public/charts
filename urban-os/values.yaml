@@ -79,3 +79,13 @@ kubernetes-data-platform:
       rootCertPath: /etc/ssl/certs/ca-certificates.crt
   minio:
     enable: false
+
+prometheus:
+  server:
+    resources:
+      limits:
+        memory: 512Mi
+        cpu: 500m
+      requests:
+        memory: 512Mi
+        cpu: 500m
