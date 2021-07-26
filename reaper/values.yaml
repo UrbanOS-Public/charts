@@ -38,3 +38,7 @@ resources:
 
 monitoring:
   targetPort: 9002
+
+aws:
+  accessKeyId: ""
+  accessKeySecret: ""
