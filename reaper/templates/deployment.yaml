@@ -66,11 +66,14 @@ spec:
             fieldRef:
               fieldPath: status.podIP
         - name: AWS_ACCESS_KEY_ID
-          value: {{ quote .Values.aws.accessKeyId }}
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}-reaper-aws-credentials
+              key: aws_access_key_id
         - name: AWS_ACCESS_KEY_SECRET
           valueFrom:
             secretKeyRef:
-              name: {{ .Release.Name }}-reaper-aws-access-key-secret
+              name: {{ .Release.Name }}-reaper-aws-credentials
               key: aws_access_key_secret
       volumes:
       - name: download-dir

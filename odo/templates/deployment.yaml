@@ -46,11 +46,14 @@ spec:
         - name: METRICS_PORT
           value: {{ quote .Values.monitoring.targetPort }}
         - name: AWS_ACCESS_KEY_ID
-          value: {{ quote .Values.aws.accessKeyId }}
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}-odo-aws-credentials
+              key: aws_access_key_id
         - name: AWS_ACCESS_KEY_SECRET
           valueFrom:
             secretKeyRef:
-              name: {{ .Release.Name }}-odo-aws-access-key-secret
+              name: {{ .Release.Name }}-odo-aws-credentials
               key: aws_access_key_secret
       volumes:
       - name: download-dir
