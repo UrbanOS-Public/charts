@@ -84,8 +84,153 @@ prometheus:
   server:
     resources:
       limits:
-        memory: 512Mi
+        memory: 1Gi
         cpu: 500m
       requests:
-        memory: 512Mi
+        memory: 1Gi
         cpu: 500m
+  serverFiles:
+    alerting_rules.yml:
+      groups:
+        # Blackbox probe
+        - name: Sites
+          rules:
+            - alert: SiteDown
+              expr: probe_success{instance!~".*(/api/v1/predictions)"} == 0
+              for: 2m
+              labels:
+                severity: error
+              annotations:
+                description: "{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 2 minutes."
+                summary: "Instance {{ $labels.instance }} down"
+        - name: api_status
+          rules:
+            - alert: APIStatusDown
+              expr: probe_success{instance=~".*(/api/v1/predictions)"} == 0
+              for: 1m
+              labels:
+                severity: error
+              annotations:
+                description: "{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 1 minutes."
+                summary: "Instance {{ $labels.instance }} down"
+        - name: api_response
+          rules:
+            - alert: APIResponseTime
+              expr: probe_duration_seconds{instance=~".*(/api/v1/predictions)"} > 3
+              for: 1m
+              labels:
+                severity: error
+              annotations:
+                description: "{{ $labels.instance }} of job {{ $labels.job }} is taking more than 3 seconds."
+                summary: "Instance {{ $labels.instance }} is taking longer response time"
+        - name: K8S_Nodes
+          rules:
+            - alert: LowMemory
+              expr: (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100) < 20
+              for: 5m
+              labels:
+                severity: warning
+              annotations:
+                description: "{{ $labels.instance }} has {{ $value }} percent memory left."
+                summary: "Low Memory on Instance {{ $labels.instance }}"
+            - alert: LowDisk
+              expr: (node_filesystem_avail_bytes{device=~"/dev/.*"} / node_filesystem_size_bytes{device=~"/dev/.*"} * 100) < 15
+              for: 5m
+              labels:
+                severity: warning
+              annotations:
+                description: "{{ $labels.instance }} has {{ $value }} percent disk left."
+                summary: "Low Disk on Instance {{ $labels.instance }}"
+            - alert: LowClusterCPU
+              expr: (cluster:capacity_cpu:sum - cluster:guarantees_cpu:sum) < 1
+              labels:
+                severity: warning
+              annotations:
+                description: "Kubernetes cluster has {{ $value }} cores left. New deployments and cron jobs may fail to launch."
+                summary: "Kubernetes cluster low on CPU cores"
+            - alert: LowClusterMemory
+              expr: (cluster:capacity_memory_bytes:sum - cluster:guarantees_memory_bytes:sum) < 1000000000 #1GB
+              labels:
+                severity: warning
+              annotations:
+                description: "Kubernetes cluster has {{ $value | humanize }} memory left. New deployments and cron jobs may fail to launch."
+                summary: "Kubernetes cluster has less than {{ 1000000000.0 | humanize }} memory available"
+            - alert: NotReady
+              annotations:
+                description: "{{ $labels.node }} is not ready"
+                summary: "Status not Ready on Node {{ $labels.node }}"
+              expr: kube_node_status_condition{condition="Ready", status="true"} != 1
+              labels:
+                severity: error
+        - name: tracer_alerts
+          rules:
+            - alert: MessageThroughput
+              expr: sum(rate(kafka_topic_partition_current_offset{topic=~"raw-00000000-7e77-4b1c-92a4-36e09db56173|transformed-00000000-7e77-4b1c-92a4-36e09db56173|streaming-persisted|scos__sample_streaming_dataset"}[5m])) by (topic) == 0
+              labels:
+                severity: error
+              annotations:
+                summary: "{{ $labels.topic }} has no input for at least 5 minutes"
+        - name: joomla_backup
+          rules:
+            - alert: JoomlaBackupNotCompleted
+              expr: >
+                time() - max(kube_job_status_start_time{job_name=~"joomla-backup.*"}) > 1800 and
+                max(kube_job_status_completion_time{job_name=~"joomla-backup.*"}) < max(kube_job_status_start_time{job_name=~"joomla-backup.*"})
+              labels:
+                severity: error
+              annotations:
+                summary: "Joomla Backup Not Completed"
+                description: "Most recent Joomla backup did not complete"
+            - alert: JoomlaBackupOverdue
+              expr: >
+                time() - max(kube_job_status_completion_time{job_name=~"joomla-backup.*"}) > 172800
+              labels:
+                severity: error
+              annotations:
+                summary: "Joomla Backup Overdue"
+                description: "Joomla backup has not run in over 24 hours"
+        - name: kube_bench_failed
+          rules:
+            - alert: KubeBenchFailed
+              expr: kube_job_status_failed{job_name=~"kube-bench.*"}[25h]
+              labels:
+                severity: warning
+              annotations:
+                summary: "Kube Bench failed some checks"
+                description: "The most recent Kube Bench run detected some failures"
+        - name: consumer_group_event_stream_lag
+          rules:
+            - alert: ConsumerGroupEventStreamLag
+              expr: pipeline:event_stream:lag > 10000
+              labels:
+                severity: warning
+              annotations:
+                summary: "Consumer Group lag for topic {{ $labels.topic }} is greater than 10,000"
+                description: "The lag for consumer group {{ $labels.consumergroup }} is {{ humanize $value }}."
+        - name: model_variance
+          rules:
+            - alert: ModelVarianceLarger
+              expr: parking_model_variance{job='variance'} > 0.10
+              labels:
+                severity: warning
+              annotations:
+                summary: "Parking model variance exceeds 0.10"
+                description: "Parking prediction variance for zone {{ $labels.zone }} is {{ $value }}."
+        - name: low_disk_space
+          rules:
+            - alert: LowDiskSpace
+              expr: (kubelet_volume_stats_available_bytes / kubelet_volume_stats_capacity_bytes * 100)  < 15
+              labels:
+                severity: warning
+              annotations:
+                summary: "Server disk space is below 15%"
+                description: 'Low disk space for Server {{ $labels.persistentvolumeclaim }}, only {{ $value | printf "%.2f" }}% space is left.'
+        - name: rule_failure
+          rules:
+            - alert: RuleFailure
+              expr: rate(prometheus_rule_evaluation_failures_total{rule_group=~".*rules.*"}[2m]) > 0
+              labels:
+                severity: warning
+              annotations:
+                summary: "Prometheus has failed to precalculate one or more metrics"
+                description: "One of the recording rules defined in Prometheus has failed to execute. This is often due to issues with info metrics, but may have other causes. Look at the rules section of the Prometheus interface for more info."
