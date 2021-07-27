@@ -90,6 +90,9 @@ prometheus:
         memory: 1Gi
         cpu: 500m
   serverFiles:
+    # Any additional alerts can go here, and will be combined with alerting_rules
+    alerts: {}
+
     alerting_rules.yml:
       groups:
         # Blackbox probe
