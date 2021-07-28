@@ -85,11 +85,11 @@ grafana:
     datasources.yaml:
       apiVersion: 1
       datasources:
-      - name: Prometheus
-        type: prometheus
-        url: urban-os-prometheus-server:9090
-        access: proxy
-        isDefault: true
+        - name: Prometheus
+          type: prometheus
+          url: http://urban-os-prometheus-server
+          access: proxy
+          isDefault: true
   service:
     enabled: true
     type: NodePort
