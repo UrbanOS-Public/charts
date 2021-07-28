@@ -80,6 +80,25 @@ kubernetes-data-platform:
   minio:
     enable: false
 
+grafana:
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+      - name: Prometheus
+        type: prometheus
+        url: urban-os-prometheus-server:9090
+        access: proxy
+        isDefault: true
+  service:
+    enabled: true
+    type: NodePort
+  sidecar:
+    dashboards:
+      enabled: true
+  adminUser: admin
+  adminPassword: admin
+
 prometheus:
   server:
     resources:
