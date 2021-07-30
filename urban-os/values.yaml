@@ -81,6 +81,10 @@ kubernetes-data-platform:
     enable: false
 
 grafana:
+  adminUser: admin
+  # An adminPassword must be set
+  # adminPassword: {password}
+
   datasources:
     datasources.yaml:
       apiVersion: 1
@@ -90,14 +94,20 @@ grafana:
           url: http://urban-os-prometheus-server
           access: proxy
           isDefault: true
+        - name: CloudWatch
+          type: cloudwatch
+          isDefault: false
+          access: proxy
+          jsonData:
+            authType: credentials
+            defaultRegion: "us-west-2"
   service:
     enabled: true
     type: NodePort
   sidecar:
     dashboards:
       enabled: true
-  adminUser: admin
-  adminPassword: admin
+
   dashboardProviders:
     dashboardproviders.yaml:
       apiVersion: 1
@@ -110,28 +120,72 @@ grafana:
           editable: true
           options:
             path: /var/lib/grafana/dashboards/default
+        - name: "kube"
+          orgId: 1
+          folder: ""
+          type: file
+          disableDeletion: false
+          editable: true
+          options:
+            path: /var/lib/grafana/dashboards/kube
+        - name: "urbanos"
+          orgId: 1
+          folder: ""
+          type: file
+          disableDeletion: false
+          editable: true
+          options:
+            path: /var/lib/grafana/dashboards/urbanos
   dashboards:
-    default:
-      #   some-dashboard:
-      #     json: |
-      #       $RAW_JSON
-      #   custom-dashboard:
-      #     file: dashboards/custom-dashboard.json
-      pipeline-health:
+    kube:
+      kube-prometheus:
+        gnetId: 2
+        revision: 2
+        datasource: Prometheus
+      kube-namespace:
+        gnetId: 6876
+        revision: 2
+        datasource: Prometheus
+      kube-cluster:
+        gnetId: 6873
+        revision: 2
+        datasource: Prometheus
+      kube-pods:
+        gnetId: 6879
+        revision: 1
+        datasource: Prometheus
+    urbanos:
+      urban-os-pipeline-health:
         gnetId: 14805
         revision: 1
         datasource: Prometheus
-      scos-cluster-overview:
+      urban-os-overview:
         gnetId: 14806
         revision: 1
         datasource: Prometheus
-      # local-dashboard:
-      #   url: https://grafana.com/api/dashboards/14805/revisions/1/download
-    #     token: ''
-    #   local-dashboard-base64:
-    #     url: https://example.com/repository/test-b64.json
-    #     token: ''
-    #     b64content: true
+      urban-os-eks-web-firewall:
+        gnetId: 14808
+        revision: 1
+        datasource: CloudWatch
+      urban-os-kube-all-nodes:
+        gnetId: 14810
+        revision: 1
+        datasource: Prometheus
+      urban-os-kafka-exporter:
+        gnetId: 14809
+        revision: 1
+        datasource: Prometheus
+      urban-os-phoenix-api-metrics:
+        gnetId: 14811
+        revision: 1
+        datasource: Prometheus
+    # Additional deployment specific dashboards may be
+    # added under the "default" provider:
+    # default:
+    #   custom-dashboard-name:
+    #     gnetId: 14811 (dashboard id from https://grafana.com/grafana/dashboards)
+    #     revision: 1
+    #     datasource: Prometheus
 
 prometheus:
   server:
