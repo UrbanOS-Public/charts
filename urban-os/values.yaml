@@ -98,6 +98,40 @@ grafana:
       enabled: true
   adminUser: admin
   adminPassword: admin
+  dashboardProviders:
+    dashboardproviders.yaml:
+      apiVersion: 1
+      providers:
+        - name: "default"
+          orgId: 1
+          folder: ""
+          type: file
+          disableDeletion: false
+          editable: true
+          options:
+            path: /var/lib/grafana/dashboards/default
+  dashboards:
+    default:
+      #   some-dashboard:
+      #     json: |
+      #       $RAW_JSON
+      #   custom-dashboard:
+      #     file: dashboards/custom-dashboard.json
+      pipeline-health:
+        gnetId: 14805
+        revision: 1
+        datasource: Prometheus
+      scos-cluster-overview:
+        gnetId: 14806
+        revision: 1
+        datasource: Prometheus
+      # local-dashboard:
+      #   url: https://grafana.com/api/dashboards/14805/revisions/1/download
+    #     token: ''
+    #   local-dashboard-base64:
+    #     url: https://example.com/repository/test-b64.json
+    #     token: ''
+    #     b64content: true
 
 prometheus:
   server:
