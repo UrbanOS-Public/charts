@@ -15,12 +15,21 @@ global:
   vault:
     endpoint: vault:8200
   ingress:
+    annotations: {}
     dnsZone: ""
     rootDnsZone: ""
     port: 80
   objectStore:
     accessKey: []
     accessSecret: []
+
+grafanaIngress:
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: /api/health
+
+prometheusIngress:
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: /-/healthy
 
 forklift:
   fullnameOverride: forklift
@@ -163,10 +172,6 @@ grafana:
         gnetId: 14806
         revision: 1
         datasource: Prometheus
-      urban-os-eks-web-firewall:
-        gnetId: 14808
-        revision: 1
-        datasource: CloudWatch
       urban-os-kube-all-nodes:
         gnetId: 14810
         revision: 1
@@ -196,6 +201,8 @@ prometheus:
       requests:
         memory: 1Gi
         cpu: 500m
+    service:
+      type: NodePort
   serverFiles:
     # Any additional alerts can go here, and will be combined with alerting_rules
     alerts: {}
