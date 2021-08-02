@@ -89,3 +89,13 @@ spec:
             value: {{ .Values.elasticsearch.host }}
           - name: METRICS_PORT
             value: {{ quote .Values.monitoring.targetPort }}
+          - name: AWS_ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-discovery-api-aws-credentials
+                key: aws_access_key_id
+          - name: AWS_ACCESS_KEY_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-discovery-api-aws-credentials
+                key: aws_access_key_secret

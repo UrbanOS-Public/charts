@@ -89,6 +89,16 @@ spec:
               secretKeyRef:
                 name: {{ .Release.Name }}-andi-auth0-client-secret
                 key: auth0_client_secret
+          - name: AWS_ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-andi-aws-credentials
+                key: aws_access_key_id
+          - name: AWS_ACCESS_KEY_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-andi-aws-credentials
+                key: aws_access_key_secret
 {{- with .Values.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}
