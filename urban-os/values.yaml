@@ -295,42 +295,6 @@ prometheus:
               expr: kube_node_status_condition{condition="Ready", status="true"} != 1
               labels:
                 severity: error
-        - name: tracer_alerts
-          rules:
-            - alert: MessageThroughput
-              expr: sum(rate(kafka_topic_partition_current_offset{topic=~"raw-00000000-7e77-4b1c-92a4-36e09db56173|transformed-00000000-7e77-4b1c-92a4-36e09db56173|streaming-persisted|scos__sample_streaming_dataset"}[5m])) by (topic) == 0
-              labels:
-                severity: error
-              annotations:
-                summary: "{{ $labels.topic }} has no input for at least 5 minutes"
-        - name: joomla_backup
-          rules:
-            - alert: JoomlaBackupNotCompleted
-              expr: >
-                time() - max(kube_job_status_start_time{job_name=~"joomla-backup.*"}) > 1800 and
-                max(kube_job_status_completion_time{job_name=~"joomla-backup.*"}) < max(kube_job_status_start_time{job_name=~"joomla-backup.*"})
-              labels:
-                severity: error
-              annotations:
-                summary: "Joomla Backup Not Completed"
-                description: "Most recent Joomla backup did not complete"
-            - alert: JoomlaBackupOverdue
-              expr: >
-                time() - max(kube_job_status_completion_time{job_name=~"joomla-backup.*"}) > 172800
-              labels:
-                severity: error
-              annotations:
-                summary: "Joomla Backup Overdue"
-                description: "Joomla backup has not run in over 24 hours"
-        - name: kube_bench_failed
-          rules:
-            - alert: KubeBenchFailed
-              expr: kube_job_status_failed{job_name=~"kube-bench.*"}[25h]
-              labels:
-                severity: warning
-              annotations:
-                summary: "Kube Bench failed some checks"
-                description: "The most recent Kube Bench run detected some failures"
         - name: consumer_group_event_stream_lag
           rules:
             - alert: ConsumerGroupEventStreamLag
@@ -340,15 +304,6 @@ prometheus:
               annotations:
                 summary: "Consumer Group lag for topic {{ $labels.topic }} is greater than 10,000"
                 description: "The lag for consumer group {{ $labels.consumergroup }} is {{ humanize $value }}."
-        - name: model_variance
-          rules:
-            - alert: ModelVarianceLarger
-              expr: parking_model_variance{job='variance'} > 0.10
-              labels:
-                severity: warning
-              annotations:
-                summary: "Parking model variance exceeds 0.10"
-                description: "Parking prediction variance for zone {{ $labels.zone }} is {{ $value }}."
         - name: low_disk_space
           rules:
             - alert: LowDiskSpace
