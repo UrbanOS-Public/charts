@@ -35,11 +35,8 @@ dependencies:
 - name: vault
   repository: https://Datastillery.github.io/charts
   version: 1.2.0
-- name: prometheus
-  repository: https://prometheus-community.github.io/helm-charts
-  version: 14.4.1
-- name: grafana
-  repository: https://grafana.github.io/helm-charts
-  version: 6.14.1
-digest: sha256:72533c0da84238ebbc88c8a4aeb0ea05490bb7b1eff3cc4ecfe311af02d6674c
-generated: "2021-08-02T15:28:24.514879-05:00"
+- name: monitoring
+  repository: file://../monitoring
+  version: 1.0.0
+digest: sha256:cecd109524d65415a667f3943a431768b68ce5682d4f99e33f5710a67eaa97db
+generated: "2021-08-04T12:53:58.909163-05:00"
