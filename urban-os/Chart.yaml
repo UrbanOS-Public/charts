@@ -53,3 +53,7 @@ dependencies:
     version: 1.2.0
     repository: https://Datastillery.github.io/charts
     condition: vault.enabled
+  - name: monitoring
+    version: 1.0.0
+    repository: file://../monitoring
+    condition: monitoring.enabled
