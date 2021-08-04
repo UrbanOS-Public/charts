@@ -229,7 +229,7 @@ prometheus:
         - name: Sites
           rules:
             - alert: SiteDown
-              expr: probe_success{instance!~".*(/api/v1/predictions)"} == 0
+              expr: probe_success == 0
               for: 2m
               labels:
                 severity: error
@@ -239,7 +239,7 @@ prometheus:
         - name: api_status
           rules:
             - alert: APIStatusDown
-              expr: probe_success{instance=~".*(/api/v1/predictions)"} == 0
+              expr: probe_success == 0
               for: 1m
               labels:
                 severity: error
@@ -249,7 +249,7 @@ prometheus:
         - name: api_response
           rules:
             - alert: APIResponseTime
-              expr: probe_duration_seconds{instance=~".*(/api/v1/predictions)"} > 3
+              expr: probe_duration_seconds > 3
               for: 1m
               labels:
                 severity: error
