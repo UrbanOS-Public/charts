@@ -15,7 +15,6 @@ global:
   vault:
     endpoint: vault:8200
   ingress:
-    annotations: {}
     dnsZone: ""
     rootDnsZone: ""
     port: 80
