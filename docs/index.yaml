@@ -1419,7 +1419,7 @@ entries:
   urban-os:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2021-08-04T09:08:33.061805-05:00"
+    created: "2021-08-05T10:45:45.384557-05:00"
     dependencies:
     - condition: forklift.enabled
       name: forklift
@@ -1469,8 +1469,12 @@ entries:
       name: vault
       repository: https://Datastillery.github.io/charts
       version: 1.2.0
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
     description: Master chart that deploys the data platform.
-    digest: ae1d86eb97364fa39507afe2b8a486927d9c582946c4241d7f93e2f4d8297110
+    digest: 9e2df529862395e4a76c83a9b7c0a39330ea7c083e89b5980605c57704aaf02a
     name: urban-os
     urls:
     - urban-os-1.6.0.tgz
@@ -2029,4 +2033,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-08-05T09:10:24.81628-05:00"
+generated: "2021-08-05T10:45:45.342939-05:00"
