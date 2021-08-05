@@ -22,7 +22,7 @@ grafana:
       datasources:
         - name: Prometheus
           type: prometheus
-          url: http://bananas-prometheus-server
+          url: http://urban-os-prometheus-server
           access: proxy
           isDefault: true
         - name: CloudWatch
@@ -116,7 +116,7 @@ grafana:
 
 prometheus:
   server:
-    fullnameOverride: bananas-prometheus-server
+    fullnameOverride: urban-os-prometheus-server
     resources:
       limits:
         memory: 1Gi

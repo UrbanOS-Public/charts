@@ -12,7 +12,7 @@ metadata:
 {{- end }}
 spec:
   backend:
-    serviceName: bananas-prometheus-server
+    serviceName: urban-os-prometheus-server
     servicePort: 80
   rules:
   - host: prometheus.{{ .Values.global.ingress.dnsZone }}
