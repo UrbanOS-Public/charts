@@ -35,5 +35,8 @@ dependencies:
 - name: vault
   repository: https://Datastillery.github.io/charts
   version: 1.2.0
-digest: sha256:3cd136c4e746bfe7eb950bbb8607374914c07b12973484956794262d2d5aae99
-generated: "2021-08-04T17:09:34.955554-04:00"
+- name: monitoring
+  repository: https://Datastillery.github.io/charts
+  version: 1.0.0
+digest: sha256:160d1ad12f54e505e373c734ba426587cfaf173c87a3a3325690855afdb1eae0
+generated: "2021-08-05T10:45:05.143668-05:00"
