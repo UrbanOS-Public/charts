@@ -1167,6 +1167,25 @@ entries:
     urls:
     - micro-service-watchinator-1.0.0.tgz
     version: 1.0.0
+  monitoring:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2021-08-05T09:10:24.830973-05:00"
+    dependencies:
+    - condition: prometheus.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 14.4.1
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 6.14.1
+    description: A combination of the community Prometheus and Grafana charts.
+    digest: d0fe88d22f9f927551107f73123dfaf25acb632bd31e22900cdbae88256e2cb9
+    name: monitoring
+    urls:
+    - monitoring-1.0.0.tgz
+    version: 1.0.0
   odo:
   - apiVersion: v1
     created: "2021-07-26T13:19:50.253962-04:00"
@@ -1398,6 +1417,64 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2021-08-04T09:08:33.061805-05:00"
+    dependencies:
+    - condition: forklift.enabled
+      name: forklift
+      repository: https://Datastillery.github.io/charts
+      version: 3.1.1
+    - condition: odo.enabled
+      name: odo
+      repository: https://Datastillery.github.io/charts
+      version: 1.1.0
+    - condition: reaper.enabled
+      name: reaper
+      repository: https://Datastillery.github.io/charts
+      version: 1.1.0
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: https://Datastillery.github.io/charts
+      version: 2.6.1
+    - condition: andi.enabled
+      name: andi
+      repository: https://Datastillery.github.io/charts
+      version: 2.1.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: kafka.enabled
+      name: kafka
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.1
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: https://Datastillery.github.io/charts
+      version: 1.6.0
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: https://Datastillery.github.io/charts
+      version: 1.1.0
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: vault.enabled
+      name: vault
+      repository: https://Datastillery.github.io/charts
+      version: 1.2.0
+    description: Master chart that deploys the data platform.
+    digest: ae1d86eb97364fa39507afe2b8a486927d9c582946c4241d7f93e2f4d8297110
+    name: urban-os
+    urls:
+    - urban-os-1.6.0.tgz
+    version: 1.6.0
   - apiVersion: v2
     appVersion: "1.0"
     created: "2021-07-26T15:37:34.885381-04:00"
@@ -1952,4 +2029,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-07-26T15:37:34.864497-04:00"
+generated: "2021-08-05T09:10:24.81628-05:00"
