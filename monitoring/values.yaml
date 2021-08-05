@@ -1,18 +1,20 @@
+# optional annotation overrides
 global:
   ingress:
-    # optional annotation overrides
     annotations: {}
 
+# A place to define a healthcheck path or other grafana specific annotations
 grafanaIngress:
-  annotations:
-    alb.ingress.kubernetes.io/healthcheck-path: /api/health
+  annotations: {}
 
+# A place to define a healthcheck path or other prometheus specific
+# annotations
 prometheusIngress:
-  annotations:
-    alb.ingress.kubernetes.io/healthcheck-path: /-/healthy
+  annotations: {}
 
 grafana:
   adminUser: admin
+  fullnameOverride: monitoring-grafana
   # An adminPassword must be set
   # adminPassword: {password}
 
@@ -22,16 +24,9 @@ grafana:
       datasources:
         - name: Prometheus
           type: prometheus
-          url: http://urban-os-prometheus-server
+          url: http://monitoring-prometheus-server
           access: proxy
           isDefault: true
-        - name: CloudWatch
-          type: cloudwatch
-          isDefault: false
-          access: proxy
-          jsonData:
-            authType: credentials
-            defaultRegion: "us-west-2"
   service:
     enabled: true
     type: NodePort
@@ -116,7 +111,7 @@ grafana:
 
 prometheus:
   server:
-    fullnameOverride: urban-os-prometheus-server
+    fullnameOverride: monitoring-prometheus-server
     resources:
       limits:
         memory: 1Gi

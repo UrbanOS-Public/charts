@@ -1170,7 +1170,7 @@ entries:
   monitoring:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2021-08-05T08:36:15.891769-05:00"
+    created: "2021-08-05T09:10:24.830973-05:00"
     dependencies:
     - condition: prometheus.enabled
       name: prometheus
@@ -1180,8 +1180,8 @@ entries:
       name: grafana
       repository: https://grafana.github.io/helm-charts
       version: 6.14.1
-    description: A combination of the community Prometheus and Helm charts.
-    digest: b5c3d6ef5ceb16ce4d04d3f33fd1d351325f4298d1471c95c5a364a6c1533c5b
+    description: A combination of the community Prometheus and Grafana charts.
+    digest: d0fe88d22f9f927551107f73123dfaf25acb632bd31e22900cdbae88256e2cb9
     name: monitoring
     urls:
     - monitoring-1.0.0.tgz
@@ -1469,14 +1469,6 @@ entries:
       name: vault
       repository: https://Datastillery.github.io/charts
       version: 1.2.0
-    - condition: prometheus.enabled
-      name: prometheus
-      repository: https://prometheus-community.github.io/helm-charts
-      version: 14.4.1
-    - condition: grafana.enabled
-      name: grafana
-      repository: https://grafana.github.io/helm-charts
-      version: 6.14.1
     description: Master chart that deploys the data platform.
     digest: ae1d86eb97364fa39507afe2b8a486927d9c582946c4241d7f93e2f4d8297110
     name: urban-os
@@ -2037,4 +2029,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-08-05T08:36:15.881409-05:00"
+generated: "2021-08-05T09:10:24.81628-05:00"
