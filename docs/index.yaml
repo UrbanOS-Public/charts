@@ -1170,6 +1170,24 @@ entries:
   monitoring:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2021-08-06T13:56:53.286709-05:00"
+    dependencies:
+    - condition: prometheus.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 14.4.1
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 6.14.1
+    description: A combination of the community Prometheus and Grafana charts.
+    digest: 1625618c4fb1e6874897aa6dc471e802e88b5faa913f84fd7b2478776b074849
+    name: monitoring
+    urls:
+    - monitoring-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2021-08-05T09:10:24.830973-05:00"
     dependencies:
     - condition: prometheus.enabled
@@ -2033,4 +2051,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-08-05T10:45:45.342939-05:00"
+generated: "2021-08-06T13:56:53.276008-05:00"
