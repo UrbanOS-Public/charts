@@ -1437,6 +1437,68 @@ entries:
   urban-os:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2021-08-06T14:09:37.653055-05:00"
+    dependencies:
+    - condition: forklift.enabled
+      name: forklift
+      repository: https://Datastillery.github.io/charts
+      version: 3.1.1
+    - condition: odo.enabled
+      name: odo
+      repository: https://Datastillery.github.io/charts
+      version: 1.1.0
+    - condition: reaper.enabled
+      name: reaper
+      repository: https://Datastillery.github.io/charts
+      version: 1.1.0
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: https://Datastillery.github.io/charts
+      version: 2.6.1
+    - condition: andi.enabled
+      name: andi
+      repository: https://Datastillery.github.io/charts
+      version: 2.1.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: kafka.enabled
+      name: kafka
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.1
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: https://Datastillery.github.io/charts
+      version: 1.6.0
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: https://Datastillery.github.io/charts
+      version: 1.1.0
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.0
+    - condition: vault.enabled
+      name: vault
+      repository: https://Datastillery.github.io/charts
+      version: 1.2.0
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: https://Datastillery.github.io/charts
+      version: 1.0.1
+    description: Master chart that deploys the data platform.
+    digest: 3b072bcf1177a4a35e9f4f5a49f2d2aa8dd8ecb1078b7fc8bef93b7aaeaa1cee
+    name: urban-os
+    urls:
+    - urban-os-1.6.1.tgz
+    version: 1.6.1
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2021-08-05T10:45:45.384557-05:00"
     dependencies:
     - condition: forklift.enabled
@@ -2051,4 +2113,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-08-06T13:56:53.276008-05:00"
+generated: "2021-08-06T14:09:37.629862-05:00"

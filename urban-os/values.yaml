@@ -46,6 +46,11 @@ discovery-ui:
 discovery-streams:
   enabled: true
 
+# By default monitoring is disabled as it is optional,
+# but we recommend it be enabled for production deployments
+monitoring:
+  enabled: false
+
 kubernetes-data-platform:
   enabled: true
   presto:
