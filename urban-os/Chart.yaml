@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the data platform.
 name: urban-os
-version: 1.6.0
+version: 1.6.1
 
 dependencies:
   - name: forklift
@@ -54,6 +54,6 @@ dependencies:
     repository: https://Datastillery.github.io/charts
     condition: vault.enabled
   - name: monitoring
-    version: 1.0.0
+    version: 1.0.1
     repository: https://Datastillery.github.io/charts
     condition: monitoring.enabled
