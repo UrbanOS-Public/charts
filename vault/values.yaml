@@ -17,8 +17,8 @@ vault:
   config:
     listener:
       tcp:
-        address: '[::]:8200'
-        cluster_address: '[::]:8201'
+        address: "[::]:8200"
+        cluster_address: "[::]:8201"
         tls_disable: true
         tls_prefer_server_cipher_suites: true
         tls_cipher_suites: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA
@@ -80,7 +80,7 @@ kubectl:
 jq:
   version: "1.6"
 
-# Used in maintenance-script
+# Used in maintenance-script if authMethod is "ldap"
 ldap:
   server: "server"
   binduser: "binduser"
@@ -92,3 +92,9 @@ ldap:
   groupattr: "groupattr"
   start_tls: "start_tls"
   insecure_tls: "insecure_tls"
+
+# If empty, defaults to vault "userpass" auth method
+# Supported values:
+#   - "ldap"
+authMethod: ""
+adminPassword: "admin"

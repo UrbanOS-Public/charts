@@ -45,7 +45,11 @@ data:
 
       write_access_policies
 
+      {{ if eq .Values.authMethod "ldap" }}
       enable_ldap
+      {{ else }}
+      enable_username_pass
+      {{ end }}
 
       enable_kubernetes
 
@@ -101,6 +105,12 @@ data:
         insecure_tls={{ .Values.ldap.insecure_tls }}
 
       vault write auth/ldap/groups/admin policies=admin
+    }
+
+    enable_username_pass() {
+      vault auth enable userpass
+
+      vault write auth/userpass/users/admin password=$VAULT_ADMIN_PASSWORD policies=admin
     }
 
     enable_kubernetes() {
