@@ -38,5 +38,8 @@ dependencies:
 - name: monitoring
   repository: https://Datastillery.github.io/charts
   version: 1.0.1
-digest: sha256:53f1d1f7efdb39bb582cd8e4294282da411308a07e48a1ec883253f691c29a48
-generated: "2021-08-11T14:07:17.692919-05:00"
+- name: elasticsearch
+  repository: https://helm.elastic.co
+  version: 7.14.0
+digest: sha256:1af070f74f071e4a6e2f6f1bf86f59ce42a623a0db20502fcc852d845fbb99cf
+generated: "2021-08-12T11:39:00.046784-04:00"
