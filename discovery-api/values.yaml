@@ -69,6 +69,7 @@ postgres:
 
 elasticsearch:
   host: "es.example.com"
+  tls: true
 
 auth:
   domain: "example.com"
