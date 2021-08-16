@@ -41,7 +41,10 @@ kafka:
   enabled: true
 discovery-api:
   elasticsearch:
+    # This is the default location of the chart-provided elasticsearch instance
     host: elasticsearch-master:9200
+    # Set this to true to require the api to connect to elasticsearch via https. TLS must be configured on the elasticsearch cluster
+    tls: false
   enabled: true
 discovery-ui:
   enabled: true
@@ -86,6 +89,7 @@ kubernetes-data-platform:
       rootCertPath: /etc/ssl/certs/ca-certificates.crt
   minio:
     enable: false
+<<<<<<< Updated upstream
 
 elasticsearch:
   replicas: 3
@@ -110,3 +114,13 @@ elasticsearch:
   #   limits:
   #     cpu: "500m"
   #     memory: "1Gi"
+=======
+<<<<<<< Updated upstream
+=======
+
+# By default, the urbanOS chart stands up its own elasticsearch instance. Disable this if you plan to provide your own.
+elasticsearch:
+  enabled: true
+  replicas: 3
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
