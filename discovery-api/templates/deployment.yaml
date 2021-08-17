@@ -87,6 +87,8 @@ spec:
             value: {{ quote .Values.auth.redirect_base_url }}
           - name: ELASTICSEARCH_HOST
             value: {{ .Values.elasticsearch.host }}
+          - name: ELASTICSEARCH_TLS_ENABLED
+            value: {{ quote .Values.elasticsearch.tls }}
           - name: METRICS_PORT
             value: {{ quote .Values.monitoring.targetPort }}
           - name: AWS_ACCESS_KEY_ID
