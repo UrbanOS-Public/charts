@@ -25,7 +25,7 @@ dependencies:
   version: 1.6.0
 - name: discovery-api
   repository: https://Datastillery.github.io/charts
-  version: 1.1.0
+  version: 1.2.0
 - name: discovery-ui
   repository: https://Datastillery.github.io/charts
   version: 1.0.0
@@ -38,5 +38,8 @@ dependencies:
 - name: monitoring
   repository: https://Datastillery.github.io/charts
   version: 1.0.1
-digest: sha256:53f1d1f7efdb39bb582cd8e4294282da411308a07e48a1ec883253f691c29a48
-generated: "2021-08-11T14:07:17.692919-05:00"
+- name: elasticsearch
+  repository: https://helm.elastic.co
+  version: 7.14.0
+digest: sha256:ffd2ff0c555f3d188bf7d90c62f8075ba60e58433c4c17b3db87ade77ea21c7a
+generated: "2021-08-17T15:14:54.161792-05:00"
