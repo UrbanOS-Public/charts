@@ -41,5 +41,8 @@ dependencies:
 - name: elasticsearch
   repository: https://helm.elastic.co
   version: 7.14.0
-digest: sha256:ffd2ff0c555f3d188bf7d90c62f8075ba60e58433c4c17b3db87ade77ea21c7a
-generated: "2021-08-17T15:14:54.161792-05:00"
+- name: raptor
+  repository: file://../raptor
+  version: 1.0.0
+digest: sha256:5f25f9d3c993aaf3030dd821fb8f3bcc6d6cdbe72d75efcfc3afa6c046c3b6bf
+generated: "2021-08-23T17:09:30.03301-04:00"
