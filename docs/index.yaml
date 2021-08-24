@@ -1324,6 +1324,16 @@ entries:
     urls:
     - platform-0.0.1.tgz
     version: 0.0.1
+  raptor:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-08-24T14:49:36.513428-04:00"
+    description: Authenticate and authorize API users
+    digest: 4f85873db15f868922a3af482cc4eb1a65482697c8bc0aae3bbefb907d0ee6f7
+    name: raptor
+    urls:
+    - raptor-1.0.0.tgz
+    version: 1.0.0
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
@@ -2259,4 +2269,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-08-17T15:35:13.247035-05:00"
+generated: "2021-08-24T14:49:36.512511-04:00"
