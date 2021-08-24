@@ -41,5 +41,8 @@ dependencies:
 - name: elasticsearch
   repository: https://helm.elastic.co
   version: 7.14.0
-digest: sha256:ffd2ff0c555f3d188bf7d90c62f8075ba60e58433c4c17b3db87ade77ea21c7a
-generated: "2021-08-17T15:14:54.161792-05:00"
+- name: raptor
+  repository: https://Datastillery.github.io/charts
+  version: 1.0.0
+digest: sha256:df2ce57c1a90e15295d9afce602f6fa0aece9ab19483be4ee509fa827853abae
+generated: "2021-08-24T16:39:51.496053-04:00"

@@ -61,3 +61,7 @@ dependencies:
     version: 7.14.0
     repository: https://helm.elastic.co
     condition: elasticsearch.enabled
+  - name: raptor
+    version: 1.0.0
+    repository: https://Datastillery.github.io/charts
+    condition: raptor.enabled

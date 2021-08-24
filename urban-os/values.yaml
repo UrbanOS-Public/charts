@@ -99,3 +99,6 @@ kubernetes-data-platform:
 elasticsearch:
   enabled: true
   replicas: 2
+raptor:
+  fullnameOverride: raptor
+  enabled: true
