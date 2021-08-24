@@ -63,5 +63,5 @@ dependencies:
     condition: elasticsearch.enabled
   - name: raptor
     version: 1.0.0
-    repository: file://../raptor
+    repository: https://Datastillery.github.io/charts
     condition: raptor.enabled
