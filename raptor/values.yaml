@@ -4,6 +4,8 @@ global:
   redis:
     host: redis.external-services
     password: ""
+  auth:
+    auth0_domain: ""
 
 image:
   repository: smartcitiesdata/raptor
@@ -11,6 +13,10 @@ image:
   pullPolicy: Always
 
 replicaCount: 1
+
+auth:
+  auth0_client_id: ""
+  auth0_client_secret: ""
 
 resources:
   limits:
@@ -26,4 +32,4 @@ monitoring:
 service:
   type: NodePort
   port: 80
-  targetPort: 4000
+  targetPort: 80
