@@ -43,6 +43,6 @@ dependencies:
   version: 7.14.0
 - name: raptor
   repository: https://Datastillery.github.io/charts
-  version: 1.0.0
-digest: sha256:df2ce57c1a90e15295d9afce602f6fa0aece9ab19483be4ee509fa827853abae
-generated: "2021-08-24T16:39:51.496053-04:00"
+  version: 1.1.0
+digest: sha256:ac57dcb0758fd14089b91e80dd43a097f2ffaa161a623ca421fbf261f759aaf6
+generated: "2021-09-09T16:29:34.633077-04:00"
