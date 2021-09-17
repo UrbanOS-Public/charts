@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: {{ template "vault.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+  name: {{ .Chart.Name }}
+spec:
+  ports:
+    - name: vault
+      port: {{ .Values.vault.port }}
+      protocol: TCP
+      targetPort: vault
+    - name: cluster-address
+      port: {{ .Values.vault.clusterPort }}
+      protocol: TCP
+      targetPort: cluster-address
+  selector:
+    app.kubernetes.io/name: {{ include "vault.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  type: ClusterIP
