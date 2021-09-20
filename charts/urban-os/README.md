@@ -38,15 +38,19 @@ Auth0
 
 ## Contributing
 
-### Updates
+### Updates to subcharts
 
 1. Make changes to the chart.
 2. Bump the chart version.
-3. Run `./package.sh ${CHART_NAME}`.
+3. Submit a pull request.
+
+### Updates to UrbanOS
+1. Make changes to the chart.
+2. Bump the chart version.
+3. Run `helm dependency update` in urbanos chart.
 4. Submit a pull request.
 
 ### New charts
 
 1. Run `helm create ${CHART_NAME}` to create a new chart subdirectory.
 2. Add templates, helpers, values, dependencies, etc. to your chart.
-3. Run the setup script (`./package.sh ${CHART_NAME}`).
