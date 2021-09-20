@@ -27,8 +27,7 @@ helm repo update
 
 1. Run `helm create ${CHART_NAME}` to create a new chart subdirectory.
 2. Add templates, helpers, values, dependencies, etc. to your chart.
-3. Run the setup script (`./package.sh ${CHART_NAME}`).
-4. Submit a pull request.
+3. Submit a pull request.
 
 ## Master Chart
 
