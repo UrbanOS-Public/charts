@@ -5,7 +5,7 @@ Helm charts for the SmartCitiesData platform (SCDP).
 
 Use our charts in two steps:
 
-1. Add our repository with `helm repo add scdp https://smartcitiesdata.github.io/charts`.
+1. Add our repository with `helm repo add scdp https://datastillery.github.io/charts/`.
 2. Install a chart with `helm upgrade --install ${RELEASE_NAME} scdp/${CHART_NAME}`. See the [Helm docs](https://helm.sh/docs/helm/#helm-upgrade) for more options.
 
 If you'd like to update the chart index later, run:
