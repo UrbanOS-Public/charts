@@ -1,4 +1,4 @@
-# charts
+# UrbanOS Helm Charts
 Helm charts for the SmartCitiesData platform (SCDP).
 
 ## Usage
@@ -37,7 +37,7 @@ helm repo update
 - (install minikube)
 - `minikube start --memory 6144 --cpus 4`
 - `helm init`
-- `helm repo add scdp https://smartcitiesdata.github.io/charts`
+- `helm repo add scdp https://datastillery.github.io/charts/`
 - Deploy the strimzi operator before deploying the rest of the chart: `helm repo add strimzi https://strimzi.io/charts`
 - `helm upgrade --install strimzi-kafka-operator strimzi/strimzi-kafka-operator --version 0.08.0`
 - `helm dep update platform/` - rerun any time you add an app
