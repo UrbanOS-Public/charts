@@ -1,7 +1,0 @@
-services:
-- hostname: redis.example.com
-  name: redis
-- hostname: ldap.example.com
-  name: ldap
-- hostname: postgres.example.com
-  name: postgres
