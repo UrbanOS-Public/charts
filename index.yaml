@@ -445,7 +445,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-07-09T14:17:28.826869-05:00"
-    description: Dynamically find kafka topics and makes available corresponding channels on a public websocket
+    description: Dynamically find kafka topics and makes available corresponding channels
+      on a public websocket
     digest: 670ada337c00b6feb3533aaec3babbdccef0483d7fc32f035f8a2bc9d8108c0c
     name: discovery-streams
     urls:
@@ -454,7 +455,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-04-08T12:18:00.01316-04:00"
-    description: Dynamically find kafka topics and makes available corresponding channels on a public websocket
+    description: Dynamically find kafka topics and makes available corresponding channels
+      on a public websocket
     digest: d66ba890e5f009d6205cd32995f8960adc0fd7d34eda2d0beb9d9c5fbda2bc14
     name: discovery-streams
     urls:
@@ -463,7 +465,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-09-14T15:14:19.627932-04:00"
-    description: Dynamically find kafka topics and makes available corresponding channels on a public websocket
+    description: Dynamically find kafka topics and makes available corresponding channels
+      on a public websocket
     digest: 67689d9240803ff58112e39806c13d18456dde0db9c0e1fef09b3697356b2f60
     name: discovery-streams
     urls:
@@ -472,7 +475,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-06-03T10:32:30.492805045-04:00"
-    description: Dynamically find kafka topics and makes available corresponding channels on a public websocket
+    description: Dynamically find kafka topics and makes available corresponding channels
+      on a public websocket
     digest: 2cacb4478de063771042da803aeb52b2b17ad4fa2c30422fa8a8aaf74c5c1c9b
     name: discovery-streams
     urls:
@@ -481,7 +485,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-01-16T10:35:33.701193-05:00"
-    description: Dynamically find kafka topics and makes available corresponding channels on a public websocket
+    description: Dynamically find kafka topics and makes available corresponding channels
+      on a public websocket
     digest: a486adda7ca32422b1eff5269a8fc1aecc51cca129bf678527090c950b711286
     name: discovery-streams
     urls:
@@ -490,7 +495,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2019-12-12T14:56:44.062504-05:00"
-    description: Dynamically find kafka topics and makes available corresponding channels on a public websocket
+    description: Dynamically find kafka topics and makes available corresponding channels
+      on a public websocket
     digest: 0357c54697a3ec4439f7e9731845e60cf8dc001053f8e645a1ef99e20303e169
     name: discovery-streams
     urls:
@@ -499,7 +505,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2019-09-18T08:56:42.388497-04:00"
-    description: Dynamically find kafka topics and makes available corresponding channels on a public websocket
+    description: Dynamically find kafka topics and makes available corresponding channels
+      on a public websocket
     digest: 21f17d1bed83cd9af7c30bc6b0d3bde85818c9c8e727420d715d2659f71a93b3
     name: discovery-streams
     urls:
@@ -508,7 +515,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2019-09-16T14:02:09.143635-04:00"
-    description: Dynamically find kafka topics and makes available corresponding channels on a public websocket
+    description: Dynamically find kafka topics and makes available corresponding channels
+      on a public websocket
     digest: f503a31c002392f28aa908bf19831d4a262694582dc52e09822133992b5a9831
     name: discovery-streams
     urls:
@@ -517,7 +525,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2019-07-17T08:43:03.926899729-04:00"
-    description: Dynamically find kafka topics and makes available corresponding channels on a public websocket
+    description: Dynamically find kafka topics and makes available corresponding channels
+      on a public websocket
     digest: 63bf4e84bf6193da9a87f37e8878f3ac0ee49e693a1bd96f29e8fcdfed8fbef9
     name: discovery-streams
     urls:
@@ -753,7 +762,8 @@ entries:
   - apiVersion: v1
     appVersion: 1.0.0-static
     created: "2019-07-17T12:43:29.135195026-04:00"
-    description: Watches data on the validated topic and does profiling on its path through the data pipeline.
+    description: Watches data on the validated topic and does profiling on its path
+      through the data pipeline.
     digest: c859e0c0f26db7c835a94de2a6a998169a117d093a3bbabc11015b8e208ddf70
     name: flair
     urls:
@@ -888,6 +898,15 @@ entries:
     - genesis-2.0.1.tgz
     version: 2.0.1
   kafka:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-01T17:30:22.086822403Z"
+    description: A Helm chart for deploying kafka via strimzi
+    digest: 9c8545d213771e387be71a989390ecee503c817ece1ff2aee23fa1a838e7a59f
+    name: kafka
+    urls:
+    - https://github.com/Datastillery/charts/releases/download/kafka-1.0.2/kafka-1.0.2.tgz
+    version: 1.0.2
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-06-21T14:43:06.430655-04:00"
@@ -1347,7 +1366,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-07-26T13:19:45.722092-04:00"
-    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
     digest: 4eafbcff0fe859bc528f601d275a38f89ff5f4cbf14ae58913b05580700d6a7c
     name: reaper
     urls:
@@ -1356,7 +1376,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-07-08T15:56:26.573952-05:00"
-    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
     digest: 608c6fd19d75bb55fe2807278e36963190a88b019feb3785607731490a149fd2
     name: reaper
     urls:
@@ -1365,7 +1386,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-06-03T15:18:05.785703-05:00"
-    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
     digest: b3f7c435ed0a6780ee6405d01cfaa6c48bd47239104963bd9b6bb3c1befaecfa
     name: reaper
     urls:
@@ -1374,7 +1396,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-05-12T15:52:29.838611-04:00"
-    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
     digest: 02c0aa5d54ec8976af17d3325dca3296b3d108083405d9a54c3e6f61676c7413
     name: reaper
     urls:
@@ -1383,7 +1406,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-06-24T16:26:59.480650577-04:00"
-    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
     digest: 981a3b28217f87d52e9bc6e33813ce8ac8696cb6969d05008937445f3cb343b0
     name: reaper
     urls:
@@ -1392,7 +1416,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-06-24T15:56:34.185855504-04:00"
-    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
     digest: 1d3a8d44611c945506a99dc51bc5afcbb2a3633aed593327bd78ec6e2a04216c
     name: reaper
     urls:
@@ -1401,7 +1426,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-06-22T22:23:47.227419432-04:00"
-    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
     digest: d19b3dd8baad163a28d3995811bb5782048bacda237a4626e0244ad85d84f86a
     name: reaper
     urls:
@@ -1410,7 +1436,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-04-02T11:49:31.802477054-04:00"
-    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
     digest: 7db122721f012fd9a2b7e8bac2a9478c39c2744858af08552defd60fdcbf0d0a
     name: reaper
     urls:
@@ -1419,7 +1446,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-03-20T16:09:06.768775-04:00"
-    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
     digest: 5239150ec8dfad6320f78f6c03247e42f5ff8f0de2b6eced78f20b6b5a664388
     name: reaper
     urls:
@@ -1428,7 +1456,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-01-27T13:15:25.851969-05:00"
-    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
     digest: 539395dcac2791b36b16d9761033a898c3b5a054d978c933c3f797a0bc81e2da
     name: reaper
     urls:
@@ -1437,7 +1466,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2019-11-19T15:46:47.610453-05:00"
-    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
     digest: e76492a7868c67261bf4a08beae9bf971d016ada1aee58398f4a44d0a90f254e
     name: reaper
     urls:
@@ -1446,7 +1476,8 @@ entries:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2019-07-17T08:43:03.93962147-04:00"
-    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
     digest: 0a4e1e99fe4980d431c29b78920b97bd13d889887927b0a9d3bd7f0c289ad69c
     name: reaper
     urls:
@@ -1463,6 +1494,76 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2021-10-01T17:30:22.281258828Z"
+    dependencies:
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: 2.1.3
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: 1.2.0
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: 1.0.0
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: 1.0.0
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: 1.0.0
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: 3.1.1
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: 1.0.2
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: 1.6.0
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: 1.0.1
+    - condition: odo.enabled
+      name: odo
+      repository: file://../odo
+      version: 1.1.0
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: 1.1.0
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: 1.1.0
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: 2.6.1
+    - condition: vault.enabled
+      name: vault
+      repository: file://../vault
+      version: 1.3.0
+    description: Master chart that deploys the data platform.
+    digest: 8f2ab84e8404ea71c60f93dc701de740e499205be6d33a4012f0aa1393df5612
+    name: urban-os
+    urls:
+    - https://github.com/Datastillery/charts/releases/download/urban-os-1.8.1/urban-os-1.8.1.tgz
+    version: 1.8.1
   - apiVersion: v2
     appVersion: "1.0"
     created: "2021-08-17T15:35:13.278254-05:00"
@@ -2278,4 +2379,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-09-09T16:25:16.373784-04:00"
+generated: "2021-10-01T17:30:22.282098628Z"
