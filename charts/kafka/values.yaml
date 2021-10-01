@@ -3,6 +3,7 @@ kafka:
   broker: pipeline-kafka-bootstrap:9092
   storageSize: 100Gi
   defaultPartitions: 1
+  # Adjusting defaultReplicas: https://github.com/Datastillery/charts/issues/312
   defaultReplicas: 3
   topics:
     - name: streaming-persisted
