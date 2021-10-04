@@ -14,7 +14,7 @@ dependencies:
     repository: file://../discovery-api
     condition: discovery-api.enabled
   - name: discovery-streams
-    version: 1.0.0
+    version: 1.0.1
     repository: file://../discovery-streams
     condition: discovery-streams.enabled
   - name: discovery-ui
