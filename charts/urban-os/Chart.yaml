@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the data platform.
 name: urban-os
-version: 1.8.1
+version: 1.8.2
 
 dependencies:
   - name: andi
@@ -14,7 +14,7 @@ dependencies:
     repository: file://../discovery-api
     condition: discovery-api.enabled
   - name: discovery-streams
-    version: 1.0.1
+    version: 1.0.2
     repository: file://../discovery-streams
     condition: discovery-streams.enabled
   - name: discovery-ui

@@ -30,7 +30,14 @@ spec:
         - name: REDIS_HOST
           value: {{ .Values.global.redis.host }}
         - name: REDIS_PASSWORD
+{{- if .Values.secureRedisPass }}
+          valueFrom:
+            secretKeyRef:
+              name: urban-os-redis-password
+              key: urban-os-redis-password
+{{- else }}
           value: {{ .Values.global.redis.password }}
+{{- end }}
         - name: RUN_IN_KUBERNETES
           value: "true"
         - name: METRICS_PORT
