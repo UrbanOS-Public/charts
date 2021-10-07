@@ -5,6 +5,7 @@ global:
     host: redis.external-services
     password: ""
     port: ""
+    passwordSecret: ""
   ingress:
     dnsZone: ""
     rootDnsZone: ""
@@ -18,8 +19,6 @@ image:
   pullPolicy: IfNotPresent
 
 replicaCount: 1
-
-secureRedisPass: false
 
 resources:
   limits:

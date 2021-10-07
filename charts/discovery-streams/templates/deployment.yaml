@@ -34,11 +34,11 @@ spec:
           value: {{ quote .Values.global.redis.port }}
 {{- end }}
         - name: REDIS_PASSWORD
-{{- if .Values.secureRedisPass }}
+{{- if .Values.global.redis.passwordSecret }}
           valueFrom:
             secretKeyRef:
-              name: urban-os-redis-password
-              key: urban-os-redis-password
+              name: {{ quote .Values.global.redis.passwordSecret }}
+              key: {{ quote .Values.global.redis.passwordSecret }}
 {{- else }}
           value: {{ .Values.global.redis.password }}
 {{- end }}
