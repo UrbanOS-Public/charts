@@ -37,12 +37,12 @@ dependencies:
   version: 1.1.0
 - name: reaper
   repository: file://../reaper
-  version: 1.1.0
+  version: 1.2.0
 - name: valkyrie
   repository: file://../valkyrie
   version: 2.6.1
 - name: vault
   repository: file://../vault
   version: 1.3.0
-digest: sha256:1d323b75b57ce523e67ffb38c68ac2f872dbcd89011d4fb13df095f22bef5f5a
-generated: "2021-10-04T12:41:03.846158-05:00"
+digest: sha256:4594fbcd4023dfd4251874c9c95804eda497cf39125688932a28ff2a6042432e
+generated: "2021-10-12T23:31:51.681578-04:00"
