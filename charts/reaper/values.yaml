@@ -8,6 +8,7 @@ global:
   redis:
     host: redis.external-services
     password: ""
+    passwordSecret: ""
   vault:
     endpoint: vault.vault:8200
 
