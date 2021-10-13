@@ -1375,6 +1375,16 @@ entries:
   reaper:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-10-13T21:52:53.16778051Z"
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
+    digest: b4397d91b6f7542c957501bd8cbf524047363eeb2ba3afab7735a7d68d91cbb6
+    name: reaper
+    urls:
+    - https://github.com/Datastillery/charts/releases/download/reaper-1.2.0/reaper-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-07-26T13:19:45.722092-04:00"
     description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
       a Kafka topic
@@ -1504,6 +1514,76 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2021-10-13T21:52:53.316349575Z"
+    dependencies:
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: 2.1.3
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: 1.2.0
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: 1.0.2
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: 1.0.0
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: 1.0.0
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: 3.1.1
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: 1.0.2
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: 1.6.0
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: 1.0.1
+    - condition: odo.enabled
+      name: odo
+      repository: file://../odo
+      version: 1.1.0
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: 1.1.0
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: 1.2.0
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: 2.6.1
+    - condition: vault.enabled
+      name: vault
+      repository: file://../vault
+      version: 1.3.0
+    description: Master chart that deploys the data platform.
+    digest: 113f74c8a3a384d8b21f73f1b1a2e396aba9afb641a5cc7ec638cc85b78c5350
+    name: urban-os
+    urls:
+    - https://github.com/Datastillery/charts/releases/download/urban-os-1.8.3/urban-os-1.8.3.tgz
+    version: 1.8.3
   - apiVersion: v2
     appVersion: "1.0"
     created: "2021-10-07T18:12:39.021657229Z"
@@ -2459,4 +2539,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-10-07T18:12:39.022235929Z"
+generated: "2021-10-13T21:52:53.317228176Z"
