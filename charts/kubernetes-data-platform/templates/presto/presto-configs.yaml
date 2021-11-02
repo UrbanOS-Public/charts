@@ -47,4 +47,7 @@ data:
 {{- if .Values.minio.enable }}
     hive.s3.endpoint=http://{{ template "kdp.minio.fullname" . }}:{{ .Values.minio.service.port }}
     hive.s3.ssl.enabled=false
+{{- else if .Values.minio.externalMinio }}
+    hive.s3.endpoint=http://{{ .Values.minio.service.name }}:{{ .Values.minio.service.port }}
+    hive.s3.ssl.enabled=false
 {{- end }}

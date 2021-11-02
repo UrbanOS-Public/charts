@@ -22,6 +22,11 @@ data:
         <name>fs.s3a.endpoint</name>
         <value>http://{{ template "kdp.minio.fullname" . }}:{{ .Values.minio.service.port }}</value>
       </property>
+{{- else if .Values.minio.externalMinio }}
+      <property>
+        <name>fs.s3a.endpoint</name>
+        <value>http://{{ .Values.minio.service.name }}:{{ .Values.minio.service.port }}</value>
+      </property>
 {{- end }}
 
 {{- if and .Values.global.objectStore.accessKey .Values.global.objectStore.accessSecret }}
