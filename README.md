@@ -1,4 +1,5 @@
 # UrbanOS Helm Charts
+
 Helm charts for the SmartCitiesData platform (SCDP).
 
 ## Usage
@@ -20,8 +21,7 @@ helm repo update
 
 1. Make changes to the chart.
 2. Bump the chart version.
-3. Run `./package.sh ${CHART_NAME}`.
-4. Submit a pull request.
+3. Submit a pull request.
 
 ### New charts
 
@@ -40,8 +40,7 @@ helm repo update
 - Deploy the strimzi operator before deploying the rest of the chart: `helm repo add strimzi https://strimzi.io/charts`
 - `helm upgrade --install strimzi-kafka-operator strimzi/strimzi-kafka-operator --version 0.08.0`
 - `helm dep update platform/` - rerun any time you add an app
-- `helm upgrade --install platform platform/` 
+- `helm upgrade --install platform platform/`
   - if upgrade fails, try `helm delete --purge platform`
   - possibly manually delete any resources that get stuck / aren't deleted by the purge
 - `k get po --all-namespaces`
-
