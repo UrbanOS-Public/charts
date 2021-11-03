@@ -63,6 +63,20 @@ spec:
           - name: SPECIAL_COMPACTION_DATASETS
             value: {{.Values.specialCompactionDatasets | quote }}
           {{ end -}}
+          {{ if .Values.global.objectStore.accessKey }}
+          - name: AWS_ACCESS_KEY_ID
+            value: {{ .Values.global.objectStore.accessKey }}
+          {{ end -}}
+          {{ if .Values.global.objectStore.accessSecret }}
+          - name: AWS_SECRET_ACCESS_KEY
+            value: {{ .Values.global.objectStore.accessSecret }}
+          {{ end -}}
+          {{ if .Values.s3HostName }}
+          - name: S3_HOST_NAME
+            value: {{ .Values.s3HostName }}
+          - name: S3_PORT
+            value: {{ .Values.s3Port | quote }}
+          {{ end -}}
           {{ if .Values.global.buckets.hiveStorageBucket }}
           - name: S3_WRITER_BUCKET
             value: {{ .Values.global.buckets.hiveStorageBucket }}
