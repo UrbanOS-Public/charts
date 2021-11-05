@@ -37,7 +37,14 @@ spec:
           - name: REDIS_HOST
             value: {{ .Values.global.redis.host }}
           - name: REDIS_PASSWORD
+{{- if .Values.global.redis.passwordSecret }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ quote .Values.global.redis.passwordSecret }}
+                key: {{ quote .Values.global.redis.passwordSecret }}
+{{- else }}
             value: {{ .Values.global.redis.password }}
+{{- end }}
           - name: DATA_TOPIC_PREFIX
             value: {{.Values.kafka.dataTopicPrefix}}
           - name: OUTPUT_TOPIC
@@ -55,6 +62,20 @@ spec:
           {{ if .Values.specialCompactionDatasets }}
           - name: SPECIAL_COMPACTION_DATASETS
             value: {{.Values.specialCompactionDatasets | quote }}
+          {{ end -}}
+          {{ if .Values.global.objectStore.accessKey }}
+          - name: AWS_ACCESS_KEY_ID
+            value: {{ .Values.global.objectStore.accessKey }}
+          {{ end -}}
+          {{ if .Values.global.objectStore.accessSecret }}
+          - name: AWS_SECRET_ACCESS_KEY
+            value: {{ .Values.global.objectStore.accessSecret }}
+          {{ end -}}
+          {{ if .Values.s3HostName }}
+          - name: S3_HOST_NAME
+            value: {{ .Values.s3HostName }}
+          - name: S3_PORT
+            value: {{ .Values.s3Port | quote }}
           {{ end -}}
           {{ if .Values.global.buckets.hiveStorageBucket }}
           - name: S3_WRITER_BUCKET

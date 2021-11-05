@@ -6,6 +6,9 @@ global:
   redis:
     host: redis.external-services
     password: ""
+  objectStore:
+    accessKey: null
+    accessSecret: null
 
 resources:
   limits:
@@ -29,6 +32,9 @@ kafka:
   #comma delimited list of kafka seed brokers
   dataTopicPrefix: "transformed"
   outputTopic: "streaming-persisted"
+
+s3HostName: null
+s3Port: null
 
 nameOverride: ""
 fullnameOverride: ""

@@ -30,7 +30,7 @@ dependencies:
     repository: file://../external-services
     condition: external-services.enabled
   - name: forklift
-    version: 3.1.1
+    version: 3.1.2
     repository: file://../forklift
     condition: forklift.enabled
   - name: kafka
