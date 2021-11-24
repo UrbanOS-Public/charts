@@ -3,3 +3,5 @@ appVersion: "1.0"
 description: Dynamically find kafka topics and makes available corresponding channels on a public websocket
 name: discovery-streams
 version: 1.0.2
+sources:
+- https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/discovery_streams

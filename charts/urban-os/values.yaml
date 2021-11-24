@@ -3,56 +3,79 @@ global:
     jwt_issuer: ""
     auth0_domain: ""
   buckets:
+    # -- S3 Bucket region. Ignored when using Minio
     region: "us-west-2"
+    # -- Required. Bucket to store Host type datasets. *Note*: Bucket names are globally unique in S3 or cluster unique in Minio
     hostedFileBucket: ""
+    # -- Required. Bucket that extracted data is written to. *Note*: Bucket names are globally unique in S3 or cluster unique in Minio
+    hiveStorageBucket: ""
   kafka:
+    # -- This is the default url for the kafka cluster deployed with the chart. Override this if you are using an external kafka cluster.
     brokers: pipeline-kafka-bootstrap:9092
   presto:
+    # -- This is the default url that presto is deployed to with the chart. Override this if you are using an external presto cluster.
     url: http://kubernetes-data-platform-presto:8080
   redis:
+    # -- The url to a Redis instance. *Note*: Most apps in the platform require access to a Redis instance, and one is not currently included in the chart.
     host: redis.external-services
     password: ""
   vault:
+    # -- A url to a vault instance. Reaper and Andi use vault to read and store secrets for dataset ingestion. *Note*: Currently, only the provided vault chart works with UrbanOS
     endpoint: vault:8200
+  # -- Common ingress configuration
   ingress:
+    # -- Domain name for the platform
     dnsZone: ""
+    # -- Root domain name for the platform. Often the same as `dnsZone`
     rootDnsZone: ""
-    port: 80
+  # -- Key and Secret for connecting to Minio if it is enabled
   objectStore:
     accessKey: []
     accessSecret: []
 
+# -- See dependent chart for configuration details
 forklift:
   fullnameOverride: forklift
   enabled: true
+# -- See dependent chart for configuration details
 reaper:
   fullnameOverride: reaper
   enabled: true
+# -- See dependent chart for configuration details
 valkyrie:
   fullnameOverride: valkyrie
   enabled: true
   replicaCount: 1
+# -- See dependent chart for configuration details
 odo:
   enabled: true
+# -- See dependent chart for configuration details
 andi:
   fullnameOverride: andi
   enabled: true
 kafka:
   enabled: true
+# -- See dependent chart for configuration details
 discovery-api:
   elasticsearch:
-    # This is the default location of the chart-provided elasticsearch instance
+    # -- This is the default location of the chart-provided elasticsearch instance
     host: elasticsearch-master:9200
-    # Set this to true to require the api to connect to elasticsearch via https.
+    # -- Set this to true to require the api to connect to elasticsearch via https.
     # TLS must be configured on the elasticsearch cluster
     tls: false
   enabled: true
+# -- See dependent chart for configuration details
 discovery-ui:
   enabled: true
+# -- See dependent chart for configuration details
 discovery-streams:
   enabled: true
+# -- See dependent chart for configuration details
+raptor:
+  fullnameOverride: raptor
+  enabled: true
 
-# By default monitoring is disabled as it is optional,
+# -- By default monitoring is disabled as it is optional,
 # but we recommend it be enabled for production deployments
 monitoring:
   enabled: false
@@ -62,9 +85,11 @@ kubernetes-data-platform:
   presto:
     workers: 2
     jvm:
+      # -- Heap size for the presto workers, should be relative to available resources
       maxHeapSize: 1536M
     deploy:
       container:
+        # -- Resource configuration for the presto workers
         resources:
           limits:
             memory: 2Gi
@@ -80,6 +105,7 @@ kubernetes-data-platform:
     allowDropTable: true
     timeout: 360m
   postgres:
+    # -- Include in-cluster postgres for the metastore
     enable: false
     db:
       name: metastore
@@ -89,9 +115,10 @@ kubernetes-data-platform:
       mode: verify-full
       rootCertPath: /etc/ssl/certs/ca-certificates.crt
   minio:
+    # -- Minio is an experimental way to gain platform independence from S3
     enable: false
 
-# By default, the urbanOS chart stands up its own elasticsearch instance.
+# -- By default, the urbanOS chart stands up its own elasticsearch instance.
 # Disable this if you plan to provide your own.
 # TLS will be disabled by default, but can be configured using the chart
 #   documentation below
@@ -99,6 +126,3 @@ kubernetes-data-platform:
 elasticsearch:
   enabled: true
   replicas: 2
-raptor:
-  fullnameOverride: raptor
-  enabled: true

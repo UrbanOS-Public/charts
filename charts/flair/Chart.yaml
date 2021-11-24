@@ -3,3 +3,4 @@ appVersion: "1.0.0-static"
 description: Watches data on the validated topic and does profiling on its path through the data pipeline.
 name: flair
 version: 2.1.0
+deprecated: true

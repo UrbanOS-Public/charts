@@ -1,5 +1,5 @@
 requirements.lock
-**/charts/
+urban-os/
 tmp_charts/
 
 .DS_Store
