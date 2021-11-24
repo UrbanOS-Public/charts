@@ -3,3 +3,5 @@ appVersion: "1.0"
 description: Validates data from raw topic and writes it to validated topic
 name: valkyrie
 version: 2.6.1
+sources:
+- https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/valkyrie
