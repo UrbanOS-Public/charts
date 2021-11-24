@@ -1,5 +1,7 @@
 # flair
 
+> **:exclamation: This Helm Chart is deprecated!**
+
 ![Version: 2.1.0](https://img.shields.io/badge/Version-2.1.0-informational?style=flat-square) ![AppVersion: 1.0.0-static](https://img.shields.io/badge/AppVersion-1.0.0--static-informational?style=flat-square)
 
 Watches data on the validated topic and does profiling on its path through the data pipeline.

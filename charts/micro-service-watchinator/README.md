@@ -1,5 +1,7 @@
 # micro-service-watchinator
 
+> **:exclamation: This Helm Chart is deprecated!**
+
 ![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Cron job to watch microservices and make sure they are alive

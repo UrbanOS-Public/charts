@@ -1,5 +1,7 @@
 # estuary
 
+> **:exclamation: This Helm Chart is deprecated!**
+
 ![Version: 0.5.2](https://img.shields.io/badge/Version-0.5.2-informational?style=flat-square)
 
 Reads the event stream and stores them in to event_stream table
