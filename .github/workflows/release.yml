@@ -33,6 +33,7 @@ jobs:
           helm repo add elastic https://helm.elastic.co
           helm repo add strimzi http://strimzi.io/charts/
           helm repo update
+          helm dependency update charts/kafka
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.1
