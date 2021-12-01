@@ -1694,6 +1694,63 @@ entries:
   urban-os:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2021-12-01T20:18:39.188546591Z"
+    dependencies:
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+    - condition: odo.enabled
+      name: odo
+      repository: file://../odo
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+    - condition: vault.enabled
+      name: vault
+      repository: file://../vault
+    description: Master chart that deploys the urban os platform. See the individual
+      dependency readmes for configuration options.
+    digest: e2070e0cf31d22d33d0d97630655729cd583910f1eb03aaedcaeeacc51d998f7
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.8.5/urban-os-1.8.5.tgz
+    version: 1.8.5
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2021-12-01T19:44:58.254000884Z"
     dependencies:
     - condition: andi.enabled
@@ -2797,4 +2854,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-12-01T19:44:58.519847103Z"
+generated: "2021-12-01T20:18:39.189285991Z"
