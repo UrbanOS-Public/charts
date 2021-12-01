@@ -39,14 +39,6 @@ spec:
             value: data.{{ .Values.global.ingress.rootDnsZone }}
           - name: ALLOWED_ORIGINS
             value: {{ .Values.global.ingress.rootDnsZone }},{{ .Values.global.ingress.dnsZone }}
-          - name: LDAP_HOST
-            value: {{ .Values.ldap.host }}
-          - name: LDAP_BASE
-            value: {{ .Values.ldap.base }}
-          - name: LDAP_USER
-            value: {{ .Values.ldap.user }}
-          - name: LDAP_ACCOUNT_SUBDN
-            value: {{ .Values.ldap.account.subdn }}
           - name: PRESIGN_KEY
             valueFrom:
               secretKeyRef:
