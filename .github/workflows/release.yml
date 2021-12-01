@@ -31,6 +31,7 @@ jobs:
           helm repo add grafana https://grafana.github.io/helm-charts
           helm repo add scdp https://urbanos-public.github.io/charts
           helm repo add elastic https://helm.elastic.co
+          helm repo add strimzi http://strimzi.io/charts/
           helm repo update
 
       - name: Run chart-releaser
