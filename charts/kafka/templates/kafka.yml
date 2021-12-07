@@ -11,10 +11,10 @@ spec:
       tls: {}
     config:
       num.partitions: 30
-      default.replication.factor: 3
-      offsets.topic.replication.factor: 3
-      transaction.state.log.replication.factor: 3
-      transaction.state.log.min.isr: 2
+      default.replication.factor: {{ .Values.kafka.defaultReplicas }}
+      offsets.topic.replication.factor: {{ .Values.kafka.defaultReplicas }}
+      transaction.state.log.replication.factor: {{ .Values.kafka.defaultReplicas }}
+      transaction.state.log.min.isr: {{ .Values.kafka.defaultReplicas }}
       auto.create.topics.enable: false
     storage:
       type: persistent-claim
@@ -29,7 +29,7 @@ spec:
     resources:
 {{ toYaml .Values.kafka.resources | indent 6 }}
     rack:
-      topologyKey: failure-domain.beta.kubernetes.io/zone
+      topologyKey: "kubernetes.io/hostname"
     tlsSidecar:
 {{ toYaml .Values.tlsSidecar | indent 6 }}
     tolerations:
