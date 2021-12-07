@@ -996,6 +996,18 @@ entries:
   kafka:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-12-07T21:56:11.006990697Z"
+    description: A Helm chart for deploying kafka via strimzi
+    digest: 725074263c14eca0bb73098b2cdb3971d2280ef60226a093e12941a8e4468245
+    name: kafka
+    sources:
+    - https://github.com/strimzi/strimzi-kafka-operator
+    - https://github.com/apache/kafka
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/kafka-1.1.3/kafka-1.1.3.tgz
+    version: 1.1.3
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-12-01T19:44:57.299082525Z"
     description: A Helm chart for deploying kafka via strimzi
     digest: 4ce35fc76ea020a51002ca744cbf5fbc9489abc6233fb497dbc88713826604cc
@@ -1692,6 +1704,63 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2021-12-07T21:56:11.190854133Z"
+    dependencies:
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+    - condition: odo.enabled
+      name: odo
+      repository: file://../odo
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+    - condition: vault.enabled
+      name: vault
+      repository: file://../vault
+    description: Master chart that deploys the urban os platform. See the individual
+      dependency readmes for configuration options.
+    digest: a0e58838edce8c900e475e6954c2d666b0642e99dbbb31c6808709e75f9af6b2
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.8.6/urban-os-1.8.6.tgz
+    version: 1.8.6
   - apiVersion: v2
     appVersion: "1.0"
     created: "2021-12-01T20:18:39.188546591Z"
@@ -2854,4 +2923,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2021-12-01T20:18:39.189285991Z"
+generated: "2021-12-07T21:56:11.191584741Z"
