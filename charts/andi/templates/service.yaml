@@ -12,6 +12,7 @@ spec:
     app.kubernetes.io/name: {{ include "helm.fullname" . }}
   ports:
   - name: http
-    port: 80
     protocol: TCP
-  type: NodePort
+    port: {{ .Values.service.port }}
+    targetPort: {{ .Values.service.targetPort }}
+  type: {{ .Values.service.type }}
