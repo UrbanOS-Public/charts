@@ -5,6 +5,7 @@ global:
     host: redis.external-services
     password: ""
     port: ""
+    sslEnabled: "false"
     passwordSecret: ""
   ingress:
     dnsZone: ""
