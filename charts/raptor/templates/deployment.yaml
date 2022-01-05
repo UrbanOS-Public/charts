@@ -29,6 +29,19 @@ spec:
           value: {{ .Values.global.kafka.brokers | default (include "kafka.brokerservice" .) }}
         - name: REDIS_HOST
           value: {{ .Values.global.redis.host }}
+        - name: REDIS_PORT
+          value: {{ quote .Values.global.redis.port }}
+        - name: REDIS_PASSWORD
+{{- if .Values.global.redis.passwordSecret }}
+          valueFrom:
+            secretKeyRef:
+              name: {{ quote .Values.global.redis.passwordSecret }}
+              key: {{ quote .Values.global.redis.passwordSecret }}
+{{- else }}
+          value: {{ .Values.global.redis.password }}
+{{- end }}
+        - name: REDIS_SSL
+          value: {{ quote .Values.global.redis.sslEnabled }}
         - name: RUN_IN_KUBERNETES
           value: "true"
         - name: METRICS_PORT
