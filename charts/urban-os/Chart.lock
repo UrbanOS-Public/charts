@@ -7,7 +7,7 @@ dependencies:
   version: 1.2.1
 - name: discovery-streams
   repository: file://../discovery-streams
-  version: 1.0.3
+  version: 1.0.4
 - name: discovery-ui
   repository: file://../discovery-ui
   version: 1.0.1
@@ -19,7 +19,7 @@ dependencies:
   version: 1.0.1
 - name: forklift
   repository: file://../forklift
-  version: 3.1.3
+  version: 3.1.4
 - name: kafka
   repository: file://../kafka
   version: 1.1.3
@@ -37,12 +37,12 @@ dependencies:
   version: 1.1.1
 - name: reaper
   repository: file://../reaper
-  version: 1.2.1
+  version: 1.2.2
 - name: valkyrie
   repository: file://../valkyrie
   version: 2.6.2
 - name: vault
   repository: file://../vault
   version: 1.3.1
-digest: sha256:f16d8af9fff7565be66a3918f2db3a28e741b43ac96434c9d488848b4e5d95f7
-generated: "2021-12-07T16:54:38.639175-05:00"
+digest: sha256:c74c79152538235fbbc52f82418e59c1bd6d8b29aa906dd98b609dc576a92ca3
+generated: "2022-01-04T16:22:24.977334-06:00"

@@ -4,8 +4,9 @@ global:
   redis:
     host: redis.external-services
     password: ""
-    port: ""
     passwordSecret: ""
+    port: 6379
+    sslEnabled: false
   ingress:
     dnsZone: ""
     rootDnsZone: ""
