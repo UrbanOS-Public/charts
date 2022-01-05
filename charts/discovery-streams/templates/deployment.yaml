@@ -30,7 +30,7 @@ spec:
         - name: REDIS_HOST
           value: {{ .Values.global.redis.host }}
         - name: REDIS_SSL
-          value: {{ .Values.global.redis.sslEnabled }}
+          value: {{ quote .Values.global.redis.sslEnabled }}
 {{- if .Values.global.redis.port }}
         - name: REDIS_PORT
           value: {{ quote .Values.global.redis.port }}
