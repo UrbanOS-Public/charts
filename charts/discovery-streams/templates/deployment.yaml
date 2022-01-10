@@ -46,6 +46,8 @@ spec:
 {{- end }}
         - name: RUN_IN_KUBERNETES
           value: "true"
+        - name: RAPTOR_URL
+          value: {{ quote .Values.global.auth.raptor_url }}
         - name: METRICS_PORT
           value: {{ quote .Values.monitoring.targetPort }}
         - name: NAMESPACE

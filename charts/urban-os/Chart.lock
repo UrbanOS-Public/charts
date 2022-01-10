@@ -4,10 +4,10 @@ dependencies:
   version: 2.1.1
 - name: discovery-api
   repository: file://../discovery-api
-  version: 1.2.1
+  version: 1.2.2
 - name: discovery-streams
   repository: file://../discovery-streams
-  version: 1.0.4
+  version: 1.0.5
 - name: discovery-ui
   repository: file://../discovery-ui
   version: 1.0.1
@@ -34,7 +34,7 @@ dependencies:
   version: 1.1.1
 - name: raptor
   repository: file://../raptor
-  version: 1.1.1
+  version: 1.1.2
 - name: reaper
   repository: file://../reaper
   version: 1.2.2
@@ -44,5 +44,5 @@ dependencies:
 - name: vault
   repository: file://../vault
   version: 1.3.1
-digest: sha256:c74c79152538235fbbc52f82418e59c1bd6d8b29aa906dd98b609dc576a92ca3
-generated: "2022-01-04T16:22:24.977334-06:00"
+digest: sha256:a5990c83b1a5677dfbe4d947e6de709f7e660aa4b69b267957ccae7f48c3dd5b
+generated: "2022-01-06T12:45:40.970263-06:00"

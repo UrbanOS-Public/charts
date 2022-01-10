@@ -83,6 +83,8 @@ spec:
             value: {{ quote .Values.elasticsearch.tls }}
           - name: METRICS_PORT
             value: {{ quote .Values.monitoring.targetPort }}
+          - name: RAPTOR_URL
+            value: {{ quote .Values.global.auth.raptor_url }}
           - name: AWS_ACCESS_KEY_ID
             valueFrom:
               secretKeyRef:

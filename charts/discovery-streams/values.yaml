@@ -10,6 +10,8 @@ global:
   ingress:
     dnsZone: ""
     rootDnsZone: ""
+  auth:
+    raptor_url: "http://raptor/api/authorize"
 
 dashboard:
   title: "Dashboard Metrics"
