@@ -11,7 +11,7 @@ global:
     dnsZone: ""
     rootDnsZone: ""
   auth:
-    raptor_url: "http://raptor.admin/api/authorize"
+    raptor_url: "http://raptor/api/authorize"
 
 dashboard:
   title: "Dashboard Metrics"

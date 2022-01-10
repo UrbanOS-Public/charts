@@ -2,7 +2,7 @@ global:
   auth:
     jwt_issuer: ""
     auth0_domain: ""
-    raptor_url: "http://raptor.admin/api/authorize"
+    raptor_url: "http://raptor/api/authorize"
   buckets:
     region: us-west-2
     hostedFileBucket: "dataset-bucket"
