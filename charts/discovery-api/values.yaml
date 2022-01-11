@@ -32,6 +32,7 @@ resources:
 replicaCount: 1
 
 ingress:
+  enabled: true
   annotations:
 
 service:
