@@ -61,7 +61,7 @@ spec:
                 name: guardian-secret-key
                 key: guardian-secret-key
           - name: HOSTED_FILE_BUCKET
-            value: {{ .Values.environment }}-{{ .Values.global.buckets.hostedFileBucket }}
+            value: {{ .Values.global.buckets.hostedFileBucket }}
           - name: HOSTED_FILE_REGION
             value: {{ .Values.global.buckets.region }}
           - name: SECRETS_ENDPOINT
