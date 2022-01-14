@@ -1,7 +1,7 @@
 dependencies:
 - name: andi
   repository: file://../andi
-  version: 2.1.1
+  version: 2.1.2
 - name: discovery-api
   repository: file://../discovery-api
   version: 1.2.2
@@ -44,5 +44,5 @@ dependencies:
 - name: vault
   repository: file://../vault
   version: 1.3.1
-digest: sha256:a5990c83b1a5677dfbe4d947e6de709f7e660aa4b69b267957ccae7f48c3dd5b
-generated: "2022-01-06T12:45:40.970263-06:00"
+digest: sha256:0a767011c32806002fc79bdf4fcbb3ae5c43ce2744ac490171210641282379a9
+generated: "2022-01-14T15:45:35.554584-06:00"
