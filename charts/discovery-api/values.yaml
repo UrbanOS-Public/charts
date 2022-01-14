@@ -42,7 +42,7 @@ service:
   auth_string: ""
 
 image:
-  name: smartcitiesdata/discovery_api
+  repository: smartcitiesdata/discovery_api
   tag: development
   pullPolicy: IfNotPresent
 
@@ -88,3 +88,5 @@ secrets:
 aws:
   accessKeyId: ""
   accessKeySecret: ""
+  s3HostName: null
+  s3Port: null

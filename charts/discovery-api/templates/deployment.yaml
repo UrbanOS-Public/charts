@@ -18,7 +18,7 @@ spec:
       serviceAccountName: discovery-api
       containers:
       - name: discovery-api
-        image: {{ .Values.image.name }}:{{ .Values.image.tag }}
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}
@@ -28,7 +28,7 @@ spec:
           - name: REDIS_HOST
             value: {{ .Values.global.redis.host }}
           - name: REDIS_PORT
-            value: {{ .Values.global.redis.port }}
+            value: {{ quote .Values.global.redis.port }}
           - name: REDIS_PASSWORD
 {{- if .Values.global.redis.passwordSecret }}
             valueFrom:
@@ -106,3 +106,9 @@ spec:
               secretKeyRef:
                 name: {{ .Release.Name }}-discovery-api-aws-credentials
                 key: aws_access_key_secret
+          {{ if .Values.aws.s3HostName }}
+          - name: S3_HOST_NAME
+            value: {{ .Values.aws.s3HostName }}
+          - name: S3_PORT
+            value: {{ quote .Values.aws.s3Port }}
+          {{ end -}}
