@@ -76,6 +76,8 @@ spec:
             value: {{ .Values.postgres.password }}
           - name: POSTGRES_PORT
             value: {{ quote .Values.postgres.port }}
+          - name: POSTGRES_VERIFY_SNI
+            value: {{ quote .Values.postgres.verifySNI }}
           - name: AUTH_JWT_ISSUER
             value: {{ quote .Values.global.auth.jwt_issuer }}
           - name: AUTH_JWKS_ENDPOINT

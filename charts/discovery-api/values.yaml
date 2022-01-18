@@ -70,6 +70,7 @@ postgres:
   dbname: "postgres"
   user: "postgres"
   password: "password"
+  verifySNI: true
 
 elasticsearch:
   host: "es.example.com"
