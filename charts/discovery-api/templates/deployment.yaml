@@ -18,7 +18,7 @@ spec:
       serviceAccountName: discovery-api
       containers:
       - name: discovery-api
-        image: {{ .Values.image.name }}:{{ .Values.image.tag }}
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}
@@ -27,8 +27,19 @@ spec:
             value: {{ .Values.global.kafka.brokers }}
           - name: REDIS_HOST
             value: {{ .Values.global.redis.host }}
+          - name: REDIS_PORT
+            value: {{ quote .Values.global.redis.port }}
           - name: REDIS_PASSWORD
+{{- if .Values.global.redis.passwordSecret }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ quote .Values.global.redis.passwordSecret }}
+                key: {{ quote .Values.global.redis.passwordSecret }}
+{{- else }}
             value: {{ .Values.global.redis.password }}
+{{- end }}
+          - name: REDIS_SSL
+            value: {{ quote .Values.global.redis.sslEnabled }}
           - name: PRESTO_URL
             value: {{ .Values.global.presto.url }}
           - name: PRESTO_CATALOG
@@ -50,11 +61,9 @@ spec:
                 name: guardian-secret-key
                 key: guardian-secret-key
           - name: HOSTED_FILE_BUCKET
-            value: {{ .Values.environment }}-{{ .Values.global.buckets.hostedFileBucket }}
+            value: {{ .Values.global.buckets.hostedFileBucket }}
           - name: HOSTED_FILE_REGION
             value: {{ .Values.global.buckets.region }}
-          - name: SECRETS_ENDPOINT
-            value: {{ .Values.global.vault.endpoint }}
           - name: POSTGRES_HOST
             value: {{ .Values.postgres.host }}
           - name: POSTGRES_DBNAME
@@ -65,6 +74,8 @@ spec:
             value: {{ .Values.postgres.password }}
           - name: POSTGRES_PORT
             value: {{ quote .Values.postgres.port }}
+          - name: POSTGRES_VERIFY_SNI
+            value: {{ quote .Values.postgres.verifySNI }}
           - name: AUTH_JWT_ISSUER
             value: {{ quote .Values.global.auth.jwt_issuer }}
           - name: AUTH_JWKS_ENDPOINT
@@ -95,3 +106,9 @@ spec:
               secretKeyRef:
                 name: {{ .Release.Name }}-discovery-api-aws-credentials
                 key: aws_access_key_secret
+          {{ if .Values.aws.s3HostName }}
+          - name: S3_HOST_NAME
+            value: {{ .Values.aws.s3HostName }}
+          - name: S3_PORT
+            value: {{ quote .Values.aws.s3Port }}
+          {{ end -}}
