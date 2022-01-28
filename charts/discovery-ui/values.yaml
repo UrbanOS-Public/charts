@@ -34,4 +34,5 @@ tolerations: []
 affinity: {}
 
 ingress:
+  enabled: true
   annotations:
