@@ -7,8 +7,11 @@ global:
   presto:
     url: http://platform-kubernetes-data-platform-presto:8080
   redis:
-    host: redis.external-services 
+    host: redis.external-services
+    port: 6379
+    passwordSecret: ""
     password: ""
+    sslEnabled: false
   vault:
     endpoint: vault.vault:8200
   ingress:
