@@ -99,6 +99,12 @@ spec:
               secretKeyRef:
                 name: {{ .Release.Name }}-andi-aws-credentials
                 key: aws_access_key_secret
+          {{ if .Values.aws.s3HostName }}
+          - name: S3_HOST_NAME
+            value: {{ .Values.aws.s3HostName }}
+          - name: S3_PORT
+            value: {{ quote .Values.aws.s3Port }}
+          {{ end -}}
 {{- with .Values.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}

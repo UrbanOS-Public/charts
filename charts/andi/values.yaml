@@ -58,8 +58,12 @@ auth:
   auth0_client_secret: ""
 
 aws:
+  # Overriden by global.objectStore.accessKey if present
   accessKeyId: ""
+  # Overriden by global.objectStore.accessSecret if present
   accessKeySecret: ""
+  s3HostName: null
+  s3Port: null
 
 # The root at which documentation pdfs and other artifacts can be found
 documentationRoot: ""
