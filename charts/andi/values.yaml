@@ -83,4 +83,5 @@ s3:
 vaultRole: "andi-role"
 
 ingress:
+  enabled: true
   annotations:
