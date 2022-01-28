@@ -77,9 +77,9 @@ spec:
           {{ end -}}
           {{ if .Values.s3HostName }}
           - name: S3_HOST_NAME
-            value: {{ .Values.s3HostName }}
+            value: {{ .Values.aws.s3HostName }}
           - name: S3_PORT
-            value: {{ .Values.s3Port | quote }}
+            value: {{ .Values.aws.s3Port | quote }}
           {{ end -}}
           {{ if .Values.global.buckets.hiveStorageBucket }}
           - name: S3_WRITER_BUCKET
