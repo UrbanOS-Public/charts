@@ -1,3 +1,4 @@
+{{- if .Values.ingress.enabled }}
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
@@ -30,4 +31,5 @@ spec:
         backend:
           serviceName: redirect
           servicePort: use-annotation
+{{- end }}
 {{- end }}

@@ -21,6 +21,10 @@ global:
   ingress:
     rootDnsZone: localhost
     dnsZone: localhost
+  objectStore:
+    accessSecret: ""
+    accessKey: ""
+
 resources:
   limits:
     memory: 512Mi
@@ -87,7 +91,9 @@ secrets:
   guardianSecretKey: ""
 
 aws:
+  # Overriden by global.objectStore.accessKey if present
   accessKeyId: ""
+  # Overriden by global.objectStore.accessSecret if present
   accessKeySecret: ""
   s3HostName: null
   s3Port: null

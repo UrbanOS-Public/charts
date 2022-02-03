@@ -36,8 +36,9 @@ kafka:
   dataTopicPrefix: "transformed"
   outputTopic: "streaming-persisted"
 
-s3HostName: null
-s3Port: null
+aws:
+  s3HostName: null
+  s3Port: null
 
 nameOverride: ""
 fullnameOverride: ""
