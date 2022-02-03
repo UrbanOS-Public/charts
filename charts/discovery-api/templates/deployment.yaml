@@ -71,7 +71,7 @@ spec:
           - name: POSTGRES_USER
             value: {{ .Values.postgres.user }}
           - name: POSTGRES_PASSWORD
-            value: {{ .Values.postgres.password }}
+            value: {{ quote .Values.postgres.password }}
           - name: POSTGRES_PORT
             value: {{ quote .Values.postgres.port }}
           - name: POSTGRES_VERIFY_SNI
