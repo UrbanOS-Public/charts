@@ -1,6 +1,6 @@
 requirements.lock
 urban-os/
 tmp_charts/
-**/charts
+charts/urban-os/charts
 
 .DS_Store
