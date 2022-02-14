@@ -1,7 +1,10 @@
 dependencies:
+- name: alchemist
+  repository: file://../alchemist
+  version: 1.0.0
 - name: andi
   repository: file://../andi
-  version: 2.1.2
+  version: 2.1.3
 - name: discovery-api
   repository: file://../discovery-api
   version: 1.2.3
@@ -44,5 +47,5 @@ dependencies:
 - name: vault
   repository: file://../vault
   version: 1.3.1
-digest: sha256:9d94bc85b81464ef6d895fd16c9139623832bb3f88c0a9ea0b657fa401880003
-generated: "2022-01-13T14:37:25.093488-06:00"
+digest: sha256:dc0f2f3ac4104943d435bf531c82d286cfc084deb67b852ada59820302a97cb1
+generated: "2022-02-11T17:59:25.464871-06:00"

@@ -2,9 +2,12 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the urban os platform. See the individual dependency readmes for configuration options.
 name: urban-os
-version: 1.8.8
+version: 1.9.0
 
 dependencies:
+  - name: alchemist
+    repository: file://../alchemist
+    condition: alchemist.enabled
   - name: andi
     repository: file://../andi
     condition: andi.enabled
