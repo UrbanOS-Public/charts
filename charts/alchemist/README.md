@@ -2,7 +2,7 @@
 
 ![Version: 1.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
-Validates data from raw topic and writes it to validated topic
+Transforms data from raw topic and writes it to transformed topic
 
 ## Source Code
 
