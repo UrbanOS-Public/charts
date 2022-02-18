@@ -47,9 +47,6 @@ valkyrie:
   enabled: true
   replicaCount: 1
 # -- See dependent chart for configuration details
-odo:
-  enabled: true
-# -- See dependent chart for configuration details
 andi:
   fullnameOverride: andi
   enabled: true
