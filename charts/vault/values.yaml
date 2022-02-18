@@ -36,10 +36,6 @@ vault:
       boundServiceAccountNamespaces: urban-os
       policies: reaper_aws,dataset_access_keys
       tokenTtl: 2m
-    - name: odo-role
-      boundServiceAccounts: odo
-      boundServiceAccountNamespaces: urban-os
-      policies: odo_aws
     - name: andi-role
       boundServiceAccounts: andi
       boundServiceAccountNamespaces: urban-os
@@ -58,8 +54,6 @@ vault:
     - name: reaper_aws
       path: secrets/smart_city/aws_keys/reaper
       capabilities: '["read", "list"]'
-    - name: odo_aws
-      path: secrets/smart_city/aws_keys/odo
       capabilities: '["read", "list"]'
     - name: discovery_api_aws
       path: secrets/smart_city/aws_keys/discovery_api
