@@ -4,3 +4,5 @@ tmp_charts/
 charts/urban-os/charts
 
 .DS_Store
+
+.idea
