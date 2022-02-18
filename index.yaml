@@ -2955,6 +2955,18 @@ entries:
   vault:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2022-02-18T18:05:25.498554089Z"
+    description: A custom chart for the vault secrets engine in support of the UrbanOS
+      platform.
+    digest: 3e909bff69f1790c7c67031d84c3c49a45ca2ecdf467141f760393f02467a661
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/vault-1.3.2/vault-1.3.2.tgz
+    version: 1.3.2
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-12-01T19:44:58.518713299Z"
     description: A custom chart for the vault secrets engine in support of the UrbanOS
       platform.
@@ -3047,4 +3059,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2022-01-14T22:08:22.227860921Z"
+generated: "2022-02-18T18:05:25.499935121Z"
