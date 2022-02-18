@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the urban os platform. See the individual dependency readmes for configuration options.
 name: urban-os
-version: 1.9.0
+version: 1.10.0
 
 dependencies:
   - name: alchemist
@@ -39,9 +39,6 @@ dependencies:
   - name: monitoring
     repository: file://../monitoring
     condition: monitoring.enabled
-  - name: odo
-    repository: file://../odo
-    condition: odo.enabled
   - name: raptor
     repository: file://../raptor
     condition: raptor.enabled
