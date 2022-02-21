@@ -34,6 +34,9 @@ global:
     accessSecret: []
 
 # -- See dependent chart for configuration details
+alchemist:
+  enabled: false
+# -- See dependent chart for configuration details
 forklift:
   fullnameOverride: forklift
   enabled: true
