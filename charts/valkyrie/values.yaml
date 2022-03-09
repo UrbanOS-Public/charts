@@ -3,7 +3,10 @@ global:
     brokers: streaming-service-kafka-bootstrap:9092
   redis:
     host: redis.external-services
+    port: 6379
     password: ""
+    passwordSecret: ""
+    sslEnabled: false
 
 replicaCount: 2
 
