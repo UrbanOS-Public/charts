@@ -2915,6 +2915,17 @@ entries:
   valkyrie:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2022-03-11T14:48:34.730379646Z"
+    description: Validates data from raw topic and writes it to validated topic
+    digest: 42ff0e249d55df749a581c461479707b296f47c8058fb2a5000dff23918fcf50
+    name: valkyrie
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/valkyrie
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/valkyrie-2.6.3/valkyrie-2.6.3.tgz
+    version: 2.6.3
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-12-01T19:44:58.371390734Z"
     description: Validates data from raw topic and writes it to validated topic
     digest: b832dd50db813ce7f2f9173f5b8137b7cf78601ca974e431ddb2befa8e6f1aa8
@@ -3130,4 +3141,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2022-02-21T16:45:31.734101517Z"
+generated: "2022-03-11T14:48:34.731531452Z"
