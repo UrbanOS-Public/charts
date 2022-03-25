@@ -1,4 +1,4 @@
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
   name: pipeline
@@ -7,8 +7,10 @@ spec:
     version: {{ .Values.kafka.version }}
     replicas: {{ .Values.kafka.defaultReplicas }}
     listeners:
-      plain: {}
-      tls: {}
+    - name: plain
+      port: 9092
+      type: internal
+      tls: false
     config:
       num.partitions: 30
       default.replication.factor: {{ .Values.kafka.defaultReplicas }}
@@ -30,12 +32,6 @@ spec:
 {{ toYaml .Values.kafka.resources | indent 6 }}
     rack:
       topologyKey: "kubernetes.io/hostname"
-    tlsSidecar:
-{{ toYaml .Values.tlsSidecar | indent 6 }}
-    tolerations:
-{{ toYaml .Values.tolerations | indent 6 }}
-    affinity:
-{{ toYaml .Values.affinity | indent 6 }}
   zookeeper:
     replicas: {{ .Values.kafka.defaultReplicas }}
     readinessProbe:
@@ -55,12 +51,6 @@ spec:
       limits:
         cpu: 100m
         memory: 512Mi
-    tlsSidecar:
-{{ toYaml .Values.tlsSidecar | indent 6 }}
-    tolerations:
-{{ toYaml .Values.tolerations | indent 6 }}
-    affinity:
-{{ toYaml .Values.affinity | indent 6 }}
   entityOperator:
     topicOperator:
       resources:
