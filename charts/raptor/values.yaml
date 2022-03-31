@@ -35,4 +35,4 @@ monitoring:
 service:
   type: NodePort
   port: 80
-  targetPort: 80
+  targetPort: 4000
