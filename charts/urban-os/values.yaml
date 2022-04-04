@@ -25,9 +25,9 @@ global:
   # -- Common ingress configuration
   ingress:
     # -- Domain name for the platform
-    dnsZone: ""
+    dnsZone: "localhost"
     # -- Root domain name for the platform. Often the same as `dnsZone`
-    rootDnsZone: ""
+    rootDnsZone: "localhost"
   # -- Key and Secret for connecting to Minio if it is enabled
   objectStore:
     accessKey: []
