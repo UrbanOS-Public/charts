@@ -117,6 +117,8 @@ spec:
             value: {{ .Values.aws.s3HostName }}
           - name: S3_PORT
             value: {{ quote .Values.aws.s3Port }}
+          - name: ALLOWED_ORIGIN
+            value: "{{ .Values.ingress.tls | ternary "https" "http" }}://*.{{ .Values.global.ingress.dnsZone }}"
           {{ end -}}
 {{- with .Values.tolerations }}
       tolerations:
