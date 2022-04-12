@@ -34,7 +34,7 @@ fullnameOverride: ""
 service:
   type: NodePort
   port: 80
-  targetPort: 80
+  targetPort: 4000
 
 secrets:
   live_view:
@@ -91,5 +91,6 @@ s3:
 vaultRole: "andi-role"
 
 ingress:
+  tls: true
   enabled: true
   annotations:

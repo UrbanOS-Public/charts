@@ -10,10 +10,10 @@ data:
         "clients": {
             "Discovery": {
                 {{- $localhost := "http://localhost:9001" -}}
-                {{- $uiInternal := print "https://discovery." .Values.global.ingress.dnsZone -}}
-                {{- $uiExternal := print "https://discovery." .Values.global.ingress.rootDnsZone -}}
-                {{- $apiInternal := print "https://data." .Values.global.ingress.dnsZone -}}
-                {{- $apiExternal := print "https://data." .Values.global.ingress.rootDnsZone -}}
+                {{- $uiInternal := print "https://discovery." .Release.Namespace "." .Values.global.ingress.dnsZone -}}
+                {{- $uiExternal := print "https://discovery." .Release.Namespace "." .Values.global.ingress.rootDnsZone -}}
+                {{- $apiInternal := print "https://data." .Release.Namespace "." .Values.global.ingress.dnsZone -}}
+                {{- $apiExternal := print "https://data." .Release.Namespace "." .Values.global.ingress.rootDnsZone -}}
                 "callbacks": "[\"{{ $localhost }}/oauth\", \"{{ $uiInternal }}/oauth\", \"{{ $uiExternal }}/oauth\", \"{{ $apiInternal }}/tableau/connector.html\", \"{{ $apiExternal }}/tableau/connector.html\"]",
                 "allowedLogoutUrls": "[\"{{ $localhost }}/oauth\", \"{{ $uiInternal }}/oauth\", \"{{ $uiExternal }}/oauth\"]",
                 "allowedOrigins": "[\"{{ $localhost }}\", \"{{ $uiInternal }}\", \"{{ $uiExternal }}\",\"{{ $apiInternal }}\", \"{{ $apiExternal }}\"]",
@@ -22,11 +22,12 @@ data:
                 "type": "spa"
             },
             "ANDI": {
+                {{- $andiProtocol := ternary "https://" "http://" .Values.andi.ingress.tls -}}
                 {{- $nipio := "https://127.0.0.1.nip.io:4443" -}}
-                {{- $andiInternal := print "https://andi." .Values.global.ingress.dnsZone -}}
-                {{- $andiExternal := print "https://andi." .Values.global.ingress.rootDnsZone -}}
-                {{- $shareDataInternal := print "https://sharedata." .Values.global.ingress.dnsZone -}}
-                {{- $shareDataExternal := print "https://sharedata." .Values.global.ingress.rootDnsZone -}}
+                {{- $andiInternal := print $andiProtocol "andi." .Release.Namespace "." .Values.global.ingress.dnsZone -}}
+                {{- $andiExternal := print $andiProtocol "andi." .Release.Namespace "." .Values.global.ingress.rootDnsZone -}}
+                {{- $shareDataInternal := print $andiProtocol "sharedata." .Release.Namespace "." .Values.global.ingress.dnsZone -}}
+                {{- $shareDataExternal := print $andiProtocol "sharedata." .Release.Namespace "." .Values.global.ingress.rootDnsZone -}}
                 "callbacks": "[\"{{ $nipio }}/auth/auth0/callback\", \"{{ $andiInternal }}/auth/auth0/callback\", \"{{ $andiExternal }}/auth/auth0/callback\", \"{{ $shareDataInternal }}/auth/auth0/callback\", \"{{ $shareDataExternal }}/auth/auth0/callback\"]",
                 "allowedLogoutUrls": "[\"{{ $nipio }}/auth/auth0\", \"{{ $andiInternal }}/auth/auth0\", \"{{ $andiExternal }}/auth/auth0\", \"{{ $shareDataInternal }}/auth/auth0\", \"{{ $shareDataExternal }}/auth/auth0\"]",
                 "allowedOrigins": "[\"{{ $nipio }}\", \"{{ $andiInternal }}\", \"{{ $andiExternal }}\", \"{{ $shareDataInternal }}\", \"{{ $shareDataExternal }}\"]",
