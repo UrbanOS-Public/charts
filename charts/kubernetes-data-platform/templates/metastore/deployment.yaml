@@ -28,6 +28,8 @@ spec:
       - name: init-schema
         image: {{ .Values.metastore.deploy.container.image }}:{{ .Values.metastore.deploy.container.tag }}
         imagePullPolicy: {{ .Values.metastore.deploy.container.pullPolicy }}
+        resources:
+{{ toYaml .Values.metastore.deploy.container.resources | indent 10 }}
         command:
         - /bin/bash
         - -c

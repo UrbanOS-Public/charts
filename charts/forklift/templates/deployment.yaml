@@ -75,7 +75,7 @@ spec:
           - name: AWS_SECRET_ACCESS_KEY
             value: {{ .Values.global.objectStore.accessSecret }}
           {{ end -}}
-          {{ if .Values.s3HostName }}
+          {{ if .Values.aws.s3HostName }}
           - name: S3_HOST_NAME
             value: {{ .Values.aws.s3HostName }}
           - name: S3_PORT
