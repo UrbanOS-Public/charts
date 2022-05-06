@@ -35,7 +35,7 @@ global:
 
 # -- See dependent chart for configuration details
 alchemist:
-  enabled: false
+  enabled: true
 # -- See dependent chart for configuration details
 forklift:
   fullnameOverride: forklift
