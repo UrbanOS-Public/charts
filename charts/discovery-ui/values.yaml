@@ -21,6 +21,7 @@ env:
   gtm_id: "GTM-EXAMPLE"
   base_url: "example.com"
   streets_tile_layer_url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  logo_url: null
   mapbox_access_token: ""
   auth0_domain: ""
   auth0_client_id: ""
