@@ -315,6 +315,17 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
+    created: "2022-05-23T12:59:59.8824491Z"
+    description: A middleware layer to connect data consumers with the data sources
+    digest: 88e1996870d74df118090fb7dfe020be8b9ac5fcf7bc9eb3995468e567c0cbaf
+    name: discovery-api
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/discovery_api
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-api-1.4.2/discovery-api-1.4.2.tgz
+    version: 1.4.2
+  - apiVersion: v1
+    appVersion: 1.0.0-static
     created: "2022-05-06T18:42:43.566609716Z"
     description: A middleware layer to connect data consumers with the data sources
     digest: d87b3ebf65ab85a221ed098d0a6ca27e1a7cf8d414f126ee611a02b0ce58825e
@@ -687,6 +698,18 @@ entries:
     - discovery-streams-0.1.2.tgz
     version: 0.1.2
   discovery-ui:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2022-05-23T13:00:00.087533392Z"
+    description: A helm chart for the discovery ui
+    digest: 41bda2ec6f6eb924d31f56efddafbc35ab776857c5c010b9204218c1aca2a6d9
+    name: discovery-ui
+    sources:
+    - https://github.com/UrbanOS-Public/discovery_ui
+    - https://github.com/UrbanOS-Public/react_discovery_ui
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-ui-1.2.1/discovery-ui-1.2.1.tgz
+    version: 1.2.1
   - apiVersion: v1
     appVersion: "1.0"
     created: "2022-05-06T18:42:43.802815928Z"
@@ -3509,4 +3532,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2022-05-06T18:42:44.226825593Z"
+generated: "2022-05-23T13:00:00.088990992Z"
