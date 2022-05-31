@@ -14,7 +14,7 @@ image:
   name: smartcolumbusos/discovery_ui
   tag: development
   environment: "local"
-  pullPolicy: always
+  pullPolicy: Always
 
 env:
   api_host: "https://data.example.com"
