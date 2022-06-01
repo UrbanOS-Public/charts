@@ -45,7 +45,7 @@ spec:
       size: 1Gi
       deleteClaim: false
     resources:
-{{ toYaml .Values.kafka.zookeeperResources | indent 6 }}
+{{ toYaml .Values.zookeeper.resources | indent 6 }}
   entityOperator:
     topicOperator:
       resources:

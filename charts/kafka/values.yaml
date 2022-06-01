@@ -16,7 +16,9 @@ kafka:
     limits:
       cpu: 1400m
       memory: 12500M
-  zookeeperResources:
+
+zookeeper:
+  resources:
     requests:
       cpu: 100m
       memory: 512Mi
