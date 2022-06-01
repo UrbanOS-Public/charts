@@ -16,6 +16,13 @@ kafka:
     limits:
       cpu: 1400m
       memory: 12500M
+  zookeeperResources:
+    requests:
+      cpu: 100m
+      memory: 512Mi
+    limits:
+      cpu: 100m
+      memory: 512Mi
 
 strimzi-kafka-operator:
   resources:

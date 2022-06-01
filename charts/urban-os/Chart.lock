@@ -7,13 +7,13 @@ dependencies:
   version: 2.2.1
 - name: discovery-api
   repository: file://../discovery-api
-  version: 1.4.1
+  version: 1.4.2
 - name: discovery-streams
   repository: file://../discovery-streams
   version: 1.1.1
 - name: discovery-ui
   repository: file://../discovery-ui
-  version: 1.2.0
+  version: 1.2.1
 - name: elasticsearch
   repository: https://helm.elastic.co
   version: 7.14.0
@@ -25,7 +25,7 @@ dependencies:
   version: 3.1.6
 - name: kafka
   repository: file://../kafka
-  version: 1.1.4
+  version: 1.1.5
 - name: kubernetes-data-platform
   repository: file://../kubernetes-data-platform
   version: 1.7.1
@@ -44,5 +44,5 @@ dependencies:
 - name: vault
   repository: file://../vault
   version: 1.3.2
-digest: sha256:e96b0240f708b2b5511b84b6348ece4d384d4f9f0982db9f0711ac96b499d521
-generated: "2022-05-06T14:37:24.380173-04:00"
+digest: sha256:83b6649439ba35997c835e140091c14c084d90ec85d1d50d9939751696fb2575
+generated: "2022-05-31T15:06:42.882266-06:00"

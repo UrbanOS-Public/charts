@@ -45,12 +45,7 @@ spec:
       size: 1Gi
       deleteClaim: false
     resources:
-      requests:
-        cpu: 100m
-        memory: 512Mi
-      limits:
-        cpu: 100m
-        memory: 512Mi
+{{ toYaml .Values.kafka.zookeeperResources | indent 6 }}
   entityOperator:
     topicOperator:
       resources:
