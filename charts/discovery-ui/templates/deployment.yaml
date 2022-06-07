@@ -22,10 +22,10 @@ spec:
         image: {{ .Values.image.name }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         volumeMounts:
-        - mountPath: /usr/share/nginx/html/config.js
+        - mountPath: /opt/app-root/src/config.js
           name: discovery-ui-configs
           subPath: config.js
-        - mountPath: /etc/nginx/conf.d/default.conf
+        - mountPath: /opt/app-root/etc/nginx.default.d/default.conf
           name: discovery-ui-configs
           subPath: default.conf
       volumes:

@@ -17,36 +17,28 @@ data:
     window.AUTH0_CLIENT_ID = '{{.Values.env.auth0_client_id}}'
     window.AUTH0_AUDIENCE = '{{.Values.env.auth0_audience}}'
   default.conf: |
-    server {
-      listen       8080;
-      server_name  localhost;
-      add_header X-Content-Type-Options nosniff;
-      add_header X-XSS-Protection "1; mode=block";
-      add_header X-Frame-Options "DENY";
-      add_header Cache-Control "no-cache, no-store, must-revalidate";
-      add_header Pragma "no-cache";
-      add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.googletagmanager.com *.google-analytics.com; style-src 'self' 'unsafe-inline'; frame-src *.auth0.com; img-src 'self' {{ .Values.env.additional_csp_hosts }} *.amazonaws.com *.mapbox.com *.google-analytics.com *.google.com *.doubleclick.net data: blob:; connect-src 'self' *.smartcolumbusos.com {{ .Values.env.additional_csp_hosts }} *.auth0.com *.mapbox.com *.plot.ly; worker-src blob:; block-all-mixed-content";
-      add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload";
+    server_name  localhost;
+    add_header X-Content-Type-Options nosniff;
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Frame-Options "DENY";
+    add_header Cache-Control "no-cache, no-store, must-revalidate";
+    add_header Pragma "no-cache";
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.googletagmanager.com *.google-analytics.com; style-src 'self' 'unsafe-inline'; frame-src *.auth0.com; img-src 'self' {{ .Values.env.additional_csp_hosts }} *.amazonaws.com *.mapbox.com *.google-analytics.com *.google.com *.doubleclick.net data: blob:; connect-src 'self' *.smartcolumbusos.com {{ .Values.env.additional_csp_hosts }} *.auth0.com *.mapbox.com *.plot.ly; worker-src blob:; block-all-mixed-content";
+    add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload";
 
-      server_tokens off;
+    server_tokens off;
 
-      gzip on;
-      gzip_static on;
-      gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
-      gzip_proxied  any;
-      gzip_vary on;
-      gzip_comp_level 6;
-      gzip_buffers 16 8k;
-      gzip_http_version 1.1;
+    gzip on;
+    gzip_static on;
+    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+    gzip_proxied  any;
+    gzip_vary on;
+    gzip_comp_level 6;
+    gzip_buffers 16 8k;
+    gzip_http_version 1.1;
 
-      root   /usr/share/nginx/html;
-      index  index.html index.htm;
-      location / {
-        try_files $uri $uri/ /index.html;
-      }
+    index  index.html index.htm;
 
-      error_page   500 502 503 504  /50x.html;
-      location = /50x.html {
-          root   /usr/share/nginx/html;
-      }
+    location / {
+      try_files $uri $uri/ /index.html;
     }
