@@ -39,7 +39,6 @@ Loads data from the transformed topic into Presto
 | s3HostName | string | `nil` |  |
 | s3Port | string | `nil` |  |
 | service.type | string | `"ClusterIP"` |  |
-| specialCompactionDatasets | string | `nil` |  |
 | tolerations | list | `[]` |  |
 
 ----------------------------------------------
