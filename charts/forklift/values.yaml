@@ -56,6 +56,3 @@ profiling_enabled: false
 
 # Set compactionSchedule to a valid cron string such as "00 01 * * *" (This will run compaction nightly at 1:00am)
 compactionSchedule: "0 * * * *"
-# Special compaction datasets use the variant compaction introduced in https://github.com/Datastillery/smartcitiesdata/pull/950
-# This is a comma seperated list of dataset ids, and will only be used if a compactionSchedule is provided. WARNING: tables will be mutated to enable the variant compaction process
-specialCompactionDatasets: null

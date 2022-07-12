@@ -63,10 +63,6 @@ spec:
           - name: COMPACTION_SCHEDULE
             value: {{.Values.compactionSchedule | quote }}
           {{ end -}}
-          {{ if .Values.specialCompactionDatasets }}
-          - name: SPECIAL_COMPACTION_DATASETS
-            value: {{.Values.specialCompactionDatasets | quote }}
-          {{ end -}}
           {{ if .Values.global.objectStore.accessKey }}
           - name: AWS_ACCESS_KEY_ID
             value: {{ .Values.global.objectStore.accessKey }}
