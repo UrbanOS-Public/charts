@@ -54,5 +54,9 @@ monitoring:
 
 profiling_enabled: false
 
+# When enabled, forklift doesn't retain any past records for a dataset.
+# New records replace what was previously stored.
+overwrite_mode: false
+
 # Set compactionSchedule to a valid cron string such as "00 01 * * *" (This will run compaction nightly at 1:00am)
 compactionSchedule: "0 * * * *"

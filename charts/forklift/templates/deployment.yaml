@@ -67,6 +67,10 @@ spec:
           - name: AWS_ACCESS_KEY_ID
             value: {{ .Values.global.objectStore.accessKey }}
           {{ end -}}
+          {{ if .Values.overwrite_mode }}
+          - name: OVERWRITE_MODE
+            value: true
+          {{ end -}}
           {{ if .Values.global.objectStore.accessSecret }}
           - name: AWS_SECRET_ACCESS_KEY
             value: {{ .Values.global.objectStore.accessSecret }}
