@@ -45,6 +45,10 @@ dependencies:
     repository: file://../kubernetes-data-platform
     condition: kubernetes-data-platform.enabled
     version: ">= 1.0.0"
+  - name: persistence
+    repository: file://../persistence
+    condition: persistence.enabled
+    version: ">= 1.0.0"
   - name: monitoring
     repository: file://../monitoring
     condition: monitoring.enabled

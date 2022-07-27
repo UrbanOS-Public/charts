@@ -54,7 +54,6 @@ vault:
     - name: reaper_aws
       path: secrets/smart_city/aws_keys/reaper
       capabilities: '["read", "list"]'
-      capabilities: '["read", "list"]'
     - name: discovery_api_aws
       path: secrets/smart_city/aws_keys/discovery_api
       capabilities: '["read", "list"]'
