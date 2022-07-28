@@ -1,0 +1,67 @@
+global:
+  s3:
+    host: example.com
+    port: 8000
+    accessKey: example
+    secretKey: example
+    hiveStorageBucket: hive-storage
+    hiveStoragePath: 
+
+metastore:
+  postgres:
+    user: padmin
+    password: example
+    host: postgres
+    port: 5432
+    name: metastore
+  resources:
+    limits:
+      memory: 2Gi
+      cpu: 1
+    requests:
+      memory: 2Gi
+      cpu: 1
+
+trino:
+  serviceAccount:
+    create: true
+    name: trino
+
+  securityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+
+  coordinator:
+    resources:
+      limits:
+        memory: 2Gi
+        cpu: 1
+      requests:
+        memory: 2Gi
+        cpu: 1
+
+  worker:
+    resources:
+      limits:
+        memory: 2Gi
+        cpu: 1
+      requests:
+        memory: 2Gi
+        cpu: 1
+
+  additionalCatalogs:
+    hive: |
+      connector.name=hive-hadoop2
+      hive.metastore.uri=thrift://hive-metastore:8000
+      hive.metastore.username=padmin
+      hive.metastore-timeout=360m
+      hive.allow-drop-table=true
+      hive.allow-rename-table=true
+      hive.allow-drop-column=true
+      hive.allow-rename-column=true
+      hive.allow-add-column=true
+      hive.s3.aws-access-key="ZCVGOsbnHUBMelrlcc4AvJEfUgk5xvmsNtcCFuGD"
+      hive.s3.aws-secret-key="0doQJevNCMHz2N7jvylasK3VWEzUHcTf8YGY0VfY"
+      hive.s3.path-style-access=true
+      hive.s3.endpoint=http://minio:80
+      hive.s3.ssl.enabled=false
