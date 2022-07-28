@@ -60,8 +60,8 @@ trino:
       hive.allow-drop-column=true
       hive.allow-rename-column=true
       hive.allow-add-column=true
-      hive.s3.aws-access-key="ZCVGOsbnHUBMelrlcc4AvJEfUgk5xvmsNtcCFuGD"
-      hive.s3.aws-secret-key="0doQJevNCMHz2N7jvylasK3VWEzUHcTf8YGY0VfY"
+      hive.s3.aws-access-key=EXAMPLE
+      hive.s3.aws-secret-key=EXAMPLE
       hive.s3.path-style-access=true
       hive.s3.endpoint=http://minio:80
       hive.s3.ssl.enabled=false
