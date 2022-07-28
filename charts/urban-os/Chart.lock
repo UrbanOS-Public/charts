@@ -22,7 +22,7 @@ dependencies:
   version: 1.0.1
 - name: forklift
   repository: file://../forklift
-  version: 3.1.6
+  version: 3.1.7
 - name: kafka
   repository: file://../kafka
   version: 1.1.6
