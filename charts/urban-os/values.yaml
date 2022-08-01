@@ -80,8 +80,11 @@ raptor:
 monitoring:
   enabled: false
 
-kubernetes-data-platform:
+persistence:
   enabled: true
+
+kubernetes-data-platform:
+  enabled: false
   presto:
     workers: 2
     jvm:
