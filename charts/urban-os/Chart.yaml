@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the urban os platform. See the individual dependency readmes for configuration options.
 name: urban-os
-version: 1.11.6
+version: 1.12.0
 
 dependencies:
   - name: alchemist
@@ -44,6 +44,10 @@ dependencies:
   - name: kubernetes-data-platform
     repository: file://../kubernetes-data-platform
     condition: kubernetes-data-platform.enabled
+    version: ">= 1.0.0"
+  - name: persistence
+    repository: file://../persistence
+    condition: persistence.enabled
     version: ">= 1.0.0"
   - name: monitoring
     repository: file://../monitoring
