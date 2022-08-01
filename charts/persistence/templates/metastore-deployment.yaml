@@ -34,11 +34,11 @@ spec:
           value: {{ .accessKey }}
         - name: S3_SECRET
           value: {{ .accessSecret }}
-        - name: S3_BUCKET_NAME
-          value: {{ .hiveStorageBucket }}
         - name: S3_BUCKET_PATH
           value: {{ .hiveStoragePath }}
           {{- end }}
+        - name: S3_BUCKET_NAME
+          value: {{ .Values.global.buckets.hiveStorageBucket }}
           {{- with .Values.metastore.postgres }}
         - name: DATABASE_USER
           value: {{ .user }}

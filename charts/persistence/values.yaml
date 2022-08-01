@@ -27,10 +27,6 @@ trino:
     create: true
     name: trino
 
-  securityContext:
-    runAsUser: 1000
-    runAsGroup: 1000
-
   coordinator:
     resources:
       limits:
