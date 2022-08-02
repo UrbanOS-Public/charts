@@ -17,7 +17,7 @@ spec:
       serviceAccountName: hive-metastore
       containers:
       - name: hive-metastore
-        image: quay.io/cloudservices/ubi-hive:3.1.2-metastore-008
+        image: {{ .Values.metastore.image }}
         ports:
         - containerPort: 8000
         env:
