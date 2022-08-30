@@ -8,9 +8,14 @@ global:
     hiveStoragePath: 
 
 metastore:
+  rbac:
+    enabled: true
+  image: quay.io/cloudservices/ubi-hive:3.1.2-metastore-009
   postgres:
     user: padmin
     password: example
+    passwordSecret: null
+    passwordSecretKey: null
     host: postgres
     port: 5432
     name: metastore

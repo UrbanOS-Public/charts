@@ -28,6 +28,9 @@ image:
 monitoring:
   targetPort: 9002
 
+rbac:
+  enabled: true
+
 nameOverride: ""
 fullnameOverride: ""
 

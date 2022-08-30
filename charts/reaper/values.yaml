@@ -29,6 +29,9 @@ service:
 
 profiling_enabled: false
 
+rbac:
+  enabled: true
+
 resources:
   limits:
     memory: 1Gi

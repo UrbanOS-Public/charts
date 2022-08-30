@@ -36,7 +36,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: {{ quote .Values.global.redis.passwordSecret }}
-              key: {{ quote .Values.global.redis.passwordSecret }}
+              key: {{ .Values.global.redis.passwordSecretKey | default .Values.global.redis.passwordSecret | quote }}
 {{- else }}
           value: {{ .Values.global.redis.password }}
 {{- end }}
