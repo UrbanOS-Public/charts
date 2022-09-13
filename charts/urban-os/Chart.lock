@@ -22,7 +22,7 @@ dependencies:
   version: 1.0.1
 - name: forklift
   repository: file://../forklift
-  version: 3.1.7
+  version: 3.1.8
 - name: kafka
   repository: file://../kafka
   version: 1.1.6
@@ -47,5 +47,5 @@ dependencies:
 - name: vault
   repository: file://../vault
   version: 1.3.3
-digest: sha256:58015578a68b84d31f3f72e04dbada1473ad7b3a0cc23dcfa060af2bd7799555
-generated: "2022-08-05T16:29:11.580305-06:00"
+digest: sha256:99bd78b816b6140a83f87367f18f357850e56277399635765093fbb5be514257
+generated: "2022-09-13T00:30:51.510297-06:00"
