@@ -9,12 +9,6 @@ Use our charts in two steps:
 1. Add our repository with `helm repo add scdp https://urbanos-public.github.io/charts/`.
 2. Install a chart with `helm upgrade --install ${RELEASE_NAME} scdp/${CHART_NAME}`. See the [Helm docs](https://helm.sh/docs/helm/#helm-upgrade) for more options.
 
-If you'd like to update the chart index later, run:
-
-```
-helm repo update
-```
-
 ## Contributing
 
 ### Updates
@@ -26,7 +20,10 @@ helm repo update
    of the updated charts.
 
 `helm search repo scdp/{chart}` (ex: `helm search repo scdp/urban-os`) can be
-used to confirm that chart versions have been released properly to the remote
+used to confirm that chart versions have been released properly to the remote.
+
+You'll need to run `helm repo update` prior to search commands, as helm
+search commands reference a local cache of the remote chart.
 
 ### New charts
 
