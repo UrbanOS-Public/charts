@@ -59,10 +59,6 @@ spec:
             value: {{ quote .Values.monitoring.targetPort }}
           - name: PROFILING_ENABLED
             value: {{ .Values.profiling_enabled | quote }}
-          {{ if .Values.compactionSchedule }}
-          - name: COMPACTION_SCHEDULE
-            value: {{.Values.compactionSchedule | quote }}
-          {{ end -}}
           {{ if .Values.global.objectStore.accessKey }}
           - name: AWS_ACCESS_KEY_ID
             value: {{ .Values.global.objectStore.accessKey }}
