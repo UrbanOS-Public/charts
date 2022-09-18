@@ -59,13 +59,15 @@ spec:
             value: {{ quote .Values.monitoring.targetPort }}
           - name: PROFILING_ENABLED
             value: {{ .Values.profiling_enabled | quote }}
+          - name: OVERWRITE_MODE
+          {{- if .Values.overwrite_mode }}
+            value: true
+          {{- else }}
+            value: false
+          {{- end }}
           {{ if .Values.global.objectStore.accessKey }}
           - name: AWS_ACCESS_KEY_ID
             value: {{ .Values.global.objectStore.accessKey }}
-          {{ end -}}
-          {{ if .Values.overwrite_mode }}
-          - name: OVERWRITE_MODE
-            value: true
           {{ end -}}
           {{ if .Values.global.objectStore.accessSecret }}
           - name: AWS_SECRET_ACCESS_KEY
