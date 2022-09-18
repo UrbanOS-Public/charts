@@ -60,11 +60,7 @@ spec:
           - name: PROFILING_ENABLED
             value: {{ .Values.profiling_enabled | quote }}
           - name: OVERWRITE_MODE
-          {{- if .Values.overwrite_mode }}
-            value: true
-          {{- else }}
-            value: false
-          {{- end }}
+            value: {{ .Values.overwrite_mode | quote }}
           {{ if .Values.global.objectStore.accessKey }}
           - name: AWS_ACCESS_KEY_ID
             value: {{ .Values.global.objectStore.accessKey }}
