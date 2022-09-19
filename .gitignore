@@ -2,6 +2,7 @@ requirements.lock
 tmp_charts/
 charts/urban-os/charts
 charts/kafka/charts
+charts/persistence/charts
 
 .DS_Store
 

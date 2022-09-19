@@ -80,6 +80,10 @@ documentationRoot: ""
 # Can be "private" or "public"
 accessLevel: "private"
 
+theme:
+  # url for the header bar logo
+  logo: ""
+
 tolerations:
   - key: example.run.public-worker
     operator: Equal

@@ -59,17 +59,11 @@ spec:
             value: {{ quote .Values.monitoring.targetPort }}
           - name: PROFILING_ENABLED
             value: {{ .Values.profiling_enabled | quote }}
-          {{ if .Values.compactionSchedule }}
-          - name: COMPACTION_SCHEDULE
-            value: {{.Values.compactionSchedule | quote }}
-          {{ end -}}
+          - name: OVERWRITE_MODE
+            value: {{ .Values.overwrite_mode | quote }}
           {{ if .Values.global.objectStore.accessKey }}
           - name: AWS_ACCESS_KEY_ID
             value: {{ .Values.global.objectStore.accessKey }}
-          {{ end -}}
-          {{ if .Values.overwrite_mode }}
-          - name: OVERWRITE_MODE
-            value: true
           {{ end -}}
           {{ if .Values.global.objectStore.accessSecret }}
           - name: AWS_SECRET_ACCESS_KEY
