@@ -31,7 +31,7 @@ dependencies:
   version: 1.7.2
 - name: persistence
   repository: file://../persistence
-  version: 1.0.0
+  version: 1.0.1
 - name: monitoring
   repository: file://../monitoring
   version: 1.1.0
@@ -47,5 +47,5 @@ dependencies:
 - name: vault
   repository: file://../vault
   version: 1.3.3
-digest: sha256:2ec7366ea412c99c3106e3495a5efd0028a35614270533aeec1be1676e6e0ca8
-generated: "2022-09-17T18:33:18.038374-06:00"
+digest: sha256:b7554cc6cac8407b9317945868c609a48307a1cf9f5d402c6ac6f8e0b0892837
+generated: "2022-09-19T13:37:48.486791-06:00"
