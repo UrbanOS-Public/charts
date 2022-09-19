@@ -22,7 +22,7 @@ spec:
         - name: kafka-exporter
           ports:
             - containerPort: 9308
-          image: "danielqsj/kafka-exporter:v1.3.1"
+          image: "danielqsj/kafka-exporter:v1.4.1"
           args: ["--kafka.server={{ .Values.kafka.broker }}"]
           imagePullPolicy: IfNotPresent
           resources:
