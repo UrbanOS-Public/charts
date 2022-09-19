@@ -13,7 +13,7 @@ Loads data from the transformed topic into Presto
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| compactionSchedule | string | `"0 * * * *"` |  |
+| overwrite_mode | bool | `false` | When enabled, forklift doesn't retain any past records for a dataset. New records replace what was previously stored. |
 | fullnameOverride | string | `""` |  |
 | global.kafka.brokers | string | `"streaming-service-kafka-bootstrap:9092"` |  |
 | global.objectStore.accessKey | string | `nil` |  |
@@ -39,7 +39,6 @@ Loads data from the transformed topic into Presto
 | s3HostName | string | `nil` |  |
 | s3Port | string | `nil` |  |
 | service.type | string | `"ClusterIP"` |  |
-| specialCompactionDatasets | string | `nil` |  |
 | tolerations | list | `[]` |  |
 
 ----------------------------------------------

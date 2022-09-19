@@ -1,5 +1,5 @@
 kafka:
-  version: 2.5.1
+  version: 2.6.2
   broker: pipeline-kafka-bootstrap:9092
   storageSize: 100Gi
   defaultPartitions: 1
@@ -16,6 +16,15 @@ kafka:
     limits:
       cpu: 1400m
       memory: 12500M
+
+zookeeper:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 512Mi
+    limits:
+      cpu: 100m
+      memory: 512Mi
 
 strimzi-kafka-operator:
   resources:

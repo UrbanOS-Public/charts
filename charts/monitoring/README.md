@@ -161,7 +161,7 @@ A combination of the community Prometheus and Grafana charts.
 | prometheus.serverFiles.rules.groups[0].rules[2].record | string | `"pipeline:event_stream:events_handled"` |  |
 | prometheus.serverFiles.rules.groups[0].rules[3].expr | string | `"label_replace(kafka_consumergroup_lag{consumergroup=~\"(.*event-stream|.*events)\"}, \"app\", \"$1\", \"consumergroup\", \"(.+)-(event-stream|events)\") > 0"` |  |
 | prometheus.serverFiles.rules.groups[0].rules[3].record | string | `"pipeline:event_stream:lag"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[4].expr | string | `"sum(label_replace(rate(fluentd_input_status_num_records_total{tag=~\".*(forklift|reaper|voltron|valkyrie|odo|discovery-api).*\"}[5m]), \"name\", \"$1\", \"tag\", \"kube.var.log.containers.(.+?)-.*\")) by (name) > 0"` |  |
+| prometheus.serverFiles.rules.groups[0].rules[4].expr | string | `"sum(label_replace(rate(fluentd_input_status_num_records_total{tag=~\".*(forklift|reaper|voltron|valkyrie|discovery-api).*\"}[5m]), \"name\", \"$1\", \"tag\", \"kube.var.log.containers.(.+?)-.*\")) by (name) > 0"` |  |
 | prometheus.serverFiles.rules.groups[0].rules[4].record | string | `"pipeline:log_message_rate"` |  |
 | prometheusIngress.annotations | object | `{}` |  |
 

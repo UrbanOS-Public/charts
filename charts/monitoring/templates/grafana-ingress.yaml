@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: grafana
@@ -11,14 +11,14 @@ metadata:
 {{ toYaml .Values.global.ingress.annotations | trim | indent 4 }}
 {{- end }}
 spec:
-  backend:
-    serviceName: monitoring-grafana
-    servicePort: 80
   rules:
-  - host: grafana.{{ .Values.global.ingress.dnsZone }}
+  - host: grafana.{{ .Release.Namespace }}.{{ .Values.global.ingress.dnsZone }}
     http:
       paths:
-      - path: /*
+      - path: /
+        pathType: Prefix
         backend:
-          serviceName: redirect
-          servicePort: use-annotation
+          service:
+            name: monitoring-grafana
+            port:
+              number: 80

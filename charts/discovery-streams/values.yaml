@@ -4,11 +4,14 @@ global:
   redis:
     host: redis.external-services
     password: ""
-    port: ""
     passwordSecret: ""
+    port: 6379
+    sslEnabled: false
   ingress:
     dnsZone: ""
     rootDnsZone: ""
+  auth:
+    raptor_url: "http://raptor/api"
 
 dashboard:
   title: "Dashboard Metrics"

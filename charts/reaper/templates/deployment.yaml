@@ -45,6 +45,8 @@ spec:
           value: "true"
         - name: REDIS_HOST
           value: {{ .Values.global.redis.host }}
+        - name: REDIS_PORT
+          value: {{ quote .Values.global.redis.port }}
         - name: REDIS_PASSWORD
 {{- if .Values.global.redis.passwordSecret }}
           valueFrom:
@@ -54,6 +56,8 @@ spec:
 {{- else }}
           value: {{ .Values.global.redis.password }}
 {{- end }}
+        - name: REDIS_SSL
+          value: {{ quote .Values.global.redis.sslEnabled }}
         - name: SECRETS_ENDPOINT
           value: {{ .Values.global.vault.endpoint }}
         - name: HOSTED_FILE_BUCKET

@@ -1,4 +1,5 @@
-apiVersion: networking.k8s.io/v1beta1
+{{- if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: discovery-api
@@ -11,27 +12,25 @@ metadata:
 {{ toYaml .Values.global.ingress.annotations | trim | indent 4 }}
 {{- end }}
 spec:
-  backend:
-    serviceName: {{ .Values.service.name }}
-    servicePort: {{ .Values.service.port }}
   rules:
-  - host: data.{{ .Values.global.ingress.rootDnsZone }}
+  - host: data.{{ .Release.Namespace }}.{{ .Values.global.ingress.rootDnsZone }}
     http:
       paths:
-      - path: /*
+      - path: /
+        pathType: Prefix
         backend:
-          serviceName: redirect
-          servicePort: use-annotation
-  - host: data.{{ .Values.global.ingress.dnsZone }}
+          service:
+            name: {{ .Chart.Name }}
+            port:
+              number: {{ .Values.service.port }}
+  - host: data.{{ .Release.Namespace }}.{{ .Values.global.ingress.dnsZone }}
     http:
       paths:
-      - path: /*
+      - path: /
+        pathType: Prefix
         backend:
-          serviceName: redirect
-          servicePort: use-annotation
-  - http:
-      paths:
-      - path: /*
-        backend:
-          serviceName: redirect
-          servicePort: use-annotation
+          service:
+            name: {{ .Chart.Name }}
+            port:
+              number: {{ .Values.service.port }}
+{{- end }}

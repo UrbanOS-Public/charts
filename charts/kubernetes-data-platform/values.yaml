@@ -142,6 +142,8 @@ hook:
     tag: '3.8'
 
 global:
+  ingress:
+    annotations: {}
   environment: sandbox
   objectStore:
     accessKey: accessKey

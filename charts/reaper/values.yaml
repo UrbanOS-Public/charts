@@ -7,8 +7,10 @@ global:
     brokers: streaming-service-kafka-bootstrap:9092
   redis:
     host: redis.external-services
+    port: 6379
     password: ""
     passwordSecret: ""
+    sslEnabled: false
   vault:
     endpoint: vault.vault:8200
 
@@ -19,7 +21,7 @@ metadata:
   labels:
 image:
   repository: smartcitiesdata/reaper
-  tag: development
+  tag: 1.0.1
   pullPolicy: Always
 service:
   port: 9092

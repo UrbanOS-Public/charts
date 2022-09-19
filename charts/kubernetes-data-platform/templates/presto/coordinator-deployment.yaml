@@ -32,10 +32,6 @@ spec:
       - name: presto-coordinator
         image: {{ .Values.presto.deploy.container.image }}:{{ .Values.presto.deploy.container.tag }}
         imagePullPolicy: {{ .Values.presto.deploy.container.pullPolicy }}
-        command:
-        - "launcher"
-        args:
-        - "run"
         volumeMounts:
         - mountPath: /presto/etc/node.properties
           name: presto-configs

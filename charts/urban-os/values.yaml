@@ -25,14 +25,17 @@ global:
   # -- Common ingress configuration
   ingress:
     # -- Domain name for the platform
-    dnsZone: ""
+    dnsZone: "localhost"
     # -- Root domain name for the platform. Often the same as `dnsZone`
-    rootDnsZone: ""
+    rootDnsZone: "localhost"
   # -- Key and Secret for connecting to Minio if it is enabled
   objectStore:
     accessKey: []
     accessSecret: []
 
+# -- See dependent chart for configuration details
+alchemist:
+  enabled: true
 # -- See dependent chart for configuration details
 forklift:
   fullnameOverride: forklift
@@ -46,9 +49,6 @@ valkyrie:
   fullnameOverride: valkyrie
   enabled: true
   replicaCount: 1
-# -- See dependent chart for configuration details
-odo:
-  enabled: true
 # -- See dependent chart for configuration details
 andi:
   fullnameOverride: andi
@@ -80,8 +80,11 @@ raptor:
 monitoring:
   enabled: false
 
-kubernetes-data-platform:
+persistence:
   enabled: true
+
+kubernetes-data-platform:
+  enabled: false
   presto:
     workers: 2
     jvm:

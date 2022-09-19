@@ -138,7 +138,7 @@ prometheus:
               record: "pipeline:event_stream:events_handled"
             - expr: label_replace(kafka_consumergroup_lag{consumergroup=~"(.*event-stream|.*events)"}, "app", "$1", "consumergroup", "(.+)-(event-stream|events)") > 0
               record: "pipeline:event_stream:lag"
-            - expr: sum(label_replace(rate(fluentd_input_status_num_records_total{tag=~".*(forklift|reaper|voltron|valkyrie|odo|discovery-api).*"}[5m]), "name", "$1", "tag", "kube.var.log.containers.(.+?)-.*")) by (name) > 0
+            - expr: sum(label_replace(rate(fluentd_input_status_num_records_total{tag=~".*(forklift|reaper|voltron|valkyrie|discovery-api).*"}[5m]), "name", "$1", "tag", "kube.var.log.containers.(.+?)-.*")) by (name) > 0
               record: "pipeline:log_message_rate"
 
     alerting_rules.yml:

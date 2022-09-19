@@ -2,6 +2,7 @@ global:
   auth:
     jwt_issuer: ""
     auth0_domain: ""
+    raptor_url: "http://raptor/api"
   buckets:
     region: us-west-2
     hostedFileBucket: "dataset-bucket"
@@ -11,12 +12,18 @@ global:
     url: http://platform-kubernetes-data-platform-presto:8080
   redis:
     host: redis.external-services
+    port: 6379
     password: ""
+    passwordSecret: ""
+    sslEnabled: false
   vault:
     endpoint: vault.vault:8200
   ingress:
     rootDnsZone: localhost
     dnsZone: localhost
+  objectStore:
+    accessSecret: ""
+    accessKey: ""
 
 resources:
   limits:
@@ -29,6 +36,7 @@ resources:
 replicaCount: 1
 
 ingress:
+  enabled: true
   annotations:
 
 service:
@@ -38,7 +46,7 @@ service:
   auth_string: ""
 
 image:
-  name: smartcitiesdata/discovery_api
+  repository: smartcitiesdata/discovery_api
   tag: development
   pullPolicy: IfNotPresent
 
@@ -66,22 +74,26 @@ postgres:
   dbname: "postgres"
   user: "postgres"
   password: "password"
+  verifySNI: true
 
 elasticsearch:
   host: "es.example.com"
   tls: true
 
 auth:
-  domain: "example.com"
   client_id: "1234"
   redirect_base_url: "http://localhost"
   jwks_endpoint: "https://example.com/.well-known/jwks.json"
-  jwt_issuer: "https://example.com/"
   user_info_endpoint: "https://example.com/userinfo"
 
 secrets:
   discoveryApiPresignKey: ""
+  guardianSecretKey: ""
 
 aws:
+  # Overriden by global.objectStore.accessKey if present
   accessKeyId: ""
+  # Overriden by global.objectStore.accessSecret if present
   accessKeySecret: ""
+  s3HostName: null
+  s3Port: null

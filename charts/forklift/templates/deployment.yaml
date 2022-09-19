@@ -36,6 +36,8 @@ spec:
             value: "true"
           - name: REDIS_HOST
             value: {{ .Values.global.redis.host }}
+          - name: REDIS_PORT
+            value: {{ quote .Values.global.redis.port }}
           - name: REDIS_PASSWORD
 {{- if .Values.global.redis.passwordSecret }}
             valueFrom:
@@ -45,6 +47,8 @@ spec:
 {{- else }}
             value: {{ .Values.global.redis.password }}
 {{- end }}
+          - name: REDIS_SSL
+            value: {{ quote .Values.global.redis.sslEnabled }}
           - name: DATA_TOPIC_PREFIX
             value: {{.Values.kafka.dataTopicPrefix}}
           - name: OUTPUT_TOPIC
@@ -55,14 +59,8 @@ spec:
             value: {{ quote .Values.monitoring.targetPort }}
           - name: PROFILING_ENABLED
             value: {{ .Values.profiling_enabled | quote }}
-          {{ if .Values.compactionSchedule }}
-          - name: COMPACTION_SCHEDULE
-            value: {{.Values.compactionSchedule | quote }}
-          {{ end -}}
-          {{ if .Values.specialCompactionDatasets }}
-          - name: SPECIAL_COMPACTION_DATASETS
-            value: {{.Values.specialCompactionDatasets | quote }}
-          {{ end -}}
+          - name: OVERWRITE_MODE
+            value: {{ .Values.overwrite_mode | quote }}
           {{ if .Values.global.objectStore.accessKey }}
           - name: AWS_ACCESS_KEY_ID
             value: {{ .Values.global.objectStore.accessKey }}
@@ -71,11 +69,11 @@ spec:
           - name: AWS_SECRET_ACCESS_KEY
             value: {{ .Values.global.objectStore.accessSecret }}
           {{ end -}}
-          {{ if .Values.s3HostName }}
+          {{ if .Values.aws.s3HostName }}
           - name: S3_HOST_NAME
-            value: {{ .Values.s3HostName }}
+            value: {{ .Values.aws.s3HostName }}
           - name: S3_PORT
-            value: {{ .Values.s3Port | quote }}
+            value: {{ .Values.aws.s3Port | quote }}
           {{ end -}}
           {{ if .Values.global.buckets.hiveStorageBucket }}
           - name: S3_WRITER_BUCKET

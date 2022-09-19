@@ -1,6 +1,9 @@
 requirements.lock
-urban-os/
 tmp_charts/
-**/charts
+charts/urban-os/charts
+charts/kafka/charts
+charts/persistence/charts
 
 .DS_Store
+
+.idea
