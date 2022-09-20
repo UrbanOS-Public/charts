@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Chart.Name }}
+spec:
+  schedule: "* * * * 10"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: {{ .Chart.Name }}
+              image: "ryanconaway2/sauron:0.0.2"
+              imagePullPolicy: Always
+              command:
+                - "/bin/sh"
+              args:
+                - "/updater_script.sh"
+              volumeMounts:
+                - mountPath: /updater_script.sh
+                  name: updater-script
+                  subPath: updater_script.sh
+          volumes:
+          - name: updater-script
+            configMap:
+              name: updater-script
+          restartPolicy: OnFailure

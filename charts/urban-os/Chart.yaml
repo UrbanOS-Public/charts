@@ -69,3 +69,7 @@ dependencies:
     repository: file://../vault
     condition: vault.enabled
     version: ">= 1.0.0"
+  - name: updater-cron
+    repository: file://../updater-cron
+    condition: updater.enabled
+    version: ">= 1.0.0"
