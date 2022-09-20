@@ -4,7 +4,7 @@ metadata:
   name: updater-script
 data:
   updater_script.sh: |
-    #!/bin/sh
+    #!/bin/bash
     
     APP_NAME=reaper
     REPOSITORY=smartcitiesdata/$APP_NAME
@@ -22,13 +22,16 @@ data:
     echo $LOCAL_APP_PODS
     
     for pod in ${LOCAL_APP_PODS[@]}; do
+      echo "POD:"
+      echo "$pod"
       LOCAL_DIGEST=$(kubectl get pod --namespace=dev $pod -o json | jq '.status.containerStatuses[] | .imageID ' | cut -d '@' -f 2 | sed 's/"//g' | tr -d '[:space:]')
       echo "LOCAL_DIGEST:"
       echo $LOCAL_DIGEST
       echo ${#LOCAL_DIGEST}
       if [ "$LOCAL_DIGEST" = "$REMOTE_DIGEST" ]; then
         echo "$pod has matching digest"
-      else
         kubectl rollout restart deployment/$APP_NAME
+      else
+        echo "$pod does NOT have matching digest"
       fi
     done

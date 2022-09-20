@@ -3,25 +3,27 @@ kind: CronJob
 metadata:
   name: {{ .Chart.Name }}
 spec:
-  schedule: "* * * * 10"
+  schedule: "*/5 * * * *"
   jobTemplate:
     spec:
       template:
         spec:
+          serviceAccount: updater-cron
           containers:
             - name: {{ .Chart.Name }}
-              image: "ryanconaway2/sauron:0.0.2"
+              image: "ryanconaway2/sauron:0.0.3"
               imagePullPolicy: Always
               command:
-                - "/bin/sh"
-              args:
-                - "/updater_script.sh"
+                - "/bin/bash"
+                - "-c"
+                - "/usr/local/bin/updater_script.sh"
               volumeMounts:
-                - mountPath: /updater_script.sh
+                - mountPath: /usr/local/bin/updater_script.sh
                   name: updater-script
                   subPath: updater_script.sh
           volumes:
           - name: updater-script
             configMap:
               name: updater-script
-          restartPolicy: OnFailure
+              defaultMode: 0777
+          restartPolicy: Never

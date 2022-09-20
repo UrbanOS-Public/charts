@@ -47,5 +47,8 @@ dependencies:
 - name: vault
   repository: file://../vault
   version: 1.3.3
-digest: sha256:7a2251d93d529f702d21e1931050b89e8fadcd88d793dbe6625903dc91a6b22c
-generated: "2022-09-19T13:53:13.218833-06:00"
+- name: updater-cron
+  repository: file://../updater-cron
+  version: 1.0.0
+digest: sha256:5954936706809b16c79e305e353af660fb039ab4c7008d07f16777e545978b83
+generated: "2022-09-20T16:06:39.109763-04:00"
