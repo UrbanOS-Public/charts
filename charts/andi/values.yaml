@@ -79,9 +79,9 @@ accessLevel: "private"
 
 theme:
   # url for the header bar logo
-  logo: ""
+  logo: "/images/UrbanOS.svg"
   # header bar text
-  headerText: ""
+  headerText: "Data Submission Tool"
 
 tolerations:
   - key: example.run.public-worker
