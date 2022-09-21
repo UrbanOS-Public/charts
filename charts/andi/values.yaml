@@ -80,6 +80,8 @@ accessLevel: "private"
 theme:
   # url for the header bar logo
   logo: ""
+  # header bar text
+  headerText: ""
 
 tolerations:
   - key: example.run.public-worker
