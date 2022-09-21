@@ -1,4 +1,5 @@
 global:
+  deploymentVersion: {{ .Chart.Version }}
   auth:
     jwt_issuer: ""
     auth0_domain: ""

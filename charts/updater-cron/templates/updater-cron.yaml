@@ -17,6 +17,9 @@ spec:
                 - "/bin/bash"
                 - "-c"
                 - "/usr/local/bin/updater_script.sh"
+              env:
+                - name: DEPLOYMENT_VERSION
+                  value: {{ .Values.global.deploymentVersion }}
               volumeMounts:
                 - mountPath: /usr/local/bin/updater_script.sh
                   name: updater-script
