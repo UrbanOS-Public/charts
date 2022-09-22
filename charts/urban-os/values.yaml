@@ -1,5 +1,4 @@
 global:
-  deploymentVersion: {{ .Chart.Version }}
   auth:
     jwt_issuer: ""
     auth0_domain: ""
@@ -131,5 +130,6 @@ elasticsearch:
   enabled: true
   replicas: 2
 
-updater:
+updater-cron:
   enabled: true
+#  deploymentVersion: {{.Chart.Version}}

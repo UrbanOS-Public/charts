@@ -71,5 +71,5 @@ dependencies:
     version: ">= 1.0.0"
   - name: updater-cron
     repository: file://../updater-cron
-    condition: updater.enabled
+    condition: updater-cron.enabled
     version: ">= 1.0.0"
