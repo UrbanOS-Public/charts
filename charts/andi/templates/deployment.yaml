@@ -121,8 +121,13 @@ spec:
             value: "{{ .Values.ingress.tls | ternary "https" "http" }}://*.{{ .Values.global.ingress.dnsZone }}"
           - name: ANDI_LOGO_URL
             value: "{{  .Values.theme.logo }}"
+          - name: ANDI_FOOTER_LEFTSIDETEXT
+            value: "{{  .Values.footer.leftSideText }}"
           {{ end -}}
 {{- with .Values.tolerations }}
       tolerations:
+{{ toYaml . | indent 8 }}
+{{- with .Values.footer.links }}
+      links:
 {{ toYaml . | indent 8 }}
 {{- end }}

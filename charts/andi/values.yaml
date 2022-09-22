@@ -81,6 +81,14 @@ theme:
   # url for the header bar logo
   logo: ""
 
+footer:
+  # footer text on left side with links on right side
+  leftSideText: ""
+  links:
+    - link:
+      linkText: ""
+      url: ""
+
 tolerations:
   - key: example.run.public-worker
     operator: Equal
