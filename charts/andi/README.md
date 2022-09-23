@@ -59,8 +59,8 @@ REST API to allow for dataset definition ingestion
 | service.port | int | `80` |  |
 | service.targetPort | int | `4000` |  |
 | service.type | string | `"NodePort"` |  |
-| theme.headerText | string | `""` |  |
-| theme.logo | string | `""` |  |
+| theme.headerText | string | `"Data Submission Tool"` |  |
+| theme.logo | string | `"/images/UrbanOS.svg"` |  |
 | tolerations[0].effect | string | `"NoExecute"` |  |
 | tolerations[0].key | string | `"example.run.public-worker"` |  |
 | tolerations[0].operator | string | `"Equal"` |  |
