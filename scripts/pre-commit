@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# An example hook script to verify what is about to be committed.
+# Called by "git commit" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message if
+# it wants to stop the commit.
+#
+# To enable this hook, rename this file to "pre-commit".
+
+# Redirect output to stderr.
+exec 1>&2
+
+is_installed=$(helm-docs --version)
+expected_installed_substring="helm-docs version"
+
+if [[ "$is_installed" == *"$expected_installed_substring"* ]]; then
+    echo "Running helm docs"
+    helm-docs
+    git add 'charts/*/README.md'
+else
+    echo "Helm docs was not found."
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        echo "Installing with homebrew"
+        brew install norwoodj/tap/helm-docs
+        helm-docs
+        git add 'charts/*/README.md'
+    else
+        echo 'Pre-commit hook did not detect helm-docs is installed. Please follow instructions from https://github.com/norwoodj/helm-docs to install'
+        exit 1
+    fi
+fi
+
