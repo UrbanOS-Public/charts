@@ -79,7 +79,9 @@ accessLevel: "private"
 
 theme:
   # url for the header bar logo
-  logo: ""
+  logo: "/images/UrbanOS.svg"
+  # header bar text
+  headerText: "Data Submission Tool"
 
 footer:
   # footer text on left side with links on right side
