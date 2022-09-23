@@ -114,6 +114,8 @@ spec:
                 key: aws_access_key_secret
           - name: ANDI_FOOTER_LEFT_SIDE_TEXT
             value: {{  .Values.footer.leftSideText }}
+          - name: ANDI_FOOTER_LINKS
+            value: "{{  .Values.footer.links }}"
           {{ if .Values.aws.s3HostName }}
           - name: S3_HOST_NAME
             value: {{ .Values.aws.s3HostName }}
@@ -126,9 +128,5 @@ spec:
           {{ end -}}
 {{- with .Values.tolerations }}
       tolerations:
-{{ toYaml . | indent 8 }}
-{{- end }}
-{{- with .Values.footer.links }}
-      footer_links:
 {{ toYaml . | indent 8 }}
 {{- end }}
