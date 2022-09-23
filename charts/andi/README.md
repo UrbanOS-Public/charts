@@ -20,6 +20,9 @@ REST API to allow for dataset definition ingestion
 | aws.s3HostName | string | `nil` |  |
 | aws.s3Port | string | `nil` |  |
 | documentationRoot | string | `""` |  |
+| footer.leftSideText | string | `""` |  |
+| footer.links[0].linkText | string | `""` |  |
+| footer.links[0].url | string | `""` |  |
 | fullnameOverride | string | `""` |  |
 | global.auth.auth0_domain | string | `""` |  |
 | global.auth.jwt_issuer | string | `""` |  |

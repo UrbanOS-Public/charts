@@ -83,6 +83,13 @@ theme:
   # header bar text
   headerText: "Data Submission Tool"
 
+footer:
+  # footer text on left side with links on right side
+  leftSideText: ""
+  links:
+    - linkText: ""
+      url: ""
+
 tolerations:
   - key: example.run.public-worker
     operator: Equal
