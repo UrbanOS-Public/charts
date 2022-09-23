@@ -11,6 +11,7 @@ Use our charts in two steps:
 
 ## Contributing
 
+
 ### Making updates to existing charts
 
 1. Make changes to the chart.
