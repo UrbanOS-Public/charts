@@ -75,6 +75,9 @@ raptor:
   fullnameOverride: raptor
   enabled: true
 
+sauron:
+  enabled: true
+
 # -- By default monitoring is disabled as it is optional,
 # but we recommend it be enabled for production deployments
 monitoring:

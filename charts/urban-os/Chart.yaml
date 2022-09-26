@@ -61,6 +61,10 @@ dependencies:
     repository: file://../reaper
     condition: reaper.enabled
     version: ">= 1.0.0"
+  - name: sauron
+    repository: file://../sauron
+    condition: sauron.enabled
+    version: ">= 0.0.1"
   - name: valkyrie
     repository: file://../valkyrie
     condition: valkyrie.enabled
@@ -68,8 +72,4 @@ dependencies:
   - name: vault
     repository: file://../vault
     condition: vault.enabled
-    version: ">= 1.0.0"
-  - name: updater-cron
-    repository: file://../updater-cron
-    condition: updater-cron.enabled
     version: ">= 1.0.0"

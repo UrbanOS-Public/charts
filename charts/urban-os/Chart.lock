@@ -41,14 +41,14 @@ dependencies:
 - name: reaper
   repository: file://../reaper
   version: 1.2.4
+- name: sauron
+  repository: file://../sauron
+  version: 0.0.1
 - name: valkyrie
   repository: file://../valkyrie
   version: 2.6.4
 - name: vault
   repository: file://../vault
   version: 1.3.3
-- name: updater-cron
-  repository: file://../updater-cron
-  version: 1.0.0
-digest: sha256:f3cc156ccfff822fb018e9da56163280c6b213d26dedb476a4569ef8a9f908be
-generated: "2022-09-21T10:57:34.122998-04:00"
+digest: sha256:dd902ce47865c3728c27e092dc7e168c967785831e7961a059a225822c7b4bc1
+generated: "2022-09-26T17:21:41.131122-04:00"

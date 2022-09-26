@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: {{ .Chart.Name }}-cron
 spec:
-  schedule: {{ .Values.config.cron }}
+  schedule: "{{ .Values.config.cron }}"
   jobTemplate:
     spec:
       template:
@@ -18,7 +18,7 @@ spec:
                 - "-c"
                 - "/usr/local/bin/image_patch_update_script.sh"
               volumeMounts:
-                - mountPath: /usr/local/bin/updater_script.sh
+                - mountPath: /usr/local/bin/image_patch_update_script.sh
                   name: image-patch-update-script
                   subPath: image_patch_update_script.sh
           volumes:

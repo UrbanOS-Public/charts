@@ -12,7 +12,7 @@ metadata:
 rules:
   - apiGroups: ["apps"]
     resources: ["deployments"]
-    verts: ["get", "patch"]
+    verbs: ["get", "patch"]
 
   - apiGroups: [""]
     resources: ["pods"]
