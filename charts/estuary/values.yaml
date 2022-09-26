@@ -36,11 +36,6 @@ service:
   port: 80
   targetPort: 4000
 
-secrets:
-  live_view:
-    enable: true
-    value: "devonlyenablefalseanddefineoutofsourceinprod"
-
 ingress:
   enabled: false
   scheme: ""

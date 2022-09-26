@@ -13,17 +13,12 @@ global:
   redis:
     host: redis.external-services
     port: 6379
-    password: ""
-    passwordSecret: ""
     sslEnabled: false
   vault:
     endpoint: vault.vault:8200
   ingress:
     rootDnsZone: localhost
     dnsZone: localhost
-  objectStore:
-    accessSecret: ""
-    accessKey: ""
 
 resources:
   limits:
@@ -72,8 +67,6 @@ postgres:
   host: "example.com"
   port: "5432"
   dbname: "postgres"
-  user: "postgres"
-  password: "password"
   verifySNI: true
 
 elasticsearch:
@@ -86,14 +79,6 @@ auth:
   jwks_endpoint: "https://example.com/.well-known/jwks.json"
   user_info_endpoint: "https://example.com/userinfo"
 
-secrets:
-  discoveryApiPresignKey: ""
-  guardianSecretKey: ""
-
 aws:
-  # Overriden by global.objectStore.accessKey if present
-  accessKeyId: ""
-  # Overriden by global.objectStore.accessSecret if present
-  accessKeySecret: ""
   s3HostName: null
   s3Port: null

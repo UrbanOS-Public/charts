@@ -2,8 +2,6 @@ global:
   s3:
     host: example.com
     port: 8000
-    accessKey: example
-    secretKey: example
     hiveStorageBucket: hive-storage
     hiveStoragePath: 
 

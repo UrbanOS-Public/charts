@@ -4,8 +4,6 @@ global:
   redis:
     host: redis.external-services
     port: 6379
-    password: ""
-    passwordSecret: ""
     sslEnabled: false
   auth:
     auth0_domain: ""
@@ -16,10 +14,6 @@ image:
   pullPolicy: Always
 
 replicaCount: 1
-
-auth:
-  auth0_client_id: ""
-  auth0_client_secret: ""
 
 resources:
   limits:

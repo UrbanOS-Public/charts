@@ -36,14 +36,10 @@ spec:
           value: {{ quote .Values.global.redis.port }}
 {{- end }}
         - name: REDIS_PASSWORD
-{{- if .Values.global.redis.passwordSecret }}
           valueFrom:
             secretKeyRef:
-              name: {{ quote .Values.global.redis.passwordSecret }}
-              key: {{ quote .Values.global.redis.passwordSecret }}
-{{- else }}
-          value: {{ .Values.global.redis.password }}
-{{- end }}
+              name: {{ .Release.Name }}-discovery-streams-redis-secret
+              key: password
         - name: RUN_IN_KUBERNETES
           value: "true"
         - name: RAPTOR_URL

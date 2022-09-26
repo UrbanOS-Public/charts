@@ -6,12 +6,9 @@ global:
   redis:
     port: 6379
     host: redis.external-services
-    password: ""
-    passwordSecret: ""
     sslEnabled: false
   objectStore:
-    accessKey: null
-    accessSecret: null
+    enabled: false
 
 resources:
   limits:

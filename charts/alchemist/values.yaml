@@ -1,5 +1,5 @@
 # alchemist is disabled by default until developement goals are met and the
-#     "topicPrefix" in reaper + valkyrie are updated to accomidate alchemist
+#     "topicPrefix" in reaper + valkyrie are updated to accommodate alchemist
 enabled: false
 
 global:
@@ -8,8 +8,6 @@ global:
   redis:
     host: redis.external-services
     port: 6379
-    password: ""
-    passwordSecret: ""
     sslEnabled: false
 
 replicaCount: 1

@@ -30,14 +30,10 @@ spec:
           - name: REDIS_PORT
             value: {{ quote .Values.global.redis.port }}
           - name: REDIS_PASSWORD
-{{- if .Values.global.redis.passwordSecret }}
             valueFrom:
               secretKeyRef:
-                name: {{ quote .Values.global.redis.passwordSecret }}
-                key: {{ quote .Values.global.redis.passwordSecret }}
-{{- else }}
-            value: {{ .Values.global.redis.password }}
-{{- end }}
+                name: {{ .Release.Name }}-discovery-api-redis-secret
+                key: password
           - name: REDIS_SSL
             value: {{ quote .Values.global.redis.sslEnabled }}
           - name: PRESTO_URL
@@ -57,12 +53,12 @@ spec:
           - name: PRESIGN_KEY
             valueFrom:
               secretKeyRef:
-                name: discovery-api-presign-key
+                name: {{ .Release.Name }}-discovery-api-presign-key
                 key: discovery-api-presign-key
           - name: GUARDIAN_KEY
             valueFrom:
               secretKeyRef:
-                name: guardian-secret-key
+                name: {{ .Release.Name }}-guardian-secret-key
                 key: guardian-secret-key
           - name: HOSTED_FILE_BUCKET
             value: {{ .Values.global.buckets.hostedFileBucket }}
@@ -73,9 +69,15 @@ spec:
           - name: POSTGRES_DBNAME
             value: {{ .Values.postgres.dbname }}
           - name: POSTGRES_USER
-            value: {{ .Values.postgres.user }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-discovery-api-postgres-secret
+                key: user
           - name: POSTGRES_PASSWORD
-            value: {{ quote .Values.postgres.password }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-discovery-api-postgres-secret
+                key: password
           - name: POSTGRES_PORT
             value: {{ quote .Values.postgres.port }}
           - name: POSTGRES_VERIFY_SNI

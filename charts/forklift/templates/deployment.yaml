@@ -39,14 +39,10 @@ spec:
           - name: REDIS_PORT
             value: {{ quote .Values.global.redis.port }}
           - name: REDIS_PASSWORD
-{{- if .Values.global.redis.passwordSecret }}
             valueFrom:
               secretKeyRef:
-                name: {{ quote .Values.global.redis.passwordSecret }}
-                key: {{ quote .Values.global.redis.passwordSecret }}
-{{- else }}
-            value: {{ .Values.global.redis.password }}
-{{- end }}
+                name: {{ .Release.Name }}-forklift-redis-secret
+                key: password
           - name: REDIS_SSL
             value: {{ quote .Values.global.redis.sslEnabled }}
           - name: DATA_TOPIC_PREFIX
@@ -61,13 +57,17 @@ spec:
             value: {{ .Values.profiling_enabled | quote }}
           - name: OVERWRITE_MODE
             value: {{ .Values.overwrite_mode | quote }}
-          {{ if .Values.global.objectStore.accessKey }}
+          {{ if .Values.global.objectStore.enabled }}
           - name: AWS_ACCESS_KEY_ID
-            value: {{ .Values.global.objectStore.accessKey }}
-          {{ end -}}
-          {{ if .Values.global.objectStore.accessSecret }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-forklift-aws-credentials
+                key: aws_access_key_id
           - name: AWS_SECRET_ACCESS_KEY
-            value: {{ .Values.global.objectStore.accessSecret }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-forklift-aws-credentials
+                key: aws_access_key_secret
           {{ end -}}
           {{ if .Values.aws.s3HostName }}
           - name: S3_HOST_NAME
