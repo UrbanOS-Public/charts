@@ -81,7 +81,7 @@ theme:
   # url for the header bar logo
   logo: "/images/UrbanOS.svg"
   # header bar text
-  headerText: "Data Submission Tool"
+  headerText: "Data Submission Tool TEST"
 
 footer:
   # footer text on left side with links on right side
