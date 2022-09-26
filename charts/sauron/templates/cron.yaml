@@ -1,32 +1,29 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ .Chart.Name }}-cron
 spec:
-  schedule: "*/5 * * * *"
+  schedule: {{ .Values.config.cron }}
   jobTemplate:
     spec:
       template:
         spec:
-          serviceAccount: updater-cron
+          serviceAccount: {{ .Values.serviceAccount.name }}
           containers:
             - name: {{ .Chart.Name }}
-              image: "ryanconaway2/sauron:0.0.3"
+              image: {{ .Values.config.image }}
               imagePullPolicy: Always
               command:
                 - "/bin/bash"
                 - "-c"
-                - "/usr/local/bin/updater_script.sh"
-              env:
-                - name: ENABLED_
-                  value: {{ .Values.deploymentVersion }}
+                - "/usr/local/bin/image_patch_update_script.sh"
               volumeMounts:
                 - mountPath: /usr/local/bin/updater_script.sh
-                  name: updater-script
-                  subPath: updater_script.sh
+                  name: image-patch-update-script
+                  subPath: image_patch_update_script.sh
           volumes:
-          - name: updater-script
+          - name: image-patch-update-script
             configMap:
-              name: updater-script
+              name: image-patch-update-script
               defaultMode: 0777
           restartPolicy: Never
