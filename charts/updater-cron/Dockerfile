@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM docker:latest
 
 ENV PATH="${PATH}:~/.local/bin"
 
