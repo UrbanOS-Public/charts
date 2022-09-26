@@ -1,6 +1,6 @@
 # valkyrie
 
-![Version: 2.6.4](https://img.shields.io/badge/Version-2.6.4-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 2.6.5](https://img.shields.io/badge/Version-2.6.5-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Validates data from raw topic and writes it to validated topic
 
