@@ -2,6 +2,10 @@
 # shellcheck disable=SC2039
 # shellcheck disable=SC2039
 
+
+TOKEN=$(curl -s "https://auth.docker.io/token?service=registry.docker.io&scope=repository:$REPOSITORY:pull" | jq -r .token)
+printf "TOKEN Length: %s \n\n" "${#TOKEN}"
+
 image_auto_update() {
   APP_NAME=$1
   echo "APP_NAME:"
@@ -31,9 +35,6 @@ image_auto_update() {
   printf "%s \n\n" "$POD_IMAGE_TAG"
 
   if [[ $POD_IMAGE_TAG == "development" ]]; then
-
-    TOKEN=$(curl -s "https://auth.docker.io/token?service=registry.docker.io&scope=repository:$REPOSITORY:pull" | jq -r .token)
-    printf "TOKEN Length: %s \n\n" "${#TOKEN}"
 
     ALL_TAGS=$(curl --location --request GET "https://hub.docker.com/v2/namespaces/smartcitiesdata/repositories/$APP_NAME/tags" | jq '.results | map(.name)')
     echo "ALL TAGS:"
