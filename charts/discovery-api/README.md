@@ -1,6 +1,6 @@
 # discovery-api
 
-![Version: 1.4.2](https://img.shields.io/badge/Version-1.4.2-informational?style=flat-square) ![AppVersion: 1.0.0-static](https://img.shields.io/badge/AppVersion-1.0.0--static-informational?style=flat-square)
+![Version: 1.4.3](https://img.shields.io/badge/Version-1.4.3-informational?style=flat-square) ![AppVersion: 1.0.0-static](https://img.shields.io/badge/AppVersion-1.0.0--static-informational?style=flat-square)
 
 A middleware layer to connect data consumers with the data sources
 
