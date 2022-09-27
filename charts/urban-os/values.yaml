@@ -132,7 +132,3 @@ kubernetes-data-platform:
 elasticsearch:
   enabled: true
   replicas: 2
-
-updater-cron:
-  enabled: true
-#  deploymentVersion: {{.Chart.Version}}
