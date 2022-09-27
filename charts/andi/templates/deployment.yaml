@@ -117,7 +117,7 @@ spec:
           - name: ANDI_HEADER_TEXT
             value: "{{  .Values.theme.headerText }}"
           - name: ANDI_FOOTER_LEFT_SIDE_TEXT
-            value: {{  .Values.footer.leftSideText }}
+            value: "{{  .Values.footer.leftSideText }}"
           - name: ANDI_FOOTER_LINKS
             value: "{{  .Values.footer.links }}"
           {{ if .Values.aws.s3HostName }}
