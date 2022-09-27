@@ -76,7 +76,7 @@ raptor:
   enabled: true
 
 sauron:
-  enabled: true
+  enabled: false
 
 # -- By default monitoring is disabled as it is optional,
 # but we recommend it be enabled for production deployments

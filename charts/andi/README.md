@@ -1,6 +1,6 @@
 # andi
 
-![Version: 2.2.4](https://img.shields.io/badge/Version-2.2.4-informational?style=flat-square)
+![Version: 2.2.5](https://img.shields.io/badge/Version-2.2.5-informational?style=flat-square)
 
 REST API to allow for dataset definition ingestion
 
@@ -20,9 +20,8 @@ REST API to allow for dataset definition ingestion
 | aws.s3HostName | string | `nil` |  |
 | aws.s3Port | string | `nil` |  |
 | documentationRoot | string | `""` |  |
-| footer.leftSideText | string | `""` |  |
-| footer.links[0].linkText | string | `""` |  |
-| footer.links[0].url | string | `""` |  |
+| footer.leftSideText | string | `"Some Left Side Text"` |  |
+| footer.links | string | `"[{\"linkText\":\"Example 1\", \"url\":\"https://www.example.com\"}, {\"linkText\":\"Example 2\", \"url\":\"https://www.google.com\"}]"` |  |
 | fullnameOverride | string | `""` |  |
 | global.auth.auth0_domain | string | `""` |  |
 | global.auth.jwt_issuer | string | `""` |  |

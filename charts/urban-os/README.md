@@ -1,6 +1,6 @@
 # urban-os
 
-![Version: 1.12.8](https://img.shields.io/badge/Version-1.12.8-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.12.9](https://img.shields.io/badge/Version-1.12.9-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Master chart that deploys the urban os platform. See the individual dependency readmes for configuration options.
 
@@ -74,7 +74,7 @@ Master chart that deploys the urban os platform. See the individual dependency r
 | persistence.enabled | bool | `true` |  |
 | raptor | object | `{"enabled":true,"fullnameOverride":"raptor"}` | See dependent chart for configuration details |
 | reaper | object | `{"enabled":true,"fullnameOverride":"reaper"}` | See dependent chart for configuration details |
-| sauron.enabled | bool | `true` |  |
+| sauron.enabled | bool | `false` |  |
 | valkyrie | object | `{"enabled":true,"fullnameOverride":"valkyrie","replicaCount":1}` | See dependent chart for configuration details |
 
 ----------------------------------------------
