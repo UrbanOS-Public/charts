@@ -1,6 +1,6 @@
 config:
-  cron: "*/5 * * * *"
-  image: "ryanconaway2/sauron:0.0.3"
+  cron: "*/10 * * * *"
+  image: "smartcitiesdata/sauron:0.0.1"
 
 serviceAccount:
   create: true

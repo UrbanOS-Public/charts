@@ -2,10 +2,6 @@
 # shellcheck disable=SC2039
 # shellcheck disable=SC2039
 
-
-TOKEN=$(curl -s "https://auth.docker.io/token?service=registry.docker.io&scope=repository:$REPOSITORY:pull" | jq -r .token)
-printf "TOKEN Length: %s \n\n" "${#TOKEN}"
-
 image_auto_update() {
   APP_NAME=$1
   echo "APP_NAME:"
@@ -23,9 +19,12 @@ image_auto_update() {
   echo "MINOR:"
   printf "%s \n\n" "$MINOR"
 
+  TOKEN=$(curl -s "https://auth.docker.io/token?service=registry.docker.io&scope=repository:$REPOSITORY:pull" | jq -r .token)
+  printf "TOKEN Length: %s \n\n" "${#TOKEN}"
+
   # Replace _ with - to conform to kubernetes standards
   KUBERNETES_FORMATTED_APP_NAME=${APP_NAME//_/-}
-  
+
   POD_NAME=$(kubectl get pods | grep -m1 "$KUBERNETES_FORMATTED_APP_NAME" | cut -d ' ' -f 1)
   echo "POD_NAME:"
   printf "%s \n\n" "$POD_NAME"
@@ -52,17 +51,36 @@ image_auto_update() {
     TARGET_REMOTE_DIGEST=$(curl -s -D - -H "Authorization: Bearer $TOKEN" -H "Accept: application/vnd.docker.distribution.manifest.v2+json" https://index.docker.io/v2/$REPOSITORY/manifests/$MAJOR.$MINOR.$LATEST_PATCH_VERSION | grep docker-content-digest | cut -d ' ' -f 2 | tr -d '[:space:]')
     echo "TARGET_REMOTE_DIGEST:"
     echo "$TARGET_REMOTE_DIGEST"
-    printf "Length: %s \n\n" "${#TARGET_REMOTE_DIGEST}"
+    TARGET_REMOTE_DIGEST_LENGTH=${#TARGET_REMOTE_DIGEST}
+    printf "Length: %s \n\n" "$TARGET_REMOTE_DIGEST_LENGTH"
+    if [[ $TARGET_REMOTE_DIGEST_LENGTH != 71 ]]; then
+      echo "TARGET_REMOTE_DIGEST is not valid. Skipping this repo."
+      printf "\n\n\n\n\n"
+      return
+    fi
 
     DEVELOPMENT_REMOTE_DIGEST=$(curl -s -D - -H "Authorization: Bearer $TOKEN" -H "Accept: application/vnd.docker.distribution.manifest.v2+json" https://index.docker.io/v2/$REPOSITORY/manifests/development | grep docker-content-digest | cut -d ' ' -f 2 | tr -d '[:space:]')
     echo "DEVELOPMENT_REMOTE_DIGEST:"
     echo "$DEVELOPMENT_REMOTE_DIGEST"
-    printf "Length: %s \n\n" "${#DEVELOPMENT_REMOTE_DIGEST}"
+    DEVELOPMENT_REMOTE_DIGEST_LENGTH=${#DEVELOPMENT_REMOTE_DIGEST}
+
+    printf "Length: %s \n\n" "$DEVELOPMENT_REMOTE_DIGEST_LENGTH"
+    if [[ $DEVELOPMENT_REMOTE_DIGEST_LENGTH != 71 ]]; then
+      echo "DEVELOPMENT_REMOTE_DIGEST is not valid. Skipping this repo."
+      printf "\n\n\n\n\n"
+      return
+    fi
 
     CURRENT_DIGEST=$(kubectl get pod --namespace=dev $POD_NAME -o json | jq '.status.containerStatuses[] | .imageID ' | cut -d '@' -f 2 | sed 's/"//g' | tr -d '[:space:]')
     echo "CURRENT_DIGEST:"
     echo "$CURRENT_DIGEST"
-    printf "Length: %s \n\n" "${#CURRENT_DIGEST}"
+    CURRENT_DIGEST_LENGTH=${#CURRENT_DIGEST}
+    printf "Length: %s \n\n" "$CURRENT_DIGEST_LENGTH"
+    if [[ $CURRENT_DIGEST_LENGTH != 71 ]]; then
+      echo "CURRENT_DIGEST is invalid. Skipping this repo."
+      printf "\n\n\n\n\n"
+      return
+    fi
 
     if [[ $CURRENT_DIGEST != "$DEVELOPMENT_REMOTE_DIGEST" ]]; then
       echo "Pod $POD_NAME is not up-to-date."
@@ -93,7 +111,3 @@ image_auto_update() {
 }
 
 image_auto_update discovery_streams 3 0
-
-
-
-
