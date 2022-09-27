@@ -41,6 +41,9 @@ dependencies:
 - name: reaper
   repository: file://../reaper
   version: 1.2.5
+- name: sauron
+  repository: file://../sauron
+  version: 0.0.1
 - name: valkyrie
   repository: file://../valkyrie
   version: 2.6.5
