@@ -2,6 +2,6 @@ apiVersion: v1
 appVersion: "1.0"
 description: Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
 name: reaper
-version: 1.2.4
+version: 1.2.5
 sources:
   - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/reaper
