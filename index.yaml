@@ -2293,6 +2293,17 @@ entries:
     urls:
     - reaper-0.1.0.tgz
     version: 0.1.0
+  sauron:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2022-09-27T19:07:32.958176322Z"
+    description: Cron jobs that watch remote deployments and images, issuing cluster
+      commands as needed to update.
+    digest: bed946bd02f3f981e60fb464aaea0da88e54e64d6b531acaefb6205f2787947a
+    name: sauron
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/sauron-0.0.1/sauron-0.0.1.tgz
+    version: 0.0.1
   streisand:
   - apiVersion: v1
     appVersion: "1.0"
@@ -2304,6 +2315,85 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-09-27T19:07:33.26961751Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: sauron.enabled
+      name: sauron
+      repository: file://../sauron
+      version: '>= 0.0.1'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: file://../vault
+      version: '>= 1.0.0'
+    description: Master chart that deploys the urban os platform. See the individual
+      dependency readmes for configuration options.
+    digest: ddb2f5de840893e29fafbc5b11d1046b783b1ba0b9b481b200f1d37e98597a8f
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.12.8/urban-os-1.12.8.tgz
+    version: 1.12.8
   - apiVersion: v2
     appVersion: "1.0"
     created: "2022-09-26T17:48:46.186380726Z"
@@ -4529,4 +4619,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2022-09-26T17:48:46.468867833Z"
+generated: "2022-09-27T19:07:33.271488407Z"
