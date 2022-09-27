@@ -9,7 +9,7 @@ Cron jobs that watch remote deployments and images, issuing cluster commands as 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | config.cron | string | `"*/10 * * * *"` |  |
-| config.image | string | `"smartcitiesdata/sauron:0.0.2"` |  |
+| config.image | string | `"smartcitiesdata/sauron:0.0.3"` |  |
 | deployments.alchemist.enabled | bool | `true` |  |
 | deployments.alchemist.major | int | `0` |  |
 | deployments.alchemist.minor | int | `2` |  |
@@ -39,6 +39,7 @@ Cron jobs that watch remote deployments and images, issuing cluster commands as 
 | remoteDeployment.gitHttpsCloneUrl | string | `"https://github.com/<Org>/<Repo>.git"` |  |
 | remoteDeployment.proxyAccountPAT | string | `""` |  |
 | remoteDeployment.targetBranch | string | `"main"` |  |
+| remoteDeployment.valuesFileFromRepoRoot | string | `"./dev/values.yaml"` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `"updater-cron"` |  |
 

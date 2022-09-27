@@ -20,6 +20,12 @@ spec:
                   value: {{ .Values.remoteDeployment.targetBranch }}
                 - name: CURRENT_DEPLOYMENT_SHA
                   value: {{ .Values.remoteDeployment.currentDeploymentSha }}
+                - name: RELEASE_NAME
+                  value: {{ .Release.Name }}
+                - name: NAMESPACE
+                  value: {{ .Release.Namespace }}
+                - name: VALUES_FILE_FROM_REPO_ROOT
+                  value: {{ .Values.remoteDeployment.valuesFileFromRepoRoot }}
               {{ if .Values.remoteDeployment.enabled }}
                 - name: GITHUB_TOKEN
                   valueFrom:

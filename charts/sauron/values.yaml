@@ -1,6 +1,6 @@
 config:
   cron: "*/10 * * * *"
-  image: "smartcitiesdata/sauron:0.0.2"
+  image: "smartcitiesdata/sauron:0.0.3"
 
 remoteDeployment:
   enabled: true
@@ -8,6 +8,7 @@ remoteDeployment:
   proxyAccountPAT: ""
   targetBranch: "main"
   currentDeploymentSha: ""
+  valuesFileFromRepoRoot: "./dev/values.yaml"
 
 serviceAccount:
   create: true
