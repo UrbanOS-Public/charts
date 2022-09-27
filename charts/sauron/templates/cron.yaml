@@ -17,13 +17,17 @@ spec:
                 - "/bin/bash"
                 - "-c"
                 - "/usr/local/bin/image_patch_update_script.sh"
+                - "/usr/local/bin/deployment_update_script.sh"
               volumeMounts:
                 - mountPath: /usr/local/bin/image_patch_update_script.sh
-                  name: image-patch-update-script
+                  name: sauron-commands
                   subPath: image_patch_update_script.sh
+                - mountPath: /usr/local/bin/deployment_update_script.sh
+                  name: sauron-commands
+                  subPath: deployment_update_script.sh
           volumes:
-          - name: image-patch-update-script
+          - name: sauron-commands
             configMap:
-              name: image-patch-update-script
+              name: sauron-commands
               defaultMode: 0777
           restartPolicy: Never

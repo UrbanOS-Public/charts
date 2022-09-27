@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: image-patch-update-script
+  name: sauron-commands
 data:
   image_patch_update_script.sh: |
     #!/bin/bash
@@ -146,6 +146,9 @@ data:
     image_auto_update valkyrie {{ .Values.deployments.valkyrie.major }} {{ .Values.deployments.valkyrie.minor }}
     {{- end }}
 
-
+  deployment_update_script.sh: |
+    #!/bin/bash
+    
+    echo foo
 
 
