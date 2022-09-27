@@ -13,6 +13,20 @@ spec:
             - name: {{ .Chart.Name }}
               image: {{ .Values.config.image }}
               imagePullPolicy: Always
+              env:
+                - name: GIT_HTTPS_CLONE_URL
+                  value: {{ .Values.remoteDeployment.gitHttpsCloneUrl }}
+                - name: TARGET_BRANCH
+                  value: {{ .Values.remoteDeployment.targetBranch }}
+                - name: CURRENT_DEPLOYMENT_SHA
+                  value: {{ .Values.remoteDeployment.currentDeploymentSha }}
+              {{ if .Values.remoteDeployment.enabled }}
+                - name: GITHUB_TOKEN
+                  valueFrom:
+                    secretKeyRef:
+                      name: {{ .Release.Name }}-sauron-github-pat
+                      key: token
+              {{ end -}}
               command:
                 - "/bin/bash"
                 - "-c"

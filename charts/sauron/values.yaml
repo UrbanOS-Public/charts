@@ -2,6 +2,13 @@ config:
   cron: "*/10 * * * *"
   image: "smartcitiesdata/sauron:0.0.2"
 
+remoteDeployment:
+  enabled: true
+  gitHttpsCloneUrl: "https://github.com/<Org>/<Repo>.git"
+  proxyAccountPAT: ""
+  targetBranch: "main"
+  currentDeploymentSha: ""
+
 serviceAccount:
   create: true
   name: updater-cron
