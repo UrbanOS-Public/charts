@@ -41,11 +41,14 @@ dependencies:
 - name: reaper
   repository: file://../reaper
   version: 1.2.5
+- name: sauron
+  repository: file://../sauron
+  version: 0.0.1
 - name: valkyrie
   repository: file://../valkyrie
   version: 2.6.5
 - name: vault
   repository: file://../vault
   version: 1.3.4
-digest: sha256:4aefb9bd98698c546ab5bc365fd92c2a040ff061b63244747b09c75183d766aa
-generated: "2022-09-26T13:43:37.44666-04:00"
+digest: sha256:9ebd524cf1e9c48166104d90f762a2b40355497eb54b1b903833d6747588d664
+generated: "2022-09-26T17:44:44.25308-04:00"
