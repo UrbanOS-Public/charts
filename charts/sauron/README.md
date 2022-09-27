@@ -9,7 +9,6 @@ Cron jobs that watch remote deployments and images, issuing cluster commands as 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | config.cron | string | `"*/10 * * * *"` |  |
-| config.enabled | bool | `true` |  |
 | config.image | string | `"smartcitiesdata/sauron:0.0.1"` |  |
 | deployments.alchemist.enabled | bool | `true` |  |
 | deployments.alchemist.major | int | `0` |  |
