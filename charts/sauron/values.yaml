@@ -3,7 +3,6 @@ config:
   image: "smartcitiesdata/sauron:0.0.4"
 
 remoteDeployment:
-  enabled: true
   gitHttpsCloneUrl: "https://github.com/<Org>/<Repo>.git"
   targetBranch: "main"
   currentDeploymentSha: ""

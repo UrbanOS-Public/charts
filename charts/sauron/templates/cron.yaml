@@ -11,14 +11,14 @@ spec:
       template:
         spec:
           securityContext:
-            fsGroup: 1000670000
-            runAsUser: 1000670000
+            runAsNonRoot: true
+            runAsUser: 1000
+            runAsGroup: 1000
+            fsGroup: 1000
           restartPolicy: Never
           serviceAccount: {{ .Values.serviceAccount.name }}
           containers:
             - name: {{ .Chart.Name }}
-              securityContext:
-                runAsUser: 1000670000
               image: {{ .Values.config.image }}
               imagePullPolicy: Always
               env:
@@ -85,8 +85,12 @@ spec:
                 - mountPath: /usr/local/bin/deployment_update_script.sh
                   name: sauron-commands
                   subPath: deployment_update_script.sh
+                - mountPath: /home
+                  name: home
           volumes:
           - name: sauron-commands
             configMap:
               name: sauron-commands
               defaultMode: 0777
+          - name: home
+            emptyDir: { }

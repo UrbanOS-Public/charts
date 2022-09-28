@@ -153,23 +153,10 @@ data:
     echo "WHOAMI"
     whoami
     id
-    echo "PWD"
-    pwd
-    echo "LS"
-    ls -l
-    echo "Move"
-    cd /usr/local/bin
-    echo "Create"
-    echo "what" > foo.txt
-    cat /usr/local/bin/foo.txt
     
-    echo "List Inside usr local bin"
-    ls -l /usr/local/bin
-  
-    echo "create root folder?"
-    mkdir urbanos
-    cd urbanos
-    
+    echo "HOME"
+    echo $HOME
+    HOME=/home
     
     re="^https:\/\/github.com\/(.+)\/(.+).git*$"
     
@@ -196,17 +183,25 @@ data:
       echo "Deploying with content from configured target branch."
       printf "gitHttpsCloneUrl: %s" "$GIT_HTTPS_CLONE_URL"
       printf "Target branch: %s" "$TARGET_BRANCH"
-      echo "PWD:"
-      pwd
-      cd /usr/local/bin/
     
-      helm repo add urbanos https://urbanos-public.github.io/charts/
-      
+      echo "Moving to /home in order to have user permissions for github."
+      cd /home
+      pwd
+    
+      echo "Cloning github repo. This uses the provided proxy account pat."
+      echo "The proxy account pat needs to have permissions to read/write to the remote deployment repo"
+      printf "\n\n"
+      git clone "https://${SAURON_PROXY_PAT}:x-oauth-basic@github.com/${USER}/${REPO}.git"
+      cd "$REPO" || exit 0
+      git checkout "$TARGET_BRANCH"
+      printf "\n\n"
+    
       {{ if .Values.remoteDeployment.secrets.persistence.trino.enabled }}
       # the below secrets were unable to be templated in properly through
       # just the values file, due to errors with string quotes,
       # so this is a workaround to apply them as their own file, skipping template
       # parsing.
+      echo "Creating hive_catalog.yaml patch file. Will list the folder post-creation for verification."
       cat << EOT > hive_catalog.yaml
     persistence:
       trino:
@@ -228,59 +223,23 @@ data:
             hive.s3.ssl.enabled=false
     EOT
       {{ end -}}
+      ls -lh
     
-    
-      git clone "https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${USER}/${REPO}.git"
-      cd "$REPO" || exit 0
-      git checkout "$TARGET_BRANCH"
-      
       if [[ -s "$VALUES_FILE_FROM_REPO_ROOT" ]]; then
+        echo "Adding urbanos repo to helm charts"
+        printf "\n\n"
+        helm repo add urbanos https://urbanos-public.github.io/charts/
         helm repo update
+        helm search repo urbanos
     
-        helm template "$RELEASE_NAME" urbanos/urban-os   \
-        --values="$VALUES_FILE_FROM_REPO_ROOT" \
-        {{- if .Values.remoteDeployment.secrets.persistence.trino.enabled -}}
-        --values=hive_catalog.yaml \ 
-        {{ end -}}
-        {{- if .Values.global.objectStore.accessKey -}}
-        --set global.objectStore.accessKey=$GLOBAL_OBJECTSTORE_ACCESSKEY \
-        {{ end -}}
-        {{- if .Values.global.objectStore.accessSecret -}}
-        --set global.objectStore.accessSecret=$GLOBAL_OBJECTSTORE_ACCESSSECRET \
-        {{ end -}}
-        {{- if .Values.remoteDeployment.secrets.raptor.auth.auth0_client_secret -}}
-        --set raptor.auth.auth0_client_secret=$RAPTOR_AUTH0_CLIENT_SECRET \ 
-        --set sauron.remoteDeployment.secrets.raptor.auth.auth0_client_secret=$RAPTOR_AUTH0_CLIENT_SECRET \
-        {{ end -}}
-        {{- if index .Values.remoteDeployment.secrets "discovery-api" "secrets" "discoveryApiPresignKey" -}}
-        --set discovery-api.secrets.discoveryApiPresignKey=$DISCOVERY_API_PRESIGN_KEY \
-        --set sauron.remoteDeployment.secrets.discovery-api.secrets.discoveryApiPresignKey=$DISCOVERY_API_PRESIGN_KEY \
-        {{ end -}}
-        {{- if index .Values.remoteDeployment.secrets "discovery-api" "secrets" "guardianSecretKey" -}}
-        --set discovery-api.secrets.guardianSecretKey=$DISCOVERY_API_GUARDIAN_KEY \
-        --set sauron.remoteDeployment.secrets.discovery-api.secrets.guardianSecretKey=$DISCOVERY_API_GUARDIAN_KEY \
-        {{ end -}}
-        {{- if index .Values.remoteDeployment.secrets "discovery-api" "postgres" "password" -}}
-        --set discovery-api.postgres.password=$DISCOVERY_API_POSTGRES_PASSWORD \
-        --set sauron.remoteDeployment.secrets.discovery-api.postgres.password=$DISCOVERY_API_POSTGRES_PASSWORD \
-        {{ end -}}
-        {{- if .Values.remoteDeployment.secrets.andi.postgres.password -}}
-        --set andi.postgres.password=$ANDI_POSTGRES_PASSWORD \
-        --set sauron.remoteDeployment.secrets.andi.postgres.password=$ANDI_POSTGRES_PASSWORD \
-        {{ end -}}
-        {{ if .Values.remoteDeployment.secrets.andi.auth.auth0_client_secret -}}
-        --set andi.auth.auth0_client_secret=$ANDI_AUTH0_CLIENT_SECRET \
-        --set sauron.remoteDeployment.secrets.andi.auth.auth0_client_secret=$ANDI_AUTH0_CLIENT_SECRET \
-        {{ end -}}
-        {{- if .Values.remoteDeployment.secrets.persistence.metastore.postgres.password -}}
-        --set persistence.metastore.postgres.password=$PERSISTENCE_POSTGRES_PASSWORD \
-        --set sauron.remoteDeployment.secrets.persistence.metastore.postgres.password=$PERSISTENCE_POSTGRES_PASSWORD \
-        {{ end -}}
-        {{- if .Values.remoteDeployment.proxyAccountPAT -}}
-        --set sauron.remoteDeployment.proxyAccountPAT=$SAURON_PROXY_PAT \
-        {{ end -}}
-        --namespace="$NAMESPACE"
-      
+        echo "Performing a helm deployment with the following values:"
+        printf "Release name: %s \n" "$RELEASE_NAME"
+        printf "Namespace: %s \n" "$Namespace"
+        printf "Values file location: %s \n" "$(realpath $VALUES_FILE_FROM_REPO_ROOT)"
+        printf "\n\n"
+    
+        helm template "$RELEASE_NAME" urbanos/urban-os --values="$VALUES_FILE_FROM_REPO_ROOT" {{ if .Values.remoteDeployment.secrets.persistence.trino.enabled }}--values=hive_catalog.yaml {{ end }}{{ if .Values.global.objectStore.accessKey }}--set global.objectStore.accessKey=$GLOBAL_OBJECTSTORE_ACCESSKEY {{ end }}{{ if .Values.global.objectStore.accessSecret }}--set global.objectStore.accessSecret=$GLOBAL_OBJECTSTORE_ACCESSSECRET {{ end }}{{ if .Values.remoteDeployment.secrets.raptor.auth.auth0_client_secret }}--set raptor.auth.auth0_client_secret=$RAPTOR_AUTH0_CLIENT_SECRET --set sauron.remoteDeployment.secrets.raptor.auth.auth0_client_secret=$RAPTOR_AUTH0_CLIENT_SECRET {{ end }}{{ if index .Values.remoteDeployment.secrets "discovery-api" "secrets" "discoveryApiPresignKey" }}--set discovery-api.secrets.discoveryApiPresignKey=$DISCOVERY_API_PRESIGN_KEY --set sauron.remoteDeployment.secrets.discovery-api.secrets.discoveryApiPresignKey=$DISCOVERY_API_PRESIGN_KEY {{ end }}{{ if index .Values.remoteDeployment.secrets "discovery-api" "secrets" "guardianSecretKey" }}--set discovery-api.secrets.guardianSecretKey=$DISCOVERY_API_GUARDIAN_KEY --set sauron.remoteDeployment.secrets.discovery-api.secrets.guardianSecretKey=$DISCOVERY_API_GUARDIAN_KEY {{ end }}{{ if index .Values.remoteDeployment.secrets "discovery-api" "postgres" "password" }}--set discovery-api.postgres.password=$DISCOVERY_API_POSTGRES_PASSWORD --set sauron.remoteDeployment.secrets.discovery-api.postgres.password=$DISCOVERY_API_POSTGRES_PASSWORD {{ end }}{{ if .Values.remoteDeployment.secrets.andi.postgres.password }}--set andi.postgres.password=$ANDI_POSTGRES_PASSWORD --set sauron.remoteDeployment.secrets.andi.postgres.password=$ANDI_POSTGRES_PASSWORD {{ end }}{{ if .Values.remoteDeployment.secrets.andi.auth.auth0_client_secret }}--set andi.auth.auth0_client_secret=$ANDI_AUTH0_CLIENT_SECRET --set sauron.remoteDeployment.secrets.andi.auth.auth0_client_secret=$ANDI_AUTH0_CLIENT_SECRET {{ end }}{{ if .Values.remoteDeployment.secrets.persistence.metastore.postgres.password }}--set persistence.metastore.postgres.password=$PERSISTENCE_POSTGRES_PASSWORD --set sauron.remoteDeployment.secrets.persistence.metastore.postgres.password=$PERSISTENCE_POSTGRES_PASSWORD {{ end }}{{ if .Values.remoteDeployment.proxyAccountPAT }}--set sauron.remoteDeployment.proxyAccountPAT=$SAURON_PROXY_PAT {{ end }}--namespace="$NAMESPACE" > template.yaml
+    
       else
         echo "Values file could not be found or is empty. Skipping deployment."
         printf "Configured file path from repo root: %s \n\n\n" "$VALUES_FILE_FROM_REPO_ROOT" 
