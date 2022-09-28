@@ -21,7 +21,7 @@ REST API to allow for dataset definition ingestion
 | aws.s3Port | string | `nil` |  |
 | documentationRoot | string | `""` |  |
 | footer.leftSideText | string | `"Some Left Side Text"` |  |
-| footer.links | string | `"[{\"linkText\":\"Example 1\", \"url\":\"https://www.example.com\"}, {\"linkText\":\"Example 2\", \"url\":\"https://www.google.com\"}]"` |  |
+| footer.links | string | `"[{\\\"linkText\\\":\\\"Example 1\\\", \\\"url\\\":\\\"https://www.example.com\\\"}, {\\\"linkText\\\":\\\"Example 2\\\", \\\"url\\\":\\\"https://www.google.com\\\"}]"` |  |
 | fullnameOverride | string | `""` |  |
 | global.auth.auth0_domain | string | `""` |  |
 | global.auth.jwt_issuer | string | `""` |  |
