@@ -1,6 +1,6 @@
 config:
   cron: "*/10 * * * *"
-  image: "smartcitiesdata/sauron:0.0.3"
+  image: "smartcitiesdata/sauron:0.0.4"
 
 remoteDeployment:
   enabled: true

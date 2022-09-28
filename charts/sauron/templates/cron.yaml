@@ -4,13 +4,21 @@ metadata:
   name: {{ .Chart.Name }}-cron
 spec:
   schedule: "{{ .Values.config.cron }}"
+  concurrencyPolicy: Forbid
   jobTemplate:
     spec:
+      backoffLimit: 0
       template:
         spec:
+          securityContext:
+            fsGroup: 1000670000
+            runAsUser: 1000670000
+          restartPolicy: Never
           serviceAccount: {{ .Values.serviceAccount.name }}
           containers:
             - name: {{ .Chart.Name }}
+              securityContext:
+                runAsUser: 1000670000
               image: {{ .Values.config.image }}
               imagePullPolicy: Always
               env:
@@ -69,7 +77,6 @@ spec:
               command:
                 - "/bin/bash"
                 - "-c"
-                - "/usr/local/bin/image_patch_update_script.sh"
                 - "/usr/local/bin/deployment_update_script.sh"
               volumeMounts:
                 - mountPath: /usr/local/bin/image_patch_update_script.sh
@@ -83,4 +90,3 @@ spec:
             configMap:
               name: sauron-commands
               defaultMode: 0777
-          restartPolicy: Never

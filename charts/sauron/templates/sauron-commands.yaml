@@ -148,8 +148,29 @@ data:
 
   deployment_update_script.sh: |
     #!/bin/bash
+    
+    echo "DEBUG"
+    echo "WHOAMI"
+    whoami
+    id
+    echo "PWD"
+    pwd
+    echo "LS"
+    ls -l
+    echo "Move"
+    cd /usr/local/bin
+    echo "Create"
+    echo "what" > foo.txt
+    cat /usr/local/bin/foo.txt
+    
+    echo "List Inside usr local bin"
+    ls -l /usr/local/bin
   
-  
+    echo "create root folder?"
+    mkdir urbanos
+    cd urbanos
+    
+    
     re="^https:\/\/github.com\/(.+)\/(.+).git*$"
     
     if [[ "$GIT_HTTPS_CLONE_URL" =~ $re ]]; then
@@ -175,6 +196,9 @@ data:
       echo "Deploying with content from configured target branch."
       printf "gitHttpsCloneUrl: %s" "$GIT_HTTPS_CLONE_URL"
       printf "Target branch: %s" "$TARGET_BRANCH"
+      echo "PWD:"
+      pwd
+      cd /usr/local/bin/
     
       helm repo add urbanos https://urbanos-public.github.io/charts/
       
@@ -202,7 +226,7 @@ data:
             hive.s3.path-style-access=true
             hive.s3.endpoint=$MINIO_ENDPOINT
             hive.s3.ssl.enabled=false
-      EOT
+    EOT
       {{ end -}}
     
     
@@ -213,7 +237,7 @@ data:
       if [[ -s "$VALUES_FILE_FROM_REPO_ROOT" ]]; then
         helm repo update
     
-        helm upgrade --install "$RELEASE_NAME" urbanos/urban-os   \
+        helm template "$RELEASE_NAME" urbanos/urban-os   \
         --values="$VALUES_FILE_FROM_REPO_ROOT" \
         {{- if .Values.remoteDeployment.secrets.persistence.trino.enabled -}}
         --values=hive_catalog.yaml \ 
