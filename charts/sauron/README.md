@@ -15,7 +15,7 @@ Cron jobs that watch remote deployments and images, issuing cluster commands as 
 | deployments.alchemist.minor | int | `2` |  |
 | deployments.andi.enabled | bool | `true` |  |
 | deployments.andi.major | int | `2` |  |
-| deployments.andi.minor | int | `3` |  |
+| deployments.andi.minor | int | `4` |  |
 | deployments.discovery_api.enabled | bool | `true` |  |
 | deployments.discovery_api.major | int | `1` |  |
 | deployments.discovery_api.minor | int | `3` |  |

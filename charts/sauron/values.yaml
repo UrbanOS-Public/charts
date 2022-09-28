@@ -15,7 +15,7 @@ deployments:
   andi:
     enabled: true
     major: 2
-    minor: 3
+    minor: 4
 
   discovery_api:
     enabled: true

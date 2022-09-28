@@ -116,6 +116,8 @@ spec:
             value: '{{  .Values.theme.logo }}'
           - name: ANDI_HEADER_TEXT
             value: '{{  .Values.theme.headerText }}'
+          - name: ANDI_PRIMARY_COLOR
+            value: '{{  .Values.theme.primaryColor }}'
           - name: ANDI_FOOTER_LEFT_SIDE_TEXT
             value: '{{  .Values.footer.leftSideText }}'
           - name: ANDI_FOOTER_LINKS
