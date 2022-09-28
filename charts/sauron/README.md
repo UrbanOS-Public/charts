@@ -30,7 +30,7 @@ Cron jobs that watch remote deployments and images, issuing cluster commands as 
 | deployments.raptor.minor | int | `2` |  |
 | deployments.reaper.enabled | bool | `true` |  |
 | deployments.reaper.major | int | `2` |  |
-| deployments.reaper.minor | int | `0` |  |
+| deployments.reaper.minor | int | `1` |  |
 | deployments.valkyrie.enabled | bool | `true` |  |
 | deployments.valkyrie.major | int | `1` |  |
 | deployments.valkyrie.minor | int | `7` |  |
@@ -38,6 +38,14 @@ Cron jobs that watch remote deployments and images, issuing cluster commands as 
 | remoteDeployment.enabled | bool | `true` |  |
 | remoteDeployment.gitHttpsCloneUrl | string | `"https://github.com/<Org>/<Repo>.git"` |  |
 | remoteDeployment.proxyAccountPAT | string | `""` |  |
+| remoteDeployment.secrets.andi.auth.auth0_client_secret | string | `""` |  |
+| remoteDeployment.secrets.andi.postgres.password | string | `""` |  |
+| remoteDeployment.secrets.discovery-api.postgres.password | string | `nil` |  |
+| remoteDeployment.secrets.discovery-api.secrets.discoveryApiPresignKey | string | `""` |  |
+| remoteDeployment.secrets.discovery-api.secrets.guardianSecretKey | string | `""` |  |
+| remoteDeployment.secrets.persistence.metastore.postgres.password | string | `""` |  |
+| remoteDeployment.secrets.persistence.trino.enabled | bool | `true` |  |
+| remoteDeployment.secrets.raptor.auth.auth0_client_secret | string | `""` |  |
 | remoteDeployment.targetBranch | string | `"main"` |  |
 | remoteDeployment.valuesFileFromRepoRoot | string | `"./dev/values.yaml"` |  |
 | serviceAccount.create | bool | `true` |  |

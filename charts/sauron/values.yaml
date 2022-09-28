@@ -5,10 +5,35 @@ config:
 remoteDeployment:
   enabled: true
   gitHttpsCloneUrl: "https://github.com/<Org>/<Repo>.git"
-  proxyAccountPAT: ""
   targetBranch: "main"
   currentDeploymentSha: ""
   valuesFileFromRepoRoot: "./dev/values.yaml"
+  proxyAccountPAT: ""
+  secrets:
+    andi:
+      postgres:
+        password: ""
+      auth:
+        auth0_client_secret: ""
+
+    persistence:
+      metastore:
+        postgres:
+          password: ""
+
+      trino:
+        enabled: true
+
+    raptor:
+      auth:
+        auth0_client_secret: ""
+
+    discovery-api:
+      secrets:
+        discoveryApiPresignKey: ""
+        guardianSecretKey: ""
+      postgres:
+        password:
 
 serviceAccount:
   create: true
@@ -50,7 +75,7 @@ deployments:
   reaper:
     enabled: true
     major: 2
-    minor: 0
+    minor: 1
 
   valkyrie:
     enabled: true
