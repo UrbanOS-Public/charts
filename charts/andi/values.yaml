@@ -82,6 +82,8 @@ theme:
   logo: "/images/UrbanOS.svg"
   # header bar text
   headerText: "Data Submission Tool"
+  # Primary color can be any valid css. Examples - "#101010", "rgb(0,0,0)", "red"
+  primaryColor: "#1170C8"
 
 footer:
   # footer text on left side with links on right side
