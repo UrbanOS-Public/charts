@@ -63,6 +63,7 @@ REST API to allow for dataset definition ingestion
 | service.type | string | `"NodePort"` |  |
 | theme.headerText | string | `"Data Submission Tool"` |  |
 | theme.logo | string | `"/images/UrbanOS.svg"` |  |
+| theme.primaryColor | string | `"#1170C8"` |  |
 | tolerations[0].effect | string | `"NoExecute"` |  |
 | tolerations[0].key | string | `"example.run.public-worker"` |  |
 | tolerations[0].operator | string | `"Equal"` |  |
