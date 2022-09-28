@@ -113,13 +113,13 @@ spec:
                 name: {{ .Release.Name }}-andi-aws-credentials
                 key: aws_access_key_secret
           - name: ANDI_LOGO_URL
-            value: "{{  .Values.theme.logo }}"
+            value: '{{  .Values.theme.logo }}'
           - name: ANDI_HEADER_TEXT
-            value: "{{  .Values.theme.headerText }}"
+            value: '{{  .Values.theme.headerText }}'
           - name: ANDI_FOOTER_LEFT_SIDE_TEXT
-            value: "{{  .Values.footer.leftSideText }}"
+            value: '{{  .Values.footer.leftSideText }}'
           - name: ANDI_FOOTER_LINKS
-            value: "{{  .Values.footer.links }}"
+            value: '{{  .Values.footer.links }}'
           {{ if .Values.aws.s3HostName }}
           - name: S3_HOST_NAME
             value: {{ .Values.aws.s3HostName }}
