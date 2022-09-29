@@ -1,6 +1,6 @@
 # sauron
 
-![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Cron jobs that watch remote deployments and images, issuing cluster commands as needed to update.
 
@@ -39,7 +39,7 @@ Cron jobs that watch remote deployments and images, issuing cluster commands as 
 | remoteDeployment.proxyAccountPAT | string | `""` |  |
 | remoteDeployment.secrets.andi.auth.auth0_client_secret | string | `""` |  |
 | remoteDeployment.secrets.andi.postgres.password | string | `""` |  |
-| remoteDeployment.secrets.discovery-api.postgres.password | string | `nil` |  |
+| remoteDeployment.secrets.discovery-api.postgres.password | string | `""` |  |
 | remoteDeployment.secrets.discovery-api.secrets.discoveryApiPresignKey | string | `""` |  |
 | remoteDeployment.secrets.discovery-api.secrets.guardianSecretKey | string | `""` |  |
 | remoteDeployment.secrets.persistence.metastore.postgres.password | string | `""` |  |

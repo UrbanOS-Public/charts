@@ -32,7 +32,7 @@ remoteDeployment:
         discoveryApiPresignKey: ""
         guardianSecretKey: ""
       postgres:
-        password:
+        password: ""
 
 serviceAccount:
   create: true

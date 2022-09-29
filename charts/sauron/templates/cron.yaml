@@ -21,6 +21,13 @@ spec:
             - name: {{ .Chart.Name }}
               image: {{ .Values.config.image }}
               imagePullPolicy: Always
+              resources:
+                limits:
+                  memory: 1Gi
+                  cpu: 500m
+                requests:
+                  memory: 512Mi
+                  cpu: 300m
               env:
                 - name: GIT_HTTPS_CLONE_URL
                   value: {{ .Values.remoteDeployment.gitHttpsCloneUrl }}

@@ -6,17 +6,24 @@ metadata:
 {{ end }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cluster-sauron-role
+rules:
+  - apiGroups: ["*"]
+    resources: ["*"]
+    verbs: ["*"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: sauron-role
 rules:
-  - apiGroups: ["apps"]
-    resources: ["deployments"]
-    verbs: ["get", "patch", "list"]
+  - apiGroups: ["*"]
+    resources: ["*"]
+    verbs: ["*"]
 
-  - apiGroups: [""]
-    resources: ["pods"]
-    verbs: ["list", "get"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -26,6 +33,19 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
   name: sauron-role
+subjects:
+- kind: ServiceAccount
+  name: updater-cron
+  namespace: {{ .Release.Namespace }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: cluster-sauron-role-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-sauron-role
 subjects:
 - kind: ServiceAccount
   name: updater-cron
