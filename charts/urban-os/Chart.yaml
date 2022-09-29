@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the urban os platform. See the individual dependency readmes for configuration options.
 name: urban-os
-version: 1.12.4
+version: 1.12.10
 
 dependencies:
   - name: alchemist
@@ -61,6 +61,10 @@ dependencies:
     repository: file://../reaper
     condition: reaper.enabled
     version: ">= 1.0.0"
+  - name: sauron
+    repository: file://../sauron
+    condition: sauron.enabled
+    version: ">= 0.0.1"
   - name: valkyrie
     repository: file://../valkyrie
     condition: valkyrie.enabled

@@ -82,7 +82,16 @@ accessLevel: "private"
 
 theme:
   # url for the header bar logo
-  logo: ""
+  logo: "/images/UrbanOS.svg"
+  # header bar text
+  headerText: "Data Submission Tool"
+  # Primary color can be any valid css. Examples - "#101010", "rgb(0,0,0)", "red"
+  primaryColor: "#1170C8"
+
+footer:
+  # footer text on left side with links on right side
+  leftSideText: "Some Left Side Text"
+  links: "[{\"linkText\":\"Example 1\", \"url\":\"https://www.example.com\"}, {\"linkText\":\"Example 2\", \"url\":\"https://www.google.com\"}]"
 
 tolerations:
   - key: example.run.public-worker

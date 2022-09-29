@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Chart.Name }}-cron
+spec:
+  schedule: "{{ .Values.config.cron }}"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccount: {{ .Values.serviceAccount.name }}
+          containers:
+            - name: {{ .Chart.Name }}
+              image: {{ .Values.config.image }}
+              imagePullPolicy: Always
+              command:
+                - "/bin/bash"
+                - "-c"
+                - "/usr/local/bin/image_patch_update_script.sh"
+              volumeMounts:
+                - mountPath: /usr/local/bin/image_patch_update_script.sh
+                  name: image-patch-update-script
+                  subPath: image_patch_update_script.sh
+          volumes:
+          - name: image-patch-update-script
+            configMap:
+              name: image-patch-update-script
+              defaultMode: 0777
+          restartPolicy: Never

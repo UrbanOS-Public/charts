@@ -121,6 +121,16 @@ spec:
               secretKeyRef:
                 name: {{ .Release.Name }}-andi-aws-credentials
                 key: aws_access_key_secret
+          - name: ANDI_LOGO_URL
+            value: '{{  .Values.theme.logo }}'
+          - name: ANDI_HEADER_TEXT
+            value: '{{  .Values.theme.headerText }}'
+          - name: ANDI_PRIMARY_COLOR
+            value: '{{  .Values.theme.primaryColor }}'
+          - name: ANDI_FOOTER_LEFT_SIDE_TEXT
+            value: '{{  .Values.footer.leftSideText }}'
+          - name: ANDI_FOOTER_LINKS
+            value: '{{  .Values.footer.links }}'
           {{ if .Values.aws.s3HostName }}
           - name: S3_HOST_NAME
             value: {{ .Values.aws.s3HostName }}
@@ -128,8 +138,6 @@ spec:
             value: {{ quote .Values.aws.s3Port }}
           - name: ALLOWED_ORIGIN
             value: "{{ .Values.ingress.tls | ternary "https" "http" }}://*.{{ .Values.global.ingress.dnsZone }}"
-          - name: ANDI_LOGO_URL
-            value: "{{  .Values.theme.logo }}"
           {{ end -}}
 {{- with .Values.tolerations }}
       tolerations:
