@@ -19,7 +19,9 @@ spec:
         app.kubernetes.io/name: {{ include "helm.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+      {{- if .Values.rbac.enabled }}
       serviceAccountName: {{ .Chart.Name }}
+      {{- end }}      
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

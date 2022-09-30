@@ -97,3 +97,7 @@ aws:
   accessKeySecret: ""
   s3HostName: null
   s3Port: null
+
+rbac:
+  # Create a ServiceAccount or use default ServiceAccount if set as false
+  enabled: true

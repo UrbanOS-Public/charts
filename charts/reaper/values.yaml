@@ -30,6 +30,7 @@ service:
 profiling_enabled: false
 
 rbac:
+  # Create a ServiceAccount or use default ServiceAccount if set as false
   enabled: true
 
 resources:

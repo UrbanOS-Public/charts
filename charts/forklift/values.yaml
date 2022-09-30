@@ -57,3 +57,7 @@ profiling_enabled: false
 # When enabled, forklift doesn't retain any past records for a dataset.
 # New records replace what was previously stored.
 overwrite_mode: false
+
+rbac:
+  # Create a ServiceAccount or use default ServiceAccount if set as false
+  enabled: true

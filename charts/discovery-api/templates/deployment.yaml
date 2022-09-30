@@ -15,7 +15,9 @@ spec:
       labels:
         app: discovery-api
     spec:
+      {{- if .Values.rbac.enabled }}
       serviceAccountName: discovery-api
+      {{- end }}
       containers:
       - name: discovery-api
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
