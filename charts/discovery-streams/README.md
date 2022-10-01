@@ -1,6 +1,6 @@
 # discovery-streams
 
-![Version: 1.1.2](https://img.shields.io/badge/Version-1.1.2-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.1.3](https://img.shields.io/badge/Version-1.1.3-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Dynamically find kafka topics and makes available corresponding channels on a public websocket
 
@@ -28,6 +28,7 @@ Dynamically find kafka topics and makes available corresponding channels on a pu
 | ingress.annotations | string | `nil` |  |
 | ingress.enabled | bool | `true` |  |
 | monitoring.targetPort | int | `9002` |  |
+| rbac.enabled | bool | `true` |  |
 | replicaCount | int | `1` |  |
 | resources.limits.cpu | string | `"1"` |  |
 | resources.limits.memory | string | `"512Mi"` |  |

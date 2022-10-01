@@ -1,6 +1,6 @@
 # reaper
 
-![Version: 1.2.5](https://img.shields.io/badge/Version-1.2.5-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.2.6](https://img.shields.io/badge/Version-1.2.6-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
 
@@ -32,6 +32,7 @@ Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka top
 | monitoring.targetPort | int | `9002` |  |
 | outputTopicPrefix | string | `"raw"` |  |
 | profiling_enabled | bool | `false` |  |
+| rbac.enabled | bool | `true` |  |
 | replicaCount | int | `1` |  |
 | resources.limits.cpu | string | `"300m"` |  |
 | resources.limits.ephemeral-storage | string | `"15G"` |  |
