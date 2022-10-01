@@ -17,6 +17,9 @@ global:
   ingress:
     rootDnsZone: localhost
     dnsZone: localhost
+  objectStore:
+    accessKey: null
+    accessSecret: null
 
 replicaCount: 1
 
