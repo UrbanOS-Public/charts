@@ -1,13 +1,15 @@
-# apiVersion: v1
-# kind: LimitRange
-# metadata:
-#   name: default-limitrange
-# spec:
-#   limits:
-#   - default:
-#       memory: 128Mi
-#       cpu: 100m
-#     defaultRequest:
-#       memory: 128Mi
-#       cpu: 100m
-#     type: Container
+{{- if .Values.limitRange.enabled }}
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: default-limitrange
+spec:
+  limits:
+  - default:
+      memory: 128Mi
+      cpu: 100m
+    defaultRequest:
+      memory: 128Mi
+      cpu: 100m
+    type: Container
+{{- end }}

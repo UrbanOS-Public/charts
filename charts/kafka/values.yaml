@@ -45,3 +45,15 @@ tlsSidecar:
 tolerations: []
 
 affinity: {}
+
+rbac:
+  # Create a ServiceAccount or use default ServiceAccount if set as false
+  enabled: true
+
+resizeHook:
+  # Create a Job to auto scale kafka sizes after initial install
+  enabled: true
+
+limitRange:
+  # Create a custom limit range
+  enabled: true
