@@ -82,7 +82,7 @@ spec:
                 name: {{ .Values.postgres.passwordSecret }}
                 key: {{ .Values.postgres.passwordSecretKey }}
             {{- else }}
-            value: {{ .Values.postgres.password }}
+            value: {{ squote .Values.postgres.password }}
             {{- end }}
           - name: POSTGRES_PORT
             value: {{ quote .Values.postgres.port }}
