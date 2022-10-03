@@ -11,7 +11,7 @@ service:
   port: 80
 
 image:
-  name: smartcolumbusos/discovery_ui
+  name: smartcitiesdata/discovery_ui
   tag: development
   environment: "local"
   pullPolicy: Always

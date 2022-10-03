@@ -30,7 +30,7 @@ A helm chart for the discovery ui
 | global.ingress.dnsZone | string | `"localhost"` |  |
 | global.ingress.rootDnsZone | string | `"localhost"` |  |
 | image.environment | string | `"local"` |  |
-| image.name | string | `"smartcolumbusos/discovery_ui"` |  |
+| image.name | string | `"smartcitiesdata/discovery_ui"` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.tag | string | `"development"` |  |
 | ingress.annotations | string | `nil` |  |
