@@ -13,6 +13,8 @@ data:
     window.STREETS_TILE_LAYER_URL = '{{.Values.env.streets_tile_layer_url}}'
     window.MAPBOX_ACCESS_TOKEN = '{{.Values.env.mapbox_access_token}}'
     window.LOGO_URL = '{{.Values.env.logo_url}}'
+    window.FOOTER_LEFT_SIDE_TEXT = '{{.Values.env.footer_left_side_text}}'
+    window.FOOTER_LINKS = '{{.Values.env.footer_links}}'
     window.AUTH0_DOMAIN = '{{.Values.global.auth.auth0_domain}}'
     window.AUTH0_CLIENT_ID = '{{.Values.env.auth0_client_id}}'
     window.AUTH0_AUDIENCE = '{{.Values.env.auth0_audience}}'
