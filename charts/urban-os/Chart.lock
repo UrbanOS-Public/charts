@@ -37,7 +37,7 @@ dependencies:
   version: 1.1.1
 - name: raptor
   repository: file://../raptor
-  version: 1.1.5
+  version: 1.1.6
 - name: reaper
   repository: file://../reaper
   version: 1.2.6
@@ -50,5 +50,5 @@ dependencies:
 - name: vault
   repository: file://../vault
   version: 1.3.5
-digest: sha256:7bc8acd1afcb9f8c177d4fe1e310569b9b162d881a2cad99469ad1864401019b
-generated: "2022-10-03T17:17:46.020551-06:00"
+digest: sha256:95431bfd6428f2135486472246b23a205186135c02154bd18d24e1ac65e6721b
+generated: "2022-10-03T17:29:45.053941-06:00"
