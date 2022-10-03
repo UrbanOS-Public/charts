@@ -36,3 +36,7 @@ service:
   type: NodePort
   port: 80
   targetPort: 4000
+
+rbac:
+  # Create a ServiceAccount or use default ServiceAccount if set as false
+  enabled: true

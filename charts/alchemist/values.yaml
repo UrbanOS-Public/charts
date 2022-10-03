@@ -56,5 +56,9 @@ tolerations: []
 
 affinity: {}
 
+rbac:
+  # Create a ServiceAccount or use default ServiceAccount if set as false
+  enabled: true
+
 monitoring:
   targetPort: 9002

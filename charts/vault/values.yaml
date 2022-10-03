@@ -26,6 +26,8 @@ vault:
       file:
         path: "/keys"
   roles:
+    # note: this may need to be updated to support the default role making requests,
+    # or to allow an entire namespace.
     - name: discovery-api-role
       boundServiceAccounts: discovery-api
       boundServiceAccountNamespaces: urban-os

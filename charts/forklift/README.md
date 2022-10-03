@@ -1,6 +1,6 @@
 # forklift
 
-![Version: 3.1.11](https://img.shields.io/badge/Version-3.1.11-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 3.1.12](https://img.shields.io/badge/Version-3.1.12-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Loads data from the transformed topic into Presto
 
@@ -36,6 +36,7 @@ Loads data from the transformed topic into Presto
 | nodeSelector | object | `{}` |  |
 | overwrite_mode | bool | `false` |  |
 | profiling_enabled | bool | `false` |  |
+| rbac.enabled | bool | `true` |  |
 | replicaCount | int | `1` |  |
 | resources.limits.cpu | string | `"500m"` |  |
 | resources.limits.memory | string | `"1Gi"` |  |

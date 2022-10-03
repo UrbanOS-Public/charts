@@ -1,6 +1,6 @@
 # andi
 
-![Version: 2.2.7](https://img.shields.io/badge/Version-2.2.7-informational?style=flat-square)
+![Version: 2.2.8](https://img.shields.io/badge/Version-2.2.8-informational?style=flat-square)
 
 REST API to allow for dataset definition ingestion
 
@@ -28,6 +28,8 @@ REST API to allow for dataset definition ingestion
 | global.ingress.dnsZone | string | `"localhost"` |  |
 | global.ingress.rootDnsZone | string | `"localhost"` |  |
 | global.kafka.brokers | string | `"streaming-service-kafka-bootstrap:9092"` |  |
+| global.objectStore.accessKey | string | `nil` |  |
+| global.objectStore.accessSecret | string | `nil` |  |
 | global.presto.url | string | `"http://platform-kubernetes-data-platform-presto:8080"` |  |
 | global.redis.host | string | `"redis.external-services"` |  |
 | global.redis.password | string | `""` |  |
@@ -49,6 +51,7 @@ REST API to allow for dataset definition ingestion
 | postgres.port | string | `"5432"` |  |
 | postgres.user | string | `"postgres"` |  |
 | postgres.verifySNI | bool | `true` |  |
+| rbac.enabled | bool | `true` |  |
 | replicaCount | int | `1` |  |
 | resources.limits.cpu | string | `"150m"` |  |
 | resources.limits.memory | string | `"256Mi"` |  |

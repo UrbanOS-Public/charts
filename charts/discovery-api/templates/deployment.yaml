@@ -15,7 +15,9 @@ spec:
       labels:
         app: discovery-api
     spec:
+      {{- if .Values.rbac.enabled }}
       serviceAccountName: discovery-api
+      {{- end }}
       containers:
       - name: discovery-api
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
@@ -34,7 +36,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: {{ quote .Values.global.redis.passwordSecret }}
-                key: {{ quote .Values.global.redis.passwordSecret }}
+                key: {{ .Values.global.redis.passwordSecretKey | default .Values.global.redis.passwordSecret | quote }}
 {{- else }}
             value: {{ .Values.global.redis.password }}
 {{- end }}
@@ -75,7 +77,14 @@ spec:
           - name: POSTGRES_USER
             value: {{ .Values.postgres.user }}
           - name: POSTGRES_PASSWORD
+            {{- if .Values.postgres.passwordSecret }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.postgres.passwordSecret }}
+                key: {{ .Values.postgres.passwordSecretKey }}
+            {{- else }}
             value: {{ quote .Values.postgres.password }}
+            {{- end }}
           - name: POSTGRES_PORT
             value: {{ quote .Values.postgres.port }}
           - name: POSTGRES_VERIFY_SNI
