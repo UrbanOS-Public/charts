@@ -1,6 +1,6 @@
 # discovery-api
 
-![Version: 1.4.3](https://img.shields.io/badge/Version-1.4.3-informational?style=flat-square) ![AppVersion: 1.0.0-static](https://img.shields.io/badge/AppVersion-1.0.0--static-informational?style=flat-square)
+![Version: 1.4.4](https://img.shields.io/badge/Version-1.4.4-informational?style=flat-square) ![AppVersion: 1.0.0-static](https://img.shields.io/badge/AppVersion-1.0.0--static-informational?style=flat-square)
 
 A middleware layer to connect data consumers with the data sources
 
@@ -59,6 +59,7 @@ A middleware layer to connect data consumers with the data sources
 | postgres.verifySNI | bool | `true` |  |
 | presto.catalog | string | `"hive"` |  |
 | presto.schema | string | `"default"` |  |
+| rbac.enabled | bool | `true` |  |
 | replicaCount | int | `1` |  |
 | resources.limits.cpu | int | `1` |  |
 | resources.limits.memory | string | `"512Mi"` |  |

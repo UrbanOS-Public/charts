@@ -1,6 +1,6 @@
 # valkyrie
 
-![Version: 2.6.5](https://img.shields.io/badge/Version-2.6.5-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 2.6.6](https://img.shields.io/badge/Version-2.6.6-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Validates data from raw topic and writes it to validated topic
 
@@ -32,6 +32,7 @@ Validates data from raw topic and writes it to validated topic
 | nodeSelector | object | `{}` |  |
 | processor_stages | int | `1` |  |
 | profiling_enabled | bool | `false` |  |
+| rbac.enabled | bool | `true` |  |
 | replicaCount | int | `2` |  |
 | resources.limits.cpu | string | `"300m"` |  |
 | resources.limits.memory | string | `"512Mi"` |  |

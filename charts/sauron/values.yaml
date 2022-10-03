@@ -3,6 +3,7 @@ config:
   image: "smartcitiesdata/sauron:0.0.2"
 
 serviceAccount:
+  # Create a ServiceAccount or use default ServiceAccount if set as false
   create: true
   name: updater-cron
 

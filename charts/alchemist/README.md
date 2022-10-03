@@ -1,6 +1,6 @@
 # alchemist
 
-![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.0.3](https://img.shields.io/badge/Version-1.0.3-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Transforms data from the raw topic and writes it to transformed topic
 
@@ -33,6 +33,7 @@ Transforms data from the raw topic and writes it to transformed topic
 | nodeSelector | object | `{}` |  |
 | processor_stages | int | `1` |  |
 | profiling_enabled | bool | `false` |  |
+| rbac.enabled | bool | `true` |  |
 | replicaCount | int | `1` |  |
 | resources.limits.cpu | string | `"300m"` |  |
 | resources.limits.memory | string | `"512Mi"` |  |

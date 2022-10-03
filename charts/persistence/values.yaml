@@ -5,12 +5,19 @@ global:
     accessKey: example
     secretKey: example
     hiveStorageBucket: hive-storage
-    hiveStoragePath: 
+    hiveStoragePath:
 
 metastore:
+  image:
+    repository: quay.io/cloudservices/ubi-hive
+    tag: 3.1.2-metastore-009
+  rbac:
+    enabled: true
   postgres:
     user: padmin
     password: example
+    passwordSecret: null
+    passwordSecretKey: null
     host: postgres
     port: 5432
     name: metastore

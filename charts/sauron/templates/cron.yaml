@@ -8,7 +8,9 @@ spec:
     spec:
       template:
         spec:
+          {{- if .Values.serviceAccount.create }}
           serviceAccount: {{ .Values.serviceAccount.name }}
+          {{- end }}
           containers:
             - name: {{ .Chart.Name }}
               image: {{ .Values.config.image }}
