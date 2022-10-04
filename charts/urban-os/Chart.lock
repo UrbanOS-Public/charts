@@ -50,5 +50,5 @@ dependencies:
 - name: vault
   repository: file://../vault
   version: 1.3.5
-digest: sha256:51afd012d572a3637cfe5407cdfcd64eca26fa4b6bb3ca73b32b96d0382348df
-generated: "2022-10-04T13:10:50.149703-05:00"
+digest: sha256:734791f71ec7c83b3bb9aaa3fd48edeea1b8d6cec8cb092c9dc5c398f1dc35bd
+generated: "2022-10-04T16:10:37.38036-06:00"
