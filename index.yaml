@@ -36,6 +36,16 @@ entries:
     version: 1.0.1
   andi:
   - apiVersion: v1
+    created: "2022-10-04T22:34:19.150648557Z"
+    description: REST API to allow for dataset definition ingestion
+    digest: 689258d48d2bebedfdb04c7ffd52d8f56a42faba427c419d56fa6ad863f5c7e0
+    name: andi
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/andi
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/andi-2.2.9/andi-2.2.9.tgz
+    version: 2.2.9
+  - apiVersion: v1
     created: "2022-10-03T14:37:24.494617721Z"
     description: REST API to allow for dataset definition ingestion
     digest: 91b8bbb951c9854d18432e250f697b390d60a1410691acb33fc43425b2cb991b
@@ -1172,6 +1182,16 @@ entries:
   external-services:
   - apiVersion: v1
     appVersion: 1.0.0
+    created: "2022-10-04T22:34:19.422616744Z"
+    description: Helm chart for external services. This is an optional abstraction
+      layer for external dependencies such as redis.
+    digest: 244c5ec4fdcecbfee0ec399e9892c2297fbed13cc444dac8369dc29ae4105297
+    name: external-services
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/external-services-1.0.3/external-services-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v1
+    appVersion: 1.0.0
     created: "2022-09-26T17:48:44.703564837Z"
     description: Helm chart for external services. This is an optional abstraction
       layer for external dependencies such as redis.
@@ -1449,6 +1469,23 @@ entries:
     - genesis-2.0.1.tgz
     version: 2.0.1
   kafka:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-10-04T22:34:19.701297935Z"
+    dependencies:
+    - condition: strimzi-kafka-operator.enabled
+      name: strimzi-kafka-operator
+      repository: http://strimzi.io/charts/
+      version: 0.23.0
+    description: A Helm chart for deploying kafka via strimzi
+    digest: 16a7b51547c0cae061bfdc869b4453463c00cba865e85de5ef6a8aaa7049a72d
+    name: kafka
+    sources:
+    - https://github.com/strimzi/strimzi-kafka-operator
+    - https://github.com/apache/kafka
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/kafka-1.1.10/kafka-1.1.10.tgz
+    version: 1.1.10
   - apiVersion: v1
     appVersion: "1.0"
     created: "2022-10-03T14:37:25.06559253Z"
@@ -2185,6 +2222,17 @@ entries:
   raptor:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2022-10-04T22:34:19.977850793Z"
+    description: Authenticate and authorize API users
+    digest: 07ee8fbd1dc274d134ac7e887f5826992d860466e4fe1320de6f21b1a3ab4a9c
+    name: raptor
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/raptor
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/raptor-1.1.6/raptor-1.1.6.tgz
+    version: 1.1.6
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2022-10-03T14:37:25.353459441Z"
     description: Authenticate and authorize API users
     digest: b4be79ec9dcc938ada8f189e4a1ab0c69a49f1d36cf388f6b19f129fb960c2d0
@@ -2479,6 +2527,85 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-10-04T22:34:20.286046338Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: sauron.enabled
+      name: sauron
+      repository: file://../sauron
+      version: '>= 0.0.1'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: file://../vault
+      version: '>= 1.0.0'
+    description: Master chart that deploys the urban os platform. See the individual
+      dependency readmes for configuration options.
+    digest: 708452cec78e8cb034fea78c0e798fed0eb604322efb733bd4267eaab2d8a40b
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.12.15/urban-os-1.12.15.tgz
+    version: 1.12.15
   - apiVersion: v2
     appVersion: "1.0"
     created: "2022-10-04T19:27:13.336177622Z"
@@ -5280,4 +5407,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-04T19:27:13.337425121Z"
+generated: "2022-10-04T22:34:20.288976483Z"
