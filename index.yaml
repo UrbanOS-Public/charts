@@ -1182,6 +1182,16 @@ entries:
   external-services:
   - apiVersion: v1
     appVersion: 1.0.0
+    created: "2022-10-05T15:21:04.980351522Z"
+    description: Helm chart for external services. This is an optional abstraction
+      layer for external dependencies such as redis.
+    digest: cd42e8578d0a7d849417802615892606dd0e3e75b88fe797fe4ef443dbd262f3
+    name: external-services
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/external-services-1.0.4/external-services-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v1
+    appVersion: 1.0.0
     created: "2022-10-04T22:34:19.422616744Z"
     description: Helm chart for external services. This is an optional abstraction
       layer for external dependencies such as redis.
@@ -2527,6 +2537,85 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-10-05T15:21:05.150664778Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: sauron.enabled
+      name: sauron
+      repository: file://../sauron
+      version: '>= 0.0.1'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: file://../vault
+      version: '>= 1.0.0'
+    description: Master chart that deploys the urban os platform. See the individual
+      dependency readmes for configuration options.
+    digest: 7dfdb25d2d3350f7780074d6acc19ecc4bcec0255020c2479da340eb88724702
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.12.16/urban-os-1.12.16.tgz
+    version: 1.12.16
   - apiVersion: v2
     appVersion: "1.0"
     created: "2022-10-04T22:34:20.286046338Z"
@@ -5407,4 +5496,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-04T22:34:20.288976483Z"
+generated: "2022-10-05T15:21:05.152174905Z"
