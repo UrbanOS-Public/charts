@@ -1,4 +1,4 @@
-{{ if .Values.enabled.true }}
+{{ if .Values.enabled }}
 {{- range $service := .Values.services }}
 kind: "Service"
 apiVersion: "v1"
