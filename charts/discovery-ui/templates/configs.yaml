@@ -13,6 +13,8 @@ data:
     window.STREETS_TILE_LAYER_URL = '{{.Values.env.streets_tile_layer_url}}'
     window.MAPBOX_ACCESS_TOKEN = '{{.Values.env.mapbox_access_token}}'
     window.LOGO_URL = '{{.Values.env.logo_url}}'
+    window.FOOTER_LEFT_SIDE_TEXT = '{{.Values.env.footer_left_side_text}}'
+    window.FOOTER_LINKS = '{{.Values.env.footer_links}}'
     window.AUTH0_DOMAIN = '{{.Values.global.auth.auth0_domain}}'
     window.AUTH0_CLIENT_ID = '{{.Values.env.auth0_client_id}}'
     window.AUTH0_AUDIENCE = '{{.Values.env.auth0_audience}}'
@@ -23,7 +25,7 @@ data:
     add_header X-Frame-Options "DENY";
     add_header Cache-Control "no-cache, no-store, must-revalidate";
     add_header Pragma "no-cache";
-    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.googletagmanager.com *.google-analytics.com; style-src 'self' 'unsafe-inline'; frame-src *.auth0.com; img-src 'self' {{ .Values.env.additional_csp_hosts }} *.amazonaws.com *.mapbox.com *.google-analytics.com *.google.com *.doubleclick.net data: blob:; connect-src 'self' *.smartcolumbusos.com {{ .Values.env.additional_csp_hosts }} *.auth0.com *.mapbox.com *.plot.ly; worker-src blob:; block-all-mixed-content";
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.googletagmanager.com *.google-analytics.com; style-src 'self' 'unsafe-inline'; frame-src *.auth0.com; img-src 'self' {{ .Values.env.additional_csp_hosts }} *.amazonaws.com *.mapbox.com *.google-analytics.com *.google.com *.doubleclick.net data: blob:; connect-src 'self' {{ .Values.env.additional_csp_hosts }} *.auth0.com *.mapbox.com *.plot.ly; worker-src blob:; block-all-mixed-content";
     add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload";
 
     server_tokens off;

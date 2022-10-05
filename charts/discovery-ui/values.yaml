@@ -11,7 +11,7 @@ service:
   port: 80
 
 image:
-  name: smartcolumbusos/discovery_ui
+  name: smartcitiesdata/discovery_ui
   tag: development
   environment: "local"
   pullPolicy: Always
@@ -23,6 +23,9 @@ env:
   base_url: "example.com"
   streets_tile_layer_url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   logo_url: null
+  header_title: "UrbanOS Data Discovery"
+  footer_left_side_text: "© 2022 UrbanOS. All rights reserved."
+  footer_links: "[]"
   mapbox_access_token: ""
   auth0_domain: ""
   auth0_client_id: ""

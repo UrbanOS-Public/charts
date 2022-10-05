@@ -17,6 +17,9 @@ global:
   ingress:
     rootDnsZone: localhost
     dnsZone: localhost
+  objectStore:
+    accessKey: null
+    accessSecret: null
 
 replicaCount: 1
 
@@ -27,6 +30,10 @@ image:
 
 monitoring:
   targetPort: 9002
+
+rbac:
+  # Create a ServiceAccount or use default ServiceAccount if set as false
+  enabled: true
 
 nameOverride: ""
 fullnameOverride: ""
@@ -59,6 +66,8 @@ postgres:
 
 auth:
   auth0_client_id: ""
+  # if left empty, no secret will be created
+  # and {{ .Release.Name }}-raptor-auth0-client-secret will be referenced
   auth0_client_secret: ""
 
 aws:
@@ -82,11 +91,13 @@ theme:
   logo: "/images/UrbanOS.svg"
   # header bar text
   headerText: "Data Submission Tool"
+  # Primary color can be any valid css. Examples - "#101010", "rgb(0,0,0)", "red"
+  primaryColor: "#1170C8"
 
 footer:
   # footer text on left side with links on right side
   leftSideText: "Some Left Side Text"
-  links: '[{\"linkText\":\"Example 1\", \"url\":\"https://www.example.com\"}, {\"linkText\":\"Example 2\", \"url\":\"https://www.google.com\"}]'
+  links: '[{"linkText":"Example 1", "url":"https://www.example.com"}, {"linkText":"Example 2", "url":"https://www.google.com"}]'
 
 tolerations:
   - key: example.run.public-worker

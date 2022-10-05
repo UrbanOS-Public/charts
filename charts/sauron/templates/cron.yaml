@@ -16,7 +16,9 @@ spec:
             runAsGroup: 1000
             fsGroup: 1000
           restartPolicy: Never
+          {{- if .Values.serviceAccount.create }}
           serviceAccount: {{ .Values.serviceAccount.name }}
+          {{- end }}
           containers:
             - name: {{ .Chart.Name }}
               image: {{ .Values.config.image }}

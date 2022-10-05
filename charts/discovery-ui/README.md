@@ -1,6 +1,6 @@
 # discovery-ui
 
-![Version: 1.3.1](https://img.shields.io/badge/Version-1.3.1-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.4.2](https://img.shields.io/badge/Version-1.4.2-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A helm chart for the discovery ui
 
@@ -20,7 +20,10 @@ A helm chart for the discovery ui
 | env.auth0_client_id | string | `""` |  |
 | env.auth0_domain | string | `""` |  |
 | env.base_url | string | `"example.com"` |  |
+| env.footer_left_side_text | string | `"© 2022 UrbanOS. All rights reserved."` |  |
+| env.footer_links | string | `"[]"` |  |
 | env.gtm_id | string | `"GTM-EXAMPLE"` |  |
+| env.header_title | string | `"UrbanOS Data Discovery"` |  |
 | env.logo_url | string | `nil` |  |
 | env.mapbox_access_token | string | `""` |  |
 | env.streets_tile_layer_url | string | `"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"` |  |
@@ -28,7 +31,7 @@ A helm chart for the discovery ui
 | global.ingress.dnsZone | string | `"localhost"` |  |
 | global.ingress.rootDnsZone | string | `"localhost"` |  |
 | image.environment | string | `"local"` |  |
-| image.name | string | `"smartcolumbusos/discovery_ui"` |  |
+| image.name | string | `"smartcitiesdata/discovery_ui"` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.tag | string | `"development"` |  |
 | ingress.annotations | string | `nil` |  |

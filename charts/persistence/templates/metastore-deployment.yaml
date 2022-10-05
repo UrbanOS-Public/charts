@@ -14,10 +14,12 @@ spec:
       labels:
         app: hive-metastore
     spec:
+      {{- if .Values.metastore.rbac.enabled }}
       serviceAccountName: hive-metastore
+      {{- end }}
       containers:
       - name: hive-metastore
-        image: quay.io/cloudservices/ubi-hive:3.1.2-metastore-008
+        image: {{ .Values.metastore.image.repository }}:{{ .Values.metastore.image.tag }}
         ports:
         - containerPort: 8000
         env:
@@ -43,7 +45,14 @@ spec:
         - name: DATABASE_USER
           value: {{ .user }}
         - name: DATABASE_PASSWORD
+          {{- if .passwordSecret }}
+          valueFrom:
+            secretKeyRef:
+              name: {{ .passwordSecret }}
+              key: {{ .passwordSecretKey }}
+          {{- else }}
           value: {{ .password }}
+          {{- end }}
         - name: POSTGRES_SQL_SERVICE_HOST
           value: {{ .host }}
         - name: POSTGRES_SQL_SERVICE_PORT

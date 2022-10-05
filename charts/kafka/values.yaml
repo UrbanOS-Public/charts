@@ -26,7 +26,9 @@ zookeeper:
       cpu: 100m
       memory: 512Mi
 
+# https://github.com/strimzi/strimzi-kafka-operator/blob/main/helm-charts/helm3/strimzi-kafka-operator/values.yaml
 strimzi-kafka-operator:
+  enabled: true
   resources:
     limits:
       cpu: 500m
@@ -45,3 +47,15 @@ tlsSidecar:
 tolerations: []
 
 affinity: {}
+
+rbac:
+  # Create a ServiceAccount or use default ServiceAccount if set as false
+  enabled: true
+
+resizeHook:
+  # Create a Job to auto scale kafka sizes after initial install
+  enabled: true
+
+limitRange:
+  # Create a custom limit range
+  enabled: true
