@@ -1,6 +1,6 @@
 # kafka
 
-![Version: 1.1.9](https://img.shields.io/badge/Version-1.1.9-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.2.10](https://img.shields.io/badge/Version-1.2.10-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A Helm chart for deploying kafka via strimzi
 
@@ -8,6 +8,12 @@ A Helm chart for deploying kafka via strimzi
 
 * <https://github.com/strimzi/strimzi-kafka-operator>
 * <https://github.com/apache/kafka>
+
+## Requirements
+
+| Repository | Name | Version |
+|------------|------|---------|
+| http://strimzi.io/charts/ | strimzi-kafka-operator | 0.31.1 |
 
 ## Values
 
@@ -29,6 +35,7 @@ A Helm chart for deploying kafka via strimzi
 | limitRange.enabled | bool | `true` |  |
 | rbac.enabled | bool | `true` |  |
 | resizeHook.enabled | bool | `true` |  |
+| strimzi-kafka-operator.enabled | bool | `true` |  |
 | strimzi-kafka-operator.resources.limits.cpu | string | `"500m"` |  |
 | strimzi-kafka-operator.resources.requests.cpu | string | `"100m"` |  |
 | tlsSidecar.resources.limits.cpu | string | `"100m"` |  |
