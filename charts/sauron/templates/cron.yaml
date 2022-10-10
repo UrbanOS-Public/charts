@@ -86,7 +86,7 @@ spec:
               command:
                 - "/bin/bash"
                 - "-c"
-                - "/usr/local/bin/deployment_update_script.sh"
+                - "/usr/local/bin/image_patch_update_script.sh && /usr/local/bin/deployment_update_script.sh"
               volumeMounts:
                 - mountPath: /usr/local/bin/image_patch_update_script.sh
                   name: sauron-commands
