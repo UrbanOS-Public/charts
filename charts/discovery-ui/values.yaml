@@ -25,7 +25,7 @@ env:
   logo_url: null
   header_title: "UrbanOS Data Discovery"
   footer_left_side_text: "© 2022 UrbanOS. All rights reserved."
-  footer_links: "[]"
+  footer_links: '[{"linkText":"UrbanOS", "url":"https://github.com/UrbanOS-Public/smartcitiesdata"}]'
   mapbox_access_token: ""
   auth0_domain: ""
   auth0_client_id: ""
