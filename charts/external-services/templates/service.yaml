@@ -1,3 +1,4 @@
+{{ if .Values.enabled }}
 {{- range $service := .Values.services }}
 kind: "Service"
 apiVersion: "v1"
@@ -7,4 +8,5 @@ spec:
   type: ExternalName
   externalName: {{ $service.hostname }}
 ---
+{{- end }}
 {{- end }}

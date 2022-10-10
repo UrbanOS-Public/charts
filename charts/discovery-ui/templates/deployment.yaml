@@ -17,21 +17,18 @@ spec:
     spec:
       imagePullSecrets:
       - name: regcred
+      volumes:
+      - name: discovery-ui-configs
+        configMap:
+          name: discovery-ui-configs
       containers:
       - name: discovery-ui
         image: {{ .Values.image.name }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         volumeMounts:
-        - mountPath: /opt/app-root/src/config.js
+        - mountPath: /usr/share/nginx/html/config.js
           name: discovery-ui-configs
           subPath: config.js
-        - mountPath: /opt/app-root/etc/nginx.default.d/default.conf
-          name: discovery-ui-configs
-          subPath: default.conf
-      volumes:
-      - name: discovery-ui-configs
-        configMap:
-          name: discovery-ui-configs
 {{- with .Values.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}

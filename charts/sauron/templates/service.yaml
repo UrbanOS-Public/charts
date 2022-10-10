@@ -50,3 +50,4 @@ subjects:
 - kind: ServiceAccount
   name: updater-cron
   namespace: {{ .Release.Namespace }}
+{{ end }}

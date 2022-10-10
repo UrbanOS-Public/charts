@@ -1,6 +1,6 @@
 # sauron
 
-![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 0.0.3](https://img.shields.io/badge/Version-0.0.3-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Cron jobs that watch remote deployments and images, issuing cluster commands as needed to update.
 
@@ -15,7 +15,7 @@ Cron jobs that watch remote deployments and images, issuing cluster commands as 
 | deployments.alchemist.minor | int | `2` |  |
 | deployments.andi.enabled | bool | `true` |  |
 | deployments.andi.major | int | `2` |  |
-| deployments.andi.minor | int | `3` |  |
+| deployments.andi.minor | int | `4` |  |
 | deployments.discovery_api.enabled | bool | `true` |  |
 | deployments.discovery_api.major | int | `1` |  |
 | deployments.discovery_api.minor | int | `3` |  |

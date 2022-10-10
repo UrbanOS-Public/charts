@@ -15,7 +15,9 @@ spec:
       labels:
         app: {{ .Chart.Name }}
     spec:
+      {{- if .Values.rbac.enabled }}
       serviceAccountName: {{ .Chart.Name }}
+      {{- end }}      
       imagePullSecrets:
       - name: regcred
       containers:
@@ -36,7 +38,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: {{ quote .Values.global.redis.passwordSecret }}
-              key: {{ quote .Values.global.redis.passwordSecret }}
+              key: {{ .Values.global.redis.passwordSecretKey | default .Values.global.redis.passwordSecret | quote }}
 {{- else }}
           value: {{ .Values.global.redis.password }}
 {{- end }}

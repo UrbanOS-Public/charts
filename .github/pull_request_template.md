@@ -1,3 +1,11 @@
+## [Ticket Link #fill_in](https://app.zenhub.com/workspaces/mdot-615b97c1a5fde400126174f8/issues/urbanos-public/internal/{replace_with_number})
+
+Remove if not applicable
+
+## Description
+
+What was changed
+
 ## Reminders
 
 - [ ] Did you up the relevant chart version numbers? (If appropriate)

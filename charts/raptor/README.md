@@ -1,6 +1,6 @@
 # raptor
 
-![Version: 1.1.4](https://img.shields.io/badge/Version-1.1.4-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.1.6](https://img.shields.io/badge/Version-1.1.6-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Authenticate and authorize API users
 
@@ -25,6 +25,7 @@ Authenticate and authorize API users
 | image.repository | string | `"smartcitiesdata/raptor"` |  |
 | image.tag | string | `"development"` |  |
 | monitoring.targetPort | int | `9002` |  |
+| rbac.enabled | bool | `true` |  |
 | replicaCount | int | `1` |  |
 | resources.limits.cpu | string | `"1"` |  |
 | resources.limits.memory | string | `"512Mi"` |  |

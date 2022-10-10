@@ -1,3 +1,4 @@
+{{- if .Values.metastore.rbac.enabled }}
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -15,3 +16,4 @@ subjects:
 - kind: ServiceAccount
   name: hive-metastore
   namespace: {{ .Release.Namespace }}
+{{- end }}

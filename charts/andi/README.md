@@ -1,6 +1,6 @@
 # andi
 
-![Version: 2.2.6](https://img.shields.io/badge/Version-2.2.6-informational?style=flat-square)
+![Version: 2.2.9](https://img.shields.io/badge/Version-2.2.9-informational?style=flat-square)
 
 REST API to allow for dataset definition ingestion
 
@@ -21,13 +21,15 @@ REST API to allow for dataset definition ingestion
 | aws.s3Port | string | `nil` |  |
 | documentationRoot | string | `""` |  |
 | footer.leftSideText | string | `"Some Left Side Text"` |  |
-| footer.links | string | `"[{\\\"linkText\\\":\\\"Example 1\\\", \\\"url\\\":\\\"https://www.example.com\\\"}, {\\\"linkText\\\":\\\"Example 2\\\", \\\"url\\\":\\\"https://www.google.com\\\"}]"` |  |
+| footer.links | string | `"[{\"linkText\":\"Example 1\", \"url\":\"https://www.example.com\"}, {\"linkText\":\"Example 2\", \"url\":\"https://www.google.com\"}]"` |  |
 | fullnameOverride | string | `""` |  |
 | global.auth.auth0_domain | string | `""` |  |
 | global.auth.jwt_issuer | string | `""` |  |
 | global.ingress.dnsZone | string | `"localhost"` |  |
 | global.ingress.rootDnsZone | string | `"localhost"` |  |
 | global.kafka.brokers | string | `"streaming-service-kafka-bootstrap:9092"` |  |
+| global.objectStore.accessKey | string | `nil` |  |
+| global.objectStore.accessSecret | string | `nil` |  |
 | global.presto.url | string | `"http://platform-kubernetes-data-platform-presto:8080"` |  |
 | global.redis.host | string | `"redis.external-services"` |  |
 | global.redis.password | string | `""` |  |
@@ -49,6 +51,7 @@ REST API to allow for dataset definition ingestion
 | postgres.port | string | `"5432"` |  |
 | postgres.user | string | `"postgres"` |  |
 | postgres.verifySNI | bool | `true` |  |
+| rbac.enabled | bool | `true` |  |
 | replicaCount | int | `1` |  |
 | resources.limits.cpu | string | `"150m"` |  |
 | resources.limits.memory | string | `"256Mi"` |  |
@@ -63,6 +66,7 @@ REST API to allow for dataset definition ingestion
 | service.type | string | `"NodePort"` |  |
 | theme.headerText | string | `"Data Submission Tool"` |  |
 | theme.logo | string | `"/images/UrbanOS.svg"` |  |
+| theme.primaryColor | string | `"#1170C8"` |  |
 | tolerations[0].effect | string | `"NoExecute"` |  |
 | tolerations[0].key | string | `"example.run.public-worker"` |  |
 | tolerations[0].operator | string | `"Equal"` |  |

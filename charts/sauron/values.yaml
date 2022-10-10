@@ -35,6 +35,7 @@ remoteDeployment:
         password: ""
 
 serviceAccount:
+  # Create a ServiceAccount or use default ServiceAccount if set as false
   create: true
   name: updater-cron
 
@@ -47,7 +48,7 @@ deployments:
   andi:
     enabled: true
     major: 2
-    minor: 3
+    minor: 4
 
   discovery_api:
     enabled: true
