@@ -230,8 +230,6 @@ data:
         printf "Values file location: %s \n" "$(realpath $VALUES_FILE_FROM_REPO_ROOT)"
         printf "\n\n"
     
-        
-        
         cat << EOT > secrets.yaml
     global:
       objectStore:
@@ -258,7 +256,7 @@ data:
     EOT
     
     
-        helm upgrade --install urban-os urbanos/urban-os --namespace="$NAMESPACE" --values="$VALUES_FILE_FROM_REPO_ROOT" --values=secrets.yaml {{ if .Values.remoteDeployment.secrets.persistence.trino.enabled }}--values=hive_catalog.yaml {{ end }}
+        helm upgrade --install $MANAGED_RELEASE_NAME urbanos/urban-os --namespace="$NAMESPACE" --values="$VALUES_FILE_FROM_REPO_ROOT" --values=secrets.yaml {{ if .Values.remoteDeployment.secrets.persistence.trino.enabled }}--values=hive_catalog.yaml {{ end }}
     
       else
         echo "Values file could not be found or is empty. Skipping deployment."

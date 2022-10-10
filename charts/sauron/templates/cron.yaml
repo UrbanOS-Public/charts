@@ -43,6 +43,8 @@ spec:
                   value: {{ .Release.Namespace }}
                 - name: VALUES_FILE_FROM_REPO_ROOT
                   value: {{ .Values.remoteDeployment.valuesFileFromRepoRoot }}
+                - name: MANAGED_RELEASE_NAME
+                  value: {{ .Values.config.managedReleaseName }}
                 {{ if .Values.global.objectStore.accessKey -}}
                 - name: GLOBAL_OBJECTSTORE_ACCESSKEY
                   value: "{{ .Values.global.objectStore.accessKey }}"

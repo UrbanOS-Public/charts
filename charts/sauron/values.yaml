@@ -6,6 +6,7 @@ global:
 config:
   cron: "*/10 * * * *"
   image: "smartcitiesdata/sauron:0.0.4"
+  managedReleaseName: "urban-os"
 
 remoteDeployment:
   gitHttpsCloneUrl: "https://github.com/<Org>/<Repo>.git"
@@ -38,11 +39,6 @@ remoteDeployment:
         guardianSecretKey: ""
       postgres:
         password: ""
-
-serviceAccount:
-  # Create a ServiceAccount or use default ServiceAccount if set as false
-  create: true
-  name: updater-cron
 
 deployments:
   alchemist:

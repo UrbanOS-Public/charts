@@ -37,6 +37,31 @@ Use our charts in two steps:
 - `helm upgrade --install urban-os urbanos/urban-os -f deployment_values.yaml`
 - Validate with `kubectl get pods --all-namespaces`
 
+### Sauron
+
+Sauron is our automated deployment updater. Sauron must first be independently deployed, then it will detect upstream changes and issue deployment commands as needed.
+
+Sauron's responsibilities include:
+- Detecting docker hub image patch updates and triggering a pod image update if using deployment tag
+- Detecting upstream Remote Deployment Repo's changes and issuing a automated deployment command with all known secrets and values from current deployment and remote repo, respectively. 
+
+Sauron will:
+- First check for docker image patch updates (Current functionality)
+- Then it will check if the Remote Deployment Repo's master branch SHA matches the SHA of the sauron deployment
+- If not, it will clone the Remote Deployments Repo with the GITHUB_TOKEN provided in the Sauron deployment
+- It will then use the secrets that were provided in the Sauron Deployment to issue a helm upgrade --install of urban-os, using the latest chart version. It will also use the values file (From the remote repo) that was specified in the Sauron deployment config.
+
+Deploying Sauron:
+
+- Initial Sauron deployment should be manually done, similar to urban-os deployments. Be sure to override all secrets defined in the values.yaml file.
+- Sauron only needs to be updated if secrets change, or if the sauron chart itself changes
+
+
+How to use:
+
+- Simply merge any change into the configured Remote Deployment Repo
+- The cronjob will automatically update your urban-os deployment with the new values file from the remote deployment repo.
+
 ## Git Hooks
 
 To install from root:
