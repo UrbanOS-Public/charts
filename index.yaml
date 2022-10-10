@@ -828,6 +828,18 @@ entries:
   discovery-ui:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2022-10-10T16:31:28.842149389Z"
+    description: A helm chart for the discovery ui
+    digest: 2d151be260ef3a506f6981817cffd81c557626c791e2d4a567982269e74c2d2d
+    name: discovery-ui
+    sources:
+    - https://github.com/UrbanOS-Public/discovery_ui
+    - https://github.com/UrbanOS-Public/react_discovery_ui
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-ui-1.4.4/discovery-ui-1.4.4.tgz
+    version: 1.4.4
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2022-10-10T14:46:14.662751433Z"
     description: A helm chart for the discovery ui
     digest: b1347e4c51949d78544165074e99e4d177247be6801a0ad061f8f6af121e1482
@@ -5614,4 +5626,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-10T14:46:15.233613747Z"
+generated: "2022-10-10T16:31:28.845688027Z"
