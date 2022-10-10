@@ -1,6 +1,6 @@
 # discovery-ui
 
-![Version: 1.4.2](https://img.shields.io/badge/Version-1.4.2-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.4.3](https://img.shields.io/badge/Version-1.4.3-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A helm chart for the discovery ui
 
@@ -21,7 +21,7 @@ A helm chart for the discovery ui
 | env.auth0_domain | string | `""` |  |
 | env.base_url | string | `"example.com"` |  |
 | env.footer_left_side_text | string | `"© 2022 UrbanOS. All rights reserved."` |  |
-| env.footer_links | string | `"[]"` |  |
+| env.footer_links | string | `"[{\"linkText\":\"UrbanOS\", \"url\":\"https://github.com/UrbanOS-Public/smartcitiesdata\"}]"` |  |
 | env.gtm_id | string | `"GTM-EXAMPLE"` |  |
 | env.header_title | string | `"UrbanOS Data Discovery"` |  |
 | env.logo_url | string | `nil` |  |
