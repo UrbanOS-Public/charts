@@ -19,3 +19,4 @@ data:
     window.AUTH0_DOMAIN = '{{.Values.global.auth.auth0_domain}}'
     window.AUTH0_CLIENT_ID = '{{.Values.env.auth0_client_id}}'
     window.AUTH0_AUDIENCE = '{{.Values.env.auth0_audience}}'
+    window.PRIMARY_COLOR = '{{.Values.env.primary_color}}'
