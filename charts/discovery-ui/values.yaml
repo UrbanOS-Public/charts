@@ -20,7 +20,10 @@ env:
   api_host: "https://data.example.com"
   #contribute_host: "https://sharedata.example.com" #Optional location for an associated public Andi deployment
   gtm_id: "GTM-EXAMPLE"
+  #used in react_discovery_ui for websocket command
   base_url: "example.com"
+  #used in discovery_ui for header purposes
+  disc_ui_url: "example.com"
   streets_tile_layer_url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   logo_url: null
   header_title: "UrbanOS Data Discovery"
