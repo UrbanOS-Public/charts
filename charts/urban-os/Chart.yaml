@@ -61,10 +61,6 @@ dependencies:
     repository: file://../reaper
     condition: reaper.enabled
     version: ">= 1.0.0"
-  - name: sauron
-    repository: file://../sauron
-    condition: sauron.enabled
-    version: ">= 0.0.1"
   - name: valkyrie
     repository: file://../valkyrie
     condition: valkyrie.enabled

@@ -21,7 +21,6 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | file://../persistence | persistence | >= 1.0.0 |
 | file://../raptor | raptor | >= 1.0.0 |
 | file://../reaper | reaper | >= 1.0.0 |
-| file://../sauron | sauron | >= 0.0.1 |
 | file://../valkyrie | valkyrie | >= 1.0.0 |
 | file://../vault | vault | >= 1.0.0 |
 | https://helm.elastic.co | elasticsearch | 7.14.0 |
