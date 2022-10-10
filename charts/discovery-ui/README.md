@@ -26,6 +26,7 @@ A helm chart for the discovery ui
 | env.header_title | string | `"UrbanOS Data Discovery"` |  |
 | env.logo_url | string | `nil` |  |
 | env.mapbox_access_token | string | `""` |  |
+| env.primary_color | string | `"#1890ff"` |  |
 | env.streets_tile_layer_url | string | `"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"` |  |
 | global.auth.auth0_domain | string | `""` |  |
 | global.ingress.dnsZone | string | `"localhost"` |  |
