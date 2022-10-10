@@ -1,6 +1,6 @@
 # external-services
 
-![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
+![Version: 1.0.4](https://img.shields.io/badge/Version-1.0.4-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
 
 Helm chart for external services. This is an optional abstraction layer for external dependencies such as redis.
 
@@ -8,6 +8,7 @@ Helm chart for external services. This is an optional abstraction layer for exte
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| enabled | bool | `true` |  |
 | services[0].hostname | string | `"redis.example.com"` |  |
 | services[0].name | string | `"redis"` |  |
 | services[1].hostname | string | `"ldap.example.com"` |  |
