@@ -273,7 +273,7 @@ data:
         echo $TARGET_DEPLOYMENT_SHA > /sauron/current_deployment_sha.txt
         
         echo "Deploying urban-os charts"
-        helm upgrade --install --version 1.12.7 $MANAGED_RELEASE_NAME urbanos/urban-os --namespace="$NAMESPACE" --values="$VALUES_FILE_FROM_REPO_ROOT" --values=secrets.yaml {{ if .Values.remoteDeployment.secrets.persistence.trino.enabled }}--values=hive_catalog.yaml {{ end }}
+        helm upgrade --install $MANAGED_RELEASE_NAME urbanos/urban-os --namespace="$NAMESPACE" --values="$VALUES_FILE_FROM_REPO_ROOT" --values=secrets.yaml {{ if .Values.remoteDeployment.secrets.persistence.trino.enabled }}--values=hive_catalog.yaml {{ end }}
     
       else
         echo "Values file could not be found or is empty. Skipping deployment."
