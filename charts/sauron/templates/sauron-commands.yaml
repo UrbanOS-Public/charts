@@ -233,8 +233,7 @@ data:
         helm search repo urbanos
     
         echo "Performing a helm deployment with the following values:"
-        printf "Release name: %s \n" "$RELEASE_NAME"
-        printf "Namespace: %s \n" "$Namespace"
+        printf "Namespace: %s \n" "$NAMESPACE"
         printf "Values file location: %s \n" "$(realpath $VALUES_FILE_FROM_REPO_ROOT)"
         printf "\n\n"
     
@@ -263,33 +262,10 @@ data:
     raptor:
       auth:
         auth0_client_secret: "{{ if .Values.remoteDeployment.secrets.raptor.auth.auth0_client_secret }}$RAPTOR_AUTH0_CLIENT_SECRET{{ end }}"
-    sauron:
-      remoteDeployment:
-          currentDeploymentSha: "$CURRENT_DEPLOYMENT_SHA"
-          proxyAccountPAT: "{{ if .Values.remoteDeployment.proxyAccountPAT }}$SAURON_PROXY_PAT{{ end }}"
-          secrets:
-            andi:
-              auth:
-                auth0_client_secret: "{{ if .Values.remoteDeployment.secrets.andi.auth.auth0_client_secret }}$ANDI_AUTH0_CLIENT_SECRET{{ end }}"
-              postgres:
-                password: "{{ if .Values.remoteDeployment.secrets.andi.postgres.password }}$ANDI_POSTGRES_PASSWORD{{ end }}"
-            discovery-api:
-              secrets:
-                discoveryApiPresignKey: "{{ if index .Values.remoteDeployment.secrets "discovery-api" "secrets" "discoveryApiPresignKey" }}$DISCOVERY_API_PRESIGN_KEY{{ end }}"
-                guardianSecretKey: "{{ if index .Values.remoteDeployment.secrets "discovery-api" "secrets" "guardianSecretKey" }}$DISCOVERY_API_GUARDIAN_KEY{{ end }}"
-              postgres:
-                password: "{{ if index .Values.remoteDeployment.secrets "discovery-api" "postgres" "password" }}$DISCOVERY_API_POSTGRES_PASSWORD{{ end }}"
-            persistence:
-              metastore:
-                postgres:
-                  password: "{{ if .Values.remoteDeployment.secrets.persistence.metastore.postgres.password }}$PERSISTENCE_POSTGRES_PASSWORD{{ end }}"
-            raptor:
-              auth:
-                auth0_client_secret: "{{ if .Values.remoteDeployment.secrets.raptor.auth.auth0_client_secret }}$RAPTOR_AUTH0_CLIENT_SECRET{{ end }}"
     EOT
     
     
-        helm upgrade --install "$RELEASE_NAME" urbanos/urban-os --namespace="$NAMESPACE" --values="$VALUES_FILE_FROM_REPO_ROOT" --values=secrets.yaml {{ if .Values.remoteDeployment.secrets.persistence.trino.enabled }}--values=hive_catalog.yaml {{ end }}
+        helm upgrade --install urban-os urbanos/urban-os --namespace="$NAMESPACE" --values="$VALUES_FILE_FROM_REPO_ROOT" --values=secrets.yaml {{ if .Values.remoteDeployment.secrets.persistence.trino.enabled }}--values=hive_catalog.yaml {{ end }}
     
       else
         echo "Values file could not be found or is empty. Skipping deployment."
