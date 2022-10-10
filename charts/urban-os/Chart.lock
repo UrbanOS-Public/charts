@@ -19,7 +19,7 @@ dependencies:
   version: 7.14.0
 - name: external-services
   repository: file://../external-services
-  version: 1.0.4
+  version: 1.0.5
 - name: forklift
   repository: file://../forklift
   version: 3.1.12
@@ -50,5 +50,5 @@ dependencies:
 - name: vault
   repository: file://../vault
   version: 1.3.5
-digest: sha256:c5ca405aa3a7ad2959c9dbfb8588bfc159cc1a031d0abe5e87c0494f08dd5e69
-generated: "2022-10-10T08:18:40.554484-06:00"
+digest: sha256:d1415e7e5bcb138b9310fff6e6cdf68eb081fd196529bfa49ca628997f3c9cb7
+generated: "2022-10-10T08:44:39.879903-06:00"
