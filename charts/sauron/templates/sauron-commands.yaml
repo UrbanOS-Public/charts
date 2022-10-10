@@ -149,13 +149,6 @@ data:
   deployment_update_script.sh: |
     #!/bin/bash
     
-    echo "DEBUG"
-    echo "WHOAMI"
-    whoami
-    id
-    
-    echo "HOME"
-    echo $HOME
     HOME=/home
     
     re="^https:\/\/github.com\/(.+)\/(.+).git*$"
