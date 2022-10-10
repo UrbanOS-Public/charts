@@ -16,9 +16,7 @@ spec:
             runAsGroup: 1000
             fsGroup: 1000
           restartPolicy: Never
-          {{- if .Values.serviceAccount.create }}
-          serviceAccount: {{ .Values.serviceAccount.name }}
-          {{- end }}
+          serviceAccount: updater-cron
           containers:
             - name: {{ .Chart.Name }}
               image: {{ .Values.config.image }}
@@ -35,8 +33,6 @@ spec:
                   value: {{ .Values.remoteDeployment.gitHttpsCloneUrl }}
                 - name: TARGET_BRANCH
                   value: {{ .Values.remoteDeployment.targetBranch }}
-                - name: CURRENT_DEPLOYMENT_SHA
-                  value: {{ .Values.remoteDeployment.currentDeploymentSha }}
                 - name: RELEASE_NAME
                   value: {{ .Release.Name }}
                 - name: NAMESPACE
@@ -98,6 +94,8 @@ spec:
                   subPath: deployment_update_script.sh
                 - mountPath: /home
                   name: home
+                - name: sauron-state
+                  mountPath: /sauron
           volumes:
           - name: sauron-commands
             configMap:
@@ -105,3 +103,6 @@ spec:
               defaultMode: 0777
           - name: home
             emptyDir: { }
+          - name: sauron-state
+            persistentVolumeClaim:
+              claimName: {{ .Release.Name }}-{{ .Chart.Name }}

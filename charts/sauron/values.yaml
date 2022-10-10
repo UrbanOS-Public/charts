@@ -11,7 +11,6 @@ config:
 remoteDeployment:
   gitHttpsCloneUrl: "https://github.com/<Org>/<Repo>.git"
   targetBranch: "main"
-  currentDeploymentSha: ""
   valuesFileFromRepoRoot: "./dev/values.yaml"
   proxyAccountPAT: ""
   secrets:

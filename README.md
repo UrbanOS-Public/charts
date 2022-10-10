@@ -55,6 +55,7 @@ Deploying Sauron:
 
 - Initial Sauron deployment should be manually done, similar to urban-os deployments. Be sure to override all secrets defined in the values.yaml file.
 - Sauron only needs to be updated if secrets change, or if the sauron chart itself changes
+- Sauron currently needs to run as a specific user. Be sure it has permissions on a cluster level: `oc adm policy add-scc-to-user anyuid -z updater-cron`
 
 
 How to use:

@@ -37,7 +37,6 @@ Cron jobs that watch remote deployments and images, issuing cluster commands as 
 | deployments.valkyrie.minor | int | `7` |  |
 | global.objectStore.accessKey | list | `[]` |  |
 | global.objectStore.accessSecret | list | `[]` |  |
-| remoteDeployment.currentDeploymentSha | string | `""` |  |
 | remoteDeployment.gitHttpsCloneUrl | string | `"https://github.com/<Org>/<Repo>.git"` |  |
 | remoteDeployment.proxyAccountPAT | string | `""` |  |
 | remoteDeployment.secrets.andi.auth.auth0_client_secret | string | `""` |  |
