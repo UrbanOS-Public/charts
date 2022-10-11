@@ -1,51 +1,40 @@
+global:
+  objectStore:
+    accessKey: [ ]
+    accessSecret: [ ]
+
 config:
   cron: "*/10 * * * *"
-  image: "smartcitiesdata/sauron:0.0.2"
+  image: "smartcitiesdata/sauron:0.0.4"
+  managedReleaseName: "urban-os"
 
-serviceAccount:
-  # Create a ServiceAccount or use default ServiceAccount if set as false
-  create: true
-  name: updater-cron
+remoteDeployment:
+  gitHttpsCloneUrl: "https://github.com/<Org>/<Repo>.git"
+  targetBranch: "main"
+  valuesFileFromRepoRoot: "./dev/values.yaml"
+  proxyAccountPAT: ""
+  secrets:
+    andi:
+      postgres:
+        password: ""
+      auth:
+        auth0_client_secret: ""
 
-deployments:
-  alchemist:
-    enabled: true
-    major: 0
-    minor: 2
+    persistence:
+      metastore:
+        postgres:
+          password: ""
 
-  andi:
-    enabled: true
-    major: 2
-    minor: 4
+      trino:
+        enabled: true
 
-  discovery_api:
-    enabled: true
-    major: 1
-    minor: 3
+    raptor:
+      auth:
+        auth0_client_secret: ""
 
-  discovery_streams:
-    enabled: true
-    major: 3
-    minor: 0
-
-  #TODO: Add support for discovery-ui (Different repo than smartcitiesdata)
-
-  forklift:
-    enabled: true
-    major: 0
-    minor: 19
-
-  raptor:
-    enabled: true
-    major: 1
-    minor: 2
-
-  reaper:
-    enabled: true
-    major: 2
-    minor: 0
-
-  valkyrie:
-    enabled: true
-    major: 1
-    minor: 7
+    discovery-api:
+      secrets:
+        discoveryApiPresignKey: ""
+        guardianSecretKey: ""
+      postgres:
+        password: ""
