@@ -37,8 +37,8 @@ REST API to allow for dataset definition ingestion
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
 | global.vault.endpoint | string | `"vault.vault:8200"` |  |
-| image.majorPin | int | `2` |  |
-| image.minorPin | int | `4` |  |
+| image.majorPin | string | `""` |  |
+| image.minorPin | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"smartcitiesdata/andi"` |  |
 | image.tag | string | `"development"` |  |

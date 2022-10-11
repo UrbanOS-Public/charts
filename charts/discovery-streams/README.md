@@ -22,8 +22,8 @@ Dynamically find kafka topics and makes available corresponding channels on a pu
 | global.redis.passwordSecret | string | `""` |  |
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
-| image.majorPin | int | `3` |  |
-| image.minorPin | int | `0` |  |
+| image.majorPin | string | `""` |  |
+| image.minorPin | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"smartcitiesdata/discovery_streams"` |  |
 | image.tag | string | `"development"` |  |

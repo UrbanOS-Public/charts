@@ -21,8 +21,8 @@ Authenticate and authorize API users
 | global.redis.passwordSecret | string | `""` |  |
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
-| image.majorPin | int | `1` |  |
-| image.minorPin | int | `2` |  |
+| image.majorPin | string | `""` |  |
+| image.minorPin | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"smartcitiesdata/raptor"` |  |
 | image.tag | string | `"development"` |  |

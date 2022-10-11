@@ -21,8 +21,8 @@ Transforms data from the raw topic and writes it to transformed topic
 | global.redis.passwordSecret | string | `""` |  |
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
-| image.majorPin | int | `0` |  |
-| image.minorPin | int | `2` |  |
+| image.majorPin | string | `""` |  |
+| image.minorPin | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"smartcitiesdata/alchemist"` |  |
 | image.tag | string | `"development"` |  |

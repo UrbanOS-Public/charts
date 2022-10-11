@@ -14,8 +14,8 @@ image:
   repository: smartcitiesdata/valkyrie
   tag: development
   pullPolicy: Always
-  majorPin: 1
-  minorPin: 7
+  majorPin: ""
+  minorPin: ""
 
 service:
   type: ClusterIP

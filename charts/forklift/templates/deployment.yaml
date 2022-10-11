@@ -2,9 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "helm.fullname" . }}
+  {{- if or .Values.image.majorPin .Values.image.minorPin }}
   annotations:
+    {{- if .Values.image.majorPin }}
     docker.major: {{ .Values.image.majorPin }}
+    {{- end }}
+    {{- if .Values.image.minorPin }}
     docker.minor: {{ .Values.image.minorPin }}
+    {{- end }}
+  {{- end }}
   labels:
     app.kubernetes.io/name: {{ include "helm.name" . }}
     helm.sh/chart: {{ include "helm.chart" . }}

@@ -40,8 +40,8 @@ A middleware layer to connect data consumers with the data sources
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
 | global.vault.endpoint | string | `"vault.vault:8200"` |  |
-| image.majorPin | int | `1` |  |
-| image.minorPin | int | `3` |  |
+| image.majorPin | string | `""` |  |
+| image.minorPin | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"smartcitiesdata/discovery_api"` |  |
 | image.tag | string | `"development"` |  |

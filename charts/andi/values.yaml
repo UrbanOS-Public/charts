@@ -27,8 +27,8 @@ image:
   repository: smartcitiesdata/andi
   tag: development
   pullPolicy: Always
-  majorPin: 2
-  minorPin: 4
+  majorPin: ""
+  minorPin: ""
 
 monitoring:
   targetPort: 9002

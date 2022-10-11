@@ -14,8 +14,8 @@ image:
   repository: smartcitiesdata/raptor
   tag: development
   pullPolicy: Always
-  majorPin: 1
-  minorPin: 2
+  majorPin: ""
+  minorPin: ""
 
 replicaCount: 1
 

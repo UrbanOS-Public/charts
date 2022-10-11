@@ -18,8 +18,8 @@ image:
   repository: smartcitiesdata/alchemist
   tag: development
   pullPolicy: Always
-  majorPin: 0
-  minorPin: 2
+  majorPin: ""
+  minorPin: ""
 
 service:
   type: ClusterIP

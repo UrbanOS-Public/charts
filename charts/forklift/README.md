@@ -25,8 +25,8 @@ Loads data from the transformed topic into Presto
 | global.redis.passwordSecret | string | `""` |  |
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
-| image.majorPin | int | `0` |  |
-| image.minorPin | int | `19` |  |
+| image.majorPin | string | `""` |  |
+| image.minorPin | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"smartcitiesdata/forklift"` |  |
 | image.tag | string | `"development"` |  |
