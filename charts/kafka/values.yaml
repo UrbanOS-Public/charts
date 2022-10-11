@@ -27,6 +27,8 @@ zookeeper:
       memory: 512Mi
 
 # https://github.com/strimzi/strimzi-kafka-operator/blob/main/helm-charts/helm3/strimzi-kafka-operator/values.yaml
+# This installs the strimzi operator, which requires CRDs to be manually installed
+# to function. https://github.com/strimzi/strimzi-kafka-operator/issues/7147#issuecomment-1270844173
 strimzi-kafka-operator:
   enabled: true
   resources:
