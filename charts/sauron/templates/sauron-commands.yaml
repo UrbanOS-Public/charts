@@ -29,14 +29,6 @@ data:
       echo "POD_IMAGE_TAG:"
       printf "%s \n\n" "$POD_IMAGE_TAG"
     
-      MAJOR=$(kubectl get pod $POD_NAME -o jsonpath='{.metadata.annotations}' | jq '."docker.major"' | sed 's/"//g')
-      echo "MAJOR:"
-      printf "%s \n\n" "$MAJOR"
-    
-      MINOR=$(kubectl get pod $POD_NAME -o jsonpath='{.metadata.annotations}' | jq '."docker.minor"' | sed 's/"//g')
-      echo "MINOR:"
-      printf "%s \n\n" "$MINOR"
-    
       if [[ $POD_IMAGE_TAG == "development" ]]; then
       
         ALL_TAGS=$(curl --location --request GET "https://hub.docker.com/v2/namespaces/smartcitiesdata/repositories/$APP_NAME/tags" | jq '.results | map(.name)')
@@ -93,6 +85,14 @@ data:
             DEPLOYMENT_NAME=$(kubectl get deployments | grep -m1 "$KUBERNETES_FORMATTED_APP_NAME" | cut -d ' ' -f 1)
             echo "DEPLOYMENT_NAME:"
             echo "$DEPLOYMENT_NAME"
+    
+            MAJOR=$(kubectl get deployment $DEPLOYMENT_NAME -o jsonpath='{.metadata.annotations}' | jq '."docker.major"' | sed 's/"//g')
+            echo "MAJOR:"
+            printf "%s \n\n" "$MAJOR"
+          
+            MINOR=$(kubectl get pod $DEPLOYMENT_NAME -o jsonpath='{.metadata.annotations}' | jq '."docker.minor"' | sed 's/"//g')
+            echo "MINOR:"
+            printf "%s \n\n" "$MINOR"
             
             kubectl rollout restart "deployment/$DEPLOYMENT_NAME"
             printf "\n\n\n\n\n"
