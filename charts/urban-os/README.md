@@ -1,6 +1,6 @@
 # urban-os
 
-![Version: 1.12.20](https://img.shields.io/badge/Version-1.12.20-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.12.22](https://img.shields.io/badge/Version-1.12.22-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 
@@ -21,7 +21,6 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | file://../persistence | persistence | >= 1.0.0 |
 | file://../raptor | raptor | >= 1.0.0 |
 | file://../reaper | reaper | >= 1.0.0 |
-| file://../sauron | sauron | >= 0.0.1 |
 | file://../valkyrie | valkyrie | >= 1.0.0 |
 | file://../vault | vault | >= 1.0.0 |
 | https://helm.elastic.co | elasticsearch | 7.14.0 |
@@ -74,7 +73,6 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | persistence.enabled | bool | `true` |  |
 | raptor | object | `{"enabled":true,"fullnameOverride":"raptor"}` | See dependent chart for configuration details |
 | reaper | object | `{"enabled":true,"fullnameOverride":"reaper"}` | See dependent chart for configuration details |
-| sauron.enabled | bool | `false` |  |
 | valkyrie | object | `{"enabled":true,"fullnameOverride":"valkyrie","replicaCount":1}` | See dependent chart for configuration details |
 
 ----------------------------------------------

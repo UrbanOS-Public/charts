@@ -1,6 +1,6 @@
 # andi
 
-![Version: 2.2.9](https://img.shields.io/badge/Version-2.2.9-informational?style=flat-square)
+![Version: 2.2.10](https://img.shields.io/badge/Version-2.2.10-informational?style=flat-square)
 
 REST API to allow for dataset definition ingestion
 
@@ -37,6 +37,8 @@ REST API to allow for dataset definition ingestion
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
 | global.vault.endpoint | string | `"vault.vault:8200"` |  |
+| image.majorPin | string | `""` |  |
+| image.minorPin | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"smartcitiesdata/andi"` |  |
 | image.tag | string | `"development"` |  |

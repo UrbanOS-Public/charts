@@ -48,7 +48,9 @@ service:
 image:
   repository: smartcitiesdata/discovery_api
   tag: development
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
+  majorPin: ""
+  minorPin: ""
 
 monitoring:
   targetPort: 9002

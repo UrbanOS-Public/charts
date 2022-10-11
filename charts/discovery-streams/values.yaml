@@ -19,7 +19,9 @@ dashboard:
 image:
   repository: smartcitiesdata/discovery_streams
   tag: development
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
+  majorPin: ""
+  minorPin: ""
 
 replicaCount: 1
 
