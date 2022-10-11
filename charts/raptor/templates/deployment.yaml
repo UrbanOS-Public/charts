@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: {{ .Chart.Name }}
   namespace: {{ .Release.Namespace }}
+  annotations:
+    docker.major: {{ .Values.image.majorPin }}
+    docker.minor: {{ .Values.image.minorPin }}
   labels:
     app: {{ .Chart.Name }}
 spec:

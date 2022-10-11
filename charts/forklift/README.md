@@ -1,6 +1,6 @@
 # forklift
 
-![Version: 3.1.12](https://img.shields.io/badge/Version-3.1.12-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 3.1.13](https://img.shields.io/badge/Version-3.1.13-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Loads data from the transformed topic into Presto
 
@@ -25,6 +25,8 @@ Loads data from the transformed topic into Presto
 | global.redis.passwordSecret | string | `""` |  |
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
+| image.majorPin | int | `0` |  |
+| image.minorPin | int | `19` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"smartcitiesdata/forklift"` |  |
 | image.tag | string | `"development"` |  |

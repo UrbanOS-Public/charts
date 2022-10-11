@@ -1,6 +1,6 @@
 # valkyrie
 
-![Version: 2.6.6](https://img.shields.io/badge/Version-2.6.6-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 2.6.7](https://img.shields.io/badge/Version-2.6.7-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Validates data from raw topic and writes it to validated topic
 
@@ -20,6 +20,8 @@ Validates data from raw topic and writes it to validated topic
 | global.redis.passwordSecret | string | `""` |  |
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
+| image.majorPin | int | `1` |  |
+| image.minorPin | int | `7` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"smartcitiesdata/valkyrie"` |  |
 | image.tag | string | `"development"` |  |

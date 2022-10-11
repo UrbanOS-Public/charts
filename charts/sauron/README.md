@@ -1,6 +1,6 @@
 # sauron
 
-![Version: 0.0.4](https://img.shields.io/badge/Version-0.0.4-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 0.0.5](https://img.shields.io/badge/Version-0.0.5-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Cron jobs that watch remote deployments and images, issuing cluster commands as needed to update.
 
@@ -11,30 +11,6 @@ Cron jobs that watch remote deployments and images, issuing cluster commands as 
 | config.cron | string | `"*/10 * * * *"` |  |
 | config.image | string | `"smartcitiesdata/sauron:0.0.4"` |  |
 | config.managedReleaseName | string | `"urban-os"` |  |
-| deployments.alchemist.enabled | bool | `true` |  |
-| deployments.alchemist.major | int | `0` |  |
-| deployments.alchemist.minor | int | `2` |  |
-| deployments.andi.enabled | bool | `true` |  |
-| deployments.andi.major | int | `2` |  |
-| deployments.andi.minor | int | `4` |  |
-| deployments.discovery_api.enabled | bool | `true` |  |
-| deployments.discovery_api.major | int | `1` |  |
-| deployments.discovery_api.minor | int | `3` |  |
-| deployments.discovery_streams.enabled | bool | `true` |  |
-| deployments.discovery_streams.major | int | `3` |  |
-| deployments.discovery_streams.minor | int | `0` |  |
-| deployments.forklift.enabled | bool | `true` |  |
-| deployments.forklift.major | int | `0` |  |
-| deployments.forklift.minor | int | `19` |  |
-| deployments.raptor.enabled | bool | `true` |  |
-| deployments.raptor.major | int | `1` |  |
-| deployments.raptor.minor | int | `2` |  |
-| deployments.reaper.enabled | bool | `true` |  |
-| deployments.reaper.major | int | `2` |  |
-| deployments.reaper.minor | int | `1` |  |
-| deployments.valkyrie.enabled | bool | `true` |  |
-| deployments.valkyrie.major | int | `1` |  |
-| deployments.valkyrie.minor | int | `7` |  |
 | global.objectStore.accessKey | list | `[]` |  |
 | global.objectStore.accessSecret | list | `[]` |  |
 | remoteDeployment.gitHttpsCloneUrl | string | `"https://github.com/<Org>/<Repo>.git"` |  |

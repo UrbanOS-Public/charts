@@ -43,11 +43,11 @@ Sauron is our automated deployment updater. Sauron must first be independently d
 
 Sauron's responsibilities include:
 - Detecting docker hub image patch updates and triggering a pod image update if using deployment tag
-- Detecting upstream Remote Deployment Repo's changes and issuing a automated deployment command with all known secrets and values from current deployment and remote repo, respectively. 
+- Detecting upstream Remote Deployment Repo's changes and issuing an automated deployment command with all known secrets and values from current deployment and remote repo, respectively. 
 
 Sauron will:
 - First check for docker image patch updates (Current functionality)
-- Then it will check if the Remote Deployment Repo's master branch SHA matches the SHA of the sauron deployment
+- Then it will check if the Remote Deployment Repo's target branch SHA matches the SHA most recently used by Sauron
 - If not, it will clone the Remote Deployments Repo with the GITHUB_TOKEN provided in the Sauron deployment
 - It will then use the secrets that were provided in the Sauron Deployment to issue a helm upgrade --install of urban-os, using the latest chart version. It will also use the values file (From the remote repo) that was specified in the Sauron deployment config.
 

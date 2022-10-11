@@ -27,6 +27,8 @@ image:
   repository: smartcitiesdata/forklift
   tag: development
   pullPolicy: Always
+  majorPin: 0
+  minorPin: 19
 
 service:
   type: ClusterIP

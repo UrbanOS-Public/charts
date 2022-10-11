@@ -1,6 +1,6 @@
 # reaper
 
-![Version: 1.2.6](https://img.shields.io/badge/Version-1.2.6-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.2.7](https://img.shields.io/badge/Version-1.2.7-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka topic
 
@@ -25,6 +25,8 @@ Elixir producer-consumer. Retrieves streamed data, and loads it onto a Kafka top
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
 | global.vault.endpoint | string | `"vault.vault:8200"` |  |
+| image.majorPin | int | `2` |  |
+| image.minorPin | int | `0` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"smartcitiesdata/reaper"` |  |
 | image.tag | string | `"1.0.1"` |  |

@@ -15,14 +15,6 @@ data:
       echo "REPOSITORY:"
       printf "%s \n\n" "$REPOSITORY"
     
-      MAJOR=$2
-      echo "MAJOR:"
-      printf "%s \n\n" "$MAJOR"
-    
-      MINOR=$3
-      echo "MINOR:"
-      printf "%s \n\n" "$MINOR"
-    
       TOKEN=$(curl -s "https://auth.docker.io/token?service=registry.docker.io&scope=repository:$REPOSITORY:pull" | jq -r .token)
       printf "TOKEN Length: %s \n\n" "${#TOKEN}"
     
@@ -36,6 +28,14 @@ data:
       POD_IMAGE_TAG=$(kubectl get pod --namespace=dev "$POD_NAME" -o json | jq '.status.containerStatuses[] | .image ' | cut -d ':' -f 2 | sed 's/"//g' | tr -d '[:space:]')
       echo "POD_IMAGE_TAG:"
       printf "%s \n\n" "$POD_IMAGE_TAG"
+    
+      MAJOR=$(kubectl get pod $POD_NAME -o jsonpath='{.metadata.annotations}' | jq '."docker.major"' | sed 's/"//g')
+      echo "MAJOR:"
+      printf "%s \n\n" "$MAJOR"
+    
+      MINOR=$(kubectl get pod $POD_NAME -o jsonpath='{.metadata.annotations}' | jq '."docker.minor"' | sed 's/"//g')
+      echo "MINOR:"
+      printf "%s \n\n" "$MINOR"
     
       if [[ $POD_IMAGE_TAG == "development" ]]; then
       
@@ -114,37 +114,14 @@ data:
       fi
     }
     
-    {{- if .Values.deployments.alchemist.enabled }}
-    image_auto_update alchemist {{ .Values.deployments.alchemist.major }} {{ .Values.deployments.alchemist.minor }}
-    {{- end }}
-    
-    {{- if .Values.deployments.andi.enabled }}
-    image_auto_update andi {{ .Values.deployments.andi.major }} {{ .Values.deployments.andi.minor }}
-    {{- end }}
-    
-    {{- if .Values.deployments.discovery_api.enabled }}
-    image_auto_update discovery_api {{ .Values.deployments.discovery_api.major }} {{ .Values.deployments.discovery_api.minor }}
-    {{- end }}
-    
-    {{- if .Values.deployments.discovery_streams.enabled }}
-    image_auto_update discovery_streams {{ .Values.deployments.discovery_streams.major }} {{ .Values.deployments.discovery_streams.minor }}
-    {{- end }}
-    
-    {{- if .Values.deployments.forklift.enabled }}
-    image_auto_update forklift {{ .Values.deployments.forklift.major }} {{ .Values.deployments.forklift.minor }}
-    {{- end }}
-
-    {{- if .Values.deployments.raptor.enabled }}
-    image_auto_update raptor {{ .Values.deployments.raptor.major }} {{ .Values.deployments.raptor.minor }}
-    {{- end }}
-    
-    {{- if .Values.deployments.reaper.enabled }}
-    image_auto_update reaper {{ .Values.deployments.reaper.major }} {{ .Values.deployments.reaper.minor }}
-    {{- end }}
-
-    {{- if .Values.deployments.valkyrie.enabled }}
-    image_auto_update valkyrie {{ .Values.deployments.valkyrie.major }} {{ .Values.deployments.valkyrie.minor }}
-    {{- end }}
+    image_auto_update alchemist
+    image_auto_update andi
+    image_auto_update discovery_api
+    image_auto_update discovery_streams
+    image_auto_update forklift
+    image_auto_update raptor
+    image_auto_update reaper
+    image_auto_update valkyrie
 
   deployment_update_script.sh: |
     #!/bin/bash
