@@ -34,6 +34,18 @@ data:
         ALL_TAGS=$(curl --location --request GET "https://hub.docker.com/v2/namespaces/smartcitiesdata/repositories/$APP_NAME/tags" | jq '.results | map(.name)')
         echo "ALL TAGS:"
         printf "%s \n\n" "$ALL_TAGS"
+    
+        DEPLOYMENT_NAME=$(kubectl get deployments | grep -m1 "$KUBERNETES_FORMATTED_APP_NAME" | cut -d ' ' -f 1)
+        echo "DEPLOYMENT_NAME:"
+        echo "$DEPLOYMENT_NAME"
+
+        MAJOR=$(kubectl get deployment $DEPLOYMENT_NAME -o jsonpath='{.metadata.annotations}' | jq '."docker.major"' | sed 's/"//g')
+        echo "MAJOR:"
+        printf "%s \n\n" "$MAJOR"
+
+        MINOR=$(kubectl get deployment $DEPLOYMENT_NAME -o jsonpath='{.metadata.annotations}' | jq '."docker.minor"' | sed 's/"//g')
+        echo "MINOR:"
+        printf "%s \n\n" "$MINOR"
         
         MATCHED_TAGS=$(echo "$ALL_TAGS" | jq "map(match(\"$MAJOR\\\.$MINOR\\\.([0-9]+)\"))")
         VALID_TAGS=$(echo "$MATCHED_TAGS" | jq "map(.string)")
@@ -82,17 +94,6 @@ data:
           echo "Pod $POD_NAME is not up-to-date."
           if [[ $TARGET_REMOTE_DIGEST == "$DEVELOPMENT_REMOTE_DIGEST" ]]; then
             echo "Newest patch of this Major/Minor matches development. Restarting deployment to trigger update"
-            DEPLOYMENT_NAME=$(kubectl get deployments | grep -m1 "$KUBERNETES_FORMATTED_APP_NAME" | cut -d ' ' -f 1)
-            echo "DEPLOYMENT_NAME:"
-            echo "$DEPLOYMENT_NAME"
-    
-            MAJOR=$(kubectl get deployment $DEPLOYMENT_NAME -o jsonpath='{.metadata.annotations}' | jq '."docker.major"' | sed 's/"//g')
-            echo "MAJOR:"
-            printf "%s \n\n" "$MAJOR"
-          
-            MINOR=$(kubectl get pod $DEPLOYMENT_NAME -o jsonpath='{.metadata.annotations}' | jq '."docker.minor"' | sed 's/"//g')
-            echo "MINOR:"
-            printf "%s \n\n" "$MINOR"
             
             kubectl rollout restart "deployment/$DEPLOYMENT_NAME"
             printf "\n\n\n\n\n"
