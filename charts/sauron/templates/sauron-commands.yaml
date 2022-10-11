@@ -43,7 +43,7 @@ data:
         echo "MAJOR:"
         printf "%s \n\n" "$MAJOR"
 
-        MINOR=$(kubectl get pod $DEPLOYMENT_NAME -o jsonpath='{.metadata.annotations}' | jq '."docker.minor"' | sed 's/"//g')
+        MINOR=$(kubectl get deployment $DEPLOYMENT_NAME -o jsonpath='{.metadata.annotations}' | jq '."docker.minor"' | sed 's/"//g')
         echo "MINOR:"
         printf "%s \n\n" "$MINOR"
         
