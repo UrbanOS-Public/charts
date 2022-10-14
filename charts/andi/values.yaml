@@ -69,14 +69,21 @@ postgres:
 auth:
   auth0_client_id: ""
   # if left empty, no secret will be created
-  # and {{ .Release.Name }}-raptor-auth0-client-secret will be referenced
+  # and {{ .Release.Name }}-andi-auth0-client-secret will be referenced
   auth0_client_secret: ""
 
 aws:
+  #################
+  # If these are left empty, no secret will be created.
+  # An existing {{ .Release.Name }}-andi-aws-credentials secret will be
+  #   referenced instead of utilizing accessKeyId and accessKeySecret to create
+  #   a secret.
+  #################
   # Overriden by global.objectStore.accessKey if present
   accessKeyId: ""
   # Overriden by global.objectStore.accessSecret if present
   accessKeySecret: ""
+  #################
   s3HostName: null
   s3Port: null
 
