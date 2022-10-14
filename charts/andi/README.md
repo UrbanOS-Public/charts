@@ -1,6 +1,6 @@
 # andi
 
-![Version: 2.2.10](https://img.shields.io/badge/Version-2.2.10-informational?style=flat-square)
+![Version: 2.2.12](https://img.shields.io/badge/Version-2.2.12-informational?style=flat-square)
 
 REST API to allow for dataset definition ingestion
 
@@ -20,8 +20,8 @@ REST API to allow for dataset definition ingestion
 | aws.s3HostName | string | `nil` |  |
 | aws.s3Port | string | `nil` |  |
 | documentationRoot | string | `""` |  |
-| footer.leftSideText | string | `"Some Left Side Text"` |  |
-| footer.links | string | `"[{\"linkText\":\"Example 1\", \"url\":\"https://www.example.com\"}, {\"linkText\":\"Example 2\", \"url\":\"https://www.google.com\"}]"` |  |
+| footer.leftSideText | string | `"© 2022 UrbanOS. All rights reserved."` |  |
+| footer.links | string | `"[{\"linkText\":\"Discovery UI\", \"url\":\"https://discovery.dev.apps.hsrqs9l3.eastus.aroapp.io/\"}, {\"linkText\":\"UrbanOS\", \"url\":\"https://github.com/UrbanOS-Public/smartcitiesdata\"}]"` |  |
 | fullnameOverride | string | `""` |  |
 | global.auth.auth0_domain | string | `""` |  |
 | global.auth.jwt_issuer | string | `""` |  |
