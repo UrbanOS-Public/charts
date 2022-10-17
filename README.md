@@ -41,13 +41,11 @@ Use our charts in two steps:
 
 
 
-# On the care and feeding of Vault
+###### On the care and feeding of Vault
 
 Vault is a service that we manage, so if anything goes wrong or down we need to be able to repair it quickly. The scripts in this file should help with that.
 
-## Common issues
-
-###### Add to this as we learn more
+###### Common issues
 
 - Secrets can't be saved or retrieved
     - The vault is probably sealed. Use the `unseal_vault.sh` script
@@ -57,7 +55,7 @@ Vault is a service that we manage, so if anything goes wrong or down we need to 
   ```
     - This is often caused by the vault pod(s) rolling
 
-## Vault installation
+###### Vault installation
 
 This section describes the manual steps needed to configure a fresh deployment of vault on our cluster.
 Here is an overview of the initialization steps:
@@ -68,12 +66,12 @@ Here is an overview of the initialization steps:
 - Apply urban-os specific configurations to the vault
 
 
-#### Deploy vault to the cluster
+###### Deploy vault to the cluster
 
 Vault is included in the urban-os charts repo. Simply deploy the urbanos charts
 to deploy an instance of High Availability, Openshift enabled vault.
 
-#### Vault cluster init
+###### Vault cluster init
 
 Initializing the vault will create the unseal keys and the root key.
 This only needs to be performed on a single pod of the cluster. After the main pod has been initialized,
@@ -101,9 +99,9 @@ Initial Root Token: [REDACTED]
 
 Store these keys in a secure place. You will not be able to retrieve them.
 
-### Vault Instance Setup
+###### Vault Instance Setup
 
-### Add replica to raft storage cluster
+###### Add replica to raft storage cluster
 
 Do this only for the replicas ({release-name}-vault-1, {release-name}-vault-2, etc.)
 
@@ -111,7 +109,7 @@ Do this only for the replicas ({release-name}-vault-1, {release-name}-vault-2, e
 vault operator raft join http://{release-name}-vault-0.{release-name}-vault-internal:8200
 ```
 
-### Unseal the vault via helper script
+###### Unseal the vault via helper script
 
 Unsealing a vault pod requires multiple keys be entered. For each vault pod on the cluster, run 
 the following command and enter a different unseal key each time.
@@ -142,26 +140,25 @@ Raft Committed Index    25
 Raft Applied Index      25
 ```
 
-## Vault configuration
+###### Vault configuration
 
 On {release-name}-vault-0,
 
-### Login to Vault as root
+###### Login to Vault as root
 
 ```sh
 vault login
 # use the root token above
 ```
 
-### Enable the KV secret engine
+###### Enable the KV secret engine
 This enables the ability to store key/value pairs from our elixir apps
 
 ```
-vault secrets enable secrets/smart_city
-vault secrets enable kv
+vault secrets enable -path=secrets/smart_city kv
 ```
 
-### Create policies
+###### Create policies
 
 These policies define a set of permissions. They will be bound to specific roles later.
 
@@ -189,7 +186,7 @@ EOF
 vault policy write andi_write_only ~/andi_write_only_policy.hcl
 ```
 
-### Enable Admin Login
+###### Enable Admin Login
 
 This enables "userpass" auth method, adds an admin user, sets a password, and binds it to the admin policy
 
@@ -201,7 +198,7 @@ vault write auth/userpass/users/admin password=$VAULT_ADMIN_PASSWORD policies=ad
 ```
 
 
-### Enables Kubernetes Service Account Login
+###### Enables Kubernetes Service Account Login
 
 This is the primary auth method urbanos uses. Allows for kubernetes service accounts
 to automatically authenticate to vault.
@@ -215,7 +212,7 @@ vault write auth/kubernetes/config \
     token_reviewer_jwt=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
 ```
 
-### Add service roles
+###### Add service roles
 
 These commands add roles for urbanos services that use vault. The roles are bound to
 a kubernetes service account, a kubernetes namespace, and a previously create policy.
