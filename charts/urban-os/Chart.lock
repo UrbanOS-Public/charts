@@ -45,7 +45,7 @@ dependencies:
   repository: file://../valkyrie
   version: 2.6.7
 - name: vault
-  repository: file://../vault
-  version: 1.3.5
-digest: sha256:47f8f6369c10478cea2d73c696e0d46f586940f8a1a0a9fe0c760ded667440db
-generated: "2022-10-14T09:41:24.092183-06:00"
+  repository: https://helm.releases.hashicorp.com
+  version: 0.22.0
+digest: sha256:37be0d6b58736b0cc70731028b407321864dbd0052da12cfa2387509442953db
+generated: "2022-10-17T12:03:05.545897-04:00"

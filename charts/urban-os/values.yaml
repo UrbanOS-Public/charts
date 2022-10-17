@@ -33,6 +33,15 @@ global:
     accessKey: []
     accessSecret: []
 
+vault:
+  global:
+    openshift: true
+
+  server:
+    ha:
+      enabled: true
+      raft:
+        enabled: true
 # -- See dependent chart for configuration details
 alchemist:
   enabled: true
