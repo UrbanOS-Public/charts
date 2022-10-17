@@ -13,7 +13,8 @@ global:
     password: ""
     sslEnabled: false
   vault:
-    endpoint: vault.vault:8200
+    # Should match the format {Release Name}-vault:8200
+    endpoint: "urban-os-vault:8200"
   ingress:
     rootDnsZone: localhost
     dnsZone: localhost
