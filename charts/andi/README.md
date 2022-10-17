@@ -22,7 +22,7 @@ REST API to allow for dataset definition ingestion
 | documentationRoot | string | `""` |  |
 | footer.leftSideLink | string | `"https://github.com/UrbanOS-Public/smartcitiesdata"` |  |
 | footer.leftSideText | string | `"© 2022 UrbanOS. All rights reserved."` |  |
-| footer.links | string | `"[{\"linkText\":\"Discovery UI\", \"url\":\"https://discovery.dev.apps.hsrqs9l3.eastus.aroapp.io/\"}, {\"linkText\":\"UrbanOS\", \"url\":\"https://github.com/UrbanOS-Public/smartcitiesdata\"}]"` |  |
+| footer.rightLinks | string | `"[{\"linkText\":\"Discovery UI\", \"url\":\"https://discovery.dev.apps.hsrqs9l3.eastus.aroapp.io/\"}, {\"linkText\":\"UrbanOS\", \"url\":\"https://github.com/UrbanOS-Public/smartcitiesdata\"}]"` |  |
 | fullnameOverride | string | `""` |  |
 | global.auth.auth0_domain | string | `""` |  |
 | global.auth.jwt_issuer | string | `""` |  |

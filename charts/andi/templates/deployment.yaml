@@ -140,8 +140,8 @@ spec:
             value: '{{  .Values.footer.leftSideText }}'
           - name: ANDI_FOOTER_LEFT_SIDE_LINK
             value: '{{  .Values.footer.leftSideLink }}'
-          - name: ANDI_FOOTER_LINKS
-            value: '{{  .Values.footer.links }}'
+          - name: ANDI_FOOTER_RIGHT_LINKS
+            value: '{{  .Values.footer.rightLinks }}'
           {{ if .Values.aws.s3HostName }}
           - name: S3_HOST_NAME
             value: {{ .Values.aws.s3HostName }}

@@ -23,7 +23,7 @@ A helm chart for the discovery ui
 | env.disc_ui_url | string | `"example.com"` |  |
 | env.footer_left_side_link | string | `"https://github.com/UrbanOS-Public/smartcitiesdata"` |  |
 | env.footer_left_side_text | string | `"© 2022 UrbanOS. All rights reserved."` |  |
-| env.footer_links | string | `"[{\"linkText\":\"UrbanOS\", \"url\":\"https://github.com/UrbanOS-Public/smartcitiesdata\"}]"` |  |
+| env.footer_right_links | string | `"[{\"linkText\":\"UrbanOS\", \"url\":\"https://github.com/UrbanOS-Public/smartcitiesdata\"}]"` |  |
 | env.gtm_id | string | `"GTM-EXAMPLE"` |  |
 | env.header_title | string | `"UrbanOS Data Discovery"` |  |
 | env.logo_url | string | `nil` |  |
