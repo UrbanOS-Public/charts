@@ -138,6 +138,8 @@ spec:
             value: '{{  .Values.theme.primaryColor }}'
           - name: ANDI_FOOTER_LEFT_SIDE_TEXT
             value: '{{  .Values.footer.leftSideText }}'
+          - name: ANDI_FOOTER_LEFT_SIDE_LINK
+            value: '{{  .Values.footer.leftSideLink }}'
           - name: ANDI_FOOTER_LINKS
             value: '{{  .Values.footer.links }}'
           {{ if .Values.aws.s3HostName }}

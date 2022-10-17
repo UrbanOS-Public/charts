@@ -4,7 +4,7 @@ dependencies:
   version: 1.0.4
 - name: andi
   repository: file://../andi
-  version: 2.2.13
+  version: 2.2.14
 - name: discovery-api
   repository: file://../discovery-api
   version: 1.4.5
@@ -13,7 +13,7 @@ dependencies:
   version: 1.1.4
 - name: discovery-ui
   repository: file://../discovery-ui
-  version: 1.4.6
+  version: 1.4.7
 - name: elasticsearch
   repository: https://helm.elastic.co
   version: 7.14.0
@@ -47,5 +47,5 @@ dependencies:
 - name: vault
   repository: file://../vault
   version: 1.3.5
-digest: sha256:47f8f6369c10478cea2d73c696e0d46f586940f8a1a0a9fe0c760ded667440db
-generated: "2022-10-14T09:41:24.092183-06:00"
+digest: sha256:ae9b8f58d88123aee0c3ce4ea4cd9b39bbbcf75f6253c56c4de4ef7256cb1a98
+generated: "2022-10-17T14:08:29.601403-05:00"
