@@ -44,7 +44,7 @@ Hadoop-less data platform for the Smart City OS
 | metastore.warehouseDir | string | `"hive-s3"` |  |
 | minio.deploy.container.image | string | `"minio/minio"` |  |
 | minio.deploy.container.pullPolicy | string | `"IfNotPresent"` |  |
-| minio.deploy.container.tag | string | `"RELEASE.2019-01-16T21-44-08Z"` |  |
+| minio.deploy.container.tag | string | `"RELEASE.2022-10-15T19-57-03Z"` |  |
 | minio.deploy.replicas | int | `1` |  |
 | minio.deploy.updateStrategy.rollingUpdate.maxSurge | int | `1` |  |
 | minio.deploy.updateStrategy.rollingUpdate.maxUnavailable | int | `1` |  |

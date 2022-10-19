@@ -126,7 +126,7 @@ minio:
     replicas: 1
     container:
       image: minio/minio
-      tag: RELEASE.2019-01-16T21-44-08Z
+      tag: RELEASE.2022-10-15T19-57-03Z
       pullPolicy: IfNotPresent
     updateStrategy:
       type: RollingUpdate
