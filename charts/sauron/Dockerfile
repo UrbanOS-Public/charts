@@ -19,3 +19,7 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
 RUN wget https://get.helm.sh/helm-v3.8.2-linux-amd64.tar.gz && \
     tar xvf helm-*-linux-amd64.tar.gz && \
     mv linux-amd64/helm /usr/local/bin
+
+#Install Kustomize
+RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash && \
+    mv ./kustomize /usr/local/bin
