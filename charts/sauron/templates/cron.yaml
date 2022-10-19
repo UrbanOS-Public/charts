@@ -39,6 +39,8 @@ spec:
                   value: {{ .Release.Namespace }}
                 - name: VALUES_FILE_FROM_REPO_ROOT
                   value: {{ .Values.remoteDeployment.valuesFileFromRepoRoot }}
+                - name: POST_RENDERER_FROM_REPO_ROOT
+                  value: {{ .Values.remoteDeployment.postRendererFromRepoRoot }}
                 - name: MANAGED_RELEASE_NAME
                   value: {{ .Values.config.managedReleaseName }}
                 {{ if .Values.global.objectStore.accessKey -}}
