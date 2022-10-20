@@ -40,7 +40,7 @@ spec:
           value: {{ .hiveStoragePath }}
           {{- end }}
         - name: S3_BUCKET_NAME
-          value: {{ .Values.global.objectStore.hiveStorageBucket }}
+          value: {{ .Values.global.buckets.hiveStorageBucket }}
           {{- with .Values.metastore.postgres }}
         - name: DATABASE_USER
           value: {{ .user }}
