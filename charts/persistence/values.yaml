@@ -3,9 +3,9 @@ global:
     host: minio
     port: 80
     accessKey: example-key
-    secretKey: example-secret
-    hiveStorageBucket: presto-hive-storage
+    accessSecret: example-secret
     hiveStoragePath: hive-s3
+    hiveStorageBucket: presto-hive-storage
 
 metastore:
   image:
