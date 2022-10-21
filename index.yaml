@@ -2358,6 +2358,14 @@ entries:
     version: 0.1.0
   persistence:
   - apiVersion: v1
+    created: "2022-10-21T07:04:49.914583845Z"
+    description: Data persistence for UrbanOS using Trino and the Hive Metastore
+    digest: e1be4ef1f2e1f1f5ba4f2e7b7f8265f8bbb318fe47cd8622908e1822b925182d
+    name: persistence
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/persistence-1.0.3/persistence-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v1
     created: "2022-10-03T14:37:25.214046997Z"
     description: Data persistence for UrbanOS using Trino and the Hive Metastore
     digest: 3facfa7cc567b53184b996c314093960c2e70d6d0078de1626dd1e1dfabb86fd
@@ -2789,6 +2797,81 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-10-21T07:04:50.096008107Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: file://../vault
+      version: '>= 1.0.0'
+    description: Master chart that deploys the UrbanOS platform. See the individual
+      dependency readmes for configuration options.
+    digest: d68a7759d61043603c5b7eba650ae2dc14928e2fe3806d09d1adc9af0d0a19db
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.13.1/urban-os-1.13.1.tgz
+    version: 1.13.1
   - apiVersion: v2
     appVersion: "1.0"
     created: "2022-10-17T19:42:00.13913652Z"
@@ -6371,4 +6454,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-19T22:25:45.068524959Z"
+generated: "2022-10-21T07:04:50.097387912Z"
