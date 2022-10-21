@@ -1,6 +1,6 @@
 # persistence
 
-![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square)
+![Version: 1.0.3](https://img.shields.io/badge/Version-1.0.3-informational?style=flat-square)
 
 Data persistence for UrbanOS using Trino and the Hive Metastore
 
@@ -8,12 +8,12 @@ Data persistence for UrbanOS using Trino and the Hive Metastore
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| global.s3.accessKey | string | `"example"` |  |
-| global.s3.hiveStorageBucket | string | `"hive-storage"` |  |
-| global.s3.hiveStoragePath | string | `nil` |  |
-| global.s3.host | string | `"example.com"` |  |
-| global.s3.port | int | `8000` |  |
-| global.s3.secretKey | string | `"example"` |  |
+| global.objectStore.accessKey | string | `"example-key"` |  |
+| global.objectStore.hiveStorageBucket | string | `"presto-hive-storage"` |  |
+| global.objectStore.hiveStoragePath | string | `"hive-s3"` |  |
+| global.objectStore.host | string | `"minio"` |  |
+| global.objectStore.port | int | `80` |  |
+| global.objectStore.secretKey | string | `"example-secret"` |  |
 | metastore.image.repository | string | `"quay.io/cloudservices/ubi-hive"` |  |
 | metastore.image.tag | string | `"3.1.2-metastore-009"` |  |
 | metastore.postgres.host | string | `"postgres"` |  |

@@ -1,11 +1,12 @@
 global:
-  s3:
-    host: example.com
-    port: 8000
-    accessKey: example
-    secretKey: example
-    hiveStorageBucket: hive-storage
-    hiveStoragePath:
+  buckets:
+    hiveStorageBucket: presto-hive-storage
+  objectStore:
+    host: minio
+    port: 80
+    accessKey: example-key
+    accessSecret: example-secret
+    hiveStoragePath: hive-s3
 
 metastore:
   image:
