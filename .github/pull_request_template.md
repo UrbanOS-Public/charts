@@ -13,6 +13,8 @@ What was changed
   - [ ] If charts within the urban-os chart (andi, etc) have been updated, have you run `helm dependency update` in /charts/urban-os and commited the Chart.lock file?
 - [ ] If chart values added, were default values provided in the chart? (Will `helm template . -f values.yaml` pass?)
 - [ ] Do you have git hooks installed? (See README.md to install)
+- [ ] If global values were altered, are they included as chart default values?
+  - [ ] Are they also specified in the urbanos chart values file?
 - [ ] If references to external charts were added:
   - [ ] Was the github release action updated to `helm update {new_thing}` it's dependencies?
   - [ ] Was the deploy repo `-u` flag updated to `helm update {new_thing}` to ensure it's not left out of deployments?
