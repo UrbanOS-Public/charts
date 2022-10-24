@@ -9,7 +9,7 @@ dependencies:
   - name: trino
     version: 0.8.0
     repository: https://trinodb.github.io/charts/
-  - name: minio-operator
+  - name: operator
     version: 4.5.3
     repository: https://operator.min.io/
-    condition: minio-operator.enabled
+    condition: operator.enabled
