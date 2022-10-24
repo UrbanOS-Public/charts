@@ -38,10 +38,28 @@ vault:
     openshift: true
 
   server:
+    resources:
+      limits:
+        memory: 256mi
+        cpu: 250m
+      requests:
+        memory: 256mi
+        cpu: 250m
+
     ha:
       enabled: true
       raft:
         enabled: true
+
+  injector:
+    resources:
+      limits:
+        memory: 256mi
+        cpu: 250m
+      requests:
+        memory: 256mi
+        cpu: 250m
+
 # -- See dependent chart for configuration details
 alchemist:
   enabled: true
