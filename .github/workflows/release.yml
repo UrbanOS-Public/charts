@@ -33,6 +33,7 @@ jobs:
           helm repo add elastic https://helm.elastic.co
           helm repo add strimzi http://strimzi.io/charts/
           helm repo add trinodb https://trinodb.github.io/charts/
+          helm repo add operator https://operator.min.io/
           helm repo update
           helm dependency update charts/kafka
           helm dependency update charts/persistence
