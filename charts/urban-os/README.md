@@ -1,6 +1,6 @@
 # urban-os
 
-![Version: 1.13.1](https://img.shields.io/badge/Version-1.13.1-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.13.3](https://img.shields.io/badge/Version-1.13.3-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 
@@ -47,7 +47,7 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | global.ingress.dnsZone | string | `"localhost"` | Domain name for the platform |
 | global.ingress.rootDnsZone | string | `"localhost"` | Root domain name for the platform. Often the same as `dnsZone` |
 | global.kafka.brokers | string | `"pipeline-kafka-bootstrap:9092"` | This is the default url for the kafka cluster deployed with the chart. Override this if you are using an external kafka cluster. |
-| global.objectStore | object | `{"accessKey":[],"accessSecret":[]}` | Key and Secret for connecting to Minio if it is enabled |
+| global.objectStore | object | `{"accessKey":[],"accessSecret":[],"hiveStoragePath":"","host":"","port":80}` | Connection info for connecting to s3 for the persistence layer |
 | global.presto.url | string | `"http://kubernetes-data-platform-presto:8080"` | This is the default url that presto is deployed to with the chart. Override this if you are using an external presto cluster. |
 | global.redis.host | string | `"redis.external-services"` | The url to a Redis instance. *Note*: Most apps in the platform require access to a Redis instance, and one is not currently included in the chart. |
 | global.redis.password | string | `""` |  |

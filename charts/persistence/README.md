@@ -1,19 +1,31 @@
 # persistence
 
-![Version: 1.0.3](https://img.shields.io/badge/Version-1.0.3-informational?style=flat-square)
+![Version: 1.0.4](https://img.shields.io/badge/Version-1.0.4-informational?style=flat-square)
 
 Data persistence for UrbanOS using Trino and the Hive Metastore
+
+## Source Code
+
+* <https://github.com/trinodb/trino>
+* <https://github.com/minio/operator>
+
+## Requirements
+
+| Repository | Name | Version |
+|------------|------|---------|
+| https://operator.min.io/ | minio-operator | 4.5.3 |
+| https://trinodb.github.io/charts/ | trino | 0.8.0 |
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| global.buckets.hiveStorageBucket | string | `"presto-hive-storage"` |  |
 | global.objectStore.accessKey | string | `"example-key"` |  |
-| global.objectStore.hiveStorageBucket | string | `"presto-hive-storage"` |  |
+| global.objectStore.accessSecret | string | `"example-secret"` |  |
 | global.objectStore.hiveStoragePath | string | `"hive-s3"` |  |
 | global.objectStore.host | string | `"minio"` |  |
 | global.objectStore.port | int | `80` |  |
-| global.objectStore.secretKey | string | `"example-secret"` |  |
 | metastore.image.repository | string | `"quay.io/cloudservices/ubi-hive"` |  |
 | metastore.image.tag | string | `"3.1.2-metastore-009"` |  |
 | metastore.postgres.host | string | `"postgres"` |  |
@@ -28,6 +40,8 @@ Data persistence for UrbanOS using Trino and the Hive Metastore
 | metastore.resources.limits.memory | string | `"2Gi"` |  |
 | metastore.resources.requests.cpu | int | `1` |  |
 | metastore.resources.requests.memory | string | `"2Gi"` |  |
+| minio-operator.enabled | bool | `false` |  |
+| minio-operator.operator.replicaCount | int | `1` |  |
 | trino.additionalCatalogs.hive | string | `"connector.name=hive-hadoop2\nhive.metastore.uri=thrift://hive-metastore:8000\nhive.metastore.username=padmin\nhive.metastore-timeout=360m\nhive.allow-drop-table=true\nhive.allow-rename-table=true\nhive.allow-drop-column=true\nhive.allow-rename-column=true\nhive.allow-add-column=true\nhive.s3.aws-access-key=EXAMPLE\nhive.s3.aws-secret-key=EXAMPLE\nhive.s3.path-style-access=true\nhive.s3.endpoint=http://minio:80\nhive.s3.ssl.enabled=false\n"` |  |
 | trino.coordinator.resources.limits.cpu | int | `1` |  |
 | trino.coordinator.resources.limits.memory | string | `"2Gi"` |  |
