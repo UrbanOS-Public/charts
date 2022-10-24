@@ -225,8 +225,8 @@ data:
         cat << EOT > secrets.yaml
     global:
       objectStore:
-        accessSecret: "{{ if .Values.global.objectStore.accessKey }}$GLOBAL_OBJECTSTORE_ACCESSKEY{{ end }}" 
-        accessKey: "{{ if .Values.global.objectStore.accessSecret }}$GLOBAL_OBJECTSTORE_ACCESSSECRET{{ end }}"
+        accessKey: "{{ if .Values.global.objectStore.accessKey }}$GLOBAL_OBJECTSTORE_ACCESSKEY{{ end }}"
+        accessSecret: "{{ if .Values.global.objectStore.accessSecret }}$GLOBAL_OBJECTSTORE_ACCESSSECRET{{ end }}" 
     andi:
       auth:
         auth0_client_secret: "{{ if .Values.remoteDeployment.secrets.andi.auth.auth0_client_secret }}$ANDI_AUTH0_CLIENT_SECRET{{ end }}"

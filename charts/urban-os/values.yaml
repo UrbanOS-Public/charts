@@ -28,10 +28,13 @@ global:
     dnsZone: "localhost"
     # -- Root domain name for the platform. Often the same as `dnsZone`
     rootDnsZone: "localhost"
-  # -- Key and Secret for connecting to Minio if it is enabled
+  # -- Connection info for connecting to s3 for the persistence layer
   objectStore:
+    host: ""
+    port: 80
     accessKey: []
     accessSecret: []
+    hiveStoragePath: ""
 
 vault:
   global:

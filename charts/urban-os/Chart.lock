@@ -31,7 +31,7 @@ dependencies:
   version: 1.7.3
 - name: persistence
   repository: file://../persistence
-  version: 1.0.2
+  version: 1.0.4
 - name: monitoring
   repository: file://../monitoring
   version: 1.1.1
@@ -47,5 +47,5 @@ dependencies:
 - name: vault
   repository: https://helm.releases.hashicorp.com
   version: 0.22.0
-digest: sha256:752ec3123770f59d14e0de61e8cd8265aba304792eb40dc91883c6f92c9c5b29
-generated: "2022-10-17T16:57:58.35835-04:00"
+digest: sha256:a21bb35c345c78f153e33531a0859687f56e82d2a03790b9b8ef774195ac2934
+generated: "2022-10-24T19:43:57.601153-04:00"
