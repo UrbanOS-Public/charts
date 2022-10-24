@@ -39,12 +39,6 @@ Use our charts in two steps:
 
 ### Vault
 
-
-
-###### On the care and feeding of Vault
-
-Vault is a service that we manage, so if anything goes wrong or down we need to be able to repair it quickly. The scripts in this file should help with that.
-
 ###### Common issues
 
 - Secrets can't be saved or retrieved
@@ -207,7 +201,7 @@ to automatically authenticate to vault.
 vault auth enable kubernetes
 
 vault write auth/kubernetes/config \
-    kubernetes_host=https://api.hsrqs9l3.eastus.aroapp.io:6443 \
+    kubernetes_host={result of kubectl cluster-info} \
     kubernetes_ca_cert=@/var/run/secrets/kubernetes.io/serviceaccount/ca.crt \
     token_reviewer_jwt=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
 ```
@@ -223,13 +217,13 @@ have the permissions specified in the policy.
 ```
 vault write auth/kubernetes/role/reaper-role \
     bound_service_account_names=reaper \
-    bound_service_account_namespaces=dev \
+    bound_service_account_namespaces={namespace} \
     policies=reaper_aws,dataset_access_keys \
     ttl=2m
 
 vault write auth/kubernetes/role/andi-role \
     bound_service_account_names=andi \
-    bound_service_account_namespaces=dev \
+    bound_service_account_namespaces={namespace} \
     policies=andi_auth0,andi_write_only,andi_aws_keys \
     ttl=2m
 ```
