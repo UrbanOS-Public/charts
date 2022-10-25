@@ -47,6 +47,16 @@ entries:
     version: 1.0.1
   andi:
   - apiVersion: v1
+    created: "2022-10-25T13:51:05.643307152Z"
+    description: REST API to allow for dataset definition ingestion
+    digest: 82785750a9ea2b59af75b9dfee2db44e449d5d2418a96b3685716aa5fd3a72df
+    name: andi
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/andi
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/andi-2.3.1/andi-2.3.1.tgz
+    version: 2.3.1
+  - apiVersion: v1
     created: "2022-10-17T19:41:59.740778184Z"
     description: REST API to allow for dataset definition ingestion
     digest: 6fdf95e682dd5cbe12097bf51abf30e3eca3af06333b9f6473b6c5aff2e5d54f
@@ -2357,6 +2367,25 @@ entries:
     - odo-0.1.0.tgz
     version: 0.1.0
   persistence:
+  - apiVersion: v2
+    created: "2022-10-25T13:51:05.842393613Z"
+    dependencies:
+    - name: trino
+      repository: https://trinodb.github.io/charts/
+      version: 0.8.0
+    - condition: operator.enabled
+      name: operator
+      repository: https://operator.min.io/
+      version: 4.5.3
+    description: Data persistence for UrbanOS using Trino and the Hive Metastore
+    digest: 8276d8beff9bd2e7d55aa94ea9d2c566d92194b1c5b44b272e223a7d50fd8955
+    name: persistence
+    sources:
+    - https://github.com/trinodb/trino
+    - https://github.com/minio/operator
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/persistence-1.0.5/persistence-1.0.5.tgz
+    version: 1.0.5
   - apiVersion: v1
     created: "2022-10-21T07:04:49.914583845Z"
     description: Data persistence for UrbanOS using Trino and the Hive Metastore
@@ -2523,6 +2552,18 @@ entries:
     - raptor-1.0.0.tgz
     version: 1.0.0
   reaper:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2022-10-25T13:51:06.036585837Z"
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
+    digest: 902888e6ee49c4eda9a1446b52d062fc7285df0fc137a902b5120519ab0bfdeb
+    name: reaper
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/reaper
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/reaper-1.2.8/reaper-1.2.8.tgz
+    version: 1.2.8
   - apiVersion: v1
     appVersion: "1.0"
     created: "2022-10-11T14:50:16.983486113Z"
@@ -2797,6 +2838,81 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-10-25T13:51:06.27533383Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.22.0
+    description: Master chart that deploys the UrbanOS platform. See the individual
+      dependency readmes for configuration options.
+    digest: 8203bbbd5ef528e6ae03b5c88d347691af7f9f71950c06775d4bef68e782e498
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.13.5/urban-os-1.13.5.tgz
+    version: 1.13.5
   - apiVersion: v2
     appVersion: "1.0"
     created: "2022-10-21T07:04:50.096008107Z"
@@ -6454,4 +6570,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-21T07:04:50.097387912Z"
+generated: "2022-10-25T13:51:06.277114044Z"
