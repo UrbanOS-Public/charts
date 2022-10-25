@@ -43,10 +43,10 @@ vault:
   server:
     resources:
       limits:
-        memory: 256mi
+        memory: 256Mi
         cpu: 250m
       requests:
-        memory: 256mi
+        memory: 256Mi
         cpu: 250m
 
     ha:
@@ -57,10 +57,10 @@ vault:
   injector:
     resources:
       limits:
-        memory: 256mi
+        memory: 256Mi
         cpu: 250m
       requests:
-        memory: 256mi
+        memory: 256Mi
         cpu: 250m
 
 # -- See dependent chart for configuration details
