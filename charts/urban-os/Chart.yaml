@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 name: urban-os
-version: 1.13.3
+version: 1.13.4
 
 dependencies:
   - name: alchemist
@@ -66,6 +66,6 @@ dependencies:
     condition: valkyrie.enabled
     version: ">= 1.0.0"
   - name: vault
-    repository: file://../vault
+    repository: https://helm.releases.hashicorp.com
     condition: vault.enabled
-    version: ">= 1.0.0"
+    version: "0.22.0"
