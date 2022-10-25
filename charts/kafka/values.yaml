@@ -61,3 +61,6 @@ resizeHook:
 limitRange:
   # Create a custom limit range
   enabled: true
+
+kafkaExporter:
+  enabled: true

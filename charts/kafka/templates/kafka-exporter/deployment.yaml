@@ -1,3 +1,4 @@
+{{- if .Values.kafkaExporter.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -32,4 +33,4 @@ spec:
             requests:
               memory: 512Mi
               cpu: 300m
-
+{{- end }}
