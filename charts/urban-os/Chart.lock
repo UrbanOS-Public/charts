@@ -25,7 +25,7 @@ dependencies:
   version: 3.1.13
 - name: kafka
   repository: file://../kafka
-  version: 1.2.12
+  version: 1.2.13
 - name: kubernetes-data-platform
   repository: file://../kubernetes-data-platform
   version: 1.7.3
@@ -47,5 +47,5 @@ dependencies:
 - name: vault
   repository: https://helm.releases.hashicorp.com
   version: 0.22.0
-digest: sha256:3e7866bd62c2bfcade812ca1318713123552b563917293b892835ac71f3a1be6
-generated: "2022-10-25T09:49:36.161928-04:00"
+digest: sha256:b9f3294ab8f9c66ad0fb6c77542ea47bf8bb27bd24243823061e2a2870e9996c
+generated: "2022-10-25T20:00:50.647554-06:00"
