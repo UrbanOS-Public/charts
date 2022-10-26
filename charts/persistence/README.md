@@ -1,6 +1,6 @@
 # persistence
 
-![Version: 1.0.4](https://img.shields.io/badge/Version-1.0.4-informational?style=flat-square)
+![Version: 1.0.6](https://img.shields.io/badge/Version-1.0.6-informational?style=flat-square)
 
 Data persistence for UrbanOS using Trino and the Hive Metastore
 
