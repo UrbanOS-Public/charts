@@ -1,6 +1,6 @@
 # andi
 
-![Version: 2.3.0](https://img.shields.io/badge/Version-2.3.0-informational?style=flat-square)
+![Version: 2.3.1](https://img.shields.io/badge/Version-2.3.1-informational?style=flat-square)
 
 REST API to allow for dataset definition ingestion
 
@@ -37,7 +37,7 @@ REST API to allow for dataset definition ingestion
 | global.redis.passwordSecret | string | `""` |  |
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
-| global.vault.endpoint | string | `"vault.vault:8200"` |  |
+| global.vault.endpoint | string | `"urban-os-vault:8200"` |  |
 | image.majorPin | string | `""` |  |
 | image.minorPin | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |

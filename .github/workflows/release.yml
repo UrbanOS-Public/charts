@@ -34,6 +34,7 @@ jobs:
           helm repo add strimzi http://strimzi.io/charts/
           helm repo add trinodb https://trinodb.github.io/charts/
           helm repo add operator https://operator.min.io/
+          helm repo add hashicorp https://helm.releases.hashicorp.com
           helm repo update
           helm dependency update charts/kafka
           helm dependency update charts/persistence

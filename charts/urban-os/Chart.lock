@@ -4,7 +4,7 @@ dependencies:
   version: 1.0.4
 - name: andi
   repository: file://../andi
-  version: 2.3.0
+  version: 2.3.1
 - name: discovery-api
   repository: file://../discovery-api
   version: 1.4.5
@@ -31,7 +31,7 @@ dependencies:
   version: 1.7.3
 - name: persistence
   repository: file://../persistence
-  version: 1.0.4
+  version: 1.0.5
 - name: monitoring
   repository: file://../monitoring
   version: 1.1.1
@@ -40,12 +40,12 @@ dependencies:
   version: 1.1.7
 - name: reaper
   repository: file://../reaper
-  version: 1.2.7
+  version: 1.2.8
 - name: valkyrie
   repository: file://../valkyrie
   version: 2.6.7
 - name: vault
-  repository: file://../vault
-  version: 1.3.5
-digest: sha256:26c82d6b1f19c227fc7f224384e6caa25eee43bbb8dc076827ac52ff135c2990
-generated: "2022-10-24T18:15:18.158602-06:00"
+  repository: https://helm.releases.hashicorp.com
+  version: 0.22.0
+digest: sha256:3e7866bd62c2bfcade812ca1318713123552b563917293b892835ac71f3a1be6
+generated: "2022-10-25T09:49:36.161928-04:00"
