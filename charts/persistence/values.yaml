@@ -95,6 +95,9 @@ tenant:
         servers: 1
         storageClassName: managed-premium
         volumesPerServer: 2
+        securityContext:
+          runAsGroup: 1000670000
+          runAsUser: 1000670000
     log:
       serviceAccountName: minio-operator
       db:
