@@ -6,6 +6,8 @@ global:
     port: 80
     accessKey: example-key
     accessSecret: example-secret
+    # metastore will create this folder in the hiveStorageBucket.
+    #   do not create it yourself or that will cause ownership conflict.
     hiveStoragePath: hive-s3
 
 metastore:
