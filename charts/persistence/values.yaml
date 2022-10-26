@@ -73,4 +73,32 @@ trino:
 # minio operator
 operator:
   enabled: false
-  replicaCount: 1
+  operator:
+    replicaCount: 1
+    resources:
+      requests:
+        cpu: 200m
+        memory: 256Mi
+        ephemeral-storage: 500Mi
+      limits:
+        cpu: 200m
+        memory: 256Mi
+        ephemeral-storage: 500Mi
+
+tenant:
+  enabled: false
+  tenant:
+    pools:
+      - name: pool-0
+        servers: 1
+        storageClassName: managed-premium
+        volumesPerServer: 2
+    log:
+      serviceAccountName: minio-operator
+      db:
+        serviceAccountName: trino
+        volumeClaimTemplate:
+          spec:
+            storageClassName: managed-premium
+    prometheus:
+      storageClassName: managed-premium

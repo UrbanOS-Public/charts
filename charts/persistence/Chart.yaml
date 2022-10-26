@@ -13,3 +13,7 @@ dependencies:
     version: 4.5.3
     repository: https://operator.min.io/
     condition: operator.enabled
+  - name: tenant
+    version: 4.5.3
+    repository: https://operator.min.io/
+    condition: tenant.enabled
