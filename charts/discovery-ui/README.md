@@ -1,6 +1,6 @@
 # discovery-ui
 
-![Version: 1.5.0](https://img.shields.io/badge/Version-1.5.0-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.5.1](https://img.shields.io/badge/Version-1.5.1-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A helm chart for the discovery ui
 
@@ -40,6 +40,10 @@ A helm chart for the discovery ui
 | ingress.annotations | string | `nil` |  |
 | ingress.enabled | bool | `true` |  |
 | nodeSelector | object | `{}` |  |
+| resources.limits.cpu | string | `"500m"` |  |
+| resources.limits.memory | string | `"1028Mi"` |  |
+| resources.requests.cpu | string | `"500m"` |  |
+| resources.requests.memory | string | `"1028Mi"` |  |
 | service.name | string | `"discovery-ui"` |  |
 | service.port | int | `80` |  |
 | service.type | string | `"NodePort"` |  |
