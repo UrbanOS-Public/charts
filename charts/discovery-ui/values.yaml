@@ -18,8 +18,11 @@ image:
 
 env:
   api_host: "https://data.example.com"
-  #contribute_host: "https://sharedata.example.com" #Optional location for an associated public Andi deployment
-  gtm_id: "GTM-EXAMPLE"
+  # Optional: location for an associated public Andi deployment
+  # Ex: https://andi.example.com
+  contribute_host: ""
+  # Optional: Google Tag Manager ID
+  gtm_id: ""
   # the host domain where urbanos is deployed
   # used in react_discovery_ui for websocket command
   base_url: "example.com"
