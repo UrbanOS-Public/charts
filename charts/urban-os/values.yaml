@@ -36,82 +36,58 @@ global:
     accessSecret: []
     hiveStoragePath: ""
 
-vault:
-  global:
-    openshift: true
-
-  server:
-    resources:
-      limits:
-        memory: 256Mi
-        cpu: 250m
-      requests:
-        memory: 256Mi
-        cpu: 250m
-
-    ha:
-      enabled: true
-      raft:
-        enabled: true
-
-  injector:
-    resources:
-      limits:
-        memory: 256Mi
-        cpu: 250m
-      requests:
-        memory: 256Mi
-        cpu: 250m
 
 # -- See dependent chart for configuration details
 alchemist:
   enabled: true
-# -- See dependent chart for configuration details
-forklift:
-  fullnameOverride: forklift
-  enabled: true
-# -- See dependent chart for configuration details
-reaper:
-  fullnameOverride: reaper
-  enabled: true
-# -- See dependent chart for configuration details
-valkyrie:
-  fullnameOverride: valkyrie
-  enabled: true
-  replicaCount: 1
+
+
 # -- See dependent chart for configuration details
 andi:
   fullnameOverride: andi
   enabled: true
-kafka:
-  enabled: true
+
+
 # -- See dependent chart for configuration details
 discovery-api:
+  enabled: true
   elasticsearch:
     # -- This is the default location of the chart-provided elasticsearch instance
     host: elasticsearch-master:9200
     # -- Set this to true to require the api to connect to elasticsearch via https.
     # TLS must be configured on the elasticsearch cluster
     tls: false
-  enabled: true
-# -- See dependent chart for configuration details
-discovery-ui:
-  enabled: true
+
+
 # -- See dependent chart for configuration details
 discovery-streams:
   enabled: true
+
+
 # -- See dependent chart for configuration details
-raptor:
-  fullnameOverride: raptor
+discovery-ui:
   enabled: true
 
-# -- By default monitoring is disabled as it is optional,
-# but we recommend it be enabled for production deployments
-monitoring:
-  enabled: false
 
-persistence:
+# -- By default, the urbanOS chart stands up its own elasticsearch instance.
+# Disable this if you plan to provide your own.
+# TLS will be disabled by default, but can be configured using the chart
+#   documentation below
+# https://github.com/elastic/helm-charts/tree/master/elasticsearch#configuration
+elasticsearch:
   enabled: true
+  replicas: 2
+
+
+# -- See dependent chart for configuration details
+forklift:
+  fullnameOverride: forklift
+  enabled: true
+
+
+kafka:
+  enabled: true
+
 
 kubernetes-data-platform:
   enabled: false
@@ -151,11 +127,131 @@ kubernetes-data-platform:
     # -- Minio is an experimental way to gain platform independence from S3
     enable: false
 
-# -- By default, the urbanOS chart stands up its own elasticsearch instance.
-# Disable this if you plan to provide your own.
-# TLS will be disabled by default, but can be configured using the chart
-#   documentation below
-# https://github.com/elastic/helm-charts/tree/master/elasticsearch#configuration
-elasticsearch:
+
+minio-operator:
   enabled: true
-  replicas: 2
+  operator:
+    replicaCount: 1
+    resources:
+      requests:
+        cpu: 200m
+        memory: 256Mi
+        ephemeral-storage: 500Mi
+      limits:
+        cpu: 200m
+        memory: 256Mi
+        ephemeral-storage: 500Mi
+
+minio-tenant:
+  enabled: true
+  secrets: false
+  tenant:
+    configuration:
+      name: minio1-env-configuration
+    buckets:
+      - name: "presto-hive-storage"
+    exposeServices:
+      console: true
+      minio: true
+    log:
+      db:
+        volumeClaimTemplate:
+          spec:
+            storageClassName: managed-premium
+    prometheus:
+      storageClassName: managed-premium
+    pools:
+      - affinity:
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: v1.min.io/tenant
+                    operator: In
+                    values:
+                      - minio1
+                  - key: v1.min.io/pool
+                    operator: In
+                    values:
+                      - pool-0
+              topologyKey: kubernetes.io/hostname
+        name: pool-0
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 1Gi
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+        securityContext: { }
+        servers: 1
+        storageClassName: managed-premium
+        volumesPerServer: 4
+    certificate:
+      requestAutoCert: false
+    users:
+    - name: tenant-user-0
+
+# -- By default monitoring is disabled as it is optional,
+# but we recommend it be enabled for production deployments
+monitoring:
+  enabled: false
+
+
+persistence:
+  enabled: true
+
+
+# -- See dependent chart for configuration details
+raptor:
+  fullnameOverride: raptor
+  enabled: true
+
+
+# -- See dependent chart for configuration details
+reaper:
+  fullnameOverride: reaper
+  enabled: true
+
+
+secrets:
+  minio:
+    base64UserAccessKey: "inject-during-deployment"
+    base64UserSecretKey: "inject-during-deployment"
+    rootUserName: "inject-during-deployment"
+    rootPassword: "inject-during-deployment"
+
+
+vault:
+  global:
+    openshift: true
+
+  server:
+    resources:
+      limits:
+        memory: 256Mi
+        cpu: 250m
+      requests:
+        memory: 256Mi
+        cpu: 250m
+
+    ha:
+      enabled: true
+      raft:
+        enabled: true
+
+  injector:
+    resources:
+      limits:
+        memory: 256Mi
+        cpu: 250m
+      requests:
+        memory: 256Mi
+        cpu: 250m
+
+
+# -- See dependent chart for configuration details
+valkyrie:
+  fullnameOverride: valkyrie
+  enabled: true
+  replicaCount: 1

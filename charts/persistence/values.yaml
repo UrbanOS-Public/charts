@@ -69,41 +69,5 @@ trino:
       hive.s3.aws-access-key=EXAMPLE
       hive.s3.aws-secret-key=EXAMPLE
       hive.s3.path-style-access=true
-      hive.s3.endpoint=http://minio:80
+      hive.s3.endpoint=https://minio:443
       hive.s3.ssl.enabled=false
-
-# minio operator
-operator:
-  enabled: false
-  operator:
-    replicaCount: 1
-    resources:
-      requests:
-        cpu: 200m
-        memory: 256Mi
-        ephemeral-storage: 500Mi
-      limits:
-        cpu: 200m
-        memory: 256Mi
-        ephemeral-storage: 500Mi
-
-tenant:
-  enabled: false
-  tenant:
-    pools:
-      - name: pool-0
-        servers: 1
-        storageClassName: managed-premium
-        volumesPerServer: 2
-        securityContext:
-          runAsGroup: 1000670000
-          runAsUser: 1000670000
-    log:
-      serviceAccountName: minio-operator
-      db:
-        serviceAccountName: trino
-        volumeClaimTemplate:
-          spec:
-            storageClassName: managed-premium
-    prometheus:
-      storageClassName: managed-premium
