@@ -71,8 +71,3 @@ trino:
       hive.s3.path-style-access=true
       hive.s3.endpoint=http://minio:80
       hive.s3.ssl.enabled=false
-
-# minio operator
-operator:
-  enabled: false
-  replicaCount: 1

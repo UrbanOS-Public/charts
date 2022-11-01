@@ -228,6 +228,23 @@ vault write auth/kubernetes/role/andi-role \
     ttl=2m
 ```
 
+### Minio
+
+Minio operator and tenant is managed as an external dependency. The operator needs to be installed 
+first, then a subsequent deployment is needed to install the tenant.
+
+There is a known bug regarding the log-search-api failing after destroying/recreating a tenant.
+
+Source: https://github.com/minio/operator/issues/1220
+
+Fix:
+```
+NS={Namesapce}
+TENANT_NAME={tenant name}
+kubectl exec -n $NS ${TENANT_NAME}-log-0 -c log-search-pg -- psql -U postgres -c "ALTER USER postgres WITH PASSWORD '$(kubectl get secret -n $NS ${TENANT_NAME}-log-secret -o jsonpath={.data.POSTGRES_PASSWORD} | base64 --decode)';"
+```
+
+
 
 ### Sauron
 

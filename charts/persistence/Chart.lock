@@ -1,9 +1,0 @@
-dependencies:
-- name: trino
-  repository: https://trinodb.github.io/charts/
-  version: 0.8.0
-- name: operator
-  repository: https://operator.min.io/
-  version: 4.5.3
-digest: sha256:5696b453b38d62e92dba8e85cdaac2a6325493c088ee8ddc93e9e4c4e4ec4562
-generated: "2022-10-24T11:37:34.362422-05:00"

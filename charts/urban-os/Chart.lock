@@ -31,7 +31,7 @@ dependencies:
   version: 1.7.3
 - name: persistence
   repository: file://../persistence
-  version: 1.0.6
+  version: 1.0.7
 - name: monitoring
   repository: file://../monitoring
   version: 1.1.1
@@ -47,5 +47,11 @@ dependencies:
 - name: vault
   repository: https://helm.releases.hashicorp.com
   version: 0.22.0
-digest: sha256:eb5ea1382f83683536354369d08f460751453949219b2286f62d50e2fd598e99
-generated: "2022-10-25T22:35:25.608816-06:00"
+- name: operator
+  repository: https://operator.min.io/
+  version: 4.5.3
+- name: tenant
+  repository: https://operator.min.io/
+  version: 4.5.3
+digest: sha256:e4bb13cf58e10e6d10fcf27019ed7035ae97a97481f8d2d0820e25a96c91e4a2
+generated: "2022-10-28T10:34:57.1135-04:00"
