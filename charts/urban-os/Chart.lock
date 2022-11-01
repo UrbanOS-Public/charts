@@ -13,7 +13,7 @@ dependencies:
   version: 1.1.4
 - name: discovery-ui
   repository: file://../discovery-ui
-  version: 1.5.1
+  version: 1.5.2
 - name: elasticsearch
   repository: https://helm.elastic.co
   version: 7.14.0
@@ -47,5 +47,5 @@ dependencies:
 - name: vault
   repository: https://helm.releases.hashicorp.com
   version: 0.22.0
-digest: sha256:26027db9aee566d9709c836ebe407eb6a0a86e0160dd9a47b1f6620ce2952b39
-generated: "2022-10-27T00:50:28.893845-06:00"
+digest: sha256:3863efd9c1a30408123265056dcbc08bd2db4c7b2c53564079c18089ebe6f9d5
+generated: "2022-11-01T01:50:28.806128-06:00"

@@ -31,6 +31,9 @@ spec:
         - mountPath: /usr/share/nginx/html/config.js
           name: discovery-ui-configs
           subPath: config.js
+        - mountPath: /etc/nginx/conf.d/nginx-csps.conf
+          name: discovery-ui-configs
+          subPath: nginx-csps.conf
 {{- with .Values.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}
