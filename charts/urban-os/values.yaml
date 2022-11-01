@@ -153,13 +153,6 @@ minio-tenant:
     exposeServices:
       console: true
       minio: true
-    log:
-      db:
-        volumeClaimTemplate:
-          spec:
-            storageClassName: managed-premium
-    prometheus:
-      storageClassName: managed-premium
     pools:
       - affinity:
           podAntiAffinity:
@@ -176,17 +169,16 @@ minio-tenant:
                       - pool-0
               topologyKey: kubernetes.io/hostname
         name: pool-0
-        resources:
-          requests:
-            cpu: 1000m
-            memory: 1Gi
-          limits:
-            cpu: 1000m
-            memory: 1Gi
-        securityContext: { }
         servers: 1
-        storageClassName: managed-premium
+        storageClassName: standard
         volumesPerServer: 4
+        resources:
+          limits:
+            memory: 2Gi
+            cpu: 500m
+          requests:
+            memory: 2Gi
+            cpu: 500m
     certificate:
       requestAutoCert: false
     users:

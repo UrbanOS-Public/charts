@@ -86,7 +86,6 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | minio-tenant.tenant.configuration.name | string | `"minio1-env-configuration"` |  |
 | minio-tenant.tenant.exposeServices.console | bool | `true` |  |
 | minio-tenant.tenant.exposeServices.minio | bool | `true` |  |
-| minio-tenant.tenant.log.db.volumeClaimTemplate.spec.storageClassName | string | `"managed-premium"` |  |
 | minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].key | string | `"v1.min.io/tenant"` |  |
 | minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].operator | string | `"In"` |  |
 | minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].values[0] | string | `"minio1"` |  |
@@ -95,15 +94,13 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[1].values[0] | string | `"pool-0"` |  |
 | minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].topologyKey | string | `"kubernetes.io/hostname"` |  |
 | minio-tenant.tenant.pools[0].name | string | `"pool-0"` |  |
-| minio-tenant.tenant.pools[0].resources.limits.cpu | string | `"1000m"` |  |
-| minio-tenant.tenant.pools[0].resources.limits.memory | string | `"1Gi"` |  |
-| minio-tenant.tenant.pools[0].resources.requests.cpu | string | `"1000m"` |  |
-| minio-tenant.tenant.pools[0].resources.requests.memory | string | `"1Gi"` |  |
-| minio-tenant.tenant.pools[0].securityContext | object | `{}` |  |
+| minio-tenant.tenant.pools[0].resources.limits.cpu | string | `"500m"` |  |
+| minio-tenant.tenant.pools[0].resources.limits.memory | string | `"2Gi"` |  |
+| minio-tenant.tenant.pools[0].resources.requests.cpu | string | `"500m"` |  |
+| minio-tenant.tenant.pools[0].resources.requests.memory | string | `"2Gi"` |  |
 | minio-tenant.tenant.pools[0].servers | int | `1` |  |
-| minio-tenant.tenant.pools[0].storageClassName | string | `"managed-premium"` |  |
+| minio-tenant.tenant.pools[0].storageClassName | string | `"standard"` |  |
 | minio-tenant.tenant.pools[0].volumesPerServer | int | `4` |  |
-| minio-tenant.tenant.prometheus.storageClassName | string | `"managed-premium"` |  |
 | minio-tenant.tenant.users[0].name | string | `"tenant-user-0"` |  |
 | monitoring | object | `{"enabled":false}` | By default monitoring is disabled as it is optional, but we recommend it be enabled for production deployments |
 | persistence.enabled | bool | `true` |  |

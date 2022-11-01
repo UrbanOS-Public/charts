@@ -39,7 +39,7 @@ Data persistence for UrbanOS using Trino and the Hive Metastore
 | metastore.resources.limits.memory | string | `"2Gi"` |  |
 | metastore.resources.requests.cpu | int | `1` |  |
 | metastore.resources.requests.memory | string | `"2Gi"` |  |
-| trino.additionalCatalogs.hive | string | `"connector.name=hive-hadoop2\nhive.metastore.uri=thrift://hive-metastore:8000\nhive.metastore.username=padmin\nhive.metastore-timeout=360m\nhive.allow-drop-table=true\nhive.allow-rename-table=true\nhive.allow-drop-column=true\nhive.allow-rename-column=true\nhive.allow-add-column=true\nhive.s3.aws-access-key=EXAMPLE\nhive.s3.aws-secret-key=EXAMPLE\nhive.s3.path-style-access=true\nhive.s3.endpoint=https://minio:443\nhive.s3.ssl.enabled=false\n"` |  |
+| trino.additionalCatalogs.hive | string | `"connector.name=hive-hadoop2\nhive.metastore.uri=thrift://hive-metastore:8000\nhive.metastore.username=padmin\nhive.metastore-timeout=360m\nhive.allow-drop-table=true\nhive.allow-rename-table=true\nhive.allow-drop-column=true\nhive.allow-rename-column=true\nhive.allow-add-column=true\nhive.s3.aws-access-key=EXAMPLE\nhive.s3.aws-secret-key=EXAMPLE\nhive.s3.path-style-access=true\nhive.s3.endpoint=http://minio:80\nhive.s3.ssl.enabled=false\n"` |  |
 | trino.coordinator.resources.limits.cpu | int | `1` |  |
 | trino.coordinator.resources.limits.memory | string | `"2Gi"` |  |
 | trino.coordinator.resources.requests.cpu | int | `1` |  |
