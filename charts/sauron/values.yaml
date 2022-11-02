@@ -39,3 +39,9 @@ remoteDeployment:
         guardianSecretKey: ""
       postgres:
         password: ""
+
+    minio:
+      base64UserAccessKey: ""
+      base64UserSecretKey: ""
+      rootUserName: ""
+      rootPassword: ""

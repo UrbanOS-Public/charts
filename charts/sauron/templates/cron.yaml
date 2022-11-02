@@ -82,6 +82,14 @@ spec:
                 {{- if .Values.remoteDeployment.proxyAccountPAT -}}
                 - name: SAURON_PROXY_PAT
                   value: "{{ .Values.remoteDeployment.proxyAccountPAT }}"
+                {{ end -}}
+                {{- if .Values.remoteDeployment.secrets.minio.rootUserName -}}
+                - name: MINIO_ROOT_USERNAME
+                  value: "{{ .Values.remoteDeployment.secrets.minio.rootUserName }}"
+                {{ end -}}
+                {{- if .Values.remoteDeployment.secrets.minio.rootPassword -}}
+                - name: MINIO_ROOT_PASSWORD
+                  value: "{{ .Values.remoteDeployment.secrets.minio.rootPassword }}"
                 {{ end }}
               command:
                 - "/bin/bash"
