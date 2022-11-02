@@ -24,6 +24,8 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | file://../valkyrie | valkyrie | >= 1.0.0 |
 | https://helm.elastic.co | elasticsearch | 7.14.0 |
 | https://helm.releases.hashicorp.com | vault | 0.22.0 |
+| https://operator.min.io/ | minio-operator(operator) | 4.5.3 |
+| https://operator.min.io/ | minio-tenant(tenant) | 4.5.3 |
 
 ## Values
 
@@ -69,10 +71,45 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | kubernetes-data-platform.presto.task.writerCount | int | `1` |  |
 | kubernetes-data-platform.presto.useJmxExporter | bool | `true` |  |
 | kubernetes-data-platform.presto.workers | int | `2` |  |
+| minio-operator.enabled | bool | `true` |  |
+| minio-operator.operator.replicaCount | int | `1` |  |
+| minio-operator.operator.resources.limits.cpu | string | `"200m"` |  |
+| minio-operator.operator.resources.limits.ephemeral-storage | string | `"500Mi"` |  |
+| minio-operator.operator.resources.limits.memory | string | `"256Mi"` |  |
+| minio-operator.operator.resources.requests.cpu | string | `"200m"` |  |
+| minio-operator.operator.resources.requests.ephemeral-storage | string | `"500Mi"` |  |
+| minio-operator.operator.resources.requests.memory | string | `"256Mi"` |  |
+| minio-tenant.enabled | bool | `true` |  |
+| minio-tenant.secrets | bool | `false` |  |
+| minio-tenant.tenant.buckets[0].name | string | `"presto-hive-storage"` |  |
+| minio-tenant.tenant.certificate.requestAutoCert | bool | `false` |  |
+| minio-tenant.tenant.configuration.name | string | `"minio1-env-configuration"` |  |
+| minio-tenant.tenant.exposeServices.console | bool | `true` |  |
+| minio-tenant.tenant.exposeServices.minio | bool | `true` |  |
+| minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].key | string | `"v1.min.io/tenant"` |  |
+| minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].operator | string | `"In"` |  |
+| minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].values[0] | string | `"minio1"` |  |
+| minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[1].key | string | `"v1.min.io/pool"` |  |
+| minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[1].operator | string | `"In"` |  |
+| minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[1].values[0] | string | `"pool-0"` |  |
+| minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].topologyKey | string | `"kubernetes.io/hostname"` |  |
+| minio-tenant.tenant.pools[0].name | string | `"pool-0"` |  |
+| minio-tenant.tenant.pools[0].resources.limits.cpu | string | `"500m"` |  |
+| minio-tenant.tenant.pools[0].resources.limits.memory | string | `"2Gi"` |  |
+| minio-tenant.tenant.pools[0].resources.requests.cpu | string | `"500m"` |  |
+| minio-tenant.tenant.pools[0].resources.requests.memory | string | `"2Gi"` |  |
+| minio-tenant.tenant.pools[0].servers | int | `1` |  |
+| minio-tenant.tenant.pools[0].storageClassName | string | `"standard"` |  |
+| minio-tenant.tenant.pools[0].volumesPerServer | int | `4` |  |
+| minio-tenant.tenant.users[0].name | string | `"tenant-user-0"` |  |
 | monitoring | object | `{"enabled":false}` | By default monitoring is disabled as it is optional, but we recommend it be enabled for production deployments |
 | persistence.enabled | bool | `true` |  |
 | raptor | object | `{"enabled":true,"fullnameOverride":"raptor"}` | See dependent chart for configuration details |
 | reaper | object | `{"enabled":true,"fullnameOverride":"reaper"}` | See dependent chart for configuration details |
+| secrets.minio.base64UserAccessKey | string | `"inject-during-deployment"` |  |
+| secrets.minio.base64UserSecretKey | string | `"inject-during-deployment"` |  |
+| secrets.minio.rootPassword | string | `"inject-during-deployment"` |  |
+| secrets.minio.rootUserName | string | `"inject-during-deployment"` |  |
 | valkyrie | object | `{"enabled":true,"fullnameOverride":"valkyrie","replicaCount":1}` | See dependent chart for configuration details |
 | vault.global.openshift | bool | `true` |  |
 | vault.injector.resources.limits.cpu | string | `"250m"` |  |

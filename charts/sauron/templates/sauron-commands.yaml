@@ -245,6 +245,12 @@ data:
     raptor:
       auth:
         auth0_client_secret: "{{ if .Values.remoteDeployment.secrets.raptor.auth.auth0_client_secret }}$RAPTOR_AUTH0_CLIENT_SECRET{{ end }}"
+    secrets:
+      minio: 
+        base64UserAccessKey: "{{ if .Values.global.objectStore.accessKey }}$GLOBAL_OBJECTSTORE_ACCESSKEY{{ end }}"
+        base64UserSecretKey: "{{ if .Values.global.objectStore.accessSecret }}$GLOBAL_OBJECTSTORE_ACCESSSECRET{{ end }}"
+        rootUserName: "{{ if .Values.remoteDeployment.secrets.minio.rootUserName }}$MINIO_ROOT_USERNAME{{ end }}"
+        rootPassword: "{{ if .Values.remoteDeployment.secrets.minio.rootPassword }}$MINIO_ROOT_PASSWORD{{ end }}"
     EOT
         
         echo "Updating sauron state to new deployment SHA"
