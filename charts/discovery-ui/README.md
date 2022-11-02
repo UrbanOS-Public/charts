@@ -20,11 +20,12 @@ A helm chart for the discovery ui
 | env.auth0_client_id | string | `""` |  |
 | env.auth0_domain | string | `""` |  |
 | env.base_url | string | `"example.com"` |  |
+| env.contribute_host | string | `""` |  |
 | env.disc_ui_url | string | `"example.com"` |  |
 | env.footer_left_side_link | string | `"https://github.com/UrbanOS-Public/smartcitiesdata"` |  |
 | env.footer_left_side_text | string | `"© 2022 UrbanOS. All rights reserved."` |  |
 | env.footer_right_links | string | `"[{\"linkText\":\"UrbanOS\", \"url\":\"https://github.com/UrbanOS-Public/smartcitiesdata\"}]"` |  |
-| env.gtm_id | string | `"GTM-EXAMPLE"` |  |
+| env.gtm_id | string | `""` |  |
 | env.header_title | string | `"UrbanOS Data Discovery"` |  |
 | env.logo_url | string | `nil` |  |
 | env.mapbox_access_token | string | `""` |  |
