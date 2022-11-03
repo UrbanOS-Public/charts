@@ -1,6 +1,6 @@
 # urban-os
 
-![Version: 1.13.10](https://img.shields.io/badge/Version-1.13.10-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.13.9](https://img.shields.io/badge/Version-1.13.9-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 
