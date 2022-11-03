@@ -18,8 +18,11 @@ image:
 
 env:
   api_host: "https://data.example.com"
-  #contribute_host: "https://sharedata.example.com" #Optional location for an associated public Andi deployment
-  gtm_id: "GTM-EXAMPLE"
+  # Optional: location for an associated public Andi deployment
+  # Ex: https://andi.example.com
+  contribute_host: ""
+  # Optional: Google Tag Manager ID
+  gtm_id: ""
   # the host domain where urbanos is deployed
   # used in react_discovery_ui for websocket command
   base_url: "example.com"
@@ -32,7 +35,7 @@ env:
   footer_left_side_text: "© 2022 UrbanOS. All rights reserved."
   footer_left_side_link: "https://github.com/UrbanOS-Public/smartcitiesdata"
   footer_right_links: '[{"linkText":"UrbanOS", "url":"https://github.com/UrbanOS-Public/smartcitiesdata"}]'
-  primary_color: '#1890ff'
+  primary_color: "#1890ff"
   mapbox_access_token: ""
   auth0_domain: ""
   auth0_client_id: ""
@@ -44,6 +47,14 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+resources:
+  limits:
+    memory: 1028Mi
+    cpu: 500m
+  requests:
+    memory: 1028Mi
+    cpu: 500m
 
 ingress:
   enabled: true

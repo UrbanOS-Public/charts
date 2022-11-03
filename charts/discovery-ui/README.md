@@ -1,6 +1,6 @@
 # discovery-ui
 
-![Version: 1.5.0](https://img.shields.io/badge/Version-1.5.0-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.5.1](https://img.shields.io/badge/Version-1.5.1-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A helm chart for the discovery ui
 
@@ -20,11 +20,12 @@ A helm chart for the discovery ui
 | env.auth0_client_id | string | `""` |  |
 | env.auth0_domain | string | `""` |  |
 | env.base_url | string | `"example.com"` |  |
+| env.contribute_host | string | `""` |  |
 | env.disc_ui_url | string | `"example.com"` |  |
 | env.footer_left_side_link | string | `"https://github.com/UrbanOS-Public/smartcitiesdata"` |  |
 | env.footer_left_side_text | string | `"© 2022 UrbanOS. All rights reserved."` |  |
 | env.footer_right_links | string | `"[{\"linkText\":\"UrbanOS\", \"url\":\"https://github.com/UrbanOS-Public/smartcitiesdata\"}]"` |  |
-| env.gtm_id | string | `"GTM-EXAMPLE"` |  |
+| env.gtm_id | string | `""` |  |
 | env.header_title | string | `"UrbanOS Data Discovery"` |  |
 | env.logo_url | string | `nil` |  |
 | env.mapbox_access_token | string | `""` |  |
@@ -40,6 +41,10 @@ A helm chart for the discovery ui
 | ingress.annotations | string | `nil` |  |
 | ingress.enabled | bool | `true` |  |
 | nodeSelector | object | `{}` |  |
+| resources.limits.cpu | string | `"500m"` |  |
+| resources.limits.memory | string | `"1028Mi"` |  |
+| resources.requests.cpu | string | `"500m"` |  |
+| resources.requests.memory | string | `"1028Mi"` |  |
 | service.name | string | `"discovery-ui"` |  |
 | service.port | int | `80` |  |
 | service.type | string | `"NodePort"` |  |

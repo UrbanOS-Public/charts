@@ -13,7 +13,7 @@ dependencies:
   version: 1.1.4
 - name: discovery-ui
   repository: file://../discovery-ui
-  version: 1.5.0
+  version: 1.5.1
 - name: elasticsearch
   repository: https://helm.elastic.co
   version: 7.14.0
@@ -25,7 +25,7 @@ dependencies:
   version: 3.1.13
 - name: kafka
   repository: file://../kafka
-  version: 1.2.13
+  version: 1.2.14
 - name: kubernetes-data-platform
   repository: file://../kubernetes-data-platform
   version: 1.7.3
@@ -53,5 +53,5 @@ dependencies:
 - name: tenant
   repository: https://operator.min.io/
   version: 4.5.3
-digest: sha256:e4bb13cf58e10e6d10fcf27019ed7035ae97a97481f8d2d0820e25a96c91e4a2
-generated: "2022-10-28T10:34:57.1135-04:00"
+digest: sha256:65e0ab4a4e819a847ba3a47769f547d94e17158cd8bbcb4b2e1098ad901ac9e3
+generated: "2022-11-02T17:22:41.686661-06:00"
