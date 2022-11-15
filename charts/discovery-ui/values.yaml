@@ -4,6 +4,7 @@ global:
   ingress:
     rootDnsZone: localhost
     dnsZone: localhost
+  require_api_key: false
 
 service:
   name: discovery-ui

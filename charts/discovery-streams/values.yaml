@@ -1,6 +1,7 @@
 global:
   kafka:
     brokers: pipeline-kafka-bootstrap:9092
+  require_api_key: false  
   redis:
     host: redis.external-services
     password: ""
