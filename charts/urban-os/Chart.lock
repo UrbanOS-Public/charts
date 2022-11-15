@@ -7,13 +7,13 @@ dependencies:
   version: 2.3.1
 - name: discovery-api
   repository: file://../discovery-api
-  version: 1.4.5
+  version: 1.4.6
 - name: discovery-streams
   repository: file://../discovery-streams
-  version: 1.1.4
+  version: 1.1.5
 - name: discovery-ui
   repository: file://../discovery-ui
-  version: 1.5.3
+  version: 1.5.4
 - name: elasticsearch
   repository: https://helm.elastic.co
   version: 7.14.0
@@ -53,5 +53,5 @@ dependencies:
 - name: tenant
   repository: https://operator.min.io/
   version: 4.5.3
-digest: sha256:154a2b16dbf0d617f3ea0794549d3e1e8f296afab0c65b49872333115e573b90
-generated: "2022-11-09T11:33:12.645387-07:00"
+digest: sha256:ba7a4f0d803c26dff0618ac4adc10aa5f42a1ac5ee19319bf78b63897f4d2359
+generated: "2022-11-15T14:31:26.692691-06:00"
