@@ -1,6 +1,6 @@
 # discovery-ui
 
-![Version: 1.5.1](https://img.shields.io/badge/Version-1.5.1-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.5.4](https://img.shields.io/badge/Version-1.5.4-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A helm chart for the discovery ui
 
@@ -34,6 +34,7 @@ A helm chart for the discovery ui
 | global.auth.auth0_domain | string | `""` |  |
 | global.ingress.dnsZone | string | `"localhost"` |  |
 | global.ingress.rootDnsZone | string | `"localhost"` |  |
+| global.require_api_key | bool | `false` |  |
 | image.environment | string | `"local"` |  |
 | image.name | string | `"smartcitiesdata/discovery_ui"` |  |
 | image.pullPolicy | string | `"Always"` |  |
