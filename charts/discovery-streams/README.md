@@ -1,6 +1,6 @@
 # discovery-streams
 
-![Version: 1.1.4](https://img.shields.io/badge/Version-1.1.4-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.1.5](https://img.shields.io/badge/Version-1.1.5-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Dynamically find kafka topics and makes available corresponding channels on a public websocket
 
@@ -22,6 +22,7 @@ Dynamically find kafka topics and makes available corresponding channels on a pu
 | global.redis.passwordSecret | string | `""` |  |
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
+| global.require_api_key | bool | `false` |  |
 | image.majorPin | string | `""` |  |
 | image.minorPin | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |

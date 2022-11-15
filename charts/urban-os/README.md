@@ -1,6 +1,6 @@
 # urban-os
 
-![Version: 1.13.9](https://img.shields.io/badge/Version-1.13.9-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.13.12](https://img.shields.io/badge/Version-1.13.12-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 
@@ -53,6 +53,7 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | global.presto.url | string | `"http://kubernetes-data-platform-presto:8080"` | This is the default url that presto is deployed to with the chart. Override this if you are using an external presto cluster. |
 | global.redis.host | string | `"redis.external-services"` | The url to a Redis instance. *Note*: Most apps in the platform require access to a Redis instance, and one is not currently included in the chart. |
 | global.redis.password | string | `""` |  |
+| global.require_api_key | bool | `false` | Determines whether a user is required to log in in order to see public data in the discovery suite |
 | global.vault.endpoint | string | `"vault:8200"` | A url to a vault instance. Reaper and Andi use vault to read and store secrets for dataset ingestion. *Note*: Currently, only the provided vault chart works with UrbanOS |
 | kafka.enabled | bool | `true` |  |
 | kubernetes-data-platform.enabled | bool | `false` |  |

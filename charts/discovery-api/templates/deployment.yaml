@@ -118,6 +118,8 @@ spec:
             value: {{ quote .Values.monitoring.targetPort }}
           - name: RAPTOR_URL
             value: {{ quote .Values.global.auth.raptor_url }}
+          - name: REQUIRE_API_KEY
+            value: {{ .Values.global.require_api_key }}
           - name: AWS_ACCESS_KEY_ID
             valueFrom:
               secretKeyRef:

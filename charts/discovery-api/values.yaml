@@ -10,6 +10,7 @@ global:
     brokers: pipeline-kafka-bootstrap:9092
   presto:
     url: http://platform-kubernetes-data-platform-presto:8080
+  require_api_key: false  
   redis:
     host: redis.external-services
     port: 6379
