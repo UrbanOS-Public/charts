@@ -458,6 +458,17 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
+    created: "2022-11-17T15:35:30.729468828Z"
+    description: A middleware layer to connect data consumers with the data sources
+    digest: 415b83b6d111b8599829dc903d4f35bb1eb99b6b120c3893dc3e03ac31c85c4e
+    name: discovery-api
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/discovery_api
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-api-1.4.7/discovery-api-1.4.7.tgz
+    version: 1.4.7
+  - apiVersion: v1
+    appVersion: 1.0.0-static
     created: "2022-10-11T14:50:15.902167139Z"
     description: A middleware layer to connect data consumers with the data sources
     digest: f0b6088bc047641e7c43f87c6c27022681cfada248863399ae4273fb5c3cd448
@@ -727,6 +738,18 @@ entries:
   discovery-streams:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2022-11-17T15:35:30.904022872Z"
+    description: Dynamically find kafka topics and makes available corresponding channels
+      on a public websocket
+    digest: bfe5c5fb9ef460ffe9ea6e7456e8f4580bf82bb8088b96ca69ffa32d30223a9f
+    name: discovery-streams
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/discovery_streams
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-streams-1.1.6/discovery-streams-1.1.6.tgz
+    version: 1.1.6
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2022-10-11T14:50:16.198037389Z"
     description: Dynamically find kafka topics and makes available corresponding channels
       on a public websocket
@@ -910,6 +933,18 @@ entries:
     - discovery-streams-0.1.2.tgz
     version: 0.1.2
   discovery-ui:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2022-11-17T15:35:31.084368517Z"
+    description: A helm chart for the discovery ui
+    digest: 8ce7b8c4b150898313268c9902466f63f960e375868dd1ca634969870f72683e
+    name: discovery-ui
+    sources:
+    - https://github.com/UrbanOS-Public/discovery_ui
+    - https://github.com/UrbanOS-Public/react_discovery_ui
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-ui-1.5.5/discovery-ui-1.5.5.tgz
+    version: 1.5.5
   - apiVersion: v1
     appVersion: "1.0"
     created: "2022-11-09T18:39:33.562435748Z"
@@ -1656,6 +1691,23 @@ entries:
     - genesis-2.0.1.tgz
     version: 2.0.1
   kafka:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-11-17T15:35:31.287106253Z"
+    dependencies:
+    - condition: strimzi-kafka-operator.enabled
+      name: strimzi-kafka-operator
+      repository: http://strimzi.io/charts/
+      version: 0.31.1
+    description: A Helm chart for deploying kafka via strimzi
+    digest: 74c04927c481ba5cf3c71e53aa283fb6a84e4ed23224f566efe4319a2a04018a
+    name: kafka
+    sources:
+    - https://github.com/strimzi/strimzi-kafka-operator
+    - https://github.com/apache/kafka
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/kafka-1.2.17/kafka-1.2.17.tgz
+    version: 1.2.17
   - apiVersion: v2
     appVersion: "1.0"
     created: "2022-11-09T18:39:33.713026064Z"
@@ -2948,6 +3000,91 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-11-17T15:35:31.512150077Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.22.0
+    - alias: minio-operator
+      condition: minio-operator.enabled
+      name: operator
+      repository: https://operator.min.io/
+      version: 4.5.3
+    - alias: minio-tenant
+      condition: minio-tenant.enabled
+      name: tenant
+      repository: https://operator.min.io/
+      version: 4.5.3
+    description: Master chart that deploys the UrbanOS platform. See the individual
+      dependency readmes for configuration options.
+    digest: ac7b8051f8858d0baa7818b6f757099fc45d42102d712560dbc0f595034a723b
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.13.14/urban-os-1.13.14.tgz
+    version: 1.13.14
   - apiVersion: v2
     appVersion: "1.0"
     created: "2022-11-17T14:24:26.073808082Z"
@@ -7160,4 +7297,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-17T15:28:33.619097934Z"
+generated: "2022-11-17T15:35:31.51404971Z"
