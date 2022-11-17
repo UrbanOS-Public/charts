@@ -83,6 +83,10 @@ spec:
                 - name: SAURON_PROXY_PAT
                   value: "{{ .Values.remoteDeployment.proxyAccountPAT }}"
                 {{ end -}}
+                {{- if .Values.remoteDeployment.secrets.minio.endpoint -}}
+                - name: MINIO_ENDPOINT
+                  value: "{{ .Values.remoteDeployment.secrets.minio.endpoint }}"
+                {{ end -}}
                 {{- if .Values.remoteDeployment.secrets.minio.rootUserName -}}
                 - name: MINIO_ROOT_USERNAME
                   value: "{{ .Values.remoteDeployment.secrets.minio.rootUserName }}"
