@@ -1,6 +1,6 @@
 # kafka
 
-![Version: 1.2.16](https://img.shields.io/badge/Version-1.2.16-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.2.17](https://img.shields.io/badge/Version-1.2.17-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A Helm chart for deploying kafka via strimzi
 
