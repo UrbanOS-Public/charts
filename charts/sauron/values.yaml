@@ -41,6 +41,8 @@ remoteDeployment:
         password: ""
 
     minio:
+      #This endpoint is only needed in here because we have to apply it post-render via environment variables for the hive-catalog workaround
+      endpoint: "http://minio:80"
       base64UserAccessKey: ""
       base64UserSecretKey: ""
       rootUserName: ""

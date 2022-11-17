@@ -1,6 +1,6 @@
 # sauron
 
-![Version: 0.0.10](https://img.shields.io/badge/Version-0.0.10-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 0.0.11](https://img.shields.io/badge/Version-0.0.11-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Cron jobs that watch remote deployments and images, issuing cluster commands as needed to update.
 
@@ -23,6 +23,7 @@ Cron jobs that watch remote deployments and images, issuing cluster commands as 
 | remoteDeployment.secrets.discovery-api.secrets.guardianSecretKey | string | `""` |  |
 | remoteDeployment.secrets.minio.base64UserAccessKey | string | `""` |  |
 | remoteDeployment.secrets.minio.base64UserSecretKey | string | `""` |  |
+| remoteDeployment.secrets.minio.endpoint | string | `"http://minio:80"` |  |
 | remoteDeployment.secrets.minio.rootPassword | string | `""` |  |
 | remoteDeployment.secrets.minio.rootUserName | string | `""` |  |
 | remoteDeployment.secrets.persistence.metastore.postgres.password | string | `""` |  |
