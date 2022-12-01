@@ -18,17 +18,11 @@ image:
   pullPolicy: Always
 
 env:
-  api_host: "https://data.example.com"
   # Optional: location for an associated public Andi deployment
   # Ex: https://andi.example.com
   contribute_host: ""
   # Optional: Google Tag Manager ID
   gtm_id: ""
-  # the host domain where urbanos is deployed
-  # used in react_discovery_ui for websocket command
-  base_url: "example.com"
-  # the domain where discovery ui will be deployed
-  # used in discovery_ui for header purposes
   disc_ui_url: "https://www.example.com"
   disc_api_url: "https://data.example.com"
   disc_streams_url: "https://streams.example.com"
