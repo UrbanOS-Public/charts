@@ -29,7 +29,9 @@ env:
   base_url: "example.com"
   # the domain where discovery ui will be deployed
   # used in discovery_ui for header purposes
-  disc_ui_url: "example.com"
+  disc_ui_url: "https://www.example.com"
+  disc_api_url: "https://data.example.com"
+  disc_streams_url: "https://streams.example.com"
   streets_tile_layer_url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   logo_url: null
   header_title: "UrbanOS Data Discovery"
