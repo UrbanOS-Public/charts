@@ -958,6 +958,18 @@ entries:
   discovery-ui:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2022-12-01T20:18:10.376181791Z"
+    description: A helm chart for the discovery ui
+    digest: 93cc4698d29ce8f44bf8182b01db68c00810afcfaf039506e03cd161cf1aac78
+    name: discovery-ui
+    sources:
+    - https://github.com/UrbanOS-Public/discovery_ui
+    - https://github.com/UrbanOS-Public/react_discovery_ui
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-ui-1.5.6/discovery-ui-1.5.6.tgz
+    version: 1.5.6
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2022-11-17T15:35:31.084368517Z"
     description: A helm chart for the discovery ui
     digest: 8ce7b8c4b150898313268c9902466f63f960e375868dd1ca634969870f72683e
@@ -3023,6 +3035,91 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-12-01T20:18:10.574596446Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.22.0
+    - alias: minio-operator
+      condition: minio-operator.enabled
+      name: operator
+      repository: https://operator.min.io/
+      version: 4.5.3
+    - alias: minio-tenant
+      condition: minio-tenant.enabled
+      name: tenant
+      repository: https://operator.min.io/
+      version: 4.5.3
+    description: Master chart that deploys the UrbanOS platform. See the individual
+      dependency readmes for configuration options.
+    digest: f570a42b442ddf98df3c2e9c8db5c372d981b7d756707d3b248b4a063daa5a11
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.13.16/urban-os-1.13.16.tgz
+    version: 1.13.16
   - apiVersion: v2
     appVersion: "1.0"
     created: "2022-11-17T17:23:07.513000443Z"
@@ -7405,4 +7502,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-17T17:23:07.5147738Z"
+generated: "2022-12-01T20:18:10.576512139Z"
