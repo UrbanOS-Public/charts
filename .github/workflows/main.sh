@@ -43,7 +43,7 @@ main() {
 
     index_major=$(get_major_index "${appName}" "${index}")
     index_minor=$(get_minor_index "${appName}" "${index}" "${index_major}")
-    index_patch=$(get_minor_index "${appName}" "${index}" "${index_major}" "${index_minor}")
+    index_patch=$(get_patch_index "${appName}" "${index}" "${index_major}" "${index_minor}")
 
     if [ $chart_major -le $index_major ]; then
         error "Major version on chart is older than the last published"
