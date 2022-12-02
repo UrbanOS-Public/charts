@@ -25,5 +25,6 @@ data:
     window.AUTH0_AUDIENCE = '{{.Values.env.auth0_audience}}'
     window.PRIMARY_COLOR = '{{.Values.env.primary_color}}'
     window.REQUIRE_API_KEY = '{{.Values.global.require_api_key}}'
+    window.REGENERATE_API_KEY_FF: true = '{{.Values.env.regenerate_api_key_ff}}'
   nginx-csps.conf: |
     add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.googletagmanager.com *.google-analytics.com; style-src 'self' 'unsafe-inline'; frame-src *.auth0.com; img-src 'self' *.amazonaws.com *.mapbox.com {{ .Values.env.additional_csp_hosts }} *.google-analytics.com *.google.com *.doubleclick.net data: blob:; connect-src 'self' {{ .Values.env.additional_csp_hosts }} *.auth0.com *.mapbox.com *.plot.ly http://localhost:*; worker-src blob:;";

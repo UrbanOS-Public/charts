@@ -44,6 +44,7 @@ env:
   auth0_client_id: ""
   auth0_audience: ""
   additional_csp_hosts: ""
+  regenerate_api_key_ff: true
 
 nodeSelector: {}
 

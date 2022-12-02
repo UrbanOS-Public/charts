@@ -1,6 +1,6 @@
 # discovery-ui
 
-![Version: 1.5.7](https://img.shields.io/badge/Version-1.5.7-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.5.8](https://img.shields.io/badge/Version-1.5.8-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A helm chart for the discovery ui
 
@@ -32,6 +32,7 @@ A helm chart for the discovery ui
 | env.logo_url | string | `nil` |  |
 | env.mapbox_access_token | string | `""` |  |
 | env.primary_color | string | `"#1890ff"` |  |
+| env.regenerate_api_key_ff | bool | `true` |  |
 | env.streets_tile_layer_url | string | `"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"` |  |
 | global.auth.auth0_domain | string | `""` |  |
 | global.ingress.dnsZone | string | `"localhost"` |  |
