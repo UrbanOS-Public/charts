@@ -10,6 +10,8 @@ data:
     {{ end -}}
     window.GTM_ID = '{{.Values.env.gtm_id}}'
     window.BASE_URL = '{{.Values.env.base_url}}'
+    window.DISC_API_URL = '{{.Values.env.disc_api_url}}'
+    window.DISC_STREAMS_URL = '{{.Values.env.disc_streams_url}}'
     window.DISC_UI_URL = '{{.Values.env.disc_ui_url}}'
     window.STREETS_TILE_LAYER_URL = '{{.Values.env.streets_tile_layer_url}}'
     window.MAPBOX_ACCESS_TOKEN = '{{.Values.env.mapbox_access_token}}'
