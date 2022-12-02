@@ -45,20 +45,24 @@ main() {
     index_minor=$(get_minor_index "${appName}" "${index}" "${index_major}")
     index_patch=$(get_patch_index "${appName}" "${index}" "${index_major}" "${index_minor}")
 
-    if [ $chart_major -le $index_major ]; then
+    if [ $chart_major -lt $index_major ]; then
         error "Major version on chart is older than the last published"
         exit 1
-    elif [ $chart_minor -le $index_minor ]; then
-        error "Minor version on chart is older than the last published"
-        exit 1
-    elif [ $chart_patch -le $index_patch ]; then
-        error "Patch version on chart is older than the last published"
-        exit 1
+    elif [ $chart_major -eq $index_major ]; then
+        if [ $chart_minor -lt $index_minor ]; then
+            error "Minor version on chart is older than the last published"
+            exit 1
+        elif [ $chart_minor -eq $index_minor ]; then
+            if [ $chart_patch -le $index_patch ]; then
+                error "Patch version on chart is older than the last published"
+                exit 1
+            fi
+        fi
     fi
 }
 
 #{{{ Helper functions
-#
+
 
 error() {
     echo "${*}" 1>&2
@@ -106,12 +110,10 @@ get_patch_index() {
     minor=$4
     yq ".entries.${appName}.[].version | select(. == \"${major}.${minor}.*\")" ${index} \
         | sed 's/^/- /g' \
-        | yq "map(match(\".*\.(\\d+)\..*\")) | map(.captures) | flatten(1) | map(.string)" \
+        | yq "map(match(\".*\..*\.(\\d+)\")) | map(.captures) | flatten(1) | map(.string)" \
         | sed 's/"//g' | yq 'sort | reverse | .[0]'
 }
 
 #}}}
 
 main "${@}"
-
-# cursor: 33 del
