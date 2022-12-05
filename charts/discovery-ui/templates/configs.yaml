@@ -7,6 +7,9 @@ data:
     window.CONTRIBUTE_HOST = '{{.Values.env.contribute_host}}'
     {{ end -}}
     window.GTM_ID = '{{.Values.env.gtm_id}}'
+    window.BASE_URL = '{{.Values.env.base_url}}'
+    window.DISC_API_URL = '{{.Values.env.disc_api_url}}'
+    window.DISC_STREAMS_URL = '{{.Values.env.disc_streams_url}}'
     window.DISC_UI_URL = '{{.Values.env.disc_ui_url}}'
     window.STREETS_TILE_LAYER_URL = '{{.Values.env.streets_tile_layer_url}}'
     window.MAPBOX_ACCESS_TOKEN = '{{.Values.env.mapbox_access_token}}'
@@ -20,5 +23,6 @@ data:
     window.AUTH0_AUDIENCE = '{{.Values.env.auth0_audience}}'
     window.PRIMARY_COLOR = '{{.Values.env.primary_color}}'
     window.REQUIRE_API_KEY = '{{.Values.global.require_api_key}}'
+    window.REGENERATE_API_KEY_FF = '{{.Values.env.regenerate_api_key_ff}}'
   nginx-csps.conf: |
     add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.googletagmanager.com *.google-analytics.com; style-src 'self' 'unsafe-inline'; frame-src *.auth0.com; img-src 'self' *.amazonaws.com *.mapbox.com {{ .Values.env.additional_csp_hosts }} *.google-analytics.com *.google.com *.doubleclick.net data: blob:; connect-src 'self' {{ .Values.env.additional_csp_hosts }} *.auth0.com *.mapbox.com *.plot.ly http://localhost:*; worker-src blob:;";
