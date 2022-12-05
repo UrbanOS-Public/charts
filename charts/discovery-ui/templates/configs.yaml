@@ -4,6 +4,7 @@ metadata:
   name: discovery-ui-configs
 data:
   config.js: |
+    {{ if .Values.env.contribute_host }}
     window.CONTRIBUTE_HOST = '{{.Values.env.contribute_host}}'
     {{ end -}}
     window.GTM_ID = '{{.Values.env.gtm_id}}'
