@@ -13,7 +13,7 @@ dependencies:
   version: 1.1.7
 - name: discovery-ui
   repository: file://../discovery-ui
-  version: 1.5.5
+  version: 1.5.7
 - name: elasticsearch
   repository: https://helm.elastic.co
   version: 7.14.0
@@ -53,5 +53,5 @@ dependencies:
 - name: tenant
   repository: https://operator.min.io/
   version: 4.5.3
-digest: sha256:092117a2db3f9f42c552f1c2bf9f79612094d334dde24539acde765550df868a
-generated: "2022-11-17T11:38:57.382431-05:00"
+digest: sha256:97f74489cafb5ecaae2706a67f178445794079c6b332e6e67a32ff926e8774c5
+generated: "2022-12-02T15:41:46.21549-05:00"
