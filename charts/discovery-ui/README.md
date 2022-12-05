@@ -1,6 +1,6 @@
 # discovery-ui
 
-![Version: 1.5.8](https://img.shields.io/badge/Version-1.5.8-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.5.9](https://img.shields.io/badge/Version-1.5.9-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A helm chart for the discovery ui
 
@@ -15,11 +15,9 @@ A helm chart for the discovery ui
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
 | env.additional_csp_hosts | string | `""` |  |
-| env.api_host | string | `"https://data.example.com"` |  |
 | env.auth0_audience | string | `""` |  |
 | env.auth0_client_id | string | `""` |  |
 | env.auth0_domain | string | `""` |  |
-| env.base_url | string | `"example.com"` |  |
 | env.contribute_host | string | `""` |  |
 | env.disc_api_url | string | `"https://data.example.com"` |  |
 | env.disc_streams_url | string | `"https://streams.example.com"` |  |

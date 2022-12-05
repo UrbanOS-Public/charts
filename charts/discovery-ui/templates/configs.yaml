@@ -4,12 +4,9 @@ metadata:
   name: discovery-ui-configs
 data:
   config.js: |
-    window.API_HOST = '{{.Values.env.api_host}}'
-    {{ if .Values.env.contribute_host }}
     window.CONTRIBUTE_HOST = '{{.Values.env.contribute_host}}'
     {{ end -}}
     window.GTM_ID = '{{.Values.env.gtm_id}}'
-    window.BASE_URL = '{{.Values.env.base_url}}'
     window.DISC_API_URL = '{{.Values.env.disc_api_url}}'
     window.DISC_STREAMS_URL = '{{.Values.env.disc_streams_url}}'
     window.DISC_UI_URL = '{{.Values.env.disc_ui_url}}'
