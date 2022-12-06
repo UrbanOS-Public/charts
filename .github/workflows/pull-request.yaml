@@ -1,0 +1,30 @@
+name: 'Version Review'
+on: [pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v3
+      - id: files
+        uses: jitterbit/get-changed-files@v1
+      - name: 'Install dependency'
+        run: |
+          sudo curl -L https://github.com/mikefarah/yq/releases/download/v4.30.5/yq_linux_386 -o /usr/bin/yq
+          sudo chmod +x /usr/bin/yq
+      - name: 'Downlad published charts'
+        run: |
+          curl -o index.yaml https://raw.githubusercontent.com/UrbanOS-Public/charts/gh-pages/index.yaml
+      - name: 'Validate Version'
+        run: |
+          chmod +x .github/workflows/main.sh
+          for changed_file in ${{ steps.files.outputs.all }}; do
+            if [[ $changed_file == *Chart.yaml ]] # * is used for pattern matching
+            then
+              bash .github/workflows/main.sh $changed_file index.yaml
+            fi
+          done
