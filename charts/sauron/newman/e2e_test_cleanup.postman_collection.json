@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "2e016dc8-fc09-4a5d-bba8-55e434385d33",
+		"name": "e2e_test_cleanup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ingestion - Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ingestion Delete returns 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{andi_url}}/api/v1/ingestion/delete?id={{ingestion_id}}",
+					"host": [
+						"{{andi_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ingestion",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{ingestion_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dataset - Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Dataset Delete returns 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{andi_url}}/api/v1/dataset/delete?id={{dataset_id}}",
+					"host": [
+						"{{andi_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"dataset",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{dataset_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "andi_url",
+			"value": "https://127.0.0.1.nip.io:4443",
+			"type": "default"
+		},
+		{
+			"key": "ingestion_id",
+			"value": "d005d26f-5b8a-4ee9-b971-d9b1c0180fcd",
+			"type": "default"
+		},
+		{
+			"key": "dataset_id",
+			"value": "42c03692-75b1-11ed-a1eb-0242ac120003",
+			"type": "default"
+		}
+	]
+}

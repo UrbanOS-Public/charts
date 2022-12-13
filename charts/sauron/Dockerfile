@@ -15,6 +15,13 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
     mv ./kubectl /usr/local/bin && \
     echo $(kubectl version --client)
 
+#install npm and newman
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&\
+    apt-get install -y nodejs
+
+RUN npm install -g newman
+ADD "./newman" /usr/local/bin
+
 #Install Helm
 RUN wget https://get.helm.sh/helm-v3.8.2-linux-amd64.tar.gz && \
     tar xvf helm-*-linux-amd64.tar.gz && \

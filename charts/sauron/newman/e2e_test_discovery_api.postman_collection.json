@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "6364a4e1-b4db-4286-a2a1-fa5f055d5d0e",
+		"name": "e2e_test_discovery_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Discovery API Result",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Fetching Discovery API data returns 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Discovery API returns info for a parking meter\", function() {",
+							"    pm.expect(pm.response.json()[0].status).to.exist;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{discovery_url}}/api/v1/organization/urbanos_end_to_end_testing_org/dataset/endtoenddata/query?limit=1&_format=json",
+					"host": [
+						"{{discovery_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"organization",
+						"urbanos_end_to_end_testing_org",
+						"dataset",
+						"endtoenddata",
+						"query"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "_format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "discovery_url",
+			"value": "http://localhost:4001",
+			"type": "default"
+		},
+		{
+			"key": "meters_to_return",
+			"value": "2",
+			"type": "default"
+		}
+	]
+}

@@ -1,0 +1,805 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "6364a4e1-b4db-4286-a2a1-fa5f055d5d0e"
+    },
+    "item": [
+      {
+        "id": "164bc2e0-2ef1-43ab-9771-e09b9fb915d4",
+        "name": "Discovery API Result",
+        "request": {
+          "url": {
+            "path": [
+              "api",
+              "v1",
+              "organization",
+              "urbanos_end_to_end_testing_org",
+              "dataset",
+              "endtoenddata",
+              "query"
+            ],
+            "host": [
+              "{{discovery_url}}"
+            ],
+            "query": [
+              {
+                "key": "limit",
+                "value": "1"
+              },
+              {
+                "key": "_format",
+                "value": "json"
+              }
+            ],
+            "variable": []
+          },
+          "method": "GET"
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "a84d7409-23f7-455e-8a9e-07f660b004bc",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Fetching Discovery API data returns 200\", function() {",
+                "    pm.response.to.have.status(200);",
+                "});",
+                "",
+                "pm.test(\"Discovery API returns info for a parking meter\", function() {",
+                "    pm.expect(pm.response.json()[0].status).to.exist;",
+                "});"
+              ],
+              "_lastExecutionId": "dc987f4a-4d5b-4d97-90c6-f97dd81d9e0a"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [
+      {
+        "listen": "prerequest",
+        "script": {
+          "id": "2d003335-cf26-4dc3-858f-5bdad09fd86d",
+          "type": "text/javascript",
+          "exec": [
+            ""
+          ],
+          "_lastExecutionId": "a76c7d60-16a1-4247-b4bb-83fe49b5b0d9"
+        }
+      },
+      {
+        "listen": "test",
+        "script": {
+          "id": "cb4b0274-8d17-4b81-95f6-cd2b2ad02620",
+          "type": "text/javascript",
+          "exec": [
+            ""
+          ],
+          "_lastExecutionId": "b79093e7-d031-4f10-83ca-2c73cbffd8f3"
+        }
+      }
+    ],
+    "variable": [
+      {
+        "type": "any",
+        "value": "http://localhost:4001",
+        "key": "discovery_url"
+      },
+      {
+        "type": "any",
+        "value": "2",
+        "key": "meters_to_return"
+      }
+    ],
+    "info": {
+      "_postman_id": "6364a4e1-b4db-4286-a2a1-fa5f055d5d0e",
+      "name": "e2e_test_discovery_api",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "id": "7300a70f-dabe-4858-8551-01ba6ed1a8ba",
+    "values": []
+  },
+  "globals": {
+    "id": "597dbb23-8203-42ed-8b82-e0a8cfe98334",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 2,
+        "pending": 0,
+        "failed": 2
+      },
+      "testScripts": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 260,
+      "responseMin": 260,
+      "responseMax": 260,
+      "responseSd": 0,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1670967595337,
+      "completed": 1670967595664
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 1,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "32e506aa-b932-48ac-bf18-f7ca50dcfa04",
+          "httpRequestId": "6883cf92-2a73-4398-9559-6fa6eb592d9c"
+        },
+        "item": {
+          "id": "164bc2e0-2ef1-43ab-9771-e09b9fb915d4",
+          "name": "Discovery API Result",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "organization",
+                "urbanos_end_to_end_testing_org",
+                "dataset",
+                "endtoenddata",
+                "query"
+              ],
+              "host": [
+                "{{discovery_url}}"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "1"
+                },
+                {
+                  "key": "_format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "a84d7409-23f7-455e-8a9e-07f660b004bc",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Fetching Discovery API data returns 200\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Discovery API returns info for a parking meter\", function() {",
+                  "    pm.expect(pm.response.json()[0].status).to.exist;",
+                  "});"
+                ],
+                "_lastExecutionId": "dc987f4a-4d5b-4d97-90c6-f97dd81d9e0a"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "4001",
+            "path": [
+              "api",
+              "v1",
+              "organization",
+              "urbanos_end_to_end_testing_org",
+              "dataset",
+              "endtoenddata",
+              "query"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [
+              {
+                "key": "limit",
+                "value": "1"
+              },
+              {
+                "key": "_format",
+                "value": "json"
+              }
+            ],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.29.0",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "f3b84a0d-fe1a-4135-ae2a-a0807e980c6c",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:4001",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "391bea0a-85a5-44a3-be23-c27cd5e3b6c7",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, must-revalidate"
+            },
+            {
+              "key": "content-length",
+              "value": "25"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "cross-origin-window-policy",
+              "value": "deny"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 13 Dec 2022 21:39:55 GMT"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "x-permitted-cross-domain-policies",
+              "value": "none"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "1; mode=block"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              66,
+              97,
+              100,
+              32,
+              82,
+              101,
+              113,
+              117,
+              101,
+              115,
+              116,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 260,
+          "responseSize": 25
+        },
+        "id": "164bc2e0-2ef1-43ab-9771-e09b9fb915d4",
+        "assertions": [
+          {
+            "assertion": "Fetching Discovery API data returns 200",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Fetching Discovery API data returns 200",
+              "message": "expected response to have status code 200 but got 400",
+              "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:1)"
+            }
+          },
+          {
+            "assertion": "Discovery API returns info for a parking meter",
+            "skipped": false,
+            "error": {
+              "name": "TypeError",
+              "index": 1,
+              "test": "Discovery API returns info for a parking meter",
+              "message": "Cannot read property 'status' of undefined",
+              "stack": "TypeError: Cannot read property 'status' of undefined\n   at Object.eval sandbox-script.js:2:1)"
+            }
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 25
+    },
+    "failures": [
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Fetching Discovery API data returns 200",
+          "message": "expected response to have status code 200 but got 400",
+          "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:1)",
+          "checksum": "7fa1142516873ca154744d510f87b4f2",
+          "id": "7dce18ab-347a-42c7-84cc-695e39f1108c",
+          "timestamp": 1670967595654,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 1,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "164bc2e0-2ef1-43ab-9771-e09b9fb915d4",
+          "name": "Discovery API Result",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "organization",
+                "urbanos_end_to_end_testing_org",
+                "dataset",
+                "endtoenddata",
+                "query"
+              ],
+              "host": [
+                "{{discovery_url}}"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "1"
+                },
+                {
+                  "key": "_format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "a84d7409-23f7-455e-8a9e-07f660b004bc",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Fetching Discovery API data returns 200\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Discovery API returns info for a parking meter\", function() {",
+                  "    pm.expect(pm.response.json()[0].status).to.exist;",
+                  "});"
+                ],
+                "_lastExecutionId": "dc987f4a-4d5b-4d97-90c6-f97dd81d9e0a"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "6364a4e1-b4db-4286-a2a1-fa5f055d5d0e"
+          },
+          "item": [
+            {
+              "id": "164bc2e0-2ef1-43ab-9771-e09b9fb915d4",
+              "name": "Discovery API Result",
+              "request": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "organization",
+                    "urbanos_end_to_end_testing_org",
+                    "dataset",
+                    "endtoenddata",
+                    "query"
+                  ],
+                  "host": [
+                    "{{discovery_url}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET"
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "a84d7409-23f7-455e-8a9e-07f660b004bc",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Fetching Discovery API data returns 200\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "});",
+                      "",
+                      "pm.test(\"Discovery API returns info for a parking meter\", function() {",
+                      "    pm.expect(pm.response.json()[0].status).to.exist;",
+                      "});"
+                    ],
+                    "_lastExecutionId": "dc987f4a-4d5b-4d97-90c6-f97dd81d9e0a"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "2d003335-cf26-4dc3-858f-5bdad09fd86d",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "a76c7d60-16a1-4247-b4bb-83fe49b5b0d9"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "cb4b0274-8d17-4b81-95f6-cd2b2ad02620",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "b79093e7-d031-4f10-83ca-2c73cbffd8f3"
+              }
+            }
+          ],
+          "variable": [
+            {
+              "type": "any",
+              "value": "http://localhost:4001",
+              "key": "discovery_url"
+            },
+            {
+              "type": "any",
+              "value": "2",
+              "key": "meters_to_return"
+            }
+          ],
+          "info": {
+            "_postman_id": "6364a4e1-b4db-4286-a2a1-fa5f055d5d0e",
+            "name": "e2e_test_discovery_api",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 1,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "32e506aa-b932-48ac-bf18-f7ca50dcfa04",
+          "httpRequestId": "6883cf92-2a73-4398-9559-6fa6eb592d9c",
+          "scriptId": "a84d7409-23f7-455e-8a9e-07f660b004bc",
+          "execution": "dc987f4a-4d5b-4d97-90c6-f97dd81d9e0a"
+        }
+      },
+      {
+        "error": {
+          "name": "TypeError",
+          "index": 1,
+          "test": "Discovery API returns info for a parking meter",
+          "message": "Cannot read property 'status' of undefined",
+          "stack": "TypeError: Cannot read property 'status' of undefined\n   at Object.eval sandbox-script.js:2:1)",
+          "checksum": "3d4684332dd280399ffda2304d00e3f9",
+          "id": "51c755e7-3957-4ef7-9daf-91eb53e4ba54",
+          "timestamp": 1670967595657,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 2,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 1,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:1 in test-script",
+        "source": {
+          "id": "164bc2e0-2ef1-43ab-9771-e09b9fb915d4",
+          "name": "Discovery API Result",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "organization",
+                "urbanos_end_to_end_testing_org",
+                "dataset",
+                "endtoenddata",
+                "query"
+              ],
+              "host": [
+                "{{discovery_url}}"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "1"
+                },
+                {
+                  "key": "_format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "a84d7409-23f7-455e-8a9e-07f660b004bc",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Fetching Discovery API data returns 200\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Discovery API returns info for a parking meter\", function() {",
+                  "    pm.expect(pm.response.json()[0].status).to.exist;",
+                  "});"
+                ],
+                "_lastExecutionId": "dc987f4a-4d5b-4d97-90c6-f97dd81d9e0a"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "6364a4e1-b4db-4286-a2a1-fa5f055d5d0e"
+          },
+          "item": [
+            {
+              "id": "164bc2e0-2ef1-43ab-9771-e09b9fb915d4",
+              "name": "Discovery API Result",
+              "request": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "organization",
+                    "urbanos_end_to_end_testing_org",
+                    "dataset",
+                    "endtoenddata",
+                    "query"
+                  ],
+                  "host": [
+                    "{{discovery_url}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET"
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "a84d7409-23f7-455e-8a9e-07f660b004bc",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Fetching Discovery API data returns 200\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "});",
+                      "",
+                      "pm.test(\"Discovery API returns info for a parking meter\", function() {",
+                      "    pm.expect(pm.response.json()[0].status).to.exist;",
+                      "});"
+                    ],
+                    "_lastExecutionId": "dc987f4a-4d5b-4d97-90c6-f97dd81d9e0a"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "2d003335-cf26-4dc3-858f-5bdad09fd86d",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "a76c7d60-16a1-4247-b4bb-83fe49b5b0d9"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "cb4b0274-8d17-4b81-95f6-cd2b2ad02620",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "b79093e7-d031-4f10-83ca-2c73cbffd8f3"
+              }
+            }
+          ],
+          "variable": [
+            {
+              "type": "any",
+              "value": "http://localhost:4001",
+              "key": "discovery_url"
+            },
+            {
+              "type": "any",
+              "value": "2",
+              "key": "meters_to_return"
+            }
+          ],
+          "info": {
+            "_postman_id": "6364a4e1-b4db-4286-a2a1-fa5f055d5d0e",
+            "name": "e2e_test_discovery_api",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 1,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "32e506aa-b932-48ac-bf18-f7ca50dcfa04",
+          "httpRequestId": "6883cf92-2a73-4398-9559-6fa6eb592d9c",
+          "scriptId": "a84d7409-23f7-455e-8a9e-07f660b004bc",
+          "execution": "dc987f4a-4d5b-4d97-90c6-f97dd81d9e0a"
+        }
+      }
+    ],
+    "error": null
+  }
+}
