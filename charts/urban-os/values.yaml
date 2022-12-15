@@ -37,6 +37,11 @@ global:
     accessKey: []
     accessSecret: []
     hiveStoragePath: ""
+  subdomains:
+    andi: "andi"
+    share: "sharedata"
+    discoveryApi: "data"
+    discoveryUi: "discovery"
 
 
 # -- See dependent chart for configuration details
@@ -48,14 +53,11 @@ alchemist:
 andi:
   fullnameOverride: andi
   enabled: true
-  subdomain: "andi"
-  shareSubdomain: "sharedata"
 
 
 # -- See dependent chart for configuration details
 discovery-api:
   enabled: true
-  subdomain: "data"
   elasticsearch:
     # -- This is the default location of the chart-provided elasticsearch instance
     host: elasticsearch-master:9200
@@ -72,7 +74,6 @@ discovery-streams:
 # -- See dependent chart for configuration details
 discovery-ui:
   enabled: true
-  subdomain: "discovery"
 
 
 # -- By default, the urbanOS chart stands up its own elasticsearch instance.
