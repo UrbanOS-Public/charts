@@ -36,8 +36,13 @@ data:
                 "type": "regular_web"
             },
             "Raptor": {
+                {{- $localhost := "http://localhost:4002" -}}
+                {{- $raptorInternal := print "https://" .Values.global.subdomains.raptor "." .Values.global.ingress.dnsZone -}}
+                {{- $raptorExternal := print "https://" .Values.global.subdomains.raptor "." .Values.global.ingress.rootDnsZone -}}
                 "name": "Raptor",
-                "type": "non_interactive"
+                "type": "non_interactive",
+                "allowedOrigins": "[\"{{ $localhost }}\", \"{{ $raptorInternal }}\", \"{{ $raptorExternal }}\"]",
+                "webOrigins": "[\"{{ $localhost }}\", \"{{ $raptorInternal }}\", \"{{ $raptorExternal }}\"]"
             }
         },
         "errorUrl": "{{ $uiExternal }}/oauth/error",

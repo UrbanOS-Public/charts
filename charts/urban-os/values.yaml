@@ -42,6 +42,7 @@ global:
     share: "sharedata"
     discoveryApi: "data"
     discoveryUi: "discovery"
+    raptor: "raptor"
 
 
 # -- See dependent chart for configuration details
