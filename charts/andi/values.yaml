@@ -101,8 +101,11 @@ theme:
   logo: "/images/UrbanOS.svg"
   # header bar text
   headerText: "Data Submission Tool"
-  # Primary color can be any valid css. Examples - "#101010", "rgb(0,0,0)", "red"
-  primaryColor: "#1170C8"
+  # Color can be any valid css. Examples - "#101010", "rgb(0,0,0)", "red"
+  primaryColor: "#0F64B3"
+  secondaryColor: "#1176D4"
+  successColor: "#008000"
+  errorColor: "#B80000"
 
 footer:
   # footer text on left side with links on right side
