@@ -136,6 +136,12 @@ spec:
             value: '{{  .Values.theme.headerText }}'
           - name: ANDI_PRIMARY_COLOR
             value: '{{  .Values.theme.primaryColor }}'
+          - name: ANDI_SECONDARY_COLOR
+            value: '{{  .Values.theme.secondary }}'
+          - name: ANDI_SUCCESS_COLOR
+            value: '{{  .Values.theme.successColor }}'
+          - name: ANDI_ERROR_COLOR
+            value: '{{  .Values.theme.errorColor }}'
           - name: ANDI_FOOTER_LEFT_SIDE_TEXT
             value: '{{  .Values.footer.leftSideText }}'
           - name: ANDI_FOOTER_LEFT_SIDE_LINK

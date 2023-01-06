@@ -1,6 +1,6 @@
 # andi
 
-![Version: 2.3.1](https://img.shields.io/badge/Version-2.3.1-informational?style=flat-square)
+![Version: 2.3.2](https://img.shields.io/badge/Version-2.3.2-informational?style=flat-square)
 
 REST API to allow for dataset definition ingestion
 
@@ -67,9 +67,12 @@ REST API to allow for dataset definition ingestion
 | service.port | int | `80` |  |
 | service.targetPort | int | `4000` |  |
 | service.type | string | `"NodePort"` |  |
+| theme.errorColor | string | `"#B80000"` |  |
 | theme.headerText | string | `"Data Submission Tool"` |  |
 | theme.logo | string | `"/images/UrbanOS.svg"` |  |
-| theme.primaryColor | string | `"#1170C8"` |  |
+| theme.primaryColor | string | `"#0F64B3"` |  |
+| theme.secondaryColor | string | `"#1176D4"` |  |
+| theme.successColor | string | `"#008000"` |  |
 | tolerations[0].effect | string | `"NoExecute"` |  |
 | tolerations[0].key | string | `"example.run.public-worker"` |  |
 | tolerations[0].operator | string | `"Equal"` |  |

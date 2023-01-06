@@ -4,7 +4,7 @@ dependencies:
   version: 1.0.4
 - name: andi
   repository: file://../andi
-  version: 2.3.1
+  version: 2.3.2
 - name: discovery-api
   repository: file://../discovery-api
   version: 1.4.8
@@ -53,5 +53,5 @@ dependencies:
 - name: tenant
   repository: https://operator.min.io/
   version: 4.5.3
-digest: sha256:a3cf89370070d1494943f2d28e3522d323de77a7b8c9321c3b126aadfb9b1fa0
-generated: "2022-12-05T15:55:15.68549-05:00"
+digest: sha256:137759f6d1537f921abbb9c9c6f1e7da94544bfb782b29364a3990f1ca68f67f
+generated: "2023-01-06T15:00:58.754722-06:00"

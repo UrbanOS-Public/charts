@@ -1,6 +1,6 @@
 # urban-os
 
-![Version: 1.13.20](https://img.shields.io/badge/Version-1.13.20-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.13.21](https://img.shields.io/badge/Version-1.13.21-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 
@@ -54,6 +54,11 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | global.redis.host | string | `"redis.external-services"` | The url to a Redis instance. *Note*: Most apps in the platform require access to a Redis instance, and one is not currently included in the chart. |
 | global.redis.password | string | `""` |  |
 | global.require_api_key | bool | `false` | Determines whether a user is required to log in in order to see public data in the discovery suite |
+| global.subdomains.andi | string | `"andi"` |  |
+| global.subdomains.discoveryApi | string | `"data"` |  |
+| global.subdomains.discoveryUi | string | `"discovery"` |  |
+| global.subdomains.raptor | string | `"raptor"` |  |
+| global.subdomains.share | string | `"sharedata"` |  |
 | global.vault.endpoint | string | `"vault:8200"` | A url to a vault instance. Reaper and Andi use vault to read and store secrets for dataset ingestion. *Note*: Currently, only the provided vault chart works with UrbanOS |
 | kafka.enabled | bool | `true` |  |
 | kubernetes-data-platform.enabled | bool | `false` |  |
