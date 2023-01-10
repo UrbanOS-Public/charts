@@ -137,7 +137,7 @@ spec:
           - name: ANDI_PRIMARY_COLOR
             value: '{{  .Values.theme.primaryColor }}'
           - name: ANDI_SECONDARY_COLOR
-            value: '{{  .Values.theme.secondary }}'
+            value: '{{  .Values.theme.secondaryColor }}'
           - name: ANDI_SUCCESS_COLOR
             value: '{{  .Values.theme.successColor }}'
           - name: ANDI_ERROR_COLOR
