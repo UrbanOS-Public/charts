@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 name: urban-os
-version: 1.13.21
+version: 1.13.22
 
 dependencies:
   - name: alchemist
