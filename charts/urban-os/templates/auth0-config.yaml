@@ -10,6 +10,7 @@ data:
         "clients": {
             "Discovery": {
                 {{- $localhost := "http://localhost:9001" -}}
+                {{- $localhost := "http://localhost:9002" -}}
                 {{- $uiInternal := print "https://" .Values.global.subdomains.discoveryUi "." .Values.global.ingress.dnsZone -}}
                 {{- $uiExternal := print "https://" .Values.global.subdomains.discoveryUi "." .Values.global.ingress.rootDnsZone -}}
                 {{- $apiInternal := print "https://" .Values.global.subdomains.discoveryApi "." .Values.global.ingress.dnsZone -}}
