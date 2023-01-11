@@ -49,9 +49,9 @@ dependencies:
   version: 0.22.0
 - name: operator
   repository: https://operator.min.io/
-  version: 4.5.3
+  version: 4.5.6
 - name: tenant
   repository: https://operator.min.io/
-  version: 4.5.3
-digest: sha256:16c25b93210202ed1fe0b1f1dc7ab4fc4d51bd24a9be58fe591c95e5c354f8da
-generated: "2023-01-10T11:44:17.102221-06:00"
+  version: 4.5.6
+digest: sha256:3c5f841f1e475cf8fd76ec13aeeac047d25759a00030bac0613fcf7c9127a68c
+generated: "2023-01-10T15:26:04.280533-07:00"

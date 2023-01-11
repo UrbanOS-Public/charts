@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 name: urban-os
-version: 1.13.23
+version: 1.13.24
 
 dependencies:
   - name: alchemist
@@ -70,12 +70,12 @@ dependencies:
     condition: vault.enabled
     version: "0.22.0"
   - name: operator
-    version: 4.5.3
+    version: 4.5.6
     repository: https://operator.min.io/
     condition: minio-operator.enabled
     alias: minio-operator
   - name: tenant
-    version: 4.5.3
+    version: 4.5.6
     repository: https://operator.min.io/
     condition: minio-tenant.enabled
     alias: minio-tenant
