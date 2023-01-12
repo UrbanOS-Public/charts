@@ -10,14 +10,15 @@ data:
         "clients": {
             "Discovery": {
                 {{- $localhost := "http://localhost:9001" -}}
+                {{- $localhost_two := "http://localhost:9002" -}}
                 {{- $uiInternal := print "https://" .Values.global.subdomains.discoveryUi "." .Values.global.ingress.dnsZone -}}
                 {{- $uiExternal := print "https://" .Values.global.subdomains.discoveryUi "." .Values.global.ingress.rootDnsZone -}}
                 {{- $apiInternal := print "https://" .Values.global.subdomains.discoveryApi "." .Values.global.ingress.dnsZone -}}
                 {{- $apiExternal := print "https://" .Values.global.subdomains.discoveryApi "." .Values.global.ingress.rootDnsZone -}}
-                "callbacks": "[\"{{ $localhost }}/oauth\", \"{{ $uiInternal }}/oauth\", \"{{ $uiExternal }}/oauth\", \"{{ $apiInternal }}/tableau/connector.html\", \"{{ $apiExternal }}/tableau/connector.html\"]",
-                "allowedLogoutUrls": "[\"{{ $localhost }}/oauth\", \"{{ $uiInternal }}/oauth\", \"{{ $uiExternal }}/oauth\"]",
-                "allowedOrigins": "[\"{{ $localhost }}\", \"{{ $uiInternal }}\", \"{{ $uiExternal }}\",\"{{ $apiInternal }}\", \"{{ $apiExternal }}\"]",
-                "webOrigins": "[\"{{ $localhost }}\", \"{{ $uiInternal }}\", \"{{ $uiExternal }}\", \"{{ $apiInternal }}\", \"{{ $apiExternal }}\"]",
+                "callbacks": "[\"{{ $localhost }}/oauth\", \"{{ $localhost_two }}/oauth\", \"{{ $uiInternal }}/oauth\", \"{{ $uiExternal }}/oauth\", \"{{ $apiInternal }}/tableau/connector.html\", \"{{ $apiExternal }}/tableau/connector.html\"]",
+                "allowedLogoutUrls": "[\"{{ $localhost }}/oauth\", \"{{ $localhost_two }}/oauth\", \"{{ $uiInternal }}/oauth\", \"{{ $uiExternal }}/oauth\"]",
+                "allowedOrigins": "[\"{{ $localhost }}\", \"{{ $localhost_two }}\", \"{{ $uiInternal }}\", \"{{ $uiExternal }}\",\"{{ $apiInternal }}\", \"{{ $apiExternal }}\"]",
+                "webOrigins": "[\"{{ $localhost }}\", \"{{ $localhost_two }}\", \"{{ $uiInternal }}\", \"{{ $uiExternal }}\", \"{{ $apiInternal }}\", \"{{ $apiExternal }}\"]",
                 "name": "UrbanOS",
                 "type": "spa"
             },
