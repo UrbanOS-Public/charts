@@ -4,7 +4,7 @@ dependencies:
   version: 1.0.4
 - name: andi
   repository: file://../andi
-  version: 2.3.4
+  version: 2.3.6
 - name: discovery-api
   repository: file://../discovery-api
   version: 1.4.8
@@ -25,7 +25,7 @@ dependencies:
   version: 3.1.13
 - name: kafka
   repository: file://../kafka
-  version: 1.2.17
+  version: 1.2.19
 - name: kubernetes-data-platform
   repository: file://../kubernetes-data-platform
   version: 1.7.3
@@ -53,5 +53,5 @@ dependencies:
 - name: tenant
   repository: https://operator.min.io/
   version: 4.5.6
-digest: sha256:3c5f841f1e475cf8fd76ec13aeeac047d25759a00030bac0613fcf7c9127a68c
-generated: "2023-01-12T10:49:04.335709-06:00"
+digest: sha256:52df350bd5acd27091d11a673662279e8c15d41de34e329cb394d67b5edb25ab
+generated: "2023-01-12T18:07:05.303348-07:00"
