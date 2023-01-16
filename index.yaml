@@ -47,6 +47,16 @@ entries:
     version: 1.0.1
   andi:
   - apiVersion: v1
+    created: "2023-01-16T15:47:40.733648766Z"
+    description: REST API to allow for dataset definition ingestion
+    digest: 4e6ec77fdbdf5222ec6c836a767f7132575db0a4a0318613afd332d33809c477
+    name: andi
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/andi
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/andi-2.3.7/andi-2.3.7.tgz
+    version: 2.3.7
+  - apiVersion: v1
     created: "2023-01-13T01:09:45.859788585Z"
     description: REST API to allow for dataset definition ingestion
     digest: 77e23cb0e36e284cd99eb6864d62050efa61ad8a7876b186f196ccac8d592531
@@ -988,6 +998,18 @@ entries:
   discovery-ui:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2023-01-16T15:47:40.947720489Z"
+    description: A helm chart for the discovery ui
+    digest: 9a81fa12e9e4dada851e64d1987d6c102255e7aeb0d4beca4f13dd4676b40fb0
+    name: discovery-ui
+    sources:
+    - https://github.com/UrbanOS-Public/discovery_ui
+    - https://github.com/UrbanOS-Public/react_discovery_ui
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-ui-1.5.12/discovery-ui-1.5.12.tgz
+    version: 1.5.12
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2023-01-12T17:14:16.222353424Z"
     description: A helm chart for the discovery ui
     digest: 61ba02ba7eefd45d90fa9cc37ac903d548170e034a6e10d60b3fdba3b9526621
@@ -1816,6 +1838,23 @@ entries:
     - genesis-2.0.1.tgz
     version: 2.0.1
   kafka:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2023-01-16T15:47:41.192441762Z"
+    dependencies:
+    - condition: strimzi-kafka-operator.enabled
+      name: strimzi-kafka-operator
+      repository: http://strimzi.io/charts/
+      version: 0.31.1
+    description: A Helm chart for deploying kafka via strimzi
+    digest: 07495009b99b715a1125f97bdead28452b8302a3fe702531170c67f6089e2d45
+    name: kafka
+    sources:
+    - https://github.com/strimzi/strimzi-kafka-operator
+    - https://github.com/apache/kafka
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/kafka-1.2.20/kafka-1.2.20.tgz
+    version: 1.2.20
   - apiVersion: v2
     appVersion: "1.0"
     created: "2023-01-13T01:09:46.135542833Z"
@@ -3152,6 +3191,91 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2023-01-16T15:47:41.462026818Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.22.0
+    - alias: minio-operator
+      condition: minio-operator.enabled
+      name: operator
+      repository: https://operator.min.io/
+      version: 4.5.6
+    - alias: minio-tenant
+      condition: minio-tenant.enabled
+      name: tenant
+      repository: https://operator.min.io/
+      version: 4.5.6
+    description: Master chart that deploys the UrbanOS platform. See the individual
+      dependency readmes for configuration options.
+    digest: 8a1e9a1a65138d4093d199b92bb3b3d8e9b4aed79cf148bbeeafd4aa5a14c70a
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.13.26/urban-os-1.13.26.tgz
+    version: 1.13.26
   - apiVersion: v2
     appVersion: "1.0"
     created: "2023-01-13T01:09:46.433733278Z"
@@ -8384,4 +8508,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2023-01-13T01:09:46.436005508Z"
+generated: "2023-01-16T15:47:41.464612383Z"
