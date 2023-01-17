@@ -148,6 +148,8 @@ spec:
             value: '{{  .Values.footer.leftSideLink }}'
           - name: ANDI_FOOTER_RIGHT_LINKS
             value: '{{  .Values.footer.rightLinks }}'
+          - name: SECURE_COOKIE
+            value: {{ quote .Values.secureCookie }}
           {{ if .Values.aws.s3HostName }}
           - name: S3_HOST_NAME
             value: {{ .Values.aws.s3HostName }}
