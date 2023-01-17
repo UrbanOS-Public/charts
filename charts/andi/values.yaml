@@ -130,3 +130,5 @@ ingress:
   tls: true
   enabled: true
   annotations:
+
+secureCookie: "false"
