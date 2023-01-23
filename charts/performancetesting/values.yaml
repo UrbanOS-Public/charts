@@ -1,0 +1,20 @@
+
+replicaCount: 1 #This is not used for now
+namespace: dev
+schedule: "0 9 * * 1" #It runs At 9:00 every Monday
+image:
+  repository: quay.io/urbanos/perfomancetesting
+  pullPolicy: Always #This parameter is set "Always" due to the updates of the image
+  tag: development
+service:
+  ports: 8080
+resources: #jar file is running with a flag -Xmx1024m
+  requests:
+    memory: 512Mi
+    cpu: 300m
+  limits:
+    memory: 1Gi
+    cpu: 500m
+url:
+  ANDI_URL: ""
+restartPolicy: Never

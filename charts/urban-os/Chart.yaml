@@ -79,3 +79,7 @@ dependencies:
     repository: https://operator.min.io/
     condition: minio-tenant.enabled
     alias: minio-tenant
+  - name: perfomancetesting
+    version: 0.1.0
+    repository: file://../performancetesting
+    condition: performancetesting.enabled
