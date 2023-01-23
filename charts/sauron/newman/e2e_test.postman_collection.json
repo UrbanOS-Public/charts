@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3bf57b4c-d180-442b-90f0-51dba706f466",
+		"_postman_id": "dc4e428d-baea-4c40-85bc-f10fb7dd3257",
 		"name": "e2e_test",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -65,6 +65,9 @@
 						"exec": [
 							"pm.test(\"Dataset create returns 201\", function() {",
 							"    pm.response.to.have.status(201);",
+							"    response_body = pm.response.json()",
+							"    pm.expect(response_body[\"id\"]).to.exist;",
+							"    pm.collectionVariables.set(\"dataset_id\", response_body[\"id\"])",
 							"});"
 						],
 						"type": "text/javascript"
@@ -85,7 +88,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\n        \"business\": {\n            \"authorEmail\": null,\n            \"authorName\": null,\n            \"benefitRating\": 1.0,\n            \"categories\": null,\n            \"conformsToUri\": null,\n            \"contactEmail\": \"test@urbanos.test\",\n            \"contactName\": \"Test Name\",\n            \"dataTitle\": \"End-to-End Testing Dataset\",\n            \"describedByMimeType\": null,\n            \"describedByUrl\": null,\n            \"description\": \"A dataset created by End to End testing\",\n            \"homepage\": \"\",\n            \"issuedDate\": \"2020-10-01T02:01:39.213382Z\",\n            \"keywords\": [],\n            \"language\": null,\n            \"license\": \"https://creativecommons.org/licenses/by/4.0/\",\n            \"modifiedDate\": \"2021-08-25T10:01:08.540140Z\",\n            \"orgTitle\": \"UrbanOS End To End Testing Org\",\n            \"parentDataset\": null,\n            \"publishFrequency\": \"Monthly\",\n            \"referenceUrls\": null,\n            \"rights\": \"\",\n            \"riskRating\": 0.0,\n            \"spatial\": null,\n            \"temporal\": null\n        },\n        \"id\": \"{{dataset_id}}\",\n        \"technical\": {\n            \"allow_duplicates\": true,\n            \"authBody\": {},\n            \"authBodyEncodeMethod\": null,\n            \"authHeaders\": {},\n            \"authUrl\": null,\n            \"cadence\": \"never\",\n            \"credentials\": false,\n            \"dataName\": \"endtoenddata\",\n            \"orgId\": \"8189cca2-7288-11ed-a1eb-0242ac120003\",\n            \"orgName\": \"urbanos_end_to_end_testing_org\",\n            \"private\": false,\n            \"protocol\": null,\n            \"schema\": [\n                {\n                    \"name\": \"status\",\n                    \"type\": \"string\"\n                }\n            ],\n            \"sourceHeaders\": {},\n            \"sourceQueryParams\": {},\n            \"sourceType\": \"ingest\",\n            \"sourceUrl\": \"\",\n            \"systemName\": \"\"\n        },\n        \"version\": \"0.6\"\n    }",
+					"raw": "    {\n        \"business\": {\n            \"authorEmail\": null,\n            \"authorName\": null,\n            \"benefitRating\": 1.0,\n            \"categories\": null,\n            \"conformsToUri\": null,\n            \"contactEmail\": \"test@urbanos.test\",\n            \"contactName\": \"Test Name\",\n            \"dataTitle\": \"End-to-End Testing Dataset\",\n            \"describedByMimeType\": null,\n            \"describedByUrl\": null,\n            \"description\": \"A dataset created by End to End testing\",\n            \"homepage\": \"\",\n            \"issuedDate\": \"2020-10-01T02:01:39.213382Z\",\n            \"keywords\": [],\n            \"language\": null,\n            \"license\": \"https://creativecommons.org/licenses/by/4.0/\",\n            \"modifiedDate\": \"2021-08-25T10:01:08.540140Z\",\n            \"orgTitle\": \"UrbanOS End To End Testing Org\",\n            \"parentDataset\": null,\n            \"publishFrequency\": \"Monthly\",\n            \"referenceUrls\": null,\n            \"rights\": \"\",\n            \"riskRating\": 0.0,\n            \"spatial\": null,\n            \"temporal\": null\n        },\n        \"technical\": {\n            \"allow_duplicates\": true,\n            \"authBody\": {},\n            \"authBodyEncodeMethod\": null,\n            \"authHeaders\": {},\n            \"authUrl\": null,\n            \"cadence\": \"never\",\n            \"credentials\": false,\n            \"dataName\": \"endtoenddata\",\n            \"orgId\": \"8189cca2-7288-11ed-a1eb-0242ac120003\",\n            \"orgName\": \"urbanos_end_to_end_testing_org\",\n            \"private\": false,\n            \"protocol\": null,\n            \"schema\": [\n                {\n                    \"name\": \"status\",\n                    \"type\": \"string\"\n                }\n            ],\n            \"sourceHeaders\": {},\n            \"sourceQueryParams\": {},\n            \"sourceType\": \"ingest\",\n            \"sourceUrl\": \"\",\n            \"systemName\": \"\"\n        },\n        \"version\": \"0.6\"\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -115,6 +118,10 @@
 						"exec": [
 							"pm.test(\"Ingestion create returns 201\", function() {",
 							"    pm.response.to.have.status(201);",
+							"",
+							"    response_body = pm.response.json()",
+							"    pm.expect(response_body[\"id\"]).to.exist;",
+							"    pm.collectionVariables.set(\"ingestion_id\", response_body[\"id\"])",
 							"});"
 						],
 						"type": "text/javascript"
@@ -124,7 +131,9 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"setTimeout(() => {}, 2000)"
+							"setTimeout(() => {}, 2000)",
+							"",
+							"pm.expect(pm.collectionVariables.get(\"dataset_id\"), \"Could not obtain dataset_id from collection variables\").to.exist;"
 						],
 						"type": "text/javascript"
 					}
@@ -135,7 +144,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"{{ingestion_id}}\",\n    \"name\": \"End To End Testing Ingestion\",\n    \"allow_duplicates\": true,\n    \"cadence\": \"*/2 * * * * *\",\n    \"extractSteps\": [\n        {\n            \"assigns\": {},\n            \"context\": {\n                \"action\": \"GET\",\n                \"body\": {},\n                \"headers\": {},\n                \"protocol\": null,\n                \"queryParams\": {},\n                \"url\": \"https://raw.githubusercontent.com/bmitchinson/json-endpoint/main/meters_ingestionA.json\"\n            },\n            \"ingestion_id\": \"{{ingestion_id}}\",\n            \"sequence\": 2,\n            \"type\": \"http\"\n        }\n    ],\n    \"schema\": [\n        {\n            \"biased\": \"No\",\n            \"demographic\": \"None\",\n            \"description\": \"\",\n            \"ingestion_id\": \"19a182df-c464-40cf-b7f3-d2bfe79ae29a\",\n            \"masked\": \"N/A\",\n            \"name\": \"status\",\n            \"pii\": \"None\",\n            \"sequence\": 5,\n            \"subSchema\": [],\n            \"type\": \"string\"\n        }\n    ],\n    \"sourceFormat\": \"application/json\",\n    \"targetDataset\": \"{{dataset_id}}\",\n    \"topLevelSelector\": null,\n    \"transformations\": []\n}",
+					"raw": "{\n    \"name\": \"End To End Testing Ingestion\",\n    \"allow_duplicates\": true,\n    \"cadence\": \"*/15 * * * * *\",\n    \"extractSteps\": [\n        {\n            \"assigns\": {},\n            \"context\": {\n                \"action\": \"GET\",\n                \"body\": {},\n                \"headers\": {},\n                \"protocol\": null,\n                \"queryParams\": {},\n                \"url\": \"https://raw.githubusercontent.com/bmitchinson/json-endpoint/main/meters_ingestionA.json\"\n            },\n            \"sequence\": 2,\n            \"type\": \"http\"\n        }\n    ],\n    \"schema\": [\n        {\n            \"biased\": \"No\",\n            \"demographic\": \"None\",\n            \"description\": \"\",\n            \"masked\": \"N/A\",\n            \"name\": \"status\",\n            \"pii\": \"None\",\n            \"sequence\": 5,\n            \"subSchema\": [],\n            \"type\": \"string\"\n        }\n    ],\n    \"sourceFormat\": \"application/json\",\n    \"targetDataset\": \"{{dataset_id}}\",\n    \"topLevelSelector\": null,\n    \"transformations\": []\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -174,7 +183,9 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"setTimeout(() => {}, 2000)"
+							"setTimeout(() => {}, 2000)",
+							"",
+							"pm.expect(pm.collectionVariables.get(\"ingestion_id\"), \"Ingestion ID is not set.\").to.exist;"
 						],
 						"type": "text/javascript"
 					}
@@ -282,7 +293,9 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"setTimeout(() => {}, 1000)"
+							"setTimeout(() => {}, 1000)",
+							"",
+							"pm.expect(pm.collectionVariables.get(\"ingestion_id\"), \"Ingestion ID is not set.\").to.exist;"
 						],
 						"type": "text/javascript"
 					}
@@ -333,7 +346,9 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"setTimeout(() => {}, 1000)"
+							"setTimeout(() => {}, 1000)",
+							"",
+							"pm.expect(pm.collectionVariables.get(\"dataset_id\"), \"Could not obtain dataset_id from collection variables\").to.exist;"
 						],
 						"type": "text/javascript"
 					}
@@ -399,9 +414,23 @@
 			"type": "default"
 		},
 		{
+			"key": "andi_url",
+			"value": "http://localhost:4000",
+			"type": "default",
+			"disabled": true
+		},
+		{
 			"key": "discovery_url",
 			"value": "https://data.dev.apps.hsrqs9l3.eastus.aroapp.io",
 			"type": "default"
+		},
+		{
+			"key": "ingestion_id",
+			"value": ""
+		},
+		{
+			"key": "dataset_id",
+			"value": ""
 		}
 	]
 }
