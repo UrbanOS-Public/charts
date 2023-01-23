@@ -33,6 +33,7 @@ env:
   footer_left_side_link: "https://github.com/UrbanOS-Public/smartcitiesdata"
   footer_right_links: '[{"linkText":"UrbanOS", "url":"https://github.com/UrbanOS-Public/smartcitiesdata"}]'
   primary_color: "#0F64B3" 
+  # omitting mapbox will default plot.ly to use openstreetmap.org
   mapbox_access_token: ""
   auth0_domain: ""
   auth0_client_id: ""
