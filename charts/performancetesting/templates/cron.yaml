@@ -4,7 +4,7 @@ metadata:
   name: {{ .Chart.Name }}-cron
   namespace: {{ .Values.namespace }}
   labels:
-    app.kubernetes.io/name: uosjarchart
+    app.kubernetes.io/name: performancetest
 spec:
   schedule: "{{ .Values.schedule }}"
   concurrencyPolicy: Forbid
@@ -23,8 +23,6 @@ spec:
             limits:
               memory: {{ .Values.resources.limits.memory }}
               cpu: {{ .Values.resources.limits.cpu }}
-            ports:
-            - containerPort: {{ .Values.service.ports }}
             env:
             - name: ANDI_URL
               value: {{ .Values.url.ANDI_URL }}

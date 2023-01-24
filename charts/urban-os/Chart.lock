@@ -53,5 +53,8 @@ dependencies:
 - name: tenant
   repository: https://operator.min.io/
   version: 4.5.6
-digest: sha256:9f94143531f2f3c4d0d988a2616914262553772c4bbe98562c2f03d201857157
-generated: "2023-01-18T11:41:54.359818-07:00"
+- name: perfomancetesting
+  repository: file://../performancetesting
+  version: 0.1.0
+digest: sha256:04cf329386080c204de95a13236234bd7f6e1f10da96d240183e01d8bb172bb8
+generated: "2023-01-24T10:57:35.0645562-06:00"
