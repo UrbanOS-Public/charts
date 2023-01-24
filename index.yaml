@@ -47,6 +47,16 @@ entries:
     version: 1.0.1
   andi:
   - apiVersion: v1
+    created: "2023-01-24T17:08:25.872153731Z"
+    description: REST API to allow for dataset definition ingestion
+    digest: ffd17846cd3a13a5c82fc949f13cf0a498ce9239fbd192a618c9b6401d8b66db
+    name: andi
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/andi
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/andi-2.3.10/andi-2.3.10.tgz
+    version: 2.3.10
+  - apiVersion: v1
     created: "2023-01-17T19:18:38.454303805Z"
     description: REST API to allow for dataset definition ingestion
     digest: c7af6919dc0ad929806bdf826fb87182574267042fda04e7b881ffcccac4d961
@@ -1008,16 +1018,16 @@ entries:
   discovery-ui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2023-01-19T15:52:40.480044409Z"
+    created: "2023-01-24T17:08:26.091462351Z"
     description: A helm chart for the discovery ui
-    digest: da119401cb63a824296d4e387e98a3a54d2b070f7207b104462aab54c0f5fbd5
+    digest: 19281d00eaa95d0406c44ef4f3c497e50a14c0d11e53764c7c7402594ee20ed6
     name: discovery-ui
     sources:
     - https://github.com/UrbanOS-Public/discovery_ui
     - https://github.com/UrbanOS-Public/react_discovery_ui
     urls:
-    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-ui-1.5.13/discovery-ui-1.5.13.tgz
-    version: 1.5.13
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-ui-1.5.15/discovery-ui-1.5.15.tgz
+    version: 1.5.15
   - apiVersion: v1
     appVersion: "1.0"
     created: "2023-01-16T15:47:40.947720489Z"
@@ -3104,6 +3114,16 @@ entries:
   sauron:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2023-01-24T17:08:26.320693298Z"
+    description: Cron jobs that watch remote deployments and images, issuing cluster
+      commands as needed to update.
+    digest: 348dee2d2dde8b3a602f9db1bdb10361cadfad398249537f3b523be947215b26
+    name: sauron
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/sauron-0.0.15/sauron-0.0.15.tgz
+    version: 0.0.15
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2022-12-30T17:22:00.714014235Z"
     description: Cron jobs that watch remote deployments and images, issuing cluster
       commands as needed to update.
@@ -3215,7 +3235,7 @@ entries:
   urban-os:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2023-01-19T15:52:40.687534128Z"
+    created: "2023-01-24T17:08:26.618781031Z"
     dependencies:
     - condition: alchemist.enabled
       name: alchemist
@@ -3293,11 +3313,11 @@ entries:
       version: 4.5.6
     description: Master chart that deploys the UrbanOS platform. See the individual
       dependency readmes for configuration options.
-    digest: 42fe928061652377b423c2d80d2b8d6860ecd93653c1b0a8f595269b3e08436e
+    digest: 9b43146e46314972986f27011af88f122bd31c2ba3f12ff144517f7d52f13506
     name: urban-os
     urls:
-    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.13.28/urban-os-1.13.28.tgz
-    version: 1.13.28
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.13.29/urban-os-1.13.29.tgz
+    version: 1.13.29
   - apiVersion: v2
     appVersion: "1.0"
     created: "2023-01-17T19:18:38.694693792Z"
@@ -8700,4 +8720,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2023-01-19T15:52:40.689538279Z"
+generated: "2023-01-24T17:08:26.62101306Z"
