@@ -1,6 +1,6 @@
 # andi
 
-![Version: 2.3.8](https://img.shields.io/badge/Version-2.3.8-informational?style=flat-square)
+![Version: 2.3.9](https://img.shields.io/badge/Version-2.3.9-informational?style=flat-square)
 
 REST API to allow for dataset definition ingestion
 

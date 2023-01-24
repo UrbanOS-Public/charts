@@ -4,7 +4,7 @@ dependencies:
   version: 1.0.4
 - name: andi
   repository: file://../andi
-  version: 2.3.8
+  version: 2.3.9
 - name: discovery-api
   repository: file://../discovery-api
   version: 1.4.8
@@ -13,7 +13,7 @@ dependencies:
   version: 1.1.7
 - name: discovery-ui
   repository: file://../discovery-ui
-  version: 1.5.13
+  version: 1.5.14
 - name: elasticsearch
   repository: https://helm.elastic.co
   version: 7.14.0
@@ -53,5 +53,5 @@ dependencies:
 - name: tenant
   repository: https://operator.min.io/
   version: 4.5.6
-digest: sha256:9f94143531f2f3c4d0d988a2616914262553772c4bbe98562c2f03d201857157
-generated: "2023-01-18T11:41:54.359818-07:00"
+digest: sha256:84021bbd69d0aff07e0b5c919697c6ee339ed839f224f02ca30812cea3b05226
+generated: "2023-01-24T11:30:33.059127-05:00"
