@@ -15,6 +15,10 @@ Newman Tests run against production and goes from Andi Org creation through Disc
 
 ## To Run the suite
 - Enter Sauron (in environment or locally)
+  - Find the name of a previously run sauron cron pod - i.e:
+```shell
+oc debug sauron-cron-27900780--1-847ds
+```
 - Enter VPN (if local)
 - navigate to /usr/local/bin
 - execute e2e_test.sh
