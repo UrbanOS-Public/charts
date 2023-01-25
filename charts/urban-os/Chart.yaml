@@ -80,6 +80,6 @@ dependencies:
     condition: minio-tenant.enabled
     alias: minio-tenant
   - name: perfomancetesting
-    version: 0.1.0
+    version: 0.1.1
     repository: file://../performancetesting
     condition: performancetesting.enabled
