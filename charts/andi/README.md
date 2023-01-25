@@ -1,6 +1,6 @@
 # andi
 
-![Version: 2.3.7](https://img.shields.io/badge/Version-2.3.7-informational?style=flat-square)
+![Version: 2.3.10](https://img.shields.io/badge/Version-2.3.10-informational?style=flat-square)
 
 REST API to allow for dataset definition ingestion
 
@@ -64,6 +64,7 @@ REST API to allow for dataset definition ingestion
 | s3.hostedFileRegion | string | `"us-west-2"` |  |
 | secrets.live_view.enable | bool | `true` |  |
 | secrets.live_view.value | string | `"devonlyenablefalseanddefineoutofsourceinprod"` |  |
+| secureCookie | string | `"false"` |  |
 | service.port | int | `80` |  |
 | service.targetPort | int | `4000` |  |
 | service.type | string | `"NodePort"` |  |
