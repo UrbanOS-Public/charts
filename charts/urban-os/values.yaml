@@ -257,5 +257,5 @@ valkyrie:
   replicaCount: 1
 
 performancetesting:
-  url.ANDI_URL: ""
+  ANDI_URL: ""
   enabled: false

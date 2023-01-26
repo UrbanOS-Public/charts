@@ -25,5 +25,5 @@ spec:
               cpu: {{ .Values.resources.limits.cpu }}
             env:
             - name: ANDI_URL
-              value: {{ .Values.url.ANDI_URL }}
+              value: {{ .Values.performancetesting.ANDI_URL }}
           restartPolicy: {{ .Values.restartPolicy }}
