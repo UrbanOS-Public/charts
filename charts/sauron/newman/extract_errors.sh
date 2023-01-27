@@ -7,6 +7,8 @@ if [[ $RESULTS_FILE == "" ]]; then
 fi
 ERROR_OUTPUT_FILE=${RESULTS_FILE}_errors.json
 
+TOTAL_TESTS=$(jq .run.stats.assertions.total "$RESULTS_FILE")
+echo "Total E2E TEST: $TOTAL_TESTS"
 FAILURES=$(jq .run.stats.assertions.failed "$RESULTS_FILE")
 if [[ $FAILURES -gt 0 ]]; then
   cat "$RESULTS_FILE" | jq '.run.executions | map(.assertions) | flatten(2) | map(select(.error != null))' > "$ERROR_OUTPUT_FILE"

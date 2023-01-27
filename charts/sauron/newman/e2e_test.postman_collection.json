@@ -69,10 +69,7 @@
 							"    pm.expect(pm.response, `Did not have status 201. Status: ${pm.response.status}, Body: ${JSON.stringify(response_body)}`).to.have.status(201);",
 							"    pm.expect(response_body[\"id\"]).to.exist;",
 							"    pm.collectionVariables.set(\"dataset_id\", response_body[\"id\"])",
-							"});",
-							"",
-							"response_json = JSON.stringify(pm.response.json())",
-							"    pm.expect(pm.collectionVariables.get(\"andi_url\"), `This will always fail to give console output. Response: ${response_json} Status: ${pm.response.status}`).to.equal(\"Failure\");"
+							"});"
 						],
 						"type": "text/javascript"
 					}
