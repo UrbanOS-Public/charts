@@ -21,7 +21,16 @@ oc debug sauron-cron-27900780--1-847ds
 ```
 - Enter VPN (if local)
 - navigate to /usr/local/bin
-- execute e2e_test.sh
+- Specify your postman environment vars and your output file:
+```shell
+newman run e2e_test.postman_collection.json --insecure --delay-request 2000 \
+    --reporters json --reporter-json-export {path_to_output_file}.json --env-var "andi_url={andi_url} discovery_url={discovery_url} api_key={api_key}" 
+```
+
+- Once completed, extract any errors from the results file:
+```shell
+./extract_errors.sh {path_to_results_file}.json
+```
 
 
 ## What all is done

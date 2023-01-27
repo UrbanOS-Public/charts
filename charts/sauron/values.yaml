@@ -5,7 +5,7 @@ global:
 
 config:
   cron: "*/10 * * * *"
-  image: "smartcitiesdata/sauron:0.0.7"
+  image: "smartcitiesdata/sauron:0.0.8"
   managedReleaseName: "urban-os"
 
 remoteDeployment:
