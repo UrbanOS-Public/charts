@@ -255,3 +255,7 @@ valkyrie:
   fullnameOverride: valkyrie
   enabled: true
   replicaCount: 1
+
+performancetesting:
+  ANDI_URL: ""
+  enabled: false
