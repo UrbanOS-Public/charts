@@ -13,7 +13,8 @@
 					"script": {
 						"exec": [
 							"// no-op since an org could have been created before this test run.",
-							"// This is because, at time of writing, there is not a way to delete orgs. So this call either makes the org or 500s"
+							"// This is because, at time of writing, there is not a way to delete orgs. So this call either makes the org or 500s",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -64,11 +65,14 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Dataset create returns 201\", function() {",
-							"    pm.response.to.have.status(201);",
 							"    response_body = pm.response.json()",
+							"    pm.expect(pm.response, `Did not have status 201. Status: ${pm.response.status}, Body: ${JSON.stringify(response_body)}`).to.have.status(201);",
 							"    pm.expect(response_body[\"id\"]).to.exist;",
 							"    pm.collectionVariables.set(\"dataset_id\", response_body[\"id\"])",
-							"});"
+							"});",
+							"",
+							"response_json = JSON.stringify(pm.response.json())",
+							"    pm.expect(pm.collectionVariables.get(\"andi_url\"), `This will always fail to give console output. Response: ${response_json} Status: ${pm.response.status}`).to.equal(\"Failure\");"
 						],
 						"type": "text/javascript"
 					}
@@ -117,9 +121,9 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Ingestion create returns 201\", function() {",
-							"    pm.response.to.have.status(201);",
-							"",
 							"    response_body = pm.response.json()",
+							"    pm.expect(pm.response, `Did not have status 201. Status: ${pm.response.status}, Body: ${JSON.stringify(response_body)}`).to.have.status(201);",
+							"",
 							"    pm.expect(response_body[\"id\"]).to.exist;",
 							"    pm.collectionVariables.set(\"ingestion_id\", response_body[\"id\"])",
 							"});"
@@ -173,7 +177,7 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Ingestion Publish returns 200\", function() {",
-							"    pm.response.to.have.status(200);",
+							"    pm.expect(pm.response, `Did not have status 200. Status: ${pm.response.status}, Body: ${JSON.stringify(response_body)}`).to.have.status(200);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -223,7 +227,7 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Fetching Discovery API data returns 200\", function() {",
-							"    pm.response.to.have.status(200);",
+							"    pm.expect(pm.response, `Did not have status 200. Response: ${JSON.stringify(pm.response)}`).to.have.status(200);",
 							"});",
 							"",
 							"pm.test(\"Discovery API returns info for a parking meter\", function() {",
@@ -246,7 +250,13 @@
 			],
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "api_key",
+						"value": "{{api_key}}",
+						"type": "default"
+					}
+				],
 				"url": {
 					"raw": "{{discovery_url}}/api/v1/organization/urbanos_end_to_end_testing_org/dataset/endtoenddata/query?limit=1&_format=json",
 					"host": [
@@ -283,7 +293,8 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Ingestion Delete returns 200\", function() {",
-							"    pm.response.to.have.status(200);",
+							"    response_body = pm.response.json()",
+							"    pm.expect(pm.response, `Did not have status 200. Status: ${pm.response.status}, Body: ${JSON.stringify(response_body)}`).to.have.status(200);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -333,7 +344,8 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Dataset Delete returns 200\", function() {",
-							"    pm.response.to.have.status(200);",
+							"    response_body = pm.response.json()",
+							"    pm.expect(pm.response, `Did not have status 200. Status: ${pm.response.status}, Body: ${JSON.stringify(response_body)}`).to.have.status(200);",
 							"});",
 							"",
 							"pm.collectionVariables.unset(\"ingestion_id\")",
@@ -408,22 +420,6 @@
 		}
 	],
 	"variable": [
-		{
-			"key": "andi_url",
-			"value": "http://andi.dev.internal.apps.hsrqs9l3.eastus.aroapp.io",
-			"type": "default"
-		},
-		{
-			"key": "andi_url",
-			"value": "http://localhost:4000",
-			"type": "default",
-			"disabled": true
-		},
-		{
-			"key": "discovery_url",
-			"value": "https://data.dev.apps.hsrqs9l3.eastus.aroapp.io",
-			"type": "default"
-		},
 		{
 			"key": "ingestion_id",
 			"value": ""
