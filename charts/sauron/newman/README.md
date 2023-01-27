@@ -27,13 +27,6 @@ newman run e2e_test.postman_collection.json --insecure --delay-request 2000 \
     --reporters json --reporter-json-export {path_to_output_file}.json --environment {path_to_postman_environment}.postman_collection.json 
 ```
 
-newman run e2e_test.postman_collection.json --insecure --delay-request 2000 \
---reporters json --reporter-json-export /repos/.json --environment {path_to_postman_environment}.postman_collection.json
-
-newman run e2e_test.postman_collection.json --insecure --delay-request 2000 \
---reporters json --reporter-json-export --environment /repos/any {path_to_output_file}
-
-
 - Once completed, extract any errors from the results file:
 ```shell
 ./extract_errors.sh {path_to_results_file}.json
