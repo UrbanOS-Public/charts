@@ -3114,6 +3114,16 @@ entries:
   sauron:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2023-01-27T16:47:25.688640002Z"
+    description: Cron jobs that watch remote deployments and images, issuing cluster
+      commands as needed to update.
+    digest: acadfeecf38419aea90ae42aa9947a695498142287db7cfe2fd45229a3b54399
+    name: sauron
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/sauron-0.0.16/sauron-0.0.16.tgz
+    version: 0.0.16
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2023-01-24T17:08:26.320693298Z"
     description: Cron jobs that watch remote deployments and images, issuing cluster
       commands as needed to update.
@@ -8720,4 +8730,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2023-01-24T17:08:26.62101306Z"
+generated: "2023-01-27T16:47:25.69096145Z"
