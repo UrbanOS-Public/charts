@@ -71,7 +71,10 @@ Store these keys in Azure Key Vault as `{release-name}-vault-key-1`, `{release-n
 
 ### Add replica to raft storage cluster
 
-Do this only for the replicas ({release-name}-vault-1, {release-name}-vault-2, etc.)
+First, unseal the primary vault (See instructions below)
+
+
+Then, do this only for the replicas ({release-name}-vault-1, {release-name}-vault-2, etc.)
 
 ```sh
 vault operator raft join http://{release-name}-vault-0.{release-name}-vault-internal:8200
