@@ -27,4 +27,8 @@ spec:
             env:
             - name: ANDI_URL
               value: {{ .Values.performancetesting.ANDI_URL }}
+            - name: DISCOVERY_URL
+              value: { { .Values.performancetesting.DISCOVERY_URL } }
+            - name: API_KEY
+              value: { { .Values.performancetesting.API_KEY } }
           restartPolicy: {{ .Values.restartPolicy }}
