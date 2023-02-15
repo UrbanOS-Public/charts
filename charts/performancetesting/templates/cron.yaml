@@ -27,4 +27,6 @@ spec:
             env:
             - name: ANDI_URL
               value: {{ .Values.performancetesting.ANDI_URL }}
+            volumeMounts:
+              - mountPath: /usr/local/bin/
           restartPolicy: {{ .Values.restartPolicy }}
