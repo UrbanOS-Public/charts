@@ -13,4 +13,6 @@ resources: #jar file is running with a flag -Xmx1024m
     cpu: 500m
 performancetesting:
   ANDI_URL: ""
+  DISCOVERY_URL: ""
+  API_KEY: ""
 restartPolicy: Never
