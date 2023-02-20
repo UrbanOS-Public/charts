@@ -26,9 +26,9 @@ spec:
                 cpu: {{ .Values.resources.limits.cpu }}
             env:
             - name: ANDI_URL
-              value: {{ .Values.performancetesting.ANDI_URL }}
+              value: {{ .Values.performancetesting.endpoints.ANDI_URL }}
             - name: DISCOVERY_URL
-              value: {{ .Values.performancetesting.DISCOVERY_URL }}
+              value: {{ .Values.performancetesting.endpoints.DISCOVERY_URL }}
             - name: API_KEY
-              value: {{ .Values.performancetesting.API_KEY }}
+              value: {{ .Values.performancetesting.endpoints.API_KEY }}
           restartPolicy: {{ .Values.restartPolicy }}

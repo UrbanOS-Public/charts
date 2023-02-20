@@ -11,7 +11,7 @@ resources: #jar file is running with a flag -Xmx1024m
   limits:
     memory: 1Gi
     cpu: 500m
-performancetesting:
+endpoints:
   ANDI_URL: ""
   DISCOVERY_URL: ""
   API_KEY: ""
