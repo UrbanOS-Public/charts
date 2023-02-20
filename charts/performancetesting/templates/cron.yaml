@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: pvc-cron
+  name: crontest-demo
   namespace: {{ .Values.namespace }}
   labels:
     app.kubernetes.io/name: performancetest
@@ -32,10 +32,10 @@ spec:
             - name: API_KEY
               value: {{ .Values.performancetesting.API_KEY }}
             volumeMounts:
-            - mountPath: /usr/local/bin/
+            - mountPath: /app
               name: pvc-cron
           restartPolicy: {{ .Values.restartPolicy }}
           volumes:
           - name: pvc-cron
             persistentVolumeClaim:
-              claimName: pvc-cron
+              claimName: pvc-cron-test
