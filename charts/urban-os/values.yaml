@@ -257,5 +257,8 @@ valkyrie:
   replicaCount: 1
 
 performancetesting:
-  ANDI_URL: ""
   enabled: false
+  endpoints:
+    ANDI_URL: ""
+    DISCOVERY_URL: ""
+    API_KEY: ""
