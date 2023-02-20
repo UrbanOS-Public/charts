@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: prueba1
+  name: {{ .Chart.Name }}-cron
   namespace: {{ .Values.namespace }}
   labels:
     app.kubernetes.io/name: performancetest
