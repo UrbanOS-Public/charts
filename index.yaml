@@ -2679,6 +2679,16 @@ entries:
     version: 0.1.0
   performancetesting:
   - apiVersion: v2
+    created: "2023-02-22T21:42:29.241474365Z"
+    description: Cronjob for executing the system test image on cadence
+    digest: c3baea0049a4fca8e6dc64f5f047517c7e26e18e8627dbfaa487ca9f87af916d
+    icon: https://github.com/UrbanOS-Public
+    name: performancetesting
+    type: application
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/performancetesting-0.1.6/performancetesting-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
     created: "2023-02-20T22:47:14.904700521Z"
     description: Cronjob for executing the system test image on cadence
     digest: 26e460afc1fe548e89d0920a56150bbedd7b3bf50480f1d5d3180f68b3fab650
@@ -3284,6 +3294,95 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2023-02-22T21:42:29.450859283Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.22.0
+    - alias: minio-operator
+      condition: minio-operator.enabled
+      name: operator
+      repository: https://operator.min.io/
+      version: 4.5.6
+    - alias: minio-tenant
+      condition: minio-tenant.enabled
+      name: tenant
+      repository: https://operator.min.io/
+      version: 4.5.6
+    - condition: performancetesting.enabled
+      name: performancetesting
+      repository: file://../performancetesting
+      version: '>= 0.0.0'
+    description: Master chart that deploys the UrbanOS platform. See the individual
+      dependency readmes for configuration options.
+    digest: 37069cca5e109533f92209bdab6e1259b75c7b3a1182ceb60d402b07ff307fe2
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.13.34/urban-os-1.13.34.tgz
+    version: 1.13.34
   - apiVersion: v2
     appVersion: "1.0"
     created: "2023-02-20T22:47:15.168671437Z"
@@ -9127,4 +9226,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-20T22:47:15.171113958Z"
+generated: "2023-02-22T21:42:29.452908335Z"
