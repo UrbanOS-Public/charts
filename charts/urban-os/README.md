@@ -1,6 +1,6 @@
 # urban-os
 
-![Version: 1.13.29](https://img.shields.io/badge/Version-1.13.29-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.13.34](https://img.shields.io/badge/Version-1.13.34-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 
@@ -18,6 +18,7 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | file://../kafka | kafka | >= 1.0.0 |
 | file://../kubernetes-data-platform | kubernetes-data-platform | >= 1.0.0 |
 | file://../monitoring | monitoring | >= 1.0.0 |
+| file://../performancetesting | performancetesting | >= 0.0.0 |
 | file://../persistence | persistence | >= 1.0.0 |
 | file://../raptor | raptor | >= 1.0.0 |
 | file://../reaper | reaper | >= 1.0.0 |
@@ -109,6 +110,10 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | minio-tenant.tenant.pools[0].volumesPerServer | int | `4` |  |
 | minio-tenant.tenant.users[0].name | string | `"tenant-user-0"` |  |
 | monitoring | object | `{"enabled":false}` | By default monitoring is disabled as it is optional, but we recommend it be enabled for production deployments |
+| performancetesting.enabled | bool | `false` |  |
+| performancetesting.endpoints.ANDI_URL | string | `""` |  |
+| performancetesting.endpoints.API_KEY | string | `""` |  |
+| performancetesting.endpoints.DISCOVERY_URL | string | `""` |  |
 | persistence.enabled | bool | `true` |  |
 | raptor | object | `{"enabled":true,"fullnameOverride":"raptor"}` | See dependent chart for configuration details |
 | reaper | object | `{"enabled":true,"fullnameOverride":"reaper"}` | See dependent chart for configuration details |
