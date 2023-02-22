@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 name: urban-os
-version: 1.13.31
+version: 1.13.34
 
 dependencies:
   - name: alchemist
@@ -80,6 +80,6 @@ dependencies:
     condition: minio-tenant.enabled
     alias: minio-tenant
   - name: performancetesting
-    version: 0.1.3
+    version: ">= 0.0.0"
     repository: file://../performancetesting
     condition: performancetesting.enabled
