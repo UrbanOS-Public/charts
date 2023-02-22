@@ -55,6 +55,6 @@ dependencies:
   version: 4.5.6
 - name: performancetesting
   repository: file://../performancetesting
-  version: 0.1.5
-digest: sha256:ff311309785a521b80d985d8bba894f53054a66d65d2f137004ab9c2bcc137cb
-generated: "2023-02-20T14:35:53.5990014-06:00"
+  version: 0.1.6
+digest: sha256:128123810bcf2d848b69fb5d86b27540802695a792bc7f19e85a8aab04e529c1
+generated: "2023-02-22T16:33:30.154043-05:00"
