@@ -1,6 +1,6 @@
 # monitoring
 
-![Version: 1.1.1](https://img.shields.io/badge/Version-1.1.1-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.1.2](https://img.shields.io/badge/Version-1.1.2-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A combination of the community Prometheus and Grafana charts.
 
@@ -8,8 +8,8 @@ A combination of the community Prometheus and Grafana charts.
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://grafana.github.io/helm-charts | grafana | 6.14.1 |
-| https://prometheus-community.github.io/helm-charts | prometheus | 14.4.1 |
+| https://grafana.github.io/helm-charts | grafana | 6.50.5 |
+| https://prometheus-community.github.io/helm-charts | prometheus | 19.3.3 |
 
 ## Values
 
@@ -66,23 +66,31 @@ A combination of the community Prometheus and Grafana charts.
 | grafana.dashboards.urbanos.urban-os-pipeline-health.datasource | string | `"Prometheus"` |  |
 | grafana.dashboards.urbanos.urban-os-pipeline-health.gnetId | int | `14805` |  |
 | grafana.dashboards.urbanos.urban-os-pipeline-health.revision | int | `1` |  |
-| grafana.datasources."datasources.yaml".apiVersion | int | `1` |  |
-| grafana.datasources."datasources.yaml".datasources[0].access | string | `"proxy"` |  |
-| grafana.datasources."datasources.yaml".datasources[0].isDefault | bool | `true` |  |
-| grafana.datasources."datasources.yaml".datasources[0].name | string | `"Prometheus"` |  |
-| grafana.datasources."datasources.yaml".datasources[0].type | string | `"prometheus"` |  |
-| grafana.datasources."datasources.yaml".datasources[0].url | string | `"http://monitoring-prometheus-server"` |  |
 | grafana.fullnameOverride | string | `"monitoring-grafana"` |  |
+| grafana.securityContext.fsGroup | int | `1000` |  |
+| grafana.securityContext.runAsGroup | int | `1000` |  |
+| grafana.securityContext.runAsUser | int | `1000` |  |
 | grafana.service.enabled | bool | `true` |  |
 | grafana.service.type | string | `"NodePort"` |  |
+| grafana.serviceAccount.create | bool | `false` |  |
+| grafana.serviceAccount.name | string | `"default"` |  |
 | grafana.sidecar.dashboards.enabled | bool | `true` |  |
 | grafanaIngress.annotations | object | `{}` |  |
-| prometheus.server.fullnameOverride | string | `"monitoring-prometheus-server"` |  |
+| prometheus.prometheus-pushgateway.securityContext.fsGroup | int | `1000` |  |
+| prometheus.prometheus-pushgateway.securityContext.runAsGroup | int | `1000` |  |
+| prometheus.prometheus-pushgateway.securityContext.runAsUser | int | `1000` |  |
+| prometheus.prometheus-pushgateway.serviceAccount.create | bool | `false` |  |
+| prometheus.prometheus-pushgateway.serviceAccount.name | string | `"default"` |  |
+| prometheus.server.defaultFlagsOverride | string | `". [ --config.file=/etc/config/prometheus.yml, --storage.tsdb.path=/data, --web.console.libraries=/etc/prometheus/console_libraries, --web.console.templates=/etc/prometheus/consoles, --web.enable-lifecycle, ]"` |  |
+| prometheus.server.extraFlags."storage.tsdb.wal-compression" | bool | `true` |  |
+| prometheus.server.namespaces[0] | string | `"dev"` |  |
 | prometheus.server.resources.limits.cpu | string | `"500m"` |  |
-| prometheus.server.resources.limits.memory | string | `"1Gi"` |  |
-| prometheus.server.resources.requests.cpu | string | `"500m"` |  |
-| prometheus.server.resources.requests.memory | string | `"1Gi"` |  |
-| prometheus.server.service.type | string | `"NodePort"` |  |
+| prometheus.server.resources.limits.memory | string | `"2Gi"` |  |
+| prometheus.server.resources.requests.cpu | string | `"250m"` |  |
+| prometheus.server.resources.requests.memory | string | `"250Mi"` |  |
+| prometheus.server.securityContext.fsGroup | int | `1000` |  |
+| prometheus.server.securityContext.runAsGroup | int | `1000` |  |
+| prometheus.server.securityContext.runAsUser | int | `1000` |  |
 | prometheus.serverFiles."alerting_rules.yml".groups[0].name | string | `"Sites"` |  |
 | prometheus.serverFiles."alerting_rules.yml".groups[0].rules[0].alert | string | `"SiteDown"` |  |
 | prometheus.serverFiles."alerting_rules.yml".groups[0].rules[0].annotations.description | string | `"{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 2 minutes."` |  |
@@ -150,6 +158,20 @@ A combination of the community Prometheus and Grafana charts.
 | prometheus.serverFiles."alerting_rules.yml".groups[6].rules[0].annotations.summary | string | `"Prometheus has failed to precalculate one or more metrics"` |  |
 | prometheus.serverFiles."alerting_rules.yml".groups[6].rules[0].expr | string | `"rate(prometheus_rule_evaluation_failures_total{rule_group=~\".*rules.*\"}[2m]) > 0"` |  |
 | prometheus.serverFiles."alerting_rules.yml".groups[6].rules[0].labels.severity | string | `"warning"` |  |
+| prometheus.serverFiles."prometheus.yml".rule_files[0] | string | `"/etc/config/recording_rules.yml"` |  |
+| prometheus.serverFiles."prometheus.yml".rule_files[1] | string | `"/etc/config/alerting_rules.yml"` |  |
+| prometheus.serverFiles."prometheus.yml".rule_files[2] | string | `"/etc/config/rules"` |  |
+| prometheus.serverFiles."prometheus.yml".rule_files[3] | string | `"/etc/config/alerts"` |  |
+| prometheus.serverFiles."prometheus.yml".scrape_configs[0].job_name | string | `"prometheus"` |  |
+| prometheus.serverFiles."prometheus.yml".scrape_configs[0].static_configs[0].targets[0] | string | `"andi.dev.internal.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics"` |  |
+| prometheus.serverFiles."prometheus.yml".scrape_configs[0].static_configs[0].targets[1] | string | `"data.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics"` |  |
+| prometheus.serverFiles."prometheus.yml".scrape_configs[0].static_configs[0].targets[2] | string | `"streams.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics"` |  |
+| prometheus.serverFiles."prometheus.yml".scrape_configs[1].job_name | string | `"discovery_api"` |  |
+| prometheus.serverFiles."prometheus.yml".scrape_configs[1].scheme | string | `"https"` |  |
+| prometheus.serverFiles."prometheus.yml".scrape_configs[1].static_configs[0].targets[0] | string | `"data.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics"` |  |
+| prometheus.serverFiles."prometheus.yml".scrape_configs[2].job_name | string | `"discovery_streams"` |  |
+| prometheus.serverFiles."prometheus.yml".scrape_configs[2].scheme | string | `"http"` |  |
+| prometheus.serverFiles."prometheus.yml".scrape_configs[2].static_configs[0].targets[0] | string | `"streams.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics"` |  |
 | prometheus.serverFiles.alerts | object | `{}` |  |
 | prometheus.serverFiles.rules.groups[0].interval | string | `"30s"` |  |
 | prometheus.serverFiles.rules.groups[0].name | string | `"pipeline.rules"` |  |
@@ -163,6 +185,8 @@ A combination of the community Prometheus and Grafana charts.
 | prometheus.serverFiles.rules.groups[0].rules[3].record | string | `"pipeline:event_stream:lag"` |  |
 | prometheus.serverFiles.rules.groups[0].rules[4].expr | string | `"sum(label_replace(rate(fluentd_input_status_num_records_total{tag=~\".*(forklift|reaper|voltron|valkyrie|discovery-api).*\"}[5m]), \"name\", \"$1\", \"tag\", \"kube.var.log.containers.(.+?)-.*\")) by (name) > 0"` |  |
 | prometheus.serverFiles.rules.groups[0].rules[4].record | string | `"pipeline:log_message_rate"` |  |
+| prometheus.serviceAccounts.server.create | bool | `false` |  |
+| prometheus.serviceAccounts.server.name | string | `"default"` |  |
 | prometheusIngress.annotations | object | `{}` |  |
 
 ----------------------------------------------

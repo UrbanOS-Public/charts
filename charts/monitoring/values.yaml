@@ -15,18 +15,13 @@ prometheusIngress:
 grafana:
   adminUser: admin
   fullnameOverride: monitoring-grafana
-  # An adminPassword must be set
-  # adminPassword: {password}
-
-  datasources:
-    datasources.yaml:
-      apiVersion: 1
-      datasources:
-        - name: Prometheus
-          type: prometheus
-          url: http://monitoring-prometheus-server
-          access: proxy
-          isDefault: true
+  serviceAccount:
+    create: false
+    name: default
+  securityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+    fsGroup: 1000
   service:
     enabled: true
     type: NodePort
@@ -110,19 +105,132 @@ grafana:
     #     datasource: Prometheus
 
 prometheus:
+  serviceAccounts:
+    server:
+      create: false
+      name: default
   server:
-    fullnameOverride: monitoring-prometheus-server
+    securityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
     resources:
       limits:
-        memory: 1Gi
+        memory: 2Gi
         cpu: 500m
       requests:
-        memory: 1Gi
-        cpu: 500m
-    service:
-      type: NodePort
+        memory: 250Mi
+        cpu: 250m
+    extraFlags:
+      storage.tsdb.wal-compression: true
+    defaultFlagsOverride: .
+      [
+      --config.file=/etc/config/prometheus.yml,
+      --storage.tsdb.path=/data,
+      --web.console.libraries=/etc/prometheus/console_libraries,
+      --web.console.templates=/etc/prometheus/consoles,
+      --web.enable-lifecycle,
+      ]
+
+    namespaces:
+      - dev
+
+  # alertmanager:
+  #   persistence:
+  #     size: 2Gi
+  #   podSecurityContext:
+  #     runAsUser: 1000
+  #     runAsGroup: 1000
+  #     fsGroup: 1000
+  prometheus-pushgateway:
+    # enabled: false
+    serviceAccount:
+      create: false
+      name: default
+
+    securityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
+
+  # configmapReload:
+  #   prometheus:
+  #     ## If false, the configmap-reload container will not be deployed
+  #     ##
+  #     enabled: true
+
+  #     ## configmap-reload container name
+  #     ##
+  #     name: configmap-reload
+
+  #     ## configmap-reload container image
+  #     ##
+  #     image:
+  #       repository: jimmidyson/configmap-reload
+  #       tag: v0.8.0
+  #       # When digest is set to a non-empty value, images will be pulled by digest (regardless of tag value).
+  #       digest: ""
+  #       pullPolicy: IfNotPresent
+
+  #     # containerPort: 9533
+
+  #     ## Additional configmap-reload container arguments
+  #     ##
+  #     extraArgs: {}
+  #     ## Additional configmap-reload volume directories
+  #     ##
+  #     extraVolumeDirs: []
+
+  #     ## Additional configmap-reload mounts
+  #     ##
+  #     extraConfigmapMounts: []
+  #       # - name: prometheus-alerts
+  #       #   mountPath: /etc/alerts.d
+  #       #   subPath: ""
+  #       #   configMap: prometheus-alerts
+  #       #   readOnly: true
+
+  #     ## Security context to be added to configmap-reload container
+  #     containerSecurityContext: {}
+
+  #     ## configmap-reload resource requests and limits
+  #     ## Ref: http://kubernetes.io/docs/user-guide/compute-resources/
+  #     ##
+  #   resources: {}
+  #   podSecurityContext:
+  #     runAsUser: 1000
+  #     runAsGroup: 1000
+  #     fsGroup: 1000
   serverFiles:
     # Any additional alerts can go here, and will be combined with alerting_rules
+    prometheus.yml:
+      rule_files:
+        - /etc/config/recording_rules.yml
+        - /etc/config/alerting_rules.yml
+        ## Below two files are DEPRECATED will be removed from this default values file
+        - /etc/config/rules
+        - /etc/config/alerts
+
+      scrape_configs:
+        - job_name: prometheus
+          static_configs:
+            - targets:
+                - andi.dev.internal.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics
+                - data.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics
+                - streams.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics
+
+        - job_name: discovery_api
+          scheme: https
+          static_configs:
+            - targets:
+                - data.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics
+
+        - job_name: discovery_streams
+          scheme: http
+          static_configs:
+            - targets:
+                - streams.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics
+
     alerts: {}
 
     rules:
