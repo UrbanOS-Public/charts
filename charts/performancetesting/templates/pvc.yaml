@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: pvc-cron-test
+  name: pvc-performancetesting
   namespace: {{ .Values.namespace }}
 spec:
   accessModes:

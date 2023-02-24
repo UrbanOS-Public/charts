@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: crontest-demo
+  name: {{ .Chart.Name }}-cron
   namespace: {{ .Values.namespace }}
   labels:
     app.kubernetes.io/name: performancetest
@@ -26,16 +26,16 @@ spec:
                 cpu: {{ .Values.resources.limits.cpu }}
             env:
             - name: ANDI_URL
-              value: {{ .Values.performancetesting.endpoints.ANDI_URL }}
+              value: {{ .Values.endpoints.ANDI_URL }}
             - name: DISCOVERY_URL
-              value: {{ .Values.performancetesting.endpoints.DISCOVERY_URL }}
+              value: {{ .Values.endpoints.DISCOVERY_URL }}
             - name: API_KEY
-              value: { { .Values.performancetesting.endpoints.API_KEY } }
+              value: {{ .Values.endpoints.API_KEY }}
             volumeMounts:
-            - mountPath: /app
+            - mountPath: /app/results
               name: pvc-cron
           restartPolicy: {{ .Values.restartPolicy }}
           volumes:
           - name: pvc-cron
             persistentVolumeClaim:
-              claimName: pvc-cron-test
+              claimName: pvc-performancetesting
