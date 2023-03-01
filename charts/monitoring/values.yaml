@@ -15,6 +15,8 @@ prometheusIngress:
 grafana:
   adminUser: admin
   fullnameOverride: monitoring-grafana
+  rbac:
+    namespaced: true
   serviceAccount:
     create: false
     name: default
@@ -109,6 +111,7 @@ prometheus:
     server:
       create: false
       name: default
+
   server:
     securityContext:
       runAsUser: 1000
@@ -116,235 +119,14 @@ prometheus:
       fsGroup: 1000
     resources:
       limits:
-        memory: 2Gi
+        memory: 1Gi
         cpu: 500m
       requests:
-        memory: 250Mi
+        memory: 500Mi
         cpu: 250m
-    extraFlags:
-      storage.tsdb.wal-compression: true
-    defaultFlagsOverride: .
-      [
-      --config.file=/etc/config/prometheus.yml,
-      --storage.tsdb.path=/data,
-      --web.console.libraries=/etc/prometheus/console_libraries,
-      --web.console.templates=/etc/prometheus/consoles,
-      --web.enable-lifecycle,
-      ]
 
-    namespaces:
-      - dev
-
-  # alertmanager:
-  #   persistence:
-  #     size: 2Gi
-  #   podSecurityContext:
-  #     runAsUser: 1000
-  #     runAsGroup: 1000
-  #     fsGroup: 1000
   prometheus-pushgateway:
-    # enabled: false
-    serviceAccount:
-      create: false
-      name: default
+    enabled: false
 
-    securityContext:
-      runAsUser: 1000
-      runAsGroup: 1000
-      fsGroup: 1000
-
-  # configmapReload:
-  #   prometheus:
-  #     ## If false, the configmap-reload container will not be deployed
-  #     ##
-  #     enabled: true
-
-  #     ## configmap-reload container name
-  #     ##
-  #     name: configmap-reload
-
-  #     ## configmap-reload container image
-  #     ##
-  #     image:
-  #       repository: jimmidyson/configmap-reload
-  #       tag: v0.8.0
-  #       # When digest is set to a non-empty value, images will be pulled by digest (regardless of tag value).
-  #       digest: ""
-  #       pullPolicy: IfNotPresent
-
-  #     # containerPort: 9533
-
-  #     ## Additional configmap-reload container arguments
-  #     ##
-  #     extraArgs: {}
-  #     ## Additional configmap-reload volume directories
-  #     ##
-  #     extraVolumeDirs: []
-
-  #     ## Additional configmap-reload mounts
-  #     ##
-  #     extraConfigmapMounts: []
-  #       # - name: prometheus-alerts
-  #       #   mountPath: /etc/alerts.d
-  #       #   subPath: ""
-  #       #   configMap: prometheus-alerts
-  #       #   readOnly: true
-
-  #     ## Security context to be added to configmap-reload container
-  #     containerSecurityContext: {}
-
-  #     ## configmap-reload resource requests and limits
-  #     ## Ref: http://kubernetes.io/docs/user-guide/compute-resources/
-  #     ##
-  #   resources: {}
-  #   podSecurityContext:
-  #     runAsUser: 1000
-  #     runAsGroup: 1000
-  #     fsGroup: 1000
-  serverFiles:
-    # Any additional alerts can go here, and will be combined with alerting_rules
-    prometheus.yml:
-      rule_files:
-        - /etc/config/recording_rules.yml
-        - /etc/config/alerting_rules.yml
-        ## Below two files are DEPRECATED will be removed from this default values file
-        - /etc/config/rules
-        - /etc/config/alerts
-
-      scrape_configs:
-        - job_name: prometheus
-          static_configs:
-            - targets:
-                - andi.dev.internal.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics
-                - data.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics
-                - streams.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics
-
-        - job_name: discovery_api
-          scheme: https
-          static_configs:
-            - targets:
-                - data.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics
-
-        - job_name: discovery_streams
-          scheme: http
-          static_configs:
-            - targets:
-                - streams.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics
-
-    alerts: {}
-
-    rules:
-      groups:
-        - name: pipeline.rules
-          interval: 30s
-          rules:
-            - expr: label_replace(label_replace(sum(rate(kafka_topic_partition_current_offset[2m]) > 0) by (topic), "dataset_id", "$2", "topic", "(raw|transformed)-(.*)"), "stage", "$1", "topic", "(raw|transformed)-(.*)") * on (dataset_id) group_left(dataset_title, source_type, org_name) dataset_info_gauge
-              record: "pipeline:topic:throughput"
-            - expr: label_replace(label_replace(label_replace(sum(kafka_consumergroup_lag{consumergroup!~"console.*"} > 0) by (consumergroup, topic, dataset), "dataset_id", "$3", "consumergroup", "(.+)-(raw|transformed)-(.*)"), "stage", "$2", "consumergroup", "(.+)-(raw|transformed)-(.*)"), "app", "$1", "consumergroup", "(.+)-(raw|transformed)-(.*)") * on (dataset_id) group_left(dataset_title, source_type, org_name) dataset_info_gauge
-              record: "pipeline:topic:lag"
-            - expr: sum(rate(events_handled_count{event_type!="data:extract:end"}[2m]) > 0) by (app, dataset_id, event_type) * on (dataset_id) group_left(dataset_title, source_type, org_name) dataset_info_gauge
-              record: "pipeline:event_stream:events_handled"
-            - expr: label_replace(kafka_consumergroup_lag{consumergroup=~"(.*event-stream|.*events)"}, "app", "$1", "consumergroup", "(.+)-(event-stream|events)") > 0
-              record: "pipeline:event_stream:lag"
-            - expr: sum(label_replace(rate(fluentd_input_status_num_records_total{tag=~".*(forklift|reaper|voltron|valkyrie|discovery-api).*"}[5m]), "name", "$1", "tag", "kube.var.log.containers.(.+?)-.*")) by (name) > 0
-              record: "pipeline:log_message_rate"
-
-    alerting_rules.yml:
-      groups:
-        # Blackbox probe
-        - name: Sites
-          rules:
-            - alert: SiteDown
-              expr: probe_success == 0
-              for: 2m
-              labels:
-                severity: error
-              annotations:
-                description: "{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 2 minutes."
-                summary: "Instance {{ $labels.instance }} down"
-        - name: api_status
-          rules:
-            - alert: APIStatusDown
-              expr: probe_success == 0
-              for: 1m
-              labels:
-                severity: error
-              annotations:
-                description: "{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 1 minutes."
-                summary: "Instance {{ $labels.instance }} down"
-        - name: api_response
-          rules:
-            - alert: APIResponseTime
-              expr: probe_duration_seconds > 3
-              for: 1m
-              labels:
-                severity: error
-              annotations:
-                description: "{{ $labels.instance }} of job {{ $labels.job }} is taking more than 3 seconds."
-                summary: "Instance {{ $labels.instance }} is taking longer response time"
-        - name: K8S_Nodes
-          rules:
-            - alert: LowMemory
-              expr: (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100) < 20
-              for: 5m
-              labels:
-                severity: warning
-              annotations:
-                description: "{{ $labels.instance }} has {{ $value }} percent memory left."
-                summary: "Low Memory on Instance {{ $labels.instance }}"
-            - alert: LowDisk
-              expr: (node_filesystem_avail_bytes{device=~"/dev/.*"} / node_filesystem_size_bytes{device=~"/dev/.*"} * 100) < 15
-              for: 5m
-              labels:
-                severity: warning
-              annotations:
-                description: "{{ $labels.instance }} has {{ $value }} percent disk left."
-                summary: "Low Disk on Instance {{ $labels.instance }}"
-            - alert: LowClusterCPU
-              expr: (cluster:capacity_cpu:sum - cluster:guarantees_cpu:sum) < 1
-              labels:
-                severity: warning
-              annotations:
-                description: "Kubernetes cluster has {{ $value }} cores left. New deployments and cron jobs may fail to launch."
-                summary: "Kubernetes cluster low on CPU cores"
-            - alert: LowClusterMemory
-              expr: (cluster:capacity_memory_bytes:sum - cluster:guarantees_memory_bytes:sum) < 1000000000 #1GB
-              labels:
-                severity: warning
-              annotations:
-                description: "Kubernetes cluster has {{ $value | humanize }} memory left. New deployments and cron jobs may fail to launch."
-                summary: "Kubernetes cluster has less than {{ 1000000000.0 | humanize }} memory available"
-            - alert: NotReady
-              annotations:
-                description: "{{ $labels.node }} is not ready"
-                summary: "Status not Ready on Node {{ $labels.node }}"
-              expr: kube_node_status_condition{condition="Ready", status="true"} != 1
-              labels:
-                severity: error
-        - name: consumer_group_event_stream_lag
-          rules:
-            - alert: ConsumerGroupEventStreamLag
-              expr: pipeline:event_stream:lag > 10000
-              labels:
-                severity: warning
-              annotations:
-                summary: "Consumer Group lag for topic {{ $labels.topic }} is greater than 10,000"
-                description: "The lag for consumer group {{ $labels.consumergroup }} is {{ humanize $value }}."
-        - name: low_disk_space
-          rules:
-            - alert: LowDiskSpace
-              expr: (kubelet_volume_stats_available_bytes / kubelet_volume_stats_capacity_bytes * 100)  < 15
-              labels:
-                severity: warning
-              annotations:
-                summary: "Server disk space is below 15%"
-                description: 'Low disk space for Server {{ $labels.persistentvolumeclaim }}, only {{ $value | printf "%.2f" }}% space is left.'
-        - name: rule_failure
-          rules:
-            - alert: RuleFailure
-              expr: rate(prometheus_rule_evaluation_failures_total{rule_group=~".*rules.*"}[2m]) > 0
-              labels:
-                severity: warning
-              annotations:
-                summary: "Prometheus has failed to precalculate one or more metrics"
-                description: "One of the recording rules defined in Prometheus has failed to execute. This is often due to issues with info metrics, but may have other causes. Look at the rules section of the Prometheus interface for more info."
+  kube-state-metrics:
+    enabled: false

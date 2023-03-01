@@ -34,7 +34,7 @@ dependencies:
   version: 1.0.7
 - name: monitoring
   repository: file://../monitoring
-  version: 1.1.2
+  version: 1.1.3
 - name: raptor
   repository: file://../raptor
   version: 1.1.7
@@ -56,5 +56,5 @@ dependencies:
 - name: performancetesting
   repository: file://../performancetesting
   version: 0.1.6
-digest: sha256:6c3cc365b0e8a2edb24706cbfa6ecd69c63984e2014250808e7921a62a62ef2e
-generated: "2023-02-22T15:43:23.478315-06:00"
+digest: sha256:aed8155fbc6cb6083d7094f7a76593b925b7aa7772a404558e72752d0544e4f3
+generated: "2023-03-01T16:50:54.975164-06:00"

@@ -1,6 +1,6 @@
 # monitoring
 
-![Version: 1.1.2](https://img.shields.io/badge/Version-1.1.2-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.1.3](https://img.shields.io/badge/Version-1.1.3-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A combination of the community Prometheus and Grafana charts.
 
@@ -8,8 +8,8 @@ A combination of the community Prometheus and Grafana charts.
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://grafana.github.io/helm-charts | grafana | 6.50.5 |
-| https://prometheus-community.github.io/helm-charts | prometheus | 19.3.3 |
+| https://grafana.github.io/helm-charts | grafana | 6.50.8 |
+| https://prometheus-community.github.io/helm-charts | prometheus | 19.6.1 |
 
 ## Values
 
@@ -67,6 +67,7 @@ A combination of the community Prometheus and Grafana charts.
 | grafana.dashboards.urbanos.urban-os-pipeline-health.gnetId | int | `14805` |  |
 | grafana.dashboards.urbanos.urban-os-pipeline-health.revision | int | `1` |  |
 | grafana.fullnameOverride | string | `"monitoring-grafana"` |  |
+| grafana.rbac.namespaced | bool | `true` |  |
 | grafana.securityContext.fsGroup | int | `1000` |  |
 | grafana.securityContext.runAsGroup | int | `1000` |  |
 | grafana.securityContext.runAsUser | int | `1000` |  |
@@ -76,115 +77,15 @@ A combination of the community Prometheus and Grafana charts.
 | grafana.serviceAccount.name | string | `"default"` |  |
 | grafana.sidecar.dashboards.enabled | bool | `true` |  |
 | grafanaIngress.annotations | object | `{}` |  |
-| prometheus.prometheus-pushgateway.securityContext.fsGroup | int | `1000` |  |
-| prometheus.prometheus-pushgateway.securityContext.runAsGroup | int | `1000` |  |
-| prometheus.prometheus-pushgateway.securityContext.runAsUser | int | `1000` |  |
-| prometheus.prometheus-pushgateway.serviceAccount.create | bool | `false` |  |
-| prometheus.prometheus-pushgateway.serviceAccount.name | string | `"default"` |  |
-| prometheus.server.defaultFlagsOverride | string | `". [ --config.file=/etc/config/prometheus.yml, --storage.tsdb.path=/data, --web.console.libraries=/etc/prometheus/console_libraries, --web.console.templates=/etc/prometheus/consoles, --web.enable-lifecycle, ]"` |  |
-| prometheus.server.extraFlags."storage.tsdb.wal-compression" | bool | `true` |  |
-| prometheus.server.namespaces[0] | string | `"dev"` |  |
+| prometheus.kube-state-metrics.enabled | bool | `false` |  |
+| prometheus.prometheus-pushgateway.enabled | bool | `false` |  |
 | prometheus.server.resources.limits.cpu | string | `"500m"` |  |
-| prometheus.server.resources.limits.memory | string | `"2Gi"` |  |
+| prometheus.server.resources.limits.memory | string | `"1Gi"` |  |
 | prometheus.server.resources.requests.cpu | string | `"250m"` |  |
-| prometheus.server.resources.requests.memory | string | `"250Mi"` |  |
+| prometheus.server.resources.requests.memory | string | `"500Mi"` |  |
 | prometheus.server.securityContext.fsGroup | int | `1000` |  |
 | prometheus.server.securityContext.runAsGroup | int | `1000` |  |
 | prometheus.server.securityContext.runAsUser | int | `1000` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[0].name | string | `"Sites"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[0].rules[0].alert | string | `"SiteDown"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[0].rules[0].annotations.description | string | `"{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 2 minutes."` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[0].rules[0].annotations.summary | string | `"Instance {{ $labels.instance }} down"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[0].rules[0].expr | string | `"probe_success == 0"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[0].rules[0].for | string | `"2m"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[0].rules[0].labels.severity | string | `"error"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[1].name | string | `"api_status"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[1].rules[0].alert | string | `"APIStatusDown"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[1].rules[0].annotations.description | string | `"{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 1 minutes."` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[1].rules[0].annotations.summary | string | `"Instance {{ $labels.instance }} down"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[1].rules[0].expr | string | `"probe_success == 0"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[1].rules[0].for | string | `"1m"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[1].rules[0].labels.severity | string | `"error"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[2].name | string | `"api_response"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[2].rules[0].alert | string | `"APIResponseTime"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[2].rules[0].annotations.description | string | `"{{ $labels.instance }} of job {{ $labels.job }} is taking more than 3 seconds."` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[2].rules[0].annotations.summary | string | `"Instance {{ $labels.instance }} is taking longer response time"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[2].rules[0].expr | string | `"probe_duration_seconds > 3"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[2].rules[0].for | string | `"1m"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[2].rules[0].labels.severity | string | `"error"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].name | string | `"K8S_Nodes"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[0].alert | string | `"LowMemory"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[0].annotations.description | string | `"{{ $labels.instance }} has {{ $value }} percent memory left."` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[0].annotations.summary | string | `"Low Memory on Instance {{ $labels.instance }}"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[0].expr | string | `"(node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100) < 20"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[0].for | string | `"5m"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[0].labels.severity | string | `"warning"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[1].alert | string | `"LowDisk"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[1].annotations.description | string | `"{{ $labels.instance }} has {{ $value }} percent disk left."` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[1].annotations.summary | string | `"Low Disk on Instance {{ $labels.instance }}"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[1].expr | string | `"(node_filesystem_avail_bytes{device=~\"/dev/.*\"} / node_filesystem_size_bytes{device=~\"/dev/.*\"} * 100) < 15"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[1].for | string | `"5m"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[1].labels.severity | string | `"warning"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[2].alert | string | `"LowClusterCPU"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[2].annotations.description | string | `"Kubernetes cluster has {{ $value }} cores left. New deployments and cron jobs may fail to launch."` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[2].annotations.summary | string | `"Kubernetes cluster low on CPU cores"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[2].expr | string | `"(cluster:capacity_cpu:sum - cluster:guarantees_cpu:sum) < 1"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[2].labels.severity | string | `"warning"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[3].alert | string | `"LowClusterMemory"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[3].annotations.description | string | `"Kubernetes cluster has {{ $value | humanize }} memory left. New deployments and cron jobs may fail to launch."` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[3].annotations.summary | string | `"Kubernetes cluster has less than {{ 1000000000.0 | humanize }} memory available"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[3].expr | string | `"(cluster:capacity_memory_bytes:sum - cluster:guarantees_memory_bytes:sum) < 1000000000"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[3].labels.severity | string | `"warning"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[4].alert | string | `"NotReady"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[4].annotations.description | string | `"{{ $labels.node }} is not ready"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[4].annotations.summary | string | `"Status not Ready on Node {{ $labels.node }}"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[4].expr | string | `"kube_node_status_condition{condition=\"Ready\", status=\"true\"} != 1"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[3].rules[4].labels.severity | string | `"error"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[4].name | string | `"consumer_group_event_stream_lag"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[4].rules[0].alert | string | `"ConsumerGroupEventStreamLag"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[4].rules[0].annotations.description | string | `"The lag for consumer group {{ $labels.consumergroup }} is {{ humanize $value }}."` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[4].rules[0].annotations.summary | string | `"Consumer Group lag for topic {{ $labels.topic }} is greater than 10,000"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[4].rules[0].expr | string | `"pipeline:event_stream:lag > 10000"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[4].rules[0].labels.severity | string | `"warning"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[5].name | string | `"low_disk_space"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[5].rules[0].alert | string | `"LowDiskSpace"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[5].rules[0].annotations.description | string | `"Low disk space for Server {{ $labels.persistentvolumeclaim }}, only {{ $value | printf \"%.2f\" }}% space is left."` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[5].rules[0].annotations.summary | string | `"Server disk space is below 15%"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[5].rules[0].expr | string | `"(kubelet_volume_stats_available_bytes / kubelet_volume_stats_capacity_bytes * 100)  < 15"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[5].rules[0].labels.severity | string | `"warning"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[6].name | string | `"rule_failure"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[6].rules[0].alert | string | `"RuleFailure"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[6].rules[0].annotations.description | string | `"One of the recording rules defined in Prometheus has failed to execute. This is often due to issues with info metrics, but may have other causes. Look at the rules section of the Prometheus interface for more info."` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[6].rules[0].annotations.summary | string | `"Prometheus has failed to precalculate one or more metrics"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[6].rules[0].expr | string | `"rate(prometheus_rule_evaluation_failures_total{rule_group=~\".*rules.*\"}[2m]) > 0"` |  |
-| prometheus.serverFiles."alerting_rules.yml".groups[6].rules[0].labels.severity | string | `"warning"` |  |
-| prometheus.serverFiles."prometheus.yml".rule_files[0] | string | `"/etc/config/recording_rules.yml"` |  |
-| prometheus.serverFiles."prometheus.yml".rule_files[1] | string | `"/etc/config/alerting_rules.yml"` |  |
-| prometheus.serverFiles."prometheus.yml".rule_files[2] | string | `"/etc/config/rules"` |  |
-| prometheus.serverFiles."prometheus.yml".rule_files[3] | string | `"/etc/config/alerts"` |  |
-| prometheus.serverFiles."prometheus.yml".scrape_configs[0].job_name | string | `"prometheus"` |  |
-| prometheus.serverFiles."prometheus.yml".scrape_configs[0].static_configs[0].targets[0] | string | `"andi.dev.internal.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics"` |  |
-| prometheus.serverFiles."prometheus.yml".scrape_configs[0].static_configs[0].targets[1] | string | `"data.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics"` |  |
-| prometheus.serverFiles."prometheus.yml".scrape_configs[0].static_configs[0].targets[2] | string | `"streams.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics"` |  |
-| prometheus.serverFiles."prometheus.yml".scrape_configs[1].job_name | string | `"discovery_api"` |  |
-| prometheus.serverFiles."prometheus.yml".scrape_configs[1].scheme | string | `"https"` |  |
-| prometheus.serverFiles."prometheus.yml".scrape_configs[1].static_configs[0].targets[0] | string | `"data.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics"` |  |
-| prometheus.serverFiles."prometheus.yml".scrape_configs[2].job_name | string | `"discovery_streams"` |  |
-| prometheus.serverFiles."prometheus.yml".scrape_configs[2].scheme | string | `"http"` |  |
-| prometheus.serverFiles."prometheus.yml".scrape_configs[2].static_configs[0].targets[0] | string | `"streams.dev.apps.hsrqs9l3.eastus.aroapp.io:9002/metrics"` |  |
-| prometheus.serverFiles.alerts | object | `{}` |  |
-| prometheus.serverFiles.rules.groups[0].interval | string | `"30s"` |  |
-| prometheus.serverFiles.rules.groups[0].name | string | `"pipeline.rules"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[0].expr | string | `"label_replace(label_replace(sum(rate(kafka_topic_partition_current_offset[2m]) > 0) by (topic), \"dataset_id\", \"$2\", \"topic\", \"(raw|transformed)-(.*)\"), \"stage\", \"$1\", \"topic\", \"(raw|transformed)-(.*)\") * on (dataset_id) group_left(dataset_title, source_type, org_name) dataset_info_gauge"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[0].record | string | `"pipeline:topic:throughput"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[1].expr | string | `"label_replace(label_replace(label_replace(sum(kafka_consumergroup_lag{consumergroup!~\"console.*\"} > 0) by (consumergroup, topic, dataset), \"dataset_id\", \"$3\", \"consumergroup\", \"(.+)-(raw|transformed)-(.*)\"), \"stage\", \"$2\", \"consumergroup\", \"(.+)-(raw|transformed)-(.*)\"), \"app\", \"$1\", \"consumergroup\", \"(.+)-(raw|transformed)-(.*)\") * on (dataset_id) group_left(dataset_title, source_type, org_name) dataset_info_gauge"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[1].record | string | `"pipeline:topic:lag"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[2].expr | string | `"sum(rate(events_handled_count{event_type!=\"data:extract:end\"}[2m]) > 0) by (app, dataset_id, event_type) * on (dataset_id) group_left(dataset_title, source_type, org_name) dataset_info_gauge"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[2].record | string | `"pipeline:event_stream:events_handled"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[3].expr | string | `"label_replace(kafka_consumergroup_lag{consumergroup=~\"(.*event-stream|.*events)\"}, \"app\", \"$1\", \"consumergroup\", \"(.+)-(event-stream|events)\") > 0"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[3].record | string | `"pipeline:event_stream:lag"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[4].expr | string | `"sum(label_replace(rate(fluentd_input_status_num_records_total{tag=~\".*(forklift|reaper|voltron|valkyrie|discovery-api).*\"}[5m]), \"name\", \"$1\", \"tag\", \"kube.var.log.containers.(.+?)-.*\")) by (name) > 0"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[4].record | string | `"pipeline:log_message_rate"` |  |
 | prometheus.serviceAccounts.server.create | bool | `false` |  |
 | prometheus.serviceAccounts.server.name | string | `"default"` |  |
 | prometheusIngress.annotations | object | `{}` |  |
