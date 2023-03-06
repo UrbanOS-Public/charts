@@ -15,7 +15,7 @@ A combination of the community Prometheus and Grafana charts.
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| adminDeploy | bool | `true` |  |
+| adminDeploy | bool | `false` |  |
 | global.ingress.annotations | object | `{}` |  |
 | grafana.adminUser | string | `"admin"` |  |
 | grafana.dashboardProviders."dashboardproviders.yaml".apiVersion | int | `1` |  |

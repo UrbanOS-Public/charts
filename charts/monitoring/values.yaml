@@ -13,7 +13,7 @@ prometheusIngress:
   annotations: {}
 
 # Adds the CulsterRole needed for prometheus to the deploment. See clusterrole.yaml
-adminDeploy: true
+adminDeploy: false
 
 grafana:
   adminUser: admin
