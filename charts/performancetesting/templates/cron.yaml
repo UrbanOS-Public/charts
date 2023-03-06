@@ -31,4 +31,11 @@ spec:
               value: {{ .Values.endpoints.DISCOVERY_URL }}
             - name: API_KEY
               value: {{ .Values.endpoints.API_KEY }}
+            volumeMounts:
+            - mountPath: /app/results
+              name: pvc-cron
           restartPolicy: {{ .Values.restartPolicy }}
+          volumes:
+          - name: pvc-cron
+            persistentVolumeClaim:
+              claimName: pvc-performancetesting
