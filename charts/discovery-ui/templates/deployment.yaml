@@ -34,6 +34,11 @@ spec:
         - mountPath: /etc/nginx/conf.d/nginx-csps.conf
           name: discovery-ui-configs
           subPath: nginx-csps.conf
+        livenessProbe:
+          httpGet:
+            path: /
+          initialDelaySeconds: 3
+          periodSeconds: 3
 {{- with .Values.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}
