@@ -36,9 +36,17 @@ spec:
           subPath: nginx-csps.conf
         livenessProbe:
           httpGet:
-            path: /
+            path: /healthz
+            port:  8080
           initialDelaySeconds: 3
-          periodSeconds: 3
+          periodSeconds: 15
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 15
+          successThreshold: 3
 {{- with .Values.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}
