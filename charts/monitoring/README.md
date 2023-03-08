@@ -17,7 +17,9 @@ A combination of the community Prometheus and Grafana charts.
 |-----|------|---------|-------------|
 | adminDeploy | bool | `false` |  |
 | global.ingress.annotations | object | `{}` |  |
-| grafana.adminUser | string | `"admin"` |  |
+| grafana.admin.existingSecret | string | `"manual-grafana-secrets"` |  |
+| grafana.admin.passwordKey | string | `"grafana-admin-password"` |  |
+| grafana.admin.userKey | string | `"grafana-admin-username"` |  |
 | grafana.dashboardProviders."dashboardproviders.yaml".apiVersion | int | `1` |  |
 | grafana.dashboardProviders."dashboardproviders.yaml".providers[0].disableDeletion | bool | `false` |  |
 | grafana.dashboardProviders."dashboardproviders.yaml".providers[0].editable | bool | `true` |  |
@@ -87,6 +89,7 @@ A combination of the community Prometheus and Grafana charts.
 | prometheus.kube-state-metrics.enabled | bool | `false` |  |
 | prometheus.prometheus-pushgateway.enabled | bool | `false` |  |
 | prometheus.server.fullnameOverride | string | `"monitoring-prometheus-server"` |  |
+| prometheus.server.namespaces[0] | string | `nil` |  |
 | prometheus.server.resources.limits.cpu | string | `"500m"` |  |
 | prometheus.server.resources.limits.memory | string | `"1Gi"` |  |
 | prometheus.server.resources.requests.cpu | string | `"250m"` |  |
@@ -94,6 +97,7 @@ A combination of the community Prometheus and Grafana charts.
 | prometheus.server.securityContext.fsGroup | int | `1000` |  |
 | prometheus.server.securityContext.runAsGroup | int | `1000` |  |
 | prometheus.server.securityContext.runAsUser | int | `1000` |  |
+| prometheus.server.useExistingClusterRoleName | string | `"prometheus-admin-cluster-role"` |  |
 | prometheus.serverFiles."alerting_rules.yml".groups[0].name | string | `"Sites"` |  |
 | prometheus.serverFiles."alerting_rules.yml".groups[0].rules[0].alert | string | `"SiteDown"` |  |
 | prometheus.serverFiles."alerting_rules.yml".groups[0].rules[0].annotations.description | string | `"{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 2 minutes."` |  |
