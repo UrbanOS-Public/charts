@@ -3,7 +3,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: {{ .Values.prometheus.server.useExistingClusterRoleName }}
+  name: "{{ .Values.prometheus.server.useExistingClusterRoleName }}"
 rules:
   - apiGroups:
       - ""
@@ -23,10 +23,10 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: { { .Values.prometheus.server.useExistingClusterRoleName } }
+  name: "{{ .Values.prometheus.server.useExistingClusterRoleName }}"
 subjects:
   - kind: ServiceAccount
-    name: { { .Values.prometheus.serviceAccounts.server.name } }
-    namespace: {{ index .Values.prometheus.server.namespaces 0 }}
+    name: "{{ .Values.prometheus.serviceAccounts.server.name }}"
+    namespace: "{{ index .Values.prometheus.server.namespaces 0 }}"
 
 {{- end }}
