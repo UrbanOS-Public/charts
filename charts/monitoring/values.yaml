@@ -12,13 +12,15 @@ grafanaIngress:
 prometheusIngress:
   annotations: {}
 
-# Adds the CulsterRole needed for prometheus to the deploment. See clusterrole.yaml
-adminDeploy: false
+# Adds the CulsterRole needed for prometheus to the deploment. See clusterrole.yaml. Can disable this and have an admin create the resources in templates/clusterole.yaml
+adminDeploy: true
 
 grafana:
-  adminUser: admin
   fullnameOverride: monitoring-grafana
-
+  admin:
+    existingSecret: "manual-grafana-secrets"
+    userKey: grafana-admin-username
+    passwordKey: grafana-admin-password
   datasources:
     datasources.yaml:
       apiVersion: 1
@@ -126,6 +128,9 @@ prometheus:
       name: default
 
   server:
+    namespaces:
+      -  #enter namespace here to limit prometheus from searching all namespaces
+    useExistingClusterRoleName: prometheus-admin-cluster-role
     fullnameOverride: monitoring-prometheus-server
     securityContext:
       runAsUser: 1000
@@ -140,6 +145,153 @@ prometheus:
         cpu: 250m
 
   serverFiles:
+    #
+    # Below is the urban-os recommended prometheus.yml file (updated March 8th, 2023)
+    # It limits the scrape jobs to just the microservices, rather than getting more kubernetes metadata.
+    # By default, prometheus will locate far more endpoints. If that fits your needs / memory constraits, feel free to leave it. However, if getting OOM errors, consider using this config instead.
+    #
+    # BE SURE TO POPULATE REQUIRED NAMESPACE IF USING THIS CONFIG.
+    #
+    # prometheus.yml:
+    #   scrape_configs:
+    #     - job_name: prometheus
+    #       static_configs:
+    #         - targets:
+    #             - localhost:9090
+
+    #     - job_name: "kubernetes-service-endpoints"
+    #       honor_labels: true
+
+    #       kubernetes_sd_configs:
+    #         - role: endpoints
+
+    #       relabel_configs:
+    #         - source_labels:
+    #             [__meta_kubernetes_service_annotation_prometheus_io_scrape]
+    #           action: keep
+    #           regex: true
+    #         - source_labels:
+    #             [
+    #               __meta_kubernetes_service_annotation_prometheus_io_scrape_slow,
+    #             ]
+    #           action: drop
+    #           regex: true
+    #         - source_labels:
+    #             [__meta_kubernetes_service_annotation_prometheus_io_scheme]
+    #           action: replace
+    #           target_label: __scheme__
+    #           regex: (https?)
+    #         - source_labels:
+    #             [__meta_kubernetes_service_annotation_prometheus_io_path]
+    #           action: replace
+    #           target_label: __metrics_path__
+    #           regex: (.+)
+    #         - source_labels:
+    #             [
+    #               __address__,
+    #               __meta_kubernetes_service_annotation_prometheus_io_port,
+    #             ]
+    #           action: replace
+    #           target_label: __address__
+    #           regex: (.+?)(?::\d+)?;(\d+)
+    #           replacement: $1:$2
+    #         - action: labelmap
+    #           regex: __meta_kubernetes_service_annotation_prometheus_io_param_(.+)
+    #           replacement: __param_$1
+    #         - action: labelmap
+    #           regex: __meta_kubernetes_service_label_(.+)
+    #         - source_labels: [__meta_kubernetes_namespace]
+    #           action: keep
+    #           regex: dev #namespace
+    #           target_label: namespace
+    #         - source_labels: [__meta_kubernetes_service_name]
+    #           action: replace
+    #           target_label: service
+    #         - source_labels: [__meta_kubernetes_pod_node_name]
+    #           action: replace
+    #           target_label: node
+
+    #     - job_name: "kubernetes-service-endpoints-slow"
+    #       honor_labels: true
+
+    #       scrape_interval: 5m
+    #       scrape_timeout: 30s
+
+    #       kubernetes_sd_configs:
+    #         - role: endpoints
+
+    #       relabel_configs:
+    #         - source_labels:
+    #             [
+    #               __meta_kubernetes_service_annotation_prometheus_io_scrape_slow,
+    #             ]
+    #           action: keep
+    #           regex: true
+    #         - source_labels:
+    #             [__meta_kubernetes_service_annotation_prometheus_io_scheme]
+    #           action: replace
+    #           target_label: __scheme__
+    #           regex: (https?)
+    #         - source_labels:
+    #             [__meta_kubernetes_service_annotation_prometheus_io_path]
+    #           action: replace
+    #           target_label: __metrics_path__
+    #           regex: (.+)
+    #         - source_labels:
+    #             [
+    #               __address__,
+    #               __meta_kubernetes_service_annotation_prometheus_io_port,
+    #             ]
+    #           action: replace
+    #           target_label: __address__
+    #           regex: (.+?)(?::\d+)?;(\d+)
+    #           replacement: $1:$2
+    #         - action: labelmap
+    #           regex: __meta_kubernetes_service_annotation_prometheus_io_param_(.+)
+    #           replacement: __param_$1
+    #         - action: labelmap
+    #           regex: __meta_kubernetes_service_label_(.+)
+    #         - source_labels: [__meta_kubernetes_namespace]
+    #           action: keep
+    #           regex: dev #namespace
+    #           target_label: namespace
+    #         - source_labels: [__meta_kubernetes_service_name]
+    #           action: replace
+    #           target_label: service
+    #         - source_labels: [__meta_kubernetes_pod_node_name]
+    #           action: replace
+    #           target_label: node
+
+    #     - job_name: "kubernetes-services"
+    #       honor_labels: true
+
+    #       metrics_path: /probe
+    #       params:
+    #         module: [http_2xx]
+
+    #       kubernetes_sd_configs:
+    #         - role: service
+
+    #       relabel_configs:
+    #         - source_labels:
+    #             [__meta_kubernetes_service_annotation_prometheus_io_probe]
+    #           action: keep
+    #           regex: true
+    #         - source_labels: [__address__]
+    #           target_label: __param_target
+    #         - target_label: __address__
+    #           replacement: blackbox
+    #         - source_labels: [__param_target]
+    #           target_label: instance
+    #         - action: labelmap
+    #           regex: __meta_kubernetes_service_label_(.+)
+    #         - source_labels: [__meta_kubernetes_namespace]
+    #           action: keep
+    #           regex: dev #namespace
+    #           target_label: namespace
+    #         - source_labels: [__meta_kubernetes_service_name]
+    #           target_label: service
+
     alerting_rules.yml:
       groups:
         # Blackbox probe

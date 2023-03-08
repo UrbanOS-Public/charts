@@ -15,7 +15,7 @@ A combination of the community Prometheus and Grafana charts.
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| adminDeploy | bool | `false` |  |
+| adminDeploy | bool | `true` |  |
 | global.ingress.annotations | object | `{}` |  |
 | grafana.admin.existingSecret | string | `"manual-grafana-secrets"` |  |
 | grafana.admin.passwordKey | string | `"grafana-admin-password"` |  |
