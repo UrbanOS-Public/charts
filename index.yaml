@@ -1872,6 +1872,23 @@ entries:
   kafka:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2023-03-09T16:33:01.000869056Z"
+    dependencies:
+    - condition: strimzi-kafka-operator.enabled
+      name: strimzi-kafka-operator
+      repository: http://strimzi.io/charts/
+      version: 0.31.1
+    description: A Helm chart for deploying kafka via strimzi
+    digest: a52e188716db8ec466d96d1f5486801426bf98522338180be685e7a7f46c9e0a
+    name: kafka
+    sources:
+    - https://github.com/strimzi/strimzi-kafka-operator
+    - https://github.com/apache/kafka
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/kafka-1.2.21/kafka-1.2.21.tgz
+    version: 1.2.21
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2023-01-16T15:47:41.192441762Z"
     dependencies:
     - condition: strimzi-kafka-operator.enabled
@@ -2505,6 +2522,24 @@ entries:
   monitoring:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2023-03-09T16:33:01.153550152Z"
+    dependencies:
+    - condition: prometheus.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 19.6.1
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 6.50.8
+    description: A combination of the community Prometheus and Grafana charts.
+    digest: ca6c34eb399536c3658c7deeba560d032ce043b00b32a653dfdb3bac8e7c94c0
+    name: monitoring
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/monitoring-1.1.5/monitoring-1.1.5.tgz
+    version: 1.1.5
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2022-09-26T17:48:45.592495595Z"
     dependencies:
     - condition: prometheus.enabled
@@ -2678,6 +2713,16 @@ entries:
     - odo-0.1.0.tgz
     version: 0.1.0
   performancetesting:
+  - apiVersion: v2
+    created: "2023-03-09T16:33:01.485928106Z"
+    description: Cronjob for executing the system test image on cadence
+    digest: a8b9ac5e34c0a91888a1c53d5cf6bd7fa6cdeec8637347a3a5eddb3d7c4fbd0a
+    icon: https://github.com/UrbanOS-Public
+    name: performancetesting
+    type: application
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/performancetesting-0.1.8/performancetesting-0.1.8.tgz
+    version: 0.1.8
   - apiVersion: v2
     created: "2023-02-24T19:08:01.063309111Z"
     description: Cronjob for executing the system test image on cadence
@@ -3304,6 +3349,95 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2023-03-09T16:33:01.726677042Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.22.0
+    - alias: minio-operator
+      condition: minio-operator.enabled
+      name: operator
+      repository: https://operator.min.io/
+      version: 4.5.6
+    - alias: minio-tenant
+      condition: minio-tenant.enabled
+      name: tenant
+      repository: https://operator.min.io/
+      version: 4.5.6
+    - condition: performancetesting.enabled
+      name: performancetesting
+      repository: file://../performancetesting
+      version: '>= 0.0.0'
+    description: Master chart that deploys the UrbanOS platform. See the individual
+      dependency readmes for configuration options.
+    digest: c29e52e6f25a1c595256614cca428dd2fd29f415212d87985bccc855c3656535
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.13.38/urban-os-1.13.38.tgz
+    version: 1.13.38
   - apiVersion: v2
     appVersion: "1.0"
     created: "2023-02-24T19:08:01.376337758Z"
@@ -9325,4 +9459,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-24T19:08:01.37820652Z"
+generated: "2023-03-09T16:33:01.728760647Z"
