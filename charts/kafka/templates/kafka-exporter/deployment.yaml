@@ -24,6 +24,16 @@ spec:
           ports:
             - containerPort: 9308
           image: "danielqsj/kafka-exporter:v1.4.1"
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 9308
+              scheme: HTTP
+            initialDelaySeconds: 100
+            timeoutSeconds: 9
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 1
           args: ["--kafka.server={{ .Values.kafka.broker }}"]
           imagePullPolicy: IfNotPresent
           resources:

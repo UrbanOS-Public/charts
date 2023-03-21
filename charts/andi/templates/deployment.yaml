@@ -39,6 +39,16 @@ spec:
             - containerPort: 80
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          livenessProbe:
+            httpGet:
+              path: /healthcheck
+              port: 4000
+              scheme: HTTP
+            initialDelaySeconds: 100
+            timeoutSeconds: 5
+            periodSeconds: 100
+            successThreshold: 1
+            failureThreshold: 3
           env:
           - name: REDIS_HOST
             value: {{ .Values.global.redis.host }}
