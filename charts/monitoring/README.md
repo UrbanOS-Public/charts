@@ -1,6 +1,6 @@
 # monitoring
 
-![Version: 1.1.1](https://img.shields.io/badge/Version-1.1.1-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.1.5](https://img.shields.io/badge/Version-1.1.5-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A combination of the community Prometheus and Grafana charts.
 
@@ -8,15 +8,18 @@ A combination of the community Prometheus and Grafana charts.
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://grafana.github.io/helm-charts | grafana | 6.14.1 |
-| https://prometheus-community.github.io/helm-charts | prometheus | 14.4.1 |
+| https://grafana.github.io/helm-charts | grafana | 6.50.8 |
+| https://prometheus-community.github.io/helm-charts | prometheus | 19.6.1 |
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| adminDeploy | bool | `true` |  |
 | global.ingress.annotations | object | `{}` |  |
-| grafana.adminUser | string | `"admin"` |  |
+| grafana.admin.existingSecret | string | `"manual-grafana-secrets"` |  |
+| grafana.admin.passwordKey | string | `"grafana-admin-password"` |  |
+| grafana.admin.userKey | string | `"grafana-admin-username"` |  |
 | grafana.dashboardProviders."dashboardproviders.yaml".apiVersion | int | `1` |  |
 | grafana.dashboardProviders."dashboardproviders.yaml".providers[0].disableDeletion | bool | `false` |  |
 | grafana.dashboardProviders."dashboardproviders.yaml".providers[0].editable | bool | `true` |  |
@@ -73,16 +76,28 @@ A combination of the community Prometheus and Grafana charts.
 | grafana.datasources."datasources.yaml".datasources[0].type | string | `"prometheus"` |  |
 | grafana.datasources."datasources.yaml".datasources[0].url | string | `"http://monitoring-prometheus-server"` |  |
 | grafana.fullnameOverride | string | `"monitoring-grafana"` |  |
+| grafana.rbac.namespaced | bool | `true` |  |
+| grafana.securityContext.fsGroup | int | `1000` |  |
+| grafana.securityContext.runAsGroup | int | `1000` |  |
+| grafana.securityContext.runAsUser | int | `1000` |  |
 | grafana.service.enabled | bool | `true` |  |
 | grafana.service.type | string | `"NodePort"` |  |
+| grafana.serviceAccount.create | bool | `false` |  |
+| grafana.serviceAccount.name | string | `"default"` |  |
 | grafana.sidecar.dashboards.enabled | bool | `true` |  |
 | grafanaIngress.annotations | object | `{}` |  |
+| prometheus.kube-state-metrics.enabled | bool | `false` |  |
+| prometheus.prometheus-pushgateway.enabled | bool | `false` |  |
 | prometheus.server.fullnameOverride | string | `"monitoring-prometheus-server"` |  |
+| prometheus.server.namespaces[0] | string | `nil` |  |
 | prometheus.server.resources.limits.cpu | string | `"500m"` |  |
 | prometheus.server.resources.limits.memory | string | `"1Gi"` |  |
-| prometheus.server.resources.requests.cpu | string | `"500m"` |  |
-| prometheus.server.resources.requests.memory | string | `"1Gi"` |  |
-| prometheus.server.service.type | string | `"NodePort"` |  |
+| prometheus.server.resources.requests.cpu | string | `"250m"` |  |
+| prometheus.server.resources.requests.memory | string | `"500Mi"` |  |
+| prometheus.server.securityContext.fsGroup | int | `1000` |  |
+| prometheus.server.securityContext.runAsGroup | int | `1000` |  |
+| prometheus.server.securityContext.runAsUser | int | `1000` |  |
+| prometheus.server.useExistingClusterRoleName | string | `"prometheus-admin-cluster-role"` |  |
 | prometheus.serverFiles."alerting_rules.yml".groups[0].name | string | `"Sites"` |  |
 | prometheus.serverFiles."alerting_rules.yml".groups[0].rules[0].alert | string | `"SiteDown"` |  |
 | prometheus.serverFiles."alerting_rules.yml".groups[0].rules[0].annotations.description | string | `"{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 2 minutes."` |  |
@@ -150,19 +165,8 @@ A combination of the community Prometheus and Grafana charts.
 | prometheus.serverFiles."alerting_rules.yml".groups[6].rules[0].annotations.summary | string | `"Prometheus has failed to precalculate one or more metrics"` |  |
 | prometheus.serverFiles."alerting_rules.yml".groups[6].rules[0].expr | string | `"rate(prometheus_rule_evaluation_failures_total{rule_group=~\".*rules.*\"}[2m]) > 0"` |  |
 | prometheus.serverFiles."alerting_rules.yml".groups[6].rules[0].labels.severity | string | `"warning"` |  |
-| prometheus.serverFiles.alerts | object | `{}` |  |
-| prometheus.serverFiles.rules.groups[0].interval | string | `"30s"` |  |
-| prometheus.serverFiles.rules.groups[0].name | string | `"pipeline.rules"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[0].expr | string | `"label_replace(label_replace(sum(rate(kafka_topic_partition_current_offset[2m]) > 0) by (topic), \"dataset_id\", \"$2\", \"topic\", \"(raw|transformed)-(.*)\"), \"stage\", \"$1\", \"topic\", \"(raw|transformed)-(.*)\") * on (dataset_id) group_left(dataset_title, source_type, org_name) dataset_info_gauge"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[0].record | string | `"pipeline:topic:throughput"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[1].expr | string | `"label_replace(label_replace(label_replace(sum(kafka_consumergroup_lag{consumergroup!~\"console.*\"} > 0) by (consumergroup, topic, dataset), \"dataset_id\", \"$3\", \"consumergroup\", \"(.+)-(raw|transformed)-(.*)\"), \"stage\", \"$2\", \"consumergroup\", \"(.+)-(raw|transformed)-(.*)\"), \"app\", \"$1\", \"consumergroup\", \"(.+)-(raw|transformed)-(.*)\") * on (dataset_id) group_left(dataset_title, source_type, org_name) dataset_info_gauge"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[1].record | string | `"pipeline:topic:lag"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[2].expr | string | `"sum(rate(events_handled_count{event_type!=\"data:extract:end\"}[2m]) > 0) by (app, dataset_id, event_type) * on (dataset_id) group_left(dataset_title, source_type, org_name) dataset_info_gauge"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[2].record | string | `"pipeline:event_stream:events_handled"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[3].expr | string | `"label_replace(kafka_consumergroup_lag{consumergroup=~\"(.*event-stream|.*events)\"}, \"app\", \"$1\", \"consumergroup\", \"(.+)-(event-stream|events)\") > 0"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[3].record | string | `"pipeline:event_stream:lag"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[4].expr | string | `"sum(label_replace(rate(fluentd_input_status_num_records_total{tag=~\".*(forklift|reaper|voltron|valkyrie|discovery-api).*\"}[5m]), \"name\", \"$1\", \"tag\", \"kube.var.log.containers.(.+?)-.*\")) by (name) > 0"` |  |
-| prometheus.serverFiles.rules.groups[0].rules[4].record | string | `"pipeline:log_message_rate"` |  |
+| prometheus.serviceAccounts.server.create | bool | `false` |  |
+| prometheus.serviceAccounts.server.name | string | `"default"` |  |
 | prometheusIngress.annotations | object | `{}` |  |
 
 ----------------------------------------------
