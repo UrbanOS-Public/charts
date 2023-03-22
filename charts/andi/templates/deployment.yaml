@@ -167,19 +167,6 @@ spec:
             value: {{ quote .Values.aws.s3Port }}
           - name: ALLOWED_ORIGIN
             value: "{{ .Values.ingress.tls | ternary "https" "http" }}://*.{{ .Values.global.ingress.dnsZone }}"
-          - livenessProbe:
-              httpGet:
-                path: /healthz
-                port: 80
-              initialDelaySeconds: 3
-              periodSeconds: 15
-          - readinessProbe:
-              httpGet:
-                path: /ready
-                port: 80
-                initialDelaySeconds: 3
-                periodSeconds: 15
-              successThreshold: 3
           {{ end -}}
 {{- with .Values.tolerations }}
       tolerations:

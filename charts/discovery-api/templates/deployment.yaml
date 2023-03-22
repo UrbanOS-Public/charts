@@ -145,17 +145,4 @@ spec:
             value: {{ .Values.aws.s3HostName }}
           - name: S3_PORT
             value: {{ quote .Values.aws.s3Port }}
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 8080
-            initialDelaySeconds: 3
-            periodSeconds: 15
-          readinessProbe:
-            httpGet:
-              path: /ready
-              port: 8080
-              initialDelaySeconds: 3
-              periodSeconds: 15
-            successThreshold: 3
           {{ end -}}
