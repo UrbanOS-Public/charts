@@ -2,6 +2,7 @@ global:
   auth:
     jwt_issuer: ""
     auth0_domain: ""
+    raptor_url: ""
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   presto:
@@ -12,6 +13,7 @@ global:
     passwordSecret: ""
     password: ""
     sslEnabled: false
+  require_admin_api_key: false
   vault:
     # Should match the format {Release Name}-vault:8200
     endpoint: "urban-os-vault:8200"

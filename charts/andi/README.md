@@ -1,6 +1,6 @@
 # andi
 
-![Version: 2.3.10](https://img.shields.io/badge/Version-2.3.10-informational?style=flat-square)
+![Version: 2.3.11](https://img.shields.io/badge/Version-2.3.11-informational?style=flat-square)
 
 REST API to allow for dataset definition ingestion
 
@@ -26,6 +26,7 @@ REST API to allow for dataset definition ingestion
 | fullnameOverride | string | `""` |  |
 | global.auth.auth0_domain | string | `""` |  |
 | global.auth.jwt_issuer | string | `""` |  |
+| global.auth.raptor_url | string | `""` |  |
 | global.ingress.dnsZone | string | `"localhost"` |  |
 | global.ingress.rootDnsZone | string | `"localhost"` |  |
 | global.kafka.brokers | string | `"streaming-service-kafka-bootstrap:9092"` |  |
@@ -37,6 +38,7 @@ REST API to allow for dataset definition ingestion
 | global.redis.passwordSecret | string | `""` |  |
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
+| global.require_admin_api_key | bool | `false` |  |
 | global.vault.endpoint | string | `"urban-os-vault:8200"` |  |
 | image.majorPin | string | `""` |  |
 | image.minorPin | string | `""` |  |
