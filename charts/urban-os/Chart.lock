@@ -56,5 +56,5 @@ dependencies:
 - name: performancetesting
   repository: file://../performancetesting
   version: 0.1.8
-digest: sha256:d3b5c5740e0f283b9d332ece9e392a54df2f24ba870e4341cc0d9b42a7a9813b
-generated: "2023-03-09T11:02:23.397757-05:00"
+digest: sha256:74ddf2b7cd3d27da279f85a51b5c1728e0f5babbe7eeedf2f0097c2c1d54a72a
+generated: "2023-03-22T17:08:15.5-04:00"
