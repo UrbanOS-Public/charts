@@ -1,6 +1,6 @@
 # urban-os
 
-![Version: 1.13.38](https://img.shields.io/badge/Version-1.13.38-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.13.39](https://img.shields.io/badge/Version-1.13.39-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 
@@ -43,6 +43,7 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | forklift | object | `{"enabled":true,"fullnameOverride":"forklift"}` | See dependent chart for configuration details |
 | global.auth.auth0_domain | string | `""` |  |
 | global.auth.jwt_issuer | string | `""` |  |
+| global.auth.raptor_url | string | `""` |  |
 | global.buckets.hiveStorageBucket | string | `""` | Required. Bucket that extracted data is written to. *Note*: Bucket names are globally unique in S3 or cluster unique in Minio |
 | global.buckets.hostedFileBucket | string | `""` | Required. Bucket to store Host type datasets. *Note*: Bucket names are globally unique in S3 or cluster unique in Minio |
 | global.buckets.region | string | `"us-west-2"` | S3 Bucket region. Ignored when using Minio |
@@ -54,6 +55,7 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | global.presto.url | string | `"http://kubernetes-data-platform-presto:8080"` | This is the default url that presto is deployed to with the chart. Override this if you are using an external presto cluster. |
 | global.redis.host | string | `"redis.external-services"` | The url to a Redis instance. *Note*: Most apps in the platform require access to a Redis instance, and one is not currently included in the chart. |
 | global.redis.password | string | `""` |  |
+| global.require_admin_api_key | bool | `false` |  |
 | global.require_api_key | bool | `false` | Determines whether a user is required to log in in order to see public data in the discovery suite |
 | global.subdomains.andi | string | `"andi"` |  |
 | global.subdomains.discoveryApi | string | `"data"` |  |

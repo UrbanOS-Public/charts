@@ -2,6 +2,7 @@ global:
   auth:
     jwt_issuer: ""
     auth0_domain: ""
+    raptor_url: ""
   buckets:
     # -- S3 Bucket region. Ignored when using Minio
     region: "us-west-2"
@@ -17,6 +18,7 @@ global:
     url: http://kubernetes-data-platform-presto:8080
   # -- Determines whether a user is required to log in in order to see public data in the discovery suite
   require_api_key: false
+  require_admin_api_key: false
   redis:
     # -- The url to a Redis instance. *Note*: Most apps in the platform require access to a Redis instance, and one is not currently included in the chart.
     host: redis.external-services

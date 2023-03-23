@@ -157,6 +157,10 @@ spec:
             value: {{ quote .Values.aws.s3Port }}
           - name: ALLOWED_ORIGIN
             value: "{{ .Values.ingress.tls | ternary "https" "http" }}://*.{{ .Values.global.ingress.dnsZone }}"
+          - name: RAPTOR_URL
+            value: {{ quote .Values.global.auth.raptor_url }}
+          - name: REQUIRE_ADMIN_API_KEY
+            value: {{ quote .Values.global.require_admin_api_key }}
           {{ end -}}
 {{- with .Values.tolerations }}
       tolerations:
