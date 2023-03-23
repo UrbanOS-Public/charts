@@ -8,6 +8,6 @@ sources:
   - https://github.com/apache/kafka
 dependencies:
   - name: strimzi-kafka-operator
-    version: 0.31.1
+    version: 0.31.2
     repository: http://strimzi.io/charts/
     condition: strimzi-kafka-operator.enabled
