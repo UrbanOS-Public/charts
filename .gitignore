@@ -3,7 +3,7 @@ tmp_charts/
 charts/urban-os/charts
 charts/kafka/charts
 charts/persistence/charts
-*.tgz
+charts/monitoring/charts
 
 .DS_Store
 
