@@ -7,7 +7,7 @@ dependencies:
   version: 2.3.12
 - name: discovery-api
   repository: file://../discovery-api
-  version: 1.4.9
+  version: 1.4.8
 - name: discovery-streams
   repository: file://../discovery-streams
   version: 1.1.7
@@ -25,7 +25,7 @@ dependencies:
   version: 3.1.13
 - name: kafka
   repository: file://../kafka
-  version: 1.2.22
+  version: 1.2.21
 - name: kubernetes-data-platform
   repository: file://../kubernetes-data-platform
   version: 1.7.3
@@ -37,7 +37,7 @@ dependencies:
   version: 1.1.6
 - name: raptor
   repository: file://../raptor
-  version: 1.1.8
+  version: 1.1.7
 - name: reaper
   repository: file://../reaper
   version: 1.2.8
@@ -56,5 +56,5 @@ dependencies:
 - name: performancetesting
   repository: file://../performancetesting
   version: 0.1.8
-digest: sha256:24be2dd67317a2dd5a74c85a1286bcf074a1996c813184c52cf57fc841c4d04f
-generated: "2023-03-23T18:04:07.6331413-06:00"
+digest: sha256:c524e01b3734deb073c557643cd52632371e53afd0b69564d4de08b133ca497c
+generated: "2023-03-24T10:19:18.932529-05:00"

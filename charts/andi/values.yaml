@@ -111,7 +111,7 @@ theme:
 
 footer:
   # footer text on left side with links on right side
-  leftSideText: "© 2022 UrbanOS. All rights reserved."
+  leftSideText: "© 2023 UrbanOS. All rights reserved."
   leftSideLink: "https://github.com/UrbanOS-Public/smartcitiesdata"
   rightLinks: '[{"linkText":"Discovery UI", "url":"https://discovery.dev.apps.hsrqs9l3.eastus.aroapp.io/"}, {"linkText":"UrbanOS", "url":"https://github.com/UrbanOS-Public/smartcitiesdata"}]'
 
