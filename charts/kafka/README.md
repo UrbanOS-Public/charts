@@ -1,6 +1,6 @@
 # kafka
 
-![Version: 1.2.22](https://img.shields.io/badge/Version-1.2.22-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.2.23](https://img.shields.io/badge/Version-1.2.23-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A Helm chart for deploying kafka via strimzi
 
@@ -13,7 +13,7 @@ A Helm chart for deploying kafka via strimzi
 
 | Repository | Name | Version |
 |------------|------|---------|
-| http://strimzi.io/charts/ | strimzi-kafka-operator | 0.31.2 |
+| http://strimzi.io/charts/ | strimzi-kafka-operator | 0.31.1 |
 
 ## Values
 
