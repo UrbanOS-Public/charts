@@ -4,16 +4,16 @@ dependencies:
   version: 1.0.4
 - name: andi
   repository: file://../andi
-  version: 2.3.13
+  version: 2.3.14
 - name: discovery-api
   repository: file://../discovery-api
-  version: 1.4.9
+  version: 1.4.10
 - name: discovery-streams
   repository: file://../discovery-streams
   version: 1.1.7
 - name: discovery-ui
   repository: file://../discovery-ui
-  version: 1.5.17
+  version: 1.5.18
 - name: elasticsearch
   repository: https://helm.elastic.co
   version: 7.14.0
@@ -25,7 +25,7 @@ dependencies:
   version: 3.1.13
 - name: kafka
   repository: file://../kafka
-  version: 1.2.23
+  version: 1.2.24
 - name: kubernetes-data-platform
   repository: file://../kubernetes-data-platform
   version: 1.7.3
@@ -37,7 +37,7 @@ dependencies:
   version: 1.1.6
 - name: raptor
   repository: file://../raptor
-  version: 1.1.8
+  version: 1.1.9
 - name: reaper
   repository: file://../reaper
   version: 1.2.8
@@ -56,5 +56,5 @@ dependencies:
 - name: performancetesting
   repository: file://../performancetesting
   version: 0.1.8
-digest: sha256:a498823e4add3827b46a2093728a5157e2759256638b35cbe30aa3f4e3c7809b
-generated: "2023-03-27T12:03:22.570419-05:00"
+digest: sha256:76b499c08a93ee7a0b780bf7571227fcf80fbf4375698e3180aea584fb5fbfd8
+generated: "2023-03-27T12:09:23.858721-05:00"
