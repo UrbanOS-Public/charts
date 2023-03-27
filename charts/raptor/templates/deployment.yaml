@@ -22,7 +22,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Chart.Name }}
+        app: {{ .Chart.Name }} 
     spec:
       {{- if .Values.rbac.enabled }}
       serviceAccountName: {{ .Chart.Name }}
@@ -33,6 +33,16 @@ spec:
       - name: {{ .Chart.Name }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        livenessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 4000
+            scheme: HTTP
+          initialDelaySeconds: 100
+          timeoutSeconds: 5
+          periodSeconds: 100
+          successThreshold: 1
+          failureThreshold: 3
         resources:
 {{ toYaml .Values.resources | indent 10 }}
         env:
