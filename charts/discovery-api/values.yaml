@@ -25,6 +25,8 @@ global:
   objectStore:
     accessSecret: ""
     accessKey: ""
+  subdomains:
+    discoveryApi: ""
 
 resources:
   limits:

@@ -68,11 +68,7 @@ spec:
           - name: PRESTO_SCHEMA
             value: {{ .Values.presto.schema }}
           - name: HOST
-{{- if .Release.Namespace }}
-            value: data.{{ .Release.Namespace }}.{{ .Values.global.ingress.rootDnsZone }}
-{{- else }}
-            value: data.{{ .Values.global.ingress.rootDnsZone }}
-{{- end }}
+            value: {{ .Values.global.subdomains.discoveryApi }}.{{ .Values.global.ingress.rootDnsZone }}
           - name: ALLOWED_ORIGINS
             value: {{ .Values.global.ingress.rootDnsZone }},{{ .Values.global.ingress.dnsZone }}
           - name: PRESIGN_KEY
