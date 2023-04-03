@@ -548,6 +548,17 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
+    created: "2023-04-03T21:23:44.289224778Z"
+    description: A middleware layer to connect data consumers with the data sources
+    digest: e96d6db40d1ea9b50b2b60194c3ea99c9544559178f6cf638b2b9e0ab7837bc1
+    name: discovery-api
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/discovery_api
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-api-1.4.11/discovery-api-1.4.11.tgz
+    version: 1.4.11
+  - apiVersion: v1
+    appVersion: 1.0.0-static
     created: "2023-03-27T17:21:16.452410007Z"
     description: A middleware layer to connect data consumers with the data sources
     digest: 41ccd2af32ab1de77b43a423e8c71f5feb9fca43c26139b664d55682cf47f5a0
@@ -3460,6 +3471,95 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2023-04-03T21:23:44.467852451Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.22.0
+    - alias: minio-operator
+      condition: minio-operator.enabled
+      name: operator
+      repository: https://operator.min.io/
+      version: 4.5.6
+    - alias: minio-tenant
+      condition: minio-tenant.enabled
+      name: tenant
+      repository: https://operator.min.io/
+      version: 4.5.6
+    - condition: performancetesting.enabled
+      name: performancetesting
+      repository: file://../performancetesting
+      version: '>= 0.0.0'
+    description: Master chart that deploys the UrbanOS platform. See the individual
+      dependency readmes for configuration options.
+    digest: 980dd7922022fb9e889a9e3b85e78dd95eec353248e823f80ab646c4f78ee146
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.13.45/urban-os-1.13.45.tgz
+    version: 1.13.45
   - apiVersion: v2
     appVersion: "1.0"
     created: "2023-03-27T17:21:17.459946844Z"
@@ -9926,4 +10026,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2023-03-27T17:21:17.462729949Z"
+generated: "2023-04-03T21:23:44.470693357Z"
