@@ -1,6 +1,6 @@
 # discovery-api
 
-![Version: 1.4.10](https://img.shields.io/badge/Version-1.4.10-informational?style=flat-square) ![AppVersion: 1.0.0-static](https://img.shields.io/badge/AppVersion-1.0.0--static-informational?style=flat-square)
+![Version: 1.4.11](https://img.shields.io/badge/Version-1.4.11-informational?style=flat-square) ![AppVersion: 1.0.0-static](https://img.shields.io/badge/AppVersion-1.0.0--static-informational?style=flat-square)
 
 A middleware layer to connect data consumers with the data sources
 
@@ -40,6 +40,7 @@ A middleware layer to connect data consumers with the data sources
 | global.redis.port | int | `6379` |  |
 | global.redis.sslEnabled | bool | `false` |  |
 | global.require_api_key | bool | `false` |  |
+| global.subdomains.discoveryApi | string | `""` |  |
 | global.vault.endpoint | string | `"vault.vault:8200"` |  |
 | image.majorPin | string | `""` |  |
 | image.minorPin | string | `""` |  |
