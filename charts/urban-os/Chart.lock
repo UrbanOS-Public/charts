@@ -7,7 +7,7 @@ dependencies:
   version: 2.3.14
 - name: discovery-api
   repository: file://../discovery-api
-  version: 1.4.10
+  version: 1.4.11
 - name: discovery-streams
   repository: file://../discovery-streams
   version: 1.1.7
@@ -56,5 +56,5 @@ dependencies:
 - name: performancetesting
   repository: file://../performancetesting
   version: 0.1.8
-digest: sha256:1c960a71fe0e81dd1606a80921c189f8682141479b5c52e396f31e3bb839c6d5
-generated: "2023-03-27T12:18:02.109054-05:00"
+digest: sha256:a1d04769bdfde51ddf31c8281a2ca5ce8becb8c789cc89d567b93400e09b00b6
+generated: "2023-04-03T12:56:54.535757-04:00"
