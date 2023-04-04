@@ -1,6 +1,6 @@
 # monitoring
 
-![Version: 1.1.6](https://img.shields.io/badge/Version-1.1.6-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.1.7](https://img.shields.io/badge/Version-1.1.7-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A combination of the community Prometheus and Grafana charts.
 
