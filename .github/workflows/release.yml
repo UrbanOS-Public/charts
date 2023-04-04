@@ -38,6 +38,7 @@ jobs:
           helm repo update
           helm dependency update charts/kafka
           helm dependency update charts/persistence
+          helm dependency update charts/monitoring
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.1
