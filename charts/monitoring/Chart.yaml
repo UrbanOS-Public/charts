@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: "A combination of the community Prometheus and Grafana charts."
 name: monitoring
-version: 1.1.6
+version: 1.1.7
 
 dependencies:
   - name: prometheus
