@@ -27,6 +27,6 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: "{{ .Values.prometheus.serviceAccounts.server.name }}"
-    namespace: "{{ index .Values.prometheus.server.namespaces 0 }}"
+    namespace: "{{ index .Values.monitoring.prometheus.server.namespaces 0 }}"
 
 {{- end }}

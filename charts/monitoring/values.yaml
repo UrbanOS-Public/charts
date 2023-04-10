@@ -397,3 +397,31 @@ prometheus:
 
   kube-state-metrics:
     enabled: false
+
+loki:
+  fullnameOverride: monitoring-loki
+  commonConfig:
+    path_prefix: /var/loki
+    replication_factor: 1
+  gateway:
+    enabled: false
+    replicas: 2
+  read:
+    replicas: 2
+  write:
+    replicas: 2
+  test:
+    enabled: false
+  monitoring:
+    dashboards:
+      enabled: false
+    rules:
+      enabled: false
+    serviceMonitor:
+      enabled: false
+    lokiCanary:
+      enabled: false
+    selfMonitoring:
+      enabled: true
+    grafanaAgent:
+      installOperator: true
