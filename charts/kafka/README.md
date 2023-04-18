@@ -1,6 +1,6 @@
 # kafka
 
-![Version: 1.2.23](https://img.shields.io/badge/Version-1.2.23-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.2.24](https://img.shields.io/badge/Version-1.2.24-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A Helm chart for deploying kafka via strimzi
 
@@ -36,6 +36,11 @@ A Helm chart for deploying kafka via strimzi
 | limitRange.enabled | bool | `true` |  |
 | rbac.enabled | bool | `true` |  |
 | resizeHook.enabled | bool | `true` |  |
+| scraper.cron | string | `"*/10 * * * *"` |  |
+| scraper.enabled | bool | `true` |  |
+| scraper.endpoint | string | `"kafka-exporter:9308/metrics"` |  |
+| scraper.image | string | `"alpine:latest"` |  |
+| scraper.serviceAccount | string | `"default"` |  |
 | strimzi-kafka-operator.enabled | bool | `true` |  |
 | strimzi-kafka-operator.resources.limits.cpu | string | `"500m"` |  |
 | strimzi-kafka-operator.resources.requests.cpu | string | `"100m"` |  |
