@@ -17,6 +17,13 @@ kafka:
       cpu: 1400m
       memory: 12500M
 
+scraper:
+  enabled: false
+  cron: "*/10 * * * *"
+  image: "alpine:latest"
+  endpoint: kafka-exporter:9308/metrics
+  serviceAccount: default
+
 zookeeper:
   resources:
     requests:
