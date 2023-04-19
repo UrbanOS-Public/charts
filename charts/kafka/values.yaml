@@ -18,7 +18,7 @@ kafka:
       memory: 12500M
 
 scraper:
-  enabled: true
+  enabled: false
   cron: "*/10 * * * *"
   image: "alpine:latest"
   endpoint: kafka-exporter:9308/metrics
