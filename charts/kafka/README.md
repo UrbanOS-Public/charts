@@ -37,7 +37,7 @@ A Helm chart for deploying kafka via strimzi
 | rbac.enabled | bool | `true` |  |
 | resizeHook.enabled | bool | `true` |  |
 | scraper.cron | string | `"*/10 * * * *"` |  |
-| scraper.enabled | bool | `true` |  |
+| scraper.enabled | bool | `false` |  |
 | scraper.endpoint | string | `"kafka-exporter:9308/metrics"` |  |
 | scraper.image | string | `"alpine:latest"` |  |
 | scraper.serviceAccount | string | `"default"` |  |
