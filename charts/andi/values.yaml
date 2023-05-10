@@ -108,10 +108,7 @@ theme:
   secondaryColor: "#1176D4"
   successColor: "#008000"
   errorColor: "#B80000"
-  # base64 string for the favicon (optional).  If used, it is a base64-encoded gzipped version of the icon
-  # For instance:
-  # customFavIconBase64: "H4sICJYyW2QCA2Zhdmljb24uaWNvAGNgYARCAQEBBhDQYGRgEAPRQAwSUQBiRgYWsFwDAwIIILE36Gsx/G9hYNjcHs5AZaAAoZhQuIxKINKAgQnMNTZQgkgaG0BoJWNjCIOZ2YCgBf//U4YBodIDmz4BAAA="
-  customFavIconBase64: 
+  customFavIconUrl: 
 
 footer:
   # footer text on left side with links on right side
