@@ -158,6 +158,8 @@ spec:
             value: '{{  .Values.footer.leftSideLink }}'
           - name: ANDI_FOOTER_RIGHT_LINKS
             value: '{{  .Values.footer.rightLinks }}'
+          - name: CUSTOM_FAV_ICON_URL
+            value: '{{  .Values.theme.customFavIconUrl }}'
           - name: SECURE_COOKIE
             value: {{ quote .Values.secureCookie }}
           {{ if .Values.aws.s3HostName }}
