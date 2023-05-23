@@ -33,6 +33,8 @@ env:
   footer_left_side_link: "https://github.com/UrbanOS-Public/smartcitiesdata"
   footer_right_links: '[{"linkText":"UrbanOS", "url":"https://github.com/UrbanOS-Public/smartcitiesdata"}]'
   primary_color: "#0F64B3"
+  # url string for the favicon (optional).  If used, it is a base64-encoded gzipped version of the icon
+  custom_favicon_url: null   
   # omitting mapbox will default plot.ly to use openstreetmap.org
   mapbox_access_token: ""
   auth0_domain: ""

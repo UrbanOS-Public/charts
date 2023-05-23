@@ -108,6 +108,7 @@ theme:
   secondaryColor: "#1176D4"
   successColor: "#008000"
   errorColor: "#B80000"
+  customFavIconUrl: 
 
 footer:
   # footer text on left side with links on right side
