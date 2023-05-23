@@ -37,7 +37,7 @@ dependencies:
   version: 1.1.7
 - name: raptor
   repository: file://../raptor
-  version: 1.1.9
+  version: 1.1.10
 - name: reaper
   repository: file://../reaper
   version: 1.2.8
@@ -56,5 +56,5 @@ dependencies:
 - name: performancetesting
   repository: file://../performancetesting
   version: 0.1.8
-digest: sha256:9cd41e8e8f391438e184008976a63476d91c97336788f4e7bf8f9edd15e5fd71
-generated: "2023-04-18T15:12:45.810426-05:00"
+digest: sha256:82303819fcb361280bd10d0f91dccd2e3283d7b2c2c747994c87a29fba45574a
+generated: "2023-05-23T07:10:13.240191-05:00"
