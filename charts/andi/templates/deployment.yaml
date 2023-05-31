@@ -111,8 +111,8 @@ spec:
             value: {{ .Values.global.vault.endpoint }}
           - name: AUTH0_DOMAIN
             value: {{ quote .Values.global.auth.auth0_domain }}
-          - name: AUTH0_CLIENT_ID
-            value: {{ quote .Values.auth.auth0_client_id }}
+          - name: ANDI_AUTH0_CLIENT_ID
+            value: {{ quote .Values.auth.andi_auth0_client_id }}
           - name: AUTH_JWT_ISSUER
             value: {{ quote .Values.global.auth.jwt_issuer }}
           - name: DOCUMENTATION_ROOT

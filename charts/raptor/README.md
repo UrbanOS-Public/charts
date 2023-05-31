@@ -1,6 +1,6 @@
 # raptor
 
-![Version: 1.1.9](https://img.shields.io/badge/Version-1.1.9-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.1.10](https://img.shields.io/badge/Version-1.1.10-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Authenticate and authorize API users
 
@@ -12,8 +12,8 @@ Authenticate and authorize API users
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| auth.auth0_client_id | string | `""` |  |
 | auth.auth0_client_secret | string | `""` |  |
+| auth.raptor_auth0_client_id | string | `""` |  |
 | global.auth.auth0_domain | string | `""` |  |
 | global.kafka.brokers | string | `"pipeline-kafka-bootstrap:9092"` |  |
 | global.redis.host | string | `"redis.external-services"` |  |
