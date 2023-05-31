@@ -25,7 +25,7 @@ data:
       echo "POD_NAME:"
       printf "%s \n\n" "$POD_NAME"
     
-      POD_IMAGE_TAG=$(kubectl get pod --namespace=dev "$POD_NAME" -o json | jq '.status.containerStatuses[] | .image ' | cut -d ':' -f 2 | sed 's/"//g' | tr -d '[:space:]')
+      POD_IMAGE_TAG=$(kubectl get pod --namespace="$NAMESPACE" "$POD_NAME" -o json | jq '.status.containerStatuses[] | .image ' | cut -d ':' -f 2 | sed 's/"//g' | tr -d '[:space:]')
       echo "POD_IMAGE_TAG:"
       printf "%s \n\n" "$POD_IMAGE_TAG"
     
@@ -79,7 +79,7 @@ data:
           return
         fi
         
-        CURRENT_DIGEST=$(kubectl get pod --namespace=dev $POD_NAME -o json | jq '.status.containerStatuses[] | .imageID ' | cut -d '@' -f 2 | sed 's/"//g' | tr -d '[:space:]')
+        CURRENT_DIGEST=$(kubectl get pod --namespace="$NAMESPACE" $POD_NAME -o json | jq '.status.containerStatuses[] | .imageID ' | cut -d '@' -f 2 | sed 's/"//g' | tr -d '[:space:]')
         echo "CURRENT_DIGEST:"
         echo "$CURRENT_DIGEST"
         CURRENT_DIGEST_LENGTH=${#CURRENT_DIGEST}

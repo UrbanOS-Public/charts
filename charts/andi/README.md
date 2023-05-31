@@ -1,6 +1,6 @@
 # andi
 
-![Version: 2.3.14](https://img.shields.io/badge/Version-2.3.14-informational?style=flat-square)
+![Version: 2.3.16](https://img.shields.io/badge/Version-2.3.16-informational?style=flat-square)
 
 REST API to allow for dataset definition ingestion
 
@@ -13,7 +13,7 @@ REST API to allow for dataset definition ingestion
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | accessLevel | string | `"private"` |  |
-| auth.auth0_client_id | string | `""` |  |
+| auth.andi_auth0_client_id | string | `""` |  |
 | auth.auth0_client_secret | string | `""` |  |
 | aws.accessKeyId | string | `""` |  |
 | aws.accessKeySecret | string | `""` |  |
@@ -70,6 +70,7 @@ REST API to allow for dataset definition ingestion
 | service.port | int | `80` |  |
 | service.targetPort | int | `4000` |  |
 | service.type | string | `"NodePort"` |  |
+| theme.customFavIconUrl | string | `nil` |  |
 | theme.errorColor | string | `"#B80000"` |  |
 | theme.headerText | string | `"Data Submission Tool"` |  |
 | theme.logo | string | `"/images/UrbanOS.svg"` |  |
