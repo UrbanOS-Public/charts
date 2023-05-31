@@ -47,6 +47,16 @@ entries:
     version: 1.0.1
   andi:
   - apiVersion: v1
+    created: "2023-05-31T18:33:05.425229916Z"
+    description: REST API to allow for dataset definition ingestion
+    digest: 8841c81bf366ec67a4c63f0065dbd2b91d2b05a8b56d76dc7f81d5dce1e1cca6
+    name: andi
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/andi
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/andi-2.3.16/andi-2.3.16.tgz
+    version: 2.3.16
+  - apiVersion: v1
     created: "2023-05-11T13:00:53.750311344Z"
     description: REST API to allow for dataset definition ingestion
     digest: 54023aa6c935455296d9e129a6779c2bbc6d1890d42f60189d6eb21f91903768
@@ -1078,6 +1088,18 @@ entries:
     - discovery-streams-0.1.2.tgz
     version: 0.1.2
   discovery-ui:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2023-05-31T18:33:05.576173438Z"
+    description: A helm chart for the discovery ui
+    digest: df7041d2955905b9165015cecf0c2561c5084e989982bef00a2c8501402509fe
+    name: discovery-ui
+    sources:
+    - https://github.com/UrbanOS-Public/discovery_ui
+    - https://github.com/UrbanOS-Public/react_discovery_ui
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-ui-1.5.20/discovery-ui-1.5.20.tgz
+    version: 1.5.20
   - apiVersion: v1
     appVersion: "1.0"
     created: "2023-05-11T13:00:54.02533488Z"
@@ -3077,6 +3099,17 @@ entries:
   raptor:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2023-05-31T18:33:05.72245259Z"
+    description: Authenticate and authorize API users
+    digest: 2cc75301e4174b90944f4149dede605fbb720ed3ea4e14d272b5c2799571aea6
+    name: raptor
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/raptor
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/raptor-1.1.10/raptor-1.1.10.tgz
+    version: 1.1.10
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2023-03-27T17:21:17.154281652Z"
     description: Authenticate and authorize API users
     digest: a045a014daa03c60b6da5ad27f1fe36a6158ff5c1d81f4977a471805b34047eb
@@ -3538,6 +3571,95 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2023-05-31T18:33:05.971807975Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.22.0
+    - alias: minio-operator
+      condition: minio-operator.enabled
+      name: operator
+      repository: https://operator.min.io/
+      version: 4.5.6
+    - alias: minio-tenant
+      condition: minio-tenant.enabled
+      name: tenant
+      repository: https://operator.min.io/
+      version: 4.5.6
+    - condition: performancetesting.enabled
+      name: performancetesting
+      repository: file://../performancetesting
+      version: '>= 0.0.0'
+    description: Master chart that deploys the UrbanOS platform. See the individual
+      dependency readmes for configuration options.
+    digest: 8cecdb4bcf3516451364725314c0f2483b24893627d486e910afadc7a2b589b0
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.13.49/urban-os-1.13.49.tgz
+    version: 1.13.49
   - apiVersion: v2
     appVersion: "1.0"
     created: "2023-05-11T13:00:54.359048439Z"
@@ -10360,4 +10482,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2023-05-11T13:00:54.362096484Z"
+generated: "2023-05-31T18:33:05.974963054Z"
