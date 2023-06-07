@@ -77,8 +77,8 @@ spec:
               fieldPath: status.podIP
         - name: AUTH0_DOMAIN
           value: {{ quote .Values.global.auth.auth0_domain }}
-        - name: AUTH0_CLIENT_ID
-          value: {{ quote .Values.auth.auth0_client_id }}
+        - name: RAPTOR_AUTH0_CLIENT_ID
+          value: {{ quote .Values.auth.raptor_auth0_client_id }}
         - name: AUTH0_CLIENT_SECRET
           valueFrom:
             secretKeyRef:

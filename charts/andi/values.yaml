@@ -70,7 +70,7 @@ postgres:
   verifySNI: true
 
 auth:
-  auth0_client_id: ""
+  andi_auth0_client_id: ""
   # if left empty, no secret will be created
   # and {{ .Release.Name }}-andi-auth0-client-secret will be referenced
   auth0_client_secret: ""

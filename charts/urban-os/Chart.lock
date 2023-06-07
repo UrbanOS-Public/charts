@@ -4,7 +4,7 @@ dependencies:
   version: 1.0.4
 - name: andi
   repository: file://../andi
-  version: 2.3.15
+  version: 2.3.16
 - name: discovery-api
   repository: file://../discovery-api
   version: 1.4.11
@@ -13,7 +13,7 @@ dependencies:
   version: 1.1.7
 - name: discovery-ui
   repository: file://../discovery-ui
-  version: 1.5.19
+  version: 1.5.20
 - name: elasticsearch
   repository: https://helm.elastic.co
   version: 7.14.0
@@ -37,7 +37,7 @@ dependencies:
   version: 1.1.7
 - name: raptor
   repository: file://../raptor
-  version: 1.1.9
+  version: 1.1.10
 - name: reaper
   repository: file://../reaper
   version: 1.2.8
@@ -56,5 +56,10 @@ dependencies:
 - name: performancetesting
   repository: file://../performancetesting
   version: 0.1.8
+<<<<<<< HEAD
 digest: sha256:3684a5493c62883be5fd8bc7e5a22ab2ff7edc7fc330ba6f0200c56b1cc4ceaf
 generated: "2023-05-19T14:35:05.9719006-04:00"
+=======
+digest: sha256:901573a4f5acc8bb623c5a2770b796430fdd4e8f9c667629ab3fe7c4e7c692d5
+generated: "2023-05-31T12:44:02.755396-05:00"
+>>>>>>> master
