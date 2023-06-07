@@ -47,6 +47,16 @@ entries:
     version: 1.0.1
   andi:
   - apiVersion: v1
+    created: "2023-06-07T18:37:06.835210727Z"
+    description: REST API to allow for dataset definition ingestion
+    digest: cd3fa6d1060382dae151130efe72f812e30e3cfd2340c68ad8406610aa3721fd
+    name: andi
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/andi
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/andi-2.3.17/andi-2.3.17.tgz
+    version: 2.3.17
+  - apiVersion: v1
     created: "2023-05-31T18:33:05.425229916Z"
     description: REST API to allow for dataset definition ingestion
     digest: 8841c81bf366ec67a4c63f0065dbd2b91d2b05a8b56d76dc7f81d5dce1e1cca6
@@ -3571,6 +3581,95 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2023-06-07T18:37:07.112699684Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.14.0
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.22.0
+    - alias: minio-operator
+      condition: minio-operator.enabled
+      name: operator
+      repository: https://operator.min.io/
+      version: 4.5.8
+    - alias: minio-tenant
+      condition: minio-tenant.enabled
+      name: tenant
+      repository: https://operator.min.io/
+      version: 4.5.8
+    - condition: performancetesting.enabled
+      name: performancetesting
+      repository: file://../performancetesting
+      version: '>= 0.0.0'
+    description: Master chart that deploys the UrbanOS platform. See the individual
+      dependency readmes for configuration options.
+    digest: 9cb62f97f091b9acf7f91aa61e9a2fbb448326b2048e553402238486294de239
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.13.51/urban-os-1.13.51.tgz
+    version: 1.13.51
   - apiVersion: v2
     appVersion: "1.0"
     created: "2023-05-31T18:33:05.971807975Z"
@@ -10482,4 +10581,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2023-05-31T18:33:05.974963054Z"
+generated: "2023-06-07T18:37:07.115421824Z"
