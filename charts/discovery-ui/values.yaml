@@ -28,7 +28,7 @@ env:
   disc_streams_url: "https://streams.example.com"
   streets_tile_layer_url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   logo_url: null
-  header_title: "UrbanOS Data Discovery"
+  header_title: "This is my application now"
   footer_left_side_text: "© 2023 UrbanOS. All rights reserved."
   footer_left_side_link: "https://github.com/UrbanOS-Public/smartcitiesdata"
   footer_right_links: '[{"linkText":"UrbanOS", "url":"https://github.com/UrbanOS-Public/smartcitiesdata"}]'
