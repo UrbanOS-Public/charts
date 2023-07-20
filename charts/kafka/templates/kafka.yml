@@ -18,6 +18,7 @@ spec:
       transaction.state.log.replication.factor: {{ .Values.kafka.defaultReplicas }}
       transaction.state.log.min.isr: {{ .Values.kafka.defaultReplicas }}
       auto.create.topics.enable: false
+      message.max.bytes: 10485880
     storage:
       type: persistent-claim
       size: {{ .Values.kafka.storageSize }}
