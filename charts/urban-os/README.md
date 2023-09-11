@@ -1,6 +1,6 @@
 # urban-os
 
-![Version: 1.13.51](https://img.shields.io/badge/Version-1.13.51-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.13.53](https://img.shields.io/badge/Version-1.13.53-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 
@@ -25,8 +25,8 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | file://../valkyrie | valkyrie | >= 1.0.0 |
 | https://helm.elastic.co | elasticsearch | 7.14.0 |
 | https://helm.releases.hashicorp.com | vault | 0.22.0 |
-| https://operator.min.io/ | minio-operator(operator) | 4.5.8 |
-| https://operator.min.io/ | minio-tenant(tenant) | 4.5.8 |
+| https://operator.min.io/ | minio-operator(operator) | 5.0.6 |
+| https://operator.min.io/ | minio-tenant(tenant) | 5.0.6 |
 
 ## Values
 
@@ -89,12 +89,14 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | minio-operator.operator.resources.requests.ephemeral-storage | string | `"500Mi"` |  |
 | minio-operator.operator.resources.requests.memory | string | `"256Mi"` |  |
 | minio-tenant.enabled | bool | `true` |  |
-| minio-tenant.secrets | bool | `false` |  |
 | minio-tenant.tenant.buckets[0].name | string | `"presto-hive-storage"` |  |
 | minio-tenant.tenant.certificate.requestAutoCert | bool | `false` |  |
 | minio-tenant.tenant.configuration.name | string | `"minio1-env-configuration"` |  |
+| minio-tenant.tenant.env[0].name | string | `"MINIO_BROWSER_LOGIN_ANIMATION"` |  |
+| minio-tenant.tenant.env[0].value | string | `"off"` |  |
 | minio-tenant.tenant.exposeServices.console | bool | `true` |  |
 | minio-tenant.tenant.exposeServices.minio | bool | `true` |  |
+| minio-tenant.tenant.name | string | `"minio1"` |  |
 | minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].key | string | `"v1.min.io/tenant"` |  |
 | minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].operator | string | `"In"` |  |
 | minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].values[0] | string | `"minio1"` |  |
