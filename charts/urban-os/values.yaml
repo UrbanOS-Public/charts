@@ -155,6 +155,10 @@ minio-operator:
 minio-tenant:
   enabled: true
   tenant:
+    env:
+      - name: MINIO_BROWSER_LOGIN_ANIMATION
+        value: "off"
+    name: minio1
     configuration:
       name: minio1-env-configuration
     buckets:

@@ -92,8 +92,11 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | minio-tenant.tenant.buckets[0].name | string | `"presto-hive-storage"` |  |
 | minio-tenant.tenant.certificate.requestAutoCert | bool | `false` |  |
 | minio-tenant.tenant.configuration.name | string | `"minio1-env-configuration"` |  |
+| minio-tenant.tenant.env[0].name | string | `"MINIO_BROWSER_LOGIN_ANIMATION"` |  |
+| minio-tenant.tenant.env[0].value | string | `"off"` |  |
 | minio-tenant.tenant.exposeServices.console | bool | `true` |  |
 | minio-tenant.tenant.exposeServices.minio | bool | `true` |  |
+| minio-tenant.tenant.name | string | `"minio1"` |  |
 | minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].key | string | `"v1.min.io/tenant"` |  |
 | minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].operator | string | `"In"` |  |
 | minio-tenant.tenant.pools[0].affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].values[0] | string | `"minio1"` |  |
