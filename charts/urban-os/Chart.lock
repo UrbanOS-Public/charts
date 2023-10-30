@@ -16,7 +16,7 @@ dependencies:
   version: 1.5.20
 - name: elasticsearch
   repository: https://helm.elastic.co
-  version: 7.14.0
+  version: 8.5.1
 - name: external-services
   repository: file://../external-services
   version: 1.0.5
@@ -56,5 +56,5 @@ dependencies:
 - name: performancetesting
   repository: file://../performancetesting
   version: 0.1.8
-digest: sha256:ff723eac4ab8d6a252df4b5681aa1da40f9e3c070170a8469e006f1a9833c813
-generated: "2023-09-06T13:40:10.963787-04:00"
+digest: sha256:7a7981e94e690eb5447a0e607f892edce0eb58d39a56a11502b9be5417924fe7
+generated: "2023-10-30T14:56:52.987501-04:00"
