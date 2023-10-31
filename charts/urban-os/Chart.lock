@@ -1,49 +1,49 @@
 dependencies:
 - name: alchemist
   repository: file://../alchemist
-  version: 1.0.4
+  version: 1.0.5
 - name: andi
   repository: file://../andi
-  version: 2.3.17
+  version: 2.3.18
 - name: discovery-api
   repository: file://../discovery-api
-  version: 1.4.11
+  version: 1.4.12
 - name: discovery-streams
   repository: file://../discovery-streams
-  version: 1.1.7
+  version: 1.1.8
 - name: discovery-ui
   repository: file://../discovery-ui
-  version: 1.5.20
+  version: 1.5.21
 - name: elasticsearch
   repository: https://helm.elastic.co
   version: 8.5.1
 - name: external-services
   repository: file://../external-services
-  version: 1.0.5
+  version: 1.0.6
 - name: forklift
   repository: file://../forklift
-  version: 3.1.13
+  version: 3.1.14
 - name: kafka
   repository: file://../kafka
-  version: 1.2.24
+  version: 1.2.25
 - name: kubernetes-data-platform
   repository: file://../kubernetes-data-platform
-  version: 1.7.3
+  version: 1.7.4
 - name: persistence
   repository: file://../persistence
-  version: 1.0.7
+  version: 1.0.8
 - name: monitoring
   repository: file://../monitoring
-  version: 1.1.7
+  version: 1.1.8
 - name: raptor
   repository: file://../raptor
-  version: 1.1.10
+  version: 1.1.11
 - name: reaper
   repository: file://../reaper
-  version: 1.2.8
+  version: 1.2.9
 - name: valkyrie
   repository: file://../valkyrie
-  version: 2.6.7
+  version: 2.6.8
 - name: vault
   repository: https://helm.releases.hashicorp.com
   version: 0.22.0
@@ -55,6 +55,6 @@ dependencies:
   version: 5.0.6
 - name: performancetesting
   repository: file://../performancetesting
-  version: 0.1.8
-digest: sha256:7a7981e94e690eb5447a0e607f892edce0eb58d39a56a11502b9be5417924fe7
-generated: "2023-10-30T14:56:52.987501-04:00"
+  version: 0.1.9
+digest: sha256:dfa8f5f8f74c04359bdbfb4471b922878207c1e548de8cfefba06bff35d325eb
+generated: "2023-10-31T09:10:06.111663-04:00"

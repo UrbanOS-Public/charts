@@ -1,6 +1,6 @@
 # kubernetes-data-platform
 
-![Version: 1.7.3](https://img.shields.io/badge/Version-1.7.3-informational?style=flat-square)
+![Version: 1.7.4](https://img.shields.io/badge/Version-1.7.4-informational?style=flat-square)
 
 Hadoop-less data platform for the Smart City OS
 
