@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.0"
 description: Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 name: urban-os
-version: 1.13.55
+version: 1.13.56
 
 dependencies:
   - name: alchemist
@@ -26,7 +26,7 @@ dependencies:
     condition: discovery-ui.enabled
     version: ">= 1.0.0"
   - name: elasticsearch
-    version: 8.5.1
+    version: 7.17.3
     repository: https://helm.elastic.co
     condition: elasticsearch.enabled
   - name: external-services
