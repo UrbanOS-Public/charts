@@ -1,6 +1,6 @@
 # urban-os
 
-![Version: 1.13.55](https://img.shields.io/badge/Version-1.13.55-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.13.56](https://img.shields.io/badge/Version-1.13.56-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 
@@ -23,7 +23,7 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | file://../raptor | raptor | >= 1.0.0 |
 | file://../reaper | reaper | >= 1.0.0 |
 | file://../valkyrie | valkyrie | >= 1.0.0 |
-| https://helm.elastic.co | elasticsearch | 8.5.1 |
+| https://helm.elastic.co | elasticsearch | 7.17.3 |
 | https://helm.releases.hashicorp.com | vault | 0.22.0 |
 | https://operator.min.io/ | minio-operator(operator) | 5.0.6 |
 | https://operator.min.io/ | minio-tenant(tenant) | 5.0.6 |
