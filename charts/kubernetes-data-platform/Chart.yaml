@@ -1,7 +1,7 @@
 name: kubernetes-data-platform
 apiVersion: v1
 description: Hadoop-less data platform for the Smart City OS
-version: 1.7.4
+version: 1.7.5
 keywords:
   - presto
   - hive-metastore

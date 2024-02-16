@@ -1,60 +1,60 @@
 dependencies:
 - name: alchemist
   repository: file://../alchemist
-  version: 1.0.5
+  version: 1.0.6
 - name: andi
   repository: file://../andi
-  version: 2.3.18
+  version: 2.3.19
 - name: discovery-api
   repository: file://../discovery-api
-  version: 1.4.12
+  version: 1.4.13
 - name: discovery-streams
   repository: file://../discovery-streams
-  version: 1.1.8
+  version: 1.1.9
 - name: discovery-ui
   repository: file://../discovery-ui
-  version: 1.5.21
+  version: 1.5.22
 - name: elasticsearch
   repository: https://helm.elastic.co
   version: 7.17.3
 - name: external-services
   repository: file://../external-services
-  version: 1.0.6
+  version: 1.0.7
 - name: forklift
   repository: file://../forklift
-  version: 3.1.14
+  version: 3.1.15
 - name: kafka
   repository: file://../kafka
-  version: 1.2.25
+  version: 1.2.26
 - name: kubernetes-data-platform
   repository: file://../kubernetes-data-platform
-  version: 1.7.4
+  version: 1.7.5
 - name: persistence
   repository: file://../persistence
-  version: 1.0.8
+  version: 1.0.9
 - name: monitoring
   repository: file://../monitoring
   version: 1.1.8
 - name: raptor
   repository: file://../raptor
-  version: 1.1.11
+  version: 1.1.12
 - name: reaper
   repository: file://../reaper
   version: 1.2.9
 - name: valkyrie
   repository: file://../valkyrie
-  version: 2.6.8
+  version: 2.6.9
 - name: vault
   repository: https://helm.releases.hashicorp.com
-  version: 0.22.0
+  version: 0.27.0
 - name: operator
   repository: https://operator.min.io/
-  version: 5.0.6
+  version: 5.0.12
 - name: tenant
   repository: https://operator.min.io/
-  version: 5.0.6
+  version: 5.0.12
 - name: performancetesting
   repository: file://../performancetesting
   version: 0.1.9
-digest: sha256:529ffbde291139536a58bcb5f10442e90d50f99db5c0eb0d1a6b46d37d19f21d
-generated: "2023-11-03T12:56:55.410021-04:00"
+digest: sha256:5dd2f4e914a20b6b5555174d4e46481fb48e7b8bedb26347614c93f906663717
+generated: "2024-02-16T14:16:07.773853-05:00"
