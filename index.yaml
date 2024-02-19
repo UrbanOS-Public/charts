@@ -2099,6 +2099,23 @@ entries:
   kafka:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2024-02-19T18:30:46.227115678Z"
+    dependencies:
+    - condition: strimzi-kafka-operator.enabled
+      name: strimzi-kafka-operator
+      repository: http://strimzi.io/charts/
+      version: 0.39.0
+    description: A Helm chart for deploying kafka via strimzi
+    digest: 4f938be96e64d1f96e3974fb7a068d8b5867d647c8cf5e96502f97621ebe7446
+    name: kafka
+    sources:
+    - https://github.com/strimzi/strimzi-kafka-operator
+    - https://github.com/apache/kafka
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/kafka-1.2.26/kafka-1.2.26.tgz
+    version: 1.2.26
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2023-10-31T14:30:50.223377479Z"
     dependencies:
     - condition: strimzi-kafka-operator.enabled
@@ -3155,6 +3172,21 @@ entries:
     - https://github.com/UrbanOS-Public/charts/releases/download/performancetesting-0.1.2/performancetesting-0.1.2.tgz
     version: 0.1.2
   persistence:
+  - apiVersion: v2
+    created: "2024-02-19T18:30:46.335960159Z"
+    dependencies:
+    - name: trino
+      repository: https://trinodb.github.io/charts/
+      version: 0.18.0
+    description: Data persistence for UrbanOS using Trino and the Hive Metastore
+    digest: 93a89266a2682ac00b1672de18d838782ab31db55c5ae5892bab1b57e985baf5
+    name: persistence
+    sources:
+    - https://github.com/trinodb/trino
+    - https://github.com/minio/operator
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/persistence-1.0.9/persistence-1.0.9.tgz
+    version: 1.0.9
   - apiVersion: v2
     created: "2023-10-31T14:30:51.330404316Z"
     dependencies:
@@ -11078,4 +11110,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2023-11-03T17:11:03.931648823Z"
+generated: "2024-02-19T18:30:46.337814049Z"
