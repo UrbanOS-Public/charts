@@ -25,13 +25,13 @@ dependencies:
   version: 3.1.15
 - name: kafka
   repository: file://../kafka
-  version: 1.2.26
+  version: 1.2.27
 - name: kubernetes-data-platform
   repository: file://../kubernetes-data-platform
   version: 1.7.5
 - name: persistence
   repository: file://../persistence
-  version: 1.0.9
+  version: 1.0.10
 - name: monitoring
   repository: file://../monitoring
   version: 1.1.8
@@ -56,5 +56,5 @@ dependencies:
 - name: performancetesting
   repository: file://../performancetesting
   version: 0.1.9
-digest: sha256:5dd2f4e914a20b6b5555174d4e46481fb48e7b8bedb26347614c93f906663717
-generated: "2024-02-16T14:16:07.773853-05:00"
+digest: sha256:bd490744007c2b46cdda3bb27bc6be0ae0da6937d6fa11c80a4f9e0d3afdef15
+generated: "2024-03-07T13:40:34.049754-05:00"
