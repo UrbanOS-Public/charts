@@ -3,6 +3,17 @@ entries:
   alchemist:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2024-04-03T21:02:58.043869837Z"
+    description: Transforms data from the raw topic and writes it to transformed topic
+    digest: 58d63dcfe6b724ca89a169d9e7bffd48ff2c48a55c1801629fe9558cf79dc53f
+    name: alchemist
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/alchemist
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/alchemist-1.0.6/alchemist-1.0.6.tgz
+    version: 1.0.6
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2023-10-31T14:30:48.405270739Z"
     description: Transforms data from the raw topic and writes it to transformed topic
     digest: f2d6402aab2ce7043c59a76a6bdf0289a8b50fc46cd756b84507124a7c6696b7
@@ -57,6 +68,16 @@ entries:
     - https://github.com/UrbanOS-Public/charts/releases/download/alchemist-1.0.1/alchemist-1.0.1.tgz
     version: 1.0.1
   andi:
+  - apiVersion: v1
+    created: "2024-04-03T21:02:58.141150777Z"
+    description: REST API to allow for dataset definition ingestion
+    digest: b6d006eae93ae88758f590c3a8f9b3f35b60612b96daaf2cb6c6ad47b443b180
+    name: andi
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/andi
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/andi-2.3.19/andi-2.3.19.tgz
+    version: 2.3.19
   - apiVersion: v1
     created: "2023-10-31T14:30:48.605724202Z"
     description: REST API to allow for dataset definition ingestion
@@ -599,6 +620,17 @@ entries:
   discovery-api:
   - apiVersion: v1
     appVersion: 1.0.0-static
+    created: "2024-04-03T21:02:58.245149795Z"
+    description: A middleware layer to connect data consumers with the data sources
+    digest: 5aef306c148b795cc52e8a617f6a79b86a47ad852f17069de8e66a4a8bc950a9
+    name: discovery-api
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/discovery_api
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-api-1.4.13/discovery-api-1.4.13.tgz
+    version: 1.4.13
+  - apiVersion: v1
+    appVersion: 1.0.0-static
     created: "2023-10-31T14:30:48.786371898Z"
     description: A middleware layer to connect data consumers with the data sources
     digest: 49924bc7f850f55154aef3cc334674d2bb5e3b7dc8797ee2554442651fe3502c
@@ -923,6 +955,18 @@ entries:
   discovery-streams:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2024-04-03T21:02:58.341703811Z"
+    description: Dynamically find kafka topics and makes available corresponding channels
+      on a public websocket
+    digest: 5efdfcd07449b88e858e70bab7efbf19374604a83d1f817030444e2766087a59
+    name: discovery-streams
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/discovery_streams
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-streams-1.1.9/discovery-streams-1.1.9.tgz
+    version: 1.1.9
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2023-10-31T14:30:49.033575982Z"
     description: Dynamically find kafka topics and makes available corresponding channels
       on a public websocket
@@ -1142,6 +1186,18 @@ entries:
     - discovery-streams-0.1.2.tgz
     version: 0.1.2
   discovery-ui:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-04-03T21:02:58.442144005Z"
+    description: A helm chart for the discovery ui
+    digest: 9362c397992989148514585ead3cd83b18906dc511787f0be08a40f1ec350206
+    name: discovery-ui
+    sources:
+    - https://github.com/UrbanOS-Public/discovery_ui
+    - https://github.com/UrbanOS-Public/react_discovery_ui
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/discovery-ui-1.5.22/discovery-ui-1.5.22.tgz
+    version: 1.5.22
   - apiVersion: v1
     appVersion: "1.0"
     created: "2023-10-31T14:30:49.232612547Z"
@@ -1747,6 +1803,16 @@ entries:
   external-services:
   - apiVersion: v1
     appVersion: 1.0.0
+    created: "2024-04-03T21:02:58.642133061Z"
+    description: Helm chart for external services. This is an optional abstraction
+      layer for external dependencies such as redis.
+    digest: 85268fe8020b74f1f601a30d005e9057130eeaa7efc24802c470f72f301eb8bd
+    name: external-services
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/external-services-1.0.7/external-services-1.0.7.tgz
+    version: 1.0.7
+  - apiVersion: v1
+    appVersion: 1.0.0
     created: "2023-10-31T14:30:49.612789907Z"
     description: Helm chart for external services. This is an optional abstraction
       layer for external dependencies such as redis.
@@ -1859,6 +1925,17 @@ entries:
     - flair-2.1.0.tgz
     version: 2.1.0
   forklift:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-04-03T21:02:58.877641142Z"
+    description: Loads data from the transformed topic into Presto
+    digest: d67ad05c7e9e3209e4dc149201beeecb8cb889cb99a506d0124d7d41154a37a0
+    name: forklift
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/forklift
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/forklift-3.1.15/forklift-3.1.15.tgz
+    version: 3.1.15
   - apiVersion: v1
     appVersion: "1.0"
     created: "2023-10-31T14:30:49.989352373Z"
@@ -2448,6 +2525,25 @@ entries:
     version: 1.0.0
   kubernetes-data-platform:
   - apiVersion: v1
+    created: "2024-04-03T21:02:59.082519846Z"
+    description: Hadoop-less data platform for the Smart City OS
+    digest: d3c30aa8d5bb14ebe1c39371ef73f6554e9965853f747564e0d5a6b5ac52c845
+    keywords:
+    - presto
+    - hive-metastore
+    - cloud-object-store
+    - minio
+    name: kubernetes-data-platform
+    sources:
+    - https://github.com/UrbanOS-Public/kdp
+    - https://github.com/prestodb/presto
+    - https://github.com/apache/hive
+    - https://github.com/minio/minio
+    - https://github.com/helm/helm
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/kubernetes-data-platform-1.7.5/kubernetes-data-platform-1.7.5.tgz
+    version: 1.7.5
+  - apiVersion: v1
     created: "2023-10-31T14:30:50.439469115Z"
     description: Hadoop-less data platform for the Smart City OS
     digest: 22fd9e394d824dd981e9e819b706603c206591fd0d85174bf5dc4254db21df61
@@ -2803,6 +2899,16 @@ entries:
     - kubernetes-data-platform-1.0.0.tgz
     version: 1.0.0
   micro-service-watchinator:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-04-03T21:02:59.174608988Z"
+    deprecated: true
+    description: Cron job to watch microservices and make sure they are alive
+    digest: 1b07a12d0e1e5552344a583c57dc5a971c558e49215520da0e7d5f3d79346ce0
+    name: micro-service-watchinator
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/micro-service-watchinator-1.1.4/micro-service-watchinator-1.1.4.tgz
+    version: 1.1.4
   - apiVersion: v1
     appVersion: "1.0"
     created: "2023-10-31T14:30:50.633783888Z"
@@ -3190,6 +3296,21 @@ entries:
     version: 0.1.2
   persistence:
   - apiVersion: v2
+    created: "2024-04-03T21:02:59.482826072Z"
+    dependencies:
+    - name: trino
+      repository: https://trinodb.github.io/charts/
+      version: 0.19.0
+    description: Data persistence for UrbanOS using Trino and the Hive Metastore
+    digest: 0c743e380ffe0bf81332cce59af729da0b7977b3b97612df973433ca6efbe64e
+    name: persistence
+    sources:
+    - https://github.com/trinodb/trino
+    - https://github.com/minio/operator
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/persistence-1.0.11/persistence-1.0.11.tgz
+    version: 1.0.11
+  - apiVersion: v2
     created: "2024-03-07T18:44:54.579185283Z"
     dependencies:
     - name: trino
@@ -3357,6 +3478,17 @@ entries:
     - platform-0.0.1.tgz
     version: 0.0.1
   raptor:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-04-03T21:02:59.573708926Z"
+    description: Authenticate and authorize API users
+    digest: 1a8a904f17723c4dbc1bd46ff34b5d23b50b4440a71d585e04476cb61307feea
+    name: raptor
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/raptor
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/raptor-1.1.12/raptor-1.1.12.tgz
+    version: 1.1.12
   - apiVersion: v1
     appVersion: "1.0"
     created: "2023-10-31T14:30:51.532617775Z"
@@ -3864,6 +3996,95 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   urban-os:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-04-03T21:02:59.913389737Z"
+    dependencies:
+    - condition: alchemist.enabled
+      name: alchemist
+      repository: file://../alchemist
+      version: '>= 1.0.0'
+    - condition: andi.enabled
+      name: andi
+      repository: file://../andi
+      version: '>= 1.0.0'
+    - condition: discovery-api.enabled
+      name: discovery-api
+      repository: file://../discovery-api
+      version: '>= 1.0.0'
+    - condition: discovery-streams.enabled
+      name: discovery-streams
+      repository: file://../discovery-streams
+      version: '>= 1.0.0'
+    - condition: discovery-ui.enabled
+      name: discovery-ui
+      repository: file://../discovery-ui
+      version: '>= 1.0.0'
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.17.3
+    - condition: external-services.enabled
+      name: external-services
+      repository: file://../external-services
+      version: '>= 1.0.0'
+    - condition: forklift.enabled
+      name: forklift
+      repository: file://../forklift
+      version: '>= 1.0.0'
+    - condition: kafka.enabled
+      name: kafka
+      repository: file://../kafka
+      version: '>= 1.0.0'
+    - condition: kubernetes-data-platform.enabled
+      name: kubernetes-data-platform
+      repository: file://../kubernetes-data-platform
+      version: '>= 1.0.0'
+    - condition: persistence.enabled
+      name: persistence
+      repository: file://../persistence
+      version: '>= 1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: file://../monitoring
+      version: '>= 1.0.0'
+    - condition: raptor.enabled
+      name: raptor
+      repository: file://../raptor
+      version: '>= 1.0.0'
+    - condition: reaper.enabled
+      name: reaper
+      repository: file://../reaper
+      version: '>= 1.0.0'
+    - condition: valkyrie.enabled
+      name: valkyrie
+      repository: file://../valkyrie
+      version: '>= 1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.27.0
+    - alias: minio-operator
+      condition: minio-operator.enabled
+      name: operator
+      repository: https://operator.min.io/
+      version: 5.0.12
+    - alias: minio-tenant
+      condition: minio-tenant.enabled
+      name: tenant
+      repository: https://operator.min.io/
+      version: 5.0.12
+    - condition: performancetesting.enabled
+      name: performancetesting
+      repository: file://../performancetesting
+      version: '>= 0.0.0'
+    description: Master chart that deploys the UrbanOS platform. See the individual
+      dependency readmes for configuration options.
+    digest: 27281742a9949c7346674043e3fcde5ca274b439a2ba1f85eaeace6c7cc6ba33
+    name: urban-os
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/urban-os-1.13.60/urban-os-1.13.60.tgz
+    version: 1.13.60
   - apiVersion: v2
     appVersion: "1.0"
     created: "2024-03-07T18:44:54.817150149Z"
@@ -11003,6 +11224,17 @@ entries:
   valkyrie:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2024-04-03T21:03:00.015094693Z"
+    description: Validates data from raw topic and writes it to validated topic
+    digest: 8e7f52c1ee544a799d60dd5b43557526c89b86ec8a0f796c7538e33ade2a94b8
+    name: valkyrie
+    sources:
+    - https://github.com/UrbanOS-Public/smartcitiesdata/tree/master/apps/valkyrie
+    urls:
+    - https://github.com/UrbanOS-Public/charts/releases/download/valkyrie-2.6.9/valkyrie-2.6.9.tgz
+    version: 2.6.9
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2023-10-31T14:30:52.451264029Z"
     description: Validates data from raw topic and writes it to validated topic
     digest: d40672b05ac0a5385ddd4445ade7bfba1d4caaf00427f4a18e40dfcd82736bc1
@@ -11320,4 +11552,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: "2024-03-07T18:44:54.81896903Z"
+generated: "2024-04-03T21:03:00.017661436Z"
