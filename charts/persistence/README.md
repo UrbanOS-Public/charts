@@ -1,6 +1,6 @@
 # persistence
 
-![Version: 1.0.12](https://img.shields.io/badge/Version-1.0.12-informational?style=flat-square)
+![Version: 1.0.13](https://img.shields.io/badge/Version-1.0.13-informational?style=flat-square)
 
 Data persistence for UrbanOS using Trino and the Hive Metastore
 
@@ -26,7 +26,7 @@ Data persistence for UrbanOS using Trino and the Hive Metastore
 | global.objectStore.host | string | `"minio"` |  |
 | global.objectStore.port | int | `80` |  |
 | metastore.image.repository | string | `"quay.io/cloudservices/ubi-hive"` |  |
-| metastore.image.tag | string | `"3.1.2-metastore-009"` |  |
+| metastore.image.tag | string | `"3.1.3-metastore-042"` |  |
 | metastore.postgres.host | string | `"postgres"` |  |
 | metastore.postgres.name | string | `"metastore"` |  |
 | metastore.postgres.password | string | `"example"` |  |
