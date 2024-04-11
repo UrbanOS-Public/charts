@@ -31,7 +31,7 @@ dependencies:
   version: 1.7.5
 - name: persistence
   repository: file://../persistence
-  version: 1.0.12
+  version: 1.0.13
 - name: monitoring
   repository: file://../monitoring
   version: 1.1.8
@@ -56,5 +56,5 @@ dependencies:
 - name: performancetesting
   repository: file://../performancetesting
   version: 0.1.9
-digest: sha256:9c7a59936fd08e8e5ee15e4097d81c840aa095ee80a475a2486a7708d5b29005
-generated: "2024-04-04T13:38:29.282881-05:00"
+digest: sha256:d883686db7fea15f6353ffcc98f1ba5d73af154751e07a7b3aedbe137f2b7ac5
+generated: "2024-04-11T14:36:34.025293-04:00"
