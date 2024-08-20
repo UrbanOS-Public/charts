@@ -12,8 +12,8 @@ global:
 
 metastore:
   image:
-    repository: quay.io/cloudservices/ubi-hive
-    tag: 3.1.3-metastore-042
+    repository: quay.io/urbanos/ubi-hive
+    tag: 3.1.3-metastore-043-hadoop-3.3.6
   rbac:
     enabled: true
   postgres:
@@ -61,6 +61,11 @@ trino:
       hive.metastore.uri=thrift://hive-metastore:8000
       hive.metastore.username=padmin
       hive.metastore-timeout=360m
+      hive.allow-drop-table=true
+      hive.allow-rename-table=true
+      hive.allow-drop-column=true
+      hive.allow-rename-column=true
+      hive.allow-add-column=true
       hive.s3.aws-access-key=EXAMPLE
       hive.s3.aws-secret-key=EXAMPLE
       hive.s3.path-style-access=true

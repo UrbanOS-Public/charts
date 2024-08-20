@@ -1,6 +1,6 @@
 # persistence
 
-![Version: 1.0.13](https://img.shields.io/badge/Version-1.0.13-informational?style=flat-square)
+![Version: 1.0.14](https://img.shields.io/badge/Version-1.0.14-informational?style=flat-square)
 
 Data persistence for UrbanOS using Trino and the Hive Metastore
 
@@ -25,8 +25,8 @@ Data persistence for UrbanOS using Trino and the Hive Metastore
 | global.objectStore.hiveStoragePath | string | `"hive-s3"` |  |
 | global.objectStore.host | string | `"minio"` |  |
 | global.objectStore.port | int | `80` |  |
-| metastore.image.repository | string | `"quay.io/cloudservices/ubi-hive"` |  |
-| metastore.image.tag | string | `"3.1.3-metastore-042"` |  |
+| metastore.image.repository | string | `"quay.io/urbanos/ubi-hive"` |  |
+| metastore.image.tag | string | `"3.1.3-metastore-043-hadoop-3.3.6"` |  |
 | metastore.postgres.host | string | `"postgres"` |  |
 | metastore.postgres.name | string | `"metastore"` |  |
 | metastore.postgres.password | string | `"example"` |  |
@@ -39,7 +39,7 @@ Data persistence for UrbanOS using Trino and the Hive Metastore
 | metastore.resources.limits.memory | string | `"2Gi"` |  |
 | metastore.resources.requests.cpu | int | `1` |  |
 | metastore.resources.requests.memory | string | `"2Gi"` |  |
-| trino.additionalCatalogs.hive | string | `"connector.name=hive\nhive.metastore.uri=thrift://hive-metastore:8000\nhive.metastore.username=padmin\nhive.metastore-timeout=360m\nhive.s3.aws-access-key=EXAMPLE\nhive.s3.aws-secret-key=EXAMPLE\nhive.s3.path-style-access=true\nhive.s3.endpoint=http://minio:80\nhive.s3.ssl.enabled=false\n"` |  |
+| trino.additionalCatalogs.hive | string | `"connector.name=hive\nhive.metastore.uri=thrift://hive-metastore:8000\nhive.metastore.username=padmin\nhive.metastore-timeout=360m\nhive.allow-drop-table=true\nhive.allow-rename-table=true\nhive.allow-drop-column=true\nhive.allow-rename-column=true\nhive.allow-add-column=true\nhive.s3.aws-access-key=EXAMPLE\nhive.s3.aws-secret-key=EXAMPLE\nhive.s3.path-style-access=true\nhive.s3.endpoint=http://minio:80\nhive.s3.ssl.enabled=false\n"` |  |
 | trino.coordinator.resources.limits.cpu | int | `1` |  |
 | trino.coordinator.resources.limits.memory | string | `"2Gi"` |  |
 | trino.coordinator.resources.requests.cpu | int | `1` |  |

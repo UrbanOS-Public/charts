@@ -25,7 +25,7 @@ dependencies:
   version: 3.1.15
 - name: kafka
   repository: file://../kafka
-  version: 1.2.27
+  version: 1.2.28
 - name: kubernetes-data-platform
   repository: file://../kubernetes-data-platform
   version: 1.7.5
@@ -49,12 +49,12 @@ dependencies:
   version: 0.27.0
 - name: operator
   repository: https://operator.min.io/
-  version: 5.0.12
+  version: 5.0.15
 - name: tenant
   repository: https://operator.min.io/
-  version: 5.0.12
+  version: 5.0.15
 - name: performancetesting
   repository: file://../performancetesting
   version: 0.1.9
-digest: sha256:d883686db7fea15f6353ffcc98f1ba5d73af154751e07a7b3aedbe137f2b7ac5
-generated: "2024-04-11T14:36:34.025293-04:00"
+digest: sha256:b478120fc6b82f6a017d59fd3269eb3f0babeed33899fddce5c7c42a7bdfc737
+generated: "2024-08-01T12:47:11.629324-05:00"
