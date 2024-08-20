@@ -1,6 +1,6 @@
 # kafka
 
-![Version: 1.2.27](https://img.shields.io/badge/Version-1.2.27-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.2.28](https://img.shields.io/badge/Version-1.2.28-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A Helm chart for deploying kafka via strimzi
 
@@ -13,7 +13,7 @@ A Helm chart for deploying kafka via strimzi
 
 | Repository | Name | Version |
 |------------|------|---------|
-| http://strimzi.io/charts/ | strimzi-kafka-operator | 0.31.1 |
+| http://strimzi.io/charts/ | strimzi-kafka-operator | 0.42.0 |
 
 ## Values
 
@@ -31,7 +31,7 @@ A Helm chart for deploying kafka via strimzi
 | kafka.topics[0].name | string | `"streaming-persisted"` |  |
 | kafka.topics[1].name | string | `"streaming-dead-letters"` |  |
 | kafka.topics[2].name | string | `"event-stream"` |  |
-| kafka.version | string | `"2.6.2"` |  |
+| kafka.version | string | `"3.7.0"` |  |
 | kafkaExporter.enabled | bool | `true` |  |
 | limitRange.enabled | bool | `true` |  |
 | rbac.enabled | bool | `true` |  |

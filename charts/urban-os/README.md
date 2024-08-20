@@ -1,6 +1,6 @@
 # urban-os
 
-![Version: 1.13.62](https://img.shields.io/badge/Version-1.13.62-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 1.13.64](https://img.shields.io/badge/Version-1.13.64-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 Master chart that deploys the UrbanOS platform. See the individual dependency readmes for configuration options.
 
@@ -25,8 +25,8 @@ Master chart that deploys the UrbanOS platform. See the individual dependency re
 | file://../valkyrie | valkyrie | >= 1.0.0 |
 | https://helm.elastic.co | elasticsearch | 7.17.3 |
 | https://helm.releases.hashicorp.com | vault | 0.27.0 |
-| https://operator.min.io/ | minio-operator(operator) | 5.0.12 |
-| https://operator.min.io/ | minio-tenant(tenant) | 5.0.12 |
+| https://operator.min.io/ | minio-operator(operator) | 5.0.15 |
+| https://operator.min.io/ | minio-tenant(tenant) | 5.0.15 |
 
 ## Values
 
