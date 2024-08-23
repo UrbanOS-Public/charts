@@ -47,10 +47,10 @@ profiling_enabled: false
 resources:
   limits:
     cpu: 300m
-    memory: 512Mi
+    memory: 2Gi
   requests:
     cpu: 300m
-    memory: 512Mi
+    memory: 2Gi
 
 nodeSelector: {}
 
