@@ -1,7 +1,7 @@
 dependencies:
 - name: alchemist
   repository: file://../alchemist
-  version: 1.0.6
+  version: 1.0.7
 - name: andi
   repository: file://../andi
   version: 2.3.19
@@ -56,5 +56,5 @@ dependencies:
 - name: performancetesting
   repository: file://../performancetesting
   version: 0.1.9
-digest: sha256:ab9b4d94c627c109ceed8afd0dbc0fd4502bbd08a3090a152ea04da5abbca513
-generated: "2024-08-20T08:47:35.777195-05:00"
+digest: sha256:9bed36c7b738a079bf08c3f25efc01a92b4c0469fab4fc700baea9bd37bbd379
+generated: "2024-08-23T09:09:58.17464-05:00"
