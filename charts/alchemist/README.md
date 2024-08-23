@@ -38,9 +38,9 @@ Transforms data from the raw topic and writes it to transformed topic
 | rbac.enabled | bool | `true` |  |
 | replicaCount | int | `1` |  |
 | resources.limits.cpu | string | `"300m"` |  |
-| resources.limits.memory | string | `"512Mi"` |  |
+| resources.limits.memory | string | `"2Gi"` |  |
 | resources.requests.cpu | string | `"300m"` |  |
-| resources.requests.memory | string | `"512Mi"` |  |
+| resources.requests.memory | string | `"2Gi"` |  |
 | service.type | string | `"ClusterIP"` |  |
 | tolerations | list | `[]` |  |
 
