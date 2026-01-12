@@ -97,6 +97,12 @@ spec:
             secretKeyRef:
               name: {{ .Release.Name }}-reaper-aws-credentials
               key: aws_access_key_secret
+          - name: RUN_IN_KUBERNETES
+              value: "true"
+          - name: POD_IP
+              valueFrom:
+              fieldRef:
+              fieldPath: status.podIP
       volumes:
       - name: download-dir
         emptyDir: {}

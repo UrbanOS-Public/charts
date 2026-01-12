@@ -8,3 +8,7 @@ charts/monitoring/charts
 .DS_Store
 
 .idea
+
+# emacs backup files
+*~
+[#]*[#]
