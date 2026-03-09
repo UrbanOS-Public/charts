@@ -59,7 +59,37 @@ TENANT_NAME={tenant name}
 kubectl exec -n $NS ${TENANT_NAME}-log-0 -c log-search-pg -- psql -U postgres -c "ALTER USER postgres WITH PASSWORD '$(kubectl get secret -n $NS ${TENANT_NAME}-log-secret -o jsonpath={.data.POSTGRES_PASSWORD} | base64 --decode)';"
 ```
 
-### Sauron
+## Creating New UrbanOS Chart Releases
+
+Make changes on your branch (as you will need a PR to merge to master to trigger the release build!).
+
+Releases are automated by github actions — they happen automatically when a PR is merged to master. The GitHub Actions workflow (release.yml) runs helm/chart-releaser-action on every push to master, which detects bumped chart versions and creates releases.
+  - charts/urban-os/Chart.yaml
+  - charts/subcomp/Chart.yaml
+
+### Steps
+
+  1. Make your changes to the relevant chart(s) under charts/.
+  2. Bump chart versions in the affected Chart.yaml files:
+    - If you update a sub-chart (e.g., andi), also bump the urban-os chart version.
+  3. Update dependencies if charts within urban-os were modified:
+  cd charts/urban-os
+  helm dependency update
+  # commit the updated Chart.lock file
+  4. Validate your chart renders correctly:
+  helm template . -f values.yaml
+  5. Install git hooks (if not already done — they auto-generate docs):
+  ./scripts/install_git_hooks.sh
+  6. Submit a PR following the PR template checklist, then merge to master.
+  7. Automation handles the rest — the release workflow packages the chart, creates a GitHub release with the chart tarball attached, and updates the gh-pages branch index so the chart is available via the urbanos helm repo.
+
+### Key Notes
+
+  - The releaser uses CR_SKIP_EXISTING: true, so only charts with new version numbers get released.
+  - If you add a new external chart dependency, also update the release.yml workflow to run helm dependency update for it.
+
+
+### Sauron (Accenture Continuous Integration Server) 
 
 Sauron is our automated deployment updater. Sauron must first be independently deployed, then it will detect upstream changes and issue deployment commands as needed.
 

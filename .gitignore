@@ -12,3 +12,4 @@ charts/monitoring/charts
 # emacs backup files
 *~
 [#]*[#]
+releases/

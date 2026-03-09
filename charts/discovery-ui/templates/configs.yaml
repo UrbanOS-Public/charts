@@ -23,6 +23,7 @@ data:
     window.DISCOVERY_AUTH0_CLIENT_ID = '{{.Values.env.discovery_auth0_client_id}}'
     window.AUTH0_AUDIENCE = '{{.Values.env.auth0_audience}}'
     window.PRIMARY_COLOR = '{{.Values.env.primary_color}}'
+    window.LINK_COLOR = '{{.Values.env.link_color}}'
     window.REQUIRE_API_KEY = '{{.Values.global.require_api_key}}'
     window.REGENERATE_API_KEY_FF = '{{.Values.env.regenerate_api_key_ff}}'
     window.DISABLE_VISUALIZATIONS = '{{.Values.env.disable_visualizations}}'
