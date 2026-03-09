@@ -78,16 +78,14 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: status.podIP
-          - name: RUN_IN_KUBERNETES
-              value: "true"
           - name: POD_IP
-              valueFrom:
+            valueFrom:
               fieldRef:
-              fieldPath: status.podIP
-    - name: POD_NAMESPACE
-      valueFrom:
-        fieldRef:
-          fieldPath: metadata.namespace
+                fieldPath: status.podIP
+          - name: POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
           - name: RELEASE_DISTRIBUTION
             value: "name"
           resources:
