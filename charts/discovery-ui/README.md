@@ -29,6 +29,7 @@ A helm chart for the discovery ui
 | env.footer_right_links | string | `"[{\"linkText\":\"UrbanOS\", \"url\":\"https://github.com/UrbanOS-Public/smartcitiesdata\"}]"` |  |
 | env.gtm_id | string | `""` |  |
 | env.header_title | string | `"UrbanOS Data Discovery"` |  |
+| env.link_color | string | `"#134B4B"` |  |
 | env.logo_url | string | `nil` |  |
 | env.mapbox_access_token | string | `""` |  |
 | env.primary_color | string | `"#0F64B3"` |  |
