@@ -65,7 +65,7 @@ spec:
               name: {{ quote .Values.global.redis.passwordSecret }}
               key: {{ .Values.global.redis.passwordSecretKey | default .Values.global.redis.passwordSecret | quote }}
 {{- else }}
-          value: {{ .Values.global.redis.password }}
+          value: {{ .Values.global.redis.password | quote }}
 {{- end }}
         - name: REDIS_SSL
           value: {{ quote .Values.global.redis.sslEnabled }}
@@ -97,11 +97,9 @@ spec:
             secretKeyRef:
               name: {{ .Release.Name }}-reaper-aws-credentials
               key: aws_access_key_secret
-          - name: RUN_IN_KUBERNETES
-              value: "true"
-          - name: POD_IP
-              valueFrom:
-              fieldRef:
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
               fieldPath: status.podIP
       volumes:
       - name: download-dir
